@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TrialClassController;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,8 @@ Route::get('/pricing' , [HomeController::class , 'pricing'])->name('home.pricing
 Route::get('/contact-us' , [HomeController::class , 'contactUs'])->name('home.contact.us');
 
 Route::post('/trial-class', [TrialClassController::class, 'store'])->name('trial-class.store');
+// courses
+
+Route::get('/quran-reading-with-tajweed' , [CourseController::class , 'quraWithTajweed'])->name('quran.tajweed');
+
 

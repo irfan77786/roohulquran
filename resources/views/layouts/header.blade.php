@@ -72,28 +72,19 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{route('home.index')}}" class="active">Home<br></a></li>
-          <li><a href="{{route('home.about')}}">About</a></li>
-          <li><a href="{{route('home.courses')}}">Courses</a></li>
-          {{-- <li><a href="trainers.html">Trainers</a></li> --}}
-          <li><a href="{{route('home.events')}}">Events</a></li>
-          <li><a href="{{route('home.pricing')}}">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
+              <li><a href="#">Noorani Qaida</a></li>
+              <li><a href="#">Quran Memorization</a></li>
+              <li><a href="#">Tafseer Course</a></li>
+
             </ul>
           </li>
+          <li><a href="{{route('home.pricing')}}">Pricing</a></li>
+          {{-- <li><a href="trainers.html">Trainers</a></li> --}}
+          <li><a href="{{route('home.about')}}">About</a></li>
+          
           <li><a href="{{route('home.contact.us')}}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

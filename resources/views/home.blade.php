@@ -569,7 +569,7 @@
           <div class="course-card " data-aos="fade-up">
             <div class="course-image">
               <span class="badge-level">Intermediate</span>
-              <img src="assets/img/ai/course-1.jpeg" alt="Memorize Quran">
+              <img src="assets/img/ai/course-5.jpg" alt="Memorize Quran">
             </div>
             <div class="course-info">
               <div class="meta">
@@ -806,7 +806,7 @@
                 <div class="d-flex align-items-center">
                   <img src="assets/img/ai/test-4.jpg" alt="User" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
-                    <h5 class="mb-0">Ayesha Khan</h5>
+                    <h5 class="mb-0">M Yaseen</h5>
                   </div>
                 </div>
               </div>
@@ -823,7 +823,7 @@
                 <div class="d-flex align-items-center">
                   <img src="assets/img/ai/test-5.jpg" alt="User" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
-                    <h5 class="mb-0">Ayesha Khan</h5>
+                    <h5 class="mb-0">Habibullah</h5>
                   </div>
                 </div>
               </div>
@@ -838,7 +838,7 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/img/ai/course-1.jpeg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
+        <img src="assets/img/ai/course-1.jpg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
         <div class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center" style="margin-bottom: -30px;">
           <i class="bi bi-mortarboard text-danger" style="font-size: 2rem;"></i>
           <div class="ms-3">
