@@ -2,8 +2,6 @@
 
 @section('content')
 
-<main class="main">
-
   <style>
     #hero {
       padding: 50px 0;
@@ -685,14 +683,40 @@
 
         <!-- Right Form -->
         <div class="text-white p-5 rounded w-100 w-lg-50 mt-4 mt-lg-0"
-          style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a);">
-          <form class="form-container mx-auto">
-            <input type="text" class="form-control mb-4 rounded-pill input-large" placeholder="Your Name">
-            <input type="email" class="form-control mb-4 rounded-pill input-large" placeholder="Your Email">
-            <input type="text" class="form-control mb-4 rounded-pill input-large" placeholder="Your Phone No">
-            <button class="btn btn-dark w-100 rounded-pill">BOOK FREE TRIAL CLASS</button>
-          </form>
-        </div>
+     style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a);">
+     <form id="trial-forms" class="form-container mx-auto">
+      @csrf
+      <div class="mb-3">
+          <input type="text" class="form-control rounded-pill" name="name" placeholder="Enter your Full Name" required>
+      </div>
+      <div class="mb-3">
+          <input type="email" class="form-control rounded-pill" name="email" placeholder="Enter Your Email Address" required>
+      </div>
+      <div class="mb-3">
+          <input type="text" class="form-control rounded-pill" name="phone" placeholder="Enter Your Phone Number" required>
+      </div>
+      <div class="mb-3">
+          <select class="form-control rounded-pill" name="country" required>
+              <option value="" disabled selected>Select Your Country</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+          </select>
+      </div>
+      <div class="mb-3">
+          <textarea class="form-control rounded-pill" name="message" placeholder="Any message (optional)"></textarea>
+      </div>
+      <input type="hidden" name="course_enroll" value="Course Title Here">
+  
+      <button type="submit" id="submit-btn" class="btn btn-dark w-100 rounded-pill">
+          <span id="btn-text">BOOK FREE TRIAL CLASS</span>
+          <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
+      </button>
+  </form>
+  
+</div>
+
       </div>
 
       <!-- Center Image -->
@@ -875,8 +899,7 @@
      <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200">
   <div class="contact-form bg-white p-4 shadow hover-popout" style="border: 2px solid #44137c; border-radius: 20px;">
     <h3 class="mb-4 text-center" style="color: #44137c; font-weight: bold;">FREE TRIAL CLASS</h3>
-    <form action="/" method="POST">
-      @csrf
+    <form id="trial-form">
       <div class="mb-3">
         <input type="text" class="form-control rounded-pill" name="name" placeholder="Enter your Full Name" required>
       </div>
@@ -895,12 +918,111 @@
           <option value="UK">UK</option>
         </select>
       </div>
-      <button type="submit" class="btn w-100 rounded-pill" style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">Get Free Trial Class</button>
+    
+      <!-- Button with loading spinner -->
+      <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
+              style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
+        <span id="btn-text">Get Free Trial Class</span>
+        <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
+      </button>
     </form>
   </div>
 </div>
     </div>
   </div>
+
 </section>
-</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+$('#trial-form').on('submit', function (e) {
+  e.preventDefault();
+
+  let form = $(this);
+  let submitBtn = $('#submit-btn');
+  let btnText = $('#btn-text');
+  let btnLoading = $('#btn-loading');
+
+  btnText.addClass('d-none');
+  btnLoading.removeClass('d-none');
+  submitBtn.prop('disabled', true);
+
+  $.ajax({
+      url: '{{ route('trial-class.store') }}',
+      type: 'POST',
+      data: form.serialize(),
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function (response) {
+          btnText.removeClass('d-none');
+          btnLoading.addClass('d-none');
+          submitBtn.prop('disabled', false);
+
+          Swal.fire('JazakAllah', response.message, 'success');
+          form[0].reset();
+      },
+      error: function (xhr) {
+          btnText.removeClass('d-none');
+          btnLoading.addClass('d-none');
+          submitBtn.prop('disabled', false);
+
+          let message = 'Something went wrong.';
+          if (xhr.status === 422) {
+              const errors = xhr.responseJSON.errors;
+              message = Object.values(errors).flat().join('\n');
+          }
+
+          Swal.fire('Error', message, 'error');
+      }
+  });
+});
+
+
+$('#trial-forms').on('submit', function (e) {
+  e.preventDefault();
+
+  let form = $(this);
+  let submitBtn = $('#submit-btn');
+  let btnText = $('#btn-text');
+  let btnLoading = $('#btn-loading');
+
+  btnText.addClass('d-none');
+  btnLoading.removeClass('d-none');
+  submitBtn.prop('disabled', true);
+
+  $.ajax({
+      url: '{{ route('trial-class.store') }}',
+      type: 'POST',
+      data: form.serialize(),
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      success: function (response) {
+          btnText.removeClass('d-none');
+          btnLoading.addClass('d-none');
+          submitBtn.prop('disabled', false);
+
+          Swal.fire('JazakAllah', response.message, 'success');
+          form[0].reset();
+      },
+      error: function (xhr) {
+          btnText.removeClass('d-none');
+          btnLoading.addClass('d-none');
+          submitBtn.prop('disabled', false);
+
+          let message = 'Something went wrong.';
+          if (xhr.status === 422) {
+              const errors = xhr.responseJSON.errors;
+              message = Object.values(errors).flat().join('\n');
+          }
+
+          Swal.fire('Error', message, 'error');
+      }
+  });
+});
+
+</script>
 @endsection

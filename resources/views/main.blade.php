@@ -11,6 +11,8 @@
   <!-- Favicons -->
   <link href="assets/img/tab-logo.png" rel="icon">
   <linkf href="assets/img/tab-logo.png" rel="apple-touch-icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
