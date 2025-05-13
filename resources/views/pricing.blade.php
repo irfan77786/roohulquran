@@ -1,109 +1,156 @@
 @extends('main')
 
+<style>
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+
+  ul.lh-lg li {
+    line-height: 1.8rem;
+  }
+</style>
 @section('content')
 
 
-
-<div class="page-title" data-aos="fade">
-    <div class="heading">
-      <div class="container">
-        <div class="row d-flex justify-content-center text-center">
-          <div class="col-lg-8">
-            <h1>Pricing</h1>
-            <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-5 bg-light">
+    <div class="container">
+  
+      <h2 class="text-center mb-4 fw-bold">Islamic Learning <span class="text-primary">Packages</span></h2>
+  
+      <div class="row g-4 justify-content-center">
+        <!-- Basic Package -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-black rounded-4 border-0 card-hover" style="background-color: #dde5e6;">
+            <div class="card-body text-center">
+              <h5 class="fw-bold">Basic Package</h5>
+              <h4 class="fw-bold">39 USD <small>/ monthly</small></h4>
+              <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
+                <li>✅ 2 Classes / Weekly</li>
+                <li>✅ 30 Minutes Class</li>
+                <li>✅ 08 Classes per Month</li>
+                <li>❌ Free Evaluation Class</li>
+                <li>❌ Progress Reports</li>
+                <li>❌ Priority Scheduling</li>
+                <li>❌ Monthly Parent Consultation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Standard Package -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-black rounded-4 border-0 card-hover" style="background-color: #dde5e6;">
+            <div class="card-body text-center">
+              <h5 class="fw-bold">Standard Package</h5>
+              <h4 class="fw-bold">49 USD <small>/ monthly</small></h4>
+              <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
+                <li>✅ 3 Classes / Weekly</li>
+                <li>✅ 30 Minutes Class</li>
+                <li>✅ 12 Classes per Month</li>
+                <li>✅ Free Evaluation Class</li>
+                <li>❌ Progress Reports</li>
+                <li>❌ Priority Scheduling</li>
+                <li>❌ Monthly Parent Consultation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Premium Package -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-white rounded-4 border-0 bg-danger card-hover">
+            <div class="card-body text-center">
+              <h5 class="fw-bold text-white">Premium Package</h5>
+              <h4 class="fw-bold text-white">59 USD <small>/ monthly</small></h4>
+              <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
+                <li>✅ 4 Classes / Weekly</li>
+                <li>✅ 30 Minutes Class</li>
+                <li>✅ 16 Classes per Month</li>
+                <li>✅ Free Evaluation Class</li>
+                <li>✅ Progress Reports</li>
+                <li>✅ Priority Scheduling</li>
+                <li>✅ Monthly Parent Consultation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Intensive Package -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-black rounded-4 border-0  card-hover" style="background-color: #dde5e6;">
+            <div class="card-body text-center">
+              <h5 class="fw-bold">Intensive Package</h5>
+              <h4 class="fw-bold">69 USD <small>/ monthly</small></h4>
+              <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
+                <li>✅ 5 Classes / Weekly</li>
+                <li>✅ 30 Minutes Class</li>
+                <li>✅ 20 Classes per Month</li>
+                <li>✅ Free Evaluation Class</li>
+                <li>✅ Progress Reports</li>
+                <li>✅ Priority Scheduling</li>
+                <li>✅ Monthly Parent Consultation</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <nav class="breadcrumbs">
-      <div class="container">
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li class="current">Pricing</li>
-        </ol>
+  
+      <!-- Notice -->
+      <div class="alert alert-warning text-center mt-5" role="alert">
+        <strong>Important notice:</strong> Official holidays will be observed without any corresponding monetary adjustments.
       </div>
-    </nav>
-  </div><!-- End Page Title -->
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="pricing section">
-
-    <div class="container">
-
-      <div class="row gy-3">
-
-        <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="pricing-item">
-            <h3>Free</h3>
-            <h4><sup>$</sup>0<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li class="na">Pharetra massa</li>
-              <li class="na">Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div>
-        </div><!-- End Pricing Item -->
-
-        <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="pricing-item featured">
-            <h3>Business</h3>
-            <h4><sup>$</sup>19<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li class="na">Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div>
-        </div><!-- End Pricing Item -->
-
-        <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="pricing-item">
-            <h3>Developer</h3>
-            <h4><sup>$</sup>29<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li>Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div>
-        </div><!-- End Pricing Item -->
-
-        <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="pricing-item">
-            <span class="advanced">Advanced</span>
-            <h3>Ultimate</h3>
-            <h4><sup>$</sup>49<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li>Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div>
-        </div><!-- End Pricing Item -->
-
+  
+      <!-- Special Discounts -->
+      <div class="text-center my-5">
+        <h3 class="fw-bold">Special <span class="text-primary">Discounts</span> and Offers</h3>
       </div>
-
+  
+      <div class="row g-4">
+        <!-- Family Discount -->
+        <div class="col-md-4">
+          <div class="p-4 bg-light border rounded h-100">
+            <h5 class="fw-bold text-danger">Family Package Discounts</h5>
+            <p>Our family-oriented pricing structure offers increasing discounts for multiple children:</p>
+            <ul class="list-unstyled">
+              <li>🔸 5% discount for second child</li>
+              <li>🔸 10% discount for third child</li>
+              <li>🔸 15% discount for fourth child and beyond</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Long-Term Commitment -->
+        <div class="col-md-4">
+          <div class="p-4 bg-light border rounded h-100">
+            <h5 class="fw-bold text-info">Long-Term Commitment Benefits</h5>
+            <p>We reward long-term commitments with the following discounts:</p>
+            <ul class="list-unstyled">
+              <li>🔹 5% discount for 6-month advance payment</li>
+              <li>🔹 10% discount for 1-year advance payment</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Referral Program -->
+        <div class="col-md-4">
+          <div class="p-4 bg-light border rounded h-100">
+            <h5 class="fw-bold text-warning">Referral Program</h5>
+            <p>Share the blessing of learning by referring others:</p>
+            <ul class="list-unstyled">
+              <li>⭐ Earn 1 free class per successful referral</li>
+              <li>⭐ Max of 4 free classes per month</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
     </div>
-
   </section>
+  
 @endsection
