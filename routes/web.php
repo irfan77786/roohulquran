@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TrialClassController;
@@ -15,6 +17,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// admin routes
+
+Route::get('admin/login' , [AuthController::class,'loginPage'])->name('login');
+Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.login');
+
+
+Route::middleware(['auth:admin'])->group(function () {
+Route::get('dashboard' , [DashboardController::class,'index'])->name('admin.dashboard');
+});
+
+
 
 Route::get('/' , [HomeController::class , 'index'])->name('home.index');
 Route::get('/about' , [HomeController::class , 'about'])->name('home.about');
