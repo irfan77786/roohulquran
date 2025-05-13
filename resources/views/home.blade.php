@@ -288,7 +288,7 @@
           <p>
             Online Quran classes for Tajweed, Hifz and Arabic <br>Your time, Your choice.
           </p>
-          <a href="courses.html" class="btn-get-started">Get Started</a>
+          <a href="{{ route('home.contact.us') }}" class="btn-get-started">Get Started</a>
         </div>
 
         <!-- Right Form -->

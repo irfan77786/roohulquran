@@ -162,7 +162,7 @@
           <li>Start Your Journey With Free Trial Class</li>
 
         </ul>
-        <a href="courses.html" class="btn-get-started text-bold">Free Trial</a>
+        <a href="{{ route('home.contact.us') }}" class="btn-get-started text-bold">Free Trial</a>
       </div>
 
       <!-- Right Form -->
@@ -284,7 +284,7 @@
               <h6 style="color: #ccc; font-weight: bold; text-decoration: line-through; font-size: 1rem;">80 USD</h6>
             </div>
             <p class="text-white mt-3">Quran Reading with Tajweed with expert guidance and progress tracking.</p>
-            <a href="#" class="btn btn-danger rounded-pill px-4" style="background-color: #e74c3c; border: none;">Free
+            <a href="{{ route('home.contact.us') }}" class="btn btn-danger rounded-pill px-4" style="background-color: #e74c3c; border: none;">Free
               Trial</a>
           </div>
         </div>

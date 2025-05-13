@@ -30,9 +30,11 @@
       <div class="col-lg-4 col-md-12 text-center text-lg-end">
         <h4 class="text-white">STAY CONNECTED:</h4>
         <div class="social-links d-flex justify-content-center justify-content-lg-end mt-3">
-          <a href="#" class="twitter"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.facebook.com/roohulquran" class="twitter"><i class="bi bi-facebook"></i></a>
           <a href="#" class="facebook"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://wa.me/+923344066429" class="whatsapp" target="_blank">
+            <i class="bi bi-whatsapp"></i>
+        </a>
         </div>
       </div>
     </div>
