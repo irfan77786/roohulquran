@@ -63,10 +63,10 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename"><img height="1000px" src="assets/img/logo.png" class="img-fluid" alt=""></h1>
+        <h1 class="sitename"><img height="1000px" src="{{asset('assets/img/logo.png')}}" class="img-fluid" alt=""></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -75,9 +75,9 @@
           <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
-              <li><a href="#">Noorani Qaida</a></li>
-              <li><a href="#">Quran Memorization</a></li>
-              <li><a href="#">Tafseer Course</a></li>
+              <li><a href="{{route('quran.recitation')}}">Noorani Qaida</a></li>
+              <li><a href="{{route('quran.memorization')}}">Quran Memorization</a></li>
+              <li><a href="{{route('quran.tafseer')}}">Tafseer Course</a></li>
 
             </ul>
           </li>
@@ -90,7 +90,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="courses.html">Get Started</a>
+      <a href="{{ route('home.contact.us') }}" class="btn-getstarted" href="courses.html">Get Started</a>
 
     </div>
   </header>
