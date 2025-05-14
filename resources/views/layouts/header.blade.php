@@ -75,9 +75,9 @@
           <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
-              <li><a href="#">Noorani Qaida</a></li>
-              <li><a href="#">Quran Memorization</a></li>
-              <li><a href="#">Tafseer Course</a></li>
+              <li><a href="{{route('quran.recitation')}}">Noorani Qaida</a></li>
+              <li><a href="{{route('quran.memorization')}}">Quran Memorization</a></li>
+              <li><a href="{{route('quran.tafseer')}}">Tafseer Course</a></li>
 
             </ul>
           </li>

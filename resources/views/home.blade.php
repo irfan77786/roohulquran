@@ -576,7 +576,7 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Memorize Quran Online</h3>
+              <h3 class="title"><a href="{{route('quran.memorization')}}">Memorize Quran Online</a></h3>
               <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a miracle.</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
@@ -598,7 +598,7 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Qaidah Reading</h3>
+              <h3 class="title"><a href="{{route('quran.recitation')}}">Qaidah Reading</a></h3>
               <p class="description">For the purpose of learning the basics of tajweed rules, one has to learn this booklet</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
@@ -620,7 +620,7 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Quran Reading with Tajweed</h3>
+              <h3 class="title"><a href="{{route('quran.tajweed')}}">Quran Reading with Tajweed</a></h3>
               <p class="description">Quran reading with Tajweed has immense significance in preservation of Quran</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
@@ -642,7 +642,7 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Tafseer ul Quran</h3>
+              <h3 class="title"><a href="{{route('quran.tafseer')}}">Tafseer ul Quran</a></h3>
               <p class="description">Learn Quran by understanding with translation</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>

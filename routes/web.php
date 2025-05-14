@@ -49,5 +49,11 @@ Route::post('/trial-class', [TrialClassController::class, 'store'])->name('trial
 // courses
 
 Route::get('/quran-reading-with-tajweed' , [CourseController::class , 'quraWithTajweed'])->name('quran.tajweed');
+Route::get('/qaida-by-roohulquran' , [CourseController::class , 'quraRecitation'])->name('quran.recitation');
+Route::get('/tafseer-course-online' , [CourseController::class , 'quraWithTafseer'])->name('quran.tafseer');
+Route::get('/memorize-quran-online' , [CourseController::class , 'quraMemorization'])->name('quran.memorization');
+
+
+
 
 
