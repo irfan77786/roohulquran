@@ -1,5 +1,6 @@
 @extends('main')
 
+@section('title', 'Quran Reading with Tajweed - Online Classes by Rooh Ul Quran Academy')
 
 @section('content')
 

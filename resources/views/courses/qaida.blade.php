@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Online Noorani Qaida Course - Learn to Read Quran from Scratch | Rooh Ul Quran Academy')
+@section('title', 'Learn Noorani Qaida Online - Beginner Quran Course | Rooh Ul Quran Academy')
 @section('content')
 
 <style>
@@ -627,7 +627,7 @@
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Online Noorani Qaida Course",
-  "description": "Rooh Ul Quran Academy's Noorani Qaida course is designed for beginners to learn Arabic letters, pronunciation, and the foundational rules of Quranic reading. Ideal for children and new learners.",
+  "description": "Rooh Ul Quran Academy's Noorani Qaida course helps beginners, kids, and adults learn the basics of Quran reading. Students will learn Arabic letters, pronunciation, and Tajweed rules in a structured, step-by-step format.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
@@ -642,5 +642,6 @@
   "url": "http://roohulquranacademy.com/qaida-by-roohulquran"
 }
 </script>
+
 
 @endsection

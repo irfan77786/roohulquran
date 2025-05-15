@@ -1,5 +1,6 @@
 @extends('main')
 
+@section('title', 'Rooh Ul Quran Academy - Online Quran Classes for Kids & Adults')
 @section('content')
 
   <style>
@@ -1034,23 +1035,29 @@ $('#trial-forms').on('submit', function (e) {
   "name": "Rooh Ul Quran Academy",
   "url": "http://roohulquranacademy.com/",
   "logo": "http://roohulquranacademy.com/logo.png",
-  "description": "Rooh Ul Quran Academy offers online Quran classes with expert male and female tutors. Learn Quran with Tajweed, Hifz, and Tafseer from the comfort of your home.",
+  "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
+  "founder": {
+    "@type": "Person",
+    "name": "Shaykh or Ustadh Name"  <!-- Optional: replace with actual name -->
+  },
+  "foundingDate": "2020",
   "sameAs": [
     "https://www.facebook.com/roohulquranacademy",
     "https://www.instagram.com/roohulquranacademy",
     "https://www.youtube.com/@roohulquranacademy"
   ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PK"
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+1-234-567-8901",
     "contactType": "Customer Service",
     "areaServed": "Worldwide",
     "availableLanguage": ["English", "Urdu", "Arabic"]
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
   }
 }
 </script>
+
 @endsection

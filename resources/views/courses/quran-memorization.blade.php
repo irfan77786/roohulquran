@@ -1,5 +1,6 @@
 @extends('main')
 
+@section('title', 'Memorize Quran Online - Hifz Classes for Kids & Adults | Rooh Ul Quran Academy')
 
 @section('content')
 
@@ -235,23 +236,28 @@
             <ul class="list-unstyled">
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>We take a quick test to determine your reading level, provide lessons that match your skills, and ensure you move forward at a speed that works for you.</p>
+                <p>We take a quick test to determine your reading level, provide lessons that match your skills, and
+                  ensure you move forward at a speed that works for you.</p>
               </li>
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>We don’t just make you memorize; we boost your memorization fluency through regular revision classes, ensuring you retain lessons for the long run.</p>
+                <p>We don’t just make you memorize; we boost your memorization fluency through regular revision classes,
+                  ensuring you retain lessons for the long run.</p>
               </li>
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>Our class procedure is simple and user-friendly and you can join with just one click find all your lessons in one place and track them easily on any device.</p>
+                <p>Our class procedure is simple and user-friendly and you can join with just one click find all your
+                  lessons in one place and track them easily on any device.</p>
               </li>
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>Our staff is highly certified and provides you with personal attention when you need help providing satisfactory answers and growing you professionally.</p>
+                <p>Our staff is highly certified and provides you with personal attention when you need help providing
+                  satisfactory answers and growing you professionally.</p>
               </li>
               <li class="d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>We track your skills to improve each day, making you complete lessons and earn achievements so you can celebrate every step forward.</p>
+                <p>We track your skills to improve each day, making you complete lessons and earn achievements so you
+                  can celebrate every step forward.</p>
               </li>
             </ul>
           </div>
@@ -279,7 +285,7 @@
               <h6 style="color: #ccc; font-weight: bold; text-decoration: line-through; font-size: 1rem;">80 USD</h6>
             </div>
             <p class="text-white mt-3">Quran memorization with expert guidance and progress tracking.
-</p>
+            </p>
             <a href="{{ route('home.contact.us') }}" class="btn btn-danger rounded-pill px-4"
               style="background-color: #e74c3c; border: none;">Free
               Trial</a>
@@ -622,4 +628,26 @@
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Online Quran Memorization (Hifz) Course",
+  "description": "Rooh Ul Quran Academy offers a structured online Hifz program to help kids and adults memorize the Quran. Our certified male and female teachers provide personalized, one-on-one classes with flexible scheduling worldwide.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "url": "http://roohulquranacademy.com",
+    "logo": "http://roohulquranacademy.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/roohulquranacademy",
+      "https://www.instagram.com/roohulquranacademy",
+      "https://www.youtube.com/@roohulquranacademy"
+    ]
+  },
+  "url": "http://roohulquranacademy.com/memorize-quran-online"
+}
+</script>
+
 @endsection

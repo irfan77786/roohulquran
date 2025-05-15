@@ -610,17 +610,16 @@
     </div>
   </div>
 </section>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Quran Reading with Tajweed",
-  "description": "Learn to read the Quran with proper Tajweed in online classes offered by Rooh Ul Quran Academy. Our expert male and female tutors guide students of all ages through structured lessons.",
+  "description": "Rooh Ul Quran Academy offers online Quran reading classes with Tajweed for kids and adults. Learn proper pronunciation, Makharij, and Tajweed rules with qualified male and female teachers. One-on-one flexible sessions available.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
-    "url": "http://roohulquranacademy.com", 
+    "url": "http://roohulquranacademy.com",
     "logo": "http://roohulquranacademy.com/logo.png",
     "sameAs": [
       "https://www.facebook.com/roohulquranacademy",
@@ -631,5 +630,6 @@
   "url": "http://roohulquranacademy.com/quran-reading-with-tajweed"
 }
 </script>
+
 
 @endsection
