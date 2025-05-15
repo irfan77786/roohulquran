@@ -30,8 +30,9 @@
                                 <i class="bi bi-telephone-fill fs-2 text-dark"></i>
                             </div>
                             <div>
-                                <small class="text-muted">Call us Anytime</small><br>
-                                <strong class="text-dark">+1 630 534 0231</strong>
+                                <small class="text-muted">Call us or whatsapp Anytime</small><br>
+                                <strong class="text-dark">+92 344 6781539</strong><br>
+                                <strong class="text-dark">+92 343 8078216</strong>
                             </div>
                         </div>
 
@@ -43,12 +44,12 @@
                             </div>
                             <div>
                                 <small class="text-muted">E-mail us Anytime</small><br>
-                                <strong class="text-dark">info@qteaching.com</strong>
+                                <strong class="text-dark">info@roohulquranacademy.com</strong>
                             </div>
                         </div>
 
                         <hr>
-
+{{-- 
                         <div class="d-flex align-items-center">
                             <div class="me-3">
                                 <i class="bi bi-geo-alt-fill fs-2 text-dark"></i>
@@ -57,7 +58,7 @@
                                 <small class="text-muted">Our Locations</small><br>
                                 <strong class="text-dark">Hatton Garden, London, United Kingdom</strong>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 

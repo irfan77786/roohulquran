@@ -583,7 +583,7 @@
                 <span class="reviews">(39 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
               </div>
             </div>
@@ -605,7 +605,7 @@
                 <span class="reviews">(24 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
               </div>
             </div>
@@ -627,7 +627,7 @@
                 <span class="reviews">(32 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
               </div>
             </div>
@@ -649,7 +649,7 @@
                 <span class="reviews">(82 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
               </div>
             </div>
@@ -1024,5 +1024,33 @@ $('#trial-forms').on('submit', function (e) {
   });
 });
 
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Rooh Ul Quran Academy",
+  "url": "http://roohulquranacademy.com/",
+  "logo": "http://roohulquranacademy.com/logo.png",
+  "description": "Rooh Ul Quran Academy offers online Quran classes with expert male and female tutors. Learn Quran with Tajweed, Hifz, and Tafseer from the comfort of your home.",
+  "sameAs": [
+    "https://www.facebook.com/roohulquranacademy",
+    "https://www.instagram.com/roohulquranacademy",
+    "https://www.youtube.com/@roohulquranacademy"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-234-567-8901",
+    "contactType": "Customer Service",
+    "areaServed": "Worldwide",
+    "availableLanguage": ["English", "Urdu", "Arabic"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PK"
+  }
+}
 </script>
 @endsection

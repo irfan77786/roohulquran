@@ -155,10 +155,10 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2><b>Quran </b>Reading With <br> Tajweed Course</h2>
+        <h2><b>Tafseer </b>Course Online <br> By Roohul Quran</h2>
         <ul class="mt-4" style="font-size: 20px;  line-height: 2rem;">
-          <li>Master Proper Recitation From Anywhere</li>
-          <li>Wheter You Are Complete Bignner Or Advance</li>
+          <li>Quranic Interpretation From Fondation to Advance Level</li>
+          <li>Discover the Deeper Meaning Behind Every Verse</li>
           <li>Start Your Journey With Free Trial Class</li>
 
         </ul>
@@ -219,11 +219,7 @@
           <div class="card-body">
             <h4 class="card-title" style="color: #44137c; font-weight: bold;">Summary</h4>
             <p class="card-text">
-              We guide you through a gradual teaching process, from basic to advanced, breaking the syllabus into
-              manageable chunks. Our certified Tajweed instructors arrange timezone-friendly one-on-one sessions
-              conveniently addressing your busy schedule, learning pace, language barriers, and preferred teaching style
-              issues. We provide high-quality, professional Tajweed education in the comfort of your home to help you
-              achieve flawless and fluent recitation.
+             We designed this course for beginners and those with some prior Islamic knowledge belonging to any cultural and language background. By simplifying the complex terminologies and eliminating language barriers, we are transforming traditional tafsir studies into modern, more accessible, easy-to-understand, step-by-step learning processes. We help you learn at your own pace, schedule, and location with your preferred instructor and teaching style.
             </p>
           </div>
         </div>
@@ -235,28 +231,23 @@
             <ul class="list-unstyled">
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>We conduct a thorough initial assessment to determine your current recitation level, customize
-                  lessons to match your capabilities, and ensure you progress comfortably.</p>
+                <p>Our unique teaching methodology adapts to your current understanding of Islamic studies and ensures steady progress in understanding Quranic interpretations at your own pace.</p>
               </li>
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>Our certified instructors from top Islamic universities have over a decade of international teaching
-                  experience, helping students achieve error-free pronunciation and articulation.</p>
+                <p>We integrate historical context with contemporary relevance, helping you understand how to apply Quranic teachings in modern life through real-world applications.</p>
               </li>
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>We combine traditional methods with modern digital tools, creating an engaging learning environment
-                  that appeals to modern mindsets while maintaining authentic instruction.</p>
+                <p>Our comprehensive learning platform combines live one-on-one sessions with rich study resources, making complex tafsir concepts accessible through structured lessons.</p>
               </li>
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>Our one-on-one sessions provide individual attention, and instructors focus on your needs and
-                  challenges while developing strong moral values aligned with Islamic teachings.</p>
+                <p>Our instructors ensure you receive authentic knowledge presented in an engaging, understandable manner, bridging classical tafsir with contemporary understanding.</p>
               </li>
               <li class="d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
-                <p>Our robust monitoring system provides regular assessments and detailed feedback, helping you track
-                  improvements and celebrate each milestone in your learning journey.</p>
+                <p>We focus on developing your independent interpretative skill, enabling you to gradually build the confidence to understand and reflect upon Quranic verses on your own.</p>
               </li>
             </ul>
           </div>
@@ -283,7 +274,7 @@
               <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">50 USD</h3>
               <h6 style="color: #ccc; font-weight: bold; text-decoration: line-through; font-size: 1rem;">80 USD</h6>
             </div>
-            <p class="text-white mt-3">Quran Reading with Tajweed with expert guidance and progress tracking.</p>
+            <p class="text-white mt-3">Tafsir Course begin Your Spiritual Journey with a Free Trial Class</p>
             <a href="{{ route('home.contact.us') }}" class="btn btn-danger rounded-pill px-4" style="background-color: #e74c3c; border: none;">Free
               Trial</a>
           </div>
@@ -373,12 +364,12 @@
 
 
     <!-- Courses Section -->
-  <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
+   <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
 
     <!-- Section Title -->
     <div class="container section-title text-center" data-aos="fade-up">
-      {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-      <p class="text-black">RELATED COURSES</p>
+      <h2 class="text-black">Highlighted Program</h2>
+      <p class="text-black">Our <b>Featured</b> Courses</p>
       <h6 class="col-lg-8 mx-auto text-black">
         Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
         tailored to help you achieve your learning goals with ease and excellence.
@@ -400,14 +391,14 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Memorize Quran Online</h3>
+              <h3 class="title"><a href="{{route('quran.memorization')}}">Memorize Quran Online</a></h3>
               <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a miracle.</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span class="reviews">(39 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
               </div>
             </div>
@@ -422,14 +413,14 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Qaidah Reading</h3>
+              <h3 class="title"><a href="{{route('quran.recitation')}}">Qaidah Reading</a></h3>
               <p class="description">For the purpose of learning the basics of tajweed rules, one has to learn this booklet</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span class="reviews">(24 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
               </div>
             </div>
@@ -444,14 +435,14 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Quran Reading with Tajweed</h3>
+              <h3 class="title"><a href="{{route('quran.tajweed')}}">Quran Reading with Tajweed</a></h3>
               <p class="description">Quran reading with Tajweed has immense significance in preservation of Quran</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span class="reviews">(32 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
               </div>
             </div>
@@ -466,14 +457,14 @@
                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
               </div>
-              <h3 class="title">Tafseer ul Quran</h3>
+              <h3 class="title"><a href="{{route('quran.tafseer')}}">Tafseer ul Quran</a></h3>
               <p class="description">Learn Quran by understanding with translation</p>
               <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span class="reviews">(82 Reviews)</span>
               </div>
               <div class="footer-course">
-                <span class="price">50 USD / 40 Pounds</span>
+                <span class="price">30 USD / 20 POUNDS</span>
                 <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
               </div>
             </div>
