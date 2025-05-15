@@ -23,7 +23,7 @@ class CourseController extends Controller
 
     public function quraRecitation()
     {
-        return view('courses.quran-reading');
+        return view('courses.qaida');
     }
 
     public function quraArabicLanguage()

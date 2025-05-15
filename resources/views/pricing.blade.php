@@ -29,15 +29,15 @@
           <div class="card h-100 text-black rounded-4 border-0 card-hover" style="background-color: #dde5e6;">
             <div class="card-body text-center">
               <h5 class="fw-bold">Basic Package</h5>
-              <h4 class="fw-bold">39 USD <small>/ monthly</small></h4>
+              <h4 class="fw-bold">30 USD / 20 POUNDS <small>/ monthly</small></h4>
               <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
                 <li>✅ 2 Classes / Weekly</li>
                 <li>✅ 30 Minutes Class</li>
                 <li>✅ 08 Classes per Month</li>
-                <li>❌ Free Evaluation Class</li>
-                <li>❌ Progress Reports</li>
-                <li>❌ Priority Scheduling</li>
-                <li>❌ Monthly Parent Consultation</li>
+                <li>✅ Free Evaluation Class</li>
+                <li>✅ Progress Reports</li>
+                <li>✅ Priority Scheduling</li>
+                <li>✅ Monthly Parent Consultation</li>
               </ul>
             </div>
           </div>
@@ -48,15 +48,15 @@
           <div class="card h-100 text-black rounded-4 border-0 card-hover" style="background-color: #dde5e6;">
             <div class="card-body text-center">
               <h5 class="fw-bold">Standard Package</h5>
-              <h4 class="fw-bold">49 USD <small>/ monthly</small></h4>
+              <h4 class="fw-bold">4O USD / 25 POUNDS <small>/ monthly</small></h4>
               <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
                 <li>✅ 3 Classes / Weekly</li>
                 <li>✅ 30 Minutes Class</li>
                 <li>✅ 12 Classes per Month</li>
                 <li>✅ Free Evaluation Class</li>
-                <li>❌ Progress Reports</li>
-                <li>❌ Priority Scheduling</li>
-                <li>❌ Monthly Parent Consultation</li>
+                <li>✅ Progress Reports</li>
+                <li>✅ Priority Scheduling</li>
+                <li>✅ Monthly Parent Consultation</li>
               </ul>
             </div>
           </div>
@@ -67,7 +67,7 @@
           <div class="card h-100 text-white rounded-4 border-0 bg-danger card-hover">
             <div class="card-body text-center">
               <h5 class="fw-bold text-white">Premium Package</h5>
-              <h4 class="fw-bold text-white">59 USD <small>/ monthly</small></h4>
+              <h4 class="fw-bold text-white">50 USD / 30 POUNDS <small>/ monthly</small></h4>
               <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
                 <li>✅ 4 Classes / Weekly</li>
                 <li>✅ 30 Minutes Class</li>
@@ -86,7 +86,7 @@
           <div class="card h-100 text-black rounded-4 border-0  card-hover" style="background-color: #dde5e6;">
             <div class="card-body text-center">
               <h5 class="fw-bold">Intensive Package</h5>
-              <h4 class="fw-bold">69 USD <small>/ monthly</small></h4>
+              <h4 class="fw-bold">60 USD / 40 POUNDS <small>/ monthly</small></h4>
               <ul class="list-unstyled lh-lg mt-3 mb-0 text-start">
                 <li>✅ 5 Classes / Weekly</li>
                 <li>✅ 30 Minutes Class</li>

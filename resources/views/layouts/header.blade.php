@@ -49,7 +49,7 @@
       <!-- Email section -->
       <div class="d-flex align-items-center justify-content-center">
         <i class="fa-regular fa-envelope me-2" style="color: #d8b73e; font-size: 1.5rem;"></i>
-        <span class="email">hafizirfan8078@gmail.com</span>
+        <span class="email">info@roohulquranacademy.com</span>
       </div>
 
     </div>

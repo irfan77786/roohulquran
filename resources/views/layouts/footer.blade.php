@@ -10,7 +10,7 @@
           <p><strong>CALL FOR MORE INFO:</strong></p>
           <p class="phone-number"><i class="bi bi-telephone-fill"></i> +92 343 8078216</p>
           <p><strong>GET IN TOUCH:</strong></p>
-          <p><i class="bi bi-envelope-fill"></i> hafizirfan8078@gmail.com</p>
+          <p><i class="bi bi-envelope-fill"></i> info@roohulquranacademy.com</p>
         </div>
       </div>
 
