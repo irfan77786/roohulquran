@@ -83,7 +83,7 @@
           </li>
           <li><a href="{{route('home.pricing')}}">Pricing</a></li>
           {{-- <li><a href="trainers.html">Trainers</a></li> --}}
-          <li><a href="{{route('home.about')}}">About</a></li>
+          {{-- <li><a href="{{route('home.about')}}">About</a></li> --}}
           
           <li><a href="{{route('home.contact.us')}}">Contact</a></li>
         </ul>
