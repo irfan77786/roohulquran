@@ -24,5 +24,13 @@
           <span class="hide-menu">Trial Classes</span>
         </a>
       </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="{{ route('blogs.index') }}" aria-expanded="false">
+          <span>
+            <i class="fa-solid fa-address-card"></i>
+          </span>
+          <span class="hide-menu">Blogs</span>
+        </a>
+      </li>
     </ul>
   </nav>

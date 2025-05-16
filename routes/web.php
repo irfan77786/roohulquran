@@ -28,6 +28,7 @@ Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.
 Route::middleware(['auth:admin'])->group(function () {
 Route::get('dashboard' , [DashboardController::class,'index'])->name('admin.dashboard');
 Route::get('admin/trial/classes' , [DashboardController::class,'trialClasses'])->name('admin.trial.classes');
+Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
 Route::post('/admin/logout', function () {
     Auth::guard('admin')->logout();
     return redirect('/admin/login');

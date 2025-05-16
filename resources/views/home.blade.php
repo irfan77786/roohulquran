@@ -1052,7 +1052,7 @@ $('#trial-forms').on('submit', function (e) {
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-234-567-8901",
+    "telephone": "+92-343-8078216",
     "contactType": "Customer Service",
     "areaServed": "Worldwide",
     "availableLanguage": ["English", "Urdu", "Arabic"]
