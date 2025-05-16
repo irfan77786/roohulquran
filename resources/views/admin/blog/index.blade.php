@@ -48,9 +48,10 @@
                                             </span>
                                         </td>
                                         <td class="text-center fw-medium">
-                                            <a href="{{ route('admin.blogs.edit', $blog->id) }}"
+                                            <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-sm btn-info me-1">View</a>
+                                            <a href="{{ route('blogs.edit', $blog->id) }}"
                                                 class="btn btn-sm btn-primary me-1">Edit</a>
-                                            <form action="{{ route('admin.blogs.destroy', $blog->id) }}" method="POST"
+                                            <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST"
                                                 style="display:inline-block;"
                                                 onsubmit="return confirm('Are you sure to delete this blog?')">
                                                 @csrf

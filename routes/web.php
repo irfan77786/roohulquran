@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
@@ -33,6 +34,9 @@ Route::post('/admin/logout', function () {
     Auth::guard('admin')->logout();
     return redirect('/admin/login');
 })->name('admin.logout');
+
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+
 
 });
 

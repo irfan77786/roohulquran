@@ -25,16 +25,31 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            'featured_image' => 'nullable|url',
+            'featured_image' => 'nullable|image',
             'seo' => 'nullable|array',
-        ]);
 
+        ]);
+    
         $validated['slug'] = Str::slug($request->title);
         $validated['author'] = auth()->user()->name;
-        Blog::create($validated);
-
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog created!');
+    
+        $blog = new Blog($validated);
+        $blog->save();
+    
+        if ($request->hasFile('featured_image')) {
+            $imagePath = $request->file('featured_image')->store("blogs/{$blog->id}", 'public');
+            $blog->featured_image = $imagePath;
+            $blog->save();
+        }
+    
+        return redirect()->route('blogs.index')->with('success', 'Blog created!');
     }
+
+        public function show(Blog $blog)
+    {
+        return view('admin.blog.show', compact('blog'));
+    }
+
 
     public function edit(Blog $blog)
     {
@@ -46,19 +61,19 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            'featured_image' => 'nullable|url',
+            'featured_image' => 'nullable',
             'seo' => 'nullable|array',
         ]);
 
         $validated['slug'] = Str::slug($request->title);
         $blog->update($validated);
 
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog updated!');
+        return redirect()->route('blogs.index')->with('success', 'Blog updated!');
     }
 
     public function destroy(Blog $blog)
     {
         $blog->delete();
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted!');
+        return redirect()->route('blogs.index')->with('success', 'Blog deleted!');
     }
 }

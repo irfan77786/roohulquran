@@ -1,20 +1,76 @@
 @extends('admin.main')
 
-
 @section('content')
-    <form action="{{ isset($blog) ? route('blogs.update', $blog) : route('blogs.store') }}" method="POST">
-        @csrf
-        @if(isset($blog)) @method('PUT') @endif
+    <div class="container mt-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">{{ isset($blog) ? 'Edit Blog' : 'Create Blog' }}</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ isset($blog) ? route('blogs.update', $blog) : route('blogs.store') }}" 
+                          method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @if(isset($blog)) @method('PUT') @endif
 
-        <input name="title" class="form-control mb-2" placeholder="Title" value="{{ old('title', $blog->title ?? '') }}">
-        <textarea name="content" class="form-control mb-2" placeholder="Content">{{ old('content', $blog->content ?? '') }}</textarea>
-        <input name="featured_image" class="form-control mb-2" placeholder="Image URL" value="{{ old('featured_image', $blog->featured_image ?? '') }}">
-        
-        <!-- SEO fields -->
-        <textarea name="seo[keywords]" class="form-control mb-2" placeholder="SEO Keywords (comma separated)">
-            {{ old('seo.keywords', $blog->seo['keywords'] ?? '') }}
-        </textarea>
+                        {{-- Title --}}
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                            <input type="text" name="title" id="title" 
+                                   class="form-control @error('title') is-invalid @enderror"
+                                   value="{{ old('title', $blog->title ?? '') }}" placeholder="Enter blog title">
+                            @error('title')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
 
-        <button class="btn btn-success">{{ isset($blog) ? 'Update' : 'Create' }}</button>
-    </form>
+                        {{-- Content --}}
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Content <span class="text-danger">*</span></label>
+                            <textarea name="content" id="content" rows="5" 
+                                      class="form-control @error('content') is-invalid @enderror"
+                                      placeholder="Write blog content here...">{{ old('content', $blog->content ?? '') }}</textarea>
+                            @error('content')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        {{-- Featured Image --}}
+                        <div class="mb-3">
+                            <label for="featured_image" class="form-label">Featured Image</label>
+                            <input type="file" name="featured_image" id="featured_image" 
+                                   class="form-control @error('featured_image') is-invalid @enderror" accept="image/*">
+                            @error('featured_image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+
+                            @if(isset($blog) && $blog->featured_image)
+                                <div class="mt-2">
+                                    <img src="{{ $blog->featured_image }}" alt="Current Image" height="80">
+                                </div>
+                            @endif
+                        </div>
+
+                        {{-- SEO Keywords --}}
+                        <div class="mb-3">
+                            <label for="seo_keywords" class="form-label">SEO Keywords</label>
+                            <textarea name="seo[keywords]" id="seo_keywords" rows="2" 
+                                      class="form-control @error('seo.keywords') is-invalid @enderror"
+                                      placeholder="Enter keywords, separated by commas">{{ old('seo.keywords', $blog->seo['keywords'] ?? '') }}</textarea>
+                            @error('seo.keywords')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        {{-- Submit --}}
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success">
+                                {{ isset($blog) ? 'Update Blog' : 'Create Blog' }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

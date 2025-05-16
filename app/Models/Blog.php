@@ -17,4 +17,10 @@ class Blog extends Model
         'seo' => 'array',
         'status' => 'boolean',
     ];
+
+    public function getImageUrlAttribute()
+{
+    return $this->featured_image ? asset('storage/' . $this->featured_image) : null;
+}
+
 }
