@@ -16,6 +16,7 @@ trait EmailSending
      public function sendEmail(string $to, string $subject, string $htmlContent): void
      {
  
+        $apiKey = config('brevo.api_key');
          $response = Http::withHeaders([
             'api-key' => $apiKey,
             'Content-Type' => 'application/json',
