@@ -35,7 +35,9 @@ Route::post('/admin/logout', function () {
     return redirect('/admin/login');
 })->name('admin.logout');
 
-Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/admin/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/admin/blogs', [BlogController::class, 'index'])->name('admin.blogs');
+
 
 
 });
