@@ -17,28 +17,42 @@
     display: block;
   }
 
-  .mobile-image {
+  #hero .mobile-image {
     display: none;
   }
 
   @media (max-width: 768px) {
-    .desktop-image {
+    #hero .desktop-image {
       display: none;
       /* Hide desktop image on mobile */
     }
 
-    .mobile-image {
+    #hero .mobile-image {
       display: block;
       /* Show mobile-specific image */
       width: 100%;
       /* Ensure it spans the full width */
     }
 
-    .text-content {
-      flex: 0 0 100%;
-      /* Make the text content take full width */
-      max-width: 100%;
-    }
+      #hero {
+    text-align: center;
+    padding: 100px 20px; /* More padding on mobile */
+  }
+
+  .hero-heading {
+    font-size: 2.2rem; /* Increase heading size on mobile */
+    font-weight: 600;
+  }
+
+  .hero-subtext {
+    font-size: 1.2rem;
+  }
+
+  .btn-get-started {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+
   }
 
   .card {
@@ -148,16 +162,16 @@
 
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.png" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-3.svg" alt="" class="desktop-image" data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-3.png" alt="" class="mobile-image d-none" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2><b>Qaida </b>Course Online<br> By Roohul Quran</h2>
-        <ul class="mt-4" style="font-size: 20px;  line-height: 2rem;">
+        <h2 class="hero-heading"><b>Qaida </b>Course Online<br> By Roohul Quran</h2>
+        <ul class="mt-4 hero-subtext" style="font-size: 20px;  line-height: 2rem;">
           <li>Your Journey from Scratch to Perfect Quran Reading</li>
           <li>Even if you have Never Seen Arabic Letters Before</li>
           <li>Begin With Free Trial Session</li>
@@ -370,121 +384,121 @@
   </div>
 </section>
 
-
 <!-- Courses Section -->
- <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
+<section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
 
-    <!-- Section Title -->
-    <div class="container section-title text-center" data-aos="fade-up">
-      <h2 class="text-black">Highlighted Program</h2>
-      <p class="text-black">Our <b>Featured</b> Courses</p>
-      <h6 class="col-lg-8 mx-auto text-black">
-        Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
-        tailored to help you achieve your learning goals with ease and excellence.
-      </h6>
-    </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title text-center" data-aos="fade-up">
+    <h2 class="text-black">Highlighted Program</h2>
+    <p class="text-black">Our <b>Featured</b> Courses</p>
+    <h6 class="col-lg-8 mx-auto text-black">
+      Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
+      tailored to help you achieve your learning goals with ease and excellence.
+    </h6>
+  </div><!-- End Section Title -->
 
-    <div class="container">
+  <div class="container">
 
-      <div class="row">
+    <div class="row">
 
-        <div class="course-wrapper " data-aos="fade-up">
-          <div class="course-card " data-aos="fade-up">
-            <div class="course-image">
-              <span class="badge-level">Intermediate</span>
-              <img src="assets/img/ai/course-5.jpg" alt="Memorize Quran">
-            </div>
-            <div class="course-info">
-              <div class="meta">
-                <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                <span><i class="bi bi-clock"></i> 24/7 Available</span>
-              </div>
-              <h3 class="title"><a href="{{route('quran.memorization')}}">Memorize Quran Online</a></h3>
-              <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a miracle.</p>
-              <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="reviews">(39 Reviews)</span>
-              </div>
-              <div class="footer-course">
-                <span class="price">30 USD / 20 POUNDS</span>
-                <span class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
-              </div>
-            </div>
+      <div class="course-wrapper " data-aos="fade-up">
+        <div class="course-card " data-aos="fade-up">
+          <div class="course-image">
+            <span class="badge-level">Intermediate</span>
+            <img src="assets/img/ai/course-1.svg" alt="Memorize Quran">
           </div>
-          <div class="course-card" data-aos="fade-up">
-            <div class="course-image">
-              <span class="badge-level">Beginner</span>
-              <img src="assets/img/ai/course-2.jpeg" alt="Memorize Quran">
+          <div class="course-info">
+            <div class="meta">
+              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
+              <span><i class="bi bi-clock"></i> 24/7 Available</span>
             </div>
-            <div class="course-info">
-              <div class="meta">
-                <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                <span><i class="bi bi-clock"></i> 24/7 Available</span>
-              </div>
-              <h3 class="title"><a href="{{route('quran.recitation')}}">Qaidah Reading</a></h3>
-              <p class="description">For the purpose of learning the basics of tajweed rules, one has to learn this booklet</p>
-              <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="reviews">(24 Reviews)</span>
-              </div>
-              <div class="footer-course">
-                <span class="price">30 USD / 20 POUNDS</span>
-                <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
-              </div>
+            <h3 class="title"><a href="{{route('quran.memorization')}}">Memorize Quran Online</a></h3>
+            <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a miracle.</p>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(39 Reviews)</span>
             </div>
-          </div>
-          <div class="course-card" data-aos="fade-up">
-            <div class="course-image">
-              <span class="badge-level">Advance</span>
-              <img src="assets/img/ai/course-3.png" alt="Memorize Quran">
-            </div>
-            <div class="course-info">
-              <div class="meta">
-                <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                <span><i class="bi bi-clock"></i> 24/7 Available</span>
-              </div>
-              <h3 class="title"><a href="{{route('quran.tajweed')}}">Quran Reading with Tajweed</a></h3>
-              <p class="description">Quran reading with Tajweed has immense significance in preservation of Quran</p>
-              <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="reviews">(32 Reviews)</span>
-              </div>
-              <div class="footer-course">
-                <span class="price">30 USD / 20 POUNDS</span>
-                <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
-              </div>
-            </div>
-          </div>
-          <div class="course-card" data-aos="fade-up">
-            <div class="course-image">
-              <span class="badge-level">Advance</span>
-              <img src="assets/img/ai/course-4.jpeg" alt="Memorize Quran">
-            </div>
-            <div class="course-info">
-              <div class="meta">
-                <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                <span><i class="bi bi-clock"></i> 24/7 Available</span>
-              </div>
-              <h3 class="title"><a href="{{route('quran.tafseer')}}">Tafseer ul Quran</a></h3>
-              <p class="description">Learn Quran by understanding with translation</p>
-              <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="reviews">(82 Reviews)</span>
-              </div>
-              <div class="footer-course">
-                <span class="price">30 USD / 20 POUNDS</span>
-                <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
-              </div>
+            <div class="footer-course">
+              <span class="price">30 USD / 20 POUNDS</span>
+              <span class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
             </div>
           </div>
         </div>
-        <!-- End Course Item-->
-
+        <div class="course-card" data-aos="fade-up">
+          <div class="course-image">
+            <span class="badge-level">Beginner</span>
+            <img src="assets/img/ai/course-2.svg" alt="Memorize Quran">
+          </div>
+          <div class="course-info">
+            <div class="meta">
+              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
+              <span><i class="bi bi-clock"></i> 24/7 Available</span>
+            </div>
+            <h3 class="title"><a href="{{route('quran.recitation')}}">Qaidah Reading</a></h3>
+            <p class="description">For the purpose of learning the basics of tajweed rules, one has to learn this
+              booklet</p>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(24 Reviews)</span>
+            </div>
+            <div class="footer-course">
+              <span class="price">30 USD / 20 POUNDS</span>
+              <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
+            </div>
+          </div>
+        </div>
+        <div class="course-card" data-aos="fade-up">
+          <div class="course-image">
+            <span class="badge-level">Advance</span>
+            <img src="assets/img/ai/course-3.jpg" alt="Memorize Quran">
+          </div>
+          <div class="course-info">
+            <div class="meta">
+              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
+              <span><i class="bi bi-clock"></i> 24/7 Available</span>
+            </div>
+            <h3 class="title"><a href="{{route('quran.tajweed')}}">Quran Reading with Tajweed</a></h3>
+            <p class="description">Quran reading with Tajweed has immense significance in preservation of Quran</p>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(32 Reviews)</span>
+            </div>
+            <div class="footer-course">
+              <span class="price">30 USD / 20 POUNDS</span>
+              <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
+            </div>
+          </div>
+        </div>
+        <div class="course-card" data-aos="fade-up">
+          <div class="course-image">
+            <span class="badge-level">Advance</span>
+            <img src="assets/img/ai/course-4.svg" alt="Memorize Quran">
+          </div>
+          <div class="course-info">
+            <div class="meta">
+              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
+              <span><i class="bi bi-clock"></i> 24/7 Available</span>
+            </div>
+            <h3 class="title"><a href="{{route('quran.tafseer')}}">Tafseer ul Quran</a></h3>
+            <p class="description">Learn Quran by understanding with translation</p>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(82 Reviews)</span>
+            </div>
+            <div class="footer-course">
+              <span class="price">30 USD / 20 POUNDS</span>
+              <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- End Course Item-->
 
     </div>
 
-  </section><!-- /Courses Section -->
+  </div>
+
+</section><!-- /Courses Section -->
 
 
 <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
@@ -608,7 +622,7 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/img/ai/course-1.jpg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
+        <img src="assets/img/ai/happystudent.svg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">
