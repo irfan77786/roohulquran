@@ -17,28 +17,42 @@
     display: block;
   }
 
-  .mobile-image {
+  #hero .mobile-image {
     display: none;
   }
 
   @media (max-width: 768px) {
-    .desktop-image {
+    #hero .desktop-image {
       display: none;
       /* Hide desktop image on mobile */
     }
 
-    .mobile-image {
+    #hero .mobile-image {
       display: block;
       /* Show mobile-specific image */
       width: 100%;
       /* Ensure it spans the full width */
     }
 
-    .text-content {
-      flex: 0 0 100%;
-      /* Make the text content take full width */
-      max-width: 100%;
-    }
+      #hero {
+    text-align: center;
+    padding: 100px 20px; /* More padding on mobile */
+  }
+
+  .hero-heading {
+    font-size: 2.2rem; /* Increase heading size on mobile */
+    font-weight: 600;
+  }
+
+  .hero-subtext {
+    font-size: 1.2rem;
+  }
+
+  .btn-get-started {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+
   }
 
   #about .card {
@@ -279,20 +293,22 @@
 <!-- Hero Section -->
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-2.png" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-2.svg" alt="" class="desktop-image" data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.png" alt="" class="mobile-image d-none" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2>Unlock The Beauty <br> Of The Quran</h2>
-        <p>
+      <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center" data-aos="fade-up"
+        data-aos-delay="100">
+        <h2 class="hero-heading">Unlock The Beauty <br> Of The Quran</h2>
+        <p class="hero-subtext">
           Online Quran classes for Tajweed, Hifz and Arabic <br>Your time, Your choice.
         </p>
-        <a href="{{ route('home.contact.us') }}" class="btn-get-started">Get Started</a>
+        <a href="{{ route('home.contact.us') }}" class="btn-get-started mt-3">Get Started</a>
       </div>
+
 
       <!-- Right Form -->
       {{-- <div class="col-lg-4 col-md-5 col-sm-12" data-aos="fade-up" data-aos-delay="200">
@@ -571,7 +587,7 @@
         <div class="course-card " data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Intermediate</span>
-            <img src="assets/img/ai/course-5.jpg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-1.svg" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -593,7 +609,7 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Beginner</span>
-            <img src="assets/img/ai/course-2.jpeg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-2.svg" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -616,7 +632,7 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-3.png" alt="Memorize Quran">
+            <img src="assets/img/ai/course-3.jpg" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -638,7 +654,7 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-4.jpeg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-4.svg" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -858,7 +874,7 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/img/ai/course-1.jpg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
+        <img src="assets/img/ai/happystudent.svg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">
