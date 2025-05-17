@@ -15,8 +15,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/tab-logo.png" rel="icon">
-  <linkf href="assets/img/tab-logo.png" rel="apple-touch-icon">
+  <link href="{{asset('assets/img/tab-logo.png')}}" rel="icon">
+  <linkf href="{{asset('assets/img/tab-logo.png')}}" rel="apple-touch-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
@@ -61,6 +61,42 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <img src="{{asset('assets/img/icons/whatsapp.webp')}}" alt="WhatsApp" />
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    /* background-color: #25D366; */
+    padding: 10px;
+    border-radius: 50%;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 600px) {
+    .whatsapp-float {
+      bottom: 15px;
+      left: 15px;
+    }
+  }
+</style>
+
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -93,7 +129,7 @@
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "Rooh Ul Quran Academy",
+  "name": "Rooh Ul Quran Online Academy",
   "url": "http://roohulquranacademy.com/",
   "logo": "http://roohulquranacademy.com/logo.png",
   "description": "Rooh Ul Quran Academy offers online Quran classes with expert male and female tutors. Learn Quran with Tajweed, Hifz, and Tafseer from the comfort of your home.",
@@ -104,7 +140,7 @@
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-234-567-8901",
+    "telephone": "+92-343-8078216",
     "contactType": "Customer Service",
     "areaServed": "Worldwide",
     "availableLanguage": ["English", "Urdu", "Arabic"]
