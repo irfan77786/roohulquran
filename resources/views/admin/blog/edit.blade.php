@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form action="{{ isset($blog) ? route('blogs.update', $blog) : route('blogs.store') }}" method="POST">
+    <form action="{{ isset($blog) ? route('admin.blogs.update', $blog) : route('admin.blogs.store') }}" method="POST">
         @csrf
         @if(isset($blog)) @method('PUT') @endif
 
