@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('title', 'Rooh Ul Quran Academy - Online Quran Classes for Kids & Adults')
+
+@section('meta_description', 'Join our expert online Quran tutors for kids and adults. Learn Tajweed, Hifz, and more at Rooh Ul Quran Academy with flexible online sessions.')
+
+@section('meta_keywords', 'Quran classes online, Tajweed courses, Hifz programs, online Islamic education, Rooh Ul Quran teachers')
 @section('content')
 
 <style>
@@ -413,7 +417,7 @@
       <div class="col-12 text-center mb-4">
         <h1 style="color: #36c47d">Why Choose Us</h1>
         <p class="col-lg-6 mx-auto mt-5" style="text-align:inherit;line-height: 1.8;">
-          There are many reasons to choose QuranClass.com for your Online Quran learning journey. Our Online Quran
+          There are many reasons to choose Roohul Quran for your Online Quran learning journey. Our Online Quran
           academy provides a structured and immersive approach to learn the Quran Online, ensuring a deep
           understanding of Islamic knowledge.
         </p>
@@ -521,7 +525,7 @@
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/muslimah.png" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Female Teachers
+              <h4>Female Quran Teachers
                 Available</h4>
               <p>Female tutors ensure respectful, comfortable, and culturally sensitive learning.</p>
             </div>
