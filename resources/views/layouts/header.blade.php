@@ -86,6 +86,8 @@
           {{-- <li><a href="{{route('home.about')}}">About</a></li> --}}
           
           <li><a href="{{route('home.contact.us')}}">Contact</a></li>
+          <li><a href="{{route('blogs.index')}}">Blogs</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

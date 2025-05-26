@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TrialClassController;
@@ -55,6 +56,14 @@ Route::get('/quran-reading-with-tajweed' , [CourseController::class , 'quraWithT
 Route::get('/qaida-by-roohulquran' , [CourseController::class , 'quraRecitation'])->name('quran.recitation');
 Route::get('/tafseer-course-online' , [CourseController::class , 'quraWithTafseer'])->name('quran.tafseer');
 Route::get('/memorize-quran-online' , [CourseController::class , 'quraMemorization'])->name('quran.memorization');
+
+// blogs
+
+Route::prefix('blogs')->name('blogs.')->group(function () {
+    Route::get('/', [ControllersBlogController::class, 'index'])->name('index'); 
+    Route::get('/{slug}', [ControllersBlogController::class, 'show'])->name('show'); 
+});
+
 
 
 

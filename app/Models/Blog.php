@@ -10,7 +10,14 @@ class Blog extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'slug', 'author', 'content', 'excerpt', 'featured_image', 'seo', 'status'
+        'title',
+        'slug',
+        'author',
+        'content',
+        'excerpt',
+        'featured_image',
+        'seo',
+        'status'
     ];
 
     protected $casts = [
@@ -18,9 +25,13 @@ class Blog extends Model
         'status' => 'boolean',
     ];
 
-    public function getImageUrlAttribute()
-{
-    return $this->featured_image ? asset('storage/' . $this->featured_image) : null;
-}
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
+    public function getImageUrlAttribute()
+    {
+        return $this->featured_image ? asset('storage/' . $this->featured_image) : null;
+    }
 }
