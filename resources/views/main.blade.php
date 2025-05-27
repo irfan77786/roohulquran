@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   {{-- <title>Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults</title> --}}
-  <title>@yield('title', 'Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults')</title>
+  <title>@yield('title', 'Roohul Quran Online Academy - Online Quran Classes For Kids And Adults')</title>
+  <meta property="og:title" content="Roohul Quran Online Academy">
+  <meta property="og:site_name" content="Roohul Quran Online Academy">
 <meta name="google-site-verification" content="LazU64-UPkWgAw4DYjqtS2HjCsUe6xVKjqjSUDB54SY" />
 <meta name="description" content="Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.">
 
@@ -131,7 +133,7 @@
   "@type": "EducationalOrganization",
   "name": "Rooh Ul Quran Online Academy",
   "url": "http://roohulquranacademy.com/",
-  "logo": "http://roohulquranacademy.com/logo.png",
+  "logo": "https://ik.imagekit.io/1sfvxxy5s/tab-logo.png?updatedAt=1748341854248",
   "description": "Rooh Ul Quran Academy offers online Quran classes with expert male and female tutors. Learn Quran with Tajweed, Hifz, and Tafseer from the comfort of your home.",
   "sameAs": [
     "https://www.facebook.com/roohulquranacademy",
