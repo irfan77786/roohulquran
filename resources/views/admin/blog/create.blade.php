@@ -17,7 +17,7 @@
                         <div class="mb-3">
                             <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
                             <input type="text" name="title" id="title" 
-                                   class="form-control @error('title') is-invalid @enderror"
+                                   class="form-control text-black @error('title') is-invalid @enderror"
                                    value="{{ old('title', $blog->title ?? '') }}" placeholder="Enter blog title">
                             @error('title')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -45,9 +45,9 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
 
-                            @if(isset($blog) && $blog->featured_image)
+                            @if(isset($blog) && $blog->image_url)
                                 <div class="mt-2">
-                                    <img src="{{ $blog->featured_image }}" alt="Current Image" height="80">
+                                    <img src="{{ $blog->image_url }}" alt="Current Image" height="80">
                                 </div>
                             @endif
                         </div>

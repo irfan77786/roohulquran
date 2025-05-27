@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -53,23 +54,38 @@ class BlogController extends Controller
 
     public function edit(Blog $blog)
     {
-        return view('admin.blog.edit', compact('blog'));
+        return view('admin.blog.create', compact('blog'));
     }
-
     public function update(Request $request, Blog $blog)
     {
         $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required',
-            'featured_image' => 'nullable',
+            'featured_image' => 'nullable|image',
             'seo' => 'nullable|array',
         ]);
-
+    
         $validated['slug'] = Str::slug($request->title);
+        $validated['author'] = auth()->user()->name;
+    
+        // Update blog details
         $blog->update($validated);
-
+    
+        // Handle image upload if new image is provided
+        if ($request->hasFile('featured_image')) {
+            // Optionally: delete old image if exists
+            if ($blog->featured_image && Storage::disk('public')->exists($blog->featured_image)) {
+                Storage::disk('public')->delete($blog->featured_image);
+            }
+    
+            $imagePath = $request->file('featured_image')->store("blogs/{$blog->id}", 'public');
+            $blog->featured_image = $imagePath;
+            $blog->save(); // Save updated image path
+        }
+    
         return redirect()->route('admin.blogs.index')->with('success', 'Blog updated!');
     }
+    
 
     public function destroy(Blog $blog)
     {
