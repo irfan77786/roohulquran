@@ -2,12 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    {{-- <title>Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults</title> --}}
-    <title>@yield('title', 'Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults')</title>
-    <meta property="og:title" content="Roohul Quran Online Academy">
-    <meta property="og:site_name" content="Roohul Quran Online Academy">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  {{-- <title>Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults</title> --}}
+  <title>@yield('title', 'Roohul Quran Online Academy - Online Quran Classes For Kids And Adults')</title>
+  <meta property="og:title" content="Roohul Quran Online Academy">
+  <meta property="og:site_name" content="Roohul Quran Online Academy">
+<meta name="google-site-verification" content="LazU64-UPkWgAw4DYjqtS2HjCsUe6xVKjqjSUDB54SY" />
+<meta name="description" content="Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.">
+
+<meta name="keywords" content="Online Quran classes, Quran academy, Learn Quran online, Quran with Tajweed, Quran memorization, Online Hifz classes, Quran for kids, Quran teachers online, Islamic education, Rooh Ul Quran Academy">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{{asset('assets/img/tab-logo.png')}}" rel="icon">
+  <linkf href="{{asset('assets/img/tab-logo.png')}}" rel="apple-touch-icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <meta name="description" content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
@@ -136,7 +148,7 @@
   "@type": "EducationalOrganization",
   "name": "Rooh Ul Quran Online Academy",
   "url": "http://roohulquranacademy.com/",
-  "logo": "http://roohulquranacademy.com/logo.png",
+  "logo": "https://ik.imagekit.io/1sfvxxy5s/tab-logo.png?updatedAt=1748341854248",
   "description": "Rooh Ul Quran Academy offers online Quran classes with expert male and female tutors. Learn Quran with Tajweed, Hifz, and Tafseer from the comfort of your home.",
   "sameAs": [
     "https://www.facebook.com/roohulquranacademy",
