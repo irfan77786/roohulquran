@@ -1,6 +1,7 @@
 <style>
   #top-header {
-    background-image: url('assets/img/header-bg.png'); /* Replace with your image path */
+    background-image: url('{{ asset('assets/img/header-bg.png') }}');
+
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center;
     padding: 10px 0;

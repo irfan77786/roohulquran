@@ -6,6 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     {{-- <title>Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults</title> --}}
     <title>@yield('title', 'Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults')</title>
+    @yield('meta')
+
     <meta property="og:title" content="Roohul Quran Online Academy">
     <meta property="og:site_name" content="Roohul Quran Online Academy">
 
@@ -103,17 +105,17 @@
 
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -130,31 +132,7 @@
         });
     </script>
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Rooh Ul Quran Online Academy",
-  "url": "http://roohulquranacademy.com/",
-  "logo": "http://roohulquranacademy.com/logo.png",
-  "description": "Rooh Ul Quran Academy offers online Quran classes with expert male and female tutors. Learn Quran with Tajweed, Hifz, and Tafseer from the comfort of your home.",
-  "sameAs": [
-    "https://www.facebook.com/roohulquranacademy",
-    "https://www.instagram.com/roohulquranacademy",
-    "https://www.youtube.com/@roohulquranacademy"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+92-343-8078216",
-    "contactType": "Customer Service",
-    "areaServed": "Worldwide",
-    "availableLanguage": ["English", "Urdu", "Arabic"]
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
-  }
-}
+@yield('meta_script')
 </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

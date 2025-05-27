@@ -1,12 +1,12 @@
 @extends('main')
 
-@section('title', $blog->title)
+@section('title', $blog->meta_title ?? $blog->title)
 
-@section('meta')
-    {{-- SEO Meta Tags --}}
-    <meta name="description" content="{{ $blog->excerpt }}">
-    <meta name="keywords" content="{{ $blog->seo['keywords'] ?? '' }}">
-@endsection
+@section('meta_keywords', $blog['meta_keywords'] ?? $blog->seo['keywords'])
+
+@section('meta_description', $blog['meta_description'] ?? '')
+
+
 
 @section('content')
 <div class="container py-5">
@@ -14,8 +14,12 @@
         <div class="col-lg-10">
             {{-- Featured Image --}}
             @if($blog->image_url)
-                <img src="{{ $blog->image_url }}" alt="{{ $blog->title }}" class="img-fluid mb-4 rounded shadow">
-            @endif
+            <img src="{{ $blog->image_url }}"
+                 alt="{{ $blog->title }}"
+                 class="img-fluid mb-4 rounded shadow"
+                 style="max-width: 100%; height: auto; object-fit: cover;">
+        @endif
+        
 
             {{-- Title & Meta --}}
             <h1 class="fw-bold text-dark mb-2">{{ $blog->title }}</h1>
@@ -60,7 +64,16 @@
                     </div>
                 </div>
             @endif
+            {{-- @yield('testimonials') --}}
+
+            {{-- Comments Section --}}
         </div>
     </div>
 </div>
+
+@include('layouts.testimonial')
+@section('meta_script')
+    {!! $blog->script ?? 'no script' !!}
+@endsection
+
 @endsection
