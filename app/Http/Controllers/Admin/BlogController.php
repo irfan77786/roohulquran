@@ -42,7 +42,7 @@ class BlogController extends Controller
             $blog->save();
         }
     
-        return redirect()->route('blogs.index')->with('success', 'Blog created!');
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog created!');
     }
 
         public function show(Blog $blog)
@@ -68,12 +68,12 @@ class BlogController extends Controller
         $validated['slug'] = Str::slug($request->title);
         $blog->update($validated);
 
-        return redirect()->route('blogs.index')->with('success', 'Blog updated!');
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog updated!');
     }
 
     public function destroy(Blog $blog)
     {
         $blog->delete();
-        return redirect()->route('blogs.index')->with('success', 'Blog deleted!');
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted!');
     }
 }

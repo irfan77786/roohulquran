@@ -30,7 +30,7 @@
                     @endif
 
                     <div class="mt-4">
-                        <a href="{{ route('blogs.index') }}" class="btn btn-outline-primary">Back to Blogs</a>
+                        <a href="{{ route('admin.blogs.index') }}" class="btn btn-outline-primary">Back to Blogs</a>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@
         </a>
       </li>
       <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ route('blogs.index') }}" aria-expanded="false">
+        <a class="sidebar-link" href="{{ route('admin.blogs.index') }}" aria-expanded="false">
           <span>
             <i class="fa-solid fa-address-card"></i>
           </span>

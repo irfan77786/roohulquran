@@ -8,7 +8,7 @@
                     <h5 class="mb-0">{{ isset($blog) ? 'Edit Blog' : 'Create Blog' }}</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ isset($blog) ? route('blogs.update', $blog) : route('blogs.store') }}" 
+                    <form action="{{ isset($blog) ? route('admin.blogs.update', $blog) : route('admin.blogs.store') }}" 
                           method="POST" enctype="multipart/form-data">
                         @csrf
                         @if(isset($blog)) @method('PUT') @endif

@@ -26,18 +26,18 @@ Route::get('admin/login' , [AuthController::class,'loginPage'])->name('login');
 Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.login');
 
 
-Route::middleware(['auth:admin'])->group(function () {
-Route::get('dashboard' , [DashboardController::class,'index'])->name('admin.dashboard');
-Route::get('admin/trial/classes' , [DashboardController::class,'trialClasses'])->name('admin.trial.classes');
-Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
-Route::post('/admin/logout', function () {
-    Auth::guard('admin')->logout();
-    return redirect('/admin/login');
-})->name('admin.logout');
 
-Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('trial/classes', [DashboardController::class, 'trialClasses'])->name('trial.classes');
 
+    // This will register all blog routes under /admin/blogs
+    Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
 
+    Route::post('logout', function () {
+        Auth::guard('admin')->logout();
+        return redirect('/admin/login');
+    })->name('logout');
 });
 
 
