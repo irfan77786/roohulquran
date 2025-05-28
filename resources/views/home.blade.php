@@ -916,7 +916,7 @@ $('#trial-forms').on('submit', function (e) {
   "@type": "EducationalOrganization",
   "name": "Rooh Ul Quran Academy",
   "url": "http://roohulquranacademy.com/",
-  "logo": "http://roohulquranacademy.com/logo.png",
+  "logo": "https://roohulquranacademy.com/assets/img/logo.png",
   "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
   "founder": {
     "@type": "Person",
@@ -941,5 +941,44 @@ $('#trial-forms').on('submit', function (e) {
   }
 }
 </script>
+
+
+{{-- blog scrip --}}
+{{-- <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://roohulquranacademy.com/blogs/rights-of-wives-in-quran-and-hadith"
+    },
+    "headline": "Rights of Wives in Quran and Hadith",
+    "description": "An article discussing the rights of wives in Islam as outlined in the Quran and Hadith, emphasizing respect, kindness, financial support, and the right to seek divorce.",
+    "image": "https://roohulquranacademy.com/storage/blogs/7/bdHag0iljvPPjerb9BS8TfgOM2b0rgrfMWV4uY7b.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Admin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Roohul Quran Academy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://roohulquranacademy.com/assets/img/logo.png"
+      }
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-343-8078216",
+      "contactType": "Customer Service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Urdu", "Arabic"]
+    }
+    "datePublished": "2025-05-28",
+    "dateModified": "2025-05-28"
+  }
+  
+
+</script> --}}
 
 @endsection
