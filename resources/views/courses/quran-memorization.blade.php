@@ -485,7 +485,7 @@
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
     "url": "http://roohulquranacademy.com",
-    "logo": "http://roohulquranacademy.com/logo.png",
+    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
     "sameAs": [
       "https://www.facebook.com/roohulquranacademy",
       "https://www.instagram.com/roohulquranacademy",

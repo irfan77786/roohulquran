@@ -464,4 +464,29 @@
 
 
 @include('layouts.testimonial')
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Tafseer Course Online",
+    "description": "An online Tafseer course designed for beginners and those with prior Islamic knowledge, focusing on Quranic interpretation from foundational to advanced levels, integrating historical context with contemporary relevance.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Roohul Quran Academy",
+      "url": "https://roohulquranacademy.com",
+      "logo": "https://roohulquranacademy.com/assets/img/logo.png",
+    },
+    "url": "https://roohulquranacademy.com/tafseer-course-online",
+    "offers": {
+      "@type": "Offer",
+      "price": "50.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://roohulquranacademy.com/tafseer-course-online"
+    }
+  }
+  
+  </script>
+  
 @endsection
