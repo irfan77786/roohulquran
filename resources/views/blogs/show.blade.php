@@ -75,7 +75,7 @@
     @include('layouts.testimonial')
 </div>
 @endsection
-
 @section('meta_script')
     {!! $blog->script ?? 'no script' !!}
 @endsection
+
