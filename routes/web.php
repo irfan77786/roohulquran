@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\TrialClassController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +64,9 @@ Route::prefix('blogs')->name('blogs.')->group(function () {
     Route::get('/', [ControllersBlogController::class, 'index'])->name('index'); 
     Route::get('/{slug}', [ControllersBlogController::class, 'show'])->name('show'); 
 });
+
+Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
+
 
 
 
