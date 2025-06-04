@@ -263,10 +263,10 @@
 <!-- Hero Section -->
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-2.svg" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-2.svg" alt="" class="desktop-image" width="1920" height="800" loading="eager">
 
 
-  <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in" loading="eager">
 
   <div class="container">
     <div class="row align-items-center">
