@@ -50,6 +50,20 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Roohul Quran Online Academy",
+      "url": "https://roohulquranacademy.com",
+      "logo": "https://roohulquranacademy.com/assets/img/tab-logo.png",
+      "sameAs": [
+        "https://www.facebook.com/roohulquran",
+      ]
+    }
+    </script>
+    
 </head>
 
 <body class="index-page">
