@@ -345,7 +345,20 @@
     </div>
   </section>
 
-
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Rooh Ul Quran Academy Introduction",
+      "description": "Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.",
+      "thumbnailUrl": "https://img.youtube.com/vi/YZYoqH3RsGk/maxresdefault.jpg",
+      "uploadDate": "2024-01-01T08:00:00+00:00",
+      "duration": "PT2M30S",
+      "contentUrl": "https://www.youtube.com/watch?v=YZYoqH3RsGk",
+      "embedUrl": "https://www.youtube.com/embed/YZYoqH3RsGk"
+    }
+    </script>
+    
 <!-- Courses Section -->
 <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
 

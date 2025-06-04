@@ -445,6 +445,20 @@
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Rooh Ul Quran Academy Introduction",
+    "description": "Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.",
+    "thumbnailUrl": "https://img.youtube.com/vi/YZYoqH3RsGk/maxresdefault.jpg",
+    "uploadDate": "2024-01-01T08:00:00+00:00",
+    "duration": "PT2M30S",
+    "contentUrl": "https://www.youtube.com/watch?v=YZYoqH3RsGk",
+    "embedUrl": "https://www.youtube.com/embed/YZYoqH3RsGk"
+  }
+  </script>
+  
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
   style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
@@ -912,35 +926,36 @@ $('#trial-forms').on('submit', function (e) {
 
 <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Rooh Ul Quran Academy",
-  "url": "http://roohulquranacademy.com/",
-  "logo": "https://roohulquranacademy.com/assets/img/logo.png",
-  "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
-  "founder": {
-    "@type": "Person",
-    "name": "Shaykh or Ustadh Name"  <!-- Optional: replace with actual name -->
-  },
-  "foundingDate": "2020",
-  "sameAs": [
-    "https://www.facebook.com/roohulquranacademy",
-    "https://www.instagram.com/roohulquranacademy",
-    "https://www.youtube.com/@roohulquranacademy"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+92-343-8078216",
-    "contactType": "Customer Service",
-    "areaServed": "Worldwide",
-    "availableLanguage": ["English", "Urdu", "Arabic"]
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "url": "http://roohulquranacademy.com/",
+    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
+    "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
+    "founder": {
+      "@type": "Person",
+      "name": "Hafiz Muhammad irfan"
+    },
+    "foundingDate": "2020",
+    "sameAs": [
+      "https://www.facebook.com/roohulquranacademy",
+      "https://www.instagram.com/roohulquranacademy",
+      "https://www.youtube.com/@roohulquranacademy"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PK"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-343-8078216",
+      "contactType": "Customer Service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Urdu", "Arabic"]
+    }
   }
-}
-</script>
+  </script>
+  
 
 
 {{-- blog scrip --}}
