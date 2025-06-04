@@ -938,9 +938,7 @@ $('#trial-forms').on('submit', function (e) {
     },
     "foundingDate": "2020",
     "sameAs": [
-      "https://www.facebook.com/roohulquranacademy",
-      "https://www.instagram.com/roohulquranacademy",
-      "https://www.youtube.com/@roohulquranacademy"
+      "https://www.facebook.com/roohulquran"
     ],
     "address": {
       "@type": "PostalAddress",
