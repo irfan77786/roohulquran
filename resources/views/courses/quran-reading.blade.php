@@ -500,7 +500,15 @@
       "https://www.facebook.com/roohulquran",
     ]
   },
-  "url": "http://roohulquranacademy.com/quran-reading-with-tajweed"
+  "url": "http://roohulquranacademy.com/quran-reading-with-tajweed",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "instructor": {
+      "@type": "Person",
+      "name": "Hafiz Muhammad irfan"
+    }
+  }
 }
 </script>
 

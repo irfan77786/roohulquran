@@ -503,7 +503,15 @@
       "https://www.facebook.com/roohulquran",
     ]
   },
-  "url": "http://roohulquranacademy.com/memorize-quran-online"
+  "url": "http://roohulquranacademy.com/memorize-quran-online",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "instructor": {
+      "@type": "Person",
+      "name": "Hafiz Muhammad irfan"
+    }
+  }
 }
 </script>
 

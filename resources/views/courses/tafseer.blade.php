@@ -496,7 +496,15 @@
       "price": "50.00",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "url": "https://roohulquranacademy.com/tafseer-course-online"
+      "url": "https://roohulquranacademy.com/tafseer-course-online",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "instructor": {
+          "@type": "Person",
+          "name": "Hafiz Muhammad irfan"
+        }
+      }
     }
   }
   
