@@ -131,7 +131,7 @@
       <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",j
+      "@type": "Organization",
       "name": "Roohul Quran Online Academy",
       "url": "https://roohulquranacademy.com",
       "logo": "https://roohulquranacademy.com/assets/img/tab-logo.png",
