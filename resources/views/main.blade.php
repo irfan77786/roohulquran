@@ -29,20 +29,6 @@
         <!-- Main CSS File -->
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Roohul Quran Online Academy",
-      "url": "https://roohulquranacademy.com",
-      "logo": "https://roohulquranacademy.com/assets/img/tab-logo.png",
-      "sameAs": [
-        "https://www.facebook.com/roohulquran",
-      ]
-    }
-    </script>
     
 </head>
 
@@ -140,6 +126,19 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
+    </script>
+
+      <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",j
+      "name": "Roohul Quran Online Academy",
+      "url": "https://roohulquranacademy.com",
+      "logo": "https://roohulquranacademy.com/assets/img/tab-logo.png",
+      "sameAs": [
+        "https://www.facebook.com/roohulquran",
+      ]
+    }
     </script>
     <!--End of Tawk.to Script-->
 
