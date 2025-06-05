@@ -500,19 +500,22 @@
     "url": "http://roohulquranacademy.com",
     "logo": "https://roohulquranacademy.com/assets/img/logo.png",
     "sameAs": [
-      "https://www.facebook.com/roohulquran",
+      "https://www.facebook.com/roohulquran"
     ]
   },
   "url": "http://roohulquranacademy.com/memorize-quran-online",
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
-    "instructor": {
-      "@type": "Person",
-      "name": "Hafiz Muhammad irfan"
-    }
+    "instructor": [
+      {
+        "@type": "Person",
+        "name": "Hafiz Muhammad Irfan"
+      }
+    ]
   }
 }
 </script>
+
 
 @endsection
