@@ -10,17 +10,22 @@ class Blog extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'slug', 'author', 'content', 'excerpt', 'featured_image', 'seo', 'status'
+        'title',
+        'slug',
+        'author',
+        'content',
+        'excerpt',
+        'featured_image',
+        'seo',
+        'status'
     ];
 
     protected $casts = [
         'seo' => 'array',
         'status' => 'boolean',
     ];
-
     public function getImageUrlAttribute()
-{
-    return $this->featured_image ? asset('storage/' . $this->featured_image) : null;
-}
-
+    {
+        return $this->featured_image ? asset('storage/' . $this->featured_image) : null;
+    }
 }

@@ -1,6 +1,7 @@
 <style>
   #top-header {
-    background-image: url('assets/img/header-bg.png'); /* Replace with your image path */
+    background-image: url('{{ asset('assets/img/header-bg.png') }}');
+
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center;
     padding: 10px 0;
@@ -86,6 +87,8 @@
           {{-- <li><a href="{{route('home.about')}}">About</a></li> --}}
           
           <li><a href="{{route('home.contact.us')}}">Contact</a></li>
+          <li><a href="{{route('blogs.index')}}">Blogs</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

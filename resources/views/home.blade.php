@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('title', 'Rooh Ul Quran Academy - Online Quran Classes for Kids & Adults')
+
+@section('meta_description', 'Join our expert online Quran tutors for kids and adults. Learn Tajweed, Hifz, and more at Rooh Ul Quran Academy with flexible online sessions.')
+
+@section('meta_keywords', 'Quran classes online, Tajweed courses, Hifz programs, online Islamic education, Rooh Ul Quran teachers')
 @section('content')
 
 <style>
@@ -196,40 +200,6 @@
     /* Optional: Increase font size for better readability */
   }
 
-  #testimonials {
-    background-color: #f5f5f5;
-  }
-
-  .testimonial-card {
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .badge-card {
-    bottom: -20px;
-    transform: translateX(-50%);
-  }
-
-  .badge-card i {
-    font-size: 2rem;
-    color: #e5a72a;
-  }
-
-  .swiper {
-    width: 100%;
-    height: auto;
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .testimonial-card {
-    max-width: 90%;
-    margin: auto;
-  }
 
   /* contact us  */
   .contact-section {
@@ -293,10 +263,17 @@
 <!-- Hero Section -->
 
 <section id="hero" class="hero section dark-background">
+<<<<<<< HEAD
   <img src="assets/img/hero-bg-2.webp" alt="" class="desktop-image" data-aos="fade-in">
 
 
   <img src="assets/img/hero-bg-1.webp" alt="" class="mobile-image" data-aos="fade-in">
+=======
+  <img src="assets/img/hero-bg-2.svg" alt="" class="desktop-image" width="1920" height="800" loading="eager">
+
+
+  <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in" loading="eager">
+>>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
 
   <div class="container">
     <div class="row align-items-center">
@@ -413,7 +390,7 @@
       <div class="col-12 text-center mb-4">
         <h1 style="color: #36c47d">Why Choose Us</h1>
         <p class="col-lg-6 mx-auto mt-5" style="text-align:inherit;line-height: 1.8;">
-          There are many reasons to choose QuranClass.com for your Online Quran learning journey. Our Online Quran
+          There are many reasons to choose Roohul Quran for your Online Quran learning journey. Our Online Quran
           academy provides a structured and immersive approach to learn the Quran Online, ensuring a deep
           understanding of Islamic knowledge.
         </p>
@@ -475,6 +452,20 @@
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Rooh Ul Quran Academy Introduction",
+    "description": "Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.",
+    "thumbnailUrl": "https://img.youtube.com/vi/YZYoqH3RsGk/maxresdefault.jpg",
+    "uploadDate": "2024-01-01T08:00:00+00:00",
+    "duration": "PT2M30S",
+    "contentUrl": "https://www.youtube.com/watch?v=YZYoqH3RsGk",
+    "embedUrl": "https://www.youtube.com/embed/YZYoqH3RsGk"
+  }
+  </script>
+  
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
   style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
@@ -521,7 +512,7 @@
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/muslimah.png" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Female Teachers
+              <h4>Female Quran Teachers
                 Available</h4>
               <p>Female tutors ensure respectful, comfortable, and culturally sensitive learning.</p>
             </div>
@@ -753,6 +744,7 @@
 
 {{-- start testimonial --}}
 
+<<<<<<< HEAD
 <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
   <div class="container">
     <div class="row align-items-center">
@@ -889,6 +881,9 @@
   </div>
 </section>
 
+=======
+@include('layouts.testimonial')
+>>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
 
 {{-- contact us --}}
 
@@ -1077,34 +1072,72 @@ $('#trial-forms').on('submit', function (e) {
 
 <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Rooh Ul Quran Academy",
-  "url": "http://roohulquranacademy.com/",
-  "logo": "http://roohulquranacademy.com/logo.png",
-  "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
-  "founder": {
-    "@type": "Person",
-    "name": "Shaykh or Ustadh Name"  <!-- Optional: replace with actual name -->
-  },
-  "foundingDate": "2020",
-  "sameAs": [
-    "https://www.facebook.com/roohulquranacademy",
-    "https://www.instagram.com/roohulquranacademy",
-    "https://www.youtube.com/@roohulquranacademy"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+92-343-8078216",
-    "contactType": "Customer Service",
-    "areaServed": "Worldwide",
-    "availableLanguage": ["English", "Urdu", "Arabic"]
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "url": "http://roohulquranacademy.com/",
+    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
+    "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
+    "founder": {
+      "@type": "Person",
+      "name": "Hafiz Muhammad irfan"
+    },
+    "foundingDate": "2020",
+    "sameAs": [
+      "https://www.facebook.com/roohulquran"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PK"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-343-8078216",
+      "contactType": "Customer Service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Urdu", "Arabic"]
+    }
   }
-}
-</script>
+  </script>
+  
+
+
+{{-- blog scrip --}}
+{{-- <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://roohulquranacademy.com/blogs/rights-of-wives-in-quran-and-hadith"
+    },
+    "headline": "Rights of Wives in Quran and Hadith",
+    "description": "An article discussing the rights of wives in Islam as outlined in the Quran and Hadith, emphasizing respect, kindness, financial support, and the right to seek divorce.",
+    "image": "https://roohulquranacademy.com/storage/blogs/7/bdHag0iljvPPjerb9BS8TfgOM2b0rgrfMWV4uY7b.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Admin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Roohul Quran Academy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://roohulquranacademy.com/assets/img/logo.png"
+      }
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-343-8078216",
+      "contactType": "Customer Service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Urdu", "Arabic"]
+    }
+    "datePublished": "2025-05-28",
+    "dateModified": "2025-05-28"
+  }
+  
+
+</script> --}}
 
 @endsection

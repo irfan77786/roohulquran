@@ -17,7 +17,7 @@
                         <div class="mb-3">
                             <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
                             <input type="text" name="title" id="title" 
-                                   class="form-control @error('title') is-invalid @enderror"
+                                   class="form-control text-black @error('title') is-invalid @enderror"
                                    value="{{ old('title', $blog->title ?? '') }}" placeholder="Enter blog title">
                             @error('title')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -27,9 +27,10 @@
                         {{-- Content --}}
                         <div class="mb-3">
                             <label for="content" class="form-label">Content <span class="text-danger">*</span></label>
-                            <textarea name="content" id="content" rows="5" 
-                                      class="form-control @error('content') is-invalid @enderror"
-                                      placeholder="Write blog content here...">{{ old('content', $blog->content ?? '') }}</textarea>
+                            <textarea name="content" id="summernote" rows="5" 
+                            class="form-control @error('content') is-invalid @enderror"
+                            placeholder="Write blog content here...">{{ old('content', $blog->content ?? '') }}</textarea>
+                        
                             @error('content')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -44,9 +45,9 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
 
-                            @if(isset($blog) && $blog->featured_image)
+                            @if(isset($blog) && $blog->image_url)
                                 <div class="mt-2">
-                                    <img src="{{ $blog->featured_image }}" alt="Current Image" height="80">
+                                    <img src="{{ $blog->image_url }}" alt="Current Image" height="80">
                                 </div>
                             @endif
                         </div>
@@ -73,4 +74,24 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                placeholder: 'Write blog content here...',
+                tabsize: 2,
+                height: 300,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview']]
+                ]
+            });
+        });
+    </script>
+    
 @endsection

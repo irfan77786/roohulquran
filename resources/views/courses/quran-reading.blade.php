@@ -123,41 +123,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Optional: Add a subtle shadow */
   }
-
-  #testimonials {
-    background-color: #f5f5f5;
-  }
-
-  .testimonial-card {
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .badge-card {
-    bottom: -20px;
-    transform: translateX(-50%);
-  }
-
-  .badge-card i {
-    font-size: 2rem;
-    color: #e5a72a;
-  }
-
-  .swiper {
-    width: 100%;
-    height: auto;
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .testimonial-card {
-    max-width: 90%;
-    margin: auto;
-  }
 </style>
 
 
@@ -387,7 +352,20 @@
       </div>
     </div>
   </section>
-
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Rooh Ul Quran Academy Introduction",
+      "description": "Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.",
+      "thumbnailUrl": "https://img.youtube.com/vi/YZYoqH3RsGk/maxresdefault.jpg",
+      "uploadDate": "2024-01-01T08:00:00+00:00",
+      "duration": "PT2M30S",
+      "contentUrl": "https://www.youtube.com/watch?v=YZYoqH3RsGk",
+      "embedUrl": "https://www.youtube.com/embed/YZYoqH3RsGk"
+    }
+    </script>
+    
 
 <!-- Courses Section -->
 <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
@@ -506,6 +484,7 @@
 </section><!-- /Courses Section -->
 
 
+<<<<<<< HEAD
   <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
   <div class="container">
     <div class="row align-items-center">
@@ -625,6 +604,9 @@
     </div>
   </div>
 </section>
+=======
+@include('layouts.testimonial')
+>>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -635,14 +617,22 @@
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
     "url": "http://roohulquranacademy.com",
-    "logo": "http://roohulquranacademy.com/logo.png",
+    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
     "sameAs": [
-      "https://www.facebook.com/roohulquranacademy",
-      "https://www.instagram.com/roohulquranacademy",
-      "https://www.youtube.com/@roohulquranacademy"
+      "https://www.facebook.com/roohulquran"
     ]
   },
-  "url": "http://roohulquranacademy.com/quran-reading-with-tajweed"
+ "url": "http://roohulquranacademy.com/memorize-quran-online",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "instructor": [
+      {
+        "@type": "Person",
+        "name": "Hafiz Muhammad Irfan"
+      }
+    ]
+  }
 }
 </script>
 
