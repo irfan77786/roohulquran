@@ -162,7 +162,7 @@
 
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.svg" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-3.webp" alt="" class="desktop-image" data-aos="fade-in">
 
 
   <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in">
@@ -405,7 +405,7 @@
         <div class="course-card " data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Intermediate</span>
-            <img src="assets/img/ai/course-1.svg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-1.webp" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -427,7 +427,7 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Beginner</span>
-            <img src="assets/img/ai/course-2.svg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-2.webp" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -450,7 +450,7 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-3.jpg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-3.webp" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -472,7 +472,7 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-4.svg" alt="Memorize Quran">
+            <img src="assets/img/ai/course-4.webp" alt="Memorize Quran">
           </div>
           <div class="course-info">
             <div class="meta">
@@ -525,7 +525,7 @@
                   excellent. Highly recommended!
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-1.jpg" alt="User" class="rounded-circle me-3"
+                  <img src="assets/img/ai/test-1.webp" alt="User" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
                     <h5 class="mb-0">Muhammad Zakir</h5>
@@ -545,7 +545,7 @@
                   teachers for their efforts.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-2.png" alt="User" class="rounded-circle me-3"
+                  <img src="assets/img/ai/test-2.webp" alt="User" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
                     <h5 class="mb-0">Ayesha Khan</h5>
@@ -565,7 +565,7 @@
                   connected, Alhamdulillah
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-3.jpg" alt="User" class="rounded-circle me-3"
+                  <img src="assets/img/ai/test-3.webp" alt="User" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
                     <h5 class="mb-0">Muhammad Zeeshan</h5>
@@ -585,7 +585,7 @@
                   my kids' reading and understanding of the Quran.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-4.jpg" alt="User" class="rounded-circle me-3"
+                  <img src="assets/img/ai/test-4.webp" alt="User" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
                     <h5 class="mb-0">M Yaseen</h5>
@@ -604,7 +604,7 @@
                   I highly recommend QTeaching to anyone looking to deepen their understanding of the Quran.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-5.jpg" alt="User" class="rounded-circle me-3"
+                  <img src="assets/img/ai/test-5.webp" alt="User" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;">
                   <div>
                     <h5 class="mb-0">Habibullah</h5>
@@ -622,7 +622,7 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/img/ai/happystudent.svg" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
+        <img src="assets/img/ai/happystudent.webp" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">

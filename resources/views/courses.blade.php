@@ -32,7 +32,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="course-item">
-            <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+            <img src="assets/img/ai/course-1.webp" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <p class="category">Web Development</p>
@@ -58,7 +58,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="course-item">
-            <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
+            <img src="assets/img/course-2" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <p class="category">Marketing</p>
@@ -84,7 +84,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
           <div class="course-item">
-            <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
+            <img src="assets/img/course-3.webp" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <p class="category">Content</p>
