@@ -24,7 +24,7 @@ trait EmailSending
         ])->post('https://api.brevo.com/v3/smtp/email', [
             'sender' => [
                 'name' => 'roohulquran',
-                'email' => 'hafizirfan11123@gmail.com',
+                'email' => 'hafizirfan8078@gmail.com',
             ],
             'to' => [
                 ['email' => $to],
