@@ -128,13 +128,8 @@
     </style>
 
 
-<<<<<<< HEAD
 <section id="hero" class="hero section dark-background">
   <img src="assets/img/hero-bg-3.webp" alt="" class="desktop-image" data-aos="fade-in">
-=======
-    <section id="hero" class="hero section dark-background">
-        <img src="assets/img/hero-bg-3.svg" alt="" class="desktop-image" data-aos="fade-in">
->>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
 
 
         <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in">
@@ -219,250 +214,6 @@
                         </div>
                     </div>
 
-<<<<<<< HEAD
-        <!-- Card 4: Contact -->
-        <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #000; color: #fff;">
-          <div class="card-body text-center">
-            <p>If you have any further query then you can contact our helpline:</p>
-            <h5 class="mb-0" style="color: #36c47d !important">Call Us</h5>
-            <p style="font-size: 1.25rem; font-weight: bold;">+92 343 8078216</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="video" class="section video-section"
-  style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2><b>Watch Our Introduction</b></h2>
-        <p class="mb-4">
-          Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.
-        </p>
-        <div class="video-container">
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/YZYoqH3RsGk?si=FHHuca05TItNfcXZ"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Courses Section -->
-<section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
-
-  <!-- Section Title -->
-  <div class="container section-title text-center" data-aos="fade-up">
-    <h2 class="text-black">Highlighted Program</h2>
-    <p class="text-black">Our <b>Featured</b> Courses</p>
-    <h6 class="col-lg-8 mx-auto text-black">
-      Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
-      tailored to help you achieve your learning goals with ease and excellence.
-    </h6>
-  </div><!-- End Section Title -->
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="course-wrapper " data-aos="fade-up">
-        <div class="course-card " data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Intermediate</span>
-            <img src="assets/img/ai/course-1.webp" alt="Memorize Quran">
-          </div>
-          <div class="course-info">
-            <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div>
-            <h3 class="title"><a href="{{route('quran.memorization')}}">Memorize Quran Online</a></h3>
-            <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a miracle.</p>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(39 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
-            </div>
-          </div>
-        </div>
-        <div class="course-card" data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Beginner</span>
-            <img src="assets/img/ai/course-2.webp" alt="Memorize Quran">
-          </div>
-          <div class="course-info">
-            <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div>
-            <h3 class="title"><a href="{{route('quran.recitation')}}">Qaidah Reading</a></h3>
-            <p class="description">For the purpose of learning the basics of tajweed rules, one has to learn this
-              booklet</p>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(24 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
-            </div>
-          </div>
-        </div>
-        <div class="course-card" data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-3.webp" alt="Memorize Quran">
-          </div>
-          <div class="course-info">
-            <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div>
-            <h3 class="title"><a href="{{route('quran.tajweed')}}">Quran Reading with Tajweed</a></h3>
-            <p class="description">Quran reading with Tajweed has immense significance in preservation of Quran</p>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(32 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
-            </div>
-          </div>
-        </div>
-        <div class="course-card" data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-4.webp" alt="Memorize Quran">
-          </div>
-          <div class="course-info">
-            <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div>
-            <h3 class="title"><a href="{{route('quran.tafseer')}}">Tafseer ul Quran</a></h3>
-            <p class="description">Learn Quran by understanding with translation</p>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(82 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Course Item-->
-
-    </div>
-
-  </div>
-
-</section><!-- /Courses Section -->
-
-
-<section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
-  <div class="container">
-    <div class="row align-items-center">
-      <!-- Left Content -->
-      <div class="col-lg-6" data-aos="fade-up">
-        <h6 class="text-danger">Our Testimonial</h6>
-        <h2 class="mb-4">
-          Why Students Love <span style="color: #e5a72a;">Learning</span> Quran with Us
-        </h2>
-        <!-- Swiper Slider -->
-        <div class="swiper testimonial-slider">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card p-4 rounded shadow bg-white">
-                <div class="rating mb-3">
-                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p class="mb-4">
-                  My son has developed such a deep love for the Quran, and it's all thanks to the dedicated teachers and
-                  their kind approach. The online classes are convenient, and the communication with parents is
-                  excellent. Highly recommended!
-                </p>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-1.webp" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
-                  <div>
-                    <h5 class="mb-0">Muhammad Zakir</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card p-4 rounded shadow bg-white">
-                <div class="rating mb-3">
-                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p class="mb-4">
-                  Roohul Quran has been a blessing for our family. My daughter looks forward to every class and is
-                  memorizing Quran with proper tajweed, something we were struggling with before. May Allah reward the
-                  teachers for their efforts.
-                </p>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-2.webp" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
-                  <div>
-                    <h5 class="mb-0">Ayesha Khan</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-card p-4 rounded shadow bg-white">
-                <div class="rating mb-3">
-                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p class="mb-4">
-                  I appreciate how Roohul Quran combines Islamic values with modern teaching methods. The progress
-                  reports and regular feedback keep us informed. My children are more disciplined and spiritually
-                  connected, Alhamdulillah
-                </p>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-3.webp" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
-                  <div>
-                    <h5 class="mb-0">Muhammad Zeeshan</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-card p-4 rounded shadow bg-white">
-                <div class="rating mb-3">
-                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p class="mb-4">
-                  We live in a Western country, and finding reliable Quran education was difficult. Roohul Quran filled
-                  that gap perfectly. The teachers are patient, experienced, and caring. I’ve seen huge improvement in
-                  my kids' reading and understanding of the Quran.
-                </p>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/ai/test-4.webp" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
-                  <div>
-                    <h5 class="mb-0">M Yaseen</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-=======
                     <!-- Card 2: What Makes This Course Different -->
                     <div class="card shadow-sm" style="border: none; border-radius: 10px;">
                         <div class="card-body">
@@ -531,7 +282,6 @@
                         </div>
                     </div>
 
->>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
 
                     <!-- Card 2: Sessions -->
                     <div class="card mb-4 shadow-sm" style="border: none; border-radius: 10px; background-color: #fff;">
@@ -592,7 +342,6 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <p class="mb-4">
                   Learning Quran online has been a blessing for me. The instructors are very knowledgeable and patient.
                   I highly recommend QTeaching to anyone looking to deepen their understanding of the Quran.
@@ -605,25 +354,10 @@
                   </div>
                 </div>
               </div>
-=======
->>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
             </div>
         </div>
     </section>
 
-<<<<<<< HEAD
-      <!-- Right Content -->
-      <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/img/ai/happystudent.webp" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
-        <div
-          class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
-          style="margin-bottom: -30px;">
-          <i class="bi bi-mortarboard text-danger" style="font-size: 2rem;"></i>
-          <div class="ms-3">
-            <h4 class="mb-0 text-danger">400+</h4>
-            <p class="mb-0">Satisfied Students</p>
-          </div>
-=======
     <section id="video" class="section video-section"
         style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -643,7 +377,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> 0771a9af1fb195344501ca72e67581907d3c308e
         </div>
     </section>
     <script type="application/ld+json">
@@ -682,7 +415,7 @@
                     <div class="course-card " data-aos="fade-up">
                         <div class="course-image">
                             <span class="badge-level">Intermediate</span>
-                            <img src="assets/img/ai/course-1.svg" alt="Memorize Quran">
+                            <img src="assets/img/ai/course-1.webp" alt="Memorize Quran">
                         </div>
                         <div class="course-info">
                             <div class="meta">
@@ -705,7 +438,7 @@
                     <div class="course-card" data-aos="fade-up">
                         <div class="course-image">
                             <span class="badge-level">Beginner</span>
-                            <img src="assets/img/ai/course-2.svg" alt="Memorize Quran">
+                            <img src="assets/img/ai/course-2.webp" alt="Memorize Quran">
                         </div>
                         <div class="course-info">
                             <div class="meta">
@@ -729,7 +462,7 @@
                     <div class="course-card" data-aos="fade-up">
                         <div class="course-image">
                             <span class="badge-level">Advance</span>
-                            <img src="assets/img/ai/course-3.jpg" alt="Memorize Quran">
+                            <img src="assets/img/ai/course-3.webp" alt="Memorize Quran">
                         </div>
                         <div class="course-info">
                             <div class="meta">
@@ -752,7 +485,7 @@
                     <div class="course-card" data-aos="fade-up">
                         <div class="course-image">
                             <span class="badge-level">Advance</span>
-                            <img src="assets/img/ai/course-4.svg" alt="Memorize Quran">
+                            <img src="assets/img/ai/course-4.webp" alt="Memorize Quran">
                         </div>
                         <div class="course-info">
                             <div class="meta">
