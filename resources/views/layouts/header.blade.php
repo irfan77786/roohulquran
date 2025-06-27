@@ -67,7 +67,8 @@
       <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename"><img height="1000px" src="{{asset('assets/img/logo.png')}}" class="img-fluid" alt=""></h1>
+        <h1 class="sitename"><img src="{{ asset('assets/img/logo.png') }}" alt="Rooh Ul Quran Academy" width="120" height="80" />
+</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
