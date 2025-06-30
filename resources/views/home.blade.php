@@ -2,9 +2,11 @@
 
 @section('title', 'Rooh Ul Quran Academy - Online Quran Classes for Kids & Adults')
 
-@section('meta_description', 'Join our expert online Quran tutors for kids and adults. Learn Tajweed, Hifz, and more at Rooh Ul Quran Academy with flexible online sessions.')
+@section('meta_description', 'Join our expert online Quran tutors for kids and adults. Learn Tajweed, Hifz, and more at
+Rooh Ul Quran Academy with flexible online sessions.')
 
-@section('meta_keywords', 'Quran classes online, Tajweed courses, Hifz programs, online Islamic education, Rooh Ul Quran teachers')
+@section('meta_keywords', 'Quran classes online, Tajweed courses, Hifz programs, online Islamic education, Rooh Ul Quran
+teachers')
 @section('content')
 
 <style>
@@ -38,24 +40,26 @@
       /* Ensure it spans the full width */
     }
 
-      #hero {
-    text-align: center;
-    padding: 100px 20px; /* More padding on mobile */
-  }
+    #hero {
+      text-align: center;
+      padding: 100px 20px;
+      /* More padding on mobile */
+    }
 
-  .hero-heading {
-    font-size: 2.2rem; /* Increase heading size on mobile */
-    font-weight: 600;
-  }
+    .hero-heading {
+      font-size: 2.2rem;
+      /* Increase heading size on mobile */
+      font-weight: 600;
+    }
 
-  .hero-subtext {
-    font-size: 1.2rem;
-  }
+    .hero-subtext {
+      font-size: 1.2rem;
+    }
 
-  .btn-get-started {
-    font-size: 1rem;
-    padding: 10px 25px;
-  }
+    .btn-get-started {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
 
   }
 
@@ -259,14 +263,62 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     /* Adds a stronger shadow */
   }
+
+  /* youtube style */
+
+  .youtube-lazy-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Perfect for responsive height */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+  }
+
+  .youtube-thumbnail {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .youtube-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url('https://img.icons8.com/ios-filled/100/ffffff/play--v1.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.9;
+    z-index: 3;
+  }
+
+  .youtube-lazy-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 </style>
 <!-- Hero Section -->
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-2.svg" alt="" class="desktop-image" width="1920" height="800" loading="eager">
+  <img src="{{ asset('assets/img/hero-bg-2.webp') }}" alt="Online Quran Classes" class="desktop-image" loading="lazy"
+    width="1440" height="600" data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.svg" alt="" class="mobile-image" data-aos="fade-in" loading="eager">
+
+  <img src="{{ asset('assets/img/hero-bg-1.webp') }}" alt="Online Quran Classes with tajweed" class="mobile-image"
+    loading="lazy" width="768" height="400" data-aos="fade-in">
+
 
   <div class="container">
     <div class="row align-items-center">
@@ -329,7 +381,7 @@
     <div class="row gy-4 align-items-center">
       <!-- Image on the Left -->
       <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/img/about.png" class="img-fluid rounded shadow" alt="About Us">
+        <img src="assets/img/about.webp" class="img-fluid rounded shadow" alt="about roohul quran">
       </div>
 
       <!-- Card for About Us Description -->
@@ -427,38 +479,8 @@
 </section>
 <!-- /Counts Section -->
 <!-- Video Section -->
-<section id="video" class="section video-section" style="background-color: #f9f9f9; padding: 50px 0;">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2><b>Watch Our Introduction</b></h2>
-        <p class="mb-4">
-          Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.
-        </p>
-        <div class="video-container">
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/YZYoqH3RsGk?si=FHHuca05TItNfcXZ"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": "Rooh Ul Quran Academy Introduction",
-    "description": "Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.",
-    "thumbnailUrl": "https://img.youtube.com/vi/YZYoqH3RsGk/maxresdefault.jpg",
-    "uploadDate": "2024-01-01T08:00:00+00:00",
-    "duration": "PT2M30S",
-    "contentUrl": "https://www.youtube.com/watch?v=YZYoqH3RsGk",
-    "embedUrl": "https://www.youtube.com/embed/YZYoqH3RsGk"
-  }
-  </script>
-  
+@include('layouts.youtube')
+
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
   style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
@@ -571,7 +593,12 @@
         <div class="course-card " data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Intermediate</span>
-            <img src="assets/img/ai/course-1.svg" alt="Memorize Quran">
+            <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
+          {{ asset('assets/img/ai/course-1.webp') }} 768w,
+          {{ asset('assets/img/ai/course-1.webp') }} 1024w"
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran" loading="lazy"
+              width="400" height="260" />
+
           </div>
           <div class="course-info">
             <div class="meta">
@@ -593,7 +620,12 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Beginner</span>
-            <img src="assets/img/ai/course-2.svg" alt="Memorize Quran">
+            <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
+          {{ asset('assets/img/ai/course-2.webp') }} 768w,
+          {{ asset('assets/img/ai/course-2.webp') }} 1024w"
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class" loading="lazy"
+              width="400" height="260" />
+
           </div>
           <div class="course-info">
             <div class="meta">
@@ -616,7 +648,12 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-3.jpg" alt="Memorize Quran">
+            <img src="{{ asset('assets/img/ai/course-3.webp') }}" srcset="{{ asset('assets/img/ai/course-3.webp') }} 480w,
+          {{ asset('assets/img/ai/course-3.webp') }} 768w,
+          {{ asset('assets/img/ai/course-3.webp') }} 1024w"
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="Quran reading with Tajweed"
+              loading="lazy" width="400" height="260" />
+
           </div>
           <div class="course-info">
             <div class="meta">
@@ -638,7 +675,12 @@
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="assets/img/ai/course-4.svg" alt="Memorize Quran">
+            <img src="{{ asset('assets/img/ai/course-4.webp') }}" srcset="{{ asset('assets/img/ai/course-4.webp') }} 480w,
+          {{ asset('assets/img/ai/course-4.webp') }} 768w,
+          {{ asset('assets/img/ai/course-4.webp') }} 1024w"
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="Tafseer ul Quran course"
+              loading="lazy" width="400" height="260" />
+
           </div>
           <div class="course-info">
             <div class="meta">
@@ -728,7 +770,7 @@
     <!-- Center Image -->
     <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
       style="z-index: 2; margin-top: 20px;">
-      <img src="assets/img/ai/thumbsup1.png" alt="Person" class="img-fluid" style="max-height: 310px;">
+      <img src="assets/img/ai/thumbsup1.webp" alt="Person" class="img-fluid" style="max-height: 310px;">
     </div>
   </div>
 </section>
@@ -952,8 +994,8 @@ $('#trial-forms').on('submit', function (e) {
       "availableLanguage": ["English", "Urdu", "Arabic"]
     }
   }
-  </script>
-  
+</script>
+
 
 
 {{-- blog scrip --}}
@@ -993,5 +1035,8 @@ $('#trial-forms').on('submit', function (e) {
   
 
 </script> --}}
+
+
+
 
 @endsection

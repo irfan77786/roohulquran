@@ -59,8 +59,8 @@
                   excellent. Highly recommended!
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-1.jpg') }}" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="{{ asset('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle me-3"
+                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
                     <h5 class="mb-0">Muhammad Zakir</h5>
                   </div>
@@ -79,8 +79,8 @@
                   teachers for their efforts.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-2.png') }}" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="{{ asset('assets/img/ai/test-2.webp') }}" alt="islamic teacher" class="rounded-circle me-3"
+                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
                     <h5 class="mb-0">Ayesha Khan</h5>
                   </div>
@@ -99,8 +99,8 @@
                   connected, Alhamdulillah
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-3.jpg') }}" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="{{ asset('assets/img/ai/test-3.webp') }}" alt="online quran classes" class="rounded-circle me-3"
+                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
                     <h5 class="mb-0">Muhammad Zeeshan</h5>
                   </div>
@@ -119,8 +119,8 @@
                   my kids' reading and understanding of the Quran.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-4.jpg') }}" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
+                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
                     <h5 class="mb-0">M Yaseen</h5>
                   </div>
@@ -138,8 +138,8 @@
                   I highly recommend QTeaching to anyone looking to deepen their understanding of the Quran.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-5.jpg') }}" alt="User" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;">
+                  <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
+                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
                     <h5 class="mb-0">Habibullah</h5>
                   </div>
@@ -156,7 +156,7 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="{{ asset('assets/img/ai/happystudent.svg') }}" alt="Student" class="img-fluid rounded" style="max-height: 400px;">
+        <img src="{{ asset('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded" style="max-height: 400px;" loading="lazy">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">

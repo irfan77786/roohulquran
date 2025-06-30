@@ -89,7 +89,7 @@
                               </select>
                             </div>
                             <div class="col-12">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Add Your Notes" required></textarea>
+                                <textarea name="message" class="form-control" rows="4" placeholder="Add Your Notes"></textarea>
 
                                 <div class="col-12">
                                     <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-4 py-2">GET IN
