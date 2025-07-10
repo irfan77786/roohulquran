@@ -38,7 +38,7 @@
                 <img src="{{ $blog->image_url }}"
                      alt="{{ $blog->title }}"
                      class="img-fluid rounded shadow w-100"
-                     style="max-height: 500px; object-fit: cover;">
+                     style="max-height: 700px; object-fit: cover;">
             </div>
             @endif
 
