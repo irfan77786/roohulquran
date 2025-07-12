@@ -13,100 +13,100 @@
     }
 </style>
 @section('content')
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <div class="row gy-5">
-                <!-- Left Side Contact Info -->
-                <div class="col-lg-5">
-                    <h6 class="text-danger mb-2">Get In Touch</h6>
-                    <h2 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h2>
-                    <p class="text-muted">We’re here to help! Whether you have questions about our Quran courses, need
-                        assistance with enrollment, or want to share feedback, feel free to reach out.</p>
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <div class="row gy-5">
+            <!-- Left Side Contact Info -->
+            <div class="col-lg-5">
+                <h6 class="text-danger mb-2">Get In Touch</h6>
+                <h2 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h2>
+                <p class="text-muted">We’re here to help! Whether you have questions about our Quran courses, need
+                    assistance with enrollment, or want to share feedback, feel free to reach out.</p>
 
-                    <div class="bg-white p-4 rounded shadow-sm">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="me-3">
-                                <i class="bi bi-telephone-fill fs-2 text-dark"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted">Call us or whatsapp Anytime</small><br>
-                                <strong class="text-dark">+92 344 6781539</strong><br>
-                                <strong class="text-dark">+92 343 8078216</strong>
-                            </div>
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="me-3">
+                            <i class="bi bi-telephone-fill fs-2 text-dark"></i>
                         </div>
-
-                        <hr>
-
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="me-3">
-                                <i class="bi bi-envelope-fill fs-2 text-dark"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted">E-mail us Anytime</small><br>
-                                <strong class="text-dark">info@roohulquranacademy.com</strong>
-                            </div>
+                        <div>
+                            <small class="text-muted">Call us or whatsapp Anytime</small><br>
+                            <strong class="text-dark">+92 344 6781539</strong><br>
+                            <strong class="text-dark">+92 343 8078216</strong>
                         </div>
-
-                        <hr>
-{{-- 
-                        <div class="d-flex align-items-center">
-                            <div class="me-3">
-                                <i class="bi bi-geo-alt-fill fs-2 text-dark"></i>
-                            </div>
-                            <div>
-                                <small class="text-muted">Our Locations</small><br>
-                                <strong class="text-dark">Hatton Garden, London, United Kingdom</strong>
-                            </div>
-                        </div> --}}
                     </div>
-                </div>
 
-                <!-- Right Side Contact Form -->
-                <div class="col-lg-7">
-                    <h6 class="text-danger">Contact Us</h6>
-                    <h2 class="fw-bold">Get in <strong>Touch</strong> with Us</h2>
-                    <form id="trial-form">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Name"
-                                    required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="phone" class="form-control" placeholder="Your Phone Number"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                              <select class="form-control rounded-pill" name="country" required>
+                    <hr>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="me-3">
+                            <i class="bi bi-envelope-fill fs-2 text-dark"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted">E-mail us Anytime</small><br>
+                            <strong class="text-dark">info@roohulquranacademy.com</strong>
+                        </div>
+                    </div>
+
+                    <hr>
+                    {{--
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="bi bi-geo-alt-fill fs-2 text-dark"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted">Our Locations</small><br>
+                            <strong class="text-dark">Hatton Garden, London, United Kingdom</strong>
+                        </div>
+                    </div> --}}
+                </div>
+            </div>
+
+            <!-- Right Side Contact Form -->
+            <div class="col-lg-7">
+                <h6 class="text-danger">Contact Us</h6>
+                <h2 class="fw-bold">Get in <strong>Touch</strong> with Us</h2>
+                <form id="trial-form">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="phone" class="form-control" placeholder="Your Phone Number"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <select id="country" name="country" class="form-control rounded-pill w-100" required>
                                 <option value="" disabled selected>Select Your Country</option>
                                 <option value="Pakistan">Pakistan</option>
                                 <option value="India">India</option>
                                 <option value="USA">USA</option>
                                 <option value="UK">UK</option>
-                              </select>
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Add Your Notes"></textarea>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" class="form-control" rows="4"
+                                placeholder="Add Your Notes"></textarea>
 
-                                <div class="col-12">
-                                    <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-4 py-2">GET IN
-                                        TOUCH</button>
-                                </div>
+                            <div class="col-12">
+                                <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-4 py-2">GET IN
+                                    TOUCH</button>
                             </div>
-                    </form>
-                </div>
+                        </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $('#trial-form').on('submit', function(e) {
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $('#trial-form').on('submit', function(e) {
             e.preventDefault();
 
             let form = $(this);
@@ -162,5 +162,5 @@
             btnLoading.removeClass('d-none');
             submitBtn.prop('disabled', true);
         });
-    </script>
+</script>
 @endsection

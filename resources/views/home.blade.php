@@ -311,13 +311,13 @@ teachers')
 <!-- Hero Section -->
 
 <section id="hero" class="hero section dark-background">
-  <img src="{{ asset('assets/img/hero-bg-2.webp') }}" alt="Online Quran Classes" class="desktop-image" loading="lazy"
-    width="1440" height="600" data-aos="fade-in">
+  <img src="{{ asset('assets/img/hero-bg-2.webp') }}" alt="Online Quran Classes" class="desktop-image" width="1440"
+    height="600" fetchpriority="high" data-aos="fade-in">
 
 
 
   <img src="{{ asset('assets/img/hero-bg-1.webp') }}" alt="Online Quran Classes with tajweed" class="mobile-image"
-    loading="lazy" width="768" height="400" data-aos="fade-in">
+    width="768" height="400" fetchpriority="high" data-aos="fade-in">
 
 
   <div class="container">
@@ -727,24 +727,24 @@ teachers')
       </div>
 
       <!-- Right Form -->
-      <div class="text-white p-5 rounded w-100 w-lg-50 mt-4 mt-lg-0"
-        style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a);">
+      <div class="text-white p-4 rounded w-100 mt-4 mt-lg-0"
+        style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a); max-width: 600px;">
         <form id="trial-forms" class="form-container mx-auto">
           @csrf
           <div class="mb-3">
-            <input type="text" class="form-control rounded-pill" name="name" placeholder="Enter your Full Name"
+            <input type="text" class="form-control rounded-pill w-100" name="name" placeholder="Enter your Full Name"
               required>
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control rounded-pill" name="email" placeholder="Enter Your Email Address"
-              required>
+            <input type="email" class="form-control rounded-pill w-100" name="email"
+              placeholder="Enter Your Email Address" required>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control rounded-pill" name="phone" placeholder="Enter Your Phone Number"
-              required>
+            <input type="text" class="form-control rounded-pill w-100" name="phone"
+              placeholder="Enter Your Phone Number" required>
           </div>
           <div class="mb-3">
-            <select class="form-control rounded-pill" name="country" required>
+            <select id="country" name="country" class="form-control rounded-pill w-100" required>
               <option value="" disabled selected>Select Your Country</option>
               <option value="Pakistan">Pakistan</option>
               <option value="India">India</option>
@@ -752,9 +752,12 @@ teachers')
               <option value="UK">UK</option>
             </select>
           </div>
+
           <div class="mb-3">
-            <textarea class="form-control rounded-pill" name="message" placeholder="Any message (optional)"></textarea>
+            <textarea class="form-control rounded-pill w-100" name="message"
+              placeholder="Any message (optional)"></textarea>
           </div>
+
           <input type="hidden" name="course_enroll" value="Course Title Here">
 
           <button type="submit" id="submit-btn" class="btn btn-dark w-100 rounded-pill">
@@ -762,8 +765,8 @@ teachers')
             <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
           </button>
         </form>
-
       </div>
+
 
     </div>
 
@@ -849,13 +852,13 @@ teachers')
                 required>
             </div>
             <div class="mb-3">
-              <select class="form-control rounded-pill" name="country" required>
-                <option value="" disabled selected>Select Your Country</option>
-                <option value="Pakistan">Pakistan</option>
-                <option value="India">India</option>
-                <option value="USA">USA</option>
-                <option value="UK">UK</option>
-              </select>
+               <select id="country" name="country" class="form-control rounded-pill w-100" required>
+              <option value="" disabled selected>Select Your Country</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+            </select>
             </div>
 
             <!-- Button with loading spinner -->

@@ -19,8 +19,8 @@
         content="@yield('meta_keywords', 'Online Quran classes, Quran academy, Learn Quran online, Quran with Tajweed, Quran memorization, Online Hifz classes, Quran for kids, Quran teachers online, Islamic education, Rooh Ul Quran Academy')">
     <meta name="google-site-verification" content="LazU64-UPkWgAw4DYjqtS2HjCsUe6xVKjqjSUDB54SY" />
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/tab-logo.png') }}" rel="icon">
-    <linkf href="{{ asset('assets/img/tab-logo.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="icon">
+    <linkf href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 

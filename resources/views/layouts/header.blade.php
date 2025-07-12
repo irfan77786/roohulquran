@@ -1,6 +1,6 @@
 <style>
   #top-header {
-    background-image: url('{{ asset('assets/img/header-bg.png') }}');
+    background-image: url('{{ asset('assets/img/header-bg.webp') }}');
 
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center;
@@ -67,7 +67,7 @@
       <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename"><img src="{{ asset('assets/img/logo.png') }}" alt="Rooh Ul Quran Academy" width="120" height="80" />
+        <h1 class="sitename"><img src="{{ asset('assets/img/logo.png') }}" alt="Rooh Ul Quran Academy"/>
 </h1>
       </a>
 

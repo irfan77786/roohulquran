@@ -1,3 +1,18 @@
+<style>
+  .sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+</style>
+
 <footer id="footer" class="footer position-relative" style="background-color: #000; color: white !important;">
   <div class="container footer-top">
     <div class="row gy-4 align-items-center text-center text-lg-start">
@@ -27,16 +42,31 @@
       </div>
 
       <!-- Social Links -->
-      <div class="col-lg-4 col-md-12 text-center text-lg-end">
-        <h4 class="text-white">STAY CONNECTED:</h4>
-        <div class="social-links d-flex justify-content-center justify-content-lg-end mt-3">
-          <a href="https://www.facebook.com/roohulquran" class="twitter"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-instagram"></i></a>
-          <a href="https://wa.me/+923344066429" class="whatsapp" target="_blank">
-            <i class="bi bi-whatsapp"></i>
-        </a>
-        </div>
-      </div>
+<div class="col-lg-4 col-md-12 text-center text-lg-end">
+  <h4 class="text-white">STAY CONNECTED:</h4>
+  <div class="social-links d-flex justify-content-center justify-content-lg-end mt-3">
+    
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/roohulquran" class="facebook" aria-label="Visit us on Facebook">
+      <span class="sr-only">Visit us on Facebook</span>
+      <i class="bi bi-facebook"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/yourhandle" class="instagram" aria-label="Visit us on Instagram">
+      <span class="sr-only">Visit us on Instagram</span>
+      <i class="bi bi-instagram"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/+923344066429" class="whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
+      <span class="sr-only">Chat with us on WhatsApp</span>
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+  </div>
+</div>
+
     </div>
   </div>
 
