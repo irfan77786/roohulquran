@@ -381,7 +381,7 @@ teachers')
     <div class="row gy-4 align-items-center">
       <!-- Image on the Left -->
       <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/img/about.webp" class="img-fluid rounded shadow" alt="about roohul quran">
+        <img src="assets/img/about.webp" class="img-fluid rounded shadow" alt="about roohul quran" width="600" height="400">
       </div>
 
       <!-- Card for About Us Description -->
