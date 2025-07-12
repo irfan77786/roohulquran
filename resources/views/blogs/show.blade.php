@@ -5,7 +5,28 @@
 @section('meta_keywords', $blog['meta_keywords'] ?? $blog->seo['keywords'])
 
 @section('meta_description', $blog['meta_description'] ?? '')
+<style>
+    .card-title {
+    font-family: 'Georgia', serif;
+    line-height: 1.4;
+}
 
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #1f1872;
+    color: white;
+}
+
+</style>
 @section('content')
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -17,7 +38,7 @@
                 <img src="{{ $blog->image_url }}"
                      alt="{{ $blog->title }}"
                      class="img-fluid rounded shadow w-100"
-                     style="max-height: 500px; object-fit: cover;">
+                     style="max-height: 700px; object-fit: cover;">
             </div>
             @endif
 
@@ -50,9 +71,9 @@
                 <div class="row g-4">
                     @foreach($relatedBlogs as $related)
                         <div class="col-sm-6 col-md-4">
-                            <div class="card border-0 shadow-sm h-100">
+                            <div class="card border-0 shadow rounded-4 h-100">
                                 @if($related->image_url)
-                                    <img src="{{ $related->image_url }}" class="card-img-top" alt="{{ $related->title }}">
+                                    <img src="{{ $related->image_url }}" class="card-img-top" alt="{{ $related->title }}"style="height: 200px; object-fit: cover;" >
                                 @endif
                                 <div class="card-body d-flex flex-column">
                                     <h6 class="fw-bold">{{ Str::limit($related->title, 50) }}</h6>

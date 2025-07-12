@@ -10,6 +10,7 @@
 
     <meta property="og:title" content="Roohul Quran Online Academy">
     <meta property="og:site_name" content="Roohul Quran Online Academy">
+    <link rel="canonical" href="https://roohulquranacademy.com/" />
 
 
     <meta name="description"
