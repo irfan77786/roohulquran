@@ -36,7 +36,7 @@
         <form action="forms/newsletter.php" method="post" class="php-email-form">
           <div class="newsletter-form d-flex justify-content-center">
             <input type="email" name="email" placeholder="Your email address" required>
-            <button type="submit"><i class="bi bi-arrow-right"></i></button>
+            <button type="submit"><b>Subscribe</b></i></button>
           </div>
         </form>
       </div>

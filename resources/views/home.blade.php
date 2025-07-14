@@ -389,7 +389,7 @@
             <div class="row gy-4 align-items-center">
                 <!-- Image on the Left -->
                 <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/about.webp" class="img-fluid rounded shadow" alt="about roohul quran"
+                    <img src="assets/img/about.webp" loading="lazy" class="img-fluid rounded shadow"  alt="about roohul quran"
                         width="600" height="400">
                 </div>
 
@@ -529,7 +529,7 @@
                                 <img src="assets/img/icons/teacher.avif" alt="Expert Quran Tutors"
                                     style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
                                 <h3>Expert Quran Tutors</h3>
-                                <p>Renowned Quran tutors integrate teachings for life, faith, and character.</p>
+                                <p style="color: #212529;">Renowned Quran tutors integrate teachings for life, faith, and character.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -539,7 +539,7 @@
                                     style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
                                 <h3>One-to-One
                                     Classes</h3>
-                                <p>Personalized learning based on your needs with expert help & feedback.</p>
+                                <p style="color: #212529;">Personalized learning based on your needs with expert help & feedback.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -549,7 +549,7 @@
                                     style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
                                 <h3>Female Quran Teachers
                                     Available</h3>
-                                <p>Female tutors ensure respectful, comfortable, and culturally sensitive learning.</p>
+                                <p style="color: #212529;">Female tutors ensure respectful, comfortable, and culturally sensitive learning.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -560,7 +560,7 @@
                                     style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
                                 <h3>Flexible Class
                                     Timings</h3>
-                                <p>24/7 flexible classes with preferred tutors for convenient Quran learning.</p>
+                                <p style="color: #212529;">24/7 flexible classes with preferred tutors for convenient Quran learning.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -570,7 +570,7 @@
                                     style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
                                 <h3>Supervised
                                     Learning</h3>
-                                <p>A structured curriculum with guidance ensures steady progress and confidence.</p>
+                                <p style="color: #212529;">A structured curriculum with guidance ensures steady progress and confidence.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -580,7 +580,7 @@
                                     style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
                                 <h3>Ideal Quran
                                     Study Option</h3>
-                                <p>Global online classes offer flexible Quran learning at your own pace.</p>
+                                <p style="color: #212529;">Global online classes offer flexible Quran learning at your own pace.</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -599,10 +599,10 @@
         <div class="container section-title text-center" data-aos="fade-up">
             <h2 class="text-black">Highlighted Program</h2>
             <p class="text-black">Our <b>Featured</b> Courses</p>
-            <h6 class="col-lg-8 mx-auto text-black">
+            <h5 class="col-lg-8 mx-auto text-black">
                 Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
                 tailored to help you achieve your learning goals with ease and excellence.
-            </h6>
+            </h5>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -635,7 +635,7 @@
                             </div>
                             <div class="footer-course">
                                 <span class="price">30 USD / 20 POUNDS</span>
-                                <span class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
+                                <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 120+ Enroll</span>
                             </div>
                         </div>
                     </div>
@@ -665,7 +665,7 @@
                             </div>
                             <div class="footer-course">
                                 <span class="price">30 USD / 20 POUNDS</span>
-                                <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
+                                <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
                             </div>
                         </div>
                     </div>
@@ -694,7 +694,7 @@
                             </div>
                             <div class="footer-course">
                                 <span class="price">30 USD / 20 POUNDS</span>
-                                <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
+                                <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 360+ Enroll</span>
                             </div>
                         </div>
                     </div>
@@ -722,7 +722,7 @@
                             </div>
                             <div class="footer-course">
                                 <span class="price">30 USD / 20 POUNDS</span>
-                                <span class="enroll"><i class="bi bi-mortarboard"></i> 378+ Enroll</span>
+                                <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 300+ Enroll</span>
                             </div>
                         </div>
                     </div>
@@ -772,7 +772,7 @@
                                 placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="mb-3">
-                            <select id="country" name="country" class="form-control rounded-pill w-100" required>
+                            <select id="country" name="country" class="form-control rounded-pill w-100" aria-label="Select your country"  required>
                                 <option value="" disabled selected>Select Your Country</option>
                                 <option value="Pakistan">Pakistan</option>
                                 <option value="India">India</option>
@@ -800,7 +800,7 @@
             <!-- Center Image -->
             <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
                 style="z-index: 2; margin-top: 20px;">
-                <img src="assets/img/ai/thumbsup1.webp" alt="Person" class="img-fluid" style="max-height: 310px;">
+                <img src="assets/img/ai/thumbsup1.webp" alt="Person" loading="lazy" class="img-fluid" style="max-height: 310px;">
             </div>
         </div>
     </section>
@@ -887,7 +887,7 @@
                                     placeholder="Enter Your Phone Number" required>
                             </div>
                             <div class="mb-3">
-                                <select id="country" name="country" class="form-control rounded-pill w-100" required>
+                                <select id="country" name="country" class="form-control rounded-pill w-100" aria-label="Select your country" required>
                                     <option value="" disabled selected>Select Your Country</option>
                                     <option value="Pakistan">Pakistan</option>
                                     <option value="India">India</option>

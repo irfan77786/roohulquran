@@ -79,7 +79,7 @@
                                 required>
                         </div>
                         <div class="mb-3">
-                            <select id="country" name="country" class="form-control rounded-pill w-100" required>
+                            <select id="country" name="country" class="form-control rounded-pill w-100" aria-label="Select your country" required>
                                 <option value="" disabled selected>Select Your Country</option>
                                 <option value="Pakistan">Pakistan</option>
                                 <option value="India">India</option>

@@ -89,7 +89,7 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <img src="{{ asset('assets/img/icons/whatsapp.png') }}" alt="WhatsApp" />
+        <img src="{{ asset('assets/img/icons/whatsapp.png') }}" loading="lazy" alt="WhatsApp" />
     </a>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}" defer></script>
@@ -118,18 +118,18 @@
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/68285e127a51e3190e056edf/1irequujd';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    window.addEventListener("load", function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/68285e127a51e3190e056edf/1irequujd';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    });
+</script>
+
 
     <script type="application/ld+json">
         {

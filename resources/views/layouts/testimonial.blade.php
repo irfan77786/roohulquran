@@ -34,6 +34,33 @@
     max-width: 90%;
     margin: auto;
   }
+
+  .swiper-pagination-bullet {
+  width: 12px; /* visual size */
+  height: 12px;
+  background: #333; /* or your color */
+  opacity: 0.5;
+  margin: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  pointer-events: none; /* keeps the bullet clickable */
+}
+.swiper-pagination-bullet-active {
+  background: #007bff; /* or any highlight color */
+  opacity: 1;
+}
+
 </style>
 <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
   <div class="container">
@@ -42,7 +69,7 @@
       <div class="col-lg-6" data-aos="fade-up">
         <h2 class="text-danger">Our Testimonial</h2>
         <h2 class="mb-4">
-          Why Students Love <span style="color: #e5a72a;">Learning</span> Quran with Us
+          Why Students Love <span style="color: #212529;">Learning</span> Quran with Us
         </h2>
         <!-- Swiper Slider -->
         <div class="swiper testimonial-slider">
