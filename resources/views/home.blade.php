@@ -32,15 +32,14 @@
 
         @media (max-width: 768px) {
             #hero .desktop-image {
-                display: none;
-                /* Hide desktop image on mobile */
+                display: none !important;
             }
 
             #hero .mobile-image {
                 display: block;
-                /* Show mobile-specific image */
                 width: 100%;
-                /* Ensure it spans the full width */
+                height: auto;
+                object-fit: cover;
             }
 
             #hero {
@@ -52,7 +51,6 @@
 
             .hero-heading {
                 font-size: 2.2rem;
-                /* Increase heading size on mobile */
                 font-weight: 600;
             }
 
@@ -64,8 +62,8 @@
                 font-size: 1rem;
                 padding: 10px 25px;
             }
-
         }
+
 
         #about .card {
             background: #281c1c;
