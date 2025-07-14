@@ -804,7 +804,7 @@ teachers')
         <h2 class="mb-4" style="font-weight: bold; color: #f8f8f8;">Register Your Free Online Quran Classes</h2>
         <ul class="list-unstyled">
           <li class="mb-4 d-flex align-items-start">
-            <img src="assets/img/icons/pointing-up.png" alt="Registration" class="me-3"
+            <img src="assets/img/icons/pointing-up.avif" alt="Registration" class="me-3"
               style="width: 40px; height: 40px;">
             <div>
               <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
@@ -813,7 +813,7 @@ teachers')
             </div>
           </li>
           <li class="mb-4 d-flex align-items-start">
-            <img src="assets/img/icons/schedule.png" alt="Schedule" class="me-3" style="width: 40px; height: 40px;">
+            <img src="assets/img/icons/schedule.avif" alt="Schedule" class="me-3" style="width: 40px; height: 40px;">
             <div>
               <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
               <p>After you register, we will reach out to you to arrange a convenient time for your free Quran trial
@@ -821,7 +821,7 @@ teachers')
             </div>
           </li>
           <li class="mb-4 d-flex align-items-start">
-            <img src="assets/img/icons/koran.png" alt="Start Class" class="me-3" style="width: 40px; height: 40px;">
+            <img src="assets/img/icons/koran.avif" alt="Start Class" class="me-3" style="width: 40px; height: 40px;">
             <div>
               <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
               <p>We’ll quickly connect you with one of our expert Quran teachers, allowing you to schedule your first
@@ -829,7 +829,7 @@ teachers')
             </div>
           </li>
           <li class="d-flex align-items-start">
-            <img src="assets/img/icons/quality.png" alt="Certificate" class="me-3" style="width: 40px; height: 40px;">
+            <img src="assets/img/icons/quality.avif" alt="Certificate" class="me-3" style="width: 40px; height: 40px;">
             <div>
               <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>
               <p>Get your certificate after successfully completing the course. Start your learning journey with us
