@@ -27,11 +27,12 @@
   transform: translate(-50%, -50%);
   width: 64px;
   height: 64px;
-  background: url('https://img.icons8.com/ios-filled/100/ffffff/play--v1.png') no-repeat center;
+  background: url('/assets/img/icons/play-button.png') no-repeat center;
   background-size: contain;
   opacity: 0.9;
   z-index: 3;
 }
+
 
 .youtube-lazy-wrapper iframe {
   position: absolute;

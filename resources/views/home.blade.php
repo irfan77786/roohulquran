@@ -506,7 +506,7 @@ teachers')
 
           <div class="col-xl-4">
             <div class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-              <img src="assets/img/icons/teacher.png" alt="Expert Quran Tutors"
+              <img src="assets/img/icons/teacher.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
               <h4>Expert Quran Tutors</h4>
               <p>Renowned Quran tutors integrate teachings for life, faith, and character.</p>
@@ -515,7 +515,7 @@ teachers')
 
           <div class="col-xl-4">
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-              <img src="assets/img/icons/presentation.png" alt="Expert Quran Tutors"
+              <img src="assets/img/icons/presentation.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
               <h4>One-to-One
                 Classes</h4>
@@ -525,7 +525,7 @@ teachers')
 
           <div class="col-xl-4">
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-              <img src="assets/img/icons/muslimah.png" alt="Expert Quran Tutors"
+              <img src="assets/img/icons/muslimah.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
               <h4>Female Quran Teachers
                 Available</h4>
@@ -536,7 +536,7 @@ teachers')
 
           <div class="col-xl-4">
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-              <img src="assets/img/icons/schedule.png" alt="Expert Quran Tutors"
+              <img src="assets/img/icons/schedule.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
               <h4>Flexible Class
                 Timings</h4>
@@ -546,7 +546,7 @@ teachers')
 
           <div class="col-xl-4">
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-              <img src="assets/img/icons/laptop.png" alt="Expert Quran Tutors"
+              <img src="assets/img/icons/laptop.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
               <h4>Supervised
                 Learning</h4>
@@ -556,7 +556,7 @@ teachers')
 
           <div class="col-xl-4">
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-              <img src="assets/img/icons/mosque.png" alt="Expert Quran Tutors"
+              <img src="assets/img/icons/mosque.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
               <h4>Ideal Quran
                 Study Option</h4>

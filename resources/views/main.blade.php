@@ -89,7 +89,7 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <img src="{{ asset('assets/img/icons/whatsapp.webp') }}" alt="WhatsApp" />
+        <img src="{{ asset('assets/img/icons/whatsapp.png') }}" alt="WhatsApp" />
     </a>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}" defer></script>
