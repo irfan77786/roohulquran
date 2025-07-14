@@ -40,7 +40,7 @@
     <div class="row align-items-center">
       <!-- Left Content -->
       <div class="col-lg-6" data-aos="fade-up">
-        <h6 class="text-danger">Our Testimonial</h6>
+        <h2 class="text-danger">Our Testimonial</h2>
         <h2 class="mb-4">
           Why Students Love <span style="color: #e5a72a;">Learning</span> Quran with Us
         </h2>
@@ -62,7 +62,7 @@
                   <img src="{{ asset('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
-                    <h5 class="mb-0">Muhammad Zakir</h5>
+                    <h3 class="mb-0">Muhammad Zakir</h3>
                   </div>
                 </div>
               </div>
@@ -82,7 +82,7 @@
                   <img src="{{ asset('assets/img/ai/test-2.webp') }}" alt="islamic teacher" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
-                    <h5 class="mb-0">Ayesha Khan</h5>
+                    <h3 class="mb-0">Ayesha Khan</h3>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@
                   <img src="{{ asset('assets/img/ai/test-3.webp') }}" alt="online quran classes" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
-                    <h5 class="mb-0">Muhammad Zeeshan</h5>
+                    <h3 class="mb-0">Muhammad Zeeshan</h3>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@
                   <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
-                    <h5 class="mb-0">M Yaseen</h5>
+                    <h3 class="mb-0">M Yaseen</h3>
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@
                   <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                   <div>
-                    <h5 class="mb-0">Habibullah</h5>
+                    <h3 class="mb-0">Habibullah</h3>
                   </div>
                 </div>
               </div>

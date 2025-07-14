@@ -64,10 +64,10 @@ teachers')
   }
 
   #about .card {
-    background: #ffffff;
+    background: #281c1c;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 600px;
+    height: 650px;
   }
 
   #about .card .nested-card {
@@ -75,6 +75,12 @@ teachers')
     padding: 16px;
     margin-bottom: 16px;
   }
+
+  @media (max-width: 1000px) {
+  #about .card {
+    height: 750px;
+  }
+}
 
   #counts {
     color: #fff;
@@ -387,9 +393,9 @@ teachers')
       <!-- Card for About Us Description -->
       <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-up" data-aos-delay="200">
         <div class="card p-4 shadow"
-          style="position: relative; top: -30px; background: #ffffff; border-radius: 10px; height: 600px;">
+          style="position: relative; top: -30px; background: #ffffff; border-radius: 10px;">
           <!-- Increased height -->
-          <h5>Who we are</h5>
+          <h2>Who we are</h2>
           <h2><b>About</b> Us ?</h2>
           <p>
             Millions of Muslims worldwide face challenges accessing quality Islamic education due to time constraints,
@@ -401,7 +407,7 @@ teachers')
 
           <!-- Nested Card 1 -->
           <div class="nested-card p-3 mb-3 nt-5" style="background-color: #f3d8d8; border-radius: 8px;">
-            <h5><b>Our Mission</b></h5>
+            <h3><b>Our Mission</b></h3>
             <p>
               Our mission is to democratize Islamic education by providing world-class instruction with top-notch
               Islamic instructors, especially those with native Arabic backgrounds, and eliminating geographical
@@ -508,7 +514,7 @@ teachers')
             <div class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
               <img src="assets/img/icons/teacher.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Expert Quran Tutors</h4>
+              <h3>Expert Quran Tutors</h3>
               <p>Renowned Quran tutors integrate teachings for life, faith, and character.</p>
             </div>
           </div><!-- End Icon Box -->
@@ -517,8 +523,8 @@ teachers')
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/presentation.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>One-to-One
-                Classes</h4>
+              <h3>One-to-One
+                Classes</h3>
               <p>Personalized learning based on your needs with expert help & feedback.</p>
             </div>
           </div><!-- End Icon Box -->
@@ -527,8 +533,8 @@ teachers')
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/muslimah.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Female Quran Teachers
-                Available</h4>
+              <h3>Female Quran Teachers
+                Available</h3>
               <p>Female tutors ensure respectful, comfortable, and culturally sensitive learning.</p>
             </div>
           </div><!-- End Icon Box -->
@@ -538,8 +544,8 @@ teachers')
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/schedule.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Flexible Class
-                Timings</h4>
+              <h3>Flexible Class
+                Timings</h3>
               <p>24/7 flexible classes with preferred tutors for convenient Quran learning.</p>
             </div>
           </div><!-- End Icon Box -->
@@ -548,8 +554,8 @@ teachers')
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/laptop.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Supervised
-                Learning</h4>
+              <h3>Supervised
+                Learning</h3>
               <p>A structured curriculum with guidance ensures steady progress and confidence.</p>
             </div>
           </div><!-- End Icon Box -->
@@ -558,8 +564,8 @@ teachers')
             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
               <img src="assets/img/icons/mosque.avif" alt="Expert Quran Tutors"
                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-              <h4>Ideal Quran
-                Study Option</h4>
+              <h3>Ideal Quran
+                Study Option</h3>
               <p>Global online classes offer flexible Quran learning at your own pace.</p>
             </div>
           </div><!-- End Icon Box -->
@@ -801,7 +807,7 @@ teachers')
             <img src="assets/img/icons/pointing-up.png" alt="Registration" class="me-3"
               style="width: 40px; height: 40px;">
             <div>
-              <h5 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h5>
+              <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
               <p>Sign up easily for free Quran classes with experienced teachers. Just provide your name and contact to
                 start learning!</p>
             </div>
