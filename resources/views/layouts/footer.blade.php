@@ -23,7 +23,7 @@
         </a>
         <div class="footer-contact pt-3">
           <p><strong>CALL FOR MORE INFO:</strong></p>
-          <p class="phone-number"><i class="bi bi-telephone-fill"></i> +92 343 8078216</p>
+          <p class="phone-number"><i class="bi bi-telephone-fill"></i> +92-334-4066429</p>
           <p><strong>GET IN TOUCH:</strong></p>
           <p><i class="bi bi-envelope-fill"></i> info@roohulquranacademy.com</p>
         </div>

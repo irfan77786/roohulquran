@@ -31,8 +31,8 @@
                         </div>
                         <div>
                             <small class="text-muted">Call us or whatsapp Anytime</small><br>
-                            <strong class="text-dark">+92 344 6781539</strong><br>
-                            <strong class="text-dark">+92 343 8078216</strong>
+                            <strong class="text-dark">+92-344-6781539</strong><br>
+                            <strong class="text-dark">+92-334-4066429</strong>
                         </div>
                     </div>
 

@@ -319,7 +319,7 @@
     <!-- Hero Section -->
 
     <section id="hero" class="hero section dark-background">
-        <img src="{{ asset('assets/img/hero-bg-2.webp') }}" alt="Online Quran Classes" class="desktop-image" width="1440"
+        <img src="{{ asset('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes" class="desktop-image" width="1440"
             height="600" fetchpriority="high" data-aos="fade-in">
 
 
@@ -341,13 +341,13 @@
 
 
                 <!-- Right Form -->
-                {{-- <div class="col-lg-4 col-md-5 col-sm-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
         <div class="form-container p-4 bg-light rounded shadow">
           <h3 class="mb-3 text-center" style="color: #44137c; font-weight: bold;">
             Free Trial Class
           </h3>
 
-          <form action="/" method="POST">
+          <form id="trial-form">
             @csrf
             <div class="mb-1">
               <label for="name" class="form-label">Name</label>
@@ -373,11 +373,14 @@
                 <!-- Add more countries as needed -->
               </select>
             </div>
-            <button type="submit" class="w-100 p-2 rounded-2" style="background-color: #44137c;color:white">Get Free
-              Trial Class</button>
+                <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
+                                style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
+                                <span id="btn-text" style="color: white !important">Get Free Trial Class</span>
+                                <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
+                            </button>
           </form>
         </div>
-      </div> --}}
+      </div>
             </div>
         </div>
     </section><!-- /Hero Section -->
@@ -605,10 +608,10 @@
         <div class="container section-title text-center" data-aos="fade-up">
             <h2 class="text-black">Highlighted Program</h2>
             <p class="text-black">Our <b>Featured</b> Courses</p>
-            <h5 class="col-lg-8 mx-auto text-black">
+            <h4 class="col-lg-8 mx-auto text-black">
                 Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
                 tailored to help you achieve your learning goals with ease and excellence.
-            </h5>
+            </h4>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -635,7 +638,7 @@
                             <h3 class="title"><a href="{{ route('quran.memorization') }}">Memorize Quran Online</a></h3>
                             <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
                                 miracle.</p>
-                            <div class="rating">
+                            {{-- <div class="rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="reviews">(39 Reviews)</span>
                             </div>
@@ -643,7 +646,7 @@
                                 <span class="price">30 USD / 20 POUNDS</span>
                                 <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 120+
                                     Enroll</span>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="course-card" data-aos="fade-up">
@@ -666,7 +669,7 @@
                             <p class="description">For the purpose of learning the basics of tajweed rules, one has to
                                 learn this
                                 booklet</p>
-                            <div class="rating">
+                            {{-- <div class="rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="reviews">(24 Reviews)</span>
                             </div>
@@ -674,7 +677,7 @@
                                 <span class="price">30 USD / 20 POUNDS</span>
                                 <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 378+
                                     Enroll</span>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="course-card" data-aos="fade-up">
@@ -696,7 +699,7 @@
                             <h3 class="title"><a href="{{ route('quran.tajweed') }}">Quran Reading with Tajweed</a></h3>
                             <p class="description">Quran reading with Tajweed has immense significance in preservation of
                                 Quran</p>
-                            <div class="rating">
+                            {{-- <div class="rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="reviews">(32 Reviews)</span>
                             </div>
@@ -704,7 +707,7 @@
                                 <span class="price">30 USD / 20 POUNDS</span>
                                 <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 360+
                                     Enroll</span>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="course-card" data-aos="fade-up">
@@ -725,7 +728,7 @@
                             </div>
                             <h3 class="title"><a href="{{ route('quran.tafseer') }}">Tafseer ul Quran</a></h3>
                             <p class="description">Learn Quran by understanding with translation</p>
-                            <div class="rating">
+                            {{-- <div class="rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="reviews">(82 Reviews)</span>
                             </div>
@@ -733,7 +736,7 @@
                                 <span class="price">30 USD / 20 POUNDS</span>
                                 <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 300+
                                     Enroll</span>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

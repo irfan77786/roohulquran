@@ -44,7 +44,7 @@
       <!-- Phone section -->
       <div class="d-flex align-items-center justify-content-center me-md-4">
         <i class="fa-brands fa-whatsapp me-2" style="color: #FFD43B; font-size: 1.5rem;"></i>
-        <span class="phone-number">+92-343-8078216</span>
+        <span class="phone-number">+92-334-4066429 / +92-344-6781539</span>
       </div>
 
       <!-- Email section -->
