@@ -46,7 +46,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
 
 Route::get('/' , [HomeController::class , 'index'])->name('home.index');
 Route::get('/about' , [HomeController::class , 'about'])->name('home.about');
-Route::get('/courses' , [HomeController::class , 'courses'])->name('home.courses');
+// Route::get('/courses' , [HomeController::class , 'courses'])->name('home.courses');
 Route::get('/pricing' , [HomeController::class , 'pricing'])->name('home.pricing');
 Route::get('/contact-us' , [HomeController::class , 'contactUs'])->name('home.contact.us');
 

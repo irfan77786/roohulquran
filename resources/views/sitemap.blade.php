@@ -19,12 +19,12 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
+    {{-- <url>
         <loc>{{ url('/courses') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
-    </url>
+    </url> --}}
     <url>
         <loc>{{ url('/pricing') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
