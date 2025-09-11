@@ -76,14 +76,14 @@
             }
         </style>
 
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE66E1TSR"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-SNE66E1TSR');
+  gtag('config', 'G-NSTXB23J7J');
 </script>
 </head>
 
