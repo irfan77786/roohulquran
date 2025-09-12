@@ -1,7 +1,7 @@
 <style>
   /* Base styles */
   #top-header {
-    background-image: url('{{ asset(' assets/img/header-bg.webp') }}');
+    background-image: url('{{ asset('assets/img/header-bg.webp') }}');
     background-size: cover;
     background-position: center;
     font-size: 14px;
