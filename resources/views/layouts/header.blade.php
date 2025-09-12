@@ -29,36 +29,10 @@
     /* default hidden */
   }
 
-  /* Extra Small Mobiles (<300px) */
-  @media (max-width: 299px) {
-    #top-header .contact-info {
-      flex-direction: column;
-      gap: 5px;
-      font-size: 10px;
-    }
 
-    .mobile-break {
-      display: block;
-    }
-  }
-
-  /* Small Mobiles (300px – 400px) */
-  @media (min-width: 300px) and (max-width: 400px) {
-    #top-header .contact-info {
-      flex-wrap: wrap;
-      gap: 5px;
-      font-size: 11px;
-
-    }
-
-    .mobile-break {
-      display: inline;
-      /* keep in one line */
-    }
-  }
 
   /* Medium Mobiles & Small Tablets (401px – 768px) */
-  @media (min-width: 401px) and (max-width: 768px) {
+  @media (min-width: 300px) and (max-width: 768px) {
     #top-header .contact-info {
       flex-wrap: nowrap;
       gap: 5px;

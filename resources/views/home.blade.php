@@ -192,7 +192,7 @@ teachers')
 
 
     /* Responsive Adjustments */
-    @media (min-width: 430px) and (max-width: 768px) {
+    @media (min-width: 300px) and (max-width: 768px) {
         .w-lg-50 {
             width: 100% !important;
         }
