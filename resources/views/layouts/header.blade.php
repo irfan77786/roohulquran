@@ -143,7 +143,7 @@
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
-    <a href="{{ route('home.contact.us') }}" class="btn-getstarted" href="courses.html">Get Started</a>
+    <a href="{{ route('home.contact.us') }}" class="btn-getstarted" style="color: white !important">Get Started</a>
 
   </div>
 </header>
