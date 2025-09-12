@@ -1,7 +1,7 @@
 <style>
   /* Base styles */
   #top-header {
-    background-image: url('{{ asset('assets/img/header-bg.webp') }}');
+    background-image: url('{{ asset(' assets/img/header-bg.webp') }}');
     background-size: cover;
     background-position: center;
     font-size: 14px;
@@ -43,6 +43,24 @@
       display: inline;
       /* keep in one line */
     }
+
+    /* Prevent Safari from auto-styling phone numbers */
+    a,
+    a:link,
+    a:visited,
+    a:active,
+    a:hover {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    /* Specific to phone-number span */
+    .phone-number {
+      color: #fff !important;
+      /* force white */
+      text-decoration: none !important;
+    }
+
   }
 
   /* Tablets (769px – 1024px) */
@@ -70,8 +88,13 @@
       <!-- Phone section -->
       <div class="d-flex align-items-center justify-content-center me-md-4">
         <i class="fa-brands fa-whatsapp me-2" style="color: #FFD43B; font-size: 1.5rem;"></i>
-        <span class="phone-number">+92-334-4066429 <span class="mobile-break"><br></span> +92-344-6781539</span>
+        <span class="phone-number">
+          <a href="tel:+923344066429" class="text-white text-decoration-none">+92-334-4066429</a>
+          <span class="mobile-break"><br></span>
+          <a href="tel:+923446781539" class="text-white text-decoration-none">+92-344-6781539</a>
+        </span>
       </div>
+
 
       <!-- Email section -->
       <div class="d-flex align-items-center justify-content-center">
