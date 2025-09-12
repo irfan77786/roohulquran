@@ -48,7 +48,12 @@
       flex-wrap: wrap;
       gap: 5px;
       font-size: 11px;
-      
+
+    }
+
+    .mobile-break {
+      display: inline;
+      /* keep in one line */
     }
   }
 
