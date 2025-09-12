@@ -223,6 +223,12 @@ teachers')
 
     }
 
+    @media (min-width: 300px) and (max-width: 400px) {
+        #about .card {
+            height: 800px;
+        }
+    }
+
     .form-container {
         max-width: 90%;
         /* Adjust the width of the form inputs */
@@ -337,6 +343,31 @@ teachers')
         width: 100%;
         height: 100%;
         border: none;
+    }
+
+    .quran-box {
+        width: 100%;
+        max-width: 800px;
+        /* keeps it centered and clean on big screens */
+        padding: 1.5rem;
+        /* default mobile padding */
+        background: linear-gradient(80deg, #44137c, #9a8f50, #e5a72a);
+        z-index: 1;
+    }
+
+    /* Tablets (≥768px) */
+    @media (min-width: 768px) {
+        .quran-box {
+            padding: 1rem;
+        }
+    }
+
+    /* Desktops (≥992px) */
+    @media (min-width: 992px) {
+        .quran-box {
+            width: 100%;
+            padding: 1rem;
+        }
     }
 </style>
 <!-- Hero Section -->
@@ -874,11 +905,11 @@ teachers')
         <div class="bg-white shadow d-flex flex-column flex-lg-row position-relative">
 
             <!-- Left Content -->
-            <div class="text-white p-5 rounded w-100 w-lg-50 d-flex align-items-center justify-content-center"
-                style="z-index: 1; background: linear-gradient(80deg, #44137c, #9a8f50, #e5a72a);">
+            <div class="quran-box text-white rounded d-flex align-items-center justify-content-center mx-auto">
                 <div>
-                    <h2 class="mb-4 fs-3 text-center text-white">Make Quran learning simple with dedicated teaching
-                        support</h2>
+                    <h2 class="mb-4 fs-4 fs-md-3 text-center text-white">
+                        Make Quran learning simple with dedicated teaching support
+                    </h2>
                     <ul class="list-unstyled text-start">
                         <li class="mb-3">✅ Start your learning journey at any level</li>
                         <li class="mb-3">✅ Study flexibly with online scheduled classes</li>
@@ -887,6 +918,7 @@ teachers')
                     </ul>
                 </div>
             </div>
+
 
             <!-- Right Form -->
             <div class="text-white right-form rounded w-100 mt-4 mt-lg-0"
