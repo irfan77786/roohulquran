@@ -49,19 +49,19 @@
     <!-- Facebook -->
     <a href="https://www.facebook.com/roohulquran" class="facebook" aria-label="Visit us on Facebook">
       <span class="sr-only">Visit us on Facebook</span>
-      <i class="bi bi-facebook"></i>
+      <i class="bi bi-facebook text-black"></i>
     </a>
 
     <!-- Instagram -->
     <a href="https://www.instagram.com/yourhandle" class="instagram" aria-label="Visit us on Instagram">
       <span class="sr-only">Visit us on Instagram</span>
-      <i class="bi bi-instagram"></i>
+      <i class="bi bi-instagram text-black"></i>
     </a>
 
     <!-- WhatsApp -->
     <a href="https://wa.me/+923344066429" class="whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
       <span class="sr-only">Chat with us on WhatsApp</span>
-      <i class="bi bi-whatsapp"></i>
+      <i class="bi bi-whatsapp text-black"></i>
     </a>
 
   </div>
