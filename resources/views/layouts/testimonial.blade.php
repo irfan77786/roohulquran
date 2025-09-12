@@ -1,6 +1,5 @@
 <style>
-
-#testimonials {
+  #testimonials {
     background-color: #f5f5f5;
   }
 
@@ -36,31 +35,35 @@
   }
 
   .swiper-pagination-bullet {
-  width: 12px; /* visual size */
-  height: 12px;
-  background: #333; /* or your color */
-  opacity: 0.5;
-  margin: 8px;
-  border-radius: 50%;
-  position: relative;
-}
+    width: 12px;
+    /* visual size */
+    height: 12px;
+    background: #333;
+    /* or your color */
+    opacity: 0.5;
+    margin: 8px;
+    border-radius: 50%;
+    position: relative;
+  }
 
-.swiper-pagination-bullet::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 48px;
-  height: 48px;
-  transform: translate(-50%, -50%);
-  background: transparent;
-  pointer-events: none; /* keeps the bullet clickable */
-}
-.swiper-pagination-bullet-active {
-  background: #007bff; /* or any highlight color */
-  opacity: 1;
-}
+  .swiper-pagination-bullet::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    pointer-events: none;
+    /* keeps the bullet clickable */
+  }
 
+  .swiper-pagination-bullet-active {
+    background: #007bff;
+    /* or any highlight color */
+    opacity: 1;
+  }
 </style>
 <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
   <div class="container">
@@ -81,17 +84,22 @@
                   <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
                 </div>
                 <p class="mb-4">
-                  My son has developed such a deep love for the Quran, and it's all thanks to the dedicated teachers and
-                  their kind approach. The online classes are convenient, and the communication with parents is
-                  excellent. Highly recommended!
+                  Rooh ul Quran Academy made it so easy for my son to start Noorani Qaida. The teacher is patient and
+                  professional.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
-                  <div>
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle"
+                      style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <!-- Flag badge -->
+                    <span class="fi fi-gb fis position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
                     <h3 class="mb-0">Muhammad Zakir</h3>
                   </div>
                 </div>
+
               </div>
             </div>
             <!-- Slide 2 -->
@@ -101,14 +109,18 @@
                   <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
                 </div>
                 <p class="mb-4">
-                  Roohul Quran has been a blessing for our family. My daughter looks forward to every class and is
-                  memorizing Quran with proper tajweed, something we were struggling with before. May Allah reward the
-                  teachers for their efforts.
+                  I always wanted to learn Quran with Tajweed. Alhamdulillah, I improved my recitation within a few
+                  months.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-2.webp') }}" alt="islamic teacher" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
-                  <div>
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+
+                    <img src="{{ asset('assets/img/ai/test-2.webp') }}" alt="islamic teacher"
+                      class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <span class="fi fi-us fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
                     <h3 class="mb-0">Ayesha Khan</h3>
                   </div>
                 </div>
@@ -121,14 +133,16 @@
                   <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
                 </div>
                 <p class="mb-4">
-                  I appreciate how Roohul Quran combines Islamic values with modern teaching methods. The progress
-                  reports and regular feedback keep us informed. My children are more disciplined and spiritually
-                  connected, Alhamdulillah
+                  As a working professional, the flexible timings helped me continue my Quran classes online.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-3.webp') }}" alt="online quran classes" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
-                  <div>
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-3.webp') }}" alt="online quran classes"
+                      class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <span class="fi fi-ca fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
                     <h3 class="mb-0">Muhammad Zeeshan</h3>
                   </div>
                 </div>
@@ -141,14 +155,16 @@
                   <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
                 </div>
                 <p class="mb-4">
-                  We live in a Western country, and finding reliable Quran education was difficult. Roohul Quran filled
-                  that gap perfectly. The teachers are patient, experienced, and caring. I’ve seen huge improvement in
-                  my kids' reading and understanding of the Quran.
+                  Their female Quran tutor is very kind and supportive. Highly recommended for sisters.
                 </p>
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
-                  <div>
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
+                      style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                      <span class="fi fi-au fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
                     <h3 class="mb-0">M Yaseen</h3>
                   </div>
                 </div>
@@ -161,13 +177,18 @@
                   <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
                 </div>
                 <p class="mb-4">
-                  Learning Quran online has been a blessing for me. The instructors are very knowledgeable and patient.
+                  Learning Quran online has been a blessing for me. The instructors are very knowledgeable and
+                  patient.
                   I highly recommend QTeaching to anyone looking to deepen their understanding of the Quran.
                 </p>
                 <div class="d-flex align-items-center">
+                  <div class="position-relative" style="width: 50px; height: 50px;">
                   <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
-                  <div>
+                    <span class="fi fi-de fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
                     <h3 class="mb-0">Habibullah</h3>
                   </div>
                 </div>
@@ -183,7 +204,8 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="{{ asset('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded" style="max-height: 400px;" loading="lazy">
+        <img src="{{ asset('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded"
+          style="max-height: 400px;" loading="lazy">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">

@@ -37,6 +37,8 @@
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
             onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+
 
         <noscript>
             <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -74,20 +76,74 @@
                     left: 15px;
                 }
             }
+
+            /* loader */
+            #preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+
+            .dots {
+                display: flex;
+                gap: 8px;
+            }
+
+            .dots span {
+                width: 12px;
+                height: 12px;
+                background: #dc3545;
+                border-radius: 50%;
+                animation: bounce 0.6s infinite alternate;
+            }
+
+            .dots span:nth-child(2) {
+                animation-delay: 0.2s;
+                background: #343a40;
+            }
+
+            .dots span:nth-child(3) {
+                animation-delay: 0.4s;
+                background: #28a745;
+            }
+
+            @keyframes bounce {
+                from {
+                    transform: translateY(0);
+                }
+
+                to {
+                    transform: translateY(-12px);
+                }
+            }
         </style>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-NSTXB23J7J');
-</script>
+        </script>
 </head>
 
 <body class="index-page">
+    <!-- Loader -->
+    <div id="preloader">
+        <div class="dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
 
     @include('layouts.header')
 
@@ -128,7 +184,7 @@
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     window.addEventListener("load", function() {
         var s1 = document.createElement("script"),
             s0 = document.getElementsByTagName("script")[0];
@@ -138,7 +194,17 @@
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
     });
-</script>
+    </script>
+
+    {{-- loader --}}
+    <script>
+        window.addEventListener("load", function() {
+  let preloader = document.getElementById('preloader');
+  preloader.style.opacity = "0";
+  setTimeout(() => preloader.style.display = "none", 500);
+});
+    </script>
+
 
 
     <script type="application/ld+json">

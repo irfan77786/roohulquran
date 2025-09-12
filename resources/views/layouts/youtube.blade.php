@@ -1,46 +1,46 @@
 <style>
-    
   .youtube-lazy-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9; /* Perfect for responsive height */
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #000;
-}
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Perfect for responsive height */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+  }
 
-.youtube-thumbnail {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
+  .youtube-thumbnail {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
 
-.youtube-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
-  background: url('/assets/img/icons/play-button.png') no-repeat center;
-  background-size: contain;
-  opacity: 0.9;
-  z-index: 3;
-}
+  .youtube-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url('/assets/img/icons/play-button.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.9;
+    z-index: 3;
+  }
 
 
-.youtube-lazy-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+  .youtube-lazy-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 </style>
 
 
@@ -48,16 +48,16 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2><b>Watch Our Introduction</b></h2>
+        <h2 style="color:#44137c;"><b>Watch Our Introduction</b></h2>
         <p class="mb-4">
           Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.
         </p>
         <div class="video-container">
           <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk">
-  <div class="youtube-thumbnail">
-    <div class="youtube-play-button"></div>
-  </div>
-</div>
+            <div class="youtube-thumbnail">
+              <div class="youtube-play-button"></div>
+            </div>
+          </div>
 
         </div>
       </div>

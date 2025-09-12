@@ -4,7 +4,7 @@
 
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     font-size: 14px;
     color: #fff;
   }
@@ -19,21 +19,40 @@
   }
 
   #top-header .contact-info > div {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
+  .mobile-break {
+  display: none;
+}
+  
 
-  @media (min-width: 768px) {
+@media (min-width: 430px) and (max-width: 768px) {
   #top-header .contact-info {
     flex-wrap: nowrap;
     justify-content: center;
-    text-align: left;
-    gap: 40px; /* larger gap on desktop */
-    font-size: 1.0rem;
+    text-align: center;
+    gap: 5px; /* smaller gap on tablets */
+    font-size: small;
+  }
+    .mobile-break {
+    display: inline;
   }
 
   #top-header .contact-info > div {
     margin-bottom: 0;
   }
+}
+
+  #top-header .contact-info {
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+    gap: 10px; /* larger gap on desktop */
+    font-size: medium;
+  }
+
+  #top-header .contact-info > div {
+    margin-bottom: 0;
   }
 </style>
 
@@ -44,7 +63,7 @@
       <!-- Phone section -->
       <div class="d-flex align-items-center justify-content-center me-md-4">
         <i class="fa-brands fa-whatsapp me-2" style="color: #FFD43B; font-size: 1.5rem;"></i>
-        <span class="phone-number">+92-334-4066429 / +92-344-6781539</span>
+        <span class="phone-number">+92-334-4066429 <span class="mobile-break"><br></span> +92-344-6781539</span>
       </div>
 
       <!-- Email section -->
