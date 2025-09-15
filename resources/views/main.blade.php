@@ -47,84 +47,6 @@
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         </noscript>
 
-
-        <style>
-            .whatsapp-float {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                z-index: 9999;
-                /* background-color: #25D366; */
-                padding: 10px;
-                border-radius: 50%;
-                /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
-                transition: transform 0.3s ease;
-            }
-
-            .whatsapp-float img {
-                width: 60px;
-                height: 60px;
-            }
-
-            .whatsapp-float:hover {
-                transform: scale(1.1);
-            }
-
-            @media (max-width: 600px) {
-                .whatsapp-float {
-                    bottom: 15px;
-                    left: 15px;
-                }
-            }
-
-            /* loader */
-            #preloader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #fff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-            }
-
-            .dots {
-                display: flex;
-                gap: 8px;
-            }
-
-            .dots span {
-                width: 12px;
-                height: 12px;
-                background: #dc3545;
-                border-radius: 50%;
-                animation: bounce 0.6s infinite alternate;
-            }
-
-            .dots span:nth-child(2) {
-                animation-delay: 0.2s;
-                background: #343a40;
-            }
-
-            .dots span:nth-child(3) {
-                animation-delay: 0.4s;
-                background: #28a745;
-            }
-
-            @keyframes bounce {
-                from {
-                    transform: translateY(0);
-                }
-
-                to {
-                    transform: translateY(-12px);
-                }
-            }
-        </style>
-
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
         <script>
@@ -134,6 +56,10 @@
 
   gtag('config', 'G-NSTXB23J7J');
         </script>
+
+        <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
+        <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+
 </head>
 
 <body class="index-page">
