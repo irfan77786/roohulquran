@@ -37,7 +37,8 @@
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
             onload="this.media='all'">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
+            onload="this.media='all'">
 
 
         <noscript>
@@ -45,6 +46,7 @@
             <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
         </noscript>
 
 
