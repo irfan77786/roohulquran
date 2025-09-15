@@ -30,4 +30,14 @@ class CourseController extends Controller
     {
         return view('courses.quran-arabic-language');
     }
+
+    public function begineerClasses()
+    {
+        return view('courses.beginner-classes');
+    }
+    
+    public function kidsClasses()
+    {
+        return view('courses.kids-classes');
+    }
 }

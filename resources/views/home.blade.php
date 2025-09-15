@@ -423,22 +423,24 @@ teachers')
 
                     <form id="trial-form">
                         @csrf
-                        <div class="mb-1">
+                        <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
                                 required>
                         </div>
-                        <div class="mb-1">
+                        <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Enter your email" required>
                         </div>
-                        <div class="mb-1">
+                        <div class="mb-3"> 
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone"
                                 placeholder="Enter your phone number" required>
                         </div>
                         <div class="mb-3">
+                            <label for="phone" class="form-label">Country</label>
+
                             <select class="form-select" id="country" name="country" required>
                                 <option value="" disabled selected>Select your country</option>
                                 @foreach(config('countries.countries') as $country)

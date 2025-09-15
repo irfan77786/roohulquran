@@ -157,8 +157,8 @@
             </div> --}}
 
             <!-- Right: Content -->
-            <div class="col-lg-12 col-md-7 col-sm-12">
-                <h3 class="fw-bold mb-4" style="color:#44137c; font-size: 28px; text-align: center;">
+            <div class="col-lg-7">
+                <h3 class="fw-bold mb-4" style="color:#44137c; font-size: 28px;">
                     About the Noorani Qaida Course
                 </h3>
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">
@@ -339,23 +339,23 @@
 
 @include('layouts.youtube')
 
+<!-- Courses Section -->
+<section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
+
+
     <!-- Courses Section -->
-    <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 10px 0;">
+    <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 50px 0;">
 
         <!-- Section Title -->
         <div class="container section-title text-center" data-aos="fade-up">
-            {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-            <p style="color:#44137c;">Our Featured Courses</p>
-            {{-- <h5 class="col-lg-8 mx-auto text-black">
+            <h2 class="text-black">Highlighted Program</h2>
+            <p class="text-black">Our <b>Featured</b> Courses</p>
+            <h4 class="col-lg-8 mx-auto text-black">
                 Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course
                 is
                 tailored to help you achieve your learning goals with ease and excellence.
-            </h5> --}}
-            <span style="color: #212529;">Explore our expertly designed Quran courses, including Tajweed, Hifz, and
-                Quran
-                translation. Each course is
-                tailored to help you achieve your learning goals with ease and excellence.</span>
-        </div>
+            </h4>
+        </div><!-- End Section Title -->
 
         <div class="container">
 
@@ -373,10 +373,10 @@
 
                         </div>
                         <div class="course-info">
-                            {{-- <div class="meta">
+                            <div class="meta">
                                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                            </div> --}}
+                            </div>
                             <h3 class="title"><a href="{{ route('quran.memorization') }}">Online Hifz Course</a></h3>
                             <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
                                 miracle.</p>
@@ -402,10 +402,10 @@
 
                         </div>
                         <div class="course-info">
-                            {{-- <div class="meta">
+                            <div class="meta">
                                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                            </div> --}}
+                            </div>
                             <h3 class="title"><a href="{{ route('quran.tajweed') }}">Learn Quran Online
                                     With Tajweed</a></h3>
                             <p class="description">For the purpose of learning the basics of tajweed rules, one has to
@@ -433,10 +433,10 @@
 
                         </div>
                         <div class="course-info">
-                            {{-- <div class="meta">
+                            <div class="meta">
                                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                            </div> --}}
+                            </div>
                             <h3 class="title"><a href="{{ route('beginner.classes') }}">Quran Classes for Beginners</a>
                             </h3>
                             <p class="description">Quran reading with Tajweed has immense significance in preservation
@@ -464,15 +464,12 @@
 
                         </div>
                         <div class="course-info">
-                            {{-- <div class="meta">
+                            <div class="meta">
                                 <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
                                 <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                            </div> --}}
-                            <h3 class="title"><a href="{{ route('kids.classes') }}">Online Quran Classes for Kids</a>
-                            </h3>
-                            <p class="description">Interactive one-on-one Quran classes designed especially for kids
-                                with patient and qualified tutors.</p>
-
+                            </div>
+                            <h3 class="title"><a href="{{ route('quran.tafseer') }}">Tafseer ul Quran</a></h3>
+                            <p class="description">Learn Quran by understanding with translation</p>
                             {{-- <div class="rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="reviews">(82 Reviews)</span>
@@ -492,6 +489,8 @@
         </div>
 
     </section><!-- /Courses Section -->
+
+</section><!-- /Courses Section -->
 
 @include('layouts.testimonial')
 

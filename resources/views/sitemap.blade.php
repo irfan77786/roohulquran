@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
-    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
->
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <!-- Static Pages -->
     <url>
         <loc>{{ url('/') }}</loc>
@@ -45,6 +42,12 @@
     </url>
     <url>
         <loc>{{ url('/qaida-by-roohulquran') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{{ url('/teachers') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>

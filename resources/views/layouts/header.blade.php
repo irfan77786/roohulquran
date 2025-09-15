@@ -123,6 +123,7 @@
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="{{route('home.index')}}" class="active">Home<br></a></li>
+        <li><a href="{{route('home.about')}}">About Us</a></li>
         <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
@@ -134,9 +135,10 @@
         </li>
         <li><a href="{{route('home.pricing')}}">Pricing</a></li>
         {{-- <li><a href="trainers.html">Trainers</a></li> --}}
-        {{-- <li><a href="{{route('home.about')}}">About</a></li> --}}
+        <li><a href="{{route('teachers')}}">Teachers</a></li>
 
-        <li><a href="{{route('home.contact.us')}}">Contact</a></li>
+
+        <li><a href="{{route('home.contact.us')}}">Contact Us</a></li>
         <li><a href="{{route('blogs.index')}}">Blogs</a></li>
 
       </ul>
