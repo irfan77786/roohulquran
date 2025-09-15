@@ -215,7 +215,7 @@
       "url": "https://roohulquranacademy.com",
       "logo": "https://roohulquranacademy.com/assets/img/tab-logo.png",
       "sameAs": [
-        "https://www.facebook.com/roohulquran",
+        "https://www.facebook.com/roohulquran"
       ]
     }
     </script>
