@@ -157,8 +157,8 @@
             </div> --}}
 
             <!-- Right: Content -->
-            <div class="col-lg-7">
-                <h3 class="fw-bold mb-4" style="color:#44137c; font-size: 28px;">
+            <div class="col-lg-12 col-md-7 col-sm-7">
+                <h3 class="fw-bold mb-4 text-align-center" style="color:#44137c; font-size: 28px; text-align: center;">
                     About the Noorani Qaida Course
                 </h3>
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">

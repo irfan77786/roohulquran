@@ -218,24 +218,24 @@
         </div>
 
         <!-- Card 2: What You Will Learn -->
-        <div class="card shadow-sm mb-4" style="border: none; border-radius: 10px;">
+        <div class="card shadow-sm" style="border: none; border-radius: 10px;">
           <div class="card-body">
             <h4 class="card-title" style="color: #44137c; font-weight: bold;">What You Will Learn in the Online Tajweed
               Course</h4>
             <ul class="list-unstyled">
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Proper articulation of Arabic alphabets (Makharij)</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Mastery of Tajweed rules for flawless recitation</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Practical exercises with one-to-one guidance</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Fluency and accuracy in Tilawat (recitation)</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Confidence to recite in Salah with Tajweed</p>
               </li>
               <li class="d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
@@ -246,26 +246,26 @@
         </div>
 
         <!-- Card 3: Why Choose Us -->
-        <div class="card shadow-sm mb-4" style="border: none; border-radius: 10px;">
+        <div class="card shadow-sm mb-2" style="border: none; border-radius: 10px;">
           <div class="card-body">
             <h4 class="card-title" style="color: #44137c; font-weight: bold;">Why Choose Our Online Tajweed Course?</h4>
             <ul class="list-unstyled">
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>One-to-one interactive online classes</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Certified Tajweed experts as teachers</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Flexible timings for kids, adults, and working professionals</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Affordable monthly fee with free trial classes</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Progress tracking and regular feedback</p>
               </li>
-              <li class="mb-3 d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
+              <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>Available worldwide for students of all ages</p>
               </li>
               <li class="d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
@@ -300,7 +300,7 @@
           <div class="card-body text-center">
             <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
             <div class="container d-flex flex-column align-items-center">
-              <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">50 USD</h3>
+              <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">0 USD</h3>
               <h6 style="color: #ccc; font-weight: bold; text-decoration: line-through; font-size: 1rem;">80 USD</h6>
             </div>
             <p class="text-white mt-3">Quran Reading with Tajweed with expert guidance and progress tracking.</p>

@@ -66,7 +66,7 @@
 @section('content')
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/ai/about-1.webp" alt="" class="desktop-image" data-aos="fade-in">
 
 
   <img src="assets/img/hero-bg-1.webp" alt="" class="mobile-image" data-aos="fade-in">

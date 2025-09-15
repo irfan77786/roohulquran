@@ -269,7 +269,7 @@
           <div class="card-body text-center">
             <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
             <div class="container d-flex flex-column align-items-center">
-              <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">50 USD</h3>
+              <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">0 USD</h3>
               <h6 style="color: #ccc; font-weight: bold; text-decoration: line-through; font-size: 1rem;">80 USD</h6>
             </div>
             <p class="text-white mt-3">Begin Your Spiritual Journey with a Free Trial Class</p>
@@ -441,7 +441,7 @@
               <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
               <span><i class="bi bi-clock"></i> 24/7 Available</span>
             </div> --}}
-            <h3 class="title"><a href="{{ route('quran.tafseer') }}">Online Quran Classes for Kids</a></h3>
+            <h3 class="title"><a href="{{ route('kids.classes') }}">Online Quran Classes for Kids</a></h3>
             <p class="description">
               Engaging and easy Quran lessons for kids with step-by-step guidance and Tajweed.
             </p>

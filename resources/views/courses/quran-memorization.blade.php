@@ -261,7 +261,7 @@
           <div class="card-body text-center">
             <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
             <div class="container d-flex flex-column align-items-center">
-              <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">50 USD</h3>
+              <h3 style="color: #36c47d; font-weight: bold; margin-bottom: 0.3rem;">0 USD</h3>
               <h6 style="color: #ccc; font-weight: bold; text-decoration: line-through; font-size: 1rem;">80 USD</h6>
             </div>
             <p class="text-white mt-3">Quran memorization with expert guidance and progress tracking.
