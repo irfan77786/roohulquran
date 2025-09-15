@@ -244,4 +244,102 @@
 
   </div>
 </section>
+
+<section id="faq" class="py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color:#44137c;">Frequently Asked Questions</h2>
+      <p class="text-muted">Find answers to the most common questions about our online Quran classes.</p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="accordion" id="faqAccordion">
+
+      <!-- Item 1 -->
+      <div class="accordion-item mb-3 shadow-sm rounded">
+        <h2 class="accordion-header" id="faq-heading-1">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faq-collapse-1" aria-expanded="false" aria-controls="faq-collapse-1">
+            How do online Quran classes work?
+          </button>
+        </h2>
+        <div id="faq-collapse-1" class="accordion-collapse collapse" aria-labelledby="faq-heading-1"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We provide <strong>live one-on-one classes</strong> through Zoom or Skype with professional Quran teachers.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="accordion-item mb-3 shadow-sm rounded">
+        <h2 class="accordion-header" id="faq-heading-2">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
+            Can kids also join?
+          </button>
+        </h2>
+        <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we have <strong>online Quran classes for kids</strong>, starting from Noorani Qaida to Tajweed and
+            Hifz.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="accordion-item mb-3 shadow-sm rounded">
+        <h2 class="accordion-header" id="faq-heading-3">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
+            Do you have female teachers for sisters?
+          </button>
+        </h2>
+        <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we have <strong>certified female Quran tutors</strong> available for women and girls.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="accordion-item mb-3 shadow-sm rounded">
+        <h2 class="accordion-header" id="faq-heading-4">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">
+            What is the class timing?
+          </button>
+        </h2>
+        <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We offer <strong>flexible timings</strong> to suit students in USA, UK, Canada, Australia, and Middle East.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="accordion-item mb-3 shadow-sm rounded">
+        <h2 class="accordion-header" id="faq-heading-5">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faq-collapse-5" aria-expanded="false" aria-controls="faq-collapse-5">
+            How can I start?
+          </button>
+        </h2>
+        <div id="faq-collapse-5" class="accordion-collapse collapse" aria-labelledby="faq-heading-5"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Simply <strong>register on our website</strong> for a free trial class. Our team will assign you a teacher
+            and schedule your first session.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 @endsection

@@ -134,6 +134,8 @@
         </li>
         <li><a href="{{route('home.pricing')}}">Pricing</a></li>
         {{-- <li><a href="trainers.html">Trainers</a></li> --}}
+        <li><a href="{{route('teachers')}}">Teachers</a></li>
+
         <li><a href="{{route('home.about')}}">About Us</a></li>
 
         <li><a href="{{route('home.contact.us')}}">Contact</a></li>

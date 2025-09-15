@@ -37,4 +37,9 @@ class HomeController extends Controller
         return view('pricing');
         
     }
+
+        public function teachers(){
+        return view('teachers');
+        
+    }
 }
