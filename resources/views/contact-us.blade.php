@@ -11,6 +11,28 @@
         background: linear-gradient(120deg, #2bab6d, #44137c);
         /* Gradient from #2bab6d to #44137c */
     }
+
+    .map-responsive {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        /* Optional: rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Optional: slight shadow */
+        margin-top: 2rem;
+    }
+
+    .map-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
 </style>
 @section('content')
 <!-- Contact Section -->
@@ -79,7 +101,8 @@
                                 required>
                         </div>
                         <div class="mb-3">
-                            <select id="country" name="country" class="form-control rounded-pill w-100" aria-label="Select your country" required>
+                            <select id="country" name="country" class="form-control rounded-pill w-100"
+                                aria-label="Select your country" required>
                                 <option value="" disabled selected>Select Your Country</option>
                                 <option value="Pakistan">Pakistan</option>
                                 <option value="India">India</option>
@@ -99,6 +122,15 @@
                 </form>
             </div>
         </div>
+
+        <!-- Responsive Google Map -->
+        <div class="map-responsive mt-5">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425.38244067771757!2d74.31309193330307!3d31.467548682519304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391907f295d971db%3A0x3bd96ab23fa64997!2sRoohul%20Quran%20Online%20Academy!5e0!3m2!1sen!2s!4v1757942220971!5m2!1sen!2s"
+                frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
     </div>
 </section>
 
