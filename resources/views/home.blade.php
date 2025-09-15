@@ -433,7 +433,7 @@ teachers')
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Enter your email" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"> 
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone"
                                 placeholder="Enter your phone number" required>
