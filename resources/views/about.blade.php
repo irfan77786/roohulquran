@@ -1,5 +1,68 @@
 @extends('main')
 
+
+<style>
+  .about-us img {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  #hero {
+    padding: 50px 0;
+  }
+
+  #hero .form-container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .desktop-image {
+    display: block;
+  }
+
+  #hero .mobile-image {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    #hero .desktop-image {
+      display: none;
+      /* Hide desktop image on mobile */
+    }
+
+    #hero .mobile-image {
+      display: block;
+      /* Show mobile-specific image */
+      width: 100%;
+      /* Ensure it spans the full width */
+    }
+
+    #hero {
+      text-align: center;
+      padding: 100px 20px;
+      /* More padding on mobile */
+    }
+
+    .hero-heading {
+      font-size: 2.2rem;
+      /* Increase heading size on mobile */
+      font-weight: 600;
+    }
+
+    .hero-subtext {
+      font-size: 1.2rem;
+    }
+
+    .btn-get-started {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+
+  }
+</style>
+
 @section('content')
 
 <section id="hero" class="hero section dark-background">
