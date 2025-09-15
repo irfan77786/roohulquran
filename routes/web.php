@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 // admin routes
 
-Route::get('admin/login' , [AuthController::class,'loginPage'])->name('login');
+Route::get('admin/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.login');
 
 
@@ -44,35 +44,32 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
 
 
 
-Route::get('/' , [HomeController::class , 'index'])->name('home.index');
-Route::get('/about' , [HomeController::class , 'about'])->name('home.about');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/about', [HomeController::class, 'about'])->name('home.about');
 // Route::get('/courses' , [HomeController::class , 'courses'])->name('home.courses');
-Route::get('/pricing' , [HomeController::class , 'pricing'])->name('home.pricing');
-Route::get('/contact-us' , [HomeController::class , 'contactUs'])->name('home.contact.us');
-Route::get('/teachers' , [HomeController::class , 'teachers'])->name('teachers');
+Route::get('/pricing', [HomeController::class, 'pricing'])->name('home.pricing');
+Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('home.contact.us');
+Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
 
 
 Route::post('/trial-class', [TrialClassController::class, 'store'])->name('trial-class.store');
 
 // courses
 
-Route::get('/quran-reading-with-tajweed' , [CourseController::class , 'quraWithTajweed'])->name('quran.tajweed');
-Route::get('/qaida-by-roohulquran' , [CourseController::class , 'quraRecitation'])->name('quran.recitation');
-Route::get('/tafseer-course-online' , [CourseController::class , 'quraWithTafseer'])->name('quran.tafseer');
-Route::get('/memorize-quran-online' , [CourseController::class , 'quraMemorization'])->name('quran.memorization');
+Route::get('/quran-reading-with-tajweed', [CourseController::class, 'quraWithTajweed'])->name('quran.tajweed');
+Route::get('/qaida-by-roohulquran', [CourseController::class, 'quraRecitation'])->name('quran.recitation');
+Route::get('/tafseer-course-online', [CourseController::class, 'quraWithTafseer'])->name('quran.tafseer');
+Route::get('/memorize-quran-online', [CourseController::class, 'quraMemorization'])->name('quran.memorization');
+Route::get('/beginner-quran-classes', [CourseController::class, 'begineerClasses'])->name('beginner.classes');
+Route::get('/kids-quran-classes', [CourseController::class, 'kidsClasses'])->name('kids.classes');
+
+
 
 // blogs
 
 Route::prefix('blogs')->name('blogs.')->group(function () {
-    Route::get('/', [ControllersBlogController::class, 'index'])->name('index'); 
-    Route::get('/{slug}', [ControllersBlogController::class, 'show'])->name('show'); 
+    Route::get('/', [ControllersBlogController::class, 'index'])->name('index');
+    Route::get('/{slug}', [ControllersBlogController::class, 'show'])->name('show');
 });
 
 Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
-
-
-
-
-
-
-
