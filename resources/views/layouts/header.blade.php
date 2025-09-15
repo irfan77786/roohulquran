@@ -1,7 +1,7 @@
 <style>
   /* Base styles */
   #top-header {
-    background-image: url('{{ asset('assets/img/header-bg.webp') }}');
+    background-image: url('{{ asset(' assets/img/header-bg.webp') }}');
     background-size: cover;
     background-position: center;
     font-size: 14px;
@@ -134,7 +134,7 @@
         </li>
         <li><a href="{{route('home.pricing')}}">Pricing</a></li>
         {{-- <li><a href="trainers.html">Trainers</a></li> --}}
-        {{-- <li><a href="{{route('home.about')}}">About</a></li> --}}
+        <li><a href="{{route('home.about')}}">About Us</a></li>
 
         <li><a href="{{route('home.contact.us')}}">Contact</a></li>
         <li><a href="{{route('blogs.index')}}">Blogs</a></li>
