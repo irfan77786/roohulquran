@@ -27,7 +27,7 @@
     transform: translate(-50%, -50%);
     width: 64px;
     height: 64px;
-    background: url('{{ asset('img/play-button.png') }}') no-repeat center;
+    background: url('/assets/img/icons/play-button.png') no-repeat center;
     background-size: contain;
     opacity: 0.9;
     z-index: 3;
