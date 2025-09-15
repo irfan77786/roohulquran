@@ -161,7 +161,7 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <img src="{{ asset('assets/img/icons/whatsapp.png') }}" loading="lazy" alt="WhatsApp" />
+        <img src="{{ asset('assets/img/icons/whatsapp.webp') }}" width="60" height="60" loading="lazy" alt="WhatsApp" />
     </a>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}" defer></script>
@@ -172,19 +172,31 @@
     <script src="{{ asset('assets/js/main.js') }}" defer></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            new Swiper('.testimonial-slider', {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                autoplay: {
-                    delay: 5000,
-                },
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.testimonial-slider', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            // Performance optimizations
+            watchOverflow: true,       // Don’t reflow if only 1 slide
+            updateOnWindowResize: true, // Debounced resize recalculations
+            observer: true,             // Watch DOM mutations smartly
+            observeParents: true,
         });
+
+        // Reduce layout thrashing on resize
+        window.addEventListener('resize', () => {
+            requestAnimationFrame(() => swiper.update());
+        });
+    });
     </script>
+
 
     @yield('meta_script')
     </script>
