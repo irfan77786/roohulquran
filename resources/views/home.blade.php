@@ -15,6 +15,8 @@ teachers')
     #hero {
         padding: 50px 0;
         overflow: hidden;
+        min-height: 600px;
+        /* Reserve space for desktop hero image */
     }
 
     #hero .form-container {
@@ -24,10 +26,19 @@ teachers')
 
     .desktop-image {
         display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1440 / 600;
+        /* Prevent CLS by reserving space */
     }
 
     #hero .mobile-image {
         display: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 768 / 800;
+        /* Prevent CLS on mobile */
+        object-fit: cover;
     }
 
     @media (min-width: 430px) and (max-width: 768px) {
@@ -37,15 +48,13 @@ teachers')
 
         #hero .mobile-image {
             display: block;
-            width: auto;
-            height: auto;
-            object-fit: cover;
         }
 
         #hero {
             text-align: center;
             padding: 10px 0px;
             min-height: 400px;
+            /* Reserve space for mobile hero */
             overflow: hidden;
         }
 
@@ -65,9 +74,9 @@ teachers')
 
         .right-form {
             padding: 10px;
-
         }
     }
+
 
     .right-form {
         padding: 20px;
@@ -374,14 +383,10 @@ teachers')
 
 <!-- Hero Section (Keep same) -->
 <section id="hero" class="hero section dark-background">
-    <img src="{{ asset('assets/img/hero-bg-4-low.webp') }}"
-     srcset="{{ asset('assets/img/hero-bg-4-low.webp') }} 480w,
+    <img src="{{ asset('assets/img/hero-bg-4-low.webp') }}" srcset="{{ asset('assets/img/hero-bg-4-low.webp') }} 480w,
              {{ asset('assets/img/hero-bg-4-medium.webp') }} 768w,
-             {{ asset('assets/img/hero-bg-4.webp') }} 1440w"
-     sizes="(max-width: 768px) 100vw, 1440px"
-     alt="Online Quran Classes"
-     width="1440" height="600"
-     loading="eager">
+             {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="(max-width: 768px) 100vw, 1440px"
+        alt="Online Quran Classes" width="1440" height="600" loading="eager">
 
     <img src="{{ asset('assets/img/hero-bg-1.webp') }}" alt="Online Quran Classes with tajweed" class="mobile-image"
         width="768" height="400" fetchpriority="high" data-aos="fade-in">
@@ -439,11 +444,11 @@ teachers')
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Enter your email" required>
                         </div>
-                        <div class="mb-3"> 
+                        <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone"
                                 placeholder="Enter your phone number" required>
-                        </div> 
+                        </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Country</label>
 
