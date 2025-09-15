@@ -437,7 +437,7 @@ teachers')
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone"
                                 placeholder="Enter your phone number" required>
-                        </div>
+                        </div> 
                         <div class="mb-3">
                             <label for="phone" class="form-label">Country</label>
 
