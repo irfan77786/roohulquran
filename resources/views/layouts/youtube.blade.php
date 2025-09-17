@@ -53,7 +53,7 @@
           Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.
         </p>
         <div class="video-container">
-          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk">
+          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="/assets/img/youtube/YZYoqH3RsGk.webp">
             <div class="youtube-thumbnail">
               <div class="youtube-play-button"></div>
             </div>
@@ -89,27 +89,34 @@
       const videoId = wrapper.dataset.videoId;
       const thumbDiv = wrapper.querySelector('.youtube-thumbnail');
 
-      // Set thumbnail background with fallback if maxres is unavailable
+      // Set thumbnail background prioritizing locally cached image
       const setThumbnailBackground = (url) => {
         thumbDiv.style.backgroundImage = `url(${url})`;
       };
 
+      const localUrl = wrapper.dataset.localThumb;
       const maxResUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
       const hqUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
-      const testImage = new Image();
-      testImage.onload = function () {
-        // Some videos return a 120x90 placeholder even though "load" fires; guard by size
-        if ((this.naturalWidth || 0) < 400 || (this.naturalHeight || 0) < 225) {
-          setThumbnailBackground(hqUrl);
-        } else {
-          setThumbnailBackground(maxResUrl);
-        }
+      const tryImage = (url, onFail) => {
+        const img = new Image();
+        img.onload = function () {
+          // Guard against tiny placeholder
+          if ((this.naturalWidth || 0) < 400 || (this.naturalHeight || 0) < 225) {
+            return onFail && onFail();
+          }
+          setThumbnailBackground(url);
+        };
+        img.onerror = function () { onFail && onFail(); };
+        img.src = url;
       };
-      testImage.onerror = function () {
-        setThumbnailBackground(hqUrl);
-      };
-      testImage.src = maxResUrl;
+
+      if (localUrl) {
+        // Try local → YouTube maxres → YouTube hq
+        tryImage(localUrl, () => tryImage(maxResUrl, () => setThumbnailBackground(hqUrl)));
+      } else {
+        tryImage(maxResUrl, () => setThumbnailBackground(hqUrl));
+      }
 
       // On click, replace with iframe
       thumbDiv.addEventListener('click', function () {

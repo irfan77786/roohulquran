@@ -25,18 +25,16 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-        <!-- Preconnect to CDNs for faster fetch -->
+        <!-- Preconnect to CDNs for faster CSS fetch -->
         <link rel="preconnect" href="https://unpkg.com" crossorigin>
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-        <link rel="preconnect" href="https://code.jquery.com" crossorigin>
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-        <!-- Bootstrap CSS non-blocking to reduce render-blocking; grid critical CSS inlined below -->
-        <link rel="preload" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" as="style">
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+        <!-- Keep Bootstrap critical to avoid layout FOUC -->
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-        <!-- Site CSS loaded normally for stable initial layout -->
-        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+        <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
+        <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
         <!-- Non-critical styles deferred -->
         <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
@@ -45,7 +43,6 @@
 
 
         <noscript>
-            <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -54,24 +51,6 @@
 
 
         <style>
-            /* Critical grid CSS for above-the-fold to avoid CLS before Bootstrap loads */
-            .container { width: 100%; margin-right: auto; margin-left: auto; padding-right: 16px; padding-left: 16px; }
-            .row { display: flex; flex-wrap: wrap; margin-right: -16px; margin-left: -16px; }
-            [class^="col-"], [class*=" col-"] { position: relative; width: 100%; padding-right: 16px; padding-left: 16px; }
-            /* Small screens default full width */
-            .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
-            .col-md-6 { flex: 0 0 100%; max-width: 100%; }
-            .col-md-7 { flex: 0 0 100%; max-width: 100%; }
-            .col-lg-4 { flex: 0 0 100%; max-width: 100%; }
-            .col-lg-8 { flex: 0 0 100%; max-width: 100%; }
-            @media (min-width: 768px) {
-                .col-md-6 { flex: 0 0 50%; max-width: 50%; }
-                .col-md-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
-            }
-            @media (min-width: 992px) {
-                .col-lg-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
-                .col-lg-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
-            }
             .whatsapp-float {
                 position: fixed;
                 bottom: 20px;
@@ -169,9 +148,10 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);} 
-            gtag('js', new Date());
-            gtag('config', 'G-NSTXB23J7J');
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NSTXB23J7J');
         </script>
 
         <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
@@ -237,7 +217,6 @@
 
     @yield('meta_script')
     </script>
-    
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
