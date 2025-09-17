@@ -1308,7 +1308,7 @@ teachers')
   "@type": "EducationalOrganization",
   "name": "Rooh Ul Quran Academy",
   "url": "https://roohulquranacademy.com/",
-  "logo": "https://roohulquranacademy.com/path/to/logo.png",  
+  "logo": "https://roohulquranacademy.com/assets/img/logo.png",  
   "contactPoint": [
     {
       "@type": "ContactPoint",
