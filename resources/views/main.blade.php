@@ -31,12 +31,12 @@
         <link rel="preconnect" href="https://code.jquery.com" crossorigin>
         <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-        <!-- Bootstrap CSS loaded normally -->
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap CSS non-blocking to reduce render-blocking; grid critical CSS inlined below -->
+        <link rel="preload" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" as="style">
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
-        <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
-        <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
-        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+        <!-- Site CSS loaded normally for stable initial layout -->
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
         <!-- Non-critical styles deferred -->
         <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
@@ -54,6 +54,24 @@
 
 
         <style>
+            /* Critical grid CSS for above-the-fold to avoid CLS before Bootstrap loads */
+            .container { width: 100%; margin-right: auto; margin-left: auto; padding-right: 16px; padding-left: 16px; }
+            .row { display: flex; flex-wrap: wrap; margin-right: -16px; margin-left: -16px; }
+            [class^="col-"], [class*=" col-"] { position: relative; width: 100%; padding-right: 16px; padding-left: 16px; }
+            /* Small screens default full width */
+            .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+            .col-md-6 { flex: 0 0 100%; max-width: 100%; }
+            .col-md-7 { flex: 0 0 100%; max-width: 100%; }
+            .col-lg-4 { flex: 0 0 100%; max-width: 100%; }
+            .col-lg-8 { flex: 0 0 100%; max-width: 100%; }
+            @media (min-width: 768px) {
+                .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+                .col-md-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
+            }
+            @media (min-width: 992px) {
+                .col-lg-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
+                .col-lg-8 { flex: 0 0 66.6667%; max-width: 66.6667%; }
+            }
             .whatsapp-float {
                 position: fixed;
                 bottom: 20px;
