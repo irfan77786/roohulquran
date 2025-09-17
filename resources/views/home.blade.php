@@ -83,6 +83,7 @@ teachers')
         #hero .desktop-image {
             display: block !important;
         }
+
         #hero .mobile-image {
             display: none !important;
         }
@@ -1301,76 +1302,89 @@ teachers')
     })();
 </script>
 
-
 <script type="application/ld+json">
     {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Rooh Ul Quran Academy",
-    "url": "http://roohulquranacademy.com/",
-    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
-    "description": "Rooh Ul Quran Academy is a trusted online platform offering Quran classes with Tajweed, Hifz, Translation, and Islamic Studies. Our expert tutors teach kids and adults worldwide through personalized online sessions.",
-    "founder": {
-      "@type": "Person",
-      "name": "Hafiz Muhammad irfan"
-    },
-    "foundingDate": "2020",
-    "sameAs": [
-      "https://www.facebook.com/roohulquran"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "PK"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+92-343-8078216",
-      "contactType": "Customer Service",
-      "areaServed": "Worldwide",
-      "availableLanguage": ["English", "Urdu", "Arabic"]
-    }
-  }
-</script>
-
-
-
-{{-- blog scrip --}}
-{{-- <script type="application/ld+json">
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Rooh Ul Quran Academy",
+  "url": "https://roohulquranacademy.com/",
+  "logo": "https://roohulquranacademy.com/path/to/logo.png",  
+  "contactPoint": [
     {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://roohulquranacademy.com/blogs/rights-of-wives-in-quran-and-hadith"
-    },
-    "headline": "Rights of Wives in Quran and Hadith",
-    "description": "An article discussing the rights of wives in Islam as outlined in the Quran and Hadith, emphasizing respect, kindness, financial support, and the right to seek divorce.",
-    "image": "https://roohulquranacademy.com/storage/blogs/7/bdHag0iljvPPjerb9BS8TfgOM2b0rgrfMWV4uY7b.webp",
-    "author": {
-      "@type": "Person",
-      "name": "Admin"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Roohul Quran Academy",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://roohulquranacademy.com/assets/img/logo.png"
+      "@type": "ContactPoint",
+      "telephone": "+92-334-4066429",
+      "contactType": "Customer Support",
+      "email": "info@roohulquranacademy.com",
+      "availableLanguage": ["English","Urdu"]
+    }
+  ],
+  "description": "Rooh ul Quran Academy is an online Quran school offering Quran reading, Tajweed, Noorani Qaida, Quran memorization (Hifz), and Tafseer courses for kids and adults worldwide with flexible timings and expert tutors.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "",
+    "addressRegion": "",
+    "addressCountry": "Pakistan"
+  },
+  "hasCourse": [
+    {
+      "@type": "Course",
+      "name": "Noorani Qaida",
+      "description": "A beginner level course to learn Noorani Qaida for those new to Quran recitation.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Rooh Ul Quran Academy",
+        "sameAs": "https://roohulquranacademy.com/"
       }
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+92-343-8078216",
-      "contactType": "Customer Service",
-      "areaServed": "Worldwide",
-      "availableLanguage": ["English", "Urdu", "Arabic"]
+    {
+      "@type": "Course",
+      "name": "Quran Reading with Tajweed",
+      "description": "Online Quran reading course focusing on proper recitation using Tajweed rules.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Rooh Ul Quran Academy",
+        "sameAs": "https://roohulquranacademy.com/"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Quran Memorization (Hifz)",
+      "description": "Structured online Hifz program to memorize the Quran under expert supervision.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Rooh Ul Quran Academy",
+        "sameAs": "https://roohulquranacademy.com/"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Tafseer Course",
+      "description": "Course to understand the meanings and interpretation (Tafseer) of the Quran.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Rooh Ul Quran Academy",
+        "sameAs": "https://roohulquranacademy.com/"
+      }
     }
-    "datePublished": "2025-05-28",
-    "dateModified": "2025-05-28"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/roohulquranacademy",
+    "https://www.instagram.com/roohulquranacademy",
+    "https://wa.me/..."  
+  ],
+  "foundingDate": "2025",
+  "courseMode": ["Online"],
+  "offers": {
+    "@type": "Offer",
+    "name": "Free Trial Class",
+    "description": "Free trial class available for new students to try the online Quran classes.",
+    "url": "https://roohulquranacademy.com/",
+    "price": "0",
+    "priceCurrency": "USD"
   }
-  
+}
+</script>
 
-</script> --}}
 
 
 
