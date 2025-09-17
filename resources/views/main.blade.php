@@ -31,9 +31,8 @@
         <link rel="preconnect" href="https://code.jquery.com" crossorigin>
         <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-        <!-- Bootstrap CSS non-blocking to reduce render-blocking; keep noscript fallback below -->
-        <link rel="preload" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" as="style">
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+        <!-- Bootstrap CSS loaded normally -->
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
         <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
@@ -46,6 +45,7 @@
 
 
         <noscript>
+            <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -147,7 +147,14 @@
             }
         </style>
 
-        <!-- Google tag (gtag.js) will be injected after page load to reduce unused JS on critical path -->
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
+            gtag('js', new Date());
+            gtag('config', 'G-NSTXB23J7J');
+        </script>
 
         <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
         <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
@@ -180,18 +187,7 @@
     {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}" defer></script> --}}
     <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}" defer></script>
-    <!-- Lazy-load Swiper only when a swiper is present -->
-    <script>
-        (function(){
-            const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider');
-            if (hasSwiper) {
-                const s = document.createElement('script');
-                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
-                s.defer = true;
-                document.head.appendChild(s);
-            }
-        })();
-    </script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/js/main.js') }}" defer></script>
 
     <script>
@@ -223,25 +219,7 @@
 
     @yield('meta_script')
     </script>
-    <!-- Load Google Analytics after load/idle to reduce unused JS on FCP -->
-    <script>
-        window.addEventListener('load', function(){
-            if (!window.requestIdleCallback) {
-                return loadAnalytics();
-            }
-            requestIdleCallback(loadAnalytics, { timeout: 3000 });
-            function loadAnalytics(){
-                var gtagScript = document.createElement('script');
-                gtagScript.async = true;
-                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J';
-                document.head.appendChild(gtagScript);
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-NSTXB23J7J');
-            }
-        });
-    </script>
+    
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
