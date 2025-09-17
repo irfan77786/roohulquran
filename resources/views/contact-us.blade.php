@@ -101,15 +101,13 @@
                                 required>
                         </div>
                         <div class="mb-3">
-                            <select id="country" name="country" class="form-control rounded-pill w-100"
-                                aria-label="Select your country" required>
-                                <option value="" disabled selected>Select Your Country</option>
-                                <option value="Pakistan">Pakistan</option>
-                                <option value="India">India</option>
-                                <option value="USA">USA</option>
-                                <option value="UK">UK</option>
-                            </select>
-                        </div>
+                        <select class="form-select rounded-pill" id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            @foreach(config('countries.countries') as $country)
+                            <option value="{{ $country }}">{{ $country }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                         <div class="col-12">
                             <textarea name="message" class="form-control" rows="4"
                                 placeholder="Add Your Notes"></textarea>
