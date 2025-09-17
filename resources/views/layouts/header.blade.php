@@ -116,7 +116,7 @@
     <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename"><img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy" />
+      <h1 class="sitename"><img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy" width="160" height="160" decoding="async" loading="eager" />
       </h1>
     </a>
 

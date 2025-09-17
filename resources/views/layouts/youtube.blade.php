@@ -89,8 +89,27 @@
       const videoId = wrapper.dataset.videoId;
       const thumbDiv = wrapper.querySelector('.youtube-thumbnail');
 
-      // Set thumbnail background
-      thumbDiv.style.backgroundImage = `url(https://img.youtube.com/vi/${videoId}/maxresdefault.jpg)`;
+      // Set thumbnail background with fallback if maxres is unavailable
+      const setThumbnailBackground = (url) => {
+        thumbDiv.style.backgroundImage = `url(${url})`;
+      };
+
+      const maxResUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      const hqUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+      const testImage = new Image();
+      testImage.onload = function () {
+        // Some videos return a 120x90 placeholder even though "load" fires; guard by size
+        if ((this.naturalWidth || 0) < 400 || (this.naturalHeight || 0) < 225) {
+          setThumbnailBackground(hqUrl);
+        } else {
+          setThumbnailBackground(maxResUrl);
+        }
+      };
+      testImage.onerror = function () {
+        setThumbnailBackground(hqUrl);
+      };
+      testImage.src = maxResUrl;
 
       // On click, replace with iframe
       thumbDiv.addEventListener('click', function () {

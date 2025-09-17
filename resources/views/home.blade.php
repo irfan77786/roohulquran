@@ -388,13 +388,13 @@ teachers')
 
 <!-- Hero Section (Keep same) -->
 <section id="hero" class="hero section dark-background">
-    <img src="{{ asset('assets/img/hero-bg-4-low.webp') }}" srcset="{{ asset('assets/img/hero-bg-4-low.webp') }} 480w,
+    <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4-low.webp') }}" srcset="{{ asset('assets/img/hero-bg-4-low.webp') }} 480w,
              {{ asset('assets/img/hero-bg-4-medium.webp') }} 768w,
              {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="(max-width: 768px) 100vw, 1440px"
-        alt="Online Quran Classes" width="1440" height="600" loading="eager">
+        alt="Online Quran Classes" width="1440" height="600" loading="eager" style="display:block">
 
     <img src="{{ asset('assets/img/hero-bg-1.webp') }}" alt="Online Quran Classes with tajweed" class="mobile-image"
-        width="768" height="400" fetchpriority="high" data-aos="fade-in">
+        width="768" height="400" fetchpriority="high" data-aos="fade-in" loading="eager" decoding="async" style="display:block">
 
     <div class="container">
         <div class="row align-items-center">
@@ -1159,7 +1159,7 @@ teachers')
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
                         <img src="assets/img/icons/pointing-up.avif" alt="Registration" class="me-3"
-                            style="width: 40px; height: 40px;">
+                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
                             <p>Sign up easily for free Quran classes with experienced teachers. Just provide your name
@@ -1169,7 +1169,7 @@ teachers')
                     </li>
                     <li class="mb-4 d-flex align-items-start">
                         <img src="assets/img/icons/schedule.avif" alt="Schedule" class="me-3"
-                            style="width: 40px; height: 40px;">
+                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
                             <p>After you register, we will reach out to you to arrange a convenient time for your free
@@ -1179,7 +1179,7 @@ teachers')
                     </li>
                     <li class="mb-4 d-flex align-items-start">
                         <img src="assets/img/icons/koran.avif" alt="Start Class" class="me-3"
-                            style="width: 40px; height: 40px;">
+                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
                             <p>We’ll quickly connect you with one of our expert Quran teachers, allowing you to schedule
@@ -1189,7 +1189,7 @@ teachers')
                     </li>
                     <li class="d-flex align-items-start">
                         <img src="assets/img/icons/quality.avif" alt="Certificate" class="me-3"
-                            style="width: 40px; height: 40px;">
+                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>
                             <p>Get your certificate after successfully completing the course. Start your learning
