@@ -1250,139 +1250,55 @@ teachers')
 
 </section>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    $('#trial-form').on('submit', function(e) {
-            e.preventDefault();
+    (function(){
+        const csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-            let form = $(this);
-            let submitBtn = $('#submit-btn');
-            let btnText = $('#btn-text');
-            let btnLoading = $('#btn-loading');
+        function handleSubmit(formId) {
+            const form = document.getElementById(formId);
+            if (!form) return;
+            form.addEventListener('submit', async function(e){
+                e.preventDefault();
+                const submitBtn = this.querySelector('#submit-btn');
+                const btnText = this.querySelector('#btn-text');
+                const btnLoading = this.querySelector('#btn-loading');
+                if (btnText) btnText.classList.add('d-none');
+                if (btnLoading) btnLoading.classList.remove('d-none');
+                if (submitBtn) submitBtn.disabled = true;
 
-            btnText.addClass('d-none');
-            btnLoading.removeClass('d-none');
-            submitBtn.prop('disabled', true);
-
-            $.ajax({
-                url: '{{ route('trial-class.store') }}',
-                type: 'POST',
-                data: form.serialize(),
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(response) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    Swal.fire('JazakAllah', response.message, 'success');
-                    form[0].reset();
-                },
-                error: function(xhr) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch('{{ route('trial-class.store') }}', {
+                        method: 'POST',
+                        headers: { 'X-CSRF-TOKEN': csrf },
+                        body: new URLSearchParams([...formData])
+                    });
+                    if (!response.ok) throw response;
+                    const data = await response.json();
+                    Swal.fire('JazakAllah', data.message || 'Submitted successfully', 'success');
+                    this.reset();
+                } catch (err) {
                     let message = 'Something went wrong.';
-                    if (xhr.status === 422) {
-                        const errors = xhr.responseJSON.errors;
-                        message = Object.values(errors).flat().join('\n');
-                    }
-
+                    try {
+                        const json = await err.json();
+                        if (json && json.errors) {
+                            message = Object.values(json.errors).flat().join('\n');
+                        }
+                    } catch(_) {}
                     Swal.fire('Error', message, 'error');
+                } finally {
+                    if (btnText) btnText.classList.remove('d-none');
+                    if (btnLoading) btnLoading.classList.add('d-none');
+                    if (submitBtn) submitBtn.disabled = false;
                 }
             });
-        });
+        }
 
-        $('#trial-form-submit').on('submit', function(e) {
-            e.preventDefault();
-
-            let form = $(this);
-            let submitBtn = $('#submit-btn');
-            let btnText = $('#btn-text');
-            let btnLoading = $('#btn-loading');
-
-            btnText.addClass('d-none');
-            btnLoading.removeClass('d-none');
-            submitBtn.prop('disabled', true);
-
-            $.ajax({
-                url: '{{ route('trial-class.store') }}',
-                type: 'POST',
-                data: form.serialize(),
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(response) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    Swal.fire('JazakAllah', response.message, 'success');
-                    form[0].reset();
-                },
-                error: function(xhr) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    let message = 'Something went wrong.';
-                    if (xhr.status === 422) {
-                        const errors = xhr.responseJSON.errors;
-                        message = Object.values(errors).flat().join('\n');
-                    }
-
-                    Swal.fire('Error', message, 'error');
-                }
-            });
-        });
-
-
-        $('#trial-forms').on('submit', function(e) {
-            e.preventDefault();
-
-            let form = $(this);
-            let submitBtn = $('#submit-btn');
-            let btnText = $('#btn-text');
-            let btnLoading = $('#btn-loading');
-
-            btnText.addClass('d-none');
-            btnLoading.removeClass('d-none');
-            submitBtn.prop('disabled', true);
-
-            $.ajax({
-                url: '{{ route('trial-class.store') }}',
-                type: 'POST',
-                data: form.serialize(),
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(response) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    Swal.fire('JazakAllah', response.message, 'success');
-                    form[0].reset();
-                },
-                error: function(xhr) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    let message = 'Something went wrong.';
-                    if (xhr.status === 422) {
-                        const errors = xhr.responseJSON.errors;
-                        message = Object.values(errors).flat().join('\n');
-                    }
-
-                    Swal.fire('Error', message, 'error');
-                }
-            });
-        });
+        handleSubmit('trial-form');
+        handleSubmit('trial-form-submit');
+        handleSubmit('trial-forms');
+    })();
 </script>
 
 
