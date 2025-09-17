@@ -737,81 +737,79 @@ teachers')
 
 
             <!-- Icon Boxes -->
-            <div class="col-lg-10 d-flex align-items-center justify-content-center mx-auto" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center text-center">
-                            <img src="assets/img/icons/teacher.avif" alt="Expert Quran Tutors"
-                                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h3>Expert Quran Tutors</h3>
-                            <p style="color: #212529;">Renowned Quran tutors integrate teachings for life, faith, and
-                                character.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
+        </div>
+    </div>
+</section>
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <img src="assets/img/icons/presentation.avif" alt="Expert Quran Tutors"
-                                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h3>One-to-One
-                                Classes</h3>
-                            <p style="color: #212529;">Personalized learning based on your needs with expert help &
-                                feedback.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
+<section id="why-choose-us" class="py-5 bg-white">
+    <div class="container" data-aos="fade-up">
+        <!-- Heading -->
+        <div class="text-center mb-2">
+            <h2 class="fw-bold" style="color:#44137c;">Learn Quran Online with Trusted Teachers</h2>
+            <p class="text-muted">
+                At Rooh ul Quran Academy, we understand that every student learns differently. That’s why we offer
+                <strong>personalized online Quran classes</strong> with both male and female tutors to suit your needs.
+                From <strong>Learn Noorani Qaida Online</strong> for kids to advanced Tajweed lessons for adults, our
+                courses are designed to meet the needs of beginners, children, and advanced learners.
+            </p>
+        </div>
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <img src="assets/img/icons/muslimah.avif" alt="Expert Quran Tutors"
-                                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h3>Female Quran Teachers
-                                Available</h3>
-                            <p style="color: #212529;">Female tutors ensure respectful, comfortable, and culturally
-                                sensitive learning.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
+        <!-- Features List -->
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <span class="fs-2 text-success mb-3">📖</span>
+                    <h5 class="fw-bold">One-to-one Classes</h5>
+                    <p class="text-muted mb-0">Personalized attention for effective Quran learning.</p>
+                </div>
+            </div>
 
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <span class="fs-2 text-primary mb-3">⏰</span>
+                    <h5 class="fw-bold">Flexible Timings</h5>
+                    <p class="text-muted mb-0">Convenient schedules for kids and adults worldwide.</p>
+                </div>
+            </div>
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <img src="assets/img/icons/schedule.avif" alt="Expert Quran Tutors"
-                                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h3>Flexible Class
-                                Timings</h3>
-                            <p style="color: #212529;">24/7 flexible classes with preferred tutors for convenient Quran
-                                learning.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <span class="fs-2 text-warning mb-3">🎙️</span>
+                    <h5 class="fw-bold">Interactive Tajweed</h5>
+                    <p class="text-muted mb-0">Learn with Tajweed rules for accurate recitation.</p>
+                </div>
+            </div>
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <img src="assets/img/icons/laptop.avif" alt="Expert Quran Tutors"
-                                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h3>Supervised
-                                Learning</h3>
-                            <p style="color: #212529;">A structured curriculum with guidance ensures steady progress
-                                and confidence.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <span class="fs-2 text-danger mb-3">⭐</span>
+                    <h5 class="fw-bold">Special Hifz Courses</h5>
+                    <p class="text-muted mb-0">Step-by-step guidance for Quran memorization.</p>
+                </div>
+            </div>
 
-                    <div class="col-xl-4">
-                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                            <img src="assets/img/icons/mosque.avif" alt="Expert Quran Tutors"
-                                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h3>Ideal Quran
-                                Study Option</h3>
-                            <p style="color: #212529;">Global online classes offer flexible Quran learning at your own
-                                pace.</p>
-                        </div>
-                    </div><!-- End Icon Box -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <span class="fs-2 text-info mb-3">👨‍🏫</span>
+                    <h5 class="fw-bold">Expert Quran Tutors</h5>
+                    <p class="text-muted mb-0">Highly trained and certified teachers with years of experience.</p>
+                </div>
+            </div>
 
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <span class="fs-2 mb-3" style="color:#e83e8c;">👩‍🏫</span>
+                    <h5 class="fw-bold">Female Quran Tutors</h5>
+                    <p class="text-muted mb-0">Dedicated female instructors for sisters and kids in a comfortable
+                        setting.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 <!-- /Why Us Section -->
 
 
@@ -1242,9 +1240,9 @@ teachers')
 
 </section>
 
-<script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script  src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $('#trial-form').on('submit', function(e) {
             e.preventDefault();
