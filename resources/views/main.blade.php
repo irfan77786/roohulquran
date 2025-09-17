@@ -25,15 +25,29 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-        <!-- Critical CSS load (avoid FOUC/CLS) -->
+        <!-- Preconnect to CDNs for faster CSS fetch -->
+        <link rel="preconnect" href="https://unpkg.com" crossorigin>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+        <!-- Keep Bootstrap critical to avoid layout FOUC -->
         <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+
+        <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
+        <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+
+        <!-- Non-critical styles deferred -->
+        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print" onload="this.media='all'">
 
 
-        
+        <noscript>
+            <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+            <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+        </noscript>
 
 
         <style>
