@@ -25,29 +25,15 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-        <!-- Preload important CSS -->
-        <link rel="preload" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" as="style">
-        <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
-
-        <!-- Load CSS non-blocking -->
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print"
-            onload="this.media='all'">
-        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print"
-            onload="this.media='all'">
-        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
-            onload="this.media='all'">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
-            onload="this.media='all'">
+        <!-- Critical CSS load (avoid FOUC/CLS) -->
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
 
 
-        <noscript>
-            <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-            <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-            <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
-        </noscript>
+        
 
 
         <style>

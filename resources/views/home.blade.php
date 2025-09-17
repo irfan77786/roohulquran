@@ -65,6 +65,7 @@ teachers')
 
         .hero-subtext {
             font-size: large;
+            line-height: 1.5;
         }
 
         .btn-get-started {
@@ -74,6 +75,16 @@ teachers')
 
         .right-form {
             padding: 10px;
+        }
+    }
+
+    /* Ensure correct hero image shows on desktop */
+    @media (min-width: 769px) {
+        #hero .desktop-image {
+            display: block !important;
+        }
+        #hero .mobile-image {
+            display: none !important;
         }
     }
 
@@ -388,13 +399,12 @@ teachers')
 
 <!-- Hero Section (Keep same) -->
 <section id="hero" class="hero section dark-background">
-    <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4-low.webp') }}" srcset="{{ asset('assets/img/hero-bg-4-low.webp') }} 480w,
-             {{ asset('assets/img/hero-bg-4-medium.webp') }} 768w,
-             {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="(max-width: 768px) 100vw, 1440px"
-        alt="Online Quran Classes" width="1440" height="600" loading="eager" style="display:block">
+    <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}" sizes="(max-width: 768px) 100vw, 1440px"
+        alt="Online Quran Classes" width="1440" height="600" loading="eager">
 
     <img src="{{ asset('assets/img/hero-bg-1.webp') }}" alt="Online Quran Classes with tajweed" class="mobile-image"
-        width="768" height="400" fetchpriority="high" data-aos="fade-in" loading="eager" decoding="async" style="display:block">
+        width="768" height="400" fetchpriority="high" data-aos="fade-in" loading="eager" decoding="async"
+        style="display:block">
 
     <div class="container">
         <div class="row align-items-center">
