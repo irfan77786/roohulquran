@@ -12,9 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-    --default-font: "Calisto MT";
-    --heading-font: "Calisto MT";
-    --nav-font: "Calisto MT";
+    --default-font: "Poppins", sans-serif;
+    --heading-font: "Poppins", sans-serif;
+    --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */

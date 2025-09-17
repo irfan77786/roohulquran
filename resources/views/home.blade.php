@@ -98,7 +98,7 @@ teachers')
 
     @media (max-width: 1000px) {
         #about .card {
-            height: 710px;
+            height: 760px;
         }
     }
 
@@ -378,6 +378,11 @@ teachers')
             padding: 1rem;
         }
     }
+
+    .add-plus::after {
+        content: "+";
+        margin-left: 4px;
+    }
 </style>
 <!-- Hero Section -->
 
@@ -624,7 +629,8 @@ teachers')
             <div class="col-lg-3 col-md-6">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"
-                        class="purecounter" style="color: white;"></span>
+                        class="purecounter add-plus" style="color: white;">
+                    </span>
                     <p style="color: white;">Years</p>
                 </div>
             </div><!-- End Stats Item -->
@@ -632,7 +638,8 @@ teachers')
             <div class="col-lg-3 col-md-6">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
-                        class="purecounter" style="color: white;"></span>
+                        class="purecounter add-plus" style="color: white;">
+                    </span>
                     <p style="color: white;">Tutors</p>
                 </div>
             </div><!-- End Stats Item -->
@@ -640,7 +647,8 @@ teachers')
             <div class="col-lg-3 col-md-6">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1"
-                        class="purecounter" style="color: white;"></span>
+                        class="purecounter add-plus" style="color: white;">
+                    </span>
                     <p style="color: white;">Graduates</p>
                 </div>
             </div><!-- End Stats Item -->
@@ -648,10 +656,13 @@ teachers')
             <div class="col-lg-3 col-md-6">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="400" data-purecounter-duration="1"
-                        class="purecounter" style="color: white;"></span>
+                        class="purecounter add-plus" style="color: white;">
+                    </span>
                     <p style="color: white;">Students</p>
                 </div>
             </div><!-- End Stats Item -->
+
+            <!-- End Stats Item -->
             <!-- End Stats Item -->
         </div>
     </div>
@@ -667,23 +678,63 @@ teachers')
         <div class="row gy-4">
             <!-- New Content -->
             <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="100">
-                <h2 style="color:#44137c;">Perks of Choosing Us</h2>
-                <p style="color: #000000; font-size: 1.1rem; line-height: 1.8; text-align: center;"
-                    class="col-lg-8 mx-auto">
-                    Experience the convenience of learning the Quran from the comfort of your home with our qualified
-                    instructors.
-                    Our online sessions are flexible and designed to fit into your daily routine, ensuring you learn at
-                    a pace
-                    that suits you best. Every student receives personalized guidance and dedicated attention to achieve
-                    real progress.
-                    <br><br>
-                    At <b>Roohul Quran Academy</b>, our goal is to make Quran learning simple, effective, and accessible
-                    for everyone —
-                    whether you’re starting from scratch or looking to advance further.
-                    Begin your journey today with a <b>free trial class</b> and discover how easy and engaging Quran
-                    study can be.
-                </p>
+                <h2 class=" mb-4" style="color:#44137c;">Why Choose Roohul Quran Academy?</h2>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-8">
+
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-3 d-flex">
+                                    <span class="me-2 text-success">✔</span>
+                                    <span><strong class="text-primary">Qualified Online Quran Teachers</strong> –
+                                        Experienced scholars and tutors to guide you every step of the way.</span>
+                                </li>
+
+                                <li class="mb-3 d-flex">
+                                    <span class="me-2 text-success">✔</span>
+                                    <span><strong class="text-danger">Female Quran Tutors</strong> – Dedicated for
+                                        sisters and kids, offering a comfortable and supportive environment.</span>
+                                </li>
+
+                                <li class="mb-3 d-flex">
+                                    <span class="me-2 text-success">✔</span>
+                                    <span><strong class="text-warning">Flexible Schedules</strong> – Learn at your own
+                                        time and pace, making it easy to fit Quran study into your daily routine.</span>
+                                </li>
+
+                                <li class="mb-3 d-flex">
+                                    <span class="me-2 text-success">✔</span>
+                                    <span><strong class="text-success">Affordable Packages</strong> – Quality Quran
+                                        education at reasonable and competitive prices.</span>
+                                </li>
+
+                                <li class="mb-3 d-flex">
+                                    <span class="me-2 text-success">✔</span>
+                                    <span><strong class="text-purple">Worldwide Access</strong> – Join from anywhere in
+                                        the world and study from the comfort of your home.</span>
+                                </li>
+
+                                <li class="mb-3 d-flex">
+                                    <span class="me-2 text-success">✔</span>
+                                    <span><strong class="text-teal">Step-by-Step Learning</strong> – From Noorani Qaida
+                                        for beginners to advanced Tajweed and Hifz, we cater to all levels.</span>
+                                </li>
+                            </ul>
+
+                            <p class="mt-4 text-center" style="color: #2c3e50; font-size: 1.1rem;">
+                                At <strong>Roohul Quran Academy</strong>, we strive to make Quran learning accessible,
+                                effective, and enjoyable for everyone. Whether you're starting from scratch or looking
+                                to advance your skills, we are here to support you.
+                                <br><br>
+                                <span class="text-black">Start your journey today with a <strong>free trial
+                                        class</strong> and experience the difference!</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
 
             <!-- Icon Boxes -->
             <div class="col-lg-10 d-flex align-items-center justify-content-center mx-auto" data-aos="fade-up"
@@ -770,7 +821,7 @@ teachers')
     <!-- Section Title -->
     <div class="container section-title text-center" data-aos="fade-up">
         {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-        <p style="color:#44137c;">Our Featured Courses</p>
+        <p class="fw-bold" style="color:#44137c;">Our Featured Courses</p>
         {{-- <h5 class="col-lg-8 mx-auto text-black">
             Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
             tailored to help you achieve your learning goals with ease and excellence.
