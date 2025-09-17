@@ -25,12 +25,15 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-        <!-- Preconnect to CDNs for faster CSS fetch -->
+        <!-- Preconnect to CDNs for faster fetch -->
         <link rel="preconnect" href="https://unpkg.com" crossorigin>
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-        <!-- Keep Bootstrap critical to avoid layout FOUC -->
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap CSS non-blocking to reduce render-blocking; keep noscript fallback below -->
+        <link rel="preload" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" as="style">
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
         <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
         <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
@@ -43,6 +46,7 @@
 
 
         <noscript>
+            <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -66,6 +70,23 @@
             .whatsapp-float img {
                 width: 60px;
                 height: 60px;
+            }
+
+            /* Crisp WhatsApp brand icon using Bootstrap Icons */
+            .whatsapp-float .wa-icon {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: #25D366;
+                color: #ffffff;
+            }
+
+            .whatsapp-float .wa-icon .bi {
+                font-size: 34px;
+                line-height: 1;
             }
 
             .whatsapp-float:hover {
@@ -127,15 +148,7 @@
             }
         </style>
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NSTXB23J7J');
-        </script>
+        <!-- Google tag (gtag.js) will be injected after page load to reduce unused JS on critical path -->
 
         <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
         <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
@@ -161,14 +174,25 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <img src="{{ asset('assets/img/icons/whatsapp.webp') }}" width="60" height="60" loading="lazy" alt="WhatsApp" />
+        <span class="wa-icon"><i class="bi bi-whatsapp"></i></span>
     </a>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}" defer></script>
     {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}" defer></script> --}}
     <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}" defer></script>
-    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}" defer></script>
+    <!-- Lazy-load Swiper only when a swiper is present -->
+    <script>
+        (function(){
+            const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider');
+            if (hasSwiper) {
+                const s = document.createElement('script');
+                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
+                s.defer = true;
+                document.head.appendChild(s);
+            }
+        })();
+    </script>
     <script src="{{ asset('assets/js/main.js') }}" defer></script>
 
     <script>
@@ -199,6 +223,25 @@
 
 
     @yield('meta_script')
+    </script>
+    <!-- Load Google Analytics after load/idle to reduce unused JS on FCP -->
+    <script>
+        window.addEventListener('load', function(){
+            if (!window.requestIdleCallback) {
+                return loadAnalytics();
+            }
+            requestIdleCallback(loadAnalytics, { timeout: 3000 });
+            function loadAnalytics(){
+                var gtagScript = document.createElement('script');
+                gtagScript.async = true;
+                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J';
+                document.head.appendChild(gtagScript);
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-NSTXB23J7J');
+            }
+        });
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
