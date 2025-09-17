@@ -37,9 +37,12 @@
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
         <!-- Non-critical styles deferred -->
-        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print" onload="this.media='all'">
+        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print"
+            onload="this.media='all'">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
+            onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
+            onload="this.media='all'">
 
 
         <noscript>
@@ -80,13 +83,106 @@
                 color: #ffffff;
             }
 
-            .whatsapp-float .wa-icon .bi {
-                font-size: 34px;
-                line-height: 1;
+            .whatsapp-float .wa-icon svg {
+                width: 34px;
+                height: 34px;
+                display: block;
             }
 
             .whatsapp-float:hover {
                 transform: scale(1.1);
+            }
+
+            /* Critical hero + header/nav to avoid CLS before CSS loads */
+            .header {
+                background-color: #ffffff;
+                padding: 0;
+                z-index: 997;
+            }
+
+            .header .btn-getstarted {
+                color: #fff;
+                background: linear-gradient(120deg, #44137c, #2bab6d);
+                font-size: 14px;
+                padding: 8px 25px;
+                border-radius: 50px;
+            }
+
+            /* .navmenu ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+                align-items: center;
+            } */
+
+            .navmenu a {
+                color: #272828;
+                padding: 18px 15px;
+                font-size: 20px;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+            }
+
+            .navmenu a i {
+                font-size: 12px;
+                line-height: 0;
+                margin-left: 5px;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+            }
+
+            .hero {
+                width: 100%;
+                min-height: 80vh;
+                position: relative;
+                padding: 80px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+            }
+
+            .hero img {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+
+            .hero .container {
+                position: relative;
+                z-index: 3;
+            }
+
+            .hero h2 {
+                margin: 0;
+                font-size: 48px;
+                font-weight: 700;
+            }
+
+            .hero p {
+                margin: 10px 0 0 0;
+                font-size: 24px;
+            }
+
+            .btn-get-started {
+                background: #44137c;
+                color: #fff;
+                font-weight: 500;
+                font-size: 15px;
+                letter-spacing: 1px;
+                display: inline-block;
+                padding: 8px 35px 10px;
+                border-radius: 50px;
+                margin-top: 30px;
+                border: 2px solid #fff;
             }
 
             @media (max-width: 600px) {
@@ -178,7 +274,12 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <span class="wa-icon"><i class="bi bi-whatsapp"></i></span>
+        <span class="wa-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" width="34" height="34">
+                <path
+                    d="M13.601 2.326A7.854 7.854 0 0 0 8.006.001C3.604.001.03 3.575.03 7.977c0 1.405.37 2.776 1.07 3.985L0 16l4.13-1.08a7.93 7.93 0 0 0 3.876 1c4.402 0 7.976-3.574 7.976-7.976a7.93 7.93 0 0 0-2.381-5.618zM8.006 14.5a6.47 6.47 0 0 1-3.3-.9l-.236-.14-2.45.64.655-2.389-.153-.245a6.47 6.47 0 0 1-.99-3.489c0-3.573 2.907-6.48 6.474-6.48a6.43 6.43 0 0 1 4.588 1.896 6.43 6.43 0 0 1 1.896 4.584c0 3.568-2.907 6.483-6.484 6.483zm3.686-4.853c-.202-.101-1.192-.59-1.377-.658-.184-.067-.318-.101-.452.102-.133.202-.518.657-.635.792-.117.134-.234.151-.436.05-.202-.102-.851-.313-1.622-.997-.6-.534-1.005-1.194-1.123-1.396-.117-.202-.012-.311.089-.412.092-.091.202-.235.303-.352.101-.117.134-.201.202-.336.067-.134.034-.252-.017-.353-.05-.102-.452-1.087-.62-1.488-.163-.392-.329-.339-.452-.343l-.384-.007c-.134 0-.353.051-.537.252-.184.202-.704.69-.704 1.68s.72 1.951.82 2.085c.101.134 1.417 2.162 3.434 3.033.48.207.855.33 1.147.422.482.153.921.132 1.27.08.387-.058 1.192-.487 1.36-.957.168-.47.168-.873.118-.957-.05-.084-.185-.134-.387-.235z" />
+            </svg>
+        </span>
     </a>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}" defer></script>

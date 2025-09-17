@@ -19,7 +19,7 @@
       <!-- Left Content -->
       <div class="col-lg-4 col-md-6 footer-about">
         <a href="{{ route('home.index') }}" class="logo d-flex align-items-center justify-content-center justify-content-lg-start">
-          <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="Logo">
+          <img src="{{ asset('assets/img/logo.svg') }}" class="img-fluid" alt="Logo" width="160" height="40" decoding="async" loading="lazy">
         </a>
         <div class="footer-contact pt-3">
           <p><strong>CALL FOR MORE INFO:</strong></p>
