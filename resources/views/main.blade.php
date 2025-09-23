@@ -28,6 +28,7 @@
         <!-- Preconnect to CDNs for faster CSS fetch -->
         <link rel="preconnect" href="https://unpkg.com" crossorigin>
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://img.youtube.com" crossorigin>
 
         <!-- Defer Bootstrap CSS to reduce render-blocking -->
         <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print"
