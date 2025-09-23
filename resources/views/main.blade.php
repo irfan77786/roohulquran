@@ -101,6 +101,7 @@
                 background-color: #ffffff;
                 padding: 0;
                 z-index: 997;
+                min-height: 80px; /* Prevent layout shift */
             }
 
             .header .btn-getstarted {
