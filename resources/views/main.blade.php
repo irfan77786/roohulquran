@@ -57,6 +57,10 @@
 
 
         <style>
+            body {
+                min-height: 100vh; /* Prevent layout shift */
+            }
+
             .whatsapp-float {
                 position: fixed;
                 bottom: 20px;
