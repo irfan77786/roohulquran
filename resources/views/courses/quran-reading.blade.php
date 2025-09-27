@@ -36,8 +36,8 @@
 
     #hero {
       text-align: center;
-      padding: 100px 20px;
-      /* More padding on mobile */
+      padding: 0px 0px;
+      min-height: 500px;
     }
 
     .hero-heading {
@@ -139,9 +139,9 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="hero-heading"><b>Quran </b>Reading With <br> Tajweed Course</h2>
+        <h2 class="hero-heading"style="font-size: 2.6rem !important"><b>Quran </b>Reading With <br> Tajweed Course</h2>
         <p class="mt-3" style="font-size: 18px; line-height: 1.8rem;">Our Online Quran Classes are structured and
-          student-focused <br> making learning Tajweed simple and achievable.
+          student-focused making learning Tajweed simple and achievable.
         </p>
         <a href="{{ route('home.contact.us') }}" class="btn-get-started text-bold">Free Trial</a>
       </div>

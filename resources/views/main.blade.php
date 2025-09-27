@@ -28,9 +28,11 @@
         <!-- Preconnect to CDNs for faster CSS fetch -->
         <link rel="preconnect" href="https://unpkg.com" crossorigin>
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://img.youtube.com" crossorigin>
 
-        <!-- Keep Bootstrap critical to avoid layout FOUC -->
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Defer Bootstrap CSS to reduce render-blocking -->
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print"
+            onload="this.media='all'">
 
         <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
         <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
@@ -46,6 +48,7 @@
 
 
         <noscript>
+            <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -54,6 +57,10 @@
 
 
         <style>
+            body {
+                min-height: 100vh; /* Prevent layout shift */
+            }
+
             .whatsapp-float {
                 position: fixed;
                 bottom: 20px;
@@ -98,6 +105,7 @@
                 background-color: #ffffff;
                 padding: 0;
                 z-index: 997;
+                min-height: 80px; /* Prevent layout shift */
             }
 
             .header .btn-getstarted {

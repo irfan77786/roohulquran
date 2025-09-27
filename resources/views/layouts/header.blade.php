@@ -44,6 +44,26 @@
       /* keep in one line */
     }
 
+    #navmenu ul {
+      background: linear-gradient(120deg,
+          #44137c,
+          #2bab6d);
+          color: white
+    }
+
+    #navmenu .dropdown i{
+      background: white;
+      color:black;
+      text-align: center;
+      margin-top: 20px
+    }
+
+        #navmenu .dropdown ul{
+      background: #fff8e6;
+      color: black
+
+    }
+
     /* Prevent Safari from auto-styling phone numbers */
     a,
     a:link,
@@ -112,7 +132,8 @@
     <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename"><img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy" width="160" height="160" decoding="async" loading="eager" />
+      <h1 class="sitename"><img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy" width="160"
+          height="160" decoding="async" loading="eager" />
       </h1>
     </a>
 
@@ -120,7 +141,7 @@
       <ul>
         <li><a href="{{route('home.index')}}" class="active">Home<br></a></li>
         <li><a href="{{route('home.about')}}">About Us</a></li>
-        <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown color-yellow"></i></a>
           <ul>
             <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
             <li><a href="{{route('quran.recitation')}}">Noorani Qaida</a></li>

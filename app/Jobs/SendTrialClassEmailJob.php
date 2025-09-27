@@ -37,7 +37,7 @@ class SendTrialClassEmailJob implements ShouldQueue
     
         // Send query alert to admin
         $this->sendEmail(
-            to: 'hafizirfan11123@gmail.com',
+            to: 'hafizirfan8078@gmail.com',
             subject: 'New Trial Class Query',
             htmlContent: view('emails.trial_query_admin', $this->data)->render()
         );
