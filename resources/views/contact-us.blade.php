@@ -130,6 +130,46 @@
         </div>
 
     </div>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://roohulquranacademy.com/contact-us",
+  "name": "Contact Rooh Ul Quran Academy",
+  "description": "Get in touch with Rooh Ul Quran Academy for inquiries about online Quran classes, enrollment, and support. Contact us via phone, WhatsApp, or email.",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "url": "https://roohulquranacademy.com"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+92-334-4066429",
+      "contactType": "Customer Support",
+      "availableLanguage": ["English", "Urdu"]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+92-344-6781539",
+      "contactType": "Customer Support",
+      "availableLanguage": ["English", "Urdu"]
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "info@roohulquranacademy.com",
+      "contactType": "Customer Support",
+      "availableLanguage": ["English", "Urdu"]
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/roohulquranacademy",
+    "https://wa.me/923344066429"
+  ]
+}
+</script>
+
 </section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -604,36 +604,26 @@
 
     </div>
   </div>
-</section>
-@include('layouts.testimonial')
-<script type="application/ld+json">
-  {
+
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Quran Reading with Tajweed",
-  "description": "Rooh Ul Quran Academy offers online Quran reading classes with Tajweed for kids and adults. Learn proper pronunciation, Makharij, and Tajweed rules with qualified male and female teachers. One-on-one flexible sessions available.",
+  "url": "https://roohulquranacademy.com/quran-reading-with-tajweed",
+  "name": "Quran Reading with Tajweed Online Course",
+  "description": "Learn Quran reading with Tajweed through structured levels from beginner to advanced. One-on-one sessions with certified male and female instructors are available 24/7. Includes personalized assessments, progress tracking, and a free trial class.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
-    "url": "http://roohulquranacademy.com",
-    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/roohulquran"
-    ]
+    "url": "https://roohulquranacademy.com"
   },
- "url": "http://roohulquranacademy.com/memorize-quran-online",
-  "hasCourseInstance": {
-    "@type": "CourseInstance",
-    "courseMode": "online",
-    "instructor": [
-      {
-        "@type": "Person",
-        "name": "Hafiz Muhammad Irfan"
-      }
-    ]
+  "audience": {
+    "@type": "Audience",
+    "audienceType": ["Kids", "Adults", "Beginners", "Advanced Learners"]
   }
 }
 </script>
 
-
+</section>
+@include('layouts.testimonial')
 @endsection

@@ -318,6 +318,39 @@
 
         </div>
     </div>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://roohulquranacademy.com/teachers",
+  "name": "Online Quran Teachers - Rooh Ul Quran Academy",
+  "description": "Meet our certified male and female Quran teachers at Rooh Ul Quran Academy. We provide Hafiz, Qari, and Islamic scholars specializing in Tajweed, Hifz, and Tafseer. Learn Quran online with one-on-one classes, flexible timings, and a free trial.",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "url": "https://roohulquranacademy.com"
+  },
+  "mainEntity": [
+    {
+      "@type": "Person",
+      "name": "Male Quran Teachers",
+      "description": "Certified in Tajweed & Qiraat, experienced in Hifz and Tafseer. Suitable for boys, men, and advanced learners."
+    },
+    {
+      "@type": "Person",
+      "name": "Female Quran Teachers",
+      "description": "Patient and experienced tutors for sisters and children. Fluent in English, Urdu, and Arabic."
+    },
+    {
+      "@type": "Person",
+      "name": "Specialist Tutors",
+      "description": "Experts in Tajweed, Hifz, and Ijazah programs with years of teaching experience."
+    }
+  ]
+}
+</script>
+
 </section>
 
 @endsection

@@ -595,38 +595,25 @@
 
         </div>
     </div>
-</section>
 
-
-<script type="application/ld+json">
-    {
+    <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Online Noorani Qaida Course",
-  "description": "Rooh Ul Quran Academy's Noorani Qaida course helps beginners, kids, and adults learn the basics of Quran reading. Students will learn Arabic letters, pronunciation, and Tajweed rules in a structured, step-by-step format.",
+  "url": "https://roohulquranacademy.com/qaida-by-roohulquran",
+  "name": "Learn Noorani Qaida Online",
+  "description": "Beginner-friendly Noorani Qaida course designed for kids and adults to learn Arabic letters, pronunciation, and basic Quran reading skills. Taught by certified male and female Quran tutors with one-on-one online sessions.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
-    "url": "http://roohulquranacademy.com",
-    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/roohulquran"
-    ]
+    "url": "https://roohulquranacademy.com"
   },
-  "url": "http://roohulquranacademy.com/qaida-by-roohulquran",
-  "hasCourseInstance": {
-    "@type": "CourseInstance",
-    "courseMode": "online",
-    "instructor": [
-      {
-        "@type": "Person",
-        "name": "Hafiz Muhammad Irfan"
-      }
-    ]
+  "audience": {
+    "@type": "Audience",
+    "audienceType": ["Kids", "Adults", "Beginners"]
   }
 }
 </script>
 
-
-
+</section>
 @endsection

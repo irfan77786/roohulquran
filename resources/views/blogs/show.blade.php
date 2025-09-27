@@ -96,7 +96,32 @@
     @include('layouts.testimonial')
 </div>
 @endsection
-@section('meta_script')
-    {!! $blog->script ?? 'no script' !!}
-@endsection
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Hajj: The Fifth Pillar of Islam",
+  "description": "An in-depth article on the importance of Hajj, the fifth pillar of Islam. It explains its spiritual benefits, historical significance, and the unity it brings to Muslims worldwide.",
+  "author": {
+    "@type": "Person",
+    "name": "Admin"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://roohulquranacademy.com/storage/blogs/8/0D8u16QnqC6oJsbnL5K0gjNRrT63mNU9Lsl5tJBw.jpg"
+    },
+    "url": "https://roohulquranacademy.com"
+  },
+  "datePublished": "2025-06-05",
+  "dateModified": "2025-06-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://roohulquranacademy.com/blogs/hajj-the-fifth-pillar-of-islam"
+  },
+  "image": "https://roohulquranacademy.com/storage/blogs/8/0D8u16QnqC6oJsbnL5K0gjNRrT63mNU9Lsl5tJBw.jpg"
+}
+</script>
 

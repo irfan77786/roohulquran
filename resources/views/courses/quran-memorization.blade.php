@@ -483,39 +483,28 @@
 
         </div>
 
-    </section><!-- /Courses Section -->
-
-
-@include('layouts.testimonial')
-
-<script type="application/ld+json">
+        <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Online Quran Memorization (Hifz) Course",
-  "description": "Rooh Ul Quran Academy offers a structured online Hifz program to help kids and adults memorize the Quran. Our certified male and female teachers provide personalized, one-on-one classes with flexible scheduling worldwide.",
+  "url": "https://roohulquranacademy.com/memorize-quran-online",
+  "name": "Memorize Quran Online - Hifz Classes",
+  "description": "Join our Quran memorization (Hifz) course designed for kids and adults. We provide one-on-one online classes, certified male and female tutors, progress tracking, revision sessions, and flexible timings. Start your spiritual journey with a free trial class.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
-    "url": "http://roohulquranacademy.com",
-    "logo": "https://roohulquranacademy.com/assets/img/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/roohulquran"
-    ]
+    "url": "https://roohulquranacademy.com"
   },
-  "url": "http://roohulquranacademy.com/memorize-quran-online",
-  "hasCourseInstance": {
-    "@type": "CourseInstance",
-    "courseMode": "online",
-    "instructor": [
-      {
-        "@type": "Person",
-        "name": "Hafiz Muhammad Irfan"
-      }
-    ]
+  "audience": {
+    "@type": "Audience",
+    "audienceType": ["Kids", "Adults", "Beginners", "Advanced Learners"]
   }
 }
 </script>
 
 
+    </section><!-- /Courses Section -->
+
+
+@include('layouts.testimonial')
 @endsection

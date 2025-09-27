@@ -1249,6 +1249,118 @@ teachers')
         </div>
     </div>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://roohulquranacademy.com/#organization",
+      "name": "Rooh Ul Quran Academy",
+      "url": "https://roohulquranacademy.com/",
+      "logo": "https://roohulquranacademy.com/assets/img/tab-logo.webp",
+      "description": "Rooh Ul Quran Academy offers online Quran classes for kids and adults worldwide, including Noorani Qaida, Tajweed, Quran Memorization (Hifz), and Tafseer courses with qualified male and female Quran tutors.",
+      "email": "info@roohulquranacademy.com",
+      "telephone": ["+92-334-4066429", "+92-344-6781539"],
+      "sameAs": [
+        "https://www.facebook.com/roohulquran"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Rooh Ul Quran Academy Team"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#tajweed-course",
+      "name": "Online Quran Classes with Tajweed",
+      "description": "Learn Quran online with proper Tajweed rules, guided by expert tutors.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#hifz-course",
+      "name": "Quran Memorization (Hifz) Online",
+      "description": "Structured online Hifz course to help students memorize the Holy Quran with discipline.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#qaida-course",
+      "name": "Learn Noorani Qaida Online",
+      "description": "Beginner-friendly Noorani Qaida course for kids and adults to learn Quran reading basics.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#tafseer-course",
+      "name": "Tafseer Course Online",
+      "description": "Comprehensive Tafseer ul Quran lessons to understand the meaning and context of the Quran.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://roohulquranacademy.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you offer a free trial class?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Rooh Ul Quran Academy offers a free trial class so students can experience our teaching method before enrolling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can kids join your online Quran classes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our online Quran classes are designed for both kids and adults. We have specialized beginner-friendly courses for children such as Noorani Qaida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide female Quran tutors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we have qualified female Quran tutors available for students who prefer to learn from a female teacher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What courses do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer Online Quran Classes with Tajweed, Noorani Qaida, Quran Memorization (Hifz), and Tafseer courses for all levels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your class timings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide flexible class timings to accommodate students across different time zones worldwide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do online Quran classes cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The fee structure varies depending on the course and number of classes per week. Please contact us directly for detailed pricing."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -1301,92 +1413,5 @@ teachers')
         handleSubmit('trial-forms');
     })();
 </script>
-
-<script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Rooh Ul Quran Academy",
-  "url": "https://roohulquranacademy.com/",
-  "logo": "https://roohulquranacademy.com/assets/img/logo.png",  
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+92-334-4066429",
-      "contactType": "Customer Support",
-      "email": "info@roohulquranacademy.com",
-      "availableLanguage": ["English","Urdu"]
-    }
-  ],
-  "description": "Rooh ul Quran Academy is an online Quran school offering Quran reading, Tajweed, Noorani Qaida, Quran memorization (Hifz), and Tafseer courses for kids and adults worldwide with flexible timings and expert tutors.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "",
-    "addressRegion": "",
-    "addressCountry": "Pakistan"
-  },
-  "hasCourse": [
-    {
-      "@type": "Course",
-      "name": "Noorani Qaida",
-      "description": "A beginner level course to learn Noorani Qaida for those new to Quran recitation.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Rooh Ul Quran Academy",
-        "sameAs": "https://roohulquranacademy.com/"
-      }
-    },
-    {
-      "@type": "Course",
-      "name": "Quran Reading with Tajweed",
-      "description": "Online Quran reading course focusing on proper recitation using Tajweed rules.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Rooh Ul Quran Academy",
-        "sameAs": "https://roohulquranacademy.com/"
-      }
-    },
-    {
-      "@type": "Course",
-      "name": "Quran Memorization (Hifz)",
-      "description": "Structured online Hifz program to memorize the Quran under expert supervision.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Rooh Ul Quran Academy",
-        "sameAs": "https://roohulquranacademy.com/"
-      }
-    },
-    {
-      "@type": "Course",
-      "name": "Tafseer Course",
-      "description": "Course to understand the meanings and interpretation (Tafseer) of the Quran.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Rooh Ul Quran Academy",
-        "sameAs": "https://roohulquranacademy.com/"
-      }
-    }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/roohulquranacademy",
-    "https://www.instagram.com/roohulquranacademy",
-    "https://wa.me/..."  
-  ],
-  "foundingDate": "2025",
-  "courseMode": ["Online"],
-  "offers": {
-    "@type": "Offer",
-    "name": "Free Trial Class",
-    "description": "Free trial class available for new students to try the online Quran classes.",
-    "url": "https://roohulquranacademy.com/",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
-
-
-
-
 
 @endsection

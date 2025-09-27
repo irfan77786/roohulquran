@@ -340,6 +340,33 @@
 
     </div>
   </div>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://roohulquranacademy.com/about",
+  "name": "About Rooh Ul Quran Academy",
+  "description": "Rooh Ul Quran Academy is an online Quran learning platform offering Tajweed, Noorani Qaida, Hifz, Tafsir, and Ijazah courses with certified male and female teachers. Our mission is to make Quran learning accessible worldwide with flexible timings and affordable fees.",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "url": "https://roohulquranacademy.com/"
+  },
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Rooh Ul Quran Academy",
+    "description": "Dedicated to spreading authentic Quran education through online classes for kids and adults worldwide.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-334-4066429",
+      "contactType": "Customer Support",
+      "availableLanguage": ["English", "Urdu", "Arabic"]
+    }
+  }
+}
+</script>
+
 </section>
 
 @endsection

@@ -53,7 +53,7 @@
           Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide.
         </p>
         <div class="video-container">
-          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="/assets/img/youtube/YZYoqH3RsGk.webp">
+          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="{{asset('assets/img/video-thumb.webp')}}">
             <div class="youtube-thumbnail">
               <div class="youtube-play-button"></div>
             </div>
