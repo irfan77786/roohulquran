@@ -850,7 +850,7 @@ teachers')
                         <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
           {{ asset('assets/img/ai/course-1.webp') }} 768w,
           {{ asset('assets/img/ai/course-1.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran"
+                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran online"
                             loading="lazy" width="400" height="260" />
 
                     </div>
@@ -879,7 +879,7 @@ teachers')
                         <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
           {{ asset('assets/img/ai/course-2.webp') }} 768w,
           {{ asset('assets/img/ai/course-2.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class"
+                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class online"
                             loading="lazy" width="400" height="260" />
 
                     </div>
@@ -1038,7 +1038,7 @@ teachers')
         <!-- Center Image -->
         <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
             style="z-index: 2; margin-top: 120px;">
-            <img src="assets/img/ai/thumbsup1.webp" alt="Person" loading="lazy" class="img-fluid"
+            <img src="assets/img/ai/thumbsup1.webp" alt="quran academy teacher" loading="lazy" class="img-fluid"
                 style="max-height: 200px;">
         </div>
     </div>
@@ -1168,7 +1168,7 @@ teachers')
                 </h2>
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/pointing-up.avif" alt="Registration" class="me-3"
+                        <img src="assets/img/icons/pointing-up.avif" alt="registration" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
@@ -1188,7 +1188,7 @@ teachers')
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/koran.avif" alt="Start Class" class="me-3"
+                        <img src="assets/img/icons/koran.avif" alt="Start quran Class" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
@@ -1198,7 +1198,7 @@ teachers')
                         </div>
                     </li>
                     <li class="d-flex align-items-start">
-                        <img src="assets/img/icons/quality.avif" alt="Certificate" class="me-3"
+                        <img src="assets/img/icons/quality.avif" alt="Certificate quran teachers" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>

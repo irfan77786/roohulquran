@@ -129,10 +129,10 @@
 </style>
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-3.webp" alt="quran memorization online" class="desktop-image" data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.webp" alt="" class="mobile-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.webp" alt="online memorize quran" class="mobile-image" data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">

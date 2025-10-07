@@ -125,8 +125,8 @@
     }
 </style>
 <section id="hero" class="hero section dark-background">
-    <img src="assets/img/hero-bg-3.webp" alt="" class="desktop-image" data-aos="fade-in">
-    <img src="assets/img/hero-bg-1.webp" alt="" class="mobile-image" data-aos="fade-in">
+    <img src="assets/img/hero-bg-3.webp" alt="kids quran classes online" class="desktop-image" data-aos="fade-in">
+    <img src="assets/img/hero-bg-1.webp" alt="kids online quran classes" class="mobile-image" data-aos="fade-in">
 
     <div class="container">
         <div class="row align-items-center">

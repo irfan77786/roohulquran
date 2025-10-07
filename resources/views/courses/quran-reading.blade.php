@@ -131,10 +131,10 @@
 
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-3.webp" alt="quran reading course" class="desktop-image" data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.webp" alt="" class="mobile-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.webp" alt="online quran reading course" class="mobile-image" data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">

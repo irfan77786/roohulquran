@@ -48,7 +48,7 @@
         <div>
             <div class="brand-logo d-flex align-items-center justify-content-between">
                 <a href="{{ route('admin.dashboard') }}" class="text-nowrap logo-img">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" height="70px" />
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="roohul quran academy logo" height="70px" />
                 </a>
                 <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                     <i class="ti ti-x fs-8"></i>

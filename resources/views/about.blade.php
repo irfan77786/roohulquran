@@ -63,10 +63,10 @@
 @section('content')
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/ai/about-1.webp" alt="" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/ai/about-1.webp" alt="about-roohul-quran-online-academy" class="desktop-image" data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.webp" alt="" class="mobile-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.webp" alt="about-roohul-quran-online-academy-mobile" class="mobile-image" data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">
@@ -174,7 +174,7 @@
       </div>
       <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-left">
         <img src="{{ asset('assets/img/ai/our-mission.webp') }}" loading="lazy" style="height: 400px;"
-          class="img-fluid rounded shadow" alt="Our Mission">
+          class="img-fluid rounded shadow" alt="quran academy mission">
       </div>
     </div>
 
