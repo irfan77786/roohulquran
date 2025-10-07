@@ -1249,7 +1249,7 @@ teachers')
     </div>
 
     <script type="application/ld+json">
-{
+        {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -1357,12 +1357,12 @@ teachers')
     }
   ]
 }
-</script>
+    </script>
 
 
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     (function(){
         const csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

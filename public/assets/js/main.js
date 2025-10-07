@@ -14,29 +14,35 @@
      */
     // Avoid forced reflow: batch scroll handling via rAF and passive listeners
     const selectBody = document.body;
-const selectHeader = document.querySelector('#header');
-let scheduled = false;
+    const selectHeader = document.querySelector("#header");
+    let scheduled = false;
 
-const onScrollHandler = () => {
-    if (scheduled) return;
-    scheduled = true;
-    window.requestAnimationFrame(() => {
-        if (
-            selectHeader &&
-            (selectHeader.classList.contains('scroll-up-sticky') ||
-             selectHeader.classList.contains('sticky-top') ||
-             selectHeader.classList.contains('fixed-top'))
-        ) {
-            if (window.scrollY > 100 && !selectBody.classList.contains('scrolled')) {
-                selectBody.classList.add('scrolled');
-            } else if (window.scrollY <= 100 && selectBody.classList.contains('scrolled')) {
-                selectBody.classList.remove('scrolled');
+    const onScrollHandler = () => {
+        if (scheduled) return;
+        scheduled = true;
+        window.requestAnimationFrame(() => {
+            if (
+                selectHeader &&
+                (selectHeader.classList.contains("scroll-up-sticky") ||
+                    selectHeader.classList.contains("sticky-top") ||
+                    selectHeader.classList.contains("fixed-top"))
+            ) {
+                if (
+                    window.scrollY > 100 &&
+                    !selectBody.classList.contains("scrolled")
+                ) {
+                    selectBody.classList.add("scrolled");
+                } else if (
+                    window.scrollY <= 100 &&
+                    selectBody.classList.contains("scrolled")
+                ) {
+                    selectBody.classList.remove("scrolled");
+                }
             }
-        }
-        scheduled = false;
-    });
-};
-window.addEventListener('scroll', onScrollHandler);
+            scheduled = false;
+        });
+    };
+    window.addEventListener("scroll", onScrollHandler);
 
     /**
      * Mobile nav toggle
