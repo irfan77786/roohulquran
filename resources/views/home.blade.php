@@ -42,20 +42,15 @@ teachers')
     }
 
     @media (min-width: 430px) and (max-width: 768px) {
-        #hero .desktop-image {
-            display: none !important;
-        }
-
-        #hero .mobile-image {
-            display: block;
-        }
-
         #hero {
             text-align: center;
             padding: 10px 0px;
             min-height: 400px;
-            /* Reserve space for mobile hero */
             overflow: hidden;
+        }
+
+        .desktop-image {
+            aspect-ratio: 768 / 400;
         }
 
         .hero-heading {
@@ -400,12 +395,16 @@ teachers')
 
 <!-- Hero Section (Keep same) -->
 <section id="hero" class="hero section dark-background">
-    <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}" sizes="(max-width: 768px) 100vw, 1440px"
-        alt="Online Quran Classes" width="1440" height="600" loading="eager">
-
-    <img src="{{ asset('assets/img/hero-bg-1.webp') }}" alt="Online Quran Classes with tajweed" class="mobile-image"
-        width="768" height="400" fetchpriority="high" data-aos="fade-in" loading="eager" decoding="async"
-        style="display:block">
+    <picture>
+        <source media="(max-width: 768px)" srcset="{{ asset('assets/img/hero-bg-1-320.webp') }} 320w, 
+                        {{ asset('assets/img/hero-bg-1.webp') }} 480w, 
+                        {{ asset('assets/img/hero-bg-1.webp') }} 768w" sizes="100vw">
+        <source media="(min-width: 769px)" srcset="{{ asset('assets/img/hero-bg-4-768.webp') }} 768w, 
+                        {{ asset('assets/img/hero-bg-4.webp') }} 1024w, 
+                        {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
+        <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes"
+            width="1440" height="600" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
 
     <div class="container">
         <div class="row align-items-center">
