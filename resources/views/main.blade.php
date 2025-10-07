@@ -4,130 +4,144 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    {{-- <title>Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults</title> --}}
+
     <title>@yield('title', 'Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults')</title>
     @yield('meta')
 
     <meta property="og:title" content="Roohul Quran Online Academy">
     <meta property="og:site_name" content="Roohul Quran Online Academy">
-    <link rel="canonical" href="https://roohulquranacademy.com/" />
-
+    <link rel="canonical" href="https://roohulquranacademy.com/">
 
     <meta name="description"
         content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
 
     <meta name="keywords"
         content="@yield('meta_keywords', 'Online Quran classes, Quran academy, Learn Quran online, Quran with Tajweed, Quran memorization, Online Hifz classes, Quran for kids, Quran teachers online, Islamic education, Rooh Ul Quran Academy')">
-    <meta name="google-site-verification" content="LazU64-UPkWgAw4DYjqtS2HjCsUe6xVKjqjSUDB54SY" />
+
+    <meta name="google-site-verification" content="LazU64-UPkWgAw4DYjqtS2HjCsUe6xVKjqjSUDB54SY">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Favicons -->
     <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="icon">
-    <linkf href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://img.youtube.com" crossorigin>
+
+    <!-- CSS (deferred) -->
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
+    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
+        onload="this.media='all'">
+
+    <noscript>
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    </noscript>
+
+    <style>
+        /* Your inline critical styles (valid in head) */
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NSTXB23J7J');
+    </script>
+
+    <!-- Preload images -->
+    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
+    <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
 
 
-        <!-- Preconnect to CDNs for faster CSS fetch -->
-        <link rel="preconnect" href="https://unpkg.com" crossorigin>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-        <link rel="preconnect" href="https://img.youtube.com" crossorigin>
+    <style>
+        body {
+            min-height: 100vh;
+            /* Prevent layout shift */
+        }
 
-        <!-- Defer Bootstrap CSS to reduce render-blocking -->
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print"
-            onload="this.media='all'">
+        body.index-page {
+            min-height: 100vh;
+        }
 
-        <!-- Preload site CSS; load non-blocking to reduce render-blocking time -->
-        <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
-        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+        #hero {
+            min-height: 600px;
+            /* Matches your existing CSS */
+        }
 
-        <!-- Non-critical styles deferred -->
-        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print"
-            onload="this.media='all'">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
-            onload="this.media='all'">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
-            onload="this.media='all'">
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            /* background-color: #25D366; */
+            padding: 10px;
+            border-radius: 50%;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+            transition: transform 0.3s ease;
+        }
 
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+        }
 
-        <noscript>
-            <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-            <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-            <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
-        </noscript>
+        /* Crisp WhatsApp brand icon using Bootstrap Icons */
+        .whatsapp-float .wa-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #25D366;
+            color: #ffffff;
+        }
 
+        .whatsapp-float .wa-icon svg {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
 
-        <style>
-            body {
-                min-height: 100vh;
-                /* Prevent layout shift */
-            }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
 
-            body.index-page {
-                min-height: 100vh;
-            }
+        /* Critical hero + header/nav to avoid CLS before CSS loads */
+        .header {
+            background-color: #ffffff;
+            padding: 0;
+            z-index: 997;
+            min-height: 80px;
+            /* Prevent layout shift */
+        }
 
-            #hero {
-                min-height: 600px;
-                /* Matches your existing CSS */
-            }
+        .header .btn-getstarted {
+            color: #fff;
+            background: linear-gradient(120deg, #44137c, #2bab6d);
+            font-size: 14px;
+            padding: 8px 25px;
+            border-radius: 50px;
+        }
 
-            .whatsapp-float {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                z-index: 9999;
-                /* background-color: #25D366; */
-                padding: 10px;
-                border-radius: 50%;
-                /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
-                transition: transform 0.3s ease;
-            }
-
-            .whatsapp-float img {
-                width: 60px;
-                height: 60px;
-            }
-
-            /* Crisp WhatsApp brand icon using Bootstrap Icons */
-            .whatsapp-float .wa-icon {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background-color: #25D366;
-                color: #ffffff;
-            }
-
-            .whatsapp-float .wa-icon svg {
-                width: 34px;
-                height: 34px;
-                display: block;
-            }
-
-            .whatsapp-float:hover {
-                transform: scale(1.1);
-            }
-
-            /* Critical hero + header/nav to avoid CLS before CSS loads */
-            .header {
-                background-color: #ffffff;
-                padding: 0;
-                z-index: 997;
-                min-height: 80px;
-                /* Prevent layout shift */
-            }
-
-            .header .btn-getstarted {
-                color: #fff;
-                background: linear-gradient(120deg, #44137c, #2bab6d);
-                font-size: 14px;
-                padding: 8px 25px;
-                border-radius: 50px;
-            }
-
-            /* .navmenu ul {
+        /* .navmenu ul {
                 margin: 0;
                 padding: 0;
                 display: flex;
@@ -135,153 +149,137 @@
                 align-items: center;
             } */
 
-            .navmenu a {
-                color: #272828;
-                padding: 18px 15px;
-                font-size: 20px;
-                font-weight: 400;
-                display: flex;
-                align-items: center;
-                white-space: nowrap;
+        .navmenu a {
+            color: #272828;
+            padding: 18px 15px;
+            font-size: 20px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .navmenu a i {
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+        .hero {
+            width: 100%;
+            min-height: 80vh;
+            position: relative;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            display: block;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin: 10px 0 0 0;
+            font-size: 24px;
+        }
+
+        .btn-get-started {
+            background: #44137c;
+            color: #fff;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 8px 35px 10px;
+            border-radius: 50px;
+            margin-top: 30px;
+            border: 2px solid #fff;
+        }
+
+        @media (max-width: 600px) {
+            .whatsapp-float {
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+
+        /* loader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dots span {
+            width: 12px;
+            height: 12px;
+            background: #dc3545;
+            border-radius: 50%;
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        .dots span:nth-child(2) {
+            animation-delay: 0.2s;
+            background: #343a40;
+        }
+
+        .dots span:nth-child(3) {
+            animation-delay: 0.4s;
+            background: #28a745;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
             }
 
-            .navmenu a i {
-                font-size: 12px;
-                line-height: 0;
-                margin-left: 5px;
-                width: 16px;
-                height: 16px;
-                display: inline-block;
+            to {
+                transform: translateY(-12px);
             }
-
-            .hero {
-                width: 100%;
-                min-height: 80vh;
-                position: relative;
-                padding: 80px 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-            }
-
-            .hero img {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                z-index: 1;
-                display: block;
-            }
-
-            .hero .container {
-                position: relative;
-                z-index: 3;
-            }
-
-            .hero h2 {
-                margin: 0;
-                font-size: 48px;
-                font-weight: 700;
-            }
-
-            .hero p {
-                margin: 10px 0 0 0;
-                font-size: 24px;
-            }
-
-            .btn-get-started {
-                background: #44137c;
-                color: #fff;
-                font-weight: 500;
-                font-size: 15px;
-                letter-spacing: 1px;
-                display: inline-block;
-                padding: 8px 35px 10px;
-                border-radius: 50px;
-                margin-top: 30px;
-                border: 2px solid #fff;
-            }
-
-            @media (max-width: 600px) {
-                .whatsapp-float {
-                    bottom: 15px;
-                    left: 15px;
-                }
-            }
-
-            /* loader */
-            #preloader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #fff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-                transition: opacity 0.5s ease;
-            }
-
-            #preloader.hidden {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            .dots {
-                display: flex;
-                gap: 8px;
-            }
-
-            .dots span {
-                width: 12px;
-                height: 12px;
-                background: #dc3545;
-                border-radius: 50%;
-                animation: bounce 0.6s infinite alternate;
-            }
-
-            .dots span:nth-child(2) {
-                animation-delay: 0.2s;
-                background: #343a40;
-            }
-
-            .dots span:nth-child(3) {
-                animation-delay: 0.4s;
-                background: #28a745;
-            }
-
-            @keyframes bounce {
-                from {
-                    transform: translateY(0);
-                }
-
-                to {
-                    transform: translateY(-12px);
-                }
-            }
-        </style>
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NSTXB23J7J');
-        </script>
-
-        <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
-        <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
-        <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
-
-        <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
-
+        }
+    </style>
 </head>
+
 
 <body class="index-page">
     <!-- Loader -->
