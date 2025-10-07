@@ -24,9 +24,18 @@
   }
 
   .swiper-slide {
+    width: 300px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    .swiper-slide {
+      width: 100%;
+    }
   }
 
   .testimonial-card {
@@ -161,7 +170,7 @@
                   <div class="position-relative" style="width: 50px; height: 50px;">
                     <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
                       style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
-                      <span class="fi fi-au fis ms-2 position-absolute bottom-0 end-0"
+                    <span class="fi fi-au fis ms-2 position-absolute bottom-0 end-0"
                       style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
                   </div>
                   <div class="ms-3">
@@ -170,7 +179,7 @@
                 </div>
               </div>
             </div>
-      
+
             <div class="swiper-slide">
               <div class="testimonial-card p-4 rounded shadow bg-white">
                 <div class="rating mb-3">
@@ -183,8 +192,8 @@
                 </p>
                 <div class="d-flex align-items-center">
                   <div class="position-relative" style="width: 50px; height: 50px;">
-                  <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
-                    style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
+                      style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                     <span class="fi fi-de fis ms-2 position-absolute bottom-0 end-0"
                       style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
                   </div>

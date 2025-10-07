@@ -13,31 +13,30 @@
      * Apply .scrolled class to the body as the page is scrolled down
      */
     // Avoid forced reflow: batch scroll handling via rAF and passive listeners
-    let scheduled = false;
-    function onScrollHandler() {
-        if (scheduled) return;
-        scheduled = true;
-        window.requestAnimationFrame(() => {
-            const selectBody = document.body;
-            const selectHeader = document.querySelector("#header");
-            if (
-                selectHeader &&
-                (selectHeader.classList.contains("scroll-up-sticky") ||
-                    selectHeader.classList.contains("sticky-top") ||
-                    selectHeader.classList.contains("fixed-top"))
-            ) {
-                if (window.scrollY > 100) {
-                    selectBody.classList.add("scrolled");
-                } else {
-                    selectBody.classList.remove("scrolled");
-                }
-            }
-            scheduled = false;
-        });
-    }
+    const selectBody = document.body;
+const selectHeader = document.querySelector('#header');
+let scheduled = false;
 
-    document.addEventListener("scroll", onScrollHandler, { passive: true });
-    window.addEventListener("load", onScrollHandler);
+const onScrollHandler = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(() => {
+        if (
+            selectHeader &&
+            (selectHeader.classList.contains('scroll-up-sticky') ||
+             selectHeader.classList.contains('sticky-top') ||
+             selectHeader.classList.contains('fixed-top'))
+        ) {
+            if (window.scrollY > 100 && !selectBody.classList.contains('scrolled')) {
+                selectBody.classList.add('scrolled');
+            } else if (window.scrollY <= 100 && selectBody.classList.contains('scrolled')) {
+                selectBody.classList.remove('scrolled');
+            }
+        }
+        scheduled = false;
+    });
+};
+window.addEventListener('scroll', onScrollHandler);
 
     /**
      * Mobile nav toggle
