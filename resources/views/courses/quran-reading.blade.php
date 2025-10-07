@@ -1,6 +1,8 @@
 @extends('main')
 
 @section('title', 'Quran Reading with Tajweed - Online Quran Classes')
+@section('meta_description' , 'Learn Quran reading with Tajweed online — improve pronunciation, fluency, and recitation with expert Quran tutors. ')
+@section('meta_keywords' , 'quran reading with tajweed, online quran classes, tajweed course, quran pronunciation, learn quran online, quran recitation classes, islamic learning')
 @section('content')
 
 <style>

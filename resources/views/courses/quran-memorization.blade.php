@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('title', 'Memorize Quran Online - Hifz Classes for Kids & Adults')
+@section('meta_description' , 'Memorize the Quran online with Rooh Ul Quran Academy — live one-on-one Hifz classes,
+flexible schedule & expert tutors')
+@section('meta_keywords' , 'memorize quran online, hifz classes online, online quran memorization, hifz course, memorize
+quran with tajweed, quran hifz academy, online hifz program')
 
 @section('content')
 
@@ -484,8 +488,8 @@
       </div>
       <!-- End Course Item-->
 
-        <script type="application/ld+json">
-{
+      <script type="application/ld+json">
+        {
   "@context": "https://schema.org",
   "@type": "Course",
   "url": "https://roohulquranacademy.com/memorize-quran-online",
@@ -501,10 +505,10 @@
     "audienceType": ["Kids", "Adults", "Beginners", "Advanced Learners"]
   }
 }
-</script>
+      </script>
 
 
-    </section><!-- /Courses Section -->
+</section><!-- /Courses Section -->
 
 
 @include('layouts.testimonial')

@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('title', 'Tafseer Course - Online Quran Classes')
+@section('meta_description' , 'Understand Quran’s meaning with Rooh Ul Quran’s Tafsir course — expert teachers, flexible
+timings, learn translation & context')
+@section('meta_keywords' , 'online tafsir course, quran tafsir, learn tafsir online, tafsir course, quran translation,
+tafsir classes, understand quran meaning')
 
 @section('content')
 
@@ -553,7 +557,7 @@
   </div>
 
   <script type="application/ld+json">
-{
+    {
   "@context": "https://schema.org",
   "@type": "Course",
   "url": "https://roohulquranacademy.com/tafseer-course-online",
@@ -569,7 +573,7 @@
     "audienceType": ["Beginners", "Adults", "Students with prior Islamic knowledge"]
   }
 }
-</script>
+  </script>
 
 </section>
 

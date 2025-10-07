@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('title', 'Quran Classes for Beginners - Online Quran Classes')
+@section('meta_description' , 'Begin your Quran journey with beginner Quran classes at Rooh Ul Quran — learn reading,
+Tajweed & basics with friendly tutors.')
+@section('meta_keywords' , 'beginner quran classes, learn quran online, quran basics course, quran reading for
+beginners, online quran for beginners, quran study beginners')
 @section('content')
 
 <style>

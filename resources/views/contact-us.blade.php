@@ -1,5 +1,9 @@
 @extends('main')
 @section('title', 'Contact Rooh Ul Quran Academy')
+@section('meta_description' , 'Contact Rooh Ul Quran Academy for online Quran classes — reach our team for enrollment,
+support, or free trial details')
+@section('meta_keywords' , 'contact rooh ul quran, quran academy contact, online quran classes support, quran course
+inquiry, contact quran teachers, quran academy help, free trial quran ')
 
 
 <style>
@@ -103,13 +107,13 @@
                                 required>
                         </div>
                         <div class="mb-3">
-                        <select class="form-select rounded-pill" id="country" name="country" required>
-                            <option value="" disabled selected>Select your country</option>
-                            @foreach(config('countries.countries') as $country)
-                            <option value="{{ $country }}">{{ $country }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                            <select class="form-select rounded-pill" id="country" name="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                @foreach(config('countries.countries') as $country)
+                                <option value="{{ $country }}">{{ $country }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="col-12">
                             <textarea name="message" class="form-control" rows="4"
                                 placeholder="Add Your Notes"></textarea>
@@ -134,7 +138,7 @@
     </div>
 
     <script type="application/ld+json">
-{
+        {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "url": "https://roohulquranacademy.com/contact-us",
@@ -170,7 +174,7 @@
     "https://wa.me/923344066429"
   ]
 }
-</script>
+    </script>
 
 </section>
 

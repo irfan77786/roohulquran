@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('title', 'Learn Noorani Qaida Online - Beginner Quran Course')
+@section('meta_description' , 'Learn Noorani Qaida online with Rooh Ul Quran — step-by-step course for kids, beginners &
+adults to build Quran reading skills.')
+@section('meta_keywords' , 'noorani qaida, qaida by roohulquran, online noorani qaida, learn qaida online, beginners
+qaida course, online quran basics')
 @section('content')
 
 <style>
@@ -596,7 +600,7 @@
     </div>
 
     <script type="application/ld+json">
-{
+        {
   "@context": "https://schema.org",
   "@type": "Course",
   "url": "https://roohulquranacademy.com/qaida-by-roohulquran",
@@ -612,7 +616,7 @@
     "audienceType": ["Kids", "Adults", "Beginners"]
   }
 }
-</script>
+    </script>
 
 </section>
 @endsection

@@ -1,5 +1,9 @@
 @extends('main')
 @section('title', 'About Rooh Ul Quran Academy | Learn Quran Online')
+@section('meta_description' , 'Rooh Ul Quran Academy offers expert online Quran classes: Tajweed, Hifz, Tafsir & more,
+flexible schedule, free trial available.')
+@section('meta_keywords' , 'online quran academy, quran classes online, tajweed, hifz, tafsir, free trial, learn quran,
+certified teachers, flexible timings')
 
 
 <style>
@@ -64,10 +68,12 @@
 @section('content')
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/ai/about-1.webp" alt="about-roohul-quran-online-academy" class="desktop-image" data-aos="fade-in">
+  <img src="assets/img/ai/about-1.webp" alt="about-roohul-quran-online-academy" class="desktop-image"
+    data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.webp" alt="about-roohul-quran-online-academy-mobile" class="mobile-image" data-aos="fade-in">
+  <img src="assets/img/hero-bg-1.webp" alt="about-roohul-quran-online-academy-mobile" class="mobile-image"
+    data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">
@@ -341,7 +347,7 @@
   </div>
 
   <script type="application/ld+json">
-{
+    {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "url": "https://roohulquranacademy.com/about",
@@ -364,7 +370,7 @@
     }
   }
 }
-</script>
+  </script>
 
 </section>
 

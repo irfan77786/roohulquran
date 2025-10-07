@@ -3,12 +3,10 @@
 @section('title', 'Online Quran Classes for Kids & Adults')
 
 @section('meta_description',
-'Join our expert online Quran tutors for kids and adults. Learn Tajweed, Hifz, and more at
-Rooh Ul Quran Academy with flexible online sessions.')
+'Rooh Ul Quran Academy offers online Quran classes with expert tutors — learn Tajweed, Hifz & Tafsir at your own pace, free trial available')
 
 @section('meta_keywords',
-'Quran classes online, Tajweed courses, Hifz programs, online Islamic education, Rooh Ul Quran
-teachers')
+'rooh ul quran academy, online quran classes, quran learning, tajweed, hifz, tafsir, learn quran online, quran courses, islamic education')
 @section('content')
 
 <style>

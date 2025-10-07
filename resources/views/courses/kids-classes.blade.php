@@ -1,6 +1,11 @@
 @extends('main')
 
 @section('title', 'Kids Quran Classes Online')
+@section('meta_description' , 'Fun, interactive online Quran classes for kids at Rooh Ul Quran — build reading, Tajweed
+& memorization skills with caring tutors.')
+@section('meta_keywords' , 'kids quran classes, online quran for kids, children quran classes, quran classes for kids,
+kids tajweed, kids hifz class, quran learning for children')
+
 @section('content')
 
 <style>

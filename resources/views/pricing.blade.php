@@ -1,5 +1,10 @@
 @extends('main')
 @section('title', 'Quran classes fee structure - Online Quran Classes')
+@section('meta_description', 'Affordable online Quran classes at Rooh Ul Quran Academy — flexible 3 or 5 day plans, free
+admission, and family discounts.')
+@section('meta_keywords' , 'rooh ul quran academy, online quran classes pricing, quran course fees, quran classes cost,
+quran classes online rates, tajweed course price, memorization course price, quran fee structure, islamic online classes
+price')
 
 
 <style>
