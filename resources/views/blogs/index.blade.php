@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Latest Blogs')
+@section('title', 'Islamic Blogs - Read Latest Articles on Quran & Islam')
 <style>
     .card-title {
     font-family: 'Georgia', serif;

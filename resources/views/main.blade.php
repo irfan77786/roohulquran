@@ -300,7 +300,7 @@
 
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/923344066429" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
         <span class="wa-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" width="34" height="34">
                 <path

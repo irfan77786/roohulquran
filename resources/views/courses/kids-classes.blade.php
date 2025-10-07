@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Learn Noorani Qaida Online - Beginner Quran Course')
+@section('title', 'Kids Quran Classes Online')
 @section('content')
 
 <style>

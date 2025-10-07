@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'About Rooh Ul Quran Academy')
+@section('title', 'About Rooh Ul Quran Academy | Learn Quran Online')
 
 
 <style>

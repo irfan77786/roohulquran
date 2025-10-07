@@ -59,8 +59,8 @@
             <div class="mb-5">
                 <h5 class="mb-3">Share this blog:</h5>
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" class="btn btn-primary btn-sm">Facebook</a>
-                    <a href="https://wa.me/?text={{ urlencode($blog->title . ' ' . request()->fullUrl()) }}" target="_blank" class="btn btn-success btn-sm">WhatsApp</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" rel="noopener" rel="noopener" class="btn btn-primary btn-sm">Facebook</a>
+                    <a href="https://wa.me/?text={{ urlencode($blog->title . ' ' . request()->fullUrl()) }}" target="_blank" rel="noopener" rel="noopener" class="btn btn-success btn-sm">WhatsApp</a>
                 </div>
             </div>
 
