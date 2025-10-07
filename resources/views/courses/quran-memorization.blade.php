@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Memorize Quran Online - Hifz Classes for Kids & Adults | Rooh Ul Quran Academy')
+@section('title', 'Memorize Quran Online - Hifz Classes for Kids & Adults')
 
 @section('content')
 

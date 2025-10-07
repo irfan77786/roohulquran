@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>@yield('title', 'Rooh Ul Quran Academy - Online Quran Classes For Kids And Adults')</title>
+    <title>@yield('title', 'Online Quran Classes For Kids And Adults')</title>
     @yield('meta')
 
     <meta property="og:title" content="Roohul Quran Online Academy">

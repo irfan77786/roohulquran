@@ -1,4 +1,6 @@
 @extends('main')
+@section('title', 'Contact Rooh Ul Quran Academy')
+
 
 <style>
     #get-in-touch {

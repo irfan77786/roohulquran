@@ -1,4 +1,6 @@
 @extends('main')
+@section('title', 'Quran classes fee structure - Online Quran Classes')
+
 
 <style>
   .card-hover {

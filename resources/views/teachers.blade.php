@@ -1,4 +1,6 @@
 @extends('main')
+@section('title', 'Online Quran Teachers - Rooh Ul Quran Academy')
+
 
 <style>
     .quran-teacher img {

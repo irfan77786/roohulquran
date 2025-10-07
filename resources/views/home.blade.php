@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Rooh Ul Quran Academy - Online Quran Classes for Kids & Adults')
+@section('title', 'Online Quran Classes for Kids & Adults')
 
 @section('meta_description',
 'Join our expert online Quran tutors for kids and adults. Learn Tajweed, Hifz, and more at
