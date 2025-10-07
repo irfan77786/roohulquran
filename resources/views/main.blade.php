@@ -277,6 +277,9 @@
 
         <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
         <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+        <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
+
+        <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
 
 </head>
 

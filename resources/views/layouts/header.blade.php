@@ -4,20 +4,22 @@
     background-image: url('{{ asset('assets/img/header-bg.webp') }}');
     background-size: cover;
     background-position: center;
+    height: 50px;
+    /* Adjust based on design */
+    display: flex;
+    align-items: center;
     font-size: 14px;
     color: #fff;
   }
 
   #top-header .contact-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent wrapping issues */
     gap: 10px;
-    /* default gap for desktop */
-    text-align: center;
-    font-size: medium;
+    justify-content: center;
+    align-items: center;
   }
 
   #top-header .contact-info>div {
@@ -29,14 +31,29 @@
     /* default hidden */
   }
 
+  .logo img {
+    width: 160px;
+    height: 160px;
+    aspect-ratio: 1 / 1;
+    /* Matches 160x160 */
+  }
+
 
 
   /* Medium Mobiles & Small Tablets (401px – 768px) */
   @media (min-width: 300px) and (max-width: 768px) {
+
     #top-header .contact-info {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: 5px;
       font-size: 12px;
+    }
+
+    .logo img {
+      width: 160px;
+      height: 160px;
+      aspect-ratio: 1 / 1;
+      /* Matches 160x160 */
     }
 
     .mobile-break {
@@ -45,23 +62,30 @@
     }
 
     #navmenu ul {
-      background: linear-gradient(120deg,
-          #44137c,
-          #2bab6d);
-          color: white
+      /* Hidden by default on mobile */
+      top: 70px;
+      /* Below header */
+      left: 0;
+      width: 100%;
+      color: white;
+      background: linear-gradient(120deg, #44137c, #2bab6d);
     }
 
-    #navmenu .dropdown i{
+    #navmenu.active ul {
+      display: block;
+      /* Shown when toggled */
+    }
+
+    #navmenu .dropdown i {
       background: white;
-      color:black;
+      color: black;
       text-align: center;
       margin-top: 20px
     }
 
-        #navmenu .dropdown ul{
+    #navmenu .dropdown ul {
       background: #fff8e6;
       color: black
-
     }
 
     /* Prevent Safari from auto-styling phone numbers */
@@ -141,7 +165,8 @@
       <ul>
         <li><a href="{{route('home.index')}}" class="active">Home<br></a></li>
         <li><a href="{{route('home.about')}}">About Us</a></li>
-        <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown color-yellow"></i></a>
+        <li class="dropdown"><a href="#"><span>Courses</span> <i
+              class="bi bi-chevron-down toggle-dropdown color-yellow"></i></a>
           <ul>
             <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
             <li><a href="{{route('quran.recitation')}}">Noorani Qaida</a></li>
