@@ -408,7 +408,7 @@
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center" data-aos="fade-up"
                 data-aos-delay="100">
-                <h2 class="hero-heading">Online Quran Academy</h2>
+                <h1 class="hero-heading">Online Quran Academy</h1>
                 <p class="hero-subtext">
                     Welcome to Rooh ul Quran Academy, your trusted online Quran school <br>
                     where learning the Holy Quran becomes simple, interactive, and rewarding.

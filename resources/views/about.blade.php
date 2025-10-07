@@ -78,7 +78,7 @@ certified teachers, flexible timings')
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="fw-bold mb-3" style="font-size: 2.6rem !important">About <span>Rooh ul Quran Academy</span></h2>
+        <h1 class="fw-bold mb-3" style="font-size: 2.6rem !important">About <span>Rooh ul Quran Academy</span></h1>
         <p style="font-size: larger; text-align: justify;" class="col-lg-10 col-md-7 col-sm-12">
           At Rooh ul Quran Academy, we believe the Quran is not just a book to be read, but a divine guidance to be
           lived.

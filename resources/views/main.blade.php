@@ -195,7 +195,7 @@
             z-index: 3;
         }
 
-        .hero h2 {
+        .hero h1 {
             margin: 0;
             font-size: 48px;
             font-weight: 700;

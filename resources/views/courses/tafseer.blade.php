@@ -139,7 +139,7 @@ tafsir classes, understand quran meaning')
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="hero-heading" style="font-size: 2.2rem !important">Online Tafsir Course</h2>
+        <h1 class="hero-heading" style="font-size: 2.2rem !important">Online Tafsir Course</h1>
         <p class="mt-3" style="font-size: 18px; line-height: 1.8rem;">Our teachers explain Tafsir in an
           easy-to-understand way, making it suitable for kids <br> adults, and new learners.
         </p>

@@ -135,9 +135,9 @@ beginners, online quran for beginners, quran study beginners')
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                <h2 class="hero-heading" style="font-size: 2.6rem !important">
+                <h1 class="hero-heading" style="font-size: 2.6rem !important">
                     <b>Online Noorani Qaida Course – Learn Noorani Qaida for Kids & Beginners</b>
-                </h2>
+                </h1>
                 <p class="mt-3" style="font-size: 18px; line-height: 1.8rem;">
                     Build a strong foundation in Quran recitation with our step-by-step Online Noorani Qaida Course <br>
                     for

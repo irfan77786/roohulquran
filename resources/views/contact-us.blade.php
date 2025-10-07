@@ -48,7 +48,7 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
             <!-- Left Side Contact Info -->
             <div class="col-lg-5">
                 <h6 class="text-danger mb-2">Get In Touch</h6>
-                <h2 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h2>
+                <h1 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h1>
                 <p class="text-muted">We’re here to help! Whether you have questions about our Quran courses, need
                     assistance with enrollment, or want to share feedback, feel free to reach out.</p>
 

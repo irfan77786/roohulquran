@@ -141,7 +141,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="hero-heading"style="font-size: 2.6rem !important"><b>Quran </b>Reading With <br> Tajweed Course</h2>
+        <h1 class="hero-heading"style="font-size: 2.6rem !important"><b>Quran </b>Reading With <br> Tajweed Course</h1>
         <p class="mt-3" style="font-size: 18px; line-height: 1.8rem;">Our Online Quran Classes are structured and
           student-focused making learning Tajweed simple and achievable.
         </p>

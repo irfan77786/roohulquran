@@ -141,7 +141,7 @@ quran with tajweed, quran hifz academy, online hifz program')
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="hero-heading" style="font-size: 2.6rem !important"><b>Quran </b>Memorization <br> Course Online</h2>
+        <h1 class="hero-heading" style="font-size: 2.6rem !important"><b>Quran </b>Memorization <br> Course Online</h1>
         <ul class="list-unstyled text-start mt-3 hero-features">
           <li class="d-flex align-items-start mb-2">
             <span class="me-2 text-white fw-bold">✔</span>

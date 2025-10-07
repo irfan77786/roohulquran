@@ -81,8 +81,8 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                <h2 class="fw-bold mb-3" style="font-size: 2.2rem !important">Online Quran Teacher <span>Learn Anytime,
-                        Anywhere</span></h2>
+                <h1 class="fw-bold mb-3" style="font-size: 2.2rem !important">Online Quran Teacher <span>Learn Anytime,
+                        Anywhere</span></h1>
                 <p style="font-size: larger" class="col-lg-10 col-md-7 col-sm-12">
                     Learning the Quran with a professional teacher is the most effective way to build strong Tajweed,
                     fluency, and understanding.
