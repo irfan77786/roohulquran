@@ -58,7 +58,17 @@
 
         <style>
             body {
-                min-height: 100vh; /* Prevent layout shift */
+                min-height: 100vh;
+                /* Prevent layout shift */
+            }
+
+            body.index-page {
+                min-height: 100vh;
+            }
+
+            #hero {
+                min-height: 600px;
+                /* Matches your existing CSS */
             }
 
             .whatsapp-float {
@@ -105,7 +115,8 @@
                 background-color: #ffffff;
                 padding: 0;
                 z-index: 997;
-                min-height: 80px; /* Prevent layout shift */
+                min-height: 80px;
+                /* Prevent layout shift */
             }
 
             .header .btn-getstarted {
@@ -212,6 +223,12 @@
                 justify-content: center;
                 align-items: center;
                 z-index: 9999;
+                transition: opacity 0.5s ease;
+            }
+
+            #preloader.hidden {
+                opacity: 0;
+                pointer-events: none;
             }
 
             .dots {
@@ -342,10 +359,12 @@
 
     {{-- loader --}}
     <script>
-        window.addEventListener("load", function() {
-  let preloader = document.getElementById('preloader');
-  preloader.style.opacity = "0";
-  setTimeout(() => preloader.style.display = "none", 500);
+        window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hidden');
+    setTimeout(() => {
+        preloader.style.display = 'none';
+    }, 500);
 });
     </script>
 
