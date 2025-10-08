@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://img.youtube.com" crossorigin>
 
     <!-- CSS (deferred) -->
-    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="print"
+    <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet" media="print"
         onload="this.media='all'">
     <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
@@ -44,7 +44,7 @@
         onload="this.media='all'">
 
     <noscript>
-        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
