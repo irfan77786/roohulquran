@@ -1360,7 +1360,8 @@
 
 </section>
 
-<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}">
+<script defer src="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
 <script>
     (function(){
         const csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
