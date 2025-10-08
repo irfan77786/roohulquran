@@ -29,6 +29,8 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://img.youtube.com" crossorigin>
 
     <!-- Preload critical fonts to prevent CLS -->
@@ -46,6 +48,10 @@
         onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
+    
+    <!-- SweetAlert2 CSS - load non-blocking to reduce critical path -->
+    <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" as="style">
+    <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
     <noscript>
         <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
@@ -53,6 +59,7 @@
         <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+        <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
     </noscript>
 
     <style>
@@ -61,11 +68,14 @@
 
         <!-- Google tag (gtag.js) deferred until after load/idle -->
 
-    <!-- Preload images -->
+    <!-- Preload critical images -->
     <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
     <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
     <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
     <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
+    
+    <!-- Preload critical JavaScript -->
+    <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}" as="script">
 
 
     <style>
@@ -345,6 +355,9 @@
     </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    
+    <!-- SweetAlert2 - load with preload hint to reduce critical path -->
+    <script src="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- Swiper loaded conditionally only when needed -->
     <script>
         (function(){

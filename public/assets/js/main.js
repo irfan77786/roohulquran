@@ -12,67 +12,138 @@
     /**
      * Apply .scrolled class to the body as the page is scrolled down
      */
-    // Avoid forced reflow: batch scroll handling via rAF and passive listeners
-    const selectBody = document.body;
-    const selectHeader = document.querySelector("#header");
+    // Optimized scroll handler to prevent forced reflows
+    let selectBody,
+        selectHeader,
+        headerClasses,
+        isScrolled = false;
     let scheduled = false;
+    let lastScrollY = 0;
+
+    // Cache DOM elements and classes on load to avoid repeated queries
+    function initScrollHandler() {
+        selectBody = document.body;
+        selectHeader = document.querySelector("#header");
+
+        if (!selectHeader) return;
+
+        // Cache header classes to avoid repeated classList.contains calls
+        headerClasses = {
+            scrollUpSticky: selectHeader.classList.contains("scroll-up-sticky"),
+            stickyTop: selectHeader.classList.contains("sticky-top"),
+            fixedTop: selectHeader.classList.contains("fixed-top"),
+        };
+
+        // Only proceed if header has one of the sticky classes
+        if (
+            !headerClasses.scrollUpSticky &&
+            !headerClasses.stickyTop &&
+            !headerClasses.fixedTop
+        ) {
+            return;
+        }
+
+        // Add passive scroll listener
+        window.addEventListener("scroll", onScrollHandler, { passive: true });
+    }
 
     const onScrollHandler = () => {
         if (scheduled) return;
         scheduled = true;
-        window.requestAnimationFrame(() => {
-            if (
-                selectHeader &&
-                (selectHeader.classList.contains("scroll-up-sticky") ||
-                    selectHeader.classList.contains("sticky-top") ||
-                    selectHeader.classList.contains("fixed-top"))
-            ) {
-                if (
-                    window.scrollY > 100 &&
-                    !selectBody.classList.contains("scrolled")
-                ) {
+
+        requestAnimationFrame(() => {
+            const currentScrollY = window.scrollY;
+
+            // Only update if scroll position changed significantly
+            if (Math.abs(currentScrollY - lastScrollY) < 5) {
+                scheduled = false;
+                return;
+            }
+
+            lastScrollY = currentScrollY;
+
+            if (currentScrollY > 100) {
+                if (!isScrolled) {
                     selectBody.classList.add("scrolled");
-                } else if (
-                    window.scrollY <= 100 &&
-                    selectBody.classList.contains("scrolled")
-                ) {
+                    isScrolled = true;
+                }
+            } else {
+                if (isScrolled) {
                     selectBody.classList.remove("scrolled");
+                    isScrolled = false;
                 }
             }
+
             scheduled = false;
         });
     };
-    window.addEventListener("scroll", onScrollHandler);
+
+    // Initialize on DOM ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollHandler);
+    } else {
+        initScrollHandler();
+    }
 
     /**
-     * Mobile nav toggle
+     * Mobile nav toggle - optimized to prevent forced reflows
      */
-    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+    let mobileNavToggleBtn, bodyElement;
+
+    function initMobileNav() {
+        mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+        bodyElement = document.body;
+
+        if (mobileNavToggleBtn) {
+            mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+        }
+    }
 
     function mobileNavToogle() {
-        document.querySelector("body").classList.toggle("mobile-nav-active");
+        bodyElement.classList.toggle("mobile-nav-active");
         mobileNavToggleBtn.classList.toggle("bi-list");
         mobileNavToggleBtn.classList.toggle("bi-x");
     }
-    mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+
+    // Initialize mobile nav on DOM ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initMobileNav);
+    } else {
+        initMobileNav();
+    }
 
     /**
-     * Hide mobile nav on same-page/hash links
+     * Hide mobile nav on same-page/hash links - optimized
      */
-    document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-        navmenu.addEventListener("click", () => {
-            if (document.querySelector(".mobile-nav-active")) {
-                mobileNavToogle();
-            }
+    function initNavMenuLinks() {
+        const navMenuLinks = document.querySelectorAll("#navmenu a");
+        navMenuLinks.forEach((navmenu) => {
+            navmenu.addEventListener("click", () => {
+                if (
+                    bodyElement &&
+                    bodyElement.classList.contains("mobile-nav-active")
+                ) {
+                    mobileNavToogle();
+                }
+            });
         });
-    });
+    }
+
+    // Initialize nav menu links on DOM ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initNavMenuLinks);
+    } else {
+        initNavMenuLinks();
+    }
 
     /**
-     * Toggle mobile nav dropdowns
+     * Toggle mobile nav dropdowns - optimized
      */
-    document
-        .querySelectorAll(".navmenu .toggle-dropdown")
-        .forEach((navmenu) => {
+    function initNavDropdowns() {
+        const dropdownToggles = document.querySelectorAll(
+            ".navmenu .toggle-dropdown"
+        );
+        dropdownToggles.forEach((navmenu) => {
             navmenu.addEventListener("click", function (e) {
                 e.preventDefault();
                 this.parentNode.classList.toggle("active");
@@ -82,6 +153,14 @@
                 e.stopImmediatePropagation();
             });
         });
+    }
+
+    // Initialize nav dropdowns on DOM ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initNavDropdowns);
+    } else {
+        initNavDropdowns();
+    }
 
     /**
      * Preloader
