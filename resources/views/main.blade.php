@@ -55,14 +55,7 @@
         /* Your inline critical styles (valid in head) */
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-NSTXB23J7J');
-    </script>
+        <!-- Google tag (gtag.js) deferred until after load/idle -->
 
     <!-- Preload images -->
     <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
@@ -313,7 +306,18 @@
     {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script> --}}
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script defer src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <!-- Swiper loaded conditionally only when needed -->
+    <script>
+        (function(){
+            const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider');
+            if (hasSwiper) {
+                const s = document.createElement('script');
+                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
+                s.defer = true;
+                document.head.appendChild(s);
+            }
+        })();
+    </script>
     <script defer src="{{ asset('assets/js/main.js') }}"></script>
 
     <script>
@@ -343,7 +347,24 @@
     </script>
 
 
-    @yield('meta_script')
+    <!-- Load Google Analytics after page load/idle to reduce unused JS -->
+    <script>
+        window.addEventListener('load', function(){
+            if (!window.requestIdleCallback) {
+                return loadAnalytics();
+            }
+            requestIdleCallback(loadAnalytics, { timeout: 3000 });
+            function loadAnalytics(){
+                var gtagScript = document.createElement('script');
+                gtagScript.async = true;
+                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J';
+                document.head.appendChild(gtagScript);
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-NSTXB23J7J');
+            }
+        });
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
