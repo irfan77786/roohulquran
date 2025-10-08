@@ -240,7 +240,7 @@
             text-transform: none; 
             line-height: 1; 
         }
-        .bi::before { 
+            .bi::before { 
             display: inline-block; 
             width: 1em; 
             height: 1em; 
@@ -355,163 +355,65 @@
     </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    
-    <!-- SweetAlert2 - load with preload hint to reduce critical path -->
-    <script src="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- Swiper loaded conditionally only when needed -->
     <script>
         (function(){
-            // Check if Swiper elements exist on the page
-            const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider, .swiper-container');
-            
+            const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider');
             if (hasSwiper) {
-                // Only load Swiper on desktop to improve mobile performance
-                if (window.innerWidth >= 768) {
-                    const s = document.createElement('script');
-                    s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
-                    s.defer = true;
-                    document.head.appendChild(s);
-                    
-                    // Initialize Swiper after script loads
-                    s.onload = function() {
-                        if (typeof Swiper !== 'undefined') {
-                            initSwiperSliders();
-                        }
-                    };
-                } else {
-                    // On mobile, convert swiper to simple static content
-                    convertSwiperToStatic();
-                }
-            }
-            
-            function initSwiperSliders() {
-                document.querySelectorAll('.init-swiper').forEach(function(swiperElement) {
-                    let config = JSON.parse(swiperElement.querySelector('.swiper-config').innerHTML.trim());
-                    
-                    if (swiperElement.classList.contains('swiper-tab')) {
-                        initSwiperWithCustomPagination(swiperElement, config);
-                    } else {
-                        new Swiper(swiperElement, config);
-                    }
-                });
-            }
-            
-            function convertSwiperToStatic() {
-                // Convert swiper containers to simple static content on mobile
-                document.querySelectorAll('.swiper-container, .init-swiper').forEach(function(container) {
-                    const slides = container.querySelectorAll('.swiper-slide');
-                    if (slides.length > 0) {
-                        // Create a simple container
-                        const staticContainer = document.createElement('div');
-                        staticContainer.className = 'mobile-static-content';
-                        staticContainer.style.cssText = 'display: flex; flex-direction: column; gap: 1rem;';
-                        
-                        // Move all slides to static container
-                        slides.forEach(slide => {
-                            slide.style.cssText = 'width: 100%; flex-shrink: 0;';
-                            staticContainer.appendChild(slide);
-                        });
-                        
-                        // Replace swiper with static content
-                        container.parentNode.replaceChild(staticContainer, container);
-                    }
-                });
+                const s = document.createElement('script');
+                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
+                s.defer = true;
+                document.head.appendChild(s);
             }
         })();
     </script>
     <script defer src="{{ asset('assets/js/main.js') }}"></script>
 
     <script>
-        // Initialize testimonial slider only on desktop
         document.addEventListener('DOMContentLoaded', function () {
-            // Only initialize Swiper on desktop
-            if (window.innerWidth >= 768) {
-                const swiper = new Swiper('.testimonial-slider', {
-                    loop: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    autoplay: {
-                        delay: 5000,
-                        disableOnInteraction: false,
-                    },
-                    // Performance optimizations
-                    watchOverflow: true,       // Don't reflow if only 1 slide
-                    updateOnWindowResize: true, // Debounced resize recalculations
-                    observer: true,             // Watch DOM mutations smartly
-                    observeParents: true,
-                });
-
-                // Reduce layout thrashing on resize
-                window.addEventListener('resize', () => {
-                    requestAnimationFrame(() => swiper.update());
-                });
-            } else {
-                // On mobile, convert testimonial slider to static content
-                const testimonialSlider = document.querySelector('.testimonial-slider');
-                if (testimonialSlider) {
-                    const slides = testimonialSlider.querySelectorAll('.swiper-slide');
-                    if (slides.length > 0) {
-                        const staticContainer = document.createElement('div');
-                        staticContainer.className = 'mobile-testimonials';
-                        staticContainer.style.cssText = 'display: flex; flex-direction: column; gap: 1rem;';
-                        
-                        slides.forEach(slide => {
-                            slide.style.cssText = 'width: 100%; flex-shrink: 0;';
-                            staticContainer.appendChild(slide);
-                        });
-                        
-                        testimonialSlider.parentNode.replaceChild(staticContainer, testimonialSlider);
-                    }
-                }
-            }
+        const swiper = new Swiper('.testimonial-slider', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            // Performance optimizations
+            watchOverflow: true,       // Don’t reflow if only 1 slide
+            updateOnWindowResize: true, // Debounced resize recalculations
+            observer: true,             // Watch DOM mutations smartly
+            observeParents: true,
         });
+
+        // Reduce layout thrashing on resize
+        window.addEventListener('resize', () => {
+            requestAnimationFrame(() => swiper.update());
+        });
+    });
     </script>
 
 
-    <!-- Load Google Analytics conditionally only when needed -->
+    <!-- Load Google Analytics after page load/idle to reduce unused JS -->
     <script>
-        // Only load GA on desktop and when user interacts with the page
-        function loadGoogleAnalytics() {
-            // Check if we're on mobile - if so, skip GA to improve performance
-            if (window.innerWidth < 768) {
-                return;
+        window.addEventListener('load', function(){
+            if (!window.requestIdleCallback) {
+                return loadAnalytics();
             }
-            
-            // Only load GA after user interaction or after 3 seconds
-            let gaLoaded = false;
-            
-            function loadGA() {
-                if (gaLoaded) return;
-                gaLoaded = true;
-                
-                const gtagScript = document.createElement('script');
+            requestIdleCallback(loadAnalytics, { timeout: 3000 });
+            function loadAnalytics(){
+                var gtagScript = document.createElement('script');
                 gtagScript.async = true;
                 gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J';
                 document.head.appendChild(gtagScript);
-                
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
                 gtag('js', new Date());
                 gtag('config', 'G-NSTXB23J7J');
             }
-            
-            // Load GA on first user interaction
-            ['click', 'scroll', 'touchstart', 'keydown'].forEach(event => {
-                document.addEventListener(event, loadGA, { once: true, passive: true });
-            });
-            
-            // Fallback: load GA after 3 seconds if no interaction
-            setTimeout(loadGA, 3000);
-        }
-        
-        // Initialize GA loading
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadGoogleAnalytics);
-        } else {
-            loadGoogleAnalytics();
-        }
+        });
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
