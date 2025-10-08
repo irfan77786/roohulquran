@@ -31,6 +31,10 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://img.youtube.com" crossorigin>
 
+    <!-- Preload critical fonts to prevent CLS -->
+    <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff') }}" as="font" type="font/woff" crossorigin>
+
     <!-- CSS (deferred) -->
     <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet" media="print"
         onload="this.media='all'">
@@ -212,6 +216,26 @@
             border: 2px solid #fff;
         }
 
+        /* Disable AOS animations on above-the-fold elements to prevent CLS */
+        [data-aos="fade-up"]:not([data-aos-delay="200"]) { 
+            opacity: 1 !important; 
+            transform: none !important; 
+        }
+
+        /* Ensure Bootstrap Icons load without layout shift */
+        .bi { 
+            font-family: "bootstrap-icons" !important; 
+            font-style: normal; 
+            font-variant: normal; 
+            text-transform: none; 
+            line-height: 1; 
+        }
+        .bi::before { 
+            display: inline-block; 
+            width: 1em; 
+            height: 1em; 
+        }
+
         @media (max-width: 600px) {
             .whatsapp-float {
                 bottom: 15px;
@@ -304,6 +328,21 @@
     <script defer src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
     {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script> --}}
+    <script>
+        // Initialize AOS with reduced animation to prevent CLS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100,
+                disable: function() {
+                    // Disable AOS on mobile to prevent CLS
+                    return window.innerWidth < 768;
+                }
+            });
+        }
+    </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
     <!-- Swiper loaded conditionally only when needed -->

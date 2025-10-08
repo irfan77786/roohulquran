@@ -439,7 +439,7 @@
 
 
             <!-- Right Form -->
-            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
                 <div class="form-container p-4 bg-light rounded shadow">
                     <h3 class=" text-center" style="color: #44137c; font-weight: bold;">
                         Free Trial Class
@@ -575,7 +575,7 @@
             </div>
 
             <!-- Card for About Us Description -->
-            <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
                 <div class="card p-4 shadow"
                     style="position: relative; top: -12px; background: #ffffff; border-radius: 10px;">
                     <!-- Increased height -->
@@ -1209,7 +1209,7 @@
             </div>
 
             <!-- Right Form -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
                 <div class="contact-form bg-white p-4 shadow hover-popout"
                     style="border: 2px solid #44137c; border-radius: 20px;">
                     <h3 class="mb-4 text-center" style="color: #44137c; font-weight: bold;">FREE TRIAL CLASS</h3>
