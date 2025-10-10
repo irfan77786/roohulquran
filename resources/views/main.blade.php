@@ -32,6 +32,7 @@
     <link rel="preconnect" href="https://code.jquery.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://img.youtube.com" crossorigin>
+    <link rel="preconnect" href="https://embed.tawk.to" crossorigin>
 
     <!-- Preload critical fonts to prevent CLS -->
     <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin>

@@ -58,6 +58,9 @@
   <FilesMatch "\.(jpg|jpeg|png|gif|webp|css|js|woff2?|ttf|svg)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+  
+  # Content Security Policy for Tawk.to compatibility
+  Header always set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.tawk.to *.google-analytics.com *.googletagmanager.com *.google.com *.gstatic.com *.googleapis.com *.jsdelivr.net *.unpkg.com *.youtube.com *.googleadservices.com *.googlesyndication.com; style-src 'self' 'unsafe-inline' *.tawk.to *.googleapis.com *.jsdelivr.net *.unpkg.com; img-src 'self' data: blob: *.tawk.to *.google-analytics.com *.googletagmanager.com *.google.com *.gstatic.com *.googleapis.com *.jsdelivr.net *.unpkg.com *.youtube.com *.img.youtube.com *.amazonaws.com *.tawk.link; font-src 'self' data: *.tawk.to *.gstatic.com *.googleapis.com *.jsdelivr.net; connect-src 'self' *.tawk.to wss://*.tawk.to *.google-analytics.com *.googletagmanager.com *.google.com *.youtube.com; frame-src 'self' *.tawk.to *.youtube.com *.google.com; form-action 'self' *.tawk.to; object-src 'none'; base-uri 'self';"
 </IfModule>
 
 </IfModule>
