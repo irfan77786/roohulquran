@@ -73,6 +73,24 @@
     /* or any highlight color */
     opacity: 1;
   }
+
+  /* Fallback styles when Swiper doesn't load */
+  .testimonial-slider:not(.swiper-initialized) .swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .testimonial-slider:not(.swiper-initialized) .swiper-slide {
+    flex: 0 0 auto;
+    width: 300px;
+    max-width: 100%;
+  }
+
+  .testimonial-slider:not(.swiper-initialized) .swiper-pagination {
+    display: none;
+  }
 </style>
 <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
   <div class="container">
@@ -209,6 +227,19 @@
           <div class="swiper-pagination"></div>
           <!-- Swiper Pagination -->
         </div>
+        
+        <!-- Fallback for when Swiper doesn't load -->
+        <script>
+          // Fallback: Hide pagination if Swiper doesn't initialize within 3 seconds
+          setTimeout(function() {
+            const swiperContainer = document.querySelector('.testimonial-slider');
+            const pagination = document.querySelector('.swiper-pagination');
+            if (swiperContainer && !swiperContainer.swiper && pagination) {
+              pagination.style.display = 'none';
+              console.log('Swiper fallback: Pagination hidden');
+            }
+          }, 3000);
+        </script>
       </div>
 
       <!-- Right Content -->

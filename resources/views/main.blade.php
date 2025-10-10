@@ -362,38 +362,44 @@
             if (hasSwiper) {
                 const s = document.createElement('script');
                 s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
-                s.defer = true;
+                s.onload = function() {
+                    // Initialize Swiper after script loads
+                    setTimeout(function() {
+                        try {
+                            const swiper = new Swiper('.testimonial-slider', {
+                                loop: true,
+                                pagination: {
+                                    el: '.swiper-pagination',
+                                    clickable: true,
+                                },
+                                autoplay: {
+                                    delay: 5000,
+                                    disableOnInteraction: false,
+                                },
+                                // Performance optimizations
+                                watchOverflow: true,       // Don't reflow if only 1 slide
+                                updateOnWindowResize: true, // Debounced resize recalculations
+                                observer: true,             // Watch DOM mutations smartly
+                                observeParents: true,
+                            });
+
+                            // Reduce layout thrashing on resize
+                            window.addEventListener('resize', () => {
+                                requestAnimationFrame(() => swiper.update());
+                            });
+                        } catch (error) {
+                            console.error('Swiper initialization failed:', error);
+                        }
+                    }, 100);
+                };
+                s.onerror = function() {
+                    console.error('Failed to load Swiper script');
+                };
                 document.head.appendChild(s);
             }
         })();
     </script>
     <script defer src="{{ asset('assets/js/main.js') }}"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        const swiper = new Swiper('.testimonial-slider', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            // Performance optimizations
-            watchOverflow: true,       // Don’t reflow if only 1 slide
-            updateOnWindowResize: true, // Debounced resize recalculations
-            observer: true,             // Watch DOM mutations smartly
-            observeParents: true,
-        });
-
-        // Reduce layout thrashing on resize
-        window.addEventListener('resize', () => {
-            requestAnimationFrame(() => swiper.update());
-        });
-    });
-    </script>
 
 
     <!-- Load Google Analytics after page load/idle to reduce unused JS -->
