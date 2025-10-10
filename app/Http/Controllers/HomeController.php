@@ -6,40 +6,49 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
 
         return view('home');
-        
     }
 
-    public function about(){
+    public function about()
+    {
         return view('about');
-        
     }
 
-    public function contactUs(){
+    public function contactUs()
+    {
         return view('contact-us');
-        
     }
 
-    public function courses(){
+    public function courses()
+    {
         return view('courses');
-        
     }
 
-    public function events(){
+    public function events()
+    {
         return view('events');
-        
     }
 
-    public function pricing(){
+    public function pricing()
+    {
         return view('pricing');
-        
     }
 
-        public function teachers(){
+    public function teachers()
+    {
         return view('teachers');
-        
+    }
+
+    public function cityPage($city, $state)
+    {
+        // Format city and state names for display
+        $cityName = ucwords(str_replace('-', ' ', $city));
+        $stateName = ucwords(str_replace('-', ' ', $state));
+
+        return view('cities.home', compact('cityName', 'stateName'));
     }
 }

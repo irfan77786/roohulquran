@@ -1,12 +1,14 @@
 @extends('main')
 
-@section('title', 'Online Quran Classes for Kids & Adults')
+@section('title', 'Online Quran Classes for Kids & Adults in {{ $cityName }}, {{ $stateName }}')
 
 @section('meta_description',
-'Rooh Ul Quran Academy offers online Quran classes with expert tutors — learn Tajweed, Hifz & Tafsir at your own pace, free trial available')
+'Rooh Ul Quran Academy offers online Quran classes with expert tutors in {{ $cityName }}, {{ $stateName }} — learn
+Tajweed, Hifz & Tafsir at your own pace, free trial available')
 
 @section('meta_keywords',
-'rooh ul quran academy, online quran classes, quran learning, tajweed, hifz, tafsir, learn quran online, quran courses, islamic education')
+'rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $stateName }}, tajweed, hifz, tafsir,
+learn quran online {{ $cityName }}, quran courses {{ $stateName }}, islamic education {{ $cityName }}')
 @section('content')
 
 <style>
@@ -400,17 +402,19 @@
         <source media="(min-width: 769px)" srcset="{{ asset('assets/img/hero-bg-4-768.webp') }} 768w, 
                         {{ asset('assets/img/hero-bg-4.webp') }} 1024w, 
                         {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
-        <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes"
-            width="1440" height="600" loading="eager" fetchpriority="high" decoding="async">
+        <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}"
+            alt="Online Quran Classes in {{ $cityName }}, {{ $stateName }}" width="1440" height="600" loading="eager"
+            fetchpriority="high" decoding="async">
     </picture>
 
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center" data-aos="fade-up"
                 data-aos-delay="100">
-                <h1 class="hero-heading">Online Quran Academy</h1>
+                <h1 class="hero-heading">Online Quran Academy in {{ $cityName }}</h1>
                 <p class="hero-subtext">
-                    Welcome to Rooh ul Quran Academy, your trusted online Quran school <br>
+                    Welcome to Rooh ul Quran Academy, your trusted online Quran school serving {{ $cityName }}, {{
+                    $stateName }} <br>
                     where learning the Holy Quran becomes simple, interactive, and rewarding.
                 </p>
 
@@ -418,11 +422,11 @@
                 <ul class="list-unstyled text-start mt-3 hero-features">
                     <li class="d-flex align-items-start mb-2">
                         <span class="me-2 text-white fw-bold">✔</span>
-                        One-to-one Online Quran Classes
+                        One-to-one Online Quran Classes for {{ $cityName }} residents
                     </li>
                     <li class="d-flex align-items-start mb-2">
                         <span class="me-2 text-white fw-bold">✔</span>
-                        Flexible Timings for Kids and Adults
+                        Flexible Timings for Kids and Adults in {{ $stateName }}
                     </li>
                     <li class="d-flex align-items-start mb-2">
                         <span class="me-2 text-white fw-bold">✔</span>
@@ -439,7 +443,8 @@
 
 
             <!-- Right Form -->
-            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200"
+                style="opacity: 1; transform: none;">
                 <div class="form-container p-4 bg-light rounded shadow">
                     <h3 class=" text-center" style="color: #44137c; font-weight: bold;">
                         Free Trial Class
@@ -492,7 +497,7 @@
         <!-- Heading -->
         <div class="text-center mb-5">
             <h2 class="fw-bold mb-3" style="color:#44137c; font-size:2rem;">
-                Rooh ul Quran Academy Learn Quran Online with Expert Teachers
+                Rooh ul Quran Academy Learn Quran Online with Expert Teachers in {{ $cityName }}, {{ $stateName }}
             </h2>
             {{-- <p class="lead text-muted">
                 Welcome to Rooh ul Quran Academy, your trusted online Quran school where learning the Holy Quran becomes
@@ -508,14 +513,15 @@
                     Whether you are a beginner starting with <strong>Noorani Qaida Online</strong>, a student aiming to
                     <strong>learn Quran with Tajweed</strong>, or someone dedicated to <strong>Quran Memorization
                         Online</strong>,
-                    we provide structured and personalized classes for all ages.
+                    we provide structured and personalized classes for all ages in {{ $cityName }}, {{ $stateName }}.
                 </p>
                 <p>
                     With highly qualified teachers, including experienced <strong>female Quran tutors</strong> for
                     sisters and
-                    kids, our mission is to make Quran learning accessible to every Muslim across the globe.
+                    kids, our mission is to make Quran learning accessible to every Muslim in {{ $cityName }} and
+                    surrounding areas.
                 </p>
-                <p class="fw-bold text-success">Enroll Now and Begin Your Online Quran Journey!</p>
+                <p class="fw-bold text-success">Enroll Now and Begin Your Online Quran Journey in {{ $cityName }}!</p>
             </div>
 
             <!-- Right Features List -->
@@ -541,16 +547,19 @@
         <!-- Tajweed + Hifz -->
         <div class="row mt-5">
             <div class="col-lg-10 mx-auto text-center">
-                <h2 class="fw-bold mb-3" style="color:#44137c;">Quran Memorization and Tajweed Made Easy</h2>
+                <h2 class="fw-bold mb-3" style="color:#44137c;">Quran Memorization and Tajweed Made Easy in {{ $cityName
+                    }}</h2>
                 <p>
                     If your goal is to <strong>memorize the Quran</strong>, our step-by-step
-                    <strong>Online Hifz Course</strong> is perfect for you. Students can
+                    <strong>Online Hifz Course</strong> is perfect for you. Students in {{ $cityName }}, {{ $stateName
+                    }} can
                     <strong>Read and Memorize Quran Online</strong> under the supervision of expert tutors who ensure
                     accuracy and
                     discipline.
                 </p>
                 <p>
-                    We also specialize in <strong>Learn Quran with Tajweed</strong>, helping students perfect their
+                    We also specialize in <strong>Learn Quran with Tajweed</strong>, helping students in {{ $cityName }}
+                    perfect their
                     recitation with
                     correct pronunciation. Whether you are a beginner or want to polish your skills, our academy
                     provides
@@ -571,11 +580,12 @@
             <!-- Image on the Left -->
             <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <img src="{{ asset('assets/img/about.webp') }}" loading="lazy" class="img-fluid rounded shadow"
-                    alt="about roohul quran" width="600" height="400">
+                    alt="about roohul quran {{ $cityName }}" width="600" height="400">
             </div>
 
             <!-- Card for About Us Description -->
-            <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-up" data-aos-delay="200"
+                style="opacity: 1; transform: none;">
                 <div class="card p-4 shadow"
                     style="position: relative; top: -12px; background: #ffffff; border-radius: 10px;">
                     <!-- Increased height -->
@@ -585,7 +595,7 @@
 
                         Roohul Quran addresses this need by offering accessible Islamic education globally to those who
                         lack
-                        resources.
+                        resources, serving students in {{ $cityName }}, {{ $stateName }} and beyond.
                     </p>
 
                     <!-- Nested Card 1 -->
@@ -596,7 +606,8 @@
                             highly qualified
                             instructors — including native Arabic teachers — and removing the limitations of distance
                             and location.
-                            We aim to deliver an engaging and world-class learning experience to every learner.
+                            We aim to deliver an engaging and world-class learning experience to every learner in {{
+                            $cityName }}, {{ $stateName }}.
                         </p>
                     </div>
 
@@ -608,7 +619,7 @@
                             Islamic education
                             through innovative technology. We aspire to build a global platform where learning the deen
                             becomes simple,
-                            flexible, and impactful for every age group.
+                            flexible, and impactful for every age group in {{ $cityName }} and surrounding areas.
                         </p>
                     </div>
 
@@ -621,12 +632,12 @@
 
 <!-- Counts Section -->
 <section id="counts" class="section counts light-background"
-    style="background-image: url('assets/img/choos-us.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url({{ asset('assets/img/choos-us.png') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
             <!-- Title -->
             <div class="col-12 text-center">
-                <h2 style="color: #36c47d">Start Your Quran Learning Journey Today</h2>
+                <h2 style="color: #36c47d">Start Your Quran Learning Journey Today in {{ $cityName }}</h2>
                 <p class="col-lg-6 mx-auto" style="text-align:inherit;line-height: 1.8;">
                     Rooh ul Quran Academy is more than an online Quran school – it is a place where students grow
                     spiritually and strengthen their connection with Allah (SWT).
@@ -686,7 +697,8 @@
         <div class="row gy-4">
             <!-- New Content -->
             <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="100">
-                <h2 class=" mb-4" style="color:#44137c;">Why Choose Roohul Quran Academy?</h2>
+                <h2 class=" mb-4" style="color:#44137c;">Why Choose Roohul Quran Academy in {{ $cityName }}, {{
+                    $stateName }}?</h2>
 
                 <div class="container">
                     <div class="row justify-content-center">
@@ -696,43 +708,49 @@
                                 <li class="mb-3 d-flex">
                                     <span class="me-2 text-success">✔</span>
                                     <span><strong class="text-primary">Qualified Online Quran Teachers</strong> –
-                                        Experienced scholars and tutors to guide you every step of the way.</span>
+                                        Experienced scholars and tutors to guide you every step of the way in {{
+                                        $cityName }}.</span>
                                 </li>
 
                                 <li class="mb-3 d-flex">
                                     <span class="me-2 text-success">✔</span>
                                     <span><strong class="text-danger">Female Quran Tutors</strong> – Dedicated for
-                                        sisters and kids, offering a comfortable and supportive environment.</span>
+                                        sisters and kids in {{ $cityName }}, offering a comfortable and supportive
+                                        environment.</span>
                                 </li>
 
                                 <li class="mb-3 d-flex">
                                     <span class="me-2 text-success">✔</span>
                                     <span><strong class="text-warning">Flexible Schedules</strong> – Learn at your own
-                                        time and pace, making it easy to fit Quran study into your daily routine.</span>
+                                        time and pace, making it easy to fit Quran study into your daily routine in {{
+                                        $stateName }}.</span>
                                 </li>
 
                                 <li class="mb-3 d-flex">
                                     <span class="me-2 text-success">✔</span>
                                     <span><strong class="text-success">Affordable Packages</strong> – Quality Quran
-                                        education at reasonable and competitive prices.</span>
+                                        education at reasonable and competitive prices for {{ $cityName }}
+                                        residents.</span>
                                 </li>
 
                                 <li class="mb-3 d-flex">
                                     <span class="me-2 text-success">✔</span>
                                     <span><strong class="text-purple">Worldwide Access</strong> – Join from anywhere in
-                                        the world and study from the comfort of your home.</span>
+                                        the world and study from the comfort of your home in {{ $cityName }}.</span>
                                 </li>
 
                                 <li class="mb-3 d-flex">
                                     <span class="me-2 text-success">✔</span>
                                     <span><strong class="text-teal">Step-by-Step Learning</strong> – From Noorani Qaida
-                                        for beginners to advanced Tajweed and Hifz, we cater to all levels.</span>
+                                        for beginners to advanced Tajweed and Hifz, we cater to all levels in {{
+                                        $cityName }}.</span>
                                 </li>
                             </ul>
 
                             <p class="mt-4 text-center" style="color: #2c3e50; font-size: 1.1rem;">
                                 At <strong>Roohul Quran Academy</strong>, we strive to make Quran learning accessible,
-                                effective, and enjoyable for everyone. Whether you're starting from scratch or looking
+                                effective, and enjoyable for everyone in {{ $cityName }}, {{ $stateName }}. Whether
+                                you're starting from scratch or looking
                                 to advance your skills, we are here to support you.
                                 <br><br>
                                 <span class="text-black">Start your journey today with a <strong>free trial
@@ -754,12 +772,15 @@
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-2">
-            <h2 class="fw-bold" style="color:#44137c;">Learn Quran Online with Trusted Teachers</h2>
+            <h2 class="fw-bold" style="color:#44137c;">Learn Quran Online with Trusted Teachers in {{ $cityName }}, {{
+                $stateName }}</h2>
             <p class="text-muted">
-                At Rooh ul Quran Academy, we understand that every student learns differently. That’s why we offer
-                <strong>personalized online Quran classes</strong> with both male and female tutors to suit your needs.
+                At Rooh ul Quran Academy, we understand that every student learns differently. That's why we offer
+                <strong>personalized online Quran classes</strong> with both male and female tutors to suit your needs
+                in {{ $cityName }}.
                 From <strong>Learn Noorani Qaida Online</strong> for kids to advanced Tajweed lessons for adults, our
-                courses are designed to meet the needs of beginners, children, and advanced learners.
+                courses are designed to meet the needs of beginners, children, and advanced learners in {{ $stateName
+                }}.
             </p>
         </div>
 
@@ -769,7 +790,8 @@
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-success mb-3">📖</span>
                     <h5 class="fw-bold">One-to-one Classes</h5>
-                    <p class="text-muted mb-0">Personalized attention for effective Quran learning.</p>
+                    <p class="text-muted mb-0">Personalized attention for effective Quran learning in {{ $cityName }}.
+                    </p>
                 </div>
             </div>
 
@@ -777,7 +799,7 @@
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-primary mb-3">⏰</span>
                     <h5 class="fw-bold">Flexible Timings</h5>
-                    <p class="text-muted mb-0">Convenient schedules for kids and adults worldwide.</p>
+                    <p class="text-muted mb-0">Convenient schedules for kids and adults in {{ $stateName }}.</p>
                 </div>
             </div>
 
@@ -793,7 +815,7 @@
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-danger mb-3">⭐</span>
                     <h5 class="fw-bold">Special Hifz Courses</h5>
-                    <p class="text-muted mb-0">Step-by-step guidance for Quran memorization.</p>
+                    <p class="text-muted mb-0">Step-by-step guidance for Quran memorization in {{ $cityName }}.</p>
                 </div>
             </div>
 
@@ -809,7 +831,8 @@
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 mb-3" style="color:#e83e8c;">👩‍🏫</span>
                     <h5 class="fw-bold">Female Quran Tutors</h5>
-                    <p class="text-muted mb-0">Dedicated female instructors for sisters and kids in a comfortable
+                    <p class="text-muted mb-0">Dedicated female instructors for sisters and kids in {{ $cityName }} in a
+                        comfortable
                         setting.</p>
                 </div>
             </div>
@@ -834,7 +857,8 @@
         </h5> --}}
         <span style="color: #212529;">Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran
             translation. Each course is
-            tailored to help you achieve your learning goals with ease and excellence.</span>
+            tailored to help you achieve your learning goals with ease and excellence in {{ $cityName }}, {{ $stateName
+            }}.</span>
     </div><!-- End Section Title -->
 
     <div class="container">
@@ -848,8 +872,8 @@
                         <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
           {{ asset('assets/img/ai/course-1.webp') }} 768w,
           {{ asset('assets/img/ai/course-1.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran online"
-                            loading="lazy" width="400" height="260" />
+                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw"
+                            alt="memorize quran online {{ $cityName }}" loading="lazy" width="400" height="260" />
 
                     </div>
                     <div class="course-info">
@@ -858,7 +882,7 @@
                             <span><i class="bi bi-clock"></i> 24/7 Available</span>
                         </div> --}}
                         <h3 class="title"><a href="{{ route('quran.memorization') }}">Hifz Quran Online</a></h3>
-                        <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
+                        <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It's a
                             miracle.</p>
                         {{-- <div class="rating">
                             <span class="stars">★★★★★</span>
@@ -877,8 +901,8 @@
                         <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
           {{ asset('assets/img/ai/course-2.webp') }} 768w,
           {{ asset('assets/img/ai/course-2.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class online"
-                            loading="lazy" width="400" height="260" />
+                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                            alt="noorani qaidah class online {{ $cityName }}" loading="lazy" width="400" height="260" />
 
                     </div>
                     <div class="course-info">
@@ -908,7 +932,7 @@
           {{ asset('assets/img/ai/course-3.webp') }} 768w,
           {{ asset('assets/img/ai/course-3.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-                            alt="Quran reading with Tajweed" loading="lazy" width="400" height="260" />
+                            alt="Quran reading with Tajweed {{ $cityName }}" loading="lazy" width="400" height="260" />
 
                     </div>
                     <div class="course-info">
@@ -937,7 +961,7 @@
           {{ asset('assets/img/ai/course-4.webp') }} 768w,
           {{ asset('assets/img/ai/course-4.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-                            alt="Tafseer ul Quran course" loading="lazy" width="400" height="260" />
+                            alt="Tafseer ul Quran course {{ $cityName }}" loading="lazy" width="400" height="260" />
 
                     </div>
                     <div class="course-info">
@@ -978,7 +1002,7 @@
             <div class="quran-box text-white rounded d-flex align-items-center justify-content-center mx-auto">
                 <div>
                     <h2 class="mb-4 fs-4 fs-md-3 text-center text-white">
-                        Make Quran learning simple with dedicated teaching support
+                        Make Quran learning simple with dedicated teaching support in {{ $cityName }}, {{ $stateName }}
                     </h2>
                     <ul class="list-unstyled text-start">
                         <li class="mb-3">✅ Start your learning journey at any level</li>
@@ -1036,8 +1060,8 @@
         <!-- Center Image -->
         <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
             style="z-index: 2; margin-top: 120px;">
-            <img src="assets/img/ai/thumbsup1.webp" alt="quran academy teacher" loading="lazy" class="img-fluid"
-                style="max-height: 200px;">
+            <img src="{{ asset('assets/img/ai/thumbsup1.webp') }}" alt="quran academy teacher {{ $cityName }}"
+                loading="lazy" class="img-fluid" style="max-height: 200px;">
         </div>
     </div>
 </section>
@@ -1050,7 +1074,8 @@
         <!-- Heading -->
         <div class="text-center mb-5">
             <h2 class="fw-bold" style="color:#44137c;">Frequently Asked Questions</h2>
-            <p class="text-muted">Find answers to the most common questions about our online Quran classes.</p>
+            <p class="text-muted">Find answers to the most common questions about our online Quran classes in {{
+                $cityName }}, {{ $stateName }}.</p>
         </div>
 
         <!-- FAQ Accordion -->
@@ -1061,7 +1086,7 @@
                 <h2 class="accordion-header" id="faq-heading-1">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-collapse-1" aria-expanded="false" aria-controls="faq-collapse-1">
-                        Can beginners start Quran classes online?
+                        Can beginners start Quran classes online in {{ $cityName }}?
                     </button>
                 </h2>
                 <div id="faq-collapse-1" class="accordion-collapse collapse" aria-labelledby="faq-heading-1"
@@ -1077,7 +1102,7 @@
                 <h2 class="accordion-header" id="faq-heading-2">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
-                        Do you provide female Quran teachers?
+                        Do you provide female Quran teachers in {{ $cityName }}?
                     </button>
                 </h2>
                 <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
@@ -1093,7 +1118,7 @@
                 <h2 class="accordion-header" id="faq-heading-3">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
-                        What if I want to memorize the Quran?
+                        What if I want to memorize the Quran in {{ $cityName }}?
                     </button>
                 </h2>
                 <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3"
@@ -1110,7 +1135,7 @@
                 <h2 class="accordion-header" id="faq-heading-4">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">
-                        Can I learn Tajweed online?
+                        Can I learn Tajweed online in {{ $stateName }}?
                     </button>
                 </h2>
                 <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4"
@@ -1154,7 +1179,7 @@
 {{-- contact us --}}
 
 <section id="contact" class="contact-section position-relative"
-    style="background: url('assets/img/ai/contact-us.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background: url({{ asset('assets/img/ai/contact-us.jpg') }}); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <!-- Transparent Black Box -->
     <div class="overlay"></div>
 
@@ -1162,11 +1187,12 @@
         <div class="row align-items-center">
             <!-- Left Content -->
             <div class="col-lg-6 col-md-12 text-white" data-aos="fade-up">
-                <h2 class="mb-4" style="font-weight: bold; color: #f8f8f8;">Register Your Free Online Quran Classes
+                <h2 class="mb-4" style="font-weight: bold; color: #f8f8f8;">Register Your Free Online Quran Classes in
+                    {{ $cityName }}
                 </h2>
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/pointing-up.avif" alt="registration" class="me-3"
+                        <img src="{{ asset('assets/img/icons/pointing-up.avif') }}" alt="registration" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
@@ -1176,7 +1202,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/schedule.avif" alt="Schedule" class="me-3"
+                        <img src="{{ asset('assets/img/icons/schedule.avif') }}" alt="Schedule" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
@@ -1190,14 +1216,14 @@
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
-                            <p>We’ll quickly connect you with one of our expert Quran teachers, allowing you to schedule
+                            <p>We'll quickly connect you with one of our expert Quran teachers, allowing you to schedule
                                 your first
                                 class at a time that works best for you.</p>
                         </div>
                     </li>
                     <li class="d-flex align-items-start">
-                        <img src="assets/img/icons/quality.avif" alt="Certificate quran teachers" class="me-3"
-                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
+                        <img src="{{ asset('assets/img/icons/quality.avif') }}" alt="Certificate quran teachers"
+                            class="me-3" style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>
                             <p>Get your certificate after successfully completing the course. Start your learning
@@ -1209,7 +1235,8 @@
             </div>
 
             <!-- Right Form -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200"
+                style="opacity: 1; transform: none;">
                 <div class="contact-form bg-white p-4 shadow hover-popout"
                     style="border: 2px solid #44137c; border-radius: 20px;">
                     <h3 class="mb-4 text-center" style="color: #44137c; font-weight: bold;">FREE TRIAL CLASS</h3>
