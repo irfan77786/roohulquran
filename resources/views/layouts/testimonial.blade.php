@@ -12,7 +12,7 @@
     bottom: -20px;
     transform: translateX(-50%);
   }
-
+   
   .badge-card i {
     font-size: 2rem;
     color: #e5a72a;
