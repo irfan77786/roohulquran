@@ -1,14 +1,16 @@
 @extends('main')
 
-@section('title', 'Online Quran Classes for Kids & Adults in {{ $cityName }}, {{ $stateName }}')
+@section('title')
+Online Quran Classes for Kids & Adults in {{ $cityName }}, {{ $stateName }}
+@endsection
 
-@section('meta_description',
-'Rooh Ul Quran Academy offers online Quran classes with expert tutors in {{ $cityName }}, {{ $stateName }} — learn
-Tajweed, Hifz & Tafsir at your own pace, free trial available')
+@section('meta_description')
+Rooh Ul Quran Academy offers online Quran classes with expert tutors in {{ $cityName }}, {{ $stateName }} — learn Tajweed, Hifz & Tafsir at your own pace, free trial available
+@endsection
 
-@section('meta_keywords',
-'rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $stateName }}, tajweed, hifz, tafsir,
-learn quran online {{ $cityName }}, quran courses {{ $stateName }}, islamic education {{ $cityName }}')
+@section('meta_keywords')
+rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $stateName }}, tajweed, hifz, tafsir, learn quran online {{ $cityName }}, quran courses {{ $stateName }}, islamic education {{ $cityName }}
+@endsection
 @section('content')
 
 <style>

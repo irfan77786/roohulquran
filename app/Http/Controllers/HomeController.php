@@ -43,8 +43,12 @@ class HomeController extends Controller
         return view('teachers');
     }
 
-    public function cityPage($city, $state)
+    public function cityPage(Request $request, $city = null, $state = null)
     {
+        // Get city and state from route parameters or defaults
+        $city = $city ?? $request->route('city');
+        $state = $state ?? $request->route('state');
+
         // Format city and state names for display
         $cityName = ucwords(str_replace('-', ' ', $city));
         $stateName = ucwords(str_replace('-', ' ', $state));
