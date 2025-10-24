@@ -13,6 +13,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function video()
+    {
+        return view('video');
+    }
+
     public function about()
     {
         return view('about');
