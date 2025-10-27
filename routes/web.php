@@ -32,9 +32,17 @@ Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.
 Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('trial/classes', [DashboardController::class, 'trialClasses'])->name('trial.classes');
+    Route::get('trial/classes/export', [DashboardController::class, 'exportTrialClasses'])->name('trial.classes.export');
 
     // This will register all blog routes under /admin/blogs
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
+
+    // Notification routes
+    Route::get('notifications', [\App\Http\Controllers\Admin\NotificationController::class, 'index'])->name('notifications.index');
+    Route::get('notifications/count', [\App\Http\Controllers\Admin\NotificationController::class, 'count'])->name('notifications.count');
+    Route::post('notifications/{id}/read', [\App\Http\Controllers\Admin\NotificationController::class, 'markAsRead'])->name('notifications.read');
+    Route::post('notifications/read-all', [\App\Http\Controllers\Admin\NotificationController::class, 'markAllAsRead'])->name('notifications.read.all');
+    Route::delete('notifications/{id}', [\App\Http\Controllers\Admin\NotificationController::class, 'destroy'])->name('notifications.destroy');
 
     Route::post('logout', function () {
         Auth::guard('admin')->logout();

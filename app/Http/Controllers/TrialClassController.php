@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\SendTrialClassEmailJob;
 use App\Models\TrialClass;
+use App\Models\AdminNotification;
 use Illuminate\Http\Request;
 
 class TrialClassController extends Controller
@@ -37,7 +38,7 @@ class TrialClassController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-       $validated =  $request->validate([
+        $validated =  $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
             'phone' => 'required|string|max:20',
@@ -46,7 +47,19 @@ class TrialClassController extends Controller
             'course_enroll' => 'nullable|string|max:255'
         ]);
 
-        TrialClass::create($request->all());
+        $trialClass = TrialClass::create($request->all());
+
+        // Create notification for admin
+        AdminNotification::createNotification(
+            'trial_class',
+            'New Trial Class Registration',
+            $validated['name'] . ' has registered for a trial class from ' . ($validated['country'] ?? 'Unknown'),
+            'ti ti-user',
+            'primary',
+            ['trial_class_id' => $trialClass->id, 'name' => $validated['name'], 'email' => $validated['email']],
+            'trial_class',
+            $trialClass->id
+        );
 
         if (!empty($validated['email'])) {
             SendTrialClassEmailJob::dispatch($validated);

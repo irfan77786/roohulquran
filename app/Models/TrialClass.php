@@ -15,6 +15,7 @@ class TrialClass extends Model
         'phone',
         'country',
         'message',
-        'course_enroll'
+        'course_enroll',
+        'contact'
     ];
 }
