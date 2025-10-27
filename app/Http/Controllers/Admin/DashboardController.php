@@ -7,6 +7,9 @@ use App\Models\TrialClass;
 use App\Models\Blog;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Student;
+use App\Models\Teacher;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -25,6 +28,12 @@ class DashboardController extends Controller
             'published_blogs' => Blog::where('status', true)->count(),
             'draft_blogs' => Blog::where('status', false)->count(),
             'total_users' => User::count(),
+            'total_students' => Student::count(),
+            'active_students' => Student::where('status', 'active')->count(),
+            'total_teachers' => Teacher::count(),
+            'active_teachers' => Teacher::where('status', 'active')->count(),
+            'total_courses' => Course::count(),
+            'active_courses' => Course::where('status', 'active')->count(),
         ];
 
         // Get recent trial classes

@@ -36,6 +36,11 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
 
     // This will register all blog routes under /admin/blogs
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
+    
+    // Academy Management Routes
+    Route::resource('students', \App\Http\Controllers\Admin\StudentController::class);
+    Route::resource('teachers', \App\Http\Controllers\Admin\TeacherController::class);
+    Route::resource('courses', \App\Http\Controllers\Admin\CourseController::class);
 
     // Notification routes
     Route::get('notifications', [\App\Http\Controllers\Admin\NotificationController::class, 'index'])->name('notifications.index');
