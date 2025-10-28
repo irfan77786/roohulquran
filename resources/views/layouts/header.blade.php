@@ -93,7 +93,6 @@
     width: 160px;
     height: 160px;
     aspect-ratio: 1 / 1;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
   }
 
