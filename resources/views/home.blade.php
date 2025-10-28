@@ -10,16 +10,45 @@
 @section('content')
 
 <style>
+    /* Modern Hero Section Design */
     #hero {
-        padding: 50px 0;
+        padding: 80px 0;
         overflow: hidden;
-        min-height: 600px;
-        /* Reserve space for desktop hero image */
+        min-height: 650px;
+        position: relative;
+    }
+
+    /* Overlay gradient for better text readability */
+    #hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(68, 19, 124, 0.8) 0%, rgba(43, 171, 109, 0.6) 100%);
+        z-index: 1;
+    }
+
+    #hero .container {
+        position: relative;
+        z-index: 2;
     }
 
     #hero .form-container {
         max-width: 100%;
         margin: 0 auto;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #hero .form-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
     }
 
     .desktop-image {
@@ -27,7 +56,7 @@
         width: 100%;
         height: auto;
         aspect-ratio: 1440 / 600;
-        /* Prevent CLS by reserving space */
+        object-fit: cover;
     }
 
     #hero .mobile-image {
@@ -35,15 +64,108 @@
         width: 100%;
         height: auto;
         aspect-ratio: 768 / 800;
-        /* Prevent CLS on mobile */
         object-fit: cover;
     }
 
+    /* Hero Typography & Elements */
+    .hero-heading {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtext {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: #f5f5f5;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 25px;
+        animation: fadeInUp 1s ease 0.2s both;
+        font-weight: 400;
+    }
+
+    .hero-features {
+        animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    .hero-features li {
+        font-size: 1.1rem;
+        color: #ffffff;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        padding: 8px 0;
+        transition: transform 0.3s ease;
+    }
+
+    .hero-features li:hover {
+        transform: translateX(10px);
+    }
+
+    .hero-features li .me-2 {
+        display: inline-block;
+        background: rgba(255, 215, 0, 0.2);
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .btn-get-started {
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+        color: #1a1a2e !important;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 15px 40px;
+        border-radius: 50px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .btn-get-started:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%) !important;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Mobile Responsive Styles */
     @media (min-width: 430px) and (max-width: 768px) {
         #hero {
             text-align: center;
-            padding: 10px 0px;
-            min-height: 400px;
+            padding: 40px 0px;
+            min-height: 500px;
             overflow: hidden;
         }
 
@@ -52,22 +174,105 @@
         }
 
         .hero-heading {
-            font-size: 2.2rem;
-            font-weight: 600;
+            font-size: 2.2rem !important;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
         .hero-subtext {
-            font-size: large;
-            line-height: 1.5;
+            font-size: 1rem !important;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .hero-features li {
+            font-size: 0.95rem;
         }
 
         .btn-get-started {
-            font-size: 1rem;
-            padding: 10px 25px;
+            font-size: 1rem !important;
+            padding: 12px 30px !important;
         }
 
         .right-form {
             padding: 10px;
+        }
+
+        #hero .form-container {
+            margin-top: 30px;
+            padding: 25px 20px !important;
+        }
+
+        #hero .form-container h3 {
+            font-size: 1.5rem !important;
+        }
+
+        #hero .form-container .mb-3 {
+            margin-bottom: 15px !important;
+        }
+
+        #hero .form-container .form-control,
+        #hero .form-container .form-select {
+            padding: 12px 15px !important;
+            font-size: 0.9rem !important;
+        }
+
+        #hero .form-container button[type="submit"] {
+            padding: 12px 28px !important;
+            font-size: 0.95rem !important;
+            margin-top: 5px;
+        }
+    }
+
+    @media (max-width: 429px) {
+        #hero {
+            padding: 30px 0;
+            min-height: 450px;
+        }
+
+        .hero-heading {
+            font-size: 1.8rem !important;
+            font-weight: 700;
+        }
+
+        .hero-subtext {
+            font-size: 0.95rem !important;
+            line-height: 1.5;
+        }
+
+        .hero-features li {
+            font-size: 0.9rem;
+            padding: 5px 0;
+        }
+
+        .btn-get-started {
+            font-size: 0.95rem !important;
+            padding: 10px 25px !important;
+        }
+
+        #hero .form-container {
+            margin-top: 20px;
+            padding: 20px 18px !important;
+        }
+
+        #hero .form-container h3 {
+            font-size: 1.3rem !important;
+        }
+
+        #hero .form-container .mb-3 {
+            margin-bottom: 14px !important;
+        }
+
+        #hero .form-container .form-control,
+        #hero .form-container .form-select {
+            padding: 12px 15px !important;
+            font-size: 0.88rem !important;
+        }
+
+        #hero .form-container button[type="submit"] {
+            padding: 12px 25px !important;
+            font-size: 0.9rem !important;
+            margin-top: 5px;
         }
     }
 
@@ -85,7 +290,83 @@
 
     .right-form {
         padding: 20px;
+    }
 
+    /* Enhanced Form Styling */
+    #hero .form-container {
+        padding: 35px 30px !important;
+    }
+
+    #hero .form-container h3 {
+        background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        text-shadow: none;
+    }
+
+    #hero .form-container .form-control,
+    #hero .form-container .form-select {
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: #ffffff;
+        color: #333;
+    }
+
+    #hero .form-container .form-control::placeholder,
+    #hero .form-container .form-select::placeholder {
+        color: #999;
+        font-weight: 400;
+    }
+
+    #hero .form-container .form-select {
+        color: #999;
+        cursor: pointer;
+    }
+
+    #hero .form-container .form-select:not([value=""]) {
+        color: #333;
+    }
+
+    #hero .form-container .form-control:focus,
+    #hero .form-container .form-select:focus {
+        border-color: #44137c;
+        box-shadow: 0 0 0 0.25rem rgba(68, 19, 124, 0.15);
+        transform: translateY(-2px);
+        outline: none;
+    }
+
+    #hero .form-container .mb-3 {
+        margin-bottom: 20px !important;
+    }
+
+    #hero .form-container button[type="submit"] {
+        background: linear-gradient(120deg, #44137c, #2bab6d) !important;
+        border: none;
+        padding: 14px 30px;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(68, 19, 124, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 10px;
+    }
+
+    #hero .form-container button[type="submit"]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(68, 19, 124, 0.4);
+    }
+
+    #hero .form-container button[type="submit"]:active {
+        transform: translateY(-1px);
     }
 
     #about .card {
@@ -408,63 +689,64 @@
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center" data-aos="fade-up"
                 data-aos-delay="100">
-                <h1 class="hero-heading">Online Quran Academy</h1>
+                <h1 class="hero-heading">Transform Your Quranic Journey</h1>
                 <p class="hero-subtext">
-                    Welcome to Rooh ul Quran Academy, your trusted online Quran school <br>
-                    where learning the Holy Quran becomes simple, interactive, and rewarding.
+                    Join Rooh ul Quran Academy - Where Expert Tutors Meet Modern Technology.<br>
+                    Experience personalized Quran learning from the comfort of your home.
                 </p>
 
-                <!-- Bullet List -->
-                <ul class="list-unstyled text-start mt-3 hero-features">
-                    <li class="d-flex align-items-start mb-2">
-                        <span class="me-2 text-white fw-bold">✔</span>
-                        One-to-one Online Quran Classes
+                <!-- Enhanced Bullet List -->
+                <ul class="list-unstyled text-start mt-4 hero-features">
+                    <li class="d-flex align-items-start mb-3">
+                        <span class="me-3 text-white fw-bold">✓</span>
+                        <span>One-on-One Live Classes with Certified Teachers</span>
                     </li>
-                    <li class="d-flex align-items-start mb-2">
-                        <span class="me-2 text-white fw-bold">✔</span>
-                        Flexible Timings for Kids and Adults
+                    <li class="d-flex align-items-start mb-3">
+                        <span class="me-3 text-white fw-bold">✓</span>
+                        <span>Flexible Schedules for Kids, Adults & Families</span>
                     </li>
-                    <li class="d-flex align-items-start mb-2">
-                        <span class="me-2 text-white fw-bold">✔</span>
-                        Interactive Learning with Tajweed Rules
+                    <li class="d-flex align-items-start mb-3">
+                        <span class="me-3 text-white fw-bold">✓</span>
+                        <span>Master Tajweed with Interactive Learning Tools</span>
                     </li>
-                    <li class="d-flex align-items-start">
-                        <span class="me-2 text-white fw-bold">✔</span>
-                        Special Courses for Hifz Quran Online
+                    <li class="d-flex align-items-start mb-3">
+                        <span class="me-3 text-white fw-bold">✓</span>
+                        <span>Specialized Hifz Program with Progress Tracking</span>
                     </li>
                 </ul>
 
-                <a href="{{ route('home.contact.us') }}" class="btn-get-started mt-3">Get Started</a>
+                <a href="{{ route('home.contact.us') }}" class="btn-get-started mt-4">Start Learning Today</a>
             </div>
 
 
             <!-- Right Form -->
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
-                <div class="form-container p-4 bg-light rounded shadow">
-                    <h3 class=" text-center" style="color: #44137c; font-weight: bold;">
-                        Free Trial Class
-                    </h3>
+                <div class="form-container bg-light rounded shadow">
+                    <div class="text-center mb-3">
+                        <div style="display: inline-block; background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%); padding: 8px 20px; border-radius: 25px; margin-bottom: 10px;">
+                            <span style="color: white; font-weight: 600; font-size: 0.9rem;">🎁 Special Offer</span>
+                        </div>
+                        <h3 class="text-center" style="color: #44137c; font-weight: bold;">
+                            Free Trial Class
+                        </h3>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 8px;">Start Your Quranic Journey Today</p>
+                    </div>
 
                     <form id="trial-form">
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name"
                                 required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Enter your email" required>
+                                placeholder="Enter your email address" required>
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone"
                                 placeholder="Enter your phone number" required>
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Country</label>
-
                             <select class="form-select" id="country" name="country" required>
                                 <option value="" disabled selected>Select your country</option>
                                 @foreach(config('countries.countries') as $country)
