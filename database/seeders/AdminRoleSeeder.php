@@ -38,8 +38,8 @@ class AdminRoleSeeder extends Seeder
             // Create admin if not exists
             $admin = Admin::create([
                 'name' => 'Super Admin',
-                'email' => 'admin@gmail.com',
-                'password' => Hash::make('123456'),
+                'email' => 'hafiz@admin.com',
+                'password' => Hash::make('hafiz2156'),
             ]);
             $admin->assignRole($superAdminRole);
             echo "Admin user created and assigned super-admin role!\n";
