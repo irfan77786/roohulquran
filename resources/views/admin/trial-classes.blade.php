@@ -90,21 +90,21 @@
         <div class="col-12">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
-                    <div class="table-responsive">
+    <div class="table-responsive">
                         <table id="trialClassesTable" class="table table-hover align-middle mb-0" style="width:100%">
                             <thead class="table-light">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                                     <th>Country</th>
-                                    <th>Message</th>
+                    <th>Message</th>
                                     <th>Date</th>
                                     <th class="text-center">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                </tr>
+            </thead>
+            <tbody>
                                 @foreach ($classes as $index => $class)
                                     <tr>
                                         <td>{{ $class->id }}</td>
@@ -149,16 +149,16 @@
                                                 <i class="ti ti-eye"></i>
                                             </button>
                                         </td>
-                                    </tr>
+                    </tr>
                                 @endforeach
-                            </tbody>
-                        </table>
+            </tbody>
+        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 {{-- Modals --}}
 <div class="modal fade" id="detailModal" tabindex="-1">
@@ -176,8 +176,8 @@
             </div>
         </div>
     </div>
-</div>
-
+    </div>
+    
 <div class="modal fade" id="messageModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

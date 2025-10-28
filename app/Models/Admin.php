@@ -9,7 +9,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Admin extends Authenticatable
 {
-    use HasFactory , Notifiable;
-    protected $fillable = ['name', 'email', 'password'];
+    use HasFactory, Notifiable, \Spatie\Permission\Traits\HasRoles;
 
+    protected $guard_name = 'admin';
+    protected $fillable = ['name', 'email', 'password', 'status'];
+    protected $hidden = ['password', 'remember_token'];
 }

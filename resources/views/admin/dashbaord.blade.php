@@ -39,13 +39,13 @@
                             </small>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
+      </div>
+    </div>
 
         <div class="col-lg-3 col-md-6 mb-3">
             <div class="card border-0 shadow-sm">
-                <div class="card-body">
+        <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="p-3 bg-warning bg-opacity-10 rounded">
                             <iconify-icon icon="solar:users-group-rounded-bold-duotone" class="fs-1 text-warning"></iconify-icon>
@@ -75,16 +75,16 @@
                             </small>
                         </div>
                     </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     {{-- Academy Statistics Row --}}
     <div class="row mb-4">
         <div class="col-lg-3 col-md-6 mb-3">
             <div class="card border-0 shadow-sm">
-                <div class="card-body">
+        <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="p-3 bg-primary bg-opacity-10 rounded">
                             <iconify-icon icon="solar:users-group-rounded-bold-duotone" class="fs-1 text-primary"></iconify-icon>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+          </div>
 
         <div class="col-lg-3 col-md-6 mb-3">
             <div class="card border-0 shadow-sm">
@@ -151,11 +151,11 @@
                             <h3 class="mb-0 fw-bold">{{ $stats['total_users'] }}</h3>
                             <small class="text-info">Registered</small>
                         </div>
-                    </div>
+              </div>
                 </div>
             </div>
-        </div>
-    </div>
+              </div>
+            </div>
 
     {{-- Charts Row --}}
     <div class="row mb-4">
@@ -167,16 +167,16 @@
                             <iconify-icon icon="solar:chart-line-bold-duotone" class="text-primary"></iconify-icon>
                             Trial Classes Over Time (Last 30 Days)
                         </h5>
-                        <div>
+            <div>
                             <button class="btn btn-sm btn-outline-primary" onclick="refreshChart()">
                                 <i class="ti ti-refresh"></i> Refresh
                             </button>
                         </div>
-                    </div>
+              </div>
                     <div id="trialChart" style="height: 350px;"></div>
-                </div>
+              </div>
             </div>
-        </div>
+              </div>
 
         <div class="col-lg-4">
             <div class="card border-0 shadow-sm">
@@ -186,9 +186,9 @@
                         Top Countries
                     </h5>
                     <div id="countryChart" style="height: 350px;"></div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     {{-- Recent Activity Row --}}
@@ -255,7 +255,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+        </div>
             </div>
         </div>
 
@@ -302,12 +302,12 @@
                         <div class="list-group-item border-0 text-center py-4">
                             <i class="ti ti-file-text fs-2 text-muted"></i>
                             <p class="mb-0 mt-2 text-muted">No recent blogs</p>
-                        </div>
-                        @endforelse
-                    </div>
-                </div>
             </div>
+                        @endforelse
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     {{-- Quick Actions --}}
@@ -356,16 +356,16 @@
                                     <div class="card-body text-center p-4">
                                         <iconify-icon icon="solar:external-link-bold-duotone" class="fs-1 text-warning mb-3"></iconify-icon>
                                         <h6 class="fw-semibold mb-0">Visit Website</h6>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+            </div>
+                            </a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+        </div>
 
 {{-- Modal for Class Details --}}
 @foreach($recent_classes as $class)
@@ -406,10 +406,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+          </div>
         </div>
     </div>
-</div>
+  </div>
 @endforeach
 
 @endsection

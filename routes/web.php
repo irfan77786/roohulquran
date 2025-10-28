@@ -37,10 +37,22 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     // This will register all blog routes under /admin/blogs
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
     
+    // User Management Routes
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+    Route::post('users/{user}/toggle-status', [\App\Http\Controllers\Admin\UserController::class, 'toggleStatus'])->name('users.toggle-status');
+    Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
+    Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
+    
     // Academy Management Routes
     Route::resource('students', \App\Http\Controllers\Admin\StudentController::class);
     Route::resource('teachers', \App\Http\Controllers\Admin\TeacherController::class);
     Route::resource('courses', \App\Http\Controllers\Admin\CourseController::class);
+    Route::resource('sessions', \App\Http\Controllers\Admin\ClassSessionController::class);
+    
+    // Attendance Routes
+    Route::get('attendance', [\App\Http\Controllers\Admin\AttendanceController::class, 'index'])->name('attendance.index');
+    Route::post('attendance/mark', [\App\Http\Controllers\Admin\AttendanceController::class, 'mark'])->name('attendance.mark');
+    Route::get('attendance/history', [\App\Http\Controllers\Admin\AttendanceController::class, 'history'])->name('attendance.history');
 
     // Notification routes
     Route::get('notifications', [\App\Http\Controllers\Admin\NotificationController::class, 'index'])->name('notifications.index');
