@@ -79,6 +79,9 @@ Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
 
 
 Route::post('/trial-class', [TrialClassController::class, 'store'])->name('trial-class.store');
+Route::get('/trial-class', function() {
+    return redirect('/');
+})->name('trial-class');
 
 // courses
 

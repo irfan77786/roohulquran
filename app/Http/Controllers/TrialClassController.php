@@ -37,35 +37,51 @@ class TrialClassController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $validated =  $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'nullable|email|max:255',
-            'phone' => 'required|string|max:20',
-            'country' => 'nullable|string|max:100',
-            'message' => 'nullable|string|max:500',
-            'course_enroll' => 'nullable|string|max:255'
-        ]);
+        try {
+            $validated = $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'nullable|email|max:255',
+                'phone' => 'required|string|max:20',
+                'country' => 'nullable|string|max:100',
+                'message' => 'nullable|string|max:500',
+                'course_enroll' => 'nullable|string|max:255'
+            ]);
 
-        $trialClass = TrialClass::create($request->all());
+            $trialClass = TrialClass::create($request->all());
 
-        // Create notification for admin
-        AdminNotification::createNotification(
-            'trial_class',
-            'New Trial Class Registration',
-            $validated['name'] . ' has registered for a trial class from ' . ($validated['country'] ?? 'Unknown'),
-            'ti ti-user',
-            'primary',
-            ['trial_class_id' => $trialClass->id, 'name' => $validated['name'], 'email' => $validated['email']],
-            'trial_class',
-            $trialClass->id
-        );
+            // Create notification for admin
+            try {
+                AdminNotification::createNotification(
+                    'trial_class',
+                    'New Trial Class Registration',
+                    $validated['name'] . ' has registered for a trial class from ' . ($validated['country'] ?? 'Unknown'),
+                    'ti ti-user',
+                    'primary',
+                    ['trial_class_id' => $trialClass->id, 'name' => $validated['name'], 'email' => $validated['email'] ?? null],
+                    'trial_class',
+                    $trialClass->id
+                );
+            } catch (\Exception $e) {
+                // Log but don't fail if notification creation fails
+                \Log::error('Failed to create admin notification: ' . $e->getMessage());
+            }
 
-        if (!empty($validated['email'])) {
-            SendTrialClassEmailJob::dispatch($validated);
+            if (!empty($validated['email'])) {
+                try {
+                    SendTrialClassEmailJob::dispatch($validated);
+                } catch (\Exception $e) {
+                    // Log but don't fail if email job fails
+                    \Log::error('Failed to dispatch email job: ' . $e->getMessage());
+                }
+            }
+
+            return response()->json(['message' => 'We received your Query, InshAllah we will contact you soon'], 201);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json(['message' => 'Validation failed', 'errors' => $e->errors()], 422);
+        } catch (\Exception $e) {
+            \Log::error('Trial class registration failed: ' . $e->getMessage());
+            return response()->json(['message' => 'An error occurred. Please try again later.'], 500);
         }
-
-        return response()->json(['message' => 'We received your Query, InshAllah we will contact you soon'], 201);
     }
 
     /**

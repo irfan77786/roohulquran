@@ -34,31 +34,27 @@
     <link rel="preconnect" href="https://img.youtube.com" crossorigin>
     <link rel="preconnect" href="https://embed.tawk.to" crossorigin>
 
-    <!-- Preload critical fonts to prevent CLS -->
+    <!-- Preload critical fonts to prevent CLS (only woff2, modern browsers) -->
     <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff') }}" as="font" type="font/woff" crossorigin>
 
-    <!-- CSS (deferred) -->
+    <!-- CSS (deferred for non-blocking load) -->
     <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet" media="print"
         onload="this.media='all'">
-    <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print"
         onload="this.media='all'">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
-        onload="this.media='all'">
+    <!-- Swiper CSS will be loaded conditionally with JS when needed -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
     
     <!-- SweetAlert2 CSS - load non-blocking to reduce critical path -->
-    <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" as="style">
     <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
     <noscript>
         <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
         <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
     </noscript>
@@ -69,14 +65,8 @@
 
         <!-- Google tag (gtag.js) deferred until after load/idle -->
 
-    <!-- Preload critical images -->
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+    <!-- Preload critical above-the-fold images only (remove if not immediately visible) -->
     <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
-    <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
-    
-    <!-- Preload critical JavaScript -->
-    <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}" as="script">
 
 
     <style>
@@ -356,47 +346,62 @@
     </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <!-- Swiper loaded conditionally only when needed -->
+    <!-- Swiper loaded conditionally only when needed - using local files for speed -->
     <script>
         (function(){
             const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider');
             if (hasSwiper) {
-                const s = document.createElement('script');
-                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
-                s.onload = function() {
-                    // Initialize Swiper after script loads
-                    setTimeout(function() {
-                        try {
-                            const swiper = new Swiper('.testimonial-slider', {
-                                loop: true,
-                                pagination: {
-                                    el: '.swiper-pagination',
-                                    clickable: true,
-                                },
-                                autoplay: {
-                                    delay: 5000,
-                                    disableOnInteraction: false,
-                                },
-                                // Performance optimizations
-                                watchOverflow: true,       // Don't reflow if only 1 slide
-                                updateOnWindowResize: true, // Debounced resize recalculations
-                                observer: true,             // Watch DOM mutations smartly
-                                observeParents: true,
-                            });
+                // Load Swiper CSS first (local file for faster loading)
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = '{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}';
+                link.onload = function() {
+                    // After CSS loads, load JS
+                    const s = document.createElement('script');
+                    s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
+                    s.onload = function() {
+                        // Initialize Swiper after both CSS and JS are loaded
+                        requestAnimationFrame(function() {
+                            try {
+                                const swiper = new Swiper('.testimonial-slider', {
+                                    loop: true,
+                                    pagination: {
+                                        el: '.swiper-pagination',
+                                        clickable: true,
+                                    },
+                                    autoplay: {
+                                        delay: 5000,
+                                        disableOnInteraction: false,
+                                    },
+                                    // Performance optimizations
+                                    watchOverflow: true,       // Don't reflow if only 1 slide
+                                    updateOnWindowResize: true, // Debounced resize recalculations
+                                    observer: true,             // Watch DOM mutations smartly
+                                    observeParents: true,
+                                });
 
-                            // Reduce layout thrashing on resize
-                            window.addEventListener('resize', () => {
-                                requestAnimationFrame(() => swiper.update());
-                            });
-                        } catch (error) {
-                            console.error('Swiper initialization failed:', error);
-                        }
-                    }, 100);
+                                // Reduce layout thrashing on resize
+                                let resizeTimer;
+                                window.addEventListener('resize', () => {
+                                    clearTimeout(resizeTimer);
+                                    resizeTimer = setTimeout(() => {
+                                        requestAnimationFrame(() => swiper.update());
+                                    }, 150);
+                                });
+                            } catch (error) {
+                                console.error('Swiper initialization failed:', error);
+                            }
+                        });
+                    };
+                    s.onerror = function() {
+                        console.error('Failed to load Swiper script');
+                    };
+                    document.head.appendChild(s);
                 };
-                s.onerror = function() {
-                    console.error('Failed to load Swiper script');
+                link.onerror = function() {
+                    console.error('Failed to load Swiper CSS');
                 };
-                document.head.appendChild(s);
+                document.head.appendChild(link);
             }
         })();
     </script>
