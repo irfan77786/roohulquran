@@ -236,6 +236,7 @@
             const pagination = document.querySelector('.swiper-pagination');
             if (swiperContainer && !swiperContainer.swiper && pagination) {
               pagination.style.display = 'none';
+              console.log('Swiper fallback: Pagination hidden');
             }
           }, 3000);
         </script>
