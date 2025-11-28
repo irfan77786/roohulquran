@@ -29,6 +29,7 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://img.youtube.com" crossorigin>
     <link rel="preconnect" href="https://embed.tawk.to" crossorigin>
