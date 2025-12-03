@@ -53,6 +53,10 @@
     <!-- SweetAlert2 CSS - load non-blocking to reduce critical path -->
     <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" as="style">
     <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Animation CSS - Performance Optimized -->
+    <link rel="preload" href="{{ asset('assets/css/animations.css') }}" as="style">
+    <link href="{{ asset('assets/css/animations.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
     <noscript>
         <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
@@ -61,6 +65,7 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
         <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/animations.css') }}" rel="stylesheet">
     </noscript>
 
     <style>
@@ -356,6 +361,8 @@
     </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <!-- Animation Script - Lightweight and Performance Optimized -->
+    <script defer src="{{ asset('assets/js/animations.js') }}"></script>
     <!-- Swiper loaded conditionally only when needed -->
     <script>
         (function(){

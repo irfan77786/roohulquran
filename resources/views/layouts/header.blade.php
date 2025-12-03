@@ -277,9 +277,9 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="{{route('home.index')}}" class="active">Home<br></a></li>
-        <li><a href="{{route('home.about')}}">About Us</a></li>
-        <li class="dropdown"><a href="#"><span>Courses</span> <i
+        <li><a href="{{route('home.index')}}" class="active fade-in animate-delay-100">Home<br></a></li>
+        <li><a href="{{route('home.about')}}" class="fade-in animate-delay-150">About Us</a></li>
+        <li class="dropdown"><a href="#" class="fade-in animate-delay-200"><span>Courses</span> <i
               class="bi bi-chevron-down toggle-dropdown color-yellow"></i></a>
           <ul>
             <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
@@ -289,19 +289,19 @@
 
           </ul>
         </li>
-        <li><a href="{{route('home.pricing')}}">Pricing</a></li>
+        <li><a href="{{route('home.pricing')}}" class="fade-in animate-delay-250">Pricing</a></li>
         {{-- <li><a href="trainers.html">Trainers</a></li> --}}
-        <li><a href="{{route('teachers')}}">Teachers</a></li>
+        <li><a href="{{route('teachers')}}" class="fade-in animate-delay-300">Teachers</a></li>
 
 
-        <li><a href="{{route('home.contact.us')}}">Contact Us</a></li>
-        <li><a href="{{route('blogs.index')}}">Blogs</a></li>
+        <li><a href="{{route('home.contact.us')}}" class="fade-in animate-delay-350">Contact Us</a></li>
+        <li><a href="{{route('blogs.index')}}" class="fade-in animate-delay-400">Blogs</a></li>
 
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
-    <a href="{{ route('home.contact.us') }}" class="btn-getstarted" style="color: white !important">Get Started</a>
+    <a href="{{ route('home.contact.us') }}" class="btn-getstarted fade-in animate-delay-500" style="color: white !important">Get Started</a>
 
   </div>
 </header>
