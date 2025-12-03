@@ -26,6 +26,16 @@ class Blog extends Model
     ];
     public function getImageUrlAttribute()
     {
-        return $this->featured_image ? asset('storage/' . $this->featured_image) : null;
+        if (!$this->featured_image) {
+            return null;
+        }
+        
+        // If it's already a full URL (Cloudinary URL), return it directly
+        if (filter_var($this->featured_image, FILTER_VALIDATE_URL)) {
+            return $this->featured_image;
+        }
+        
+        // Otherwise, it's a local storage path (for backward compatibility)
+        return asset('storage/' . $this->featured_image);
     }
 }
