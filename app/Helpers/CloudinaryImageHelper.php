@@ -20,39 +20,43 @@ class CloudinaryImageHelper
         // Remove leading slash if present
         $localPath = ltrim($localPath, '/');
         
-        // For SVG files, check if we should use Cloudinary or fallback to local
-        // SVG files are small and sometimes work better served locally
-        $extension = strtolower(pathinfo($localPath, PATHINFO_EXTENSION));
-        if ($extension === 'svg') {
-            // Check if we have a Cloudinary URL for this SVG
+        // Cache key for this image URL
+        $cacheKey = 'cloudinary_url_' . md5($localPath . serialize($transformations));
+        
+        // Cache the URL lookup for LIFETIME to avoid repeated config lookups
+        return Cache::rememberForever($cacheKey, function () use ($localPath, $transformations) {
+            // For SVG files, check if we should use Cloudinary or fallback to local
+            // SVG files are small and sometimes work better served locally
+            $extension = strtolower(pathinfo($localPath, PATHINFO_EXTENSION));
+            if ($extension === 'svg') {
+                // Check if we have a Cloudinary URL for this SVG
+                $mappings = Config::get('cloudinary-images', []);
+                if (isset($mappings[$localPath])) {
+                    $cloudinaryUrl = $mappings[$localPath];
+                    return $cloudinaryUrl;
+                }
+                // Fallback to local asset for SVG if not in mappings
+                return asset($localPath);
+            }
+            
+            // Get mappings from config (cached internally by Laravel)
             $mappings = Config::get('cloudinary-images', []);
+            
+            // Check if we have a Cloudinary URL for this path
             if (isset($mappings[$localPath])) {
                 $cloudinaryUrl = $mappings[$localPath];
-                // Test if the URL is accessible, if not, fallback to local
-                // For now, we'll use Cloudinary URL if it exists
+                
+                // Apply transformations if provided
+                if (!empty($transformations)) {
+                    return self::applyTransformations($cloudinaryUrl, $transformations);
+                }
+                
                 return $cloudinaryUrl;
             }
-            // Fallback to local asset for SVG if not in mappings
+            
+            // Fallback to local asset if not found in mappings
             return asset($localPath);
-        }
-        
-        // Get mappings from config
-        $mappings = Config::get('cloudinary-images', []);
-        
-        // Check if we have a Cloudinary URL for this path
-        if (isset($mappings[$localPath])) {
-            $cloudinaryUrl = $mappings[$localPath];
-            
-            // Apply transformations if provided
-            if (!empty($transformations)) {
-                return self::applyTransformations($cloudinaryUrl, $transformations);
-            }
-            
-            return $cloudinaryUrl;
-        }
-        
-        // Fallback to local asset if not found in mappings
-        return asset($localPath);
+        });
     }
     
     /**

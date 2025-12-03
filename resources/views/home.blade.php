@@ -748,7 +748,7 @@
                         <div class="mb-3">
                             <select class="form-select" id="country" name="country" required>
                                 <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
+                                @foreach(get_countries_list() as $country)
                                 <option value="{{ $country }}">{{ $country }}</option>
                                 @endforeach
                             </select>
@@ -1288,14 +1288,14 @@
                         <input type="text" class="form-control rounded-pill" name="phone"
                             placeholder="Enter Your Phone Number" required>
                     </div>
-                    <div class="mb-3">
-                        <select class="form-select rounded-pill" id="country" name="country" required>
-                            <option value="" disabled selected>Select your country</option>
-                            @foreach(config('countries.countries') as $country)
-                            <option value="{{ $country }}">{{ $country }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                        <div class="mb-3">
+                            <select class="form-select rounded-pill" id="country" name="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                @foreach(get_countries_list() as $country)
+                                <option value="{{ $country }}">{{ $country }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                     <div class="mb-3">
                         <textarea class="form-control rounded-pill w-100" name="message"
@@ -1510,7 +1510,7 @@
                         <div class="mb-3">
                             <select class="form-select" id="country" name="country" required>
                                 <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
+                                @foreach(get_countries_list() as $country)
                                 <option value="{{ $country }}">{{ $country }}</option>
                                 @endforeach
                             </select>

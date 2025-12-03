@@ -80,6 +80,11 @@
     <link rel="preload" href="{{ cloudinary_image('assets/img/logo.svg') }}" as="image">
     <link rel="preload" href="{{ cloudinary_image('assets/img/header-bg.webp') }}" as="image">
     
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://embed.tawk.to">
+    
     <!-- Preload critical JavaScript -->
     <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}" as="script">
 
@@ -443,15 +448,24 @@
     });
     </script>
 
-    {{-- loader --}}
+    {{-- Optimized loader - hide immediately when DOM is ready, not waiting for all resources --}}
     <script>
-        window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    preloader.classList.add('hidden');
-    setTimeout(() => {
-        preloader.style.display = 'none';
-    }, 500);
-});
+        // Hide preloader as soon as DOM is ready (faster than waiting for all resources)
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hidePreloader);
+        } else {
+            hidePreloader();
+        }
+        
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 300); // Reduced from 500ms for faster perceived load
+            }
+        }
     </script>
 
     <!--End of Tawk.to Script-->
