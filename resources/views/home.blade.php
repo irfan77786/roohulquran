@@ -444,7 +444,7 @@
     }
 
     #why-us {
-        background-image: url('assets/img/about-bg.png');
+        background-image: url('{{ cloudinary_image('assets/img/about-bg.png') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -675,20 +675,19 @@
 <!-- Hero Section (Keep same) -->
 <section id="hero" class="hero section dark-background">
     <picture>
-        <source media="(max-width: 768px)" srcset="{{ asset('assets/img/hero-bg-1-320.webp') }} 320w, 
-                        {{ asset('assets/img/hero-bg-1.webp') }} 480w, 
-                        {{ asset('assets/img/hero-bg-1.webp') }} 768w" sizes="100vw">
-        <source media="(min-width: 769px)" srcset="{{ asset('assets/img/hero-bg-4-768.webp') }} 768w, 
-                        {{ asset('assets/img/hero-bg-4.webp') }} 1024w, 
-                        {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
-        <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes"
+        <source media="(max-width: 768px)" srcset="{{ cloudinary_image('assets/img/hero-bg-1-320.webp') }} 320w, 
+                        {{ cloudinary_image('assets/img/hero-bg-1.webp') }} 480w, 
+                        {{ cloudinary_image('assets/img/hero-bg-1.webp') }} 768w" sizes="100vw">
+        <source media="(min-width: 769px)" srcset="{{ cloudinary_image('assets/img/hero-bg-4-768.webp') }} 768w, 
+                        {{ cloudinary_image('assets/img/hero-bg-4.webp') }} 1024w, 
+                        {{ cloudinary_image('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
+        <img class="desktop-image" src="{{ cloudinary_image('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes"
             width="1440" height="600" loading="eager" fetchpriority="high" decoding="async">
     </picture>
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center" data-aos="fade-up"
-                data-aos-delay="100">
+            <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center slide-up animate-delay-100">
                 <h1 class="hero-heading">Transform Your Quranic Journey</h1>
                 <p class="hero-subtext">
                     Join Rooh ul Quran Academy - Where Expert Tutors Meet Modern Technology.<br>
@@ -720,7 +719,7 @@
 
 
             <!-- Right Form -->
-            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-4 col-md-6 col-sm-12 slide-left animate-delay-200">
                 <div class="form-container bg-light rounded shadow">
                     <div class="text-center mb-3">
                         <div style="display: inline-block; background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%); padding: 8px 20px; border-radius: 25px; margin-bottom: 10px;">
@@ -749,7 +748,7 @@
                         <div class="mb-3">
                             <select class="form-select" id="country" name="country" required>
                                 <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
+                                @foreach(get_countries_list() as $country)
                                 <option value="{{ $country }}">{{ $country }}</option>
                                 @endforeach
                             </select>
@@ -769,10 +768,10 @@
 
 <!-- New Content Section -->
 <section id="academy-intro" class="py-5 bg-light">
-    <div class="container" data-aos="fade-up">
+    <div class="container animate-on-scroll">
 
         <!-- Heading -->
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 slide-up">
             <h2 class="fw-bold mb-3" style="color:#44137c; font-size:2rem;">
                 Rooh ul Quran Academy Learn Quran Online with Expert Teachers
             </h2>
@@ -785,7 +784,7 @@
         <!-- Intro + Features -->
         <div class="row align-items-center g-5">
             <!-- Left Content -->
-            <div class="col-lg-10 mx-auto text-center">
+            <div class="col-lg-10 mx-auto text-center fade-in animate-delay-200">
                 <p>
                     Whether you are a beginner starting with <strong>Noorani Qaida Online</strong>, a student aiming to
                     <strong>learn Quran with Tajweed</strong>, or someone dedicated to <strong>Quran Memorization
@@ -822,7 +821,7 @@
 
         <!-- Tajweed + Hifz -->
         <div class="row mt-5">
-            <div class="col-lg-10 mx-auto text-center">
+            <div class="col-lg-10 mx-auto text-center slide-up animate-delay-300">
                 <h2 class="fw-bold mb-3" style="color:#44137c;">Quran Memorization and Tajweed Made Easy</h2>
                 <p>
                     If your goal is to <strong>memorize the Quran</strong>, our step-by-step
@@ -847,17 +846,17 @@
 
 <!-- About Section -->
 <section id="about" class="about section"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ cloudinary_image('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container">
         <div class="row gy-4 align-items-center">
             <!-- Image on the Left -->
-            <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('assets/img/about.webp') }}" loading="lazy" class="img-fluid rounded shadow"
+            <div class="col-lg-6 order-1 order-lg-1 slide-right animate-delay-100">
+                <img src="{{ cloudinary_image('assets/img/about.webp') }}" loading="lazy" class="img-fluid rounded shadow"
                     alt="about roohul quran" width="600" height="400">
             </div>
 
             <!-- Card for About Us Description -->
-            <div class="col-lg-6 order-2 order-lg-2" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-6 order-2 order-lg-2 slide-left animate-delay-200">
                 <div class="card p-4 shadow"
                     style="position: relative; top: -12px; background: #ffffff; border-radius: 10px;">
                     <!-- Increased height -->
@@ -903,11 +902,11 @@
 
 <!-- Counts Section -->
 <section id="counts" class="section counts light-background"
-    style="background-image: url('assets/img/choos-us.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+    style="background-image: url('{{ cloudinary_image('assets/img/choos-us.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container">
         <div class="row gy-4">
             <!-- Title -->
-            <div class="col-12 text-center">
+            <div class="col-12 text-center slide-up">
                 <h2 style="color: #36c47d">Start Your Quran Learning Journey Today</h2>
                 <p class="col-lg-6 mx-auto" style="text-align:inherit;line-height: 1.8;">
                     Rooh ul Quran Academy is more than an online Quran school – it is a place where students grow
@@ -916,7 +915,7 @@
             </div>
 
             <!-- Stats Items -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 scale-in animate-delay-100">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"
                         class="purecounter add-plus" style="color: white;">
@@ -925,7 +924,7 @@
                 </div>
             </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 scale-in animate-delay-200">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
                         class="purecounter add-plus" style="color: white;">
@@ -934,7 +933,7 @@
                 </div>
             </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 scale-in animate-delay-300">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1"
                         class="purecounter add-plus" style="color: white;">
@@ -943,7 +942,7 @@
                 </div>
             </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 scale-in animate-delay-400">
                 <div class="stats-item text-center w-100 h-100">
                     <span data-purecounter-start="0" data-purecounter-end="400" data-purecounter-duration="1"
                         class="purecounter add-plus" style="color: white;">
@@ -963,11 +962,11 @@
 
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background-image: url('{{ cloudinary_image('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <div class="container">
         <div class="row gy-4">
             <!-- New Content -->
-            <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 text-center slide-up">
                 <h2 class=" mb-4" style="color:#44137c;">Why Choose Roohul Quran Academy?</h2>
 
                 <div class="container">
@@ -1033,9 +1032,9 @@
 </section>
 
 <section id="why-choose-us" class="py-5 bg-white">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <!-- Heading -->
-        <div class="text-center mb-2">
+        <div class="text-center mb-2 slide-up">
             <h2 class="fw-bold" style="color:#44137c;">Learn Quran Online with Trusted Teachers</h2>
             <p class="text-muted">
                 At Rooh ul Quran Academy, we understand that every student learns differently. That’s why we offer
@@ -1046,8 +1045,8 @@
         </div>
 
         <!-- Features List -->
-        <div class="row">
-            <div class="col-md-6 col-lg-4">
+        <div class="row" data-stagger="100">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-success mb-3">📖</span>
                     <h5 class="fw-bold">One-to-one Classes</h5>
@@ -1055,7 +1054,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-primary mb-3">⏰</span>
                     <h5 class="fw-bold">Flexible Timings</h5>
@@ -1063,7 +1062,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-warning mb-3">🎙️</span>
                     <h5 class="fw-bold">Interactive Tajweed</h5>
@@ -1071,7 +1070,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-danger mb-3">⭐</span>
                     <h5 class="fw-bold">Special Hifz Courses</h5>
@@ -1079,7 +1078,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 text-info mb-3">👨‍🏫</span>
                     <h5 class="fw-bold">Expert Quran Tutors</h5>
@@ -1087,7 +1086,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
                 <div class="card h-100 border-0 shadow-sm text-center p-4">
                     <span class="fs-2 mb-3" style="color:#e83e8c;">👩‍🏫</span>
                     <h5 class="fw-bold">Female Quran Tutors</h5>
@@ -1107,7 +1106,7 @@
 <section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 10px 0;">
 
     <!-- Section Title -->
-    <div class="container section-title text-center" data-aos="fade-up">
+    <div class="container section-title text-center slide-up">
         {{-- <h2 class="text-black">Highlighted Program</h2> --}}
         <p class="fw-bold" style="color:#44137c;">Our Featured Courses</p>
         {{-- <h5 class="col-lg-8 mx-auto text-black">
@@ -1121,15 +1120,15 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row" data-stagger="150">
 
-            <div class="course-wrapper " data-aos="fade-up">
-                <div class="course-card " data-aos="fade-up">
+            <div class="course-wrapper animate-on-scroll">
+                <div class="course-card animate-on-scroll">
                     <div class="course-image">
                         <span class="badge-level">Intermediate</span>
-                        <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
-          {{ asset('assets/img/ai/course-1.webp') }} 768w,
-          {{ asset('assets/img/ai/course-1.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-1.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-1.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-1.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-1.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran online"
                             loading="lazy" width="400" height="260" />
 
@@ -1156,9 +1155,9 @@
                 <div class="course-card" data-aos="fade-up">
                     <div class="course-image">
                         <span class="badge-level">Beginner</span>
-                        <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
-          {{ asset('assets/img/ai/course-2.webp') }} 768w,
-          {{ asset('assets/img/ai/course-2.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-2.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-2.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-2.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-2.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class online"
                             loading="lazy" width="400" height="260" />
 
@@ -1183,12 +1182,12 @@
                         </div> --}}
                     </div>
                 </div>
-                <div class="course-card" data-aos="fade-up">
+                <div class="course-card animate-on-scroll">
                     <div class="course-image">
                         <span class="badge-level">Advance</span>
-                        <img src="{{ asset('assets/img/ai/course-3.webp') }}" srcset="{{ asset('assets/img/ai/course-3.webp') }} 480w,
-          {{ asset('assets/img/ai/course-3.webp') }} 768w,
-          {{ asset('assets/img/ai/course-3.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-3.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-3.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-3.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-3.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
                             alt="Quran reading with Tajweed" loading="lazy" width="400" height="260" />
 
@@ -1212,12 +1211,12 @@
                         </div> --}}
                     </div>
                 </div>
-                <div class="course-card" data-aos="fade-up">
+                <div class="course-card animate-on-scroll">
                     <div class="course-image">
                         <span class="badge-level">Advance</span>
-                        <img src="{{ asset('assets/img/ai/course-4.webp') }}" srcset="{{ asset('assets/img/ai/course-4.webp') }} 480w,
-          {{ asset('assets/img/ai/course-4.webp') }} 768w,
-          {{ asset('assets/img/ai/course-4.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-4.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-4.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-4.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-4.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
                             alt="Tafseer ul Quran course" loading="lazy" width="400" height="260" />
 
@@ -1257,7 +1256,7 @@
         <div class="bg-white shadow d-flex flex-column flex-lg-row position-relative">
 
             <!-- Left Content -->
-            <div class="quran-box text-white rounded d-flex align-items-center justify-content-center mx-auto">
+            <div class="quran-box text-white rounded d-flex align-items-center justify-content-center mx-auto slide-right animate-delay-100">
                 <div>
                     <h2 class="mb-4 fs-4 fs-md-3 text-center text-white">
                         Make Quran learning simple with dedicated teaching support
@@ -1273,7 +1272,7 @@
 
 
             <!-- Right Form -->
-            <div class="text-white right-form rounded w-100 mt-4 mt-lg-0"
+            <div class="text-white right-form rounded w-100 mt-4 mt-lg-0 slide-left animate-delay-200"
                 style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a); max-width: 600px;">
                 <form id="trial-forms" class="form-container mx-auto">
                     @csrf
@@ -1289,14 +1288,14 @@
                         <input type="text" class="form-control rounded-pill" name="phone"
                             placeholder="Enter Your Phone Number" required>
                     </div>
-                    <div class="mb-3">
-                        <select class="form-select rounded-pill" id="country" name="country" required>
-                            <option value="" disabled selected>Select your country</option>
-                            @foreach(config('countries.countries') as $country)
-                            <option value="{{ $country }}">{{ $country }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                        <div class="mb-3">
+                            <select class="form-select rounded-pill" id="country" name="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                @foreach(get_countries_list() as $country)
+                                <option value="{{ $country }}">{{ $country }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                     <div class="mb-3">
                         <textarea class="form-control rounded-pill w-100" name="message"
@@ -1316,9 +1315,9 @@
         </div>
 
         <!-- Center Image -->
-        <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
+        <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block zoom-in animate-delay-300"
             style="z-index: 2; margin-top: 120px;">
-            <img src="assets/img/ai/thumbsup1.webp" alt="quran academy teacher" loading="lazy" class="img-fluid"
+            <img src="{{ cloudinary_image('assets/img/ai/thumbsup1.webp') }}" alt="quran academy teacher" loading="lazy" class="img-fluid"
                 style="max-height: 200px;">
         </div>
     </div>
@@ -1328,9 +1327,9 @@
 {{-- start of faq --}}
 
 <section id="faq" class="py-5 bg-light">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <!-- Heading -->
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 slide-up">
             <h2 class="fw-bold" style="color:#44137c;">Frequently Asked Questions</h2>
             <p class="text-muted">Find answers to the most common questions about our online Quran classes.</p>
         </div>
@@ -1436,19 +1435,19 @@
 {{-- contact us --}}
 
 <section id="contact" class="contact-section position-relative"
-    style="background: url('assets/img/ai/contact-us.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background: url('{{ cloudinary_image('assets/img/ai/contact-us.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <!-- Transparent Black Box -->
     <div class="overlay"></div>
 
     <div class="container position-relative" style="z-index: 1;">
         <div class="row align-items-center">
             <!-- Left Content -->
-            <div class="col-lg-6 col-md-12 text-white" data-aos="fade-up">
+            <div class="col-lg-6 col-md-12 text-white slide-right">
                 <h2 class="mb-4" style="font-weight: bold; color: #f8f8f8;">Register Your Free Online Quran Classes
                 </h2>
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/pointing-up.avif" alt="registration" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/pointing-up.avif') }}" alt="registration" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
@@ -1458,7 +1457,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/schedule.avif" alt="Schedule" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/schedule.avif') }}" alt="Schedule" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
@@ -1468,7 +1467,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/koran.avif" alt="Start quran Class" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/koran.avif') }}" alt="Start quran Class" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
@@ -1478,7 +1477,7 @@
                         </div>
                     </li>
                     <li class="d-flex align-items-start">
-                        <img src="assets/img/icons/quality.avif" alt="Certificate quran teachers" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/quality.avif') }}" alt="Certificate quran teachers" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>
@@ -1491,7 +1490,7 @@
             </div>
 
             <!-- Right Form -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-6 col-md-12 slide-left animate-delay-200">
                 <div class="contact-form bg-white p-4 shadow hover-popout"
                     style="border: 2px solid #44137c; border-radius: 20px;">
                     <h3 class="mb-4 text-center" style="color: #44137c; font-weight: bold;">FREE TRIAL CLASS</h3>
@@ -1511,7 +1510,7 @@
                         <div class="mb-3">
                             <select class="form-select" id="country" name="country" required>
                                 <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
+                                @foreach(get_countries_list() as $country)
                                 <option value="{{ $country }}">{{ $country }}</option>
                                 @endforeach
                             </select>

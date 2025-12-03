@@ -68,11 +68,11 @@ certified teachers, flexible timings')
 @section('content')
 
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/ai/about-1.webp" alt="about-roohul-quran-online-academy" class="desktop-image"
+  <img src="{{ cloudinary_image('assets/img/ai/about-1.webp') }}" alt="about-roohul-quran-online-academy" class="desktop-image"
     data-aos="fade-in">
 
 
-  <img src="assets/img/hero-bg-1.webp" alt="about-roohul-quran-online-academy-mobile" class="mobile-image"
+  <img src="{{ cloudinary_image('assets/img/hero-bg-1.webp') }}" alt="about-roohul-quran-online-academy-mobile" class="mobile-image"
     data-aos="fade-in">
 
   <div class="container">
@@ -138,7 +138,7 @@ certified teachers, flexible timings')
     {{-- About Content --}}
     <div class="row gy-5 align-items-center">
       <div class="col-lg-6" data-aos="fade-right">
-        <img src="{{ asset('assets/img/ai/about.webp') }}" class="img-fluid rounded shadow"
+        <img src="{{ cloudinary_image('assets/img/ai/about.webp') }}" class="img-fluid rounded shadow"
           alt="About Rooh ul Quran Academy" loading="lazy" style="height: 400px; ">
       </div>
 
@@ -180,7 +180,7 @@ certified teachers, flexible timings')
         </p>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-left">
-        <img src="{{ asset('assets/img/ai/our-mission.webp') }}" loading="lazy" style="height: 400px;"
+        <img src="{{ cloudinary_image('assets/img/ai/our-mission.webp') }}" loading="lazy" style="height: 400px;"
           class="img-fluid rounded shadow" alt="quran academy mission">
       </div>
     </div>

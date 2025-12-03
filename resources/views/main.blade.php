@@ -23,8 +23,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="icon">
-    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
+    <link href="{{ cloudinary_image('assets/img/tab-logo.webp') }}" rel="icon">
+    <link href="{{ cloudinary_image('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
@@ -53,6 +53,10 @@
     <!-- SweetAlert2 CSS - load non-blocking to reduce critical path -->
     <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" as="style">
     <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Animation CSS - Performance Optimized -->
+    <link rel="preload" href="{{ asset('assets/css/animations.css') }}" as="style">
+    <link href="{{ asset('assets/css/animations.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
     <noscript>
         <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
@@ -61,6 +65,7 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
         <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/animations.css') }}" rel="stylesheet">
     </noscript>
 
     <style>
@@ -70,10 +75,15 @@
         <!-- Google tag (gtag.js) deferred until after load/idle -->
 
     <!-- Preload critical images -->
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
-    <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/logo.svg') }}" as="image">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/header-bg.webp') }}" as="image">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://embed.tawk.to">
     
     <!-- Preload critical JavaScript -->
     <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}" as="script">
@@ -356,6 +366,8 @@
     </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <!-- Animation Script - Lightweight and Performance Optimized -->
+    <script defer src="{{ asset('assets/js/animations.js') }}"></script>
     <!-- Swiper loaded conditionally only when needed -->
     <script>
         (function(){
@@ -436,15 +448,24 @@
     });
     </script>
 
-    {{-- loader --}}
+    {{-- Optimized loader - hide immediately when DOM is ready, not waiting for all resources --}}
     <script>
-        window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    preloader.classList.add('hidden');
-    setTimeout(() => {
-        preloader.style.display = 'none';
-    }, 500);
-});
+        // Hide preloader as soon as DOM is ready (faster than waiting for all resources)
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hidePreloader);
+        } else {
+            hidePreloader();
+        }
+        
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 300); // Reduced from 500ms for faster perceived load
+            }
+        }
     </script>
 
     <!--End of Tawk.to Script-->

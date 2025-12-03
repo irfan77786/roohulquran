@@ -53,7 +53,7 @@
           Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide. This introduction video explains our teaching methodology and commitment to Islamic education.
         </p>
         <div class="video-container">
-          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="{{asset('assets/img/video-thumb.webp')}}" itemprop="video">
+          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="{{cloudinary_image('assets/img/video-thumb.webp')}}" itemprop="video">
             <div class="youtube-thumbnail">
               <div class="youtube-play-button"></div>
             </div>
