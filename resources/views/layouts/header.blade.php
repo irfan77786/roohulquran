@@ -270,7 +270,7 @@
   <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
     <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
-      <img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy Logo" width="160" height="160"
+      <img src="{{ cloudinary_image('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy Logo" width="160" height="160"
         decoding="async" loading="eager" />
     </a>
 

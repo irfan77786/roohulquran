@@ -116,7 +116,7 @@
                 </p>
                 <div class="d-flex align-items-center">
                   <div class="position-relative" style="width: 50px; height: 50px;">
-                    <img src="{{ asset('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle"
+                    <img src="{{ cloudinary_image('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle"
                       style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                     <!-- Flag badge -->
                     <span class="fi fi-gb fis position-absolute bottom-0 end-0"
@@ -142,7 +142,7 @@
                 <div class="d-flex align-items-center">
                   <div class="position-relative" style="width: 50px; height: 50px;">
 
-                    <img src="{{ asset('assets/img/ai/test-2.webp') }}" alt="islamic teacher"
+                    <img src="{{ cloudinary_image('assets/img/ai/test-2.webp') }}" alt="islamic teacher"
                       class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                     <span class="fi fi-us fis ms-2 position-absolute bottom-0 end-0"
                       style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
@@ -164,7 +164,7 @@
                 </p>
                 <div class="d-flex align-items-center">
                   <div class="position-relative" style="width: 50px; height: 50px;">
-                    <img src="{{ asset('assets/img/ai/test-3.webp') }}" alt="online quran classes"
+                    <img src="{{ cloudinary_image('assets/img/ai/test-3.webp') }}" alt="online quran classes"
                       class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                     <span class="fi fi-ca fis ms-2 position-absolute bottom-0 end-0"
                       style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
@@ -186,7 +186,7 @@
                 </p>
                 <div class="d-flex align-items-center">
                   <div class="position-relative" style="width: 50px; height: 50px;">
-                    <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
+                    <img src="{{ cloudinary_image('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
                       style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                     <span class="fi fi-au fis ms-2 position-absolute bottom-0 end-0"
                       style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
@@ -210,7 +210,7 @@
                 </p>
                 <div class="d-flex align-items-center">
                   <div class="position-relative" style="width: 50px; height: 50px;">
-                    <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
+                    <img src="{{ cloudinary_image('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
                       style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
                     <span class="fi fi-de fis ms-2 position-absolute bottom-0 end-0"
                       style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
@@ -244,7 +244,7 @@
 
       <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
-        <img src="{{ asset('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded"
+        <img src="{{ cloudinary_image('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded"
           style="max-height: 400px;" loading="lazy">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"

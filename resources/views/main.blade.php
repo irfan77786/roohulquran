@@ -23,8 +23,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="icon">
-    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
+    <link href="{{ cloudinary_image('assets/img/tab-logo.webp') }}" rel="icon">
+    <link href="{{ cloudinary_image('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
@@ -70,10 +70,10 @@
         <!-- Google tag (gtag.js) deferred until after load/idle -->
 
     <!-- Preload critical images -->
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
-    <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/logo.svg') }}" as="image">
+    <link rel="preload" href="{{ cloudinary_image('assets/img/header-bg.webp') }}" as="image">
     
     <!-- Preload critical JavaScript -->
     <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}" as="script">

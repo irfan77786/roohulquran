@@ -444,7 +444,7 @@
     }
 
     #why-us {
-        background-image: url('assets/img/about-bg.png');
+        background-image: url('{{ cloudinary_image('assets/img/about-bg.png') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -675,13 +675,13 @@
 <!-- Hero Section (Keep same) -->
 <section id="hero" class="hero section dark-background">
     <picture>
-        <source media="(max-width: 768px)" srcset="{{ asset('assets/img/hero-bg-1-320.webp') }} 320w, 
-                        {{ asset('assets/img/hero-bg-1.webp') }} 480w, 
-                        {{ asset('assets/img/hero-bg-1.webp') }} 768w" sizes="100vw">
-        <source media="(min-width: 769px)" srcset="{{ asset('assets/img/hero-bg-4-768.webp') }} 768w, 
-                        {{ asset('assets/img/hero-bg-4.webp') }} 1024w, 
-                        {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
-        <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes"
+        <source media="(max-width: 768px)" srcset="{{ cloudinary_image('assets/img/hero-bg-1-320.webp') }} 320w, 
+                        {{ cloudinary_image('assets/img/hero-bg-1.webp') }} 480w, 
+                        {{ cloudinary_image('assets/img/hero-bg-1.webp') }} 768w" sizes="100vw">
+        <source media="(min-width: 769px)" srcset="{{ cloudinary_image('assets/img/hero-bg-4-768.webp') }} 768w, 
+                        {{ cloudinary_image('assets/img/hero-bg-4.webp') }} 1024w, 
+                        {{ cloudinary_image('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
+        <img class="desktop-image" src="{{ cloudinary_image('assets/img/hero-bg-4.webp') }}" alt="Online Quran Classes"
             width="1440" height="600" loading="eager" fetchpriority="high" decoding="async">
     </picture>
 
@@ -847,12 +847,12 @@
 
 <!-- About Section -->
 <section id="about" class="about section"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ cloudinary_image('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container">
         <div class="row gy-4 align-items-center">
             <!-- Image on the Left -->
             <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('assets/img/about.webp') }}" loading="lazy" class="img-fluid rounded shadow"
+                <img src="{{ cloudinary_image('assets/img/about.webp') }}" loading="lazy" class="img-fluid rounded shadow"
                     alt="about roohul quran" width="600" height="400">
             </div>
 
@@ -903,7 +903,7 @@
 
 <!-- Counts Section -->
 <section id="counts" class="section counts light-background"
-    style="background-image: url('assets/img/choos-us.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ cloudinary_image('assets/img/choos-us.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
             <!-- Title -->
@@ -963,7 +963,7 @@
 
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background-image: url('{{ cloudinary_image('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <div class="container">
         <div class="row gy-4">
             <!-- New Content -->
@@ -1127,9 +1127,9 @@
                 <div class="course-card " data-aos="fade-up">
                     <div class="course-image">
                         <span class="badge-level">Intermediate</span>
-                        <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
-          {{ asset('assets/img/ai/course-1.webp') }} 768w,
-          {{ asset('assets/img/ai/course-1.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-1.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-1.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-1.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-1.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran online"
                             loading="lazy" width="400" height="260" />
 
@@ -1156,9 +1156,9 @@
                 <div class="course-card" data-aos="fade-up">
                     <div class="course-image">
                         <span class="badge-level">Beginner</span>
-                        <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
-          {{ asset('assets/img/ai/course-2.webp') }} 768w,
-          {{ asset('assets/img/ai/course-2.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-2.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-2.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-2.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-2.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class online"
                             loading="lazy" width="400" height="260" />
 
@@ -1186,9 +1186,9 @@
                 <div class="course-card" data-aos="fade-up">
                     <div class="course-image">
                         <span class="badge-level">Advance</span>
-                        <img src="{{ asset('assets/img/ai/course-3.webp') }}" srcset="{{ asset('assets/img/ai/course-3.webp') }} 480w,
-          {{ asset('assets/img/ai/course-3.webp') }} 768w,
-          {{ asset('assets/img/ai/course-3.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-3.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-3.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-3.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-3.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
                             alt="Quran reading with Tajweed" loading="lazy" width="400" height="260" />
 
@@ -1215,9 +1215,9 @@
                 <div class="course-card" data-aos="fade-up">
                     <div class="course-image">
                         <span class="badge-level">Advance</span>
-                        <img src="{{ asset('assets/img/ai/course-4.webp') }}" srcset="{{ asset('assets/img/ai/course-4.webp') }} 480w,
-          {{ asset('assets/img/ai/course-4.webp') }} 768w,
-          {{ asset('assets/img/ai/course-4.webp') }} 1024w"
+                        <img src="{{ cloudinary_image('assets/img/ai/course-4.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-4.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-4.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-4.webp') }} 1024w"
                             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
                             alt="Tafseer ul Quran course" loading="lazy" width="400" height="260" />
 
@@ -1318,7 +1318,7 @@
         <!-- Center Image -->
         <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
             style="z-index: 2; margin-top: 120px;">
-            <img src="assets/img/ai/thumbsup1.webp" alt="quran academy teacher" loading="lazy" class="img-fluid"
+            <img src="{{ cloudinary_image('assets/img/ai/thumbsup1.webp') }}" alt="quran academy teacher" loading="lazy" class="img-fluid"
                 style="max-height: 200px;">
         </div>
     </div>
@@ -1436,7 +1436,7 @@
 {{-- contact us --}}
 
 <section id="contact" class="contact-section position-relative"
-    style="background: url('assets/img/ai/contact-us.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background: url('{{ cloudinary_image('assets/img/ai/contact-us.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <!-- Transparent Black Box -->
     <div class="overlay"></div>
 
@@ -1448,7 +1448,7 @@
                 </h2>
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/pointing-up.avif" alt="registration" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/pointing-up.avif') }}" alt="registration" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
@@ -1458,7 +1458,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/schedule.avif" alt="Schedule" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/schedule.avif') }}" alt="Schedule" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
@@ -1468,7 +1468,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/koran.avif" alt="Start quran Class" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/koran.avif') }}" alt="Start quran Class" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
@@ -1478,7 +1478,7 @@
                         </div>
                     </li>
                     <li class="d-flex align-items-start">
-                        <img src="assets/img/icons/quality.avif" alt="Certificate quran teachers" class="me-3"
+                        <img src="{{ cloudinary_image('assets/img/icons/quality.avif') }}" alt="Certificate quran teachers" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>

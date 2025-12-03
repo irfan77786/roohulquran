@@ -71,11 +71,11 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
 @section('content')
 
 <section id="hero" class="hero section dark-background">
-    <img src="{{ asset('assets/img/ai/teacher-1.webp') }}" alt="roohul quran academy teacher 1" class="desktop-image"
+    <img src="{{ cloudinary_image('assets/img/ai/teacher-1.webp') }}" alt="roohul quran academy teacher 1" class="desktop-image"
         data-aos="fade-in">
 
 
-    <img src="assets/img/hero-bg-1.webp" alt="roohul quran academy teacher hero section" class="mobile-image"
+    <img src="{{ cloudinary_image('assets/img/hero-bg-1.webp') }}" alt="roohul quran academy teacher hero section" class="mobile-image"
         data-aos="fade-in">
 
     <div class="container">
@@ -143,7 +143,7 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
         {{-- About Teachers --}}
         <div class="row gy-4 align-items-center">
             <div class="col-lg-6" data-aos="fade-right">
-                <img src="{{ asset('assets/img/ai/teachers.webp') }}" class="img-fluid rounded shadow"
+                <img src="{{ cloudinary_image('assets/img/ai/teachers.webp') }}" class="img-fluid rounded shadow"
                     alt="Online Quran Teacher" loading="lazy" style="height: 400px; ">
             </div>
             <div class="col-lg-6" data-aos="fade-left">

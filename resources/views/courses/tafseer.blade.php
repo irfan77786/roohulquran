@@ -133,8 +133,8 @@ tafsir classes, understand quran meaning')
   }
 </style>
 <section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="tafseer course" class="desktop-image" data-aos="fade-in">
-  <img src="assets/img/hero-bg-1.webp" alt="online tafseer course" class="mobile-image" data-aos="fade-in">
+  <img src="{{ cloudinary_image('assets/img/hero-bg-3.webp') }}" alt="tafseer course" class="desktop-image" data-aos="fade-in">
+  <img src="{{ cloudinary_image('assets/img/hero-bg-1.webp') }}" alt="online tafseer course" class="mobile-image" data-aos="fade-in">
 
   <div class="container">
     <div class="row align-items-center">
@@ -345,9 +345,9 @@ tafsir classes, understand quran meaning')
         <div class="course-card " data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Intermediate</span>
-            <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
-          {{ asset('assets/img/ai/course-1.webp') }} 768w,
-          {{ asset('assets/img/ai/course-1.webp') }} 1024w"
+            <img src="{{ cloudinary_image('assets/img/ai/course-1.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-1.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-1.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-1.webp') }} 1024w"
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran" loading="lazy"
               width="400" height="260" />
 
@@ -374,9 +374,9 @@ tafsir classes, understand quran meaning')
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Beginner</span>
-            <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
-          {{ asset('assets/img/ai/course-2.webp') }} 768w,
-          {{ asset('assets/img/ai/course-2.webp') }} 1024w"
+            <img src="{{ cloudinary_image('assets/img/ai/course-2.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-2.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-2.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-2.webp') }} 1024w"
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class" loading="lazy"
               width="400" height="260" />
 
@@ -404,9 +404,9 @@ tafsir classes, understand quran meaning')
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="{{ asset('assets/img/ai/course-3.webp') }}" srcset="{{ asset('assets/img/ai/course-3.webp') }} 480w,
-          {{ asset('assets/img/ai/course-3.webp') }} 768w,
-          {{ asset('assets/img/ai/course-3.webp') }} 1024w"
+            <img src="{{ cloudinary_image('assets/img/ai/course-3.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-3.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-3.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-3.webp') }} 1024w"
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="Quran reading with Tajweed"
               loading="lazy" width="400" height="260" />
 
@@ -433,9 +433,9 @@ tafsir classes, understand quran meaning')
         <div class="course-card" data-aos="fade-up">
           <div class="course-image">
             <span class="badge-level">Advance</span>
-            <img src="{{ asset('assets/img/ai/course-4.webp') }}" srcset="{{ asset('assets/img/ai/course-4.webp') }} 480w,
-          {{ asset('assets/img/ai/course-4.webp') }} 768w,
-          {{ asset('assets/img/ai/course-4.webp') }} 1024w"
+            <img src="{{ cloudinary_image('assets/img/ai/course-4.webp') }}" srcset="{{ cloudinary_image('assets/img/ai/course-4.webp') }} 480w,
+          {{ cloudinary_image('assets/img/ai/course-4.webp') }} 768w,
+          {{ cloudinary_image('assets/img/ai/course-4.webp') }} 1024w"
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="Tafseer ul Quran course"
               loading="lazy" width="400" height="260" />
 
