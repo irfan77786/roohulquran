@@ -44,16 +44,16 @@
 </style>
 
 
-<section id="video" class="section video-section" style="background-color: #f9f9f9; padding: 50px 0;" itemscope itemtype="https://schema.org/VideoObject">
+<section id="video" class="section video-section" style="background-color: #f9f9f9; padding: 50px 0;">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 style="color:#44137c;" itemprop="name"><b>Watch Our Introduction Video</b></h2>
-        <p class="mb-4" itemprop="description">
+        <h2 style="color:#44137c;"><b>Watch Our Introduction Video</b></h2>
+        <p class="mb-4">
           Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide. This introduction video explains our teaching methodology and commitment to Islamic education.
         </p>
         <div class="video-container">
-          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="{{asset('assets/img/video-thumb.webp')}}" itemprop="video">
+          <div class="youtube-lazy-wrapper" data-video-id="YZYoqH3RsGk" data-local-thumb="{{asset('assets/img/video-thumb.webp')}}">
             <div class="youtube-thumbnail">
               <div class="youtube-play-button"></div>
             </div>
@@ -77,8 +77,8 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "Rooh Ul Quran Academy Introduction - Online Quran Classes",
-  "description": "Learn more about Rooh Ul Quran Academy's mission, vision, and how we provide high-quality Quran education to students worldwide. Watch our introduction video to understand our teaching methods and approach to online Quran learning.",
+  "name": "Watch Our Introduction Video",
+  "description": "Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide. This introduction video explains our teaching methodology and commitment to Islamic education.",
   "thumbnailUrl": "https://img.youtube.com/vi/YZYoqH3RsGk/maxresdefault.jpg",
   "uploadDate": "2024-01-01T08:00:00+00:00",
   "duration": "PT2M30S",
@@ -88,10 +88,10 @@
   "publisher": {
     "@type": "Organization",
     "name": "Rooh Ul Quran Academy",
-    "url": "https://roohulquranacademy.com",
+    "url": "{{ url('/') }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://roohulquranacademy.com/assets/img/tab-logo.webp"
+      "url": "{{ url('/') }}/assets/img/tab-logo.webp"
     }
   },
   "author": {

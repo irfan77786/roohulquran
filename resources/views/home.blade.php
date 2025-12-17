@@ -1556,6 +1556,7 @@
     {
       "@type": "Course",
       "@id": "https://roohulquranacademy.com/#tajweed-course",
+      "url": "{{ url('/quran-reading-with-tajweed') }}",
       "name": "Online Quran Classes with Tajweed",
       "description": "Learn Quran online with proper Tajweed rules, guided by expert tutors.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }

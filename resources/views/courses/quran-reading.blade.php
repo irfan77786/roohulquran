@@ -611,13 +611,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "url": "https://roohulquranacademy.com/quran-reading-with-tajweed",
+  "url": "{{ url()->current() }}",
   "name": "Quran Reading with Tajweed Online Course",
   "description": "Learn Quran reading with Tajweed through structured levels from beginner to advanced. One-on-one sessions with certified male and female instructors are available 24/7. Includes personalized assessments, progress tracking, and a free trial class.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
-    "url": "https://roohulquranacademy.com"
+    "url": "{{ url('/') }}"
   },
   "audience": {
     "@type": "Audience",
