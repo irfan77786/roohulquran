@@ -36,4 +36,9 @@ class Payment extends Model
     {
         return $this->belongsTo(Enrollment::class);
     }
+
+    public function invoice()
+    {
+        return $this->belongsTo(Invoice::class, 'invoice_number', 'invoice_number');
+    }
 }

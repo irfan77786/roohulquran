@@ -24,19 +24,19 @@
                     <form method="GET" action="{{ route('admin.attendance.index') }}" id="filterForm">
                         <div class="row g-3">
                             <div class="col-md-4">
-                                <label class="form-label">Select Session</label>
-                                <select class="form-select" name="session_id" id="session_select" onchange="filterForm.submit()">
-                                    <option value="">Choose a session...</option>
-                                    @foreach($sessions as $session)
-                                        <option value="{{ $session->id }}" {{ $classSessionId == $session->id ? 'selected' : '' }}>
-                                            {{ $session->name }} - {{ $session->course->name ?? 'N/A' }} ({{ $session->day_of_week }})
+                                <label class="form-label">Select Course</label>
+                                <select class="form-select" name="course_id" id="course_select" onchange="filterForm.submit()">
+                                    <option value="">Choose a course...</option>
+                                    @foreach($courses as $course)
+                                        <option value="{{ $course->id }}" {{ $courseId == $course->id ? 'selected' : '' }}>
+                                            {{ $course->name }} @if($course->level) - {{ $course->level }} @endif
                                         </option>
                                     @endforeach
                                 </select>
-                                @if($sessions->isEmpty())
+                                @if($courses->isEmpty())
                                 <small class="text-danger d-block mt-1">
-                                    <i class="ti ti-alert-circle"></i> No sessions found. 
-                                    <a href="{{ route('admin.sessions.index') }}" target="_blank">Create one here</a>
+                                    <i class="ti ti-alert-circle"></i> No courses found. 
+                                    <a href="{{ route('admin.courses.index') }}" target="_blank">Create one here</a>
                                 </small>
                                 @endif
                             </div>
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    @if($selectedSession)
+    @if($selectedCourse)
     {{-- Attendance Marking Interface --}}
     <div class="row">
         <div class="col-12">
@@ -59,11 +59,11 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div>
-                            <h5 class="mb-0 fw-bold">{{ $selectedSession->name }}</h5>
+                            <h5 class="mb-0 fw-bold">{{ $selectedCourse->name }}</h5>
                             <p class="text-muted mb-0">
-                                {{ $selectedSession->course->name }} | 
-                                Teacher: {{ $selectedSession->teacher->name ?? 'TBA' }} | 
-                                {{ \Carbon\Carbon::parse($selectedDate)->format('l, F d, Y') }}
+                                @if($selectedCourse->level) Level: {{ $selectedCourse->level }} | @endif
+                                {{ \Carbon\Carbon::parse($selectedDate)->format('l, F d, Y') }} | 
+                                Total Students: {{ $enrollments->count() }}
                             </p>
                         </div>
                         <div>
@@ -108,7 +108,11 @@
                                             </span>
                                         </td>
                                         <td id="time-{{ $enrollment->student_id }}">
-                                            {{ $currentAttendance ? $currentAttendance->time : '-' }}
+                                            @if($currentAttendance && $currentAttendance->time)
+                                                {{ \Carbon\Carbon::parse($currentAttendance->time)->format('h:i A') }}
+                                            @else
+                                                -
+                                            @endif
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm" role="group">
@@ -140,9 +144,9 @@
         <div class="col-12">
             <div class="card border-0 shadow-sm">
                 <div class="card-body text-center py-5">
-                    <iconify-icon icon="solar:calendar-add-bold-duotone" class="fs-1 text-muted mb-3"></iconify-icon>
-                    <h5 class="text-muted">Select a Session to Mark Attendance</h5>
-                    <p class="text-muted">Choose a class session from the dropdown above to begin marking attendance.</p>
+                    <iconify-icon icon="solar:book-bookmark-bold-duotone" class="fs-1 text-muted mb-3"></iconify-icon>
+                    <h5 class="text-muted">Select a Course to Mark Attendance</h5>
+                    <p class="text-muted">Choose a course from the dropdown above to view enrolled students and mark their attendance.</p>
                 </div>
             </div>
         </div>
@@ -152,15 +156,15 @@
 
 @push('scripts')
 <script>
-const selectedSessionId = {{ $selectedSession ? $selectedSession->id : 'null' }};
+const selectedCourseId = {{ $selectedCourse ? $selectedCourse->id : 'null' }};
 const selectedDate = '{{ $selectedDate }}';
 
-function markAttendance(studentId, status) {
+function markAttendance(studentId, attendanceStatus) {
     const data = {
         student_id: studentId,
-        class_session_id: selectedSessionId,
+        course_id: selectedCourseId,
         date: selectedDate,
-        status: status,
+        status: attendanceStatus,
         _token: '{{ csrf_token() }}'
     };
 
@@ -168,15 +172,31 @@ function markAttendance(studentId, status) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(response => {
+        return response.json().then(responseData => {
+            return { httpStatus: response.status, data: responseData };
+        });
+    })
+    .then(({ httpStatus, data }) => {
         if (data.success) {
-            updateBadge(studentId, status);
-            showToast('Attendance marked successfully', 'success');
+            updateBadge(studentId, attendanceStatus);
+            if (data.updated) {
+                showToast(data.message || 'Attendance updated successfully', 'success');
+            } else {
+                showToast('Attendance marked successfully', 'success');
+            }
+        } else {
+            // Handle already marked attendance
+            if (data.already_marked) {
+                showToast(data.message || 'Attendance already marked for today\'s session', 'warning');
+            } else {
+                showToast(data.message || 'Failed to mark attendance', 'error');
+            }
         }
     })
     .catch(error => {
@@ -189,6 +209,17 @@ function updateBadge(studentId, status) {
     const badge = document.getElementById('badge-' + studentId);
     const timeCell = document.getElementById('time-' + studentId);
     
+    if (!badge || !timeCell) {
+        console.error('Badge or time cell not found for student:', studentId);
+        return;
+    }
+    
+    // Ensure status is a string
+    if (typeof status !== 'string') {
+        console.error('Status is not a string:', status, typeof status);
+        status = String(status);
+    }
+    
     // Remove old badge classes
     badge.className = 'badge attendance-badge';
     
@@ -200,38 +231,60 @@ function updateBadge(studentId, status) {
         'excused': 'info'
     };
     
-    badge.classList.add('badge-' + statusColors[status]);
+    const statusColor = statusColors[status] || 'secondary';
+    badge.classList.add('badge-' + statusColor);
     badge.textContent = status.charAt(0).toUpperCase() + status.slice(1);
     
     // Update time
     const now = new Date();
-    timeCell.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const displayHours = hours % 12 || 12;
+    timeCell.textContent = `${displayHours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
 }
 
 function markAllPresent() {
-    if (confirm('Mark all students as present?')) {
-        const presentButtons = document.querySelectorAll('[onclick*="markAttendance"][onclick*="present"]');
-        presentButtons.forEach(btn => btn.click());
-    }
+    showConfirm('Mark All Present?', 'Mark all students as present?', 'Yes, Mark All', 'Cancel').then((result) => {
+        if (result.isConfirmed) {
+            const presentButtons = document.querySelectorAll('[onclick*="markAttendance"][onclick*="present"]');
+            presentButtons.forEach(btn => btn.click());
+        }
+    });
 }
 
 function markAllAbsent() {
-    if (confirm('Mark all students as absent?')) {
-        const absentButtons = document.querySelectorAll('[onclick*="markAttendance"][onclick*="absent"]');
-        absentButtons.forEach(btn => btn.click());
-    }
+    showConfirm('Mark All Absent?', 'Mark all students as absent?', 'Yes, Mark All', 'Cancel').then((result) => {
+        if (result.isConfirmed) {
+            const absentButtons = document.querySelectorAll('[onclick*="markAttendance"][onclick*="absent"]');
+            absentButtons.forEach(btn => btn.click());
+        }
+    });
 }
 
 function showToast(message, type) {
     // Simple toast notification
     const toast = document.createElement('div');
-    toast.className = `alert alert-${type === 'success' ? 'success' : 'danger'} position-fixed`;
-    toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999;';
-    toast.innerHTML = message;
+    let alertClass = 'alert-info';
+    if (type === 'success') {
+        alertClass = 'alert-success';
+    } else if (type === 'error' || type === 'danger') {
+        alertClass = 'alert-danger';
+    } else if (type === 'warning') {
+        alertClass = 'alert-warning';
+    }
+    
+    toast.className = `alert ${alertClass} position-fixed shadow-lg`;
+    toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px; padding: 15px 20px; border-radius: 8px;';
+    toast.innerHTML = `<i class="ti ti-${type === 'success' ? 'check-circle' : (type === 'warning' ? 'alert-triangle' : 'x-circle')} me-2"></i>${message}`;
     document.body.appendChild(toast);
     
     setTimeout(() => {
-        toast.remove();
+        toast.style.transition = 'opacity 0.3s';
+        toast.style.opacity = '0';
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
     }, 3000);
 }
 </script>

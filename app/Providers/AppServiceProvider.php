@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +27,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+        
+        // Share student data with all student views
+        View::composer('student.*', function ($view) {
+            if (Auth::guard('student')->check()) {
+                $student = Auth::guard('student')->user();
+                $view->with('student', $student);
+            }
+        });
     }
 }

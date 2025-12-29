@@ -23,10 +23,12 @@
           {{-- Notifications --}}
           <li class="nav-item dropdown">
             <a class="nav-link nav-icon-hover position-relative" href="javascript:void(0)" id="notificationDropdown" data-bs-toggle="dropdown">
-              <i class="ti ti-bell fs-5"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notification-count-badge" id="notificationCountBadge" style="font-size: 10px; display: none;">
-                0
-              </span>
+              <div class="position-relative d-inline-block">
+                <i class="ti ti-bell fs-5"></i>
+                <span class="position-absolute bottom-0 end-0 badge rounded-pill bg-danger border border-white" id="notificationCountBadge" style="font-size: 0.65rem; padding: 0.2rem 0.4rem; min-width: 18px; height: 18px; display: none; line-height: 1; transform: translate(25%, 25%);">
+                  0
+                </span>
+              </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" style="width: 350px; max-height: 400px; overflow-y: auto;">
               <div class="message-body">

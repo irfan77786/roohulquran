@@ -1,8 +1,9 @@
 <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
     <ul id="sidebarnav">
+      <!-- MAIN NAVIGATION -->
       <li class="nav-small-cap">
         <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-        <span class="hide-menu">MAIN NAVIGATION</span>
+        <span class="hide-menu">MAIN</span>
       </li>
       <li class="sidebar-item {{ Request::routeIs('admin.dashboard') ? 'active' : '' }}">
         <a class="sidebar-link {{ Request::routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}" aria-expanded="false">
@@ -13,9 +14,10 @@
         </a>
       </li>
       
+      <!-- ACADEMY MANAGEMENT -->
       <li class="nav-small-cap">
         <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-        <span class="hide-menu">ACADEMY MANAGEMENT</span>
+        <span class="hide-menu">ACADEMY</span>
       </li>
       
       <li class="sidebar-item {{ Request::routeIs('admin.students.*') ? 'active' : '' }}">
@@ -54,6 +56,24 @@
         </a>
       </li>
       
+      <li class="sidebar-item {{ Request::routeIs('admin.attendance.*') ? 'active' : '' }}">
+        <a class="sidebar-link {{ Request::routeIs('admin.attendance.*') ? 'active' : '' }}" href="{{ route('admin.attendance.index') }}" aria-expanded="false">
+          <span>
+            <iconify-icon icon="solar:clipboard-check-bold-duotone" class="fs-6"></iconify-icon>
+          </span>
+          <span class="hide-menu">Attendance</span>
+        </a>
+      </li>
+      
+      <li class="sidebar-item {{ Request::routeIs('admin.invoices.*') ? 'active' : '' }}">
+        <a class="sidebar-link {{ Request::routeIs('admin.invoices.*') ? 'active' : '' }}" href="{{ route('admin.invoices.index') }}" aria-expanded="false">
+          <span>
+            <iconify-icon icon="solar:receipt-bold-duotone" class="fs-6"></iconify-icon>
+          </span>
+          <span class="hide-menu">Invoices</span>
+        </a>
+      </li>
+      
       <li class="sidebar-item {{ Request::routeIs('admin.trial.classes') ? 'active' : '' }}">
         <a class="sidebar-link {{ Request::routeIs('admin.trial.classes') ? 'active' : '' }}" href="{{ route('admin.trial.classes') }}" aria-expanded="false">
           <span>
@@ -69,11 +89,26 @@
         </a>
       </li>
       
-      <!-- User Management Section -->
+      <!-- CONTENT MANAGEMENT -->
+      <li class="nav-small-cap">
+        <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
+        <span class="hide-menu">CONTENT</span>
+      </li>
+      
+      <li class="sidebar-item {{ Request::routeIs('admin.blogs.*') ? 'active' : '' }}">
+        <a class="sidebar-link {{ Request::routeIs('admin.blogs.*') ? 'active' : '' }}" href="{{ route('admin.blogs.index') }}" aria-expanded="false">
+          <span>
+            <iconify-icon icon="solar:document-bold-duotone" class="fs-6"></iconify-icon>
+          </span>
+          <span class="hide-menu">Blogs</span>
+        </a>
+      </li>
+      
+      <!-- SETTINGS & ADMINISTRATION -->
       @canany(['users-view', 'roles-view', 'permissions-view'])
       <li class="nav-small-cap">
-        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-        <span class="hide-menu">USER MANAGEMENT</span>
+        <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
+        <span class="hide-menu">SETTINGS</span>
       </li>
       
       @can('users-view')
@@ -110,41 +145,10 @@
       @endcan
       @endcanany
       
-      <li class="sidebar-item {{ Request::routeIs('admin.attendance.*') ? 'active' : '' }}">
-        <a class="sidebar-link {{ Request::routeIs('admin.attendance.*') ? 'active' : '' }}" href="{{ route('admin.attendance.index') }}" aria-expanded="false">
-          <span>
-            <iconify-icon icon="solar:clipboard-check-bold-duotone" class="fs-6"></iconify-icon>
-          </span>
-          <span class="hide-menu">Attendance</span>
-        </a>
-      </li>
-      
+      <!-- UTILITIES -->
       <li class="nav-small-cap">
         <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-        <span class="hide-menu">CONTENT</span>
-      </li>
-      
-      <li class="sidebar-item {{ Request::routeIs('admin.blogs.*') ? 'active' : '' }}">
-        <a class="sidebar-link {{ Request::routeIs('admin.blogs.*') ? 'active' : '' }}" href="{{ route('admin.blogs.index') }}" aria-expanded="false">
-          <span>
-            <iconify-icon icon="solar:document-bold-duotone" class="fs-6"></iconify-icon>
-          </span>
-          <span class="hide-menu">Blogs</span>
-        </a>
-      </li>
-      
-      <li class="nav-small-cap">
-        <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-        <span class="hide-menu">QUICK ACTIONS</span>
-      </li>
-      
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ route('admin.blogs.create') }}" aria-expanded="false">
-          <span>
-            <iconify-icon icon="solar:add-circle-bold-duotone" class="fs-6"></iconify-icon>
-          </span>
-          <span class="hide-menu">Create Blog</span>
-        </a>
+        <span class="hide-menu">UTILITIES</span>
       </li>
       
       <li class="sidebar-item">

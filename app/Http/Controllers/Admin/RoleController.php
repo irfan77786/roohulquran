@@ -9,9 +9,25 @@ use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $roles = Role::with('permissions')->latest()->paginate(15);
+        $query = Role::with('permissions');
+
+        // Search filter
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where('name', 'like', "%{$search}%");
+        }
+
+        // Date range filter
+        if ($request->filled('date_from')) {
+            $query->whereDate('created_at', '>=', $request->date_from);
+        }
+        if ($request->filled('date_to')) {
+            $query->whereDate('created_at', '<=', $request->date_to);
+        }
+
+        $roles = $query->latest()->paginate(15)->withQueryString();
         $permissions = Permission::all()->groupBy('module');
         return view('admin.roles.index', compact('roles', 'permissions'));
     }

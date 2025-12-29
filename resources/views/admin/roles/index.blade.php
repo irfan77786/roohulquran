@@ -16,6 +16,51 @@
         </div>
     </div>
 
+    <!-- Filters -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="mb-0 fw-bold">Filters</h5>
+                </div>
+                <div class="card-body">
+                    <form method="GET" action="{{ route('admin.roles.index') }}" id="filterForm">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label small">Search</label>
+                                <input type="text" class="form-control form-control-sm" name="search" value="{{ request('search') }}" placeholder="Role Name...">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label small">Date From</label>
+                                <input type="date" class="form-control form-control-sm" name="date_from" value="{{ request('date_from') }}">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label small">Date To</label>
+                                <input type="date" class="form-control form-control-sm" name="date_to" value="{{ request('date_to') }}">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label small">&nbsp;</label>
+                                <button type="submit" class="btn btn-sm btn-primary w-100">
+                                    <i class="ti ti-filter"></i>
+                                </button>
+                            </div>
+                            @php
+                                $hasFilters = request()->filled('search') || request()->filled('date_from') || request()->filled('date_to');
+                            @endphp
+                            @if($hasFilters)
+                            <div class="col-md-12">
+                                <a href="{{ route('admin.roles.index') }}" class="btn btn-sm btn-outline-secondary">
+                                    <i class="ti ti-x me-1"></i>Clear Filters
+                                </a>
+                            </div>
+                            @endif
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="card border-0 shadow-sm">

@@ -25,12 +25,22 @@
                                 <input type="email" class="form-control" name="email" value="{{ $student->email }}">
                             </div>
                             <div class="col-md-6 mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" minlength="8" placeholder="Leave empty to keep current password">
+                                <small class="text-muted">Only enter if you want to change the password</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
                                 <label class="form-label">Phone</label>
                                 <input type="text" class="form-control" name="phone" value="{{ $student->phone }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Country</label>
-                                <input type="text" class="form-control" name="country" value="{{ $student->country }}">
+                                <select class="form-select" name="country" id="country">
+                                    <option value="">Select Country</option>
+                                    @foreach(config('countries.countries') as $country)
+                                        <option value="{{ $country }}" {{ $student->country === $country ? 'selected' : '' }}>{{ $country }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Status *</label>

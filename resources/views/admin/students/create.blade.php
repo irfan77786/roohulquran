@@ -24,12 +24,31 @@
                                 <input type="email" class="form-control" name="email">
                             </div>
                             <div class="col-md-6 mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="password_field" minlength="8" placeholder="Enter password or leave empty to auto-generate">
+                                <small class="text-muted">Leave empty to auto-generate a password</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox" name="generate_credentials" id="generate_credentials" value="1">
+                                    <label class="form-check-label" for="generate_credentials">
+                                        Auto-generate Password (ignores password field above)
+                                    </label>
+                                </div>
+                                <small class="text-muted">If checked, a random password will be generated. Email is required.</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
                                 <label class="form-label">Phone</label>
                                 <input type="text" class="form-control" name="phone">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Country</label>
-                                <input type="text" class="form-control" name="country">
+                                <select class="form-select" name="country" id="country">
+                                    <option value="">Select Country</option>
+                                    @foreach(config('countries.countries') as $country)
+                                        <option value="{{ $country }}">{{ $country }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Status *</label>
@@ -51,4 +70,25 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const generateCheckbox = document.getElementById('generate_credentials');
+    const passwordField = document.getElementById('password_field');
+    
+    if (generateCheckbox && passwordField) {
+        generateCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                passwordField.disabled = true;
+                passwordField.placeholder = 'Password will be auto-generated';
+            } else {
+                passwordField.disabled = false;
+                passwordField.placeholder = 'Enter password or leave empty to auto-generate';
+            }
+        });
+    }
+});
+</script>
+@endpush
 @endsection

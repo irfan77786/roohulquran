@@ -237,6 +237,72 @@
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
     {{-- Before closing </body> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Global Toast and Alert Functions -->
+<script>
+// Global Toast Notification Function
+function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    let alertClass = 'alert-info';
+    let icon = 'ti-info-circle';
+    
+    if (type === 'success') {
+        alertClass = 'alert-success';
+        icon = 'ti-check-circle';
+    } else if (type === 'error' || type === 'danger') {
+        alertClass = 'alert-danger';
+        icon = 'ti-x-circle';
+    } else if (type === 'warning') {
+        alertClass = 'alert-warning';
+        icon = 'ti-alert-triangle';
+    }
+    
+    toast.className = `alert ${alertClass} position-fixed shadow-lg`;
+    toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px; padding: 15px 20px; border-radius: 8px; animation: slideInRight 0.3s ease;';
+    toast.innerHTML = `<i class="ti ${icon} me-2"></i>${message}`;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.transition = 'opacity 0.3s';
+        toast.style.opacity = '0';
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Global SweetAlert Confirmation Function
+function showConfirm(title, text, confirmButtonText = 'Yes, continue', cancelButtonText = 'Cancel') {
+    return Swal.fire({
+        title: title,
+        text: text,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: confirmButtonText,
+        cancelButtonText: cancelButtonText
+    });
+}
+
+// CSS Animation for toast
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+`;
+document.head.appendChild(style);
+</script>
 
 @stack('scripts')
 

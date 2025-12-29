@@ -43,6 +43,24 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
+            // Student routes - support both subdomain and path prefix
+            $host = request()->getHost();
+            $subdomain = explode('.', $host)[0];
+            $isStudentSubdomain = $subdomain === 'student' || str_contains($host, 'student.');
+            
+            if ($isStudentSubdomain) {
+                // Subdomain routing (production)
+                Route::middleware('web')
+                    ->namespace($this->namespace)
+                    ->group(base_path('routes/student.php'));
+            } else {
+                // Path prefix routing (local development)
+                Route::prefix('student')
+                    ->middleware('web')
+                    ->namespace($this->namespace)
+                    ->group(base_path('routes/student.php'));
+            }
+
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));

@@ -8,10 +8,39 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $permissions = Permission::all()->groupBy('module');
-        return view('admin.permissions.index', compact('permissions'));
+        $query = Permission::query();
+
+        // Search filter
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhere('module', 'like', "%{$search}%");
+            });
+        }
+
+        // Module filter
+        if ($request->filled('module')) {
+            $query->where('module', $request->module);
+        }
+
+        // Date range filter
+        if ($request->filled('date_from')) {
+            $query->whereDate('created_at', '>=', $request->date_from);
+        }
+        if ($request->filled('date_to')) {
+            $query->whereDate('created_at', '<=', $request->date_to);
+        }
+
+        $permissions = $query->get()->groupBy('module');
+        
+        // Get unique modules for filter
+        $modules = Permission::distinct()->pluck('module')->sort()->values();
+        
+        return view('admin.permissions.index', compact('permissions', 'modules'));
     }
 
     public function store(Request $request)

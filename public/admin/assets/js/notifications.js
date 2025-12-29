@@ -206,13 +206,16 @@
 
     function updateBadge(count) {
         const badge = document.getElementById('notificationCountBadge');
-        if (!badge) return;
-
-        if (count > 0) {
-            badge.textContent = count;
-            badge.style.display = 'block';
-        } else {
-            badge.style.display = 'none';
+        
+        if (badge) {
+            if (count > 0) {
+                badge.textContent = count > 99 ? '99+' : count;
+                badge.style.display = 'flex';
+                badge.style.alignItems = 'center';
+                badge.style.justifyContent = 'center';
+            } else {
+                badge.style.display = 'none';
+            }
         }
 
         // Update sidebar badge

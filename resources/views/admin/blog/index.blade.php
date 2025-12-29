@@ -11,6 +11,55 @@
                         <a href="{{ route('admin.blogs.create') }}" class="btn btn-success">Create Blog</a>
                     </div>
 
+                    {{-- Filters --}}
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-white border-0 py-3">
+                            <h5 class="mb-0 fw-bold">Filters</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="GET" action="{{ route('admin.blogs.index') }}" id="filterForm">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label small">Search</label>
+                                        <input type="text" class="form-control form-control-sm" name="search" value="{{ request('search') }}" placeholder="Title, Slug, Content...">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label small">Status</label>
+                                        <select class="form-select form-select-sm" name="status">
+                                            <option value="">All Status</option>
+                                            <option value="published" {{ request('status') == 'published' ? 'selected' : '' }}>Published</option>
+                                            <option value="draft" {{ request('status') == 'draft' ? 'selected' : '' }}>Draft</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label small">Date From</label>
+                                        <input type="date" class="form-control form-control-sm" name="date_from" value="{{ request('date_from') }}">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label small">Date To</label>
+                                        <input type="date" class="form-control form-control-sm" name="date_to" value="{{ request('date_to') }}">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label small">&nbsp;</label>
+                                        <button type="submit" class="btn btn-sm btn-primary w-100">
+                                            <i class="ti ti-filter"></i>
+                                        </button>
+                                    </div>
+                                    @php
+                                        $hasFilters = request()->filled('search') || request()->filled('status') || request()->filled('date_from') || request()->filled('date_to');
+                                    @endphp
+                                    @if($hasFilters)
+                                    <div class="col-md-12">
+                                        <a href="{{ route('admin.blogs.index') }}" class="btn btn-sm btn-outline-secondary">
+                                            <i class="ti ti-x me-1"></i>Clear Filters
+                                        </a>
+                                    </div>
+                                    @endif
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                     {{-- Blog Table --}}
                     <div class="table-responsive">
                         <table class="table text-nowrap align-middle mb-0">
