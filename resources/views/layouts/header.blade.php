@@ -102,6 +102,48 @@
 
 
 
+  /* Main header (#header) - mobile layout: logo left, buttons + menu right */
+  @media (max-width: 1199px) {
+    #header .container-fluid.container-xl {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    #header .logo {
+      order: 1;
+      margin-right: auto;
+      flex-shrink: 0;
+    }
+
+    #header .logo img {
+      width: 120px;
+      height: 120px;
+      max-height: 120px;
+    }
+
+    #header .header-actions {
+      order: 2;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #header .header-actions .btn-getstarted {
+      padding: 6px 12px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    #header .navmenu {
+      order: 3;
+      flex-shrink: 0;
+    }
+  }
+
   /* Medium Mobiles & Small Tablets (300px – 768px) */
   @media (min-width: 300px) and (max-width: 768px) {
     #top-header {
@@ -142,6 +184,18 @@
     .logo img {
       width: 130px;
       height: 130px;
+    }
+
+    /* Keep main header logo size on mobile */
+    #header .logo img {
+      width: 120px;
+      height: 80px;
+      max-height: 120px;
+    }
+
+    #header .header-actions .btn-getstarted {
+      padding: 5px 10px;
+      font-size: 11px;
     }
 
     .mobile-break {
@@ -301,7 +355,7 @@
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
-    <div class="d-flex align-items-center gap-2">
+    <div class="d-flex align-items-center gap-2 header-actions">
       @php
         $appUrl = config('app.url', 'http://roohulquranacademy.com');
         $appUrl = rtrim($appUrl, '/');
