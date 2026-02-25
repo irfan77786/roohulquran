@@ -328,7 +328,7 @@ kids tajweed, kids hifz class, quran learning for children')
                     <div class="card-body text-center">
                         <p>If you have any further query then you can contact our helpline:</p>
                         <h5 class="mb-0" style="color: #36c47d !important">Call Us</h5>
-                        <p style="font-size: 1.25rem; font-weight: bold;">+92 343 8078216</p>
+                        <p style="font-size: 1.25rem; font-weight: bold;">+92 334 4066429</p>
                     </div>
                 </div>
             </div>

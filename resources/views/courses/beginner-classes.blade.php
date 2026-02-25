@@ -32,8 +32,9 @@ beginners, online quran for beginners, quran study beginners')
 
         #hero .mobile-image {
             display: block;
-            width: auto;
-            height: auto;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -41,6 +42,7 @@ beginners, online quran for beginners, quran study beginners')
             text-align: center;
             padding: 0px 0px;
             min-height: 500px;
+            height: 500px;
         }
 
         .hero-heading {
@@ -327,7 +329,7 @@ beginners, online quran for beginners, quran study beginners')
                     <div class="card-body text-center">
                         <p>If you have any further query then you can contact our helpline:</p>
                         <h5 class="mb-0" style="color: #36c47d !important">Call Us</h5>
-                        <p style="font-size: 1.25rem; font-weight: bold;">+92 343 8078216</p>
+                        <p style="font-size: 1.25rem; font-weight: bold;">+92 334 4066429</p>
                     </div>
                 </div>
             </div>
