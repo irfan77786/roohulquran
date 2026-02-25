@@ -32,7 +32,8 @@ qaida course, online quran basics')
 
         #hero .mobile-image {
             display: block;
-            width: auto;
+            width: 100%;
+            max-width: 100%;
             height: auto;
             object-fit: cover;
         }
@@ -41,11 +42,34 @@ qaida course, online quran basics')
             text-align: center;
             padding: 0px 0px;
             min-height: 500px;
+            overflow-x: hidden;
         }
 
-        .hero-heading {
-            font-size: 2.2rem;
+        #hero .container {
+            max-width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        #hero .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        #hero .hero-heading {
+            font-size: 1.35rem !important;
             font-weight: 600;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        #hero .mt-3 {
+            font-size: 1rem !important;
+            line-height: 1.5rem !important;
+            max-width: 100%;
+            overflow-wrap: break-word;
         }
 
         .hero-subtext {
