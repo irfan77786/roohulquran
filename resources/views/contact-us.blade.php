@@ -94,7 +94,8 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
             <div class="col-lg-7">
                 <h6 class="text-danger">Contact Us</h6>
                 <h2 class="fw-bold">Get in <strong>Touch</strong> with Us</h2>
-                <form id="trial-form">
+                <form id="trial-form" method="post" action="{{ route('trial-class.store') }}">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
                             <input type="text" name="name" class="form-control" placeholder="Name" required>
@@ -178,65 +179,71 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 
 </section>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    $('#trial-form').on('submit', function(e) {
+(function() {
+    function initContactForm() {
+        var form = document.getElementById('trial-form');
+        var submitBtn = document.getElementById('get-in-touch');
+        if (!form || !submitBtn) return;
+
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            let form = $(this);
-            let submitBtn = $('#submit-btn');
-            let btnText = $('#btn-text');
-            let btnLoading = $('#btn-loading');
+            var btnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
 
-            btnText.addClass('d-none');
-            btnLoading.removeClass('d-none');
-            submitBtn.prop('disabled', true);
+            var formData = new FormData(form);
 
-            $.ajax({
-                url: '{{ route('trial-class.store') }}',
-                type: 'POST',
-                data: form.serialize(),
+            fetch('{{ route('trial-class.store') }}', {
+                method: 'POST',
+                body: formData,
                 headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
                 },
-                success: function(response) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    Swal.fire('JazakAllah', response.message, 'success');
-                    form[0].reset();
-                },
-                error: function(xhr) {
-                    btnText.removeClass('d-none');
-                    btnLoading.addClass('d-none');
-                    submitBtn.prop('disabled', false);
-
-                    let message = 'Something went wrong.';
-                    if (xhr.status === 422) {
-                        const errors = xhr.responseJSON.errors;
-                        message = Object.values(errors).flat().join('\n');
-                    }
-
-                    Swal.fire('Error', message, 'error');
+                credentials: 'same-origin'
+            })
+            .then(function(response) {
+                return response.json().then(function(data) {
+                    if (!response.ok) throw { status: response.status, data: data };
+                    return data;
+                });
+            })
+            .then(function(data) {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire('JazakAllah', data.message || 'We received your query. InshAllah we will contact you soon.', 'success');
+                } else {
+                    alert(data.message || 'Thank you! We will contact you soon.');
                 }
+                form.reset();
+            })
+            .catch(function(err) {
+                var message = 'Something went wrong. Please try again or call us.';
+                if (err.status === 422 && err.data && err.data.errors) {
+                    message = Object.values(err.data.errors).flat().join('\n');
+                } else if (err.data && err.data.message) {
+                    message = err.data.message;
+                }
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire('Error', message, 'error');
+                } else {
+                    alert(message);
+                }
+            })
+            .finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = btnText;
             });
         });
+    }
 
-
-        $('#trial-forms').on('submit', function(e) {
-            e.preventDefault();
-
-            let form = $(this);
-            let submitBtn = $('#submit-btn');
-            let btnText = $('#btn-text');
-            let btnLoading = $('#btn-loading');
-
-            btnText.addClass('d-none');
-            btnLoading.removeClass('d-none');
-            submitBtn.prop('disabled', true);
-        });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initContactForm);
+    } else {
+        initContactForm();
+    }
+})();
 </script>
 @endsection
