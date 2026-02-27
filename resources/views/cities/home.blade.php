@@ -447,7 +447,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
     }
 
     #why-us {
-        background-image: url('assets/img/about-bg.png');
+        background-image: url('{{ asset('assets/img/about-bg.png') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -855,7 +855,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
 <!-- About Section -->
 <section id="about" class="about section"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ asset('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container">
         <div class="row gy-4 align-items-center">
             <!-- Image on the Left -->
@@ -973,7 +973,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background-image: url('{{ asset('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <div class="container">
         <div class="row gy-4">
             <!-- New Content -->
@@ -1493,7 +1493,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/koran.avif" alt="Start quran Class" class="me-3"
+                        <img src="{{ asset('assets/img/icons/koran.avif') }}" alt="Start quran Class" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>

@@ -444,7 +444,7 @@
     }
 
     #why-us {
-        background-image: url('assets/img/about-bg.png');
+        background-image: url('{{ asset('assets/img/about-bg.png') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -847,7 +847,7 @@
 
 <!-- About Section -->
 <section id="about" class="about section"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ asset('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container">
         <div class="row gy-4 align-items-center">
             <!-- Image on the Left -->
@@ -903,7 +903,7 @@
 
 <!-- Counts Section -->
 <section id="counts" class="section counts light-background"
-    style="background-image: url('assets/img/choos-us.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    style="background-image: url('{{ asset('assets/img/choos-us.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
             <!-- Title -->
@@ -963,7 +963,7 @@
 
 <!-- Why Us Section -->
 <section id="why-us" class="section why-us"
-    style="background-image: url('assets/img/about-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background-image: url('{{ asset('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <div class="container">
         <div class="row gy-4">
             <!-- New Content -->
@@ -1318,7 +1318,7 @@
         <!-- Center Image -->
         <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
             style="z-index: 2; margin-top: 120px;">
-            <img src="assets/img/ai/thumbsup1.webp" alt="quran academy teacher" loading="lazy" class="img-fluid"
+            <img src="{{ asset('assets/img/ai/thumbsup1.webp') }}" alt="quran academy teacher" loading="lazy" class="img-fluid"
                 style="max-height: 200px;">
         </div>
     </div>
@@ -1436,7 +1436,7 @@
 {{-- contact us --}}
 
 <section id="contact" class="contact-section position-relative"
-    style="background: url('assets/img/ai/contact-us.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    style="background: url('{{ asset('assets/img/ai/contact-us.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
     <!-- Transparent Black Box -->
     <div class="overlay"></div>
 
@@ -1448,7 +1448,7 @@
                 </h2>
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/pointing-up.avif" alt="registration" class="me-3"
+                        <img src="{{ asset('assets/img/icons/pointing-up.avif') }}" alt="registration" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
@@ -1458,7 +1458,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/schedule.avif" alt="Schedule" class="me-3"
+                        <img src="{{ asset('assets/img/icons/schedule.avif') }}" alt="Schedule" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
@@ -1468,7 +1468,7 @@
                         </div>
                     </li>
                     <li class="mb-4 d-flex align-items-start">
-                        <img src="assets/img/icons/koran.avif" alt="Start quran Class" class="me-3"
+                        <img src="{{ asset('assets/img/icons/koran.avif') }}" alt="Start quran Class" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
@@ -1478,7 +1478,7 @@
                         </div>
                     </li>
                     <li class="d-flex align-items-start">
-                        <img src="assets/img/icons/quality.avif" alt="Certificate quran teachers" class="me-3"
+                        <img src="{{ asset('assets/img/icons/quality.avif') }}" alt="Certificate quran teachers" class="me-3"
                             style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>
