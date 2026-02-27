@@ -53,7 +53,7 @@
     </a>
 
     <!-- Instagram -->
-    <a href="https://www.instagram.com/yourhandle" rel="noopener" class="instagram" aria-label="Visit us on Instagram">
+    <a href="https://www.instagram.com/roohulquranacademy?igsh=MWptYzU3a2M4aTl4OA==" rel="noopener" class="instagram" aria-label="Visit us on Instagram">
       <span class="sr-only">Visit us on Instagram</span>
       <i class="bi bi-instagram text-black"></i>
     </a>
