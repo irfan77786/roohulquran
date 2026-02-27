@@ -114,6 +114,11 @@ Route::prefix('blogs')->name('blogs.')->group(function () {
 
 Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
 
+// UK City-specific routes (generated into routes/uk-cities.php)
+if (file_exists(__DIR__ . '/uk-cities.php')) {
+    require __DIR__ . '/uk-cities.php';
+}
+
 // City-specific routes - All US Cities (31,254 cities)
 Route::get('/new-york/quran-academy-new-york-new-york', [HomeController::class, 'cityPage'])->defaults('city', 'new-york')->defaults('state', 'new-york');
 Route::get('/los-angeles/quran-academy-los-angeles-california', [HomeController::class, 'cityPage'])->defaults('city', 'los-angeles')->defaults('state', 'california');
