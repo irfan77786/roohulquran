@@ -119,6 +119,15 @@ if (file_exists(__DIR__ . '/uk-cities.php')) {
     require __DIR__ . '/uk-cities.php';
 }
 
+// European country city routes (one file per country in routes/cities/)
+// Generated via: php -d memory_limit=512M artisan routes:generate-european-cities
+$europeCitiesDir = __DIR__ . '/cities';
+if (is_dir($europeCitiesDir)) {
+    foreach (glob($europeCitiesDir . '/*-cities.php') ?: [] as $file) {
+        require $file;
+    }
+}
+
 // City-specific routes - All US Cities (31,254 cities)
 Route::get('/new-york/quran-academy-new-york-new-york', [HomeController::class, 'cityPage'])->defaults('city', 'new-york')->defaults('state', 'new-york');
 Route::get('/los-angeles/quran-academy-los-angeles-california', [HomeController::class, 'cityPage'])->defaults('city', 'los-angeles')->defaults('state', 'california');

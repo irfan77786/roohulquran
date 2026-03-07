@@ -5,6 +5,11 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+// Increase memory for large route files (UK + European city routes)
+if (ini_get('memory_limit') !== '-1') {
+    ini_set('memory_limit', '512M');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
