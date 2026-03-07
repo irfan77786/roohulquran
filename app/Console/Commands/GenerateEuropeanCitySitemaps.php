@@ -9,7 +9,8 @@ class GenerateEuropeanCitySitemaps extends Command
     protected $signature = 'sitemap:generate-european-cities
                             {--dir=routes/cities : Directory containing *-cities.php route files}
                             {--out=public/sitemaps/eu : Output directory for XML sitemaps}
-                            {--index=sitemap-europe-cities.xml : Filename of the sitemap index}';
+                            {--index=sitemap-europe-cities.xml : Filename of the sitemap index}
+                            {--url= : Base URL for all sitemap links (e.g. https://roohulquranacademy.com). Uses APP_URL if not set.}';
 
     protected $description = 'Generate one sitemap XML per European country and a single EU sitemap index for Google Search Console';
 
@@ -24,7 +25,10 @@ class GenerateEuropeanCitySitemaps extends Command
             return 1;
         }
 
-        $baseUrl = rtrim(config('app.url'), '/');
+        $baseUrl = $this->option('url')
+            ? rtrim($this->option('url'), '/')
+            : rtrim(config('app.url'), '/');
+        $this->info('Using base URL: ' . $baseUrl);
         $now = now()->toIso8601String();
 
         $files = glob($routesDir . '/*-cities.php');
