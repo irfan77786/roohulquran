@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Roohul Quran</title>
   <link href="{{ asset('assets/img/tab-logo.png') }}" rel="icon">
   <linkf href="assets/img/tab-logo.png" rel="apple-touch-icon">
@@ -80,6 +83,12 @@
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="{{ asset('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  {{-- Reload when page is restored from mobile back-forward cache to avoid stale CSRF (419) --}}
+  <script>
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) { window.location.reload(); }
+    });
+  </script>
 </body>
 
 </html>
