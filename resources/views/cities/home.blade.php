@@ -738,6 +738,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
                     <form id="trial-form">
                         @csrf
+                        <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="form_started_at" value="{{ time() }}">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name"
                                 required>
@@ -1300,6 +1302,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                 style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a); max-width: 600px;">
                 <form id="trial-forms" class="form-container mx-auto">
                     @csrf
+                    <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="form_started_at" value="{{ time() }}">
                     <div class="mb-3">
                         <input type="text" class="form-control rounded-pill" name="name"
                             placeholder="Enter your Full Name" required>
@@ -1522,6 +1526,9 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                     style="border: 2px solid #44137c; border-radius: 20px;">
                     <h3 class="mb-4 text-center" style="color: #44137c; font-weight: bold;">FREE TRIAL CLASS</h3>
                     <form id="trial-form-submit">
+                        @csrf
+                        <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="form_started_at" value="{{ time() }}">
                         <div class="mb-3">
                             <input type="text" class="form-control rounded-pill" name="name"
                                 placeholder="Enter your Full Name" required>
@@ -1698,6 +1705,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                     const data = await response.json();
                     Swal.fire('JazakAllah', data.message || 'Submitted successfully', 'success');
                     this.reset();
+                    const startedAtField = this.querySelector('input[name="form_started_at"]');
+                    if (startedAtField) startedAtField.value = Math.floor(Date.now() / 1000);
                 } catch (err) {
                     let message = 'Something went wrong.';
                     try {

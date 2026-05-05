@@ -47,7 +47,7 @@ class TrialClassController extends Controller
             'course_enroll' => 'nullable|string|max:255'
         ]);
 
-        $trialClass = TrialClass::create($request->all());
+        $trialClass = TrialClass::create($validated);
 
         // Create notification for admin
         AdminNotification::createNotification(

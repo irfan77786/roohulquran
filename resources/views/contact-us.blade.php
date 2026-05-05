@@ -96,6 +96,8 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                 <h2 class="fw-bold">Get in <strong>Touch</strong> with Us</h2>
                 <form id="trial-form" method="post" action="{{ route('trial-class.store') }}">
                     @csrf
+                    <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="form_started_at" value="{{ time() }}">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <input type="text" name="name" class="form-control" placeholder="Name" required>
@@ -218,6 +220,10 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                     alert(data.message || 'Thank you! We will contact you soon.');
                 }
                 form.reset();
+                var startedAtField = form.querySelector('input[name="form_started_at"]');
+                if (startedAtField) {
+                    startedAtField.value = Math.floor(Date.now() / 1000);
+                }
             })
             .catch(function(err) {
                 var message = 'Something went wrong. Please try again or call us.';
