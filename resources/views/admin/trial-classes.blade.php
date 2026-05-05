@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container-fluid">
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     {{-- Page Header --}}
     <div class="row mb-4">
         <div class="col-12">
@@ -10,7 +17,10 @@
                     <h3 class="mb-0 fw-bold">Trial Classes</h3>
                     <p class="text-muted mb-0">Manage and view all trial class registrations</p>
                 </div>
-                <div class="d-flex gap-2">
+                <div class="d-flex gap-2 flex-wrap">
+                    <button type="button" class="btn btn-outline-danger" id="bulkDeleteBtn" disabled>
+                        <i class="ti ti-trash"></i> Delete selected
+                    </button>
                     <button class="btn btn-outline-primary" onclick="window.print()">
                         <i class="ti ti-printer"></i> Print
                     </button>
@@ -94,6 +104,9 @@
                         <table id="trialClassesTable" class="table table-hover align-middle mb-0" style="width:100%">
                             <thead class="table-light">
                 <tr>
+                    <th class="text-center" style="width: 2.5rem;">
+                        <input type="checkbox" class="form-check-input" id="selectAllTrialClasses" title="Select all">
+                    </th>
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -106,7 +119,10 @@
             </thead>
             <tbody>
                                 @foreach ($classes as $index => $class)
-                                    <tr>
+                                    <tr data-trial-id="{{ $class->id }}">
+                                        <td class="text-center">
+                                            <input type="checkbox" class="form-check-input trial-class-select" value="{{ $class->id }}">
+                                        </td>
                                         <td>{{ $class->id }}</td>
                                         <td>
                                             <div class="d-flex align-items-center">
@@ -136,7 +152,7 @@
                                                 <span class="text-muted">-</span>
                                             @endif
                                         </td>
-                                        <td>{{ $class->created_at->format('d M Y') }}</td>
+                                        <td data-order="{{ $class->created_at->format('Y-m-d H:i:s') }}">{{ $class->created_at->format('d M Y') }}</td>
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-outline-primary view-details" 
                                                     data-id="{{ $class->id }}"
@@ -147,6 +163,12 @@
                                                     data-message="{{ $class->message }}"
                                                     data-date="{{ $class->created_at->format('F d, Y h:i A') }}">
                                                 <i class="ti ti-eye"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger btn-delete-trial"
+                                                    data-id="{{ $class->id }}"
+                                                    data-delete-url="{{ route('admin.trial.classes.destroy', $class) }}"
+                                                    title="Delete">
+                                                <i class="ti ti-trash"></i>
                                             </button>
                                         </td>
                     </tr>
@@ -220,12 +242,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Initialize DataTable
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+        const bulkDeleteUrl = @json(route('admin.trial.classes.bulk-delete'));
+
         const table = $('#trialClassesTable').DataTable({
             "processing": true,
             "pageLength": 10,
-            "order": [[ 6, "desc" ]], // Sort by date column
+            "order": [[ 7, "desc" ]], // Newest date first (server list is already newest-first)
             "columnDefs": [
-                { "orderable": false, "targets": [7] } // Disable sorting on Actions column
+                { "orderable": false, "targets": [0, 6, 8] } // Checkbox, Message, Actions
             ],
             "language": {
                 "search": "Search:",
@@ -234,6 +259,74 @@
                 "infoEmpty": "No entries to show",
                 "infoFiltered": "(filtered from _MAX_ total entries)"
             }
+        });
+
+        function getSelectedTrialIds() {
+            return $('.trial-class-select:checked').map(function () { return this.value; }).get();
+        }
+
+        function updateBulkDeleteState() {
+            const n = getSelectedTrialIds().length;
+            $('#bulkDeleteBtn').prop('disabled', n === 0);
+        }
+
+        $('#selectAllTrialClasses').on('change', function () {
+            const checked = $(this).prop('checked');
+            $('.trial-class-select').prop('checked', checked);
+            updateBulkDeleteState();
+        });
+
+        $(document).on('change', '.trial-class-select', function () {
+            const total = $('.trial-class-select').length;
+            const checked = $('.trial-class-select:checked').length;
+            $('#selectAllTrialClasses').prop('checked', total > 0 && checked === total);
+            updateBulkDeleteState();
+        });
+
+        $(document).on('click', '.btn-delete-trial', function () {
+            const id = $(this).data('id');
+            const url = $(this).data('delete-url');
+            if (!confirm('Delete registration #' + id + '? This cannot be undone.')) return;
+
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }).then(function (r) {
+                if (!r.ok) throw new Error('Delete failed');
+                return r.json();
+            }).then(function () {
+                window.location.reload();
+            }).catch(function () {
+                alert('Could not delete. Please try again.');
+            });
+        });
+
+        $('#bulkDeleteBtn').on('click', function () {
+            const ids = getSelectedTrialIds();
+            if (ids.length === 0) return;
+            if (!confirm('Delete ' + ids.length + ' registration(s)? This cannot be undone.')) return;
+
+            fetch(bulkDeleteUrl, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify({ ids: ids.map(function (x) { return parseInt(x, 10); }) })
+            }).then(function (r) {
+                if (!r.ok) throw new Error('Bulk delete failed');
+                return r.json();
+            }).then(function () {
+                window.location.reload();
+            }).catch(function () {
+                alert('Could not delete selected rows. Please try again.');
+            });
         });
 
         // Export button handler
@@ -326,9 +419,9 @@
 
                 // Search filter (Name, Email, Phone columns)
                 if (search) {
-                    const name = data[1].toLowerCase();
-                    const email = data[2].toLowerCase();
-                    const phone = data[3].toLowerCase();
+                    const name = data[2].toLowerCase();
+                    const email = data[3].toLowerCase();
+                    const phone = data[4].toLowerCase();
                     
                     if (!name.includes(search) && !email.includes(search) && !phone.includes(search)) {
                         match = false;
@@ -336,13 +429,13 @@
                 }
 
                 // Country filter
-                if (country && data[4] !== country) {
+                if (country && data[5] !== country) {
                     match = false;
                 }
 
                 // Date range filter
                 if (dateFrom || dateTo) {
-                    const dateStr = data[6];
+                    const dateStr = data[7];
                     const rowDate = new Date(dateStr);
                     
                     if (dateFrom && rowDate < new Date(dateFrom)) {

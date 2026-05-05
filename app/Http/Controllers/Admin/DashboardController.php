@@ -68,14 +68,52 @@ class DashboardController extends Controller
 
     public function trialClasses()
     {
-        $classes = TrialClass::latest()->get();
+        $classes = TrialClass::query()
+            ->orderByDesc('created_at')
+            ->orderByDesc('id')
+            ->get();
 
         return view('admin.trial-classes', compact('classes'));
     }
 
+    public function destroyTrialClass(Request $request, TrialClass $trialClass)
+    {
+        $trialClass->delete();
+
+        if ($request->wantsJson() || $request->ajax()) {
+            return response()->json(['message' => 'Registration deleted.']);
+        }
+
+        return redirect()->route('admin.trial.classes')->with('success', 'Registration deleted.');
+    }
+
+    public function bulkDestroyTrialClasses(Request $request)
+    {
+        $validated = $request->validate([
+            'ids' => 'required|array|min:1',
+            'ids.*' => 'integer|exists:trial_classes,id',
+        ]);
+
+        TrialClass::whereIn('id', $validated['ids'])->delete();
+        $count = count($validated['ids']);
+
+        if ($request->wantsJson() || $request->ajax()) {
+            return response()->json([
+                'message' => $count === 1
+                    ? '1 registration deleted.'
+                    : $count . ' registrations deleted.',
+            ]);
+        }
+
+        return redirect()->route('admin.trial.classes')->with('success', $count . ' registration(s) deleted.');
+    }
+
     public function exportTrialClasses()
     {
-        $classes = TrialClass::latest()->get();
+        $classes = TrialClass::query()
+            ->orderByDesc('created_at')
+            ->orderByDesc('id')
+            ->get();
 
         $filename = 'trial-classes-' . date('Y-m-d-H-i-s') . '.csv';
 

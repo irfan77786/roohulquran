@@ -33,6 +33,8 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('trial/classes', [DashboardController::class, 'trialClasses'])->name('trial.classes');
     Route::get('trial/classes/export', [DashboardController::class, 'exportTrialClasses'])->name('trial.classes.export');
+    Route::post('trial/classes/bulk-delete', [DashboardController::class, 'bulkDestroyTrialClasses'])->name('trial.classes.bulk-delete');
+    Route::delete('trial/classes/{trialClass}', [DashboardController::class, 'destroyTrialClass'])->name('trial.classes.destroy');
 
     // This will register all blog routes under /admin/blogs
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
