@@ -95,7 +95,7 @@ Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
 
 
 Route::post('/trial-class', [TrialClassController::class, 'store'])
-    ->middleware(['throttle:3,60', 'protect.public.form'])
+    ->middleware(['throttle:2,60', 'protect.public.form'])
     ->name('trial-class.store');
 
 // courses

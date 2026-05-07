@@ -740,6 +740,11 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                         @csrf
                         <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="form_started_at" value="{{ time() }}">
+                        @if(env('TURNSTILE_SITE_KEY'))
+                            <div class="mb-3">
+                                <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
+                            </div>
+                        @endif
                         <div class="mb-3">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name"
                                 required>
@@ -1304,6 +1309,11 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                     @csrf
                     <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                     <input type="hidden" name="form_started_at" value="{{ time() }}">
+                    @if(env('TURNSTILE_SITE_KEY'))
+                        <div class="mb-3">
+                            <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
+                        </div>
+                    @endif
                     <div class="mb-3">
                         <input type="text" class="form-control rounded-pill" name="name"
                             placeholder="Enter your Full Name" required>
@@ -1529,6 +1539,11 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                         @csrf
                         <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="form_started_at" value="{{ time() }}">
+                        @if(env('TURNSTILE_SITE_KEY'))
+                            <div class="mb-3">
+                                <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
+                            </div>
+                        @endif
                         <div class="mb-3">
                             <input type="text" class="form-control rounded-pill" name="name"
                                 placeholder="Enter your Full Name" required>
@@ -1678,6 +1693,9 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
 <link rel="stylesheet" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}">
 <script defer src="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+@if(env('TURNSTILE_SITE_KEY'))
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+@endif
 <script>
     (function(){
         const csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

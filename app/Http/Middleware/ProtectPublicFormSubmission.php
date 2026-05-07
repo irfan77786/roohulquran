@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class ProtectPublicFormSubmission
@@ -23,6 +24,10 @@ class ProtectPublicFormSubmission
         $startedAt = (int) $request->input('form_started_at', 0);
         if ($startedAt <= 0 || (time() - $startedAt) < 3) {
             return $this->spamResponse($request, 'Please wait a moment before submitting the form.');
+        }
+
+        if (!$this->validateTurnstile($request)) {
+            return $this->spamResponse($request, 'Captcha verification failed. Please try again.');
         }
 
         // Duplicate guard (same normalized payload from same IP for 30 mins).
@@ -50,6 +55,37 @@ class ProtectPublicFormSubmission
         ];
 
         return sha1(implode('|', $parts));
+    }
+
+    private function validateTurnstile(Request $request): bool
+    {
+        $siteKey = (string) env('TURNSTILE_SITE_KEY', '');
+        $secret = (string) env('TURNSTILE_SECRET_KEY', '');
+
+        // Do not block if keys are not configured yet.
+        if ($siteKey === '' || $secret === '') {
+            return true;
+        }
+
+        $token = (string) $request->input('cf-turnstile-response', '');
+        if ($token === '') {
+            return false;
+        }
+
+        $response = Http::asForm()->timeout(8)->post(
+            'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+            [
+                'secret' => $secret,
+                'response' => $token,
+                'remoteip' => $request->ip(),
+            ]
+        );
+
+        if (!$response->ok()) {
+            return false;
+        }
+
+        return (bool) data_get($response->json(), 'success', false);
     }
 
     private function spamResponse(Request $request, string $message)

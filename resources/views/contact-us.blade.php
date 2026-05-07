@@ -98,6 +98,11 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                     @csrf
                     <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                     <input type="hidden" name="form_started_at" value="{{ time() }}">
+                    @if(env('TURNSTILE_SITE_KEY'))
+                        <div class="mb-3">
+                            <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
+                        </div>
+                    @endif
                     <div class="row g-3">
                         <div class="col-md-6">
                             <input type="text" name="name" class="form-control" placeholder="Name" required>
@@ -182,6 +187,9 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(env('TURNSTILE_SITE_KEY'))
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+@endif
 <script>
 (function() {
     function initContactForm() {
