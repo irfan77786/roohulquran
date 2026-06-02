@@ -356,25 +356,7 @@
     </nav>
 
     <div class="d-flex align-items-center gap-2 header-actions">
-      @php
-        $appUrl = config('app.url', 'http://roohulquranacademy.com');
-        $appUrl = rtrim($appUrl, '/');
-        $parsedUrl = parse_url($appUrl);
-        $protocol = $parsedUrl['scheme'] ?? 'http';
-        $host = $parsedUrl['host'] ?? str_replace(['http://', 'https://'], '', $appUrl);
-        
-        // Check if we're in local development (contains .test, .local, localhost)
-        $isLocal = str_contains($host, '.test') || str_contains($host, '.local') || str_contains($host, 'localhost');
-        
-        if ($isLocal) {
-            // Use path prefix for local development
-            $studentLoginUrl = $appUrl . '/student/login';
-        } else {
-            // Use subdomain for production
-            $studentLoginUrl = $protocol . '://student.' . $host . '/login';
-        }
-      @endphp
-      <a href="{{ $studentLoginUrl }}" class="btn-getstarted" style="color: white !important; background: transparent; border: 1px solid white; padding: 8px 20px; border-radius: 5px; text-decoration: none; transition: all 0.3s;">Student Login</a>
+      <a href="{{ route('student.login') }}" class="btn-getstarted" style="color: white !important; background: transparent; border: 1px solid white; padding: 8px 20px; border-radius: 5px; text-decoration: none; transition: all 0.3s;">Student Login</a>
       <a href="{{ route('home.contact.us') }}" class="btn-getstarted" style="color: white !important">Get Started</a>
     </div>
 
