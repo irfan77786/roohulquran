@@ -1608,27 +1608,34 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
       "name": "Online Quran Classes with Tajweed",
       "description": "Learn Quran online with proper Tajweed rules, guided by expert tutors.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
     },
     {
       "@type": "Course",
       "@id": "https://roohulquranacademy.com/#hifz-course",
+      "url": "{{ url('/memorize-quran-online') }}",
       "name": "Quran Memorization (Hifz) Online",
       "description": "Structured online Hifz course to help students memorize the Holy Quran with discipline.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
     },
     {
       "@type": "Course",
       "@id": "https://roohulquranacademy.com/#qaida-course",
+      "url": "{{ url('/qaida-by-roohulquran') }}",
       "name": "Learn Noorani Qaida Online",
       "description": "Beginner-friendly Noorani Qaida course for kids and adults to learn Quran reading basics.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
     },
     {
       "@type": "Course",
       "@id": "https://roohulquranacademy.com/#tafseer-course",
+      "url": "{{ url('/tafseer-course-online') }}",
       "name": "Tafseer Course Online",
       "description": "Comprehensive Tafseer ul Quran lessons to understand the meaning and context of the Quran.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
     },
     {
       "@type": "FAQPage",

@@ -572,6 +572,7 @@ tafsir classes, understand quran meaning')
     "@type": "Audience",
     "audienceType": ["Beginners", "Adults", "Students with prior Islamic knowledge"]
   }
+  @include('layouts.partials.course-schema-extras')
 }
   </script>
 

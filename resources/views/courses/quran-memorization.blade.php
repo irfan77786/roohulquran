@@ -504,6 +504,7 @@ quran with tajweed, quran hifz academy, online hifz program')
     "@type": "Audience",
     "audienceType": ["Kids", "Adults", "Beginners", "Advanced Learners"]
   }
+  @include('layouts.partials.course-schema-extras')
 }
       </script>
 

@@ -626,6 +626,13 @@ kids tajweed, kids hifz class, quran learning for children')
         "name": "Hafiz Muhammad Irfan"
       }
     ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ route('home.pricing') }}",
+    "price": "40",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
   }
 }
 </script>

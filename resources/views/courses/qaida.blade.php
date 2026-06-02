@@ -639,6 +639,7 @@ qaida course, online quran basics')
     "@type": "Audience",
     "audienceType": ["Kids", "Adults", "Beginners"]
   }
+  @include('layouts.partials.course-schema-extras')
 }
     </script>
 

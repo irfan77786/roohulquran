@@ -627,6 +627,13 @@ beginners, online quran for beginners, quran study beginners')
         "name": "Hafiz Muhammad Irfan"
       }
     ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ route('home.pricing') }}",
+    "price": "40",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
   }
 }
 </script>
