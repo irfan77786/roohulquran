@@ -38,12 +38,18 @@
     <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff') }}" as="font" type="font/woff" crossorigin>
 
+    @php
+        $isProduction = app()->environment('production');
+        $mainCssPath = $isProduction ? 'assets/css/main.min.css' : 'assets/css/main.css';
+        $mainJsPath = $isProduction ? 'assets/js/main.min.js' : 'assets/js/main.js';
+    @endphp
+
     <!-- CSS (deferred) -->
     <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet" media="print"
         onload="this.media='all'">
-    <link rel="preload" href="{{ asset('assets/css/main.css') }}" as="style">
-    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" media="print"
+    <link rel="preload" href="{{ asset($mainCssPath) }}" as="style">
+    <link href="{{ asset($mainCssPath) }}" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet" media="print"
         onload="this.media='all'">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
         onload="this.media='all'">
@@ -56,8 +62,8 @@
 
     <noscript>
         <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset($mainCssPath) }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
         <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
@@ -400,7 +406,7 @@
             }
         })();
     </script>
-    <script defer src="{{ asset('assets/js/main.js') }}"></script>
+    <script defer src="{{ asset($mainJsPath) }}"></script>
 
 
     <!-- Load Google Analytics after page load/idle to reduce unused JS -->
