@@ -27,11 +27,8 @@
     <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
 
     <!-- Preconnect -->
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://img.youtube.com" crossorigin>
     <link rel="preconnect" href="https://embed.tawk.to" crossorigin>
 
     <!-- Preload critical fonts to prevent CLS -->
@@ -44,56 +41,24 @@
         $mainJsPath = $isProduction ? 'assets/js/main.min.js' : 'assets/js/main.js';
     @endphp
 
-    <!-- CSS (deferred) -->
-    <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet" media="print"
-        onload="this.media='all'">
-    <link rel="preload" href="{{ asset($mainCssPath) }}" as="style">
-    <link href="{{ asset($mainCssPath) }}" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet" media="print"
-        onload="this.media='all'">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print"
-        onload="this.media='all'">
+    <!-- Critical CSS (blocking — prevents CLS from late stylesheet application) -->
+    <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset($mainCssPath) }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
+    <!-- Non-critical CSS (deferred) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
-        
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17989840665"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'AW-17989840665');
-    </script>
-    
-    <!-- SweetAlert2 CSS - load non-blocking to reduce critical path -->
-    <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" as="style">
-    <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
-
     <noscript>
-        <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset($mainCssPath) }}" rel="stylesheet">
-        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
-        <link href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
     </noscript>
 
-    <style>
-        /* Your inline critical styles (valid in head) */
-    </style>
-
-        <!-- Google tag (gtag.js) deferred until after load/idle -->
-
-    <!-- Preload critical images -->
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high">
+    <!-- Preload LCP hero image (viewport-specific) -->
+    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high" media="(min-width: 769px)">
+    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high" media="(max-width: 768px)">
     <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
-    <link rel="preload" href="{{ asset('assets/img/header-bg.webp') }}" as="image">
     
-    <!-- Preload critical JavaScript -->
-    <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}" as="script">
-
+    @stack('styles')
+    @include('layouts.partials.header-styles')
 
     <style>
         body {
@@ -243,10 +208,24 @@
             border: 2px solid #fff;
         }
 
-        /* Disable AOS animations on above-the-fold elements to prevent CLS */
-        [data-aos="fade-up"]:not([data-aos-delay="200"]) { 
-            opacity: 1 !important; 
-            transform: none !important; 
+        /* Disable AOS on above-the-fold elements to prevent CLS */
+        [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Stable top-header dimensions — shimmer uses transform, not left */
+        #top-header {
+            min-height: 54px;
+            contain: layout style;
+        }
+
+        #top-header::before {
+            will-change: transform;
+        }
+
+        .hero-subtext {
+            min-height: 3.6em;
         }
 
         /* Ensure Bootstrap Icons load without layout shift */
@@ -269,72 +248,13 @@
                 left: 15px;
             }
         }
+    </style>
 
-        /* loader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        #preloader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dots span {
-            width: 12px;
-            height: 12px;
-            background: #dc3545;
-            border-radius: 50%;
-            animation: bounce 0.6s infinite alternate;
-        }
-
-        .dots span:nth-child(2) {
-            animation-delay: 0.2s;
-            background: #343a40;
-        }
-
-        .dots span:nth-child(3) {
-            animation-delay: 0.4s;
-            background: #28a745;
-        }
-
-        @keyframes bounce {
-            from {
-                transform: translateY(0);
-            }
-
-            to {
-                transform: translateY(-12px);
-            }
-        }
     </style>
 </head>
 
 
 <body class="index-page">
-    <!-- Loader -->
-    <div id="preloader">
-        <div class="dots">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
-
-
     @include('layouts.header')
 
     @yield('content')
@@ -372,69 +292,75 @@
     </script>
     <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <!-- Swiper loaded conditionally only when needed -->
+    <!-- Swiper: load CSS/JS only when slider scrolls into view -->
     <script>
-        (function(){
-            const hasSwiper = document.querySelector('.init-swiper, .testimonial-slider');
-            if (hasSwiper) {
-                const s = document.createElement('script');
-                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
-                s.onload = function() {
-                    // Initialize Swiper after script loads
-                    setTimeout(function() {
-                        try {
-                            const swiper = new Swiper('.testimonial-slider', {
-                                loop: true,
-                                pagination: {
-                                    el: '.swiper-pagination',
-                                    clickable: true,
-                                },
-                                autoplay: {
-                                    delay: 5000,
-                                    disableOnInteraction: false,
-                                },
-                                // Performance optimizations
-                                watchOverflow: true,       // Don't reflow if only 1 slide
-                                updateOnWindowResize: true, // Debounced resize recalculations
-                                observer: true,             // Watch DOM mutations smartly
-                                observeParents: true,
-                            });
+        (function () {
+            var slider = document.querySelector('.testimonial-slider, .init-swiper');
+            if (!slider || !('IntersectionObserver' in window)) return;
 
-                            // Reduce layout thrashing on resize
-                            window.addEventListener('resize', () => {
-                                requestAnimationFrame(() => swiper.update());
-                            });
-                        } catch (error) {
-                            console.error('Swiper initialization failed:', error);
-                        }
-                    }, 100);
-                };
-                s.onerror = function() {
-                    console.error('Failed to load Swiper script');
-                };
+            var swiperLoaded = false;
+            function loadSwiperAssets(callback) {
+                if (swiperLoaded) { callback(); return; }
+                swiperLoaded = true;
+                var css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = '{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}';
+                document.head.appendChild(css);
+                var s = document.createElement('script');
+                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
+                s.onload = callback;
                 document.head.appendChild(s);
             }
+
+            function initSwiper() {
+                loadSwiperAssets(function () {
+                    try {
+                        document.querySelectorAll('.testimonial-slider').forEach(function (el) {
+                            new Swiper(el, {
+                                loop: true,
+                                pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+                                autoplay: { delay: 5000, disableOnInteraction: false },
+                                watchOverflow: true,
+                                observer: false,
+                                observeParents: false,
+                            });
+                        });
+                    } catch (e) { /* silent */ }
+                });
+            }
+
+            var obs = new IntersectionObserver(function (entries) {
+                if (entries.some(function (e) { return e.isIntersecting; })) {
+                    obs.disconnect();
+                    initSwiper();
+                }
+            }, { rootMargin: '200px' });
+            obs.observe(slider);
         })();
     </script>
     <script defer src="{{ asset($mainJsPath) }}"></script>
 
 
-    <!-- Load Google Analytics after page load/idle to reduce unused JS -->
+    <!-- Load Google Analytics & Ads after page idle to reduce main-thread work -->
     <script>
-        window.addEventListener('load', function(){
-            if (!window.requestIdleCallback) {
-                return loadAnalytics();
-            }
-            requestIdleCallback(loadAnalytics, { timeout: 3000 });
-            function loadAnalytics(){
-                var gtagScript = document.createElement('script');
-                gtagScript.async = true;
-                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NSTXB23J7J';
-                document.head.appendChild(gtagScript);
+        window.addEventListener('load', function () {
+            var load = function () {
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
+                function gtag() { dataLayer.push(arguments); }
+                window.gtag = gtag;
                 gtag('js', new Date());
-                gtag('config', 'G-NSTXB23J7J');
+                ['G-NSTXB23J7J', 'AW-17989840665'].forEach(function (id) {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+                    document.head.appendChild(s);
+                    gtag('config', id);
+                });
+            };
+            if (window.requestIdleCallback) {
+                requestIdleCallback(load, { timeout: 3000 });
+            } else {
+                setTimeout(load, 2000);
             }
         });
     </script>
@@ -450,17 +376,6 @@
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
     });
-    </script>
-
-    {{-- loader --}}
-    <script>
-        window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    preloader.classList.add('hidden');
-    setTimeout(() => {
-        preloader.style.display = 'none';
-    }, 500);
-});
     </script>
 
     <!--End of Tawk.to Script-->

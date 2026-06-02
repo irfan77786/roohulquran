@@ -207,6 +207,8 @@
      * Init swiper sliders
      */
     function initSwiper() {
+        if (typeof Swiper === "undefined") return;
+
         document
             .querySelectorAll(".init-swiper")
             .forEach(function (swiperElement) {

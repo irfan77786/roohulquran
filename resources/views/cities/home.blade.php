@@ -11,8 +11,8 @@ Rooh Ul Quran Academy offers online Quran classes with expert tutors in {{ $city
 @section('meta_keywords')
 rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $stateName }}, tajweed, hifz, tafsir, learn quran online {{ $cityName }}, quran courses {{ $stateName }}, islamic education {{ $cityName }}
 @endsection
-@section('content')
 
+@push('styles')
 <style>
     /* Modern Hero Section Design */
     #hero {
@@ -81,7 +81,6 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         background-clip: text;
         text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
         margin-bottom: 20px;
-        animation: fadeInDown 1s ease;
         letter-spacing: -1px;
     }
 
@@ -91,12 +90,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         color: #f5f5f5;
         text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
         margin-bottom: 25px;
-        animation: fadeInUp 1s ease 0.2s both;
         font-weight: 400;
-    }
-
-    .hero-features {
-        animation: fadeInUp 1s ease 0.4s both;
+        min-height: 3.6em;
     }
 
     .hero-features li {
@@ -130,38 +125,15 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         border-radius: 50px;
         border: none;
         box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 1px;
-        animation: fadeInUp 1s ease 0.6s both;
     }
 
     .btn-get-started:hover {
         transform: translateY(-3px);
         box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
         background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%) !important;
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     /* Mobile Responsive Styles */
@@ -673,9 +645,10 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         margin-left: 4px;
     }
 </style>
-<!-- Hero Section -->
+@endpush
 
-<!-- Hero Section (Keep same) -->
+@section('content')
+<!-- Hero Section -->
 <section id="hero" class="hero section dark-background">
     <picture>
         <source media="(max-width: 768px)" srcset="{{ asset('assets/img/hero-bg-1-320.webp') }} 320w, 
@@ -691,8 +664,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center" data-aos="fade-up"
-                data-aos-delay="100">
+            <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center">
                 <h1 class="hero-heading">Transform Your Quranic Journey in {{ $cityName }}</h1>
                 <p class="hero-subtext">
                     Join Rooh ul Quran Academy serving {{ $cityName }}, {{ $stateName }} - Where Expert Tutors Meet Modern Technology.<br>
@@ -724,7 +696,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
 
             <!-- Right Form -->
-            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200" style="opacity: 1; transform: none;">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="form-container bg-light rounded shadow">
                     <div class="text-center mb-3">
                         <div style="display: inline-block; background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%); padding: 8px 20px; border-radius: 25px; margin-bottom: 10px;">
@@ -1698,13 +1670,51 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
 </section>
 
-<link rel="stylesheet" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}">
-<script defer src="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
 @if(env('TURNSTILE_SITE_KEY'))
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+(function () {
+    var forms = document.querySelectorAll('#trial-form, #trial-form-submit, #trial-forms');
+    if (!forms.length || !('IntersectionObserver' in window)) return;
+    var loaded = false;
+    function loadTurnstile() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+    }
+    var obs = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) {
+            obs.disconnect();
+            loadTurnstile();
+        }
+    }, { rootMargin: '100px' });
+    forms.forEach(function (f) { obs.observe(f); });
+})();
+</script>
 @endif
 <script>
     (function(){
+        var swalPromise = null;
+        function loadSwal() {
+            if (window.Swal) return Promise.resolve(window.Swal);
+            if (swalPromise) return swalPromise;
+            swalPromise = new Promise(function (resolve, reject) {
+                var css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = '{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}';
+                document.head.appendChild(css);
+                var s = document.createElement('script');
+                s.src = '{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}';
+                s.onload = function () { resolve(window.Swal); };
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+            return swalPromise;
+        }
+
         const csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         function handleSubmit(formId) {
@@ -1720,6 +1730,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                 if (submitBtn) submitBtn.disabled = true;
 
                 try {
+                    const Swal = await loadSwal();
                     const formData = new FormData(this);
                     const response = await fetch('{{ route('trial-class.store') }}', {
                         method: 'POST',
@@ -1740,7 +1751,9 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                             message = Object.values(json.errors).flat().join('\n');
                         }
                     } catch(_) {}
-                    Swal.fire('Error', message, 'error');
+                    loadSwal().then(function (Swal) {
+                        Swal.fire('Error', message, 'error');
+                    });
                 } finally {
                     if (btnText) btnText.classList.remove('d-none');
                     if (btnLoading) btnLoading.classList.add('d-none');
