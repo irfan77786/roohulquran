@@ -55,6 +55,16 @@
         onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
+        
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17989840665"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-17989840665');
+    </script>
     
     <!-- SweetAlert2 CSS - load non-blocking to reduce critical path -->
     <link rel="preload" href="{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}" as="style">
