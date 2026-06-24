@@ -77,5 +77,15 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+
+        RateLimiter::for('trial-class', function (Request $request) {
+            return Limit::perHour(3)
+                ->by($request->ip())
+                ->response(function (Request $request, array $headers) {
+                    return response()->json([
+                        'message' => 'You can submit this form up to 3 times per hour. Please try again later.',
+                    ], 429, $headers);
+                });
+        });
     }
 }
