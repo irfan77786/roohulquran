@@ -203,12 +203,13 @@ h6 {
 @media (max-width: 1200px) {
     .header .logo {
         order: 1;
+        line-height: 1;
     }
 
     .header .btn-getstarted {
         order: 2;
-        margin: 0 15px 0 0;
-        padding: 6px 15px;
+        margin: 0 8px 0 0;
+        padding: 6px 12px;
     }
 
     .header .navmenu {
