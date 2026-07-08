@@ -28,40 +28,61 @@
   <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
     <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
-      <img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy Logo" width="160" height="160"
+      <img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh Ul Quran Academy Logo"
         decoding="async" loading="eager" />
     </a>
 
+    <div class="d-flex align-items-center gap-2 header-actions">
+      <button type="button" class="mobile-nav-toggle d-xl-none" aria-label="Open menu" aria-expanded="false">
+        <span class="mobile-nav-toggle-box" aria-hidden="true">
+          <span class="mobile-nav-toggle-line"></span>
+          <span class="mobile-nav-toggle-line"></span>
+          <span class="mobile-nav-toggle-line"></span>
+        </span>
+      </button>
+      <a href="{{ route('home.contact.us') }}" class="btn-getstarted d-none d-sm-inline-flex" style="color: white !important">Get Started</a>
+    </div>
 
     <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="{{route('home.index')}}" class="active">Home<br></a></li>
-        <li><a href="{{route('home.about')}}">About Us</a></li>
-        <li class="dropdown"><a href="#"><span>Courses</span> <i
-              class="bi bi-chevron-down toggle-dropdown color-yellow"></i></a>
-          <ul>
-            <li><a href="{{route('quran.tajweed')}}">Quran Reading With Tajweed</a></li>
-            <li><a href="{{route('quran.recitation')}}">Noorani Qaida</a></li>
-            <li><a href="{{route('quran.memorization')}}">Quran Memorization</a></li>
-            <li><a href="{{route('quran.tafseer')}}">Tafseer Course</a></li>
+      <div class="mobile-nav-overlay" aria-hidden="true"></div>
 
-          </ul>
-        </li>
-        <li><a href="{{route('home.pricing')}}">Pricing</a></li>
-        {{-- <li><a href="trainers.html">Trainers</a></li> --}}
-        <li><a href="{{route('teachers')}}">Teachers</a></li>
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-top d-xl-none">
+          <a href="{{ url('/') }}" class="mobile-nav-logo">
+            <img src="{{ asset('assets/img/logo.svg') }}" alt="Rooh ul Quran Academy" loading="lazy" decoding="async">
+          </a>
+          <button type="button" class="mobile-nav-close" aria-label="Close menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
 
+        <ul>
+          <li><a href="{{ route('home.index') }}" class="active">Home</a></li>
+          <li><a href="{{ route('home.about') }}">About Us</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{ route('quran.tajweed') }}">Quran Reading With Tajweed</a></li>
+              <li><a href="{{ route('quran.recitation') }}">Noorani Qaida</a></li>
+              <li><a href="{{ route('quran.memorization') }}">Quran Memorization</a></li>
+              <li><a href="{{ route('quran.tafseer') }}">Tafseer Course</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ route('home.pricing') }}">Pricing</a></li>
+          <li><a href="{{ route('teachers') }}">Teachers</a></li>
+          <li><a href="{{ route('home.contact.us') }}">Contact Us</a></li>
+          <li><a href="{{ route('blogs.index') }}">Blogs</a></li>
+        </ul>
 
-        <li><a href="{{route('home.contact.us')}}">Contact Us</a></li>
-        <li><a href="{{route('blogs.index')}}">Blogs</a></li>
-
-      </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <div class="mobile-nav-footer d-xl-none">
+          <a href="{{ route('home.contact.us') }}" class="mobile-nav-cta">Get Started</a>
+          <p class="mobile-nav-contact">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="tel:+923344066429">+92-334-4066429</a>
+          </p>
+        </div>
+      </div>
     </nav>
-
-    <div class="d-flex align-items-center gap-2 header-actions">
-      <a href="{{ route('home.contact.us') }}" class="btn-getstarted" style="color: white !important">Get Started</a>
-    </div>
 
   </div>
 </header>
