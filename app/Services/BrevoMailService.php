@@ -1,5 +1,5 @@
 <?php
-// app/Services/BrevoMailService.php
+
 namespace App\Services;
 
 use SendinBlue\Client\Api\TransactionalEmailsApi;
@@ -9,7 +9,7 @@ use GuzzleHttp\Client;
 
 class BrevoMailService
 {
-    protected $apiInstance;
+    protected TransactionalEmailsApi $apiInstance;
 
     public function __construct()
     {
@@ -17,12 +17,15 @@ class BrevoMailService
         $this->apiInstance = new TransactionalEmailsApi(new Client(), $config);
     }
 
-    public function send(array $to, string $subject, string $htmlContent)
+    public function send(string $to, string $subject, string $htmlContent)
     {
         $email = new SendSmtpEmail([
             'subject' => $subject,
-            'sender' => ['name' => 'Roohul Quran', 'email' => 'no-reply@roohulquran.com'],
-            'to' => $to,
+            'sender' => [
+                'name' => config('services.brevo.sender_name'),
+                'email' => config('services.brevo.sender_email'),
+            ],
+            'to' => [['email' => $to]],
             'htmlContent' => $htmlContent,
         ]);
 

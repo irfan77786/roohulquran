@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\SendTrialClassEmailJob;
 use App\Models\TrialClass;
 use App\Models\AdminNotification;
+use App\Services\GeoLocationService;
 use Illuminate\Http\Request;
 
 class TrialClassController extends Controller
@@ -35,35 +36,30 @@ class TrialClassController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, GeoLocationService $geoLocation)
     {
-        // dd($request->all());
-        $validated =  $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'nullable|email|max:255',
             'phone' => 'required|string|max:20',
-            'country' => 'nullable|string|max:100',
             'message' => 'nullable|string|max:500',
-            'course_enroll' => 'nullable|string|max:255'
         ]);
+
+        $validated['country'] = $geoLocation->getCountryFromIp($request->ip());
 
         $trialClass = TrialClass::create($validated);
 
-        // Create notification for admin
         AdminNotification::createNotification(
             'trial_class',
             'New Trial Class Registration',
-            $validated['name'] . ' has registered for a trial class from ' . ($validated['country'] ?? 'Unknown'),
+            $validated['name'] . ' has registered for a trial class from ' . $validated['country'],
             'ti ti-user',
             'primary',
-            ['trial_class_id' => $trialClass->id, 'name' => $validated['name'], 'email' => $validated['email']],
+            ['trial_class_id' => $trialClass->id, 'name' => $validated['name'], 'phone' => $validated['phone']],
             'trial_class',
             $trialClass->id
         );
 
-        if (!empty($validated['email'])) {
-            SendTrialClassEmailJob::dispatch($validated);
-        }
+        SendTrialClassEmailJob::dispatchSync($validated);
 
         return response()->json(['message' => 'We received your Query, InshAllah we will contact you soon'], 201);
     }

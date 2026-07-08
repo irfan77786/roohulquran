@@ -717,26 +717,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                                 <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
                             </div>
                         @endif
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Enter your email address" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="phone" name="phone"
-                                placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="mb-3">
-                            <select class="form-select" id="country" name="country" required>
-                                <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
-                                <option value="{{ $country }}">{{ $country }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        @include('layouts.partials.public-form-fields')
 
                         <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
                             style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
@@ -1286,33 +1267,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                             <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
                         </div>
                     @endif
-                    <div class="mb-3">
-                        <input type="text" class="form-control rounded-pill" name="name"
-                            placeholder="Enter your Full Name" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control rounded-pill" name="email"
-                            placeholder="Enter Your Email Address" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control rounded-pill" name="phone"
-                            placeholder="Enter Your Phone Number" required>
-                    </div>
-                    <div class="mb-3">
-                        <select class="form-select rounded-pill" id="country" name="country" required>
-                            <option value="" disabled selected>Select your country</option>
-                            @foreach(config('countries.countries') as $country)
-                            <option value="{{ $country }}">{{ $country }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <textarea class="form-control rounded-pill w-100" name="message"
-                            placeholder="Any message (optional)"></textarea>
-                    </div>
-
-                    <input type="hidden" name="course_enroll" value="Course Title Here">
+                    @include('layouts.partials.public-form-fields', ['rounded' => true])
 
                     <button type="submit" id="submit-btn" class="btn btn-dark w-100 rounded-pill">
                         <span id="btn-text">BOOK FREE TRIAL CLASS</span>
@@ -1516,26 +1471,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                                 <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
                             </div>
                         @endif
-                        <div class="mb-3">
-                            <input type="text" class="form-control rounded-pill" name="name"
-                                placeholder="Enter your Full Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control rounded-pill" name="email"
-                                placeholder="Enter Your Email Address" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control rounded-pill" name="phone"
-                                placeholder="Enter Your Phone Number" required>
-                        </div>
-                        <div class="mb-3">
-                            <select class="form-select" id="country" name="country" required>
-                                <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
-                                <option value="{{ $country }}">{{ $country }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        @include('layouts.partials.public-form-fields', ['rounded' => true])
                         <!-- Button with loading spinner -->
                         <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
                             style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">

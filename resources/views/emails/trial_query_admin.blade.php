@@ -70,12 +70,6 @@
                         <td>{{ $name }}</td>
                     </tr>
                 @endif
-                @if (!empty($email))
-                    <tr>
-                        <td class="label">Email</td>
-                        <td>{{ $email }}</td>
-                    </tr>
-                @endif
                 @if (!empty($phone))
                     <tr>
                         <td class="label">Phone</td>
@@ -84,14 +78,8 @@
                 @endif
                 @if (!empty($country))
                     <tr>
-                        <td class="label">Country</td>
+                        <td class="label">Country (from IP)</td>
                         <td>{{ $country }}</td>
-                    </tr>
-                @endif
-                @if (!empty($course_enroll))
-                    <tr>
-                        <td class="label">Course Interested</td>
-                        <td>{{ $course_enroll }}</td>
                     </tr>
                 @endif
                 @if (!empty($message))

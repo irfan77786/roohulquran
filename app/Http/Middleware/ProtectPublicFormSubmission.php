@@ -22,7 +22,8 @@ class ProtectPublicFormSubmission
 
         // Timing trap: blocks most instant scripted posts.
         $startedAt = (int) $request->input('form_started_at', 0);
-        if ($startedAt <= 0 || (time() - $startedAt) < 3) {
+        $minSeconds = app()->environment('local') ? 1 : 3;
+        if ($startedAt <= 0 || (time() - $startedAt) < $minSeconds) {
             return $this->spamResponse($request, 'Please wait a moment before submitting the form.');
         }
 
@@ -30,14 +31,17 @@ class ProtectPublicFormSubmission
             return $this->spamResponse($request, 'Captcha verification failed. Please try again.');
         }
 
-        // Duplicate guard (same normalized payload from same IP for 30 mins).
-        $signature = $this->submissionSignature($request);
-        $duplicateKey = 'form-duplicate:' . $signature;
-        if (Cache::has($duplicateKey)) {
-            return $this->spamResponse($request, 'Duplicate submission detected. Please try again later.');
-        }
+        // Duplicate guard (same normalized payload from same IP).
+        // Skip on local so form testing is not blocked.
+        if (!app()->environment('local')) {
+            $signature = $this->submissionSignature($request);
+            $duplicateKey = 'form-duplicate:' . $signature;
+            if (Cache::has($duplicateKey)) {
+                return $this->spamResponse($request, 'Duplicate submission detected. Please try again later.');
+            }
 
-        Cache::put($duplicateKey, true, now()->addMinutes(30));
+            Cache::put($duplicateKey, true, now()->addMinutes(30));
+        }
 
         return $next($request);
     }
@@ -47,11 +51,8 @@ class ProtectPublicFormSubmission
         $parts = [
             strtolower(trim((string) $request->ip())),
             strtolower(trim((string) $request->input('name'))),
-            strtolower(trim((string) $request->input('email'))),
             strtolower(trim((string) $request->input('phone'))),
-            strtolower(trim((string) $request->input('country'))),
             Str::limit(strtolower(trim((string) $request->input('message'))), 120),
-            strtolower(trim((string) $request->input('course_enroll'))),
         ];
 
         return sha1(implode('|', $parts));
@@ -59,6 +60,11 @@ class ProtectPublicFormSubmission
 
     private function validateTurnstile(Request $request): bool
     {
+        // Local/dev: Turnstile often fails on .test domains; skip so forms stay testable.
+        if (app()->environment('local')) {
+            return true;
+        }
+
         $siteKey = (string) env('TURNSTILE_SITE_KEY', '');
         $secret = (string) env('TURNSTILE_SECRET_KEY', '');
 
@@ -91,7 +97,7 @@ class ProtectPublicFormSubmission
     private function spamResponse(Request $request, string $message)
     {
         if ($request->expectsJson() || $request->ajax()) {
-            return response()->json(['message' => $message], 429);
+            return response()->json(['message' => $message], 422);
         }
 
         return back()->withErrors(['spam' => $message])->withInput();

@@ -2,20 +2,14 @@
 
 namespace App\Jobs;
 
-use App\Mail\TrialClassConfirmationMail;
-use App\Services\BrevoMailService;
 use App\Traits\EmailSending;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Mail;
 
-class SendTrialClassEmailJob implements ShouldQueue
+class SendTrialClassEmailJob
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, EmailSending;
+    use Dispatchable, Queueable, SerializesModels, EmailSending;
 
     protected $data;
 
@@ -26,16 +20,6 @@ class SendTrialClassEmailJob implements ShouldQueue
 
     public function handle(): void
     {
-        // Send confirmation email to user
-        if (!empty($this->data['email'])) {
-            $this->sendEmail(
-                to: $this->data['email'],
-                subject: 'Trial Class Confirmation',
-                htmlContent: view('emails.trial_confirmation_html', $this->data)->render()
-            );
-        }
-    
-        // Send query alert to admin
         $this->sendEmail(
             to: 'hafizirfan8078@gmail.com',
             subject: 'New Trial Class Query',

@@ -79,11 +79,14 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('trial-class', function (Request $request) {
-            return Limit::perHour(3)
+            // Local/dev: allow frequent testing. Production: 10/hour per IP.
+            $maxAttempts = app()->environment('local') ? 60 : 10;
+
+            return Limit::perHour($maxAttempts)
                 ->by($request->ip())
                 ->response(function (Request $request, array $headers) {
                     return response()->json([
-                        'message' => 'You can submit this form up to 3 times per hour. Please try again later.',
+                        'message' => 'Too many submissions. Please try again later.',
                     ], 429, $headers);
                 });
         });

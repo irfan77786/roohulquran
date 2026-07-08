@@ -104,33 +104,14 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                         </div>
                     @endif
                     <div class="row g-3">
-                        <div class="col-md-6">
-                            <input type="text" name="name" class="form-control" placeholder="Name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="phone" class="form-control" placeholder="Your Phone Number"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <select class="form-select rounded-pill" id="country" name="country" required>
-                                <option value="" disabled selected>Select your country</option>
-                                @foreach(config('countries.countries') as $country)
-                                <option value="{{ $country }}">{{ $country }}</option>
-                                @endforeach
-                            </select>
+                        <div class="col-12">
+                            @include('layouts.partials.public-form-fields')
                         </div>
                         <div class="col-12">
-                            <textarea name="message" class="form-control" rows="4"
-                                placeholder="Add Your Notes"></textarea>
-
-                            <div class="col-12">
-                                <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-4 py-2">GET IN
-                                    TOUCH</button>
-                            </div>
+                            <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-2 py-2">GET IN
+                                TOUCH</button>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
