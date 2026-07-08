@@ -98,14 +98,10 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                     @csrf
                     <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                     <input type="hidden" name="form_started_at" value="{{ time() }}">
-                    @if(env('TURNSTILE_SITE_KEY'))
-                        <div class="mb-3">
-                            <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
-                        </div>
-                    @endif
                     <div class="row g-3">
                         <div class="col-12">
                             @include('layouts.partials.public-form-fields')
+                            @include('layouts.partials.form-turnstile')
                         </div>
                         <div class="col-12">
                             <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-2 py-2">GET IN
@@ -212,6 +208,10 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                 var startedAtField = form.querySelector('input[name="form_started_at"]');
                 if (startedAtField) {
                     startedAtField.value = Math.floor(Date.now() / 1000);
+                }
+                var turnstileWidget = form.querySelector('.cf-turnstile');
+                if (window.turnstile && turnstileWidget) {
+                    window.turnstile.reset(turnstileWidget);
                 }
             })
             .catch(function(err) {

@@ -708,12 +708,8 @@
                         @csrf
                         <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="form_started_at" value="{{ time() }}">
-                        @if(env('TURNSTILE_SITE_KEY'))
-                            <div class="mb-3">
-                                <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
-                            </div>
-                        @endif
                         @include('layouts.partials.public-form-fields')
+                        @include('layouts.partials.form-turnstile')
 
                         <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
                             style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
@@ -1239,12 +1235,8 @@
                     @csrf
                     <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                     <input type="hidden" name="form_started_at" value="{{ time() }}">
-                    @if(env('TURNSTILE_SITE_KEY'))
-                        <div class="mb-3">
-                            <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
-                        </div>
-                    @endif
                     @include('layouts.partials.public-form-fields', ['rounded' => true])
+                    @include('layouts.partials.form-turnstile')
 
                     <button type="submit" id="submit-btn" class="btn btn-dark w-100 rounded-pill">
                         <span id="btn-text">BOOK FREE TRIAL CLASS</span>
@@ -1440,12 +1432,8 @@
                         @csrf
                         <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="form_started_at" value="{{ time() }}">
-                        @if(env('TURNSTILE_SITE_KEY'))
-                            <div class="mb-3">
-                                <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}"></div>
-                            </div>
-                        @endif
                         @include('layouts.partials.public-form-fields', ['rounded' => true])
+                        @include('layouts.partials.form-turnstile')
                         <!-- Button with loading spinner -->
                         <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
                             style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
@@ -1653,6 +1641,8 @@
                     this.reset();
                     const startedAtField = this.querySelector('input[name="form_started_at"]');
                     if (startedAtField) startedAtField.value = Math.floor(Date.now() / 1000);
+                    const turnstileWidget = this.querySelector('.cf-turnstile');
+                    if (window.turnstile && turnstileWidget) turnstile.reset(turnstileWidget);
                 } catch (err) {
                     let message = 'Something went wrong.';
                     try {
