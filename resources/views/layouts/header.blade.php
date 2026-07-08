@@ -5,7 +5,7 @@
 
       <!-- Phone section -->
       <div class="d-flex align-items-center justify-content-center me-md-4">
-        <i class="fa-brands fa-whatsapp me-2" style="color: #FFD43B; font-size: 1.5rem;"></i>
+        <i class="fa-brands fa-whatsapp me-2" style="color: #FF5528; font-size: 1.5rem;"></i>
         <span class="phone-number">
           <a href="tel:+923344066429" class="text-white text-decoration-none">+92-334-4066429</a>
           <span class="mobile-separator" style="color: rgba(255, 255, 255, 0.5);">|</span>
@@ -16,7 +16,7 @@
 
       <!-- Email section -->
       <div class="d-flex align-items-center justify-content-center">
-        <i class="fa-regular fa-envelope me-2" style="color: #d8b73e; font-size: 1.5rem;"></i>
+        <i class="fa-regular fa-envelope me-2" style="color: #FF5528; font-size: 1.5rem;"></i>
         <span class="email">info@roohulquranacademy.com</span>
       </div>
 
@@ -54,14 +54,12 @@
 
         <li><a href="{{route('home.contact.us')}}">Contact Us</a></li>
         <li><a href="{{route('blogs.index')}}">Blogs</a></li>
-        <li class="d-lg-none"><a href="{{ route('student.login') }}">Student Login</a></li>
 
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
     <div class="d-flex align-items-center gap-2 header-actions">
-      <a href="{{ route('student.login') }}" class="btn-getstarted header-student-login d-none d-lg-inline-flex" style="color: white !important; background: transparent; border: 1px solid white; padding: 8px 20px; border-radius: 5px; text-decoration: none; transition: all 0.3s;">Student Login</a>
       <a href="{{ route('home.contact.us') }}" class="btn-getstarted" style="color: white !important">Get Started</a>
     </div>
 

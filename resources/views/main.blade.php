@@ -44,7 +44,11 @@
     <!-- Critical CSS (blocking — prevents CLS from late stylesheet application) -->
     <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset($mainCssPath) }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/theme-tauheed.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Non-critical CSS (deferred) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
@@ -53,8 +57,7 @@
     </noscript>
 
     <!-- Preload LCP hero image (viewport-specific) -->
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-4.webp') }}" as="image" fetchpriority="high" media="(min-width: 769px)">
-    <link rel="preload" href="{{ asset('assets/img/hero-bg-1.webp') }}" as="image" fetchpriority="high" media="(max-width: 768px)">
+    <link rel="preload" href="{{ asset('assets/img/hero-quran-banner.png') }}" as="image" fetchpriority="high">
     <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
     
     @stack('styles')
@@ -125,7 +128,7 @@
 
         .header .btn-getstarted {
             color: #fff;
-            background: linear-gradient(120deg, #44137c, #2bab6d);
+            background-color: #FF5528;
             font-size: 14px;
             padding: 8px 25px;
             border-radius: 50px;
@@ -196,7 +199,7 @@
         }
 
         .btn-get-started {
-            background: #44137c;
+            background-color: #FF5528;
             color: #fff;
             font-weight: 500;
             font-size: 15px;

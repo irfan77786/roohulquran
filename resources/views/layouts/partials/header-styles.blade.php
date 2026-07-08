@@ -1,37 +1,13 @@
 <style>
   /* Modern Top Header Design */
   #top-header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background-color: #122F2A;
     position: relative;
     overflow: hidden;
     padding: 15px 0;
     min-height: 54px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     contain: layout style;
-  }
-
-  /* Shimmer overlay — transform only (no layout reflow) */
-  #top-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    animation: shimmer 3s infinite;
-    will-change: transform;
-    pointer-events: none;
-  }
-
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
   }
 
   #top-header .contact-info {
@@ -73,7 +49,7 @@
   }
 
   #top-header a:hover {
-    color: #FFD43B;
+    color: #FF5528;
   }
 
   .mobile-break {
@@ -242,7 +218,7 @@
       left: 0;
       width: 100%;
       color: white;
-      background: linear-gradient(120deg, #44137c, #2bab6d);
+      background-color: #122F2A;
     }
 
     #navmenu.active ul {

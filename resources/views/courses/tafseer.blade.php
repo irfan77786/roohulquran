@@ -81,7 +81,7 @@ tafsir classes, understand quran meaning')
 
   .card-body ul li i {
     font-size: 1.5rem;
-    color: #44137c;
+    color: #122F2A;
   }
 
   .btn-danger {
@@ -132,9 +132,7 @@ tafsir classes, understand quran meaning')
     /* Optional: Add a subtle shadow */
   }
 </style>
-<section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="tafseer course" class="desktop-image" data-aos="fade-in">
-  <img src="assets/img/hero-bg-1.webp" alt="online tafseer course" class="mobile-image" data-aos="fade-in">
+<section id="hero" class="hero section tauheed-page-banner">
 
   <div class="container">
     <div class="row align-items-center">
@@ -158,7 +156,7 @@ tafsir classes, understand quran meaning')
         <!-- Card 1 -->
         <div class="card mb-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Online Tafsir Course</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Online Tafsir Course</h4>
             <p class="card-text">
               Understand the true meanings of the Quran with our Online Tafsir Course. This program is designed for
               students of all ages who want to go beyond recitation and explore the depth of Allah’s words. With expert
@@ -173,7 +171,7 @@ tafsir classes, understand quran meaning')
         <!-- Card 3 -->
         <div class="card mt-4 shadow-sm">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">What You Will Learn</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">What You Will Learn</h4>
             <ul class="list-unstyled">
               <li class="mb-2 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
@@ -206,7 +204,7 @@ tafsir classes, understand quran meaning')
         <!-- Card 4 -->
         <div class="card mt-4 shadow-sm" style="border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Why Choose Our Online Tafsir Course?</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Online Tafsir Course?</h4>
             <ul class="list-unstyled">
               <li class="mb-2 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
@@ -248,7 +246,7 @@ tafsir classes, understand quran meaning')
         <!-- Card 2 -->
         <div class="card shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Deepen Your Knowledge of the Quran</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Deepen Your Knowledge of the Quran</h4>
             <p>
               Reciting the Quran is a great blessing, but understanding its meanings is equally important. At Roohul
               Quran Academy, our Online Tafsir Course helps students discover the message of the Quran in a simple and
@@ -269,7 +267,7 @@ tafsir classes, understand quran meaning')
       <!-- Right Side -->
       <div class="col-lg-4 col-md-12">
         <!-- Pricing -->
-        <div class="card shadow-sm mb-4" style="border: none; border-radius: 10px; background-color: #44137c;">
+        <div class="card shadow-sm mb-4" style="border: none; border-radius: 10px; background-color: #122F2A;">
           <div class="card-body text-center">
             <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
             <div class="container d-flex flex-column align-items-center">
@@ -287,19 +285,19 @@ tafsir classes, understand quran meaning')
           <div class="card-body">
             <ul class="list-unstyled">
               <li class="mb-3 d-flex align-items-center">
-                <i class="bi bi-person-video me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-person-video me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Sessions:</strong> 1 on 1</span>
               </li>
               <li class="mb-3 d-flex align-items-center">
-                <i class="bi bi-clock me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-clock me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Availability:</strong> 24/7</span>
               </li>
               <li class="mb-3 d-flex align-items-center">
-                <i class="bi bi-people me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-people me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Instructors:</strong> M/F</span>
               </li>
               <li class="d-flex align-items-center">
-                <i class="bi bi-person-check me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-person-check me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Students:</strong> 100+</span>
               </li>
             </ul>
@@ -327,7 +325,7 @@ tafsir classes, understand quran meaning')
   <!-- Section Title -->
   <div class="container section-title text-center" data-aos="fade-up">
     {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-    <p style="color:#44137c;">Our Featured Courses</p>
+    <p style="color:#122F2A;">Our Featured Courses</p>
     {{-- <h5 class="col-lg-8 mx-auto text-black">
       Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
       tailored to help you achieve your learning goals with ease and excellence.

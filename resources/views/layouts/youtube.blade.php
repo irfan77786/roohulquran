@@ -48,7 +48,7 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 style="color:#44137c;"><b>Watch Our Introduction Video</b></h2>
+        <h2 style="color:#122F2A;"><b>Watch Our Introduction Video</b></h2>
         <p class="mb-4">
           Learn more about our mission, vision, and how we provide high-quality Quran education to students worldwide. This introduction video explains our teaching methodology and commitment to Islamic education.
         </p>

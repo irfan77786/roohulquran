@@ -16,10 +16,24 @@ rooh ul quran academy video, introduction video, online quran classes video, isl
 
 <style>
     .video-hero {
-        background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%);
-        color: white;
-        padding: 80px 0;
+        background-color: #F6F3EE;
+        background-image: url('{{ asset('assets/img/hero-quran-banner.png') }}');
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        color: #122F2A;
+        padding: 70px 0 80px;
+        min-height: 580px;
         text-align: center;
+        position: relative;
+    }
+
+    @media (max-width: 991px) {
+        .video-hero {
+            padding: 50px 0 60px;
+            min-height: auto;
+            background-position: 70% bottom;
+        }
     }
     
     .video-container-main {
@@ -60,7 +74,7 @@ rooh ul quran academy video, introduction video, online quran classes video, isl
     }
     
     .meta-item i {
-        color: #44137c;
+        color: #122F2A;
     }
 </style>
 

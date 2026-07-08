@@ -77,7 +77,7 @@
 
   .card-body ul li i {
     font-size: 1.5rem;
-    color: #44137c;
+    color: #122F2A;
   }
 
   .btn-danger {
@@ -132,11 +132,7 @@
 
 
 
-<section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="quran reading course" class="desktop-image" data-aos="fade-in">
-
-
-  <img src="assets/img/hero-bg-1.webp" alt="online quran reading course" class="mobile-image" data-aos="fade-in">
+<section id="hero" class="hero section tauheed-page-banner">
 
   <div class="container">
     <div class="row align-items-center">
@@ -151,7 +147,7 @@
       <!-- Right Form -->
       {{-- <div class="col-lg-4 col-md-5 col-sm-12" data-aos="fade-up" data-aos-delay="200">
         <div class="form-container p-4 bg-light rounded shadow">
-          <h3 class="mb-3 text-center" style="color: #44137c; font-weight: bold;">
+          <h3 class="mb-3 text-center" style="color: #122F2A; font-weight: bold;">
             Free Trial Class
           </h3>
 
@@ -181,7 +177,7 @@
                 <!-- Add more countries as needed -->
               </select>
             </div>
-            <button type="submit" class="w-100 p-2 rounded-2" style="background-color: #44137c;color:white">Get Free
+            <button type="submit" class="w-100 p-2 rounded-2" style="background-color: #122F2A;color:white">Get Free
               Trial Class</button>
           </form>
         </div>
@@ -200,7 +196,7 @@
         <!-- Card 1: Summary -->
         <div class="card mb-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Summary</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Summary</h4>
             <p class="card-text">
               Learn the Quran with perfection and beauty through our Online Tajweed Course. Designed for kids, adults,
               and beginners, this course helps you master the rules of Tajweed with step-by-step guidance from certified
@@ -222,7 +218,7 @@
         <!-- Card 2: What You Will Learn -->
         <div class="card shadow-sm" style="border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">What You Will Learn in the Online Tajweed
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">What You Will Learn in the Online Tajweed
               Course</h4>
             <ul class="list-unstyled">
               <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
@@ -250,7 +246,7 @@
         <!-- Card 3: Why Choose Us -->
         <div class="card shadow-sm mb-2" style="border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Why Choose Our Online Tajweed Course?</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Online Tajweed Course?</h4>
             <ul class="list-unstyled">
               <li class=" d-flex align-items-start"><span class="me-2" style="color: #36c47d;">✔</span>
                 <p>One-to-one interactive online classes</p>
@@ -285,7 +281,7 @@
         <!-- Card 4: Getting Started -->
         <div class="card mt-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Getting Started</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Getting Started</h4>
             <p class="card-text">
               Don’t let your busy routine prevent you from learning the Quran. Start this amazing spiritual journey
               today from the comfort of your home. Grab the free trial session immediately to evaluate our platform’s
@@ -298,7 +294,7 @@
       <!-- Right Side: Three Vertical Cards -->
       <div class="col-lg-4 col-md-12">
         <!-- Card 1: Starting From -->
-        <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #44137c;">
+        <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #122F2A;">
           <div class="card-body text-center">
             <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
             <div class="container d-flex flex-column align-items-center">
@@ -316,13 +312,13 @@
           <div class="card-body">
             <ul class="list-unstyled">
               <li class="mb-3 d-flex align-items-center"><i class="bi bi-person-video me-2"
-                  style="font-size: 1.5rem; color: #44137c;"></i><span><strong>Sessions:</strong> 1 on 1</span></li>
+                  style="font-size: 1.5rem; color: #122F2A;"></i><span><strong>Sessions:</strong> 1 on 1</span></li>
               <li class="mb-3 d-flex align-items-center"><i class="bi bi-clock me-2"
-                  style="font-size: 1.5rem; color: #44137c;"></i><span><strong>Availability:</strong> 24/7</span></li>
+                  style="font-size: 1.5rem; color: #122F2A;"></i><span><strong>Availability:</strong> 24/7</span></li>
               <li class="mb-3 d-flex align-items-center"><i class="bi bi-people me-2"
-                  style="font-size: 1.5rem; color: #44137c;"></i><span><strong>Instructors:</strong> M/F</span></li>
+                  style="font-size: 1.5rem; color: #122F2A;"></i><span><strong>Instructors:</strong> M/F</span></li>
               <li class="d-flex align-items-center"><i class="bi bi-person-check me-2"
-                  style="font-size: 1.5rem; color: #44137c;"></i><span><strong>Students:</strong> 100+</span></li>
+                  style="font-size: 1.5rem; color: #122F2A;"></i><span><strong>Students:</strong> 100+</span></li>
             </ul>
           </div>
         </div>
@@ -330,7 +326,7 @@
         <!-- Card 3: Course Overview -->
         <div class="card mb-4 shadow-sm" style="border: none; border-radius: 10px; background-color: #fff8f0;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Course Overview</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Course Overview</h4>
             <ul class="list-unstyled">
               <li class="mb-2 d-flex align-items-start"><i class="bi bi-check-circle-fill me-2"
                   style="color: #36c47d;"></i><span>Level 1: Mastering the Basics</span></li>
@@ -368,7 +364,7 @@
   <!-- Section Title -->
   <div class="container section-title text-center" data-aos="fade-up">
     {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-    <p style="color:#44137c;">Our Featured Courses</p>
+    <p style="color:#122F2A;">Our Featured Courses</p>
     {{-- <h5 class="col-lg-8 mx-auto text-black">
       Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
       tailored to help you achieve your learning goals with ease and excellence.
@@ -515,7 +511,7 @@
   <div class="container" data-aos="fade-up">
     <!-- Heading -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color:#44137c;">Tajweed Course – Frequently Asked Questions</h2>
+      <h2 class="fw-bold" style="color:#122F2A;">Tajweed Course – Frequently Asked Questions</h2>
       <p class="text-muted">Find answers about our Online Tajweed Course for kids and adults.</p>
     </div>
 

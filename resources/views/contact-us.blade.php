@@ -8,14 +8,11 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 
 <style>
     #get-in-touch {
-        background: linear-gradient(120deg, #44137c, #2bab6d);
-        /* Gradient from #44137c to #2bab6d */
-
+        background-color: #FF5528;
     }
 
     #get-in-touch:hover {
-        background: linear-gradient(120deg, #2bab6d, #44137c);
-        /* Gradient from #2bab6d to #44137c */
+        background-color: #e04a22;
     }
 
     .map-responsive {

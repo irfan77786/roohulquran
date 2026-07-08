@@ -1,0 +1,100 @@
+:root {
+    --tauheed-primary: #122F2A;
+    --tauheed-secondary: #1A685B;
+    --tauheed-accent: #FF5528;
+    --tauheed-text: #797E88;
+    --tauheed-bg: #F6F3EE;
+    --background-color: #ffffff;
+    --default-color: #797E88;
+    --heading-color: #122F2A;
+    --accent-color: #1A685B;
+    --nav-hover-color: #1A685B;
+    --nav-dropdown-hover-color: #1A685B;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    color: var(--default-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito", sans-serif;
+    color: var(--heading-color);
+}
+
+.btn-get-started,
+.btn-getstarted {
+    background-color: var(--tauheed-accent) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-get-started:hover,
+.btn-getstarted:hover {
+    background-color: #e04a22 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.light-background {
+    --background-color: var(--tauheed-bg);
+}
+
+/* Inner page banner — same style as home hero */
+.hero.tauheed-page-banner {
+    position: relative;
+    padding: 70px 0 80px;
+    min-height: 580px;
+    background-color: #F6F3EE;
+    background-image: url('../img/hero-quran-banner.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: #122F2A;
+}
+
+.hero.tauheed-page-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero.tauheed-page-banner h1,
+.hero.tauheed-page-banner .hero-heading {
+    color: #122F2A !important;
+    font-weight: 800;
+    text-shadow: none;
+    -webkit-text-fill-color: unset;
+    background: none;
+    text-align: left;
+}
+
+.hero.tauheed-page-banner p {
+    color: #444444;
+    text-align: left;
+}
+
+.hero.tauheed-page-banner li,
+.hero.tauheed-page-banner ul,
+.hero.tauheed-page-banner .hero-features,
+.hero.tauheed-page-banner .text-white {
+    color: #122F2A !important;
+}
+
+.hero.tauheed-page-banner .desktop-image,
+.hero.tauheed-page-banner .mobile-image,
+.hero.tauheed-page-banner picture {
+    display: none !important;
+}
+
+@media (max-width: 991px) {
+    .hero.tauheed-page-banner {
+        padding: 50px 0 60px;
+        min-height: auto;
+        background-position: 70% bottom;
+    }
+}

@@ -13,337 +13,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 @endsection
 
 @push('styles')
+@include('layouts.partials.hero-banner-styles')
 <style>
-    /* Modern Hero Section Design */
-    #hero {
-        padding: 80px 0;
-        overflow: hidden;
-        min-height: 650px;
-        position: relative;
-    }
-
-    /* Overlay gradient for better text readability */
-    #hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(68, 19, 124, 0.8) 0%, rgba(43, 171, 109, 0.6) 100%);
-        z-index: 1;
-    }
-
-    #hero .container {
-        position: relative;
-        z-index: 2;
-    }
-
-    #hero .form-container {
-        max-width: 100%;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.98) !important;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    #hero .form-container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
-    }
-
-    .desktop-image {
-        display: block;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1440 / 600;
-        object-fit: cover;
-    }
-
-    #hero .mobile-image {
-        display: none;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 768 / 800;
-        object-fit: cover;
-    }
-
-    /* Hero Typography & Elements */
-    .hero-heading {
-        font-size: 3.5rem;
-        font-weight: 800;
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
-        margin-bottom: 20px;
-        letter-spacing: -1px;
-    }
-
-    .hero-subtext {
-        font-size: 1.25rem;
-        line-height: 1.8;
-        color: #f5f5f5;
-        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-        margin-bottom: 25px;
-        font-weight: 400;
-        min-height: 3.6em;
-    }
-
-    .hero-features li {
-        font-size: 1.1rem;
-        color: #ffffff;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-        padding: 8px 0;
-        transition: transform 0.3s ease;
-    }
-
-    .hero-features li:hover {
-        transform: translateX(10px);
-    }
-
-    .hero-features li .me-2 {
-        display: inline-block;
-        background: rgba(255, 215, 0, 0.2);
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        text-align: center;
-        line-height: 25px;
-    }
-
-    .btn-get-started {
-        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
-        color: #1a1a2e !important;
-        font-weight: 700;
-        font-size: 1.1rem;
-        padding: 15px 40px;
-        border-radius: 50px;
-        border: none;
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .btn-get-started:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
-        background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%) !important;
-    }
-
-    /* Mobile Responsive Styles */
-    @media (min-width: 430px) and (max-width: 768px) {
-        #hero {
-            text-align: center;
-            padding: 40px 0px;
-            min-height: 500px;
-            overflow: hidden;
-        }
-
-        .desktop-image {
-            aspect-ratio: 768 / 400;
-        }
-
-        .hero-heading {
-            font-size: 2.2rem !important;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .hero-subtext {
-            font-size: 1rem !important;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .hero-features li {
-            font-size: 0.95rem;
-        }
-
-        .btn-get-started {
-            font-size: 1rem !important;
-            padding: 12px 30px !important;
-        }
-
-        .right-form {
-            padding: 10px;
-        }
-
-        #hero .form-container {
-            margin-top: 30px;
-            padding: 25px 20px !important;
-        }
-
-        #hero .form-container h3 {
-            font-size: 1.5rem !important;
-        }
-
-        #hero .form-container .mb-3 {
-            margin-bottom: 15px !important;
-        }
-
-        #hero .form-container .form-control,
-        #hero .form-container .form-select {
-            padding: 12px 15px !important;
-            font-size: 0.9rem !important;
-        }
-
-        #hero .form-container button[type="submit"] {
-            padding: 12px 28px !important;
-            font-size: 0.95rem !important;
-            margin-top: 5px;
-        }
-    }
-
-    @media (max-width: 429px) {
-        #hero {
-            padding: 30px 0;
-            min-height: 450px;
-        }
-
-        .hero-heading {
-            font-size: 1.8rem !important;
-            font-weight: 700;
-        }
-
-        .hero-subtext {
-            font-size: 0.95rem !important;
-            line-height: 1.5;
-        }
-
-        .hero-features li {
-            font-size: 0.9rem;
-            padding: 5px 0;
-        }
-
-        .btn-get-started {
-            font-size: 0.95rem !important;
-            padding: 10px 25px !important;
-        }
-
-        #hero .form-container {
-            margin-top: 20px;
-            padding: 20px 18px !important;
-        }
-
-        #hero .form-container h3 {
-            font-size: 1.3rem !important;
-        }
-
-        #hero .form-container .mb-3 {
-            margin-bottom: 14px !important;
-        }
-
-        #hero .form-container .form-control,
-        #hero .form-container .form-select {
-            padding: 12px 15px !important;
-            font-size: 0.88rem !important;
-        }
-
-        #hero .form-container button[type="submit"] {
-            padding: 12px 25px !important;
-            font-size: 0.9rem !important;
-            margin-top: 5px;
-        }
-    }
-
-    /* Ensure correct hero image shows on desktop */
-    @media (min-width: 769px) {
-        #hero .desktop-image {
-            display: block !important;
-        }
-
-        #hero .mobile-image {
-            display: none !important;
-        }
-    }
-
-    .right-form {
-        padding: 20px;
-    }
-
-    /* Enhanced Form Styling */
-    #hero .form-container {
-        padding: 35px 30px !important;
-    }
-
-    #hero .form-container h3 {
-        background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 800;
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-        text-shadow: none;
-    }
-
-    #hero .form-container .form-control,
-    #hero .form-container .form-select {
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 14px 20px;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        background: #ffffff;
-        color: #333;
-    }
-
-    #hero .form-container .form-control::placeholder,
-    #hero .form-container .form-select::placeholder {
-        color: #999;
-        font-weight: 400;
-    }
-
-    #hero .form-container .form-select {
-        color: #999;
-        cursor: pointer;
-    }
-
-    #hero .form-container .form-select:not([value=""]) {
-        color: #333;
-    }
-
-    #hero .form-container .form-control:focus,
-    #hero .form-container .form-select:focus {
-        border-color: #44137c;
-        box-shadow: 0 0 0 0.25rem rgba(68, 19, 124, 0.15);
-        transform: translateY(-2px);
-        outline: none;
-    }
-
-    #hero .form-container .mb-3 {
-        margin-bottom: 20px !important;
-    }
-
-    #hero .form-container button[type="submit"] {
-        background: linear-gradient(120deg, #44137c, #2bab6d) !important;
-        border: none;
-        padding: 14px 30px;
-        font-size: 1rem;
-        font-weight: 700;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(68, 19, 124, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-top: 10px;
-    }
-
-    #hero .form-container button[type="submit"]:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(68, 19, 124, 0.4);
-    }
-
-    #hero .form-container button[type="submit"]:active {
-        transform: translateY(-1px);
-    }
-
     #about .card {
         background: #281c1c;
         border-radius: 10px;
@@ -524,7 +195,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border: 2px solid #44137c;
+        border: 2px solid #122F2A;
     }
 
     .contact-section .contact-form input,
@@ -536,7 +207,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
     .contact-section .contact-form input:focus,
     .contact-section .contact-form select:focus {
-        border-color: #44137c;
+        border-color: #122F2A;
         outline: none;
     }
 
@@ -615,31 +286,6 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         border: none;
     }
 
-    .quran-box {
-        width: 100%;
-        max-width: 800px;
-        /* keeps it centered and clean on big screens */
-        padding: 1.5rem;
-        /* default mobile padding */
-        background: linear-gradient(80deg, #44137c, #9a8f50, #e5a72a);
-        z-index: 1;
-    }
-
-    /* Tablets (≥768px) */
-    @media (min-width: 768px) {
-        .quran-box {
-            padding: 1rem;
-        }
-    }
-
-    /* Desktops (≥992px) */
-    @media (min-width: 992px) {
-        .quran-box {
-            width: 100%;
-            padding: 1rem;
-        }
-    }
-
     .add-plus::after {
         content: "+";
         margin-left: 4px;
@@ -648,84 +294,17 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 @endpush
 
 @section('content')
-<!-- Hero Section -->
-<section id="hero" class="hero section dark-background">
-    <picture>
-        <source media="(max-width: 768px)" srcset="{{ asset('assets/img/hero-bg-1-320.webp') }} 320w, 
-                        {{ asset('assets/img/hero-bg-1.webp') }} 480w, 
-                        {{ asset('assets/img/hero-bg-1.webp') }} 768w" sizes="100vw">
-        <source media="(min-width: 769px)" srcset="{{ asset('assets/img/hero-bg-4-768.webp') }} 768w, 
-                        {{ asset('assets/img/hero-bg-4.webp') }} 1024w, 
-                        {{ asset('assets/img/hero-bg-4.webp') }} 1440w" sizes="1440px">
-        <img class="desktop-image" src="{{ asset('assets/img/hero-bg-4.webp') }}"
-            alt="Online Quran Classes in {{ $cityName }}, {{ $stateName }}" width="1440" height="600" loading="eager"
-            fetchpriority="high" decoding="async">
-    </picture>
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 col-md-7 col-sm-12 mb-4 mb-md-0 text-md-start text-center">
-                <h1 class="hero-heading">Transform Your Quranic Journey in {{ $cityName }}</h1>
-                <p class="hero-subtext">
-                    Join Rooh ul Quran Academy serving {{ $cityName }}, {{ $stateName }} - Where Expert Tutors Meet Modern Technology.<br>
-                    Experience personalized Quran learning from the comfort of your home.
-                </p>
-
-                <!-- Enhanced Bullet List -->
-                <ul class="list-unstyled text-start mt-4 hero-features">
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-white fw-bold">✓</span>
-                        <span>One-on-One Live Classes with Certified Teachers</span>
-                    </li>
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-white fw-bold">✓</span>
-                        <span>Flexible Schedules for {{ $cityName }} Families</span>
-                    </li>
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-white fw-bold">✓</span>
-                        <span>Master Tajweed with Interactive Learning Tools</span>
-                    </li>
-                    <li class="d-flex align-items-start mb-3">
-                        <span class="me-3 text-white fw-bold">✓</span>
-                        <span>Specialized Hifz Program with Progress Tracking</span>
-                    </li>
-                </ul>
-
-                <a href="{{ route('home.contact.us') }}" class="btn-get-started mt-4">Start Learning Today</a>
-            </div>
-
-
-            <!-- Right Form -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="form-container bg-light rounded shadow">
-                    <div class="text-center mb-3">
-                        <div style="display: inline-block; background: linear-gradient(135deg, #44137c 0%, #2bab6d 100%); padding: 8px 20px; border-radius: 25px; margin-bottom: 10px;">
-                            <span style="color: white; font-weight: 600; font-size: 0.9rem;">🎁 Special Offer</span>
-                        </div>
-                        <h3 class="text-center" style="color: #44137c; font-weight: bold;">
-                            Free Trial Class
-                        </h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-top: 8px;">Start Your Quranic Journey Today</p>
-                    </div>
-
-                    <form id="trial-form">
-                        @csrf
-                        <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
-                        <input type="hidden" name="form_started_at" value="{{ time() }}">
-                        @include('layouts.partials.public-form-fields')
-                        @include('layouts.partials.form-turnstile')
-
-                        <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
-                            style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
-                            <span id="btn-text" style="color: white !important">Get Free Trial Class</span>
-                            <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include('layouts.partials.hero-banner', [
+    'heroTitle' => 'Transform Your Quranic Journey in ' . $cityName,
+    'heroSubtitle' => 'Join Rooh ul Quran Academy serving ' . $cityName . ', ' . $stateName . ' - Where Expert Tutors Meet Modern Technology.<br>Experience personalized Quran learning from the comfort of your home.',
+    'heroFeatures' => [
+        'One-on-One Live Classes with Certified Teachers',
+        'Flexible Schedules for ' . $cityName . ' Families',
+        'Master Tajweed with Interactive Learning Tools',
+        'Specialized Hifz Program with Progress Tracking',
+    ],
+    'heroImageAlt' => 'Online Quran Classes in ' . $cityName . ', ' . $stateName,
+])
 
 <!-- New Content Section -->
 <section id="academy-intro" class="py-5 bg-light">
@@ -733,7 +312,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
         <!-- Heading -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3" style="color:#44137c; font-size:2rem;">
+            <h2 class="fw-bold mb-3" style="color:#122F2A; font-size:2rem;">
                 Rooh ul Quran Academy Learn Quran Online with Expert Teachers in {{ $cityName }}, {{ $stateName }}
             </h2>
             {{-- <p class="lead text-muted">
@@ -763,7 +342,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
             <!-- Right Features List -->
             {{-- <div class="col-lg-6">
-                <h4 class="fw-bold mb-4" style="color:#2bab6d;">Why Choose Us?</h4>
+                <h4 class="fw-bold mb-4" style="color:#1A685B;">Why Choose Us?</h4>
                 <ul class="list-unstyled fs-6">
                     <li class="mb-3 d-flex align-items-start">
                         <span class="me-2 text-success fs-5">✔</span> One-to-one Online Quran Classes
@@ -784,7 +363,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         <!-- Tajweed + Hifz -->
         <div class="row mt-5">
             <div class="col-lg-10 mx-auto text-center">
-                <h2 class="fw-bold mb-3" style="color:#44137c;">Quran Memorization and Tajweed Made Easy in {{ $cityName
+                <h2 class="fw-bold mb-3" style="color:#122F2A;">Quran Memorization and Tajweed Made Easy in {{ $cityName
                     }}</h2>
                 <p>
                     If your goal is to <strong>memorize the Quran</strong>, our step-by-step
@@ -826,8 +405,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                 <div class="card p-4 shadow"
                     style="position: relative; top: -12px; background: #ffffff; border-radius: 10px;">
                     <!-- Increased height -->
-                    <h2 style="color:#44137c;">Who we are</h2>
-                    <h2 style="color:#44137c;"><b>About</b> Us ?</h2>
+                    <h2 style="color:#122F2A;">Who we are</h2>
+                    <h2 style="color:#122F2A;"><b>About</b> Us ?</h2>
                     <p>
 
                         Roohul Quran addresses this need by offering accessible Islamic education globally to those who
@@ -934,7 +513,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
         <div class="row gy-4">
             <!-- New Content -->
             <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="100">
-                <h2 class=" mb-4" style="color:#44137c;">Why Choose Roohul Quran Academy in {{ $cityName }}, {{
+                <h2 class=" mb-4" style="color:#122F2A;">Why Choose Roohul Quran Academy in {{ $cityName }}, {{
                     $stateName }}?</h2>
 
                 <div class="container">
@@ -1009,7 +588,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-2">
-            <h2 class="fw-bold" style="color:#44137c;">Learn Quran Online with Trusted Teachers in {{ $cityName }}, {{
+            <h2 class="fw-bold" style="color:#122F2A;">Learn Quran Online with Trusted Teachers in {{ $cityName }}, {{
                 $stateName }}</h2>
             <p class="text-muted">
                 At Rooh ul Quran Academy, we understand that every student learns differently. That's why we offer
@@ -1087,7 +666,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
     <!-- Section Title -->
     <div class="container section-title text-center" data-aos="fade-up">
         {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-        <p class="fw-bold" style="color:#44137c;">Our Featured Courses</p>
+        <p class="fw-bold" style="color:#122F2A;">Our Featured Courses</p>
         {{-- <h5 class="col-lg-8 mx-auto text-black">
             Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
             tailored to help you achieve your learning goals with ease and excellence.
@@ -1231,63 +810,13 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
 </section><!-- /Courses Section -->
 
-<section style="background-color: #fdf1dd;">
-    <div class="container position-relative">
-        <div class="bg-white shadow d-flex flex-column flex-lg-row position-relative">
-
-            <!-- Left Content -->
-            <div class="quran-box text-white rounded d-flex align-items-center justify-content-center mx-auto">
-                <div>
-                    <h2 class="mb-4 fs-4 fs-md-3 text-center text-white">
-                        Make Quran learning simple with dedicated teaching support in {{ $cityName }}, {{ $stateName }}
-                    </h2>
-                    <ul class="list-unstyled text-start">
-                        <li class="mb-3">✅ Start your learning journey at any level</li>
-                        <li class="mb-3">✅ Study flexibly with online scheduled classes</li>
-                        <li class="mb-3">✅ Grow through personalized attention</li>
-                        <li>✅ Advance confidently with expert guidance</li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <!-- Right Form -->
-            <div class="text-white right-form rounded w-100 mt-4 mt-lg-0"
-                style="z-index: 1; background: linear-gradient(270deg, #44137c, #9a8f50, #e5a72a); max-width: 600px;">
-                <form id="trial-forms" class="form-container mx-auto">
-                    @csrf
-                    <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="form_started_at" value="{{ time() }}">
-                    @include('layouts.partials.public-form-fields', ['rounded' => true])
-                    @include('layouts.partials.form-turnstile')
-
-                    <button type="submit" id="submit-btn" class="btn btn-dark w-100 rounded-pill">
-                        <span id="btn-text">BOOK FREE TRIAL CLASS</span>
-                        <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
-                    </button>
-                </form>
-            </div>
-
-
-        </div>
-
-        <!-- Center Image -->
-        <div class="position-absolute top-50 start-50 translate-middle d-none d-lg-block"
-            style="z-index: 2; margin-top: 120px;">
-            <img src="{{ asset('assets/img/ai/thumbsup1.webp') }}" alt="quran academy teacher {{ $cityName }}"
-                loading="lazy" class="img-fluid" style="max-height: 200px;">
-        </div>
-    </div>
-</section>
-{{-- end of form --}}
-
 {{-- start of faq --}}
 
 <section id="faq" class="py-5 bg-light">
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:#44137c;">Frequently Asked Questions</h2>
+            <h2 class="fw-bold" style="color:#122F2A;">Frequently Asked Questions</h2>
             <p class="text-muted">Find answers to the most common questions about our online Quran classes in {{
                 $cityName }}, {{ $stateName }}.</p>
         </div>
@@ -1452,8 +981,8 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
             <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200"
                 style="opacity: 1; transform: none;">
                 <div class="contact-form bg-white p-4 shadow hover-popout"
-                    style="border: 2px solid #44137c; border-radius: 20px;">
-                    <h3 class="mb-4 text-center" style="color: #44137c; font-weight: bold;">FREE TRIAL CLASS</h3>
+                    style="border: 2px solid #122F2A; border-radius: 20px;">
+                    <h3 class="mb-4 text-center" style="color: #122F2A; font-weight: bold;">FREE TRIAL CLASS</h3>
                     <form id="trial-form-submit">
                         @csrf
                         <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
@@ -1462,7 +991,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                         @include('layouts.partials.form-turnstile')
                         <!-- Button with loading spinner -->
                         <button type="submit" class="btn w-100 rounded-pill" id="submit-btn"
-                            style="background: linear-gradient(120deg, #44137c, #2bab6d); font-weight: bold;">
+                            style="background-color: #FF5528; font-weight: bold;">
                             <span id="btn-text">Get Free Trial Class</span>
                             <span id="btn-loading" class="spinner-border spinner-border-sm d-none"></span>
                         </button>
@@ -1597,7 +1126,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 @if(env('TURNSTILE_SITE_KEY'))
 <script>
 (function () {
-    var forms = document.querySelectorAll('#trial-form, #trial-form-submit, #trial-forms');
+    var forms = document.querySelectorAll('#trial-form, #trial-form-submit');
     if (!forms.length || !('IntersectionObserver' in window)) return;
     var loaded = false;
     function loadTurnstile() {
@@ -1690,7 +1219,6 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
 
         handleSubmit('trial-form');
         handleSubmit('trial-form-submit');
-        handleSubmit('trial-forms');
     })();
 </script>
 

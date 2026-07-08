@@ -13,7 +13,7 @@
 
 </style>
 
-<footer id="footer" class="footer position-relative" style="background-color: #000; color: white !important;">
+<footer id="footer" class="footer position-relative" style="background-color: #122F2A; color: white !important;">
   <div class="container footer-top">
     <div class="row gy-4 align-items-center text-center text-lg-start">
       <!-- Left Content -->

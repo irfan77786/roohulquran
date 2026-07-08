@@ -70,14 +70,7 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
 
 @section('content')
 
-<section id="hero" class="hero section dark-background">
-    <img src="{{ asset('assets/img/ai/teacher-1.webp') }}" alt="roohul quran academy teacher 1" class="desktop-image"
-        data-aos="fade-in">
-
-
-    <img src="assets/img/hero-bg-1.webp" alt="roohul quran academy teacher hero section" class="mobile-image"
-        data-aos="fade-in">
-
+<section id="hero" class="hero section tauheed-page-banner">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
@@ -95,7 +88,7 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
             <!-- Right Form -->
             {{-- <div class="col-lg-4 col-md-5 col-sm-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="form-container p-4 bg-light rounded shadow">
-                    <h3 class="mb-3 text-center" style="color: #44137c; font-weight: bold;">
+                    <h3 class="mb-3 text-center" style="color: #122F2A; font-weight: bold;">
                         Free Trial Class
                     </h3>
 
@@ -128,7 +121,7 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
                             </select>
                         </div>
                         <button type="submit" class="w-100 p-2 rounded-2"
-                            style="background-color: #44137c;color:white">Get Free
+                            style="background-color: #122F2A;color:white">Get Free
                             Trial Class</button>
                     </form>
                 </div>
@@ -235,7 +228,7 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:#44137c;">Frequently Asked Questions</h2>
+            <h2 class="fw-bold" style="color:#122F2A;">Frequently Asked Questions</h2>
             <p class="text-muted">Find answers to the most common questions about our online Quran classes.</p>
         </div>
 

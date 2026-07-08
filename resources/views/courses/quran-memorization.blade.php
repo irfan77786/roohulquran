@@ -80,7 +80,7 @@ quran with tajweed, quran hifz academy, online hifz program')
 
   .card-body ul li i {
     font-size: 1.5rem;
-    color: #44137c;
+    color: #122F2A;
   }
 
   .btn-danger {
@@ -132,11 +132,7 @@ quran with tajweed, quran hifz academy, online hifz program')
   }
 </style>
 
-<section id="hero" class="hero section dark-background">
-  <img src="assets/img/hero-bg-3.webp" alt="quran memorization online" class="desktop-image" data-aos="fade-in">
-
-
-  <img src="assets/img/hero-bg-1.webp" alt="online memorize quran" class="mobile-image" data-aos="fade-in">
+<section id="hero" class="hero section tauheed-page-banner">
 
   <div class="container">
     <div class="row align-items-center">
@@ -144,15 +140,15 @@ quran with tajweed, quran hifz academy, online hifz program')
         <h1 class="hero-heading" style="font-size: 2.6rem !important"><b>Quran </b>Memorization <br> Course Online</h1>
         <ul class="list-unstyled text-start mt-3 hero-features">
           <li class="d-flex align-items-start mb-2">
-            <span class="me-2 text-white fw-bold">✔</span>
+            <span class="me-2 fw-bold">✔</span>
             Start Where You Are , Learn at Your Pace
           </li>
           <li class="d-flex align-items-start mb-2">
-            <span class="me-2 text-white fw-bold">✔</span>
+            <span class="me-2 fw-bold">✔</span>
             Even If Yuo Can't Read Arabic Yet
           </li>
           <li class="d-flex align-items-start mb-2">
-            <span class="me-2 text-white fw-bold">✔</span>
+            <span class="me-2 fw-bold">✔</span>
             Start Your Journey With Free Trial Class
           </li>
         </ul>
@@ -162,7 +158,7 @@ quran with tajweed, quran hifz academy, online hifz program')
       <!-- Right Form -->
       {{-- <div class="col-lg-4 col-md-5 col-sm-12" data-aos="fade-up" data-aos-delay="200">
         <div class="form-container p-4 bg-light rounded shadow">
-          <h3 class="mb-3 text-center" style="color: #44137c; font-weight: bold;">
+          <h3 class="mb-3 text-center" style="color: #122F2A; font-weight: bold;">
             Free Trial Class
           </h3>
 
@@ -192,7 +188,7 @@ quran with tajweed, quran hifz academy, online hifz program')
                 <!-- Add more countries as needed -->
               </select>
             </div>
-            <button type="submit" class="w-100 p-2 rounded-2" style="background-color: #44137c;color:white">Get Free
+            <button type="submit" class="w-100 p-2 rounded-2" style="background-color: #122F2A;color:white">Get Free
               Trial Class</button>
           </form>
         </div>
@@ -211,7 +207,7 @@ quran with tajweed, quran hifz academy, online hifz program')
         <!-- Card 1: Summary -->
         <div class="card mb-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Summary</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Summary</h4>
             <p class="card-text">
               Our Quran memorization course is designed for beginners who can’t read Arabic and those proficient in
               basic Arabic reading. We offer customized learning based on students’ mental capabilities and learning
@@ -225,7 +221,7 @@ quran with tajweed, quran hifz academy, online hifz program')
         <!-- Card 2: What Makes This Course Different -->
         <div class="card shadow-sm" style="border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">What Makes This Course Different?</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">What Makes This Course Different?</h4>
             <ul class="list-unstyled">
               <li class="mb-3 d-flex align-items-start">
                 <span class="me-2" style="color: #36c47d;">✔</span>
@@ -257,7 +253,7 @@ quran with tajweed, quran hifz academy, online hifz program')
         </div>
         <div class="card mt-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Getting Started</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Getting Started</h4>
             <p class="card-text">
               Don’t let your busy routine prevent you from learning the Quran. Start this amazing spiritual journey
               today from the comfort of your home. Grab the free trial session immediately to evaluate our platform’s
@@ -270,7 +266,7 @@ quran with tajweed, quran hifz academy, online hifz program')
       <!-- Right Side: Three Vertical Cards -->
       <div class="col-lg-4 col-md-12">
         <!-- Card 1: Starting From -->
-        <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #44137c;">
+        <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #122F2A;">
           <div class="card-body text-center">
             <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
             <div class="container d-flex flex-column align-items-center">
@@ -291,19 +287,19 @@ quran with tajweed, quran hifz academy, online hifz program')
           <div class="card-body">
             <ul class="list-unstyled">
               <li class="mb-3 d-flex align-items-center">
-                <i class="bi bi-person-video me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-person-video me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Sessions:</strong> 1 on 1</span>
               </li>
               <li class="mb-3 d-flex align-items-center">
-                <i class="bi bi-clock me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-clock me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Availability:</strong> 24/7</span>
               </li>
               <li class="mb-3 d-flex align-items-center">
-                <i class="bi bi-people me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-people me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Instructors:</strong> M/F</span>
               </li>
               <li class="d-flex align-items-center">
-                <i class="bi bi-person-check me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                <i class="bi bi-person-check me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                 <span><strong>Students:</strong> 100+</span>
               </li>
             </ul>
@@ -313,7 +309,7 @@ quran with tajweed, quran hifz academy, online hifz program')
         <!-- Card 3: Course Overview -->
         <div class="card mb-4 shadow-sm" style="border: none; border-radius: 10px; background-color: #fff8f0;">
           <div class="card-body">
-            <h4 class="card-title" style="color: #44137c; font-weight: bold;">Course Overview</h4>
+            <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Course Overview</h4>
             <ul class="list-unstyled">
               <li class="mb-2 d-flex align-items-start">
                 <i class="bi bi-check-circle-fill me-2" style="color: #36c47d;"></i>

@@ -101,7 +101,7 @@ qaida course, online quran basics')
 
     .card-body ul li i {
         font-size: 1.5rem;
-        color: #44137c;
+        color: #122F2A;
     }
 
     .btn-danger {
@@ -152,9 +152,7 @@ qaida course, online quran basics')
         /* Optional: Add a subtle shadow */
     }
 </style>
-<section id="hero" class="hero section dark-background">
-    <img src="assets/img/hero-bg-3.webp" alt="qaida course online" class="desktop-image" data-aos="fade-in">
-    <img src="assets/img/hero-bg-1.webp" alt="online noorani qaida course" class="mobile-image" data-aos="fade-in">
+<section id="hero" class="hero section tauheed-page-banner">
 
     <div class="container">
         <div class="row align-items-center">
@@ -185,7 +183,7 @@ qaida course, online quran basics')
 
             <!-- Right: Content -->
             <div class="col-lg-12 col-md-7 col-sm-12">
-                <h3 class="fw-bold mb-4" style="color:#44137c; font-size: 28px; text-align: center;">
+                <h3 class="fw-bold mb-4" style="color:#122F2A; font-size: 28px; text-align: center;">
                     About the Noorani Qaida Course
                 </h3>
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">
@@ -220,7 +218,7 @@ qaida course, online quran basics')
                 <!-- Learn Noorani Qaida Step by Step -->
                 <div class="card mb-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #44137c; font-weight: bold;">Learn Noorani Qaida Online –
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Learn Noorani Qaida Online –
                             Step by Step for Beginners</h4>
                         <p class="card-text">Our Noorani Qaida Online Course is designed for:</p>
                         <ul>
@@ -247,7 +245,7 @@ qaida course, online quran basics')
                 <!-- Noorani Qaida for Kids and Adults -->
                 <div class="card shadow-sm" style="border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #44137c; font-weight: bold;">Noorani Qaida for Kids and
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Noorani Qaida for Kids and
                             Adults – A Strong Quran Foundation</h4>
                         <p class="card-text">
                             At Rooh ul Quran Academy, we believe that Noorani Qaida is the key to reading the Quran
@@ -273,7 +271,7 @@ qaida course, online quran basics')
                 <!-- Why Choose -->
                 <div class="card mt-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #44137c; font-weight: bold;">Why Choose Our Online Noorani
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Online Noorani
                             Qaida Course?</h4>
                         <ul>
                             <li>Qualified Noorani Qaida Tutors – Skilled in teaching kids & beginners.</li>
@@ -290,7 +288,7 @@ qaida course, online quran basics')
             <!-- Right Side -->
             <div class="col-lg-4 col-md-12">
                 <!-- Pricing -->
-                <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #44137c;">
+                <div class="card shadow-sm" style="border: none; border-radius: 10px; background-color: #122F2A;">
                     <div class="card-body text-center">
                         <div class="badge bg-dark text-white mb-3" style="font-size: 0.9rem;">Starting From</div>
                         <div class="container d-flex flex-column align-items-center">
@@ -309,19 +307,19 @@ qaida course, online quran basics')
                     <div class="card-body">
                         <ul class="list-unstyled">
                             <li class="mb-3 d-flex align-items-center">
-                                <i class="bi bi-person-video me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                                <i class="bi bi-person-video me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                                 <span><strong>Sessions:</strong> 1 on 1</span>
                             </li>
                             <li class="mb-3 d-flex align-items-center">
-                                <i class="bi bi-clock me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                                <i class="bi bi-clock me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                                 <span><strong>Availability:</strong> 24/7</span>
                             </li>
                             <li class="mb-3 d-flex align-items-center">
-                                <i class="bi bi-people me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                                <i class="bi bi-people me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                                 <span><strong>Instructors:</strong> Male & Female</span>
                             </li>
                             <li class="d-flex align-items-center">
-                                <i class="bi bi-globe me-2" style="font-size: 1.5rem; color: #44137c;"></i>
+                                <i class="bi bi-globe me-2" style="font-size: 1.5rem; color: #122F2A;"></i>
                                 <span><strong>Worldwide:</strong> Available in all countries</span>
                             </li>
                         </ul>
@@ -331,7 +329,7 @@ qaida course, online quran basics')
                 <!-- Course Levels -->
                 <div class="card mb-4 shadow-sm" style="border: none; border-radius: 10px; background-color: #fff8f0;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #44137c; font-weight: bold;">Course Overview</h4>
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Course Overview</h4>
                         <ul class="list-unstyled">
                             <li><i class="bi bi-check-circle-fill me-2" style="color: #36c47d;"></i> Level 1: Learn
                                 Arabic Letters</li>
@@ -372,7 +370,7 @@ qaida course, online quran basics')
     <!-- Section Title -->
     <div class="container section-title text-center" data-aos="fade-up">
         {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-        <p style="color:#44137c;">Our Featured Courses</p>
+        <p style="color:#122F2A;">Our Featured Courses</p>
         {{-- <h5 class="col-lg-8 mx-auto text-black">
             Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course
             is
@@ -526,7 +524,7 @@ qaida course, online quran basics')
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:#44137c;">Noorani Qaida – Frequently Asked Questions</h2>
+            <h2 class="fw-bold" style="color:#122F2A;">Noorani Qaida – Frequently Asked Questions</h2>
             <p class="text-muted">Find answers about our Online Noorani Qaida Course for kids and adults.</p>
         </div>
 
