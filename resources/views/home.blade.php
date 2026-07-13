@@ -10,6 +10,9 @@
 
 @push('styles')
 @include('layouts.partials.hero-banner-styles')
+@include('layouts.partials.teacher-highlights-styles')
+@include('layouts.partials.academy-intro-styles')
+@include('layouts.partials.counts-section-styles')
 <style>
     #about .card {
         background: #281c1c;
@@ -31,19 +34,7 @@
     }
 
     #counts {
-        color: #fff;
-        /* Ensure text is readable on the background image */
-        padding: 20px 0;
-    }
-
-    #counts h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    #counts p {
-        font-size: 1.3rem;
+        padding: 70px 0;
     }
 
     .stats-item span {
@@ -52,13 +43,8 @@
     }
 
     .stats-item p {
-        font-size: 10rem;
+        font-size: 1rem;
         margin-top: 10px;
-    }
-
-    .stats-item span,
-    .stats-item p {
-        color: white;
     }
 
     .video-section {
@@ -292,25 +278,67 @@
 @section('content')
 @include('layouts.partials.hero-banner')
 
-<!-- New Content Section -->
-<section id="academy-intro" class="py-5 bg-light">
-    <div class="container" data-aos="fade-up">
+<!-- Teacher Highlights — Tauheed style -->
+<section id="teacher-highlights">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <article class="teacher-card"
+                    style="background-image: url('{{ asset('assets/img/ai/about.webp') }}');">
+                    <div class="teacher-card-body">
+                        <h3>Professional Quran Teachers</h3>
+                        <p>
+                            Learn the Holy Quran with highly qualified and experienced Quran teachers. We offer Tajweed,
+                            Nazra, Hifz, and Islamic Studies classes for students of all ages with personalized online
+                            sessions.
+                        </p>
+                        <a href="{{ route('teachers') }}" class="teacher-card-btn teacher-card-btn--accent">
+                            Learn More
+                            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
 
-        <!-- Heading -->
-        <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3" style="color:#122F2A; font-size:2rem;">
-                Rooh ul Quran Academy Learn Quran Online with Expert Teachers
-            </h2>
-            {{-- <p class="lead text-muted">
-                Welcome to Rooh ul Quran Academy, your trusted online Quran school where learning the Holy Quran becomes
-                <span class="fw-semibold">simple, interactive, and rewarding</span>.
-            </p> --}}
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="180">
+                <article class="teacher-card"
+                    style="background-image: url('{{ asset('assets/img/ai/teachers.webp') }}');">
+                    <div class="teacher-card-body">
+                        <h3>Female Quran Teachers</h3>
+                        <p>
+                            Our dedicated female Quran tutors provide comfortable and interactive learning environments
+                            for sisters and kids. Flexible timings and one-on-one online classes are available worldwide.
+                        </p>
+                        <a href="{{ route('home.contact.us') }}" class="teacher-card-btn teacher-card-btn--light">
+                            Enroll Now
+                            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
         </div>
+    </div>
+</section>
 
-        <!-- Intro + Features -->
-        <div class="row align-items-center g-5">
-            <!-- Left Content -->
-            <div class="col-lg-10 mx-auto text-center">
+<!-- New Content Section -->
+<section id="academy-intro">
+    <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+            <!-- Left: Image -->
+            <div class="col-lg-5 intro-image-col" data-aos="fade-right" data-aos-delay="100">
+                <span class="intro-image-dot" aria-hidden="true"></span>
+                <span class="intro-image-accent" aria-hidden="true"></span>
+                <div class="intro-image-frame">
+                    <img src="{{ asset('assets/img/child-reading-quran.png') }}" alt="Child reading Quran at Rooh ul Quran Academy"
+                        loading="lazy" width="600" height="480">
+                </div>
+            </div>
+
+            <!-- Right: Content (text unchanged) -->
+            <div class="col-lg-7 intro-content" data-aos="fade-left" data-aos-delay="150">
+                <h2 class="fw-bold mb-3">
+                    Rooh ul Quran Academy Learn Quran Online with Expert Teachers
+                </h2>
                 <p>
                     Whether you are a beginner starting with <strong>Noorani Qaida Online</strong>, a student aiming to
                     <strong>learn Quran with Tajweed</strong>, or someone dedicated to <strong>Quran Memorization
@@ -322,47 +350,43 @@
                     sisters and
                     kids, our mission is to make Quran learning accessible to every Muslim across the globe.
                 </p>
-                <p class="fw-bold text-success">Enroll Now and Begin Your Online Quran Journey!</p>
-            </div>
+                <p class="fw-bold intro-enroll">Enroll Now and Begin Your Online Quran Journey!</p>
 
-            <!-- Right Features List -->
-            {{-- <div class="col-lg-6">
-                <h4 class="fw-bold mb-4" style="color:#1A685B;">Why Choose Us?</h4>
-                <ul class="list-unstyled fs-6">
-                    <li class="mb-3 d-flex align-items-start">
-                        <span class="me-2 text-success fs-5">✔</span> One-to-one Online Quran Classes
-                    </li>
-                    <li class="mb-3 d-flex align-items-start">
-                        <span class="me-2 text-success fs-5">✔</span> Flexible Timings for Kids and Adults
-                    </li>
-                    <li class="mb-3 d-flex align-items-start">
-                        <span class="me-2 text-success fs-5">✔</span> Interactive Learning with Tajweed Rules
-                    </li>
-                    <li class="mb-3 d-flex align-items-start">
-                        <span class="me-2 text-success fs-5">✔</span> Special Courses for Hifz Quran Online
-                    </li>
-                </ul>
-            </div> --}}
-        </div>
+                <hr class="intro-divider">
 
-        <!-- Tajweed + Hifz -->
-        <div class="row mt-5">
-            <div class="col-lg-10 mx-auto text-center">
-                <h2 class="fw-bold mb-3" style="color:#122F2A;">Quran Memorization and Tajweed Made Easy</h2>
-                <p>
-                    If your goal is to <strong>memorize the Quran</strong>, our step-by-step
-                    <strong>Online Hifz Course</strong> is perfect for you. Students can
-                    <strong>Read and Memorize Quran Online</strong> under the supervision of expert tutors who ensure
-                    accuracy and
-                    discipline.
-                </p>
-                <p>
-                    We also specialize in <strong>Learn Quran with Tajweed</strong>, helping students perfect their
-                    recitation with
-                    correct pronunciation. Whether you are a beginner or want to polish your skills, our academy
-                    provides
-                    structured and easy-to-follow programs.
-                </p>
+                <div class="intro-block-secondary">
+                    <h2 class="fw-bold mb-3">Quran Memorization and Tajweed Made Easy</h2>
+                    <p>
+                        If your goal is to <strong>memorize the Quran</strong>, our step-by-step
+                        <strong>Online Hifz Course</strong> is perfect for you. Students can
+                        <strong>Read and Memorize Quran Online</strong> under the supervision of expert tutors who ensure
+                        accuracy and
+                        discipline.
+                    </p>
+                    <p>
+                        We also specialize in <strong>Learn Quran with Tajweed</strong>, helping students perfect their
+                        recitation with
+                        correct pronunciation. Whether you are a beginner or want to polish your skills, our academy
+                        provides
+                        structured and easy-to-follow programs.
+                    </p>
+                </div>
+
+                <div class="intro-actions">
+                    <a href="#contact" class="intro-discover-btn">
+                        Discover More
+                        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                    <div class="intro-phone-block">
+                        <span class="intro-phone-icon" aria-hidden="true">
+                            <i class="bi bi-telephone-fill"></i>
+                        </span>
+                        <div class="intro-phone-text">
+                            <span class="intro-phone-label">Call us any time:</span>
+                            <a href="tel:+923344066429" class="intro-phone-number">+92-334-4066429</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -426,59 +450,60 @@
 </section>
 <!-- /About Section -->
 
-<!-- Counts Section -->
-<section id="counts" class="section counts light-background"
-    style="background-image: url('{{ asset('assets/img/choos-us.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<!-- Counts Section — help-people-v1-shape1 abstract brushstroke background -->
+<section id="counts" class="section counts counts-tauheed counts-help-people-v1-shape1"
+    aria-labelledby="counts-heading">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+        <div class="row gy-4 stats-row">
             <!-- Title -->
             <div class="col-12 text-center">
-                <h2 style="color: #36c47d">Start Your Quran Learning Journey Today</h2>
-                <p class="col-lg-6 mx-auto" style="text-align:inherit;line-height: 1.8;">
+                <h2 id="counts-heading" class="counts-heading">Start Your Quran Learning Journey Today</h2>
+                <p class="col-lg-6 mx-auto counts-lead">
                     Rooh ul Quran Academy is more than an online Quran school – it is a place where students grow
                     spiritually and strengthen their connection with Allah (SWT).
                 </p>
             </div>
 
             <!-- Stats Items -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                 <div class="stats-item text-center w-100 h-100">
+                    <span class="stats-icon" aria-hidden="true"><i class="bi bi-calendar-check"></i></span>
                     <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"
-                        class="purecounter add-plus" style="color: white;">
+                        class="purecounter add-plus stats-number">
                     </span>
-                    <p style="color: white;">Years</p>
+                    <p class="stats-label">Years</p>
                 </div>
             </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                 <div class="stats-item text-center w-100 h-100">
+                    <span class="stats-icon" aria-hidden="true"><i class="bi bi-person-workspace"></i></span>
                     <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
-                        class="purecounter add-plus" style="color: white;">
+                        class="purecounter add-plus stats-number">
                     </span>
-                    <p style="color: white;">Tutors</p>
+                    <p class="stats-label">Tutors</p>
                 </div>
             </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                 <div class="stats-item text-center w-100 h-100">
+                    <span class="stats-icon" aria-hidden="true"><i class="bi bi-mortarboard"></i></span>
                     <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1"
-                        class="purecounter add-plus" style="color: white;">
+                        class="purecounter add-plus stats-number">
                     </span>
-                    <p style="color: white;">Graduates</p>
+                    <p class="stats-label">Graduates</p>
                 </div>
             </div><!-- End Stats Item -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
                 <div class="stats-item text-center w-100 h-100">
+                    <span class="stats-icon" aria-hidden="true"><i class="bi bi-people"></i></span>
                     <span data-purecounter-start="0" data-purecounter-end="400" data-purecounter-duration="1"
-                        class="purecounter add-plus" style="color: white;">
+                        class="purecounter add-plus stats-number">
                     </span>
-                    <p style="color: white;">Students</p>
+                    <p class="stats-label">Students</p>
                 </div>
             </div><!-- End Stats Item -->
-
-            <!-- End Stats Item -->
-            <!-- End Stats Item -->
         </div>
     </div>
 </section>
