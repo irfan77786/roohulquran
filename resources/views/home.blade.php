@@ -13,7 +13,6 @@
 @include('layouts.partials.teacher-highlights-styles')
 @include('layouts.partials.academy-intro-styles')
 @include('layouts.partials.counts-section-styles')
-@include('layouts.partials.courses-section-styles')
 @include('layouts.partials.why-us-styles')
 <style>
     #about .card {
@@ -408,107 +407,8 @@
 
 
 
-<!-- Courses Section -->
-<section id="courses" class="courses section courses-elegant">
+@include('layouts.partials.featured-courses')
 
-    <!-- Section Title -->
-    <div class="container section-title text-center" data-aos="fade-up">
-        <span class="courses-eyebrow">Popular Quran Courses</span>
-        <h2 class="courses-heading">Our Featured Courses</h2>
-        <span class="courses-sub">Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran
-            translation. Each course is
-            tailored to help you achieve your learning goals with ease and excellence.</span>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-        <div class="course-wrapper">
-
-            <article class="course-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="course-image">
-                    <span class="badge-level">Intermediate</span>
-                    <img src="{{ asset('assets/img/ai/course-1.webp') }}" alt="memorize quran online"
-                        loading="lazy" width="400" height="260" />
-                </div>
-                <div class="course-info">
-                    <div class="course-meta">
-                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
-                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
-                    </div>
-                    <h3 class="title"><a href="{{ route('quran.memorization') }}">Hifz Quran Online</a></h3>
-                    <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
-                        miracle.</p>
-                    <a href="{{ route('quran.memorization') }}" class="course-cta">
-                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="course-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="course-image">
-                    <span class="badge-level">Beginner</span>
-                    <img src="{{ asset('assets/img/ai/course-2.webp') }}" alt="noorani qaidah class online"
-                        loading="lazy" width="400" height="260" />
-                </div>
-                <div class="course-info">
-                    <div class="course-meta">
-                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
-                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
-                    </div>
-                    <h3 class="title"><a href="{{ route('quran.recitation') }}">Learn Noorani Qaida Online</a></h3>
-                    <p class="description">For the purpose of learning the basics of tajweed rules, one has to
-                        learn this
-                        booklet</p>
-                    <a href="{{ route('quran.recitation') }}" class="course-cta">
-                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="course-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="course-image">
-                    <span class="badge-level">Advance</span>
-                    <img src="{{ asset('assets/img/ai/course-3.webp') }}" alt="Quran reading with Tajweed"
-                        loading="lazy" width="400" height="260" />
-                </div>
-                <div class="course-info">
-                    <div class="course-meta">
-                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
-                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
-                    </div>
-                    <h3 class="title"><a href="{{ route('quran.tajweed') }}">Quran with Tajweed Course</a></h3>
-                    <p class="description">Quran reading with Tajweed has immense significance in preservation of
-                        Quran</p>
-                    <a href="{{ route('quran.tajweed') }}" class="course-cta">
-                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="course-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="course-image">
-                    <span class="badge-level">Advance</span>
-                    <img src="{{ asset('assets/img/ai/course-4.webp') }}" alt="Tafseer ul Quran course"
-                        loading="lazy" width="400" height="260" />
-                </div>
-                <div class="course-info">
-                    <div class="course-meta">
-                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
-                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
-                    </div>
-                    <h3 class="title"><a href="{{ route('quran.tafseer') }}">Online Quran Classes for Kids</a></h3>
-                    <p class="description">
-                        Engaging and easy Quran lessons for kids with step-by-step guidance and Tajweed.
-                    </p>
-                    <a href="{{ route('quran.tafseer') }}" class="course-cta">
-                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-        </div>
-    </div>
-
-</section><!-- /Courses Section -->
 
 <!-- About Section -->
 <section id="about" class="about section"
@@ -1114,103 +1014,6 @@
 
 </section>
 
-@if(env('TURNSTILE_SITE_KEY'))
-<script>
-(function () {
-    var forms = document.querySelectorAll('#trial-form, #trial-form-submit');
-    if (!forms.length || !('IntersectionObserver' in window)) return;
-    var loaded = false;
-    function loadTurnstile() {
-        if (loaded) return;
-        loaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-        s.async = true;
-        s.defer = true;
-        document.head.appendChild(s);
-    }
-    var obs = new IntersectionObserver(function (entries) {
-        if (entries.some(function (e) { return e.isIntersecting; })) {
-            obs.disconnect();
-            loadTurnstile();
-        }
-    }, { rootMargin: '100px' });
-    forms.forEach(function (f) { obs.observe(f); });
-})();
-</script>
-@endif
-<script>
-    (function(){
-        var swalPromise = null;
-        function loadSwal() {
-            if (window.Swal) return Promise.resolve(window.Swal);
-            if (swalPromise) return swalPromise;
-            swalPromise = new Promise(function (resolve, reject) {
-                var css = document.createElement('link');
-                css.rel = 'stylesheet';
-                css.href = '{{ asset('assets/vendor/sweetalert2/sweetalert2.min.css') }}';
-                document.head.appendChild(css);
-                var s = document.createElement('script');
-                s.src = '{{ asset('assets/vendor/sweetalert2/sweetalert2.min.js') }}';
-                s.onload = function () { resolve(window.Swal); };
-                s.onerror = reject;
-                document.head.appendChild(s);
-            });
-            return swalPromise;
-        }
-
-        const csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-        function handleSubmit(formId) {
-            const form = document.getElementById(formId);
-            if (!form) return;
-            form.addEventListener('submit', async function(e){
-                e.preventDefault();
-                const submitBtn = this.querySelector('#submit-btn');
-                const btnText = this.querySelector('#btn-text');
-                const btnLoading = this.querySelector('#btn-loading');
-                if (btnText) btnText.classList.add('d-none');
-                if (btnLoading) btnLoading.classList.remove('d-none');
-                if (submitBtn) submitBtn.disabled = true;
-
-                try {
-                    const Swal = await loadSwal();
-                    const formData = new FormData(this);
-                    const response = await fetch('{{ route('trial-class.store') }}', {
-                        method: 'POST',
-                        headers: { 'X-CSRF-TOKEN': csrf },
-                        body: new URLSearchParams([...formData])
-                    });
-                    if (!response.ok) throw response;
-                    const data = await response.json();
-                    Swal.fire('JazakAllah', data.message || 'Submitted successfully', 'success');
-                    this.reset();
-                    const startedAtField = this.querySelector('input[name="form_started_at"]');
-                    if (startedAtField) startedAtField.value = Math.floor(Date.now() / 1000);
-                    const turnstileWidget = this.querySelector('.cf-turnstile');
-                    if (window.turnstile && turnstileWidget) turnstile.reset(turnstileWidget);
-                } catch (err) {
-                    let message = 'Something went wrong.';
-                    try {
-                        const json = await err.json();
-                        if (json && json.errors) {
-                            message = Object.values(json.errors).flat().join('\n');
-                        }
-                    } catch(_) {}
-                    loadSwal().then(function (Swal) {
-                        Swal.fire('Error', message, 'error');
-                    });
-                } finally {
-                    if (btnText) btnText.classList.remove('d-none');
-                    if (btnLoading) btnLoading.classList.add('d-none');
-                    if (submitBtn) submitBtn.disabled = false;
-                }
-            });
-        }
-
-        handleSubmit('trial-form');
-        handleSubmit('trial-form-submit');
-    })();
-</script>
+@include('layouts.partials.trial-form-scripts')
 
 @endsection

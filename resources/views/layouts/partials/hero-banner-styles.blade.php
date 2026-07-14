@@ -193,11 +193,33 @@
 
     @media (max-width: 576px) {
         #hero.hero-tauheed .hero-heading {
-            font-size: 1.75rem;
+            font-size: 1.75rem !important;
         }
 
         #hero.hero-tauheed .hero-subtext {
             font-size: 1rem;
         }
+    }
+
+    /* Override legacy course-page #hero CSS */
+    #hero.hero-tauheed {
+        text-align: left !important;
+        overflow: hidden;
+    }
+
+    #hero.hero-tauheed .form-container {
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #hero.hero-tauheed .hero-heading {
+        max-width: none;
+        overflow-wrap: break-word;
+    }
+
+    #hero.hero-tauheed .desktop-image,
+    #hero.hero-tauheed .mobile-image {
+        display: none !important;
     }
 </style>

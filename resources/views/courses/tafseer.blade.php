@@ -132,21 +132,19 @@ tafsir classes, understand quran meaning')
     /* Optional: Add a subtle shadow */
   }
 </style>
-<section id="hero" class="hero section tauheed-page-banner">
-
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8 col-md-7 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <h1 class="hero-heading" style="font-size: 2.2rem !important">Online Tafsir Course</h1>
-        <p class="mt-3" style="font-size: 18px; line-height: 1.8rem;">Our teachers explain Tafsir in an
-          easy-to-understand way, making it suitable for kids <br> adults, and new learners.
-        </p>
-        <a href="{{ route('home.contact.us') }}" class="btn-get-started text-bold">Free Trial</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /Hero Section -->
+@include('layouts.partials.hero-banner-styles')
+@include('layouts.partials.hero-banner', [
+    'heroTitle' => 'Online Tafsir Course',
+    'heroSubtitle' => 'Our teachers explain Tafsir in an easy-to-understand way, making it suitable for kids, adults, and new learners.',
+    'heroFeatures' => [
+        'Easy-to-understand Tafsir lessons',
+        'Suitable for kids, adults & beginners',
+        'Learn meaning and context of Quran',
+        'Start with a free trial class',
+    ],
+    'heroCtaText' => 'Free Trial',
+    'heroCtaUrl' => route('home.contact.us'),
+])
 
 <section id="course-details" class="py-5" style="background-color: #f9f9f9;">
   <div class="container">
@@ -319,154 +317,8 @@ tafsir classes, understand quran meaning')
 
 @include('layouts.youtube')
 
-<!-- Courses Section -->
-<section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 10px 0;">
+@include('layouts.partials.featured-courses')
 
-  <!-- Section Title -->
-  <div class="container section-title text-center" data-aos="fade-up">
-    {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-    <p style="color:#122F2A;">Our Featured Courses</p>
-    {{-- <h5 class="col-lg-8 mx-auto text-black">
-      Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
-      tailored to help you achieve your learning goals with ease and excellence.
-    </h5> --}}
-    <span style="color: #212529;">Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran
-      translation. Each course is
-      tailored to help you achieve your learning goals with ease and excellence.</span>
-  </div><!-- End Section Title -->
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="course-wrapper " data-aos="fade-up">
-        <div class="course-card " data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Intermediate</span>
-            <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
-          {{ asset('assets/img/ai/course-1.webp') }} 768w,
-          {{ asset('assets/img/ai/course-1.webp') }} 1024w"
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran" loading="lazy"
-              width="400" height="260" />
-
-          </div>
-          <div class="course-info">
-            {{-- <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div> --}}
-            <h3 class="title"><a href="{{ route('quran.memorization') }}">Hifz Quran Online</a></h3>
-            <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
-              miracle.</p>
-            {{-- <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(39 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 120+
-                Enroll</span>
-            </div> --}}
-          </div>
-        </div>
-        <div class="course-card" data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Beginner</span>
-            <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
-          {{ asset('assets/img/ai/course-2.webp') }} 768w,
-          {{ asset('assets/img/ai/course-2.webp') }} 1024w"
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class" loading="lazy"
-              width="400" height="260" />
-
-          </div>
-          <div class="course-info">
-            {{-- <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div> --}}
-            <h3 class="title"><a href="{{ route('quran.recitation') }}">Learn Noorani Qaida Online</a></h3>
-            <p class="description">For the purpose of learning the basics of tajweed rules, one has to
-              learn this
-              booklet</p>
-            {{-- <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(24 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 378+
-                Enroll</span>
-            </div> --}}
-          </div>
-        </div>
-        <div class="course-card" data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Advance</span>
-            <img src="{{ asset('assets/img/ai/course-3.webp') }}" srcset="{{ asset('assets/img/ai/course-3.webp') }} 480w,
-          {{ asset('assets/img/ai/course-3.webp') }} 768w,
-          {{ asset('assets/img/ai/course-3.webp') }} 1024w"
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="Quran reading with Tajweed"
-              loading="lazy" width="400" height="260" />
-
-          </div>
-          <div class="course-info">
-            {{-- <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div> --}}
-            <h3 class="title"><a href="{{ route('quran.tajweed') }}">Quran with Tajweed Course</a></h3>
-            <p class="description">Quran reading with Tajweed has immense significance in preservation of
-              Quran</p>
-            {{-- <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(32 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 360+
-                Enroll</span>
-            </div> --}}
-          </div>
-        </div>
-        <div class="course-card" data-aos="fade-up">
-          <div class="course-image">
-            <span class="badge-level">Advance</span>
-            <img src="{{ asset('assets/img/ai/course-4.webp') }}" srcset="{{ asset('assets/img/ai/course-4.webp') }} 480w,
-          {{ asset('assets/img/ai/course-4.webp') }} 768w,
-          {{ asset('assets/img/ai/course-4.webp') }} 1024w"
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="Tafseer ul Quran course"
-              loading="lazy" width="400" height="260" />
-
-          </div>
-          <div class="course-info">
-            {{-- <div class="meta">
-              <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-              <span><i class="bi bi-clock"></i> 24/7 Available</span>
-            </div> --}}
-            <h3 class="title"><a href="{{ route('kids.classes') }}">Online Quran Classes for Kids</a></h3>
-            <p class="description">
-              Engaging and easy Quran lessons for kids with step-by-step guidance and Tajweed.
-            </p>
-
-            {{-- <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(82 Reviews)</span>
-            </div>
-            <div class="footer-course">
-              <span class="price">30 USD / 20 POUNDS</span>
-              <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 300+
-                Enroll</span>
-            </div> --}}
-          </div>
-        </div>
-      </div>
-      <!-- End Course Item-->
-
-    </div>
-
-  </div>
-
-</section><!-- /Courses Section -->
 
 <section class="py-5 bg-light">
   <div class="container">
@@ -577,4 +429,6 @@ tafsir classes, understand quran meaning')
 </section>
 
 @include('layouts.testimonial')
+@include('layouts.partials.trial-form-scripts')
+
 @endsection
