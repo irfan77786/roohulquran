@@ -13,6 +13,8 @@
 @include('layouts.partials.teacher-highlights-styles')
 @include('layouts.partials.academy-intro-styles')
 @include('layouts.partials.counts-section-styles')
+@include('layouts.partials.courses-section-styles')
+@include('layouts.partials.why-us-styles')
 <style>
     #about .card {
         background: #281c1c;
@@ -323,7 +325,7 @@
 <!-- New Content Section -->
 <section id="academy-intro">
     <div class="container">
-        <div class="row align-items-center g-4 g-lg-5">
+        <div class="row align-items-stretch g-4 g-lg-5">
             <!-- Left: Image -->
             <div class="col-lg-5 intro-image-col" data-aos="fade-right" data-aos-delay="100">
                 <span class="intro-image-dot" aria-hidden="true"></span>
@@ -331,31 +333,43 @@
                 <div class="intro-image-frame">
                     <img src="{{ asset('assets/img/child-reading-quran.png') }}" alt="Child reading Quran at Rooh ul Quran Academy"
                         loading="lazy" width="600" height="480">
+                    <div class="intro-image-badge">
+                        <i class="bi bi-journal-richtext" aria-hidden="true"></i>
+                        <div>
+                            <strong>Online Quran Classes</strong>
+                            <span>Kids & Adults Welcome</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Right: Content (text unchanged) -->
             <div class="col-lg-7 intro-content" data-aos="fade-left" data-aos-delay="150">
-                <h2 class="fw-bold mb-3">
-                    Rooh ul Quran Academy Learn Quran Online with Expert Teachers
-                </h2>
-                <p>
-                    Whether you are a beginner starting with <strong>Noorani Qaida Online</strong>, a student aiming to
-                    <strong>learn Quran with Tajweed</strong>, or someone dedicated to <strong>Quran Memorization
-                        Online</strong>,
-                    we provide structured and personalized classes for all ages.
-                </p>
-                <p>
-                    With highly qualified teachers, including experienced <strong>female Quran tutors</strong> for
-                    sisters and
-                    kids, our mission is to make Quran learning accessible to every Muslim across the globe.
-                </p>
-                <p class="fw-bold intro-enroll">Enroll Now and Begin Your Online Quran Journey!</p>
+                <span class="intro-eyebrow">About Our Academy</span>
 
-                <hr class="intro-divider">
+                <div class="intro-panel">
+                    <h2 class="fw-bold">
+                        Rooh ul Quran Academy Learn Quran Online with Expert Teachers
+                    </h2>
+                    <p>
+                        Whether you are a beginner starting with <strong>Noorani Qaida Online</strong>, a student aiming to
+                        <strong>learn Quran with Tajweed</strong>, or someone dedicated to <strong>Quran Memorization
+                            Online</strong>,
+                        we provide structured and personalized classes for all ages.
+                    </p>
+                    <p>
+                        With highly qualified teachers, including experienced <strong>female Quran tutors</strong> for
+                        sisters and
+                        kids, our mission is to make Quran learning accessible to every Muslim across the globe.
+                    </p>
+                    <a href="#contact" class="intro-enroll">
+                        Enroll Now and Begin Your Online Quran Journey!
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
 
-                <div class="intro-block-secondary">
-                    <h2 class="fw-bold mb-3">Quran Memorization and Tajweed Made Easy</h2>
+                <div class="intro-panel intro-block-secondary">
+                    <h2 class="fw-bold">Quran Memorization and Tajweed Made Easy</h2>
                     <p>
                         If your goal is to <strong>memorize the Quran</strong>, our step-by-step
                         <strong>Online Hifz Course</strong> is perfect for you. Students can
@@ -393,6 +407,108 @@
 </section>
 
 
+
+<!-- Courses Section -->
+<section id="courses" class="courses section courses-elegant">
+
+    <!-- Section Title -->
+    <div class="container section-title text-center" data-aos="fade-up">
+        <span class="courses-eyebrow">Popular Quran Courses</span>
+        <h2 class="courses-heading">Our Featured Courses</h2>
+        <span class="courses-sub">Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran
+            translation. Each course is
+            tailored to help you achieve your learning goals with ease and excellence.</span>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="course-wrapper">
+
+            <article class="course-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="course-image">
+                    <span class="badge-level">Intermediate</span>
+                    <img src="{{ asset('assets/img/ai/course-1.webp') }}" alt="memorize quran online"
+                        loading="lazy" width="400" height="260" />
+                </div>
+                <div class="course-info">
+                    <div class="course-meta">
+                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
+                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
+                    </div>
+                    <h3 class="title"><a href="{{ route('quran.memorization') }}">Hifz Quran Online</a></h3>
+                    <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
+                        miracle.</p>
+                    <a href="{{ route('quran.memorization') }}" class="course-cta">
+                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="course-image">
+                    <span class="badge-level">Beginner</span>
+                    <img src="{{ asset('assets/img/ai/course-2.webp') }}" alt="noorani qaidah class online"
+                        loading="lazy" width="400" height="260" />
+                </div>
+                <div class="course-info">
+                    <div class="course-meta">
+                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
+                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
+                    </div>
+                    <h3 class="title"><a href="{{ route('quran.recitation') }}">Learn Noorani Qaida Online</a></h3>
+                    <p class="description">For the purpose of learning the basics of tajweed rules, one has to
+                        learn this
+                        booklet</p>
+                    <a href="{{ route('quran.recitation') }}" class="course-cta">
+                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="course-image">
+                    <span class="badge-level">Advance</span>
+                    <img src="{{ asset('assets/img/ai/course-3.webp') }}" alt="Quran reading with Tajweed"
+                        loading="lazy" width="400" height="260" />
+                </div>
+                <div class="course-info">
+                    <div class="course-meta">
+                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
+                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
+                    </div>
+                    <h3 class="title"><a href="{{ route('quran.tajweed') }}">Quran with Tajweed Course</a></h3>
+                    <p class="description">Quran reading with Tajweed has immense significance in preservation of
+                        Quran</p>
+                    <a href="{{ route('quran.tajweed') }}" class="course-cta">
+                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="course-image">
+                    <span class="badge-level">Advance</span>
+                    <img src="{{ asset('assets/img/ai/course-4.webp') }}" alt="Tafseer ul Quran course"
+                        loading="lazy" width="400" height="260" />
+                </div>
+                <div class="course-info">
+                    <div class="course-meta">
+                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
+                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
+                    </div>
+                    <h3 class="title"><a href="{{ route('quran.tafseer') }}">Online Quran Classes for Kids</a></h3>
+                    <p class="description">
+                        Engaging and easy Quran lessons for kids with step-by-step guidance and Tajweed.
+                    </p>
+                    <a href="{{ route('quran.tafseer') }}" class="course-cta">
+                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+</section><!-- /Courses Section -->
 
 <!-- About Section -->
 <section id="about" class="about section"
@@ -512,72 +628,106 @@
 @include('layouts.youtube')
 
 <!-- Why Us Section -->
-<section id="why-us" class="section why-us"
-    style="background-image: url('{{ asset('assets/img/about-bg.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+<section id="why-us" class="section why-us why-us-split">
     <div class="container">
-        <div class="row gy-4">
-            <!-- New Content -->
-            <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="100">
-                <h2 class=" mb-4" style="color:#122F2A;">Why Choose Roohul Quran Academy?</h2>
+        <div class="row align-items-start g-4 g-lg-5">
+            <!-- Left: Content -->
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                <span class="why-eyebrow">Why Choose Us</span>
+                <h2 class="why-heading">Why Choose Roohul Quran Academy?</h2>
 
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 col-lg-8">
+                <ul class="why-list">
+                    <li>
+                        <span class="check-icon" aria-hidden="true">✔</span>
+                        <span><strong>Qualified Online Quran Teachers</strong> –
+                            Experienced scholars and tutors to guide you every step of the way.</span>
+                    </li>
 
-                            <ul class="list-unstyled text-start">
-                                <li class="mb-3 d-flex">
-                                    <span class="me-2 text-success">✔</span>
-                                    <span><strong class="text-primary">Qualified Online Quran Teachers</strong> –
-                                        Experienced scholars and tutors to guide you every step of the way.</span>
-                                </li>
+                    <li>
+                        <span class="check-icon" aria-hidden="true">✔</span>
+                        <span><strong>Female Quran Tutors</strong> – Dedicated for
+                            sisters and kids, offering a comfortable and supportive environment.</span>
+                    </li>
 
-                                <li class="mb-3 d-flex">
-                                    <span class="me-2 text-success">✔</span>
-                                    <span><strong class="text-danger">Female Quran Tutors</strong> – Dedicated for
-                                        sisters and kids, offering a comfortable and supportive environment.</span>
-                                </li>
+                    <li>
+                        <span class="check-icon" aria-hidden="true">✔</span>
+                        <span><strong>Flexible Schedules</strong> – Learn at your own
+                            time and pace, making it easy to fit Quran study into your daily routine.</span>
+                    </li>
 
-                                <li class="mb-3 d-flex">
-                                    <span class="me-2 text-success">✔</span>
-                                    <span><strong class="text-warning">Flexible Schedules</strong> – Learn at your own
-                                        time and pace, making it easy to fit Quran study into your daily routine.</span>
-                                </li>
+                    <li>
+                        <span class="check-icon" aria-hidden="true">✔</span>
+                        <span><strong>Affordable Packages</strong> – Quality Quran
+                            education at reasonable and competitive prices.</span>
+                    </li>
 
-                                <li class="mb-3 d-flex">
-                                    <span class="me-2 text-success">✔</span>
-                                    <span><strong class="text-success">Affordable Packages</strong> – Quality Quran
-                                        education at reasonable and competitive prices.</span>
-                                </li>
+                    <li>
+                        <span class="check-icon" aria-hidden="true">✔</span>
+                        <span><strong>Worldwide Access</strong> – Join from anywhere in
+                            the world and study from the comfort of your home.</span>
+                    </li>
 
-                                <li class="mb-3 d-flex">
-                                    <span class="me-2 text-success">✔</span>
-                                    <span><strong class="text-purple">Worldwide Access</strong> – Join from anywhere in
-                                        the world and study from the comfort of your home.</span>
-                                </li>
+                    <li>
+                        <span class="check-icon" aria-hidden="true">✔</span>
+                        <span><strong>Step-by-Step Learning</strong> – From Noorani Qaida
+                            for beginners to advanced Tajweed and Hifz, we cater to all levels.</span>
+                    </li>
+                </ul>
 
-                                <li class="mb-3 d-flex">
-                                    <span class="me-2 text-success">✔</span>
-                                    <span><strong class="text-teal">Step-by-Step Learning</strong> – From Noorani Qaida
-                                        for beginners to advanced Tajweed and Hifz, we cater to all levels.</span>
-                                </li>
-                            </ul>
-
-                            <p class="mt-4 text-center" style="color: #2c3e50; font-size: 1.1rem;">
-                                At <strong>Roohul Quran Academy</strong>, we strive to make Quran learning accessible,
-                                effective, and enjoyable for everyone. Whether you're starting from scratch or looking
-                                to advance your skills, we are here to support you.
-                                <br><br>
-                                <span class="text-black">Start your journey today with a <strong>free trial
-                                        class</strong> and experience the difference!</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p class="why-closing">
+                    At <strong>Roohul Quran Academy</strong>, we strive to make Quran learning accessible,
+                    effective, and enjoyable for everyone. Whether you're starting from scratch or looking
+                    to advance your skills, we are here to support you.
+                    <br><br>
+                    <span class="trial-note">Start your journey today with a <strong>free trial
+                            class</strong> and experience the difference!</span>
+                </p>
             </div>
 
-
-            <!-- Icon Boxes -->
-
+            <!-- Right: Courses list -->
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="180">
+                <aside class="why-courses-panel">
+                    <h3>Our Quran Courses</h3>
+                    <ul class="why-course-list">
+                        <li>
+                            <a href="{{ route('quran.recitation') }}" class="why-course-link is-active">
+                                <span>Madani &amp; Noorani Qaida Course</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('beginner.classes') }}" class="why-course-link">
+                                <span>Quran Reading Course</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('quran.tajweed') }}" class="why-course-link">
+                                <span>Learn Quran With Tajweed</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('quran.memorization') }}" class="why-course-link">
+                                <span>Quran Memorization</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('quran.tafseer') }}" class="why-course-link">
+                                <span>Quran Translation And Tafseer</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home.contact.us') }}" class="why-course-link">
+                                <span>Online Ijazah Course</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
         </div>
     </div>
 </section>
@@ -653,154 +803,6 @@
 <!-- /Why Us Section -->
 
 
-<!-- Courses Section -->
-<section id="courses" class="courses section" style="background-color: #fdf1dd; padding: 10px 0;">
-
-    <!-- Section Title -->
-    <div class="container section-title text-center" data-aos="fade-up">
-        {{-- <h2 class="text-black">Highlighted Program</h2> --}}
-        <p class="fw-bold" style="color:#122F2A;">Our Featured Courses</p>
-        {{-- <h5 class="col-lg-8 mx-auto text-black">
-            Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is
-            tailored to help you achieve your learning goals with ease and excellence.
-        </h5> --}}
-        <span style="color: #212529;">Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran
-            translation. Each course is
-            tailored to help you achieve your learning goals with ease and excellence.</span>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="course-wrapper " data-aos="fade-up">
-                <div class="course-card " data-aos="fade-up">
-                    <div class="course-image">
-                        <span class="badge-level">Intermediate</span>
-                        <img src="{{ asset('assets/img/ai/course-1.webp') }}" srcset="{{ asset('assets/img/ai/course-1.webp') }} 480w,
-          {{ asset('assets/img/ai/course-1.webp') }} 768w,
-          {{ asset('assets/img/ai/course-1.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw" alt="memorize quran online"
-                            loading="lazy" width="400" height="260" />
-
-                    </div>
-                    <div class="course-info">
-                        {{-- <div class="meta">
-                            <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                            <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                        </div> --}}
-                        <h3 class="title"><a href="{{ route('quran.memorization') }}">Hifz Quran Online</a></h3>
-                        <p class="description">Memorizing the Holy Quran is a spiritual and physical program. It’s a
-                            miracle.</p>
-                        {{-- <div class="rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="reviews">(39 Reviews)</span>
-                        </div>
-                        <div class="footer-course">
-                            <span class="price">30 USD / 20 POUNDS</span>
-                            <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 120+
-                                Enroll</span>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-image">
-                        <span class="badge-level">Beginner</span>
-                        <img src="{{ asset('assets/img/ai/course-2.webp') }}" srcset="{{ asset('assets/img/ai/course-2.webp') }} 480w,
-          {{ asset('assets/img/ai/course-2.webp') }} 768w,
-          {{ asset('assets/img/ai/course-2.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="noorani qaidah class online"
-                            loading="lazy" width="400" height="260" />
-
-                    </div>
-                    <div class="course-info">
-                        {{-- <div class="meta">
-                            <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                            <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                        </div> --}}
-                        <h3 class="title"><a href="{{ route('quran.recitation') }}">Learn Noorani Qaida Online</a></h3>
-                        <p class="description">For the purpose of learning the basics of tajweed rules, one has to
-                            learn this
-                            booklet</p>
-                        {{-- <div class="rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="reviews">(24 Reviews)</span>
-                        </div>
-                        <div class="footer-course">
-                            <span class="price">30 USD / 20 POUNDS</span>
-                            <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 378+
-                                Enroll</span>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-image">
-                        <span class="badge-level">Advance</span>
-                        <img src="{{ asset('assets/img/ai/course-3.webp') }}" srcset="{{ asset('assets/img/ai/course-3.webp') }} 480w,
-          {{ asset('assets/img/ai/course-3.webp') }} 768w,
-          {{ asset('assets/img/ai/course-3.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-                            alt="Quran reading with Tajweed" loading="lazy" width="400" height="260" />
-
-                    </div>
-                    <div class="course-info">
-                        {{-- <div class="meta">
-                            <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                            <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                        </div> --}}
-                        <h3 class="title"><a href="{{ route('quran.tajweed') }}">Quran with Tajweed Course</a></h3>
-                        <p class="description">Quran reading with Tajweed has immense significance in preservation of
-                            Quran</p>
-                        {{-- <div class="rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="reviews">(32 Reviews)</span>
-                        </div>
-                        <div class="footer-course">
-                            <span class="price">30 USD / 20 POUNDS</span>
-                            <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 360+
-                                Enroll</span>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="course-card" data-aos="fade-up">
-                    <div class="course-image">
-                        <span class="badge-level">Advance</span>
-                        <img src="{{ asset('assets/img/ai/course-4.webp') }}" srcset="{{ asset('assets/img/ai/course-4.webp') }} 480w,
-          {{ asset('assets/img/ai/course-4.webp') }} 768w,
-          {{ asset('assets/img/ai/course-4.webp') }} 1024w"
-                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-                            alt="Tafseer ul Quran course" loading="lazy" width="400" height="260" />
-
-                    </div>
-                    <div class="course-info">
-                        {{-- <div class="meta">
-                            <span><i class="bi bi-person-video"></i> 1 on 1 Session</span>
-                            <span><i class="bi bi-clock"></i> 24/7 Available</span>
-                        </div> --}}
-                        <h3 class="title"><a href="{{ route('quran.tafseer') }}">Online Quran Classes for Kids</a></h3>
-                        <p class="description">
-                            Engaging and easy Quran lessons for kids with step-by-step guidance and Tajweed.
-                        </p>
-
-                        {{-- <div class="rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="reviews">(82 Reviews)</span>
-                        </div>
-                        <div class="footer-course">
-                            <span class="price">30 USD / 20 POUNDS</span>
-                            <span style="color: #212529;" class="enroll"><i class="bi bi-mortarboard"></i> 300+
-                                Enroll</span>
-                        </div> --}}
-                    </div>
-                </div>
-            </div>
-            <!-- End Course Item-->
-
-        </div>
-
-    </div>
-
-</section><!-- /Courses Section -->
 
 {{-- start of faq --}}
 
