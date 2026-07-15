@@ -178,7 +178,7 @@ class GoogleReviewsService
             'author' => $review['reviewer_name'] ?? 'Google User',
             'rating' => $rating,
             'text' => $text,
-            'photo' => $review['reviewer_photo_link'] ?? null,
+            'photo' => $this->normalizeReviewPhoto($review['reviewer_photo_link'] ?? null),
             'relative_time' => $created
                 ? \Carbon\Carbon::parse($created)->diffForHumans()
                 : null,
@@ -186,6 +186,16 @@ class GoogleReviewsService
                 ? \Carbon\Carbon::parse($created)->toIso8601String()
                 : null,
         ];
+    }
+
+    private function normalizeReviewPhoto(?string $url): ?string
+    {
+        if (! filled($url)) {
+            return null;
+        }
+
+        // Smaller avatars load more reliably on live HTTPS + CSP hosts
+        return preg_replace('/=s\d+(-c)?(-rp)?(-mo)?(-ba\d+)?(-br\d+)?$/i', '=s96-c-rp-mo-br100', $url) ?: $url;
     }
 
     private function fetchFromBusinessProfile(): array
