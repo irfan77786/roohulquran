@@ -319,9 +319,16 @@
                 loadSwiperAssets(function () {
                     try {
                         document.querySelectorAll('.testimonial-slider').forEach(function (el) {
+                            var section = el.closest('#testimonials') || el.parentElement;
+                            var nextEl = section.querySelector('.testimonial-next');
+                            var prevEl = section.querySelector('.testimonial-prev');
                             new Swiper(el, {
                                 loop: true,
                                 pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+                                navigation: {
+                                    nextEl: nextEl,
+                                    prevEl: prevEl,
+                                },
                                 autoplay: { delay: 5000, disableOnInteraction: false },
                                 watchOverflow: true,
                                 observer: false,
@@ -368,7 +375,7 @@
         });
     </script>
     <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     window.addEventListener("load", function() {
         var s1 = document.createElement("script"),
@@ -379,7 +386,7 @@
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
     });
-    </script>
+    </script> -->
 
     <!--End of Tawk.to Script-->
 
