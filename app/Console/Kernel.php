@@ -15,8 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // Refresh Google reviews cache (requires cron: * * * * * php artisan schedule:run)
-        $schedule->command('google-reviews:fetch --fresh')->daily();
+        // $schedule->command('inspire')->hourly();
     }
 
     /**

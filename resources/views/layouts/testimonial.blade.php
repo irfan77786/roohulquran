@@ -6,15 +6,13 @@
   .testimonial-card {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
-    margin: auto;
   }
 
   .badge-card {
     bottom: -20px;
     transform: translateX(-50%);
   }
-
+   
   .badge-card i {
     font-size: 2rem;
     color: #e5a72a;
@@ -30,7 +28,8 @@
     height: auto;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
+    aspect-ratio: 16 / 9;
   }
 
   @media (max-width: 768px) {
@@ -39,10 +38,17 @@
     }
   }
 
+  .testimonial-card {
+    max-width: 90%;
+    margin: auto;
+  }
+
   .swiper-pagination-bullet {
     width: 12px;
+    /* visual size */
     height: 12px;
     background: #333;
+    /* or your color */
     opacity: 0.5;
     margin: 8px;
     border-radius: 50%;
@@ -59,13 +65,16 @@
     transform: translate(-50%, -50%);
     background: transparent;
     pointer-events: none;
+    /* keeps the bullet clickable */
   }
 
   .swiper-pagination-bullet-active {
     background: #007bff;
+    /* or any highlight color */
     opacity: 1;
   }
 
+  /* Fallback styles when Swiper doesn't load */
   .testimonial-slider:not(.swiper-initialized) .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -82,214 +91,158 @@
   .testimonial-slider:not(.swiper-initialized) .swiper-pagination {
     display: none;
   }
-
-  .google-review-meta {
-    font-size: 0.85rem;
-    color: #6c757d;
-  }
-
-  .google-review-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.85rem;
-    color: #5f6368;
-    margin-bottom: 1rem;
-  }
-
-  .google-review-badge svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .google-reviews-embed {
-    min-height: 320px;
-    max-height: 480px;
-    overflow: auto;
-  }
-
-  .testimonial-nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .testimonial-nav .swiper-button-prev,
-  .testimonial-nav .swiper-button-next {
-    position: static;
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    border-radius: 50%;
-    background: #fff;
-    border: 1px solid #dee2e6;
-    color: #dc3545;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  }
-
-  .testimonial-nav .swiper-button-prev::after,
-  .testimonial-nav .swiper-button-next::after {
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  .testimonial-nav .swiper-button-prev:hover,
-  .testimonial-nav .swiper-button-next:hover {
-    background: #dc3545;
-    border-color: #dc3545;
-    color: #fff;
-  }
-
-  .testimonial-nav .swiper-button-disabled {
-    opacity: 0.35;
-    pointer-events: none;
-  }
 </style>
-@php
-  $driver = config('google-reviews.driver', 'embed');
-  $embedId = config('google-reviews.embed.id');
-  $embedProvider = config('google-reviews.embed.provider', 'sociablekit');
-  $useEmbed = $driver === 'embed' && filled($embedId);
-
-  $reviewsPayload = $googleReviews ?? ['source' => 'fallback', 'rating' => 5, 'total' => 0, 'reviews' => [], 'maps_url' => null];
-  $reviews = $reviewsPayload['reviews'] ?? [];
-  $overallRating = $reviewsPayload['rating'] ?? null;
-  $totalReviews = $reviewsPayload['total'] ?? count($reviews);
-  $mapsUrl = $reviewsPayload['maps_url'] ?? config('google-reviews.maps_url');
-  $fromGoogle = in_array($reviewsPayload['source'] ?? '', ['business_profile', 'places', 'sociablekit'], true) || $useEmbed;
-@endphp
 <section id="testimonials" class="py-5" style="background-color: #f5f5f5;">
   <div class="container">
     <div class="row align-items-center">
+      <!-- Left Content -->
       <div class="col-lg-6" data-aos="fade-up">
-        <h2 class="text-danger">{{ $fromGoogle ? 'Google Reviews' : 'Our Testimonial' }}</h2>
-        <h2 class="mb-3">
-          Why Students Love <span style="color: #212529;">Learning</span> Quran with&nbsp;Us
+        <h2 class="text-danger">Our Testimonial</h2>
+        <h2 class="mb-4">
+          Why Students Love <span style="color: #212529;">Learning</span> Quran with Us
         </h2>
-
-        @if($useEmbed)
-          <div class="google-reviews-embed mb-3">
-            @if($embedProvider === 'elfsight')
-              <script src="https://static.elfsight.com/platform/platform.js" async></script>
-              <div class="elfsight-app-{{ $embedId }}" data-elfsight-app-lazy></div>
-            @else
-              {{-- SociableKIT free Google reviews widget --}}
-              <div class="sk-ww-google-reviews" data-embed-id="{{ $embedId }}"></div>
-              <script src="https://widgets.sociablekit.com/google-reviews/widget.js" defer></script>
-            @endif
-          </div>
-
-          @if($mapsUrl)
-            <p class="mt-2 mb-0">
-              <a href="{{ $mapsUrl }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                See all reviews on Google →
-              </a>
-            </p>
-          @endif
-        @else
-          @if($fromGoogle && $overallRating)
-            <div class="google-review-badge mb-3">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-              </svg>
-              <strong>{{ number_format((float) $overallRating, 1) }}</strong>
-              <span style="color: #ffc107;">{{ str_repeat('★', (int) round($overallRating)) }}</span>
-              <span>based on {{ number_format((int) $totalReviews) }} Google reviews</span>
-            </div>
-          @endif
-
-          <div class="testimonial-nav">
-            <div class="swiper-button-prev testimonial-prev" aria-label="Previous review"></div>
-            <div class="swiper-button-next testimonial-next" aria-label="Next review"></div>
-          </div>
-
-          <div class="swiper testimonial-slider">
-            <div class="swiper-wrapper">
-              @forelse($reviews as $review)
-                @php
-                  $rating = (int) ($review['rating'] ?? 5);
-                  $photo = $review['photo'] ?? null;
-                  $initial = mb_strtoupper(mb_substr($review['author'] ?? 'G', 0, 1));
-                @endphp
-                <div class="swiper-slide">
-                  <div class="testimonial-card p-4 rounded shadow bg-white">
-                    <div class="rating mb-3 d-flex align-items-center justify-content-between">
-                      <span class="stars" style="color: #ffc107; font-size: 1.5rem;">{{ str_repeat('★', $rating) }}{{ str_repeat('☆', max(0, 5 - $rating)) }}</span>
-                      @if($fromGoogle)
-                        <svg viewBox="0 0 24 24" width="18" height="18" aria-label="Google review">
-                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                      @endif
-                    </div>
-                    <p class="mb-4">{{ \Illuminate\Support\Str::limit($review['text'] ?? '', 220) }}</p>
-                    <div class="d-flex align-items-center">
-                      <div class="position-relative" style="width: 50px; height: 50px;">
-                        @if($photo)
-                          <img src="{{ $photo }}" alt="{{ $review['author'] }} review" class="rounded-circle"
-                            style="width: 50px; height: 50px; object-fit: cover;" loading="lazy" referrerpolicy="no-referrer">
-                        @else
-                          <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
-                            style="width: 50px; height: 50px; background: #4285F4; font-size: 1.25rem;">
-                            {{ $initial }}
-                          </div>
-                        @endif
-                      </div>
-                      <div class="ms-3">
-                        <h3 class="mb-0" style="font-size: 1.1rem;">{{ $review['author'] ?? 'Google User' }}</h3>
-                        @if(!empty($review['relative_time']))
-                          <span class="google-review-meta">{{ $review['relative_time'] }}</span>
-                        @elseif($fromGoogle)
-                          <span class="google-review-meta">Posted on Google</span>
-                        @endif
-                      </div>
-                    </div>
+        <!-- Swiper Slider -->
+        <div class="swiper testimonial-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card p-4 rounded shadow bg-white">
+                <div class="rating mb-3">
+                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
+                </div>
+                <p class="mb-4">
+                  Rooh ul Quran Academy made it so easy for my son to start Noorani Qaida. The teacher is patient and
+                  professional.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-1.webp') }}" alt="islamic studies" class="rounded-circle"
+                      style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <!-- Flag badge -->
+                    <span class="fi fi-gb fis position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
+                    <h3 class="mb-0">Muhammad Zakir</h3>
                   </div>
                 </div>
-              @empty
-                <div class="swiper-slide">
-                  <div class="testimonial-card p-4 rounded shadow bg-white">
-                    <p class="mb-0">
-                      @if($driver === 'embed')
-                        Add your free SociableKIT embed ID to <code>GOOGLE_REVIEWS_EMBED_ID</code> in <code>.env</code>.
-                      @else
-                        Reviews will appear here once Google is connected.
-                      @endif
-                    </p>
+
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card p-4 rounded shadow bg-white">
+                <div class="rating mb-3">
+                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
+                </div>
+                <p class="mb-4">
+                  I always wanted to learn Quran with Tajweed. Alhamdulillah, I improved my recitation within a few
+                  months.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+
+                    <img src="{{ asset('assets/img/ai/test-2.webp') }}" alt="islamic teacher"
+                      class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <span class="fi fi-us fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
+                    <h3 class="mb-0">Ayesha Khan</h3>
                   </div>
                 </div>
-              @endforelse
+              </div>
             </div>
-            <br><br>
-            <div class="swiper-pagination"></div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card p-4 rounded shadow bg-white">
+                <div class="rating mb-3">
+                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
+                </div>
+                <p class="mb-4">
+                  As a working professional, the flexible timings helped me continue my Quran classes online.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-3.webp') }}" alt="online quran classes"
+                      class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <span class="fi fi-ca fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
+                    <h3 class="mb-0">Muhammad Zeeshan</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card p-4 rounded shadow bg-white">
+                <div class="rating mb-3">
+                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
+                </div>
+                <p class="mb-4">
+                  Their female Quran tutor is very kind and supportive. Highly recommended for sisters.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-4.webp') }}" alt="learning quran" class="rounded-circle me-3"
+                      style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <span class="fi fi-au fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
+                    <h3 class="mb-0">M Yaseen</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card p-4 rounded shadow bg-white">
+                <div class="rating mb-3">
+                  <span class="stars" style="color: #ffc107; font-size: 1.5rem;">★★★★★</span>
+                </div>
+                <p class="mb-4">
+                  Learning Quran online has been a blessing for me. The instructors are very knowledgeable and
+                  patient.
+                  I highly recommend QTeaching to anyone looking to deepen their understanding of the Quran.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative" style="width: 50px; height: 50px;">
+                    <img src="{{ asset('assets/img/ai/test-5.webp') }}" alt="parents review" class="rounded-circle me-3"
+                      style="width: 50px; height: 50px; object-fit: cover;" loading="lazy">
+                    <span class="fi fi-de fis ms-2 position-absolute bottom-0 end-0"
+                      style="font-size: 1rem; border-radius: 80%; padding: 2px;"></span>
+                  </div>
+                  <div class="ms-3">
+                    <h3 class="mb-0">Habibullah</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
           </div>
-
-          @if($mapsUrl)
-            <p class="mt-2 mb-0">
-              <a href="{{ $mapsUrl }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                See all reviews on Google →
-              </a>
-            </p>
-          @endif
-
-          <script>
-            setTimeout(function() {
-              const swiperContainer = document.querySelector('.testimonial-slider');
-              const pagination = document.querySelector('.swiper-pagination');
-              if (swiperContainer && !swiperContainer.swiper && pagination) {
-                pagination.style.display = 'none';
-              }
-            }, 3000);
-          </script>
-        @endif
+          <br><br>
+          <div class="swiper-pagination"></div>
+          <!-- Swiper Pagination -->
+        </div>
+        
+        <!-- Fallback for when Swiper doesn't load -->
+        <script>
+          // Fallback: Hide pagination if Swiper doesn't initialize within 3 seconds
+          setTimeout(function() {
+            const swiperContainer = document.querySelector('.testimonial-slider');
+            const pagination = document.querySelector('.swiper-pagination');
+            if (swiperContainer && !swiperContainer.swiper && pagination) {
+              pagination.style.display = 'none';
+              console.log('Swiper fallback: Pagination hidden');
+            }
+          }, 3000);
+        </script>
       </div>
 
+      <!-- Right Content -->
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
         <img src="{{ asset('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded"
           style="max-height: 400px;" loading="lazy">
@@ -297,14 +250,9 @@
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">
           <i class="bi bi-mortarboard text-danger" style="font-size: 2rem;"></i>
-          <div class="ms-3 text-start">
-            @if($fromGoogle && !$useEmbed && $totalReviews)
-              <h4 class="mb-0 text-danger">{{ number_format((int) $totalReviews) }}+</h4>
-              <p class="mb-0">Google Reviews</p>
-            @else
-              <h4 class="mb-0 text-danger">400+</h4>
-              <p class="mb-0">Satisfied Students</p>
-            @endif
+          <div class="ms-3">
+            <h4 class="mb-0 text-danger">400+</h4>
+            <p class="mb-0">Satisfied Students</p>
           </div>
         </div>
       </div>
