@@ -91,10 +91,87 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
 }
 
+/* Glass content panel (used on mobile; subtle on desktop too) */
+.hero.tauheed-page-banner .tauheed-banner-panel {
+    max-width: 640px;
+}
+
 @media (max-width: 991px) {
     .hero.tauheed-page-banner {
-        padding: 50px 0 60px;
-        min-height: auto;
-        background-position: 70% bottom;
+        padding: 36px 0 48px;
+        min-height: 420px;
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero.tauheed-page-banner .container {
+        width: 100%;
+    }
+
+    .hero.tauheed-page-banner .tauheed-banner-panel {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 1.5rem 1.4rem 1.55rem;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.58);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 8px 24px rgba(18, 47, 42, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        text-align: left !important;
+    }
+
+    .hero.tauheed-page-banner h1,
+    .hero.tauheed-page-banner .hero-heading,
+    .hero.tauheed-page-banner .tauheed-banner-panel h1 {
+        font-size: 1.45rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.65rem !important;
+        font-weight: 800 !important;
+        text-align: left !important;
+    }
+
+    .hero.tauheed-page-banner p,
+    .hero.tauheed-page-banner .tauheed-banner-panel p {
+        font-size: 0.92rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1rem !important;
+        text-align: left !important;
+        max-width: 100% !important;
+    }
+
+    .hero.tauheed-page-banner .btn-get-started {
+        font-size: 0.88rem !important;
+        padding: 9px 20px !important;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero.tauheed-page-banner {
+        min-height: 380px;
+        padding: 28px 0 40px;
+    }
+
+    .hero.tauheed-page-banner .tauheed-banner-panel {
+        padding: 1.35rem 1.2rem 1.4rem;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .hero.tauheed-page-banner h1,
+    .hero.tauheed-page-banner .hero-heading,
+    .hero.tauheed-page-banner .tauheed-banner-panel h1 {
+        font-size: 1.28rem !important;
+    }
+
+    .hero.tauheed-page-banner p,
+    .hero.tauheed-page-banner .tauheed-banner-panel p {
+        font-size: 0.86rem !important;
     }
 }

@@ -324,6 +324,9 @@
                             var prevEl = section.querySelector('.testimonial-prev');
                             new Swiper(el, {
                                 loop: true,
+                                autoHeight: true,
+                                slidesPerView: 1,
+                                spaceBetween: 16,
                                 pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
                                 navigation: {
                                     nextEl: nextEl,
