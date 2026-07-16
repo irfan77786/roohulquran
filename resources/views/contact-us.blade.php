@@ -38,6 +38,24 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
     }
 </style>
 @section('content')
+{{-- Page banner (same as About / Teachers) --}}
+<section id="hero" class="hero section tauheed-page-banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="tauheed-banner-panel">
+                    <h1 class="fw-bold mb-3" style="font-size: 2.4rem !important">Contact <span>Us</span></h1>
+                    <p style="font-size: larger" class="col-lg-10 col-md-12 col-sm-12">
+                        We’re here to help! Whether you have questions about our Quran courses, need
+                        assistance with enrollment, or want to share feedback, feel free to reach out.
+                    </p>
+                    <a href="#contact" class="btn-get-started text-bold">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="py-5 bg-light">
     <div class="container">
@@ -45,7 +63,7 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
             <!-- Left Side Contact Info -->
             <div class="col-lg-5">
                 <h6 class="text-danger mb-2">Get In Touch</h6>
-                <h1 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h1>
+                <h2 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h2>
                 <p class="text-muted">We’re here to help! Whether you have questions about our Quran courses, need
                     assistance with enrollment, or want to share feedback, feel free to reach out.</p>
 

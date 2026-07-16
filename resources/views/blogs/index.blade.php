@@ -27,7 +27,25 @@ education blog, quran study resources')
     }
 </style>
 @section('content')
-<div class="container py-5">
+{{-- Page banner (same as About / Teachers) --}}
+<section id="hero" class="hero section tauheed-page-banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="tauheed-banner-panel">
+                    <h1 class="fw-bold mb-3" style="font-size: 2.4rem !important">Our <span>Blog</span></h1>
+                    <p style="font-size: larger" class="col-lg-10 col-md-12 col-sm-12">
+                        Explore Islamic articles, Quran learning tips, and guidance for students of all ages
+                        from Rooh Ul Quran Academy.
+                    </p>
+                    <a href="#blogs" class="btn-get-started text-bold">Latest Articles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="blogs" class="container py-5">
     <h2 class="mb-4 text-center fw-bold">Latest Blogs</h2>
 
     <div class="row g-4">

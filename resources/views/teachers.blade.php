@@ -14,10 +14,6 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
         object-fit: cover;
     }
 
-    #hero {
-        padding: 50px 0;
-    }
-
     #hero .form-container {
         max-width: 100%;
         margin: 0 auto;
@@ -34,37 +30,173 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
     @media (max-width: 768px) {
         #hero .desktop-image {
             display: none;
-            /* Hide desktop image on mobile */
         }
 
         #hero .mobile-image {
             display: block;
-            /* Show mobile-specific image */
             width: 100%;
-            /* Ensure it spans the full width */
+        }
+    }
+
+    /* Teachers page — same visual polish as About (content unchanged) */
+    #quran-teacher.teachers-refined {
+        background: #ffffff;
+        padding: 80px 0 40px;
+    }
+
+    #quran-teacher.teachers-refined .teacher-media {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 18px 40px rgba(18, 47, 42, 0.12);
+    }
+
+    #quran-teacher.teachers-refined .teacher-media img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+    }
+
+    #quran-teacher.teachers-refined h4.fw-semibold {
+        color: #122F2A;
+        font-weight: 800;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #quran-teacher.teachers-refined .text-muted {
+        color: #5f6670 !important;
+        line-height: 1.75;
+    }
+
+    #quran-teacher.teachers-refined .teacher-checklist {
+        list-style: none;
+        padding: 0;
+        margin: 1.25rem 0 0;
+    }
+
+    #quran-teacher.teachers-refined .teacher-checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 0.55rem 0.85rem;
+        margin-bottom: 0.45rem;
+        background: #F6F3EE;
+        border-radius: 10px;
+        color: #122F2A;
+        font-weight: 600;
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    #quran-teacher.teachers-refined .teacher-checklist li i {
+        color: #1A685B;
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+    }
+
+    #quran-teacher.teachers-refined .types-section {
+        margin-top: 70px;
+    }
+
+    #quran-teacher.teachers-refined .why-card {
+        height: 100%;
+        background: #fff;
+        border: 1px solid rgba(18, 47, 42, 0.08);
+        border-radius: 16px;
+        padding: 1.75rem 1.5rem;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #quran-teacher.teachers-refined .why-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(18, 47, 42, 0.1);
+    }
+
+    #quran-teacher.teachers-refined .why-card .why-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        background: #F6F3EE;
+        color: #1A685B;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.45rem;
+        margin-bottom: 1rem;
+    }
+
+    #quran-teacher.teachers-refined .why-card h6 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #122F2A;
+    }
+
+    #quran-teacher.teachers-refined .why-card p {
+        margin: 0;
+        color: #6b7280;
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    #teachers-benefits.teachers-refined {
+        background: #ffffff;
+        padding: 40px 0 60px;
+    }
+
+    #teachers-benefits.teachers-refined h4.fw-semibold {
+        color: #122F2A;
+        font-weight: 800;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #teachers-benefits.teachers-refined .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background: #F6F3EE;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(18, 47, 42, 0.06);
+    }
+
+    #teachers-benefits.teachers-refined .benefits-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+        color: #122F2A;
+        font-weight: 600;
+        font-size: 0.98rem;
+        line-height: 1.5;
+        border-bottom: 1px solid rgba(18, 47, 42, 0.06);
+    }
+
+    #teachers-benefits.teachers-refined .benefits-list li:last-child {
+        border-bottom: none;
+    }
+
+    #teachers-benefits.teachers-refined .benefits-list li i {
+        color: #1A685B;
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 991px) {
+        #quran-teacher.teachers-refined {
+            padding: 60px 0 20px;
         }
 
-        #hero {
-            text-align: center;
-            padding: 0px 0px;
-            min-height: 500px;
+        #quran-teacher.teachers-refined .teacher-media img {
+            height: 320px;
         }
 
-        .hero-heading {
-            font-size: 2.2rem;
-            /* Increase heading size on mobile */
-            font-weight: 600;
+        #quran-teacher.teachers-refined .types-section {
+            margin-top: 50px;
         }
-
-        .hero-subtext {
-            font-size: 1.2rem;
-        }
-
-        .btn-get-started {
-            font-size: 1rem;
-            padding: 10px 25px;
-        }
-
     }
 </style>
 
@@ -86,144 +218,99 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
                     <a href="{{ route('home.contact.us') }}" class="btn-get-started text-bold">Free Trial</a>
                 </div>
             </div>
-
-            <!-- Right Form -->
-            {{-- <div class="col-lg-4 col-md-5 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-                <div class="form-container p-4 bg-light rounded shadow">
-                    <h3 class="mb-3 text-center" style="color: #122F2A; font-weight: bold;">
-                        Free Trial Class
-                    </h3>
-
-                    <form action="/" method="POST">
-                        @csrf
-                        <div class="mb-1">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
-                                required>
-                        </div>
-                        <div class="mb-1">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-1">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone"
-                                placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Country</label>
-                            <select class="form-select" id="country" name="country" required>
-                                <option value="" disabled selected>Select your country</option>
-                                <option value="Pakistan">Pakistan</option>
-                                <option value="India">India</option>
-                                <option value="USA">USA</option>
-                                <option value="UK">UK</option>
-                                <!-- Add more countries as needed -->
-                            </select>
-                        </div>
-                        <button type="submit" class="w-100 p-2 rounded-2"
-                            style="background-color: #122F2A;color:white">Get Free
-                            Trial Class</button>
-                    </form>
-                </div>
-            </div> --}}
         </div>
     </div>
 </section>
-<section id="quran-teacher" class="py-5 bg-light quran-teacher">
+
+<section id="quran-teacher" class="py-5 quran-teacher teachers-refined">
     <div class="container">
 
-
         {{-- About Teachers --}}
-        <div class="row gy-4 align-items-center">
+        <div class="row gy-5 align-items-center">
             <div class="col-lg-6" data-aos="fade-right">
-                <img src="{{ asset('assets/img/ai/teachers.webp') }}" class="img-fluid rounded shadow"
-                    alt="Online Quran Teacher" loading="lazy" style="height: 400px; ">
+                <div class="teacher-media">
+                    <img src="{{ asset('assets/img/ai/teachers.webp') }}"
+                        alt="Online Quran Teacher" loading="lazy">
+                </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <h4 class="fw-semibold">Why You Need an Online Quran Teacher</h4>
                 <p class="text-muted">Learning Quran online without guidance can lead to mistakes in Tajweed and
                     recitation. A professional teacher helps you:</p>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Pronounce letters correctly</li>
-                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Understand Tajweed rules in detail
-                    </li>
-                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Build fluency in recitation</li>
-                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Memorize Quran effectively</li>
-                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Stay motivated with proper feedback
-                    </li>
+                <ul class="teacher-checklist">
+                    <li><i class="bi bi-check-circle-fill"></i> Pronounce letters correctly</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Understand Tajweed rules in detail</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Build fluency in recitation</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Memorize Quran effectively</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Stay motivated with proper feedback</li>
                 </ul>
             </div>
         </div>
 
         {{-- Types of Teachers --}}
-        <div class="row mt-5">
-            <div class="col-12 text-center mb-4" data-aos="fade-up">
-                <h4 class="fw-semibold">Types of Online Quran Teachers We Provide</h4>
-            </div>
+        <div class="types-section">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="fade-up">
+                    <h4 class="fw-semibold">Types of Online Quran Teachers We Provide</h4>
+                </div>
 
-            <div class="col-md-4 mb-4" data-aos="zoom-in">
-                <div class="card h-100 shadow border-0 rounded-3">
-                    <div class="card-body text-center">
-                        <i class="bi bi-person-badge fs-2 text-primary mb-3"></i>
+                <div class="col-md-4 mb-4" data-aos="zoom-in">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-person-badge"></i></div>
                         <h6 class="fw-bold">Male Quran Teachers</h6>
-                        <p class="text-muted small">Certified in Tajweed & Qiraat, ideal for boys, men, and advanced
+                        <p class="small">Certified in Tajweed & Qiraat, ideal for boys, men, and advanced
                             students. Experienced in Hifz and Tafsir.</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card h-100 shadow border-0 rounded-3">
-                    <div class="card-body text-center">
-                        <i class="bi bi-person-fill fs-2 text-primary mb-3"></i>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-person-fill"></i></div>
                         <h6 class="fw-bold">Female Quran Teachers</h6>
-                        <p class="text-muted small">Perfect for sisters & young children. Patient, gentle, and fluent in
+                        <p class="small">Perfect for sisters & young children. Patient, gentle, and fluent in
                             English, Urdu, and Arabic.</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="card h-100 shadow border-0 rounded-3">
-                    <div class="card-body text-center">
-                        <i class="bi bi-mortarboard fs-2 text-primary mb-3"></i>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-mortarboard"></i></div>
                         <h6 class="fw-bold">Specialist Tutors</h6>
-                        <p class="text-muted small">Experts for Tajweed, Hifz, and Ijazah Programs. Advanced teachers
+                        <p class="small">Experts for Tajweed, Hifz, and Ijazah Programs. Advanced teachers
                             with years of experience.</p>
                     </div>
                 </div>
             </div>
         </div>
 
+    </div>
+</section>
+
+<section id="teachers-benefits" class="teachers-refined">
+    <div class="container">
         {{-- Benefits --}}
-        <div class="row mt-5">
+        <div class="row">
             <div class="col-12 text-center mb-4" data-aos="fade-up">
                 <h4 class="fw-semibold">Benefits of Learning with Our Teachers</h4>
             </div>
-            <div class="col-lg-10 mx-auto">
-                <ul class="list-group list-group-flush shadow-sm">
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> One-on-one live
-                        sessions for maximum attention</li>
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Qualified Hafiz,
-                        Qari, and Islamic scholars</li>
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Flexible timings
-                        for international students</li>
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Male and female
-                        Quran tutors available</li>
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Step-by-step
-                        progress tracking</li>
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Free trial class
-                        before you enroll</li>
-                    <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Affordable fees
-                        with family packages</li>
+            <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                <ul class="benefits-list">
+                    <li><i class="bi bi-check-circle-fill"></i> One-on-one live sessions for maximum attention</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Qualified Hafiz, Qari, and Islamic scholars</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Flexible timings for international students</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Male and female Quran tutors available</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Step-by-step progress tracking</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Free trial class before you enroll</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Affordable fees with family packages</li>
                 </ul>
             </div>
         </div>
-
     </div>
 </section>
+
+{{-- Courses + Testimonials --}}
+@include('layouts.partials.featured-courses')
+@include('layouts.testimonial')
 
 {{-- start of faq --}}
 <section id="faq" class="py-5 bg-light">
