@@ -7,25 +7,139 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 
 
 <style>
+    #contact.contact-refined {
+        background: #ffffff;
+        padding: 80px 0 70px;
+    }
+
+    #contact.contact-refined .contact-eyebrow {
+        display: inline-block;
+        color: #FF5528;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 0.6rem;
+    }
+
+    #contact.contact-refined .contact-title {
+        color: #122F2A;
+        font-weight: 800;
+        font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+        line-height: 1.25;
+        margin-bottom: 0.85rem;
+    }
+
+    #contact.contact-refined .contact-lead {
+        color: #5f6670;
+        line-height: 1.75;
+        margin-bottom: 1.75rem;
+    }
+
+    #contact.contact-refined .info-card {
+        background: #F6F3EE;
+        border: 1px solid rgba(18, 47, 42, 0.06);
+        border-radius: 18px;
+        padding: 1.5rem;
+        height: 100%;
+    }
+
+    #contact.contact-refined .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    #contact.contact-refined .info-item + .info-item {
+        border-top: 1px solid rgba(18, 47, 42, 0.08);
+    }
+
+    #contact.contact-refined .info-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: #122F2A;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    #contact.contact-refined .info-item small {
+        display: block;
+        color: #6b7280;
+        margin-bottom: 0.25rem;
+    }
+
+    #contact.contact-refined .info-item a,
+    #contact.contact-refined .info-item strong {
+        color: #122F2A;
+        font-weight: 700;
+        text-decoration: none;
+        line-height: 1.45;
+    }
+
+    #contact.contact-refined .info-item a:hover {
+        color: #FF5528;
+    }
+
+    #contact.contact-refined .form-panel {
+        background: #fff;
+        border: 1px solid rgba(18, 47, 42, 0.08);
+        border-radius: 18px;
+        padding: 2rem 1.75rem;
+        box-shadow: 0 16px 40px rgba(18, 47, 42, 0.08);
+        height: 100%;
+    }
+
+    #contact.contact-refined .form-panel .form-control,
+    #contact.contact-refined .form-panel .form-select {
+        border-radius: 10px;
+        border-color: rgba(18, 47, 42, 0.12);
+        padding: 0.7rem 0.9rem;
+    }
+
+    #contact.contact-refined .form-panel .form-control:focus,
+    #contact.contact-refined .form-panel .form-select:focus {
+        border-color: #1A685B;
+        box-shadow: 0 0 0 0.2rem rgba(26, 104, 91, 0.15);
+    }
+
     #get-in-touch {
-        background-color: #FF5528;
+        background-color: #FF5528 !important;
+        border: none !important;
+        border-radius: 50px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 0.75rem 1.75rem !important;
+        transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     #get-in-touch:hover {
-        background-color: #e04a22;
+        background-color: #e04a22 !important;
+        transform: translateY(-2px);
+    }
+
+    #contact.contact-refined .map-wrap {
+        margin-top: 3.5rem;
+    }
+
+    #contact.contact-refined .map-wrap .map-heading {
+        text-align: center;
+        margin-bottom: 1.25rem;
     }
 
     .map-responsive {
         position: relative;
-        padding-bottom: 56.25%;
-        /* 16:9 ratio */
+        padding-bottom: 45%;
         height: 0;
         overflow: hidden;
-        border-radius: 8px;
-        /* Optional: rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Optional: slight shadow */
-        margin-top: 2rem;
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(18, 47, 42, 0.12);
+        border: 1px solid rgba(18, 47, 42, 0.06);
     }
 
     .map-responsive iframe {
@@ -35,6 +149,20 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
         width: 100%;
         height: 100%;
         border: 0;
+    }
+
+    @media (max-width: 991px) {
+        #contact.contact-refined {
+            padding: 60px 0 50px;
+        }
+
+        #contact.contact-refined .form-panel {
+            padding: 1.5rem 1.25rem;
+        }
+
+        .map-responsive {
+            padding-bottom: 65%;
+        }
     }
 </style>
 @section('content')
@@ -57,82 +185,57 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-5 bg-light">
+<section id="contact" class="contact-refined">
     <div class="container">
-        <div class="row gy-5">
+        <div class="row gy-4 align-items-stretch">
             <!-- Left Side Contact Info -->
-            <div class="col-lg-5">
-                <h6 class="text-danger mb-2">Get In Touch</h6>
-                <h2 class="fw-bold"><strong>Contact</strong> Us <span class="fw-normal">Now</span></h2>
-                <p class="text-muted">We’re here to help! Whether you have questions about our Quran courses, need
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="contact-eyebrow">Get In Touch</span>
+                <h2 class="contact-title">Contact Us Now</h2>
+                <p class="contact-lead">We’re here to help! Whether you have questions about our Quran courses, need
                     assistance with enrollment, or want to share feedback, feel free to reach out.</p>
 
-                <div class="bg-white p-4 rounded shadow-sm">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3">
-                            <i class="bi bi-telephone-fill fs-2 text-dark"></i>
-                        </div>
+                <div class="info-card">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
                         <div>
-                            <small class="text-muted">Call us or whatsapp Anytime</small><br>
-                            <strong class="text-dark">+92-344-6781539</strong><br>
-                            <strong class="text-dark">+92-334-4066429</strong>
+                            <small>Call us or whatsapp Anytime</small>
+                            <a href="tel:+923344066429">+92-334-4066429</a>
                         </div>
                     </div>
 
-                    <hr>
-
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3">
-                            <i class="bi bi-envelope-fill fs-2 text-dark"></i>
-                        </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
                         <div>
-                            <small class="text-muted">E-mail us Anytime</small><br>
-                            <strong class="text-dark">info@roohulquranacademy.com</strong>
+                            <small>E-mail us Anytime</small>
+                            <a href="mailto:info@roohulquranacademy.com">info@roohulquranacademy.com</a>
                         </div>
                     </div>
-
-                    <hr>
-                    {{--
-                    <div class="d-flex align-items-center">
-                        <div class="me-3">
-                            <i class="bi bi-geo-alt-fill fs-2 text-dark"></i>
-                        </div>
-                        <div>
-                            <small class="text-muted">Our Locations</small><br>
-                            <strong class="text-dark">Hatton Garden, London, United Kingdom</strong>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
 
             <!-- Right Side Contact Form -->
-            <div class="col-lg-7">
-                <h6 class="text-danger">Contact Us</h6>
-                <h2 class="fw-bold">Get in <strong>Touch</strong> with Us</h2>
-                <form id="trial-form" method="post" action="{{ route('trial-class.store') }}">
-                    @csrf
-                    <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="form_started_at" value="{{ time() }}">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            @include('layouts.partials.public-form-fields')
-                            @include('layouts.partials.form-turnstile')
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="form-panel">
+                    <span class="contact-eyebrow">Contact Us</span>
+                    <h2 class="contact-title">Get in Touch with Us</h2>
+                    <form id="trial-form" method="post" action="{{ route('trial-class.store') }}">
+                        @csrf
+                        <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="form_started_at" value="{{ time() }}">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                @include('layouts.partials.public-form-fields')
+                                @include('layouts.partials.form-turnstile')
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-2 py-2">GET IN
+                                    TOUCH</button>
+                            </div>
                         </div>
-                        <div class="col-12">
-                            <button type="submit" id="get-in-touch" class="btn btn-dark px-4 mt-2 py-2">GET IN
-                                TOUCH</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-
-        <!-- Responsive Google Map -->
-        <div class="map-responsive mt-5">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425.38244067771757!2d74.31309193330307!3d31.467548682519304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391907f295d971db%3A0x3bd96ab23fa64997!2sRoohul%20Quran%20Online%20Academy!5e0!3m2!1sen!2s!4v1757942220971!5m2!1sen!2s"
-                frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
         </div>
 
     </div>
@@ -153,12 +256,6 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
     {
       "@type": "ContactPoint",
       "telephone": "+92-334-4066429",
-      "contactType": "Customer Support",
-      "availableLanguage": ["English", "Urdu"]
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "+92-344-6781539",
       "contactType": "Customer Support",
       "availableLanguage": ["English", "Urdu"]
     },
