@@ -1,20 +1,21 @@
 <style>
-  /* Modern Top Header Design */
+  /* Contact bar — original pill layout, Tauheed colors */
   #top-header {
     background-color: #122F2A;
     position: relative;
     overflow: hidden;
-    padding: 15px 0;
+    padding: 12px 0;
     min-height: 54px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px rgba(18, 47, 42, 0.12);
     contain: layout style;
+    border-bottom: none;
   }
 
   #top-header .contact-info {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    gap: 30px;
+    gap: 18px;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -23,26 +24,34 @@
 
   #top-header .contact-info > div {
     margin-bottom: 0;
-    padding: 8px 20px;
+    padding: 7px 18px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     transition: background 0.3s ease, box-shadow 0.3s ease;
   }
 
   #top-header .contact-info > div:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(26, 104, 91, 0.45);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   #top-header .contact-info i {
-    font-size: 1.3rem !important;
+    font-size: 1.15rem !important;
+    color: #FF5528 !important;
+  }
+
+  #top-header,
+  #top-header .email {
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 500;
   }
 
   #top-header a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -70,13 +79,42 @@
     height: auto;
     max-height: 78px;
     max-width: 190px;
-    margin: -4px 0;
+    margin: 8px 0 4px;
     object-fit: contain;
     transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 6px rgba(18, 47, 42, 0.22));
   }
 
   #header .logo img:hover {
     transform: scale(1.04);
+  }
+
+  .header-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1A685B;
+    color: #fff !important;
+    font-size: 1.15rem;
+    text-decoration: none !important;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .header-icon-btn:hover {
+    transform: translateY(-2px);
+    color: #fff !important;
+  }
+
+  .header-icon-btn.header-icon-wa {
+    background: #25D366;
+  }
+
+  .header-icon-btn.header-icon-mail {
+    background: #FF5528;
   }
 
   @media (max-width: 1199px) {
@@ -110,7 +148,7 @@
     #header .logo img {
       max-height: 64px;
       max-width: 120px;
-      margin: -4px 0;
+      margin: 4px 0;
     }
 
     #header .header-actions {
@@ -232,14 +270,15 @@
     .mobile-nav-logo {
       display: inline-flex;
       align-items: center;
-      background: #ffffff;
-      padding: 6px 14px;
-      border-radius: 8px;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
       text-decoration: none !important;
     }
 
     .mobile-nav-logo img {
-      max-height: 48px;
+      max-height: 64px;
+      max-width: 150px;
       width: auto;
       height: auto;
       display: block;
@@ -311,7 +350,7 @@
       color: #ffffff !important;
       padding: 14px 22px !important;
       font-size: 16px !important;
-      font-weight: 500 !important;
+      font-weight: 700 !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       transition: background 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
     }
@@ -472,7 +511,7 @@
     #header .logo img {
       max-height: 58px;
       max-width: 108px;
-      margin: -3px 0;
+      margin: 4px 0;
     }
 
     #header .header-actions .btn-getstarted {
@@ -493,12 +532,18 @@
     #header .logo img {
       max-height: 52px;
       max-width: 96px;
-      margin: -2px 0;
+      margin: 4px 0;
     }
 
     #header .header-actions .btn-getstarted {
       padding: 4px 8px;
       font-size: 10px;
+    }
+
+    .header-icon-btn {
+      width: 34px;
+      height: 34px;
+      font-size: 1rem;
     }
   }
 
@@ -528,7 +573,7 @@
     #header .logo img {
       max-height: 82px;
       max-width: 200px;
-      margin: -6px 0;
+      margin: 8px 0 4px;
     }
 
     #header .navmenu {
@@ -548,5 +593,70 @@
     #header .mobile-nav-toggle {
       display: none !important;
     }
+
+    #header .navmenu a,
+    #header .navmenu a:focus {
+      font-weight: 700 !important;
+      color: #122F2A;
+    }
+
+    #header .navmenu .dropdown ul a {
+      font-weight: 600 !important;
+    }
+  }
+
+  /* Header sits on the hero (desktop + mobile) instead of a separate bar */
+  body:has(#hero) #top-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    background: #122F2A;
+    border-bottom: none;
+    box-shadow: 0 2px 12px rgba(18, 47, 42, 0.12);
+    backdrop-filter: none;
+  }
+
+  body:has(#hero) #header {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1001;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  @media (min-width: 1200px) {
+    body:has(#hero) #header {
+      top: 62px;
+      padding-top: 8px;
+    }
+  }
+
+  @media (max-width: 1199.98px) {
+    body:has(#hero) #header {
+      top: 0;
+      padding-top: 8px;
+    }
+  }
+
+  body.scrolled:has(#hero) #top-header {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  body.scrolled:has(#hero) #header {
+    position: fixed !important;
+    top: 0 !important;
+    padding-top: 4px;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(18, 47, 42, 0.08) !important;
   }
 </style>

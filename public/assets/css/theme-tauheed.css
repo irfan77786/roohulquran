@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Inner page banner — same style as home hero */
 .hero.tauheed-page-banner {
     position: relative;
-    padding: 70px 0 80px;
+    padding: 168px 0 80px;
     min-height: 580px;
     background-color: #F6F3EE;
     background-image: url('../img/hero-quran-banner.png');
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 991px) {
     .hero.tauheed-page-banner {
-        padding: 36px 0 48px;
+        padding: 108px 0 48px;
         min-height: 420px;
         background-position: center center;
         background-size: cover;
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 575px) {
     .hero.tauheed-page-banner {
         min-height: 380px;
-        padding: 28px 0 40px;
+        padding: 100px 0 40px;
     }
 
     .hero.tauheed-page-banner .tauheed-banner-panel {

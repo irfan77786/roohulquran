@@ -174,20 +174,21 @@
      * Toggle mobile nav dropdowns - optimized
      */
     function initNavDropdowns() {
-        const dropdownToggles = document.querySelectorAll(
-            ".navmenu .toggle-dropdown"
-        );
-        dropdownToggles.forEach((toggle) => {
-            toggle.addEventListener("click", function (e) {
+        const dropdownLinks = document.querySelectorAll(".navmenu .dropdown > a");
+        dropdownLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+                if (window.innerWidth >= 1200) {
+                    return;
+                }
                 e.preventDefault();
+                e.stopImmediatePropagation();
                 const dropdown = this.closest(".dropdown");
                 if (!dropdown) return;
-                const submenu = dropdown.querySelector("ul");
+                const submenu = dropdown.querySelector(":scope > ul");
                 dropdown.classList.toggle("active");
                 if (submenu) {
                     submenu.classList.toggle("dropdown-active");
                 }
-                e.stopImmediatePropagation();
             });
         });
     }

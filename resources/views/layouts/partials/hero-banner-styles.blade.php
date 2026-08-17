@@ -1,7 +1,7 @@
 <style>
     #hero.hero-tauheed {
         position: relative;
-        padding: 70px 0 80px;
+        padding: 168px 0 80px;
         min-height: 580px;
         background-color: #F6F3EE;
         background-image: url('{{ asset('assets/img/hero-quran-banner.png') }}');
@@ -168,7 +168,7 @@
 
     @media (max-width: 991px) {
         #hero.hero-tauheed {
-            padding: 50px 0 60px;
+            padding: 108px 0 60px;
             min-height: auto;
             background-position: 70% bottom;
         }

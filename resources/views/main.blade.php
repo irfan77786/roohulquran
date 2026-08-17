@@ -58,7 +58,7 @@
 
     <!-- Preload LCP hero image (viewport-specific) -->
     <link rel="preload" href="{{ asset('assets/img/hero-quran-banner.png') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/logo.svg') }}" as="image">
+    <link rel="preload" href="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" as="image">
     
     @stack('styles')
     @include('layouts.partials.header-styles')

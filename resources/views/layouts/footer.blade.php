@@ -19,7 +19,7 @@
       <!-- Left Content -->
       <div class="col-lg-4 col-md-6 footer-about">
         <a href="{{ route('home.index') }}" class="logo d-flex align-items-center justify-content-center justify-content-lg-start">
-          <img src="{{ asset('assets/img/logo.svg') }}" class="img-fluid" alt="roohul quran academy logo" width="160" height="40" decoding="async" loading="lazy">
+          <img src="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" class="img-fluid footer-logo" alt="roohul quran academy logo" width="160" height="99" decoding="async" loading="lazy">
         </a>
         <div class="footer-contact pt-3">
           <p><strong>CALL FOR MORE INFO:</strong></p>
@@ -74,3 +74,10 @@
     <p>Copyright © 2025. All Rights Reserved.</p>
   </div>
 </footer>
+<style>
+  .footer-logo {
+    max-height: 92px;
+    width: auto;
+    height: auto;
+  }
+</style>
