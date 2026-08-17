@@ -65,6 +65,30 @@
         });
     }
 
+    function hideChatWidgets() {
+        document.body.classList.add('rq-lead-open');
+        try {
+            if (window.Tawk_API) {
+                if (typeof Tawk_API.hideWidget === 'function') Tawk_API.hideWidget();
+                if (typeof Tawk_API.minimize === 'function') Tawk_API.minimize();
+            }
+        } catch (e) {}
+    }
+
+    function showChatWidgets() {
+        document.body.classList.remove('rq-lead-open');
+        try {
+            if (window.Tawk_API && typeof Tawk_API.showWidget === 'function') {
+                Tawk_API.showWidget();
+            }
+        } catch (e) {}
+    }
+
+    function openWhatsApp(text) {
+        var message = text || 'Assalamu Alaikum, I want to know about online Quran classes.';
+        window.location.href = 'https://wa.me/' + cfg.whatsapp + '?text=' + encodeURIComponent(message);
+    }
+
     function open(key) {
         if (captured() || shown(key) || openKey) return;
         var modal = document.getElementById('rq-lead-' + key);
@@ -72,15 +96,17 @@
 
         root.hidden = false;
         modal.hidden = false;
-        document.body.classList.add('rq-lead-open');
+        hideChatWidgets();
         openKey = key;
         markShown(key);
 
         loadTurnstile(function () { stampForms(modal); });
 
-        var focusEl = modal.querySelector('input[name="name"], .rq-lead-choice, .rq-lead-btn-wa');
-        if (focusEl) {
-            setTimeout(function () { focusEl.focus(); }, 180);
+        if (window.innerWidth >= 768) {
+            var focusEl = modal.querySelector('input[name="name"], .rq-lead-choice');
+            if (focusEl) {
+                setTimeout(function () { focusEl.focus(); }, 180);
+            }
         }
     }
 
@@ -89,7 +115,7 @@
         root.querySelectorAll('.rq-lead-modal').forEach(function (modal) {
             modal.hidden = true;
         });
-        document.body.classList.remove('rq-lead-open');
+        showChatWidgets();
         openKey = null;
     }
 
@@ -112,14 +138,17 @@
         btn.addEventListener('click', function () {
             var text = btn.getAttribute('data-wa') || 'Assalamu Alaikum, I want to join a Quran class.';
             markCaptured();
-            window.open('https://wa.me/' + cfg.whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
             close();
+            openWhatsApp(text);
         });
     });
 
-    root.querySelectorAll('.rq-lead-btn-wa, .rq-lead-wa-link').forEach(function (link) {
-        link.addEventListener('click', function () {
+    root.querySelectorAll('.rq-lead-btn-wa, .rq-lead-wa-link').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var text = btn.getAttribute('data-wa') || 'Assalamu Alaikum, I want to know about online Quran classes.';
             markCaptured();
+            close();
+            openWhatsApp(text);
         });
     });
 
@@ -186,6 +215,13 @@
             setTimeout(function () { open('dwell'); }, cfg.dwellDelay || 5000);
         }
     }
+
+    window.Tawk_API = window.Tawk_API || {};
+    var previousTawkLoad = window.Tawk_API.onLoad;
+    window.Tawk_API.onLoad = function () {
+        if (typeof previousTawkLoad === 'function') previousTawkLoad();
+        if (openKey) hideChatWidgets();
+    };
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', schedule);

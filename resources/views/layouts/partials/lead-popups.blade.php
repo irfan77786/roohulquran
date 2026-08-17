@@ -29,7 +29,7 @@
         <button type="button" class="rq-lead-close" data-rq-close aria-label="Close">&times;</button>
         <div class="rq-lead-dwell-grid">
             <div class="rq-lead-dwell-aside">
-                <span class="rq-lead-kicker">Free Trial Class</span>
+                <span class="rq-lead-kicker rq-lead-kicker-light">Free Trial Class</span>
                 <h2 id="rq-lead-dwell-title">Start learning Quran today</h2>
                 <p>One-on-one class with a certified teacher. Leave your number and we will contact you on WhatsApp.</p>
                 <ul>
@@ -54,9 +54,9 @@
                         <span class="rq-lead-btn-loading d-none">Please wait…</span>
                     </button>
                 </form>
-                <a class="rq-lead-wa-link" href="https://wa.me/{{ $waNumber }}?text={{ rawurlencode('Assalamu Alaikum, I want to book a free trial Quran class.') }}" target="_blank" rel="noopener">
+                <button type="button" class="rq-lead-wa-link" data-wa="Assalamu Alaikum, I want to book a free trial Quran class.">
                     <i class="bi bi-whatsapp"></i> Or chat on WhatsApp
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -114,9 +114,9 @@
             <span class="rq-lead-kicker rq-lead-kicker-light">Fee details</span>
             <h2 id="rq-lead-pricing-title">Need more information about the fee?</h2>
             <p>Contact us and we will explain the class fee, timing, and the right package for you.</p>
-            <a class="rq-lead-btn rq-lead-btn-wa" href="https://wa.me/{{ $waNumber }}?text={{ rawurlencode('Assalamu Alaikum, I want more information about the fee for online Quran classes.') }}" target="_blank" rel="noopener">
+            <button type="button" class="rq-lead-btn rq-lead-btn-wa" data-wa="Assalamu Alaikum, I want more information about the fee for online Quran classes.">
                 <i class="bi bi-whatsapp"></i> Contact us on WhatsApp
-            </a>
+            </button>
         </div>
         <div class="rq-lead-pricing-form">
             <p>Or leave your number — we will contact you with fee details.</p>

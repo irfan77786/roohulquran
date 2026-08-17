@@ -527,10 +527,21 @@ body.rq-lead-open {
     overflow: hidden;
 }
 
+/* Hide Tawk chat + floating WhatsApp while a lead popup is open (mobile overlap). */
+body.rq-lead-open .whatsapp-float,
+body.rq-lead-open iframe[src*="tawk.to"],
+body.rq-lead-open iframe[title*="chat"],
+body.rq-lead-open div[class*="tawk-"],
+body.rq-lead-open div[id*="tawk"] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
 .rq-lead-root {
     position: fixed;
     inset: 0;
-    z-index: 100000;
+    z-index: 2147483000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -736,10 +747,15 @@ body.rq-lead-open {
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
+    width: 100%;
     margin-top: 0.9rem;
+    padding: 0;
+    border: 0;
+    background: none;
     color: #1A685B;
     font-weight: 700;
-    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;
 }
 
 .rq-lead-courses {
@@ -874,7 +890,7 @@ body.rq-lead-open {
     .rq-lead-dwell-form,
     .rq-lead-courses-inner,
     .rq-lead-pricing-form {
-        padding: 1.25rem 1.2rem 1.3rem;
+        padding: 1.25rem 1.2rem 2.4rem;
     }
 
     .rq-lead-choices {
