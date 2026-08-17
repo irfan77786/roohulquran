@@ -65,12 +65,7 @@ class BlogController extends Controller
         $blog->save();
 
         if ($request->hasFile('featured_image')) {
-            $uploadedFile = $request->file('featured_image');
-            $uploadResult = Cloudinary::upload($uploadedFile->getRealPath(), [
-                'folder' => 'blogs',
-                'public_id' => 'blog_' . $blog->id . '_' . time(),
-            ]);
-            $blog->featured_image = $uploadResult->getSecurePath();
+            $blog->featured_image = $this->storeFeaturedImage($request->file('featured_image'), $blog->id);
             $blog->save();
         }
 
@@ -116,28 +111,10 @@ class BlogController extends Controller
         // Update blog details
         $blog->update($validated);
 
-        // Handle image upload if new image is provided
         if ($request->hasFile('featured_image')) {
-            // Delete old image from Cloudinary if exists
-            if ($blog->featured_image) {
-                try {
-                    $publicId = $this->extractPublicIdFromUrl($blog->featured_image);
-                    if ($publicId) {
-                        Cloudinary::destroy($publicId);
-                    }
-                } catch (\Exception $e) {
-                    // Log error but continue with upload
-                    \Log::warning('Failed to delete old Cloudinary image: ' . $e->getMessage());
-                }
-            }
-
-            $uploadedFile = $request->file('featured_image');
-            $uploadResult = Cloudinary::upload($uploadedFile->getRealPath(), [
-                'folder' => 'blogs',
-                'public_id' => 'blog_' . $blog->id . '_' . time(),
-            ]);
-            $blog->featured_image = $uploadResult->getSecurePath();
-            $blog->save(); // Save updated image path
+            $this->deleteFeaturedImage($blog->featured_image);
+            $blog->featured_image = $this->storeFeaturedImage($request->file('featured_image'), $blog->id);
+            $blog->save();
         }
 
         return redirect()->route('admin.blogs.index')->with('success', 'Blog updated!');
@@ -146,21 +123,53 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
-        // Delete image from Cloudinary if exists
-        if ($blog->featured_image) {
+        $this->deleteFeaturedImage($blog->featured_image);
+
+        $blog->delete();
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted!');
+    }
+
+    private function cloudinaryConfigured(): bool
+    {
+        return filled(config('cloudinary.cloud_url'));
+    }
+
+    private function storeFeaturedImage($uploadedFile, int $blogId): string
+    {
+        if ($this->cloudinaryConfigured()) {
+            $uploadResult = Cloudinary::upload($uploadedFile->getRealPath(), [
+                'folder' => 'blogs',
+                'public_id' => 'blog_' . $blogId . '_' . time(),
+            ]);
+
+            return $uploadResult->getSecurePath();
+        }
+
+        return $uploadedFile->store('blogs', 'public');
+    }
+
+    private function deleteFeaturedImage(?string $path): void
+    {
+        if (! $path) {
+            return;
+        }
+
+        if ($this->cloudinaryConfigured() && filter_var($path, FILTER_VALIDATE_URL)) {
             try {
-                $publicId = $this->extractPublicIdFromUrl($blog->featured_image);
+                $publicId = $this->extractPublicIdFromUrl($path);
                 if ($publicId) {
                     Cloudinary::destroy($publicId);
                 }
             } catch (\Exception $e) {
-                // Log error but continue with deletion
                 \Log::warning('Failed to delete Cloudinary image: ' . $e->getMessage());
             }
+
+            return;
         }
-        
-        $blog->delete();
-        return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted!');
+
+        if (! filter_var($path, FILTER_VALIDATE_URL)) {
+            Storage::disk('public')->delete($path);
+        }
     }
 
     /**
