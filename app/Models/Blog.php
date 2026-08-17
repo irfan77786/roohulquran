@@ -26,16 +26,29 @@ class Blog extends Model
     ];
     public function getImageUrlAttribute()
     {
-        if (!$this->featured_image) {
+        $image = trim((string) $this->featured_image);
+        if ($image === '') {
             return null;
         }
-        
-        // If it's already a full URL (Cloudinary URL), return it directly
-        if (filter_var($this->featured_image, FILTER_VALIDATE_URL)) {
-            return $this->featured_image;
+
+        // UploadedFile was accidentally saved as a Windows/PHP temp path.
+        if (preg_match('/^[A-Za-z]:[\\\\\\/]/', $image) || str_starts_with($image, '/tmp/')) {
+            return null;
         }
-        
-        // Otherwise, it's a local storage path (for backward compatibility)
-        return asset('storage/' . $this->featured_image);
+
+        if (filter_var($image, FILTER_VALIDATE_URL)) {
+            return $image;
+        }
+
+        $image = ltrim(str_replace('\\', '/', $image), '/');
+        if (str_starts_with($image, 'public/')) {
+            $image = substr($image, 7);
+        }
+        if (str_starts_with($image, 'storage/')) {
+            $image = substr($image, 8);
+        }
+
+        // Root-relative URL so images work on http and https (no mixed-content).
+        return '/storage/' . $image;
     }
 }

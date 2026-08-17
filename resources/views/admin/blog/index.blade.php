@@ -79,9 +79,9 @@
                                             <span class="table-link1 text-truncate d-block">{{ $blog->title }}</span>
                                         </th>
                                         <td>
-                                            <a href="{{ url('/blog/' . $blog->slug) }}" target="_blank" rel="noopener"
+                                            <a href="{{ route('blogs.show', $blog->slug) }}" target="_blank" rel="noopener"
                                                 class="link-primary text-dark fw-medium d-block">
-                                                {{ url('/blog/' . $blog->slug) }}
+                                                {{ route('blogs.show', $blog->slug) }}
                                             </a>
                                         </td>
                                         <td class="text-center">

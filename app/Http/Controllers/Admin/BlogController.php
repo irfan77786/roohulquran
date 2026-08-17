@@ -60,12 +60,14 @@ class BlogController extends Controller
 
         $validated['slug'] = Str::slug($request->title);
         $validated['author'] = auth()->user()->name;
+        $imageFile = $request->file('featured_image');
+        unset($validated['featured_image']);
 
         $blog = new Blog($validated);
         $blog->save();
 
-        if ($request->hasFile('featured_image')) {
-            $blog->featured_image = $this->storeFeaturedImage($request->file('featured_image'), $blog->id);
+        if ($imageFile) {
+            $blog->featured_image = $this->storeFeaturedImage($imageFile, $blog->id);
             $blog->save();
         }
 
@@ -107,13 +109,14 @@ class BlogController extends Controller
 
         $validated['slug'] = Str::slug($request->title);
         $validated['author'] = auth()->user()->name;
+        $imageFile = $request->file('featured_image');
+        unset($validated['featured_image']);
 
-        // Update blog details
         $blog->update($validated);
 
-        if ($request->hasFile('featured_image')) {
+        if ($imageFile) {
             $this->deleteFeaturedImage($blog->featured_image);
-            $blog->featured_image = $this->storeFeaturedImage($request->file('featured_image'), $blog->id);
+            $blog->featured_image = $this->storeFeaturedImage($imageFile, $blog->id);
             $blog->save();
         }
 
@@ -137,20 +140,35 @@ class BlogController extends Controller
     private function storeFeaturedImage($uploadedFile, int $blogId): string
     {
         if ($this->cloudinaryConfigured()) {
-            $uploadResult = Cloudinary::upload($uploadedFile->getRealPath(), [
-                'folder' => 'blogs',
-                'public_id' => 'blog_' . $blogId . '_' . time(),
-            ]);
+            try {
+                $uploadResult = Cloudinary::upload($uploadedFile->getRealPath(), [
+                    'folder' => 'blogs',
+                    'public_id' => 'blog_' . $blogId . '_' . time(),
+                ]);
 
-            return $uploadResult->getSecurePath();
+                return $uploadResult->getSecurePath();
+            } catch (\Throwable $e) {
+                \Log::warning('Cloudinary upload failed, using local storage: ' . $e->getMessage());
+            }
         }
 
-        return $uploadedFile->store('blogs', 'public');
+        $extension = strtolower($uploadedFile->getClientOriginalExtension() ?: $uploadedFile->guessExtension() ?: 'jpg');
+        $filename = 'blog_' . $blogId . '_' . time() . '_' . Str::random(8) . '.' . $extension;
+        $directory = storage_path('app/public/blogs');
+
+        if (! is_dir($directory) && ! mkdir($directory, 0755, true) && ! is_dir($directory)) {
+            throw new \RuntimeException('Unable to create blog image directory.');
+        }
+
+        // move() avoids Flysystem chmod/visibility failures on Windows/XAMPP.
+        $uploadedFile->move($directory, $filename);
+
+        return 'blogs/' . $filename;
     }
 
     private function deleteFeaturedImage(?string $path): void
     {
-        if (! $path) {
+        if (! $path || preg_match('/^[A-Za-z]:[\\\\\\/]/', $path) || str_starts_with($path, '/tmp/')) {
             return;
         }
 
