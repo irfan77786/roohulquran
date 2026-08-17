@@ -67,20 +67,24 @@
             {{-- Related Blogs --}}
             @if($relatedBlogs->count())
             <div class="mt-5 mb-5">
-                <h4 class="fw-bold">📚 You may also like:</h4>
+                <h4 class="fw-bold mb-4" style="color:#122F2A">You may also like</h4>
                 <div class="row g-4">
                     @foreach($relatedBlogs as $related)
                         <div class="col-sm-6 col-md-4">
-                            <div class="card border-0 shadow rounded-4 h-100">
-                                @if($related->image_url)
-                                    <img src="{{ $related->image_url }}" class="card-img-top" alt="{{ $related->title }}"style="height: 200px; object-fit: cover;" >
-                                @endif
-                                <div class="card-body d-flex flex-column">
-                                    <h6 class="fw-bold">{{ Str::limit($related->title, 50) }}</h6>
-                                    <p class="small text-muted">{{ Str::limit($related->excerpt ?? strip_tags($related->content), 80) }}</p>
-                                    <a href="{{ route('blogs.show', $related->slug) }}" class="mt-auto btn btn-link p-0 text-primary">Read More →</a>
+                            <article class="rq-blog-card">
+                                <a href="{{ route('blogs.show', $related->slug) }}" class="rq-blog-card-media">
+                                    @if($related->image_url)
+                                        <img src="{{ $related->image_url }}" alt="{{ $related->title }}">
+                                    @else
+                                        <div class="rq-blog-placeholder"><i class="bi bi-journal-richtext"></i></div>
+                                    @endif
+                                </a>
+                                <div class="rq-blog-card-body">
+                                    <h3><a href="{{ route('blogs.show', $related->slug) }}">{{ Str::limit($related->title, 50) }}</a></h3>
+                                    <p>{{ Str::limit($related->excerpt ?? strip_tags($related->content), 80) }}</p>
+                                    <a href="{{ route('blogs.show', $related->slug) }}" class="rq-blog-read">Read <i class="bi bi-arrow-right"></i></a>
                                 </div>
-                            </div>
+                            </article>
                         </div>
                     @endforeach
                 </div>

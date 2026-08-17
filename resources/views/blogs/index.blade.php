@@ -5,27 +5,7 @@
 guidance for students of all ages.')
 @section('meta_keywords' , 'rooh ul quran blog, islamic articles, quran learning tips, online quran blog, islamic
 education blog, quran study resources')
-<style>
-    .card-title {
-        font-family: 'Georgia', serif;
-        line-height: 1.4;
-    }
 
-    .card-text {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    .btn-outline-success {
-        border-color: #28a745;
-        color: #28a745;
-    }
-
-    .btn-outline-success:hover {
-        background-color: #1f1872;
-        color: white;
-    }
-</style>
 @section('content')
 {{-- Page banner (same as About / Teachers) --}}
 <section id="hero" class="hero section tauheed-page-banner">
@@ -45,44 +25,88 @@ education blog, quran study resources')
     </div>
 </section>
 
-<div id="blogs" class="container py-5">
-    <h2 class="mb-4 text-center fw-bold">Latest Blogs</h2>
+<section id="blogs" class="rq-blogs">
+    <div class="container">
+        <div class="rq-blogs-heading" data-aos="fade-up">
+            <span class="rq-blogs-kicker">Insights &amp; Guidance</span>
+            <h2>Latest Articles</h2>
+            <p>Practical Quran learning tips, Tajweed guidance, and Islamic articles for students of every age.</p>
+        </div>
 
-    <div class="row g-4">
-        @forelse($blogs as $blog)
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow rounded-4 overflow-hidden">
-                @if($blog->image_url)
-                <img src="{{ $blog->image_url }}" class="card-img-top object-fit-cover" alt="{{ $blog->title }}"
-                    style="height: 200px; object-fit: cover;">
+        @php
+            $featured = $blogs->onFirstPage() ? $blogs->first() : null;
+        @endphp
+
+        @if($featured)
+            <a href="{{ route('blogs.show', $featured->slug) }}" class="rq-blog-featured" data-aos="fade-up">
+                <div class="rq-blog-featured-media">
+                    <span class="rq-blog-date-chip">
+                        <strong>{{ $featured->created_at->format('d') }}</strong>
+                        <span>{{ $featured->created_at->format('M') }}</span>
+                    </span>
+                    @if($featured->image_url)
+                        <img src="{{ $featured->image_url }}" alt="{{ $featured->title }}">
+                    @else
+                        <div class="rq-blog-placeholder"><i class="bi bi-journal-richtext"></i></div>
+                    @endif
+                </div>
+                <div class="rq-blog-featured-body">
+                    <span class="rq-blog-badge">Latest</span>
+                    <h3>{{ $featured->title }}</h3>
+                    <p>{{ Str::limit($featured->excerpt ?? strip_tags($featured->content), 180) }}</p>
+                    <div class="rq-blog-meta">
+                        <span><i class="bi bi-person"></i>{{ $featured->author ?: 'Rooh Ul Quran' }}</span>
+                        <span><i class="bi bi-calendar3"></i>{{ $featured->created_at->format('M d, Y') }}</span>
+                    </div>
+                    <span class="rq-blog-read">Read article <i class="bi bi-arrow-right"></i></span>
+                </div>
+            </a>
+        @endif
+
+        <div class="row g-4">
+            @forelse($blogs as $blog)
+                @if($featured && $loop->first)
+                    @continue
                 @endif
-
-                <div class="card-body px-4 py-3">
-                    <a href="{{ route('blogs.show', $blog->slug) }}">
-                        <h5 class="card-title fw-bold text-warning mb-3">{{ Str::limit($blog->title, 60) }}</h5>
-                    </a>
-                    <p class="card-text text-black" style="min-height: 60px;">
-                        {{ Str::limit($blog->excerpt ?? strip_tags($blog->content), 100) }}
-                    </p>
-                    <a href="{{ route('blogs.show', $blog->slug) }}"
-                        class="btn btn-outline-success btn-sm mt-3 rounded-pill">Learn More</a>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 50 }}">
+                    <article class="rq-blog-card">
+                        <a href="{{ route('blogs.show', $blog->slug) }}" class="rq-blog-card-media">
+                            <span class="rq-blog-date-chip">
+                                <strong>{{ $blog->created_at->format('d') }}</strong>
+                                <span>{{ $blog->created_at->format('M') }}</span>
+                            </span>
+                            @if($blog->image_url)
+                                <img src="{{ $blog->image_url }}" alt="{{ $blog->title }}">
+                            @else
+                                <div class="rq-blog-placeholder"><i class="bi bi-journal-richtext"></i></div>
+                            @endif
+                        </a>
+                        <div class="rq-blog-card-body">
+                            <h3><a href="{{ route('blogs.show', $blog->slug) }}">{{ Str::limit($blog->title, 72) }}</a></h3>
+                            <p>{{ Str::limit($blog->excerpt ?? strip_tags($blog->content), 110) }}</p>
+                            <div class="rq-blog-card-foot">
+                                <div class="rq-blog-meta mb-0">
+                                    <span><i class="bi bi-person"></i>{{ $blog->author ?: 'Admin' }}</span>
+                                </div>
+                                <a href="{{ route('blogs.show', $blog->slug) }}" class="rq-blog-read">Read <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-
-                <div class="card-footer bg-transparent border-0 text-muted px-4 pb-3 small">
-                    By {{ $blog->author }} • {{ $blog->created_at->format('M d, Y') }}
+            @empty
+                <div class="col-12">
+                    <div class="rq-blogs-empty">
+                        <i class="bi bi-journal-x d-block"></i>
+                        <h3 class="mb-2">No articles yet</h3>
+                        <p class="mb-0 text-muted">New Islamic articles and Quran learning guides will appear here soon.</p>
+                    </div>
                 </div>
-            </div>
+            @endforelse
         </div>
-        @empty
-        <div class="col-12 text-center">
-            <p>No blogs found.</p>
+
+        <div class="rq-blogs-pagination">
+            {{ $blogs->onEachSide(1)->links() }}
         </div>
-        @endforelse
     </div>
-
-    <div class="mt-4 d-flex justify-content-center">
-        {{ $blogs->links() }}
-    </div>
-</div>
-
+</section>
 @endsection
