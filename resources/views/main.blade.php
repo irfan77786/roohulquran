@@ -275,6 +275,7 @@
             </svg>
         </span>
     </a>
+    @include('layouts.partials.lead-popups')
     <script defer src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
     {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script> --}}
