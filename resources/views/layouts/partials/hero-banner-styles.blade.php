@@ -168,7 +168,7 @@
 
     @media (max-width: 991px) {
         #hero.hero-tauheed {
-            padding: 108px 0 60px;
+            padding: 132px 0 60px;
             min-height: auto;
             background-position: 70% bottom;
         }

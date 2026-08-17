@@ -89,34 +89,6 @@
     transform: scale(1.04);
   }
 
-  .header-icon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #1A685B;
-    color: #fff !important;
-    font-size: 1.15rem;
-    text-decoration: none !important;
-    flex-shrink: 0;
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-
-  .header-icon-btn:hover {
-    transform: translateY(-2px);
-    color: #fff !important;
-  }
-
-  .header-icon-btn.header-icon-wa {
-    background: #25D366;
-  }
-
-  .header-icon-btn.header-icon-mail {
-    background: #FF5528;
-  }
-
   @media (max-width: 1199px) {
     #header {
       width: 100%;
@@ -503,7 +475,28 @@
 
   @media (max-width: 1199.98px) {
     #top-header {
-      display: none !important;
+      display: block;
+      padding: 8px 10px;
+      min-height: 0;
+    }
+
+    #top-header .contact-info {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    #top-header .contact-info > div {
+      padding: 5px 12px;
+    }
+
+    #top-header,
+    #top-header .email,
+    #top-header a {
+      font-size: 0.78rem;
+    }
+
+    #top-header .contact-info i {
+      font-size: 0.95rem !important;
     }
   }
 
@@ -538,12 +531,6 @@
     #header .header-actions .btn-getstarted {
       padding: 4px 8px;
       font-size: 10px;
-    }
-
-    .header-icon-btn {
-      width: 34px;
-      height: 34px;
-      font-size: 1rem;
     }
   }
 
@@ -638,8 +625,8 @@
 
   @media (max-width: 1199.98px) {
     body:has(#hero) #header {
-      top: 0;
-      padding-top: 8px;
+      top: 52px;
+      padding-top: 6px;
     }
   }
 

@@ -4,20 +4,18 @@
     <div class="contact-info">
 
       <!-- Phone section -->
-      <div class="d-flex align-items-center justify-content-center me-md-4">
+      <div class="d-flex align-items-center justify-content-center">
         <i class="bi bi-whatsapp me-2"></i>
         <span class="phone-number">
-          <a href="tel:+923344066429" class="text-decoration-none">+92-334-4066429</a>
-          <span class="mobile-separator" style="color: rgba(255, 255, 255, 0.5);">|</span>
-          {{-- <a href="tel:+923446781539" class="text-decoration-none">+92-344-6781539</a> --}}
+          <a href="https://wa.me/923344066429" class="text-decoration-none" target="_blank" rel="noopener">+92-334-4066429</a>
         </span>
       </div>
 
-
-      <!-- Email section -->
       <div class="d-flex align-items-center justify-content-center">
         <i class="bi bi-envelope-fill me-2"></i>
-        <span class="email">info@roohulquranacademy.com</span>
+        <span class="email">
+          <a href="mailto:info@roohulquranacademy.com" class="text-decoration-none">info@roohulquranacademy.com</a>
+        </span>
       </div>
 
     </div>
@@ -33,12 +31,6 @@
     </a>
 
     <div class="d-flex align-items-center gap-2 header-actions">
-      <a href="https://wa.me/923344066429" class="header-icon-btn header-icon-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-      </a>
-      <a href="mailto:info@roohulquranacademy.com" class="header-icon-btn header-icon-mail" aria-label="Email us">
-        <i class="bi bi-envelope-fill"></i>
-      </a>
       <button type="button" class="mobile-nav-toggle d-xl-none" aria-label="Open menu" aria-expanded="false">
         <span class="mobile-nav-toggle-box" aria-hidden="true">
           <span class="mobile-nav-toggle-line"></span>
