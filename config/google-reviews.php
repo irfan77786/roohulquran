@@ -17,7 +17,7 @@ return [
 
     'cache_ttl' => (int) env('GOOGLE_REVIEWS_CACHE_TTL', 1800),
     'stale_ttl' => (int) env('GOOGLE_REVIEWS_STALE_TTL', 86400),
-    'max_reviews' => (int) env('GOOGLE_REVIEWS_MAX', 10),
+    'max_reviews' => (int) env('GOOGLE_REVIEWS_MAX', 50),
     'min_rating' => (int) env('GOOGLE_REVIEWS_MIN_RATING', 4),
 
     /*
