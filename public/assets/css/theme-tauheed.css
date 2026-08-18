@@ -528,6 +528,7 @@ body.rq-lead-open {
 }
 
 /* Hide Tawk chat + floating WhatsApp while a lead popup is open (mobile overlap). */
+body.rq-lead-open .whatsapp-widget,
 body.rq-lead-open .whatsapp-float,
 body.rq-lead-open iframe[src*="tawk.to"],
 body.rq-lead-open iframe[title*="chat"],

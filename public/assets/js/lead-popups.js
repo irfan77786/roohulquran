@@ -212,7 +212,7 @@
             return;
         }
         if (path !== cfg.contactPath) {
-            setTimeout(function () { open('dwell'); }, cfg.dwellDelay || 5000);
+            setTimeout(function () { open('dwell'); }, cfg.dwellDelay || 10000);
         }
     }
 

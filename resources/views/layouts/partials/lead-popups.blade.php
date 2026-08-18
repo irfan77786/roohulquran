@@ -12,7 +12,7 @@
         'storeUrl' => route('trial-class.store'),
         'csrf' => csrf_token(),
         'whatsapp' => $waNumber,
-        'dwellDelay' => (int) config('lead-popups.dwell_delay_ms', 5000),
+        'dwellDelay' => (int) config('lead-popups.dwell_delay_ms', 10000),
         'pageDelay' => (int) config('lead-popups.page_delay_ms', 1500),
         'pricingPath' => rtrim(parse_url(route('home.pricing'), PHP_URL_PATH), '/') ?: '/pricing',
         'contactPath' => rtrim(parse_url(route('home.contact.us'), PHP_URL_PATH), '/') ?: '/contact-us',
@@ -24,7 +24,7 @@
 <div class="rq-lead-root" id="rq-lead-root" hidden>
     <div class="rq-lead-overlay" data-rq-close></div>
 
-    {{-- 1) Stay 5 seconds — trial form --}}
+    {{-- 1) Stay 10 seconds — trial form --}}
     <div class="rq-lead-modal rq-lead-dwell" id="rq-lead-dwell" role="dialog" aria-modal="true" aria-labelledby="rq-lead-dwell-title" hidden>
         <button type="button" class="rq-lead-close" data-rq-close aria-label="Close">&times;</button>
         <div class="rq-lead-dwell-grid">
