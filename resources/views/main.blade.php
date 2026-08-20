@@ -78,21 +78,15 @@
             /* Matches your existing CSS */
         }
 
-        .whatsapp-widget {
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
             left: 20px;
             z-index: 9999;
-        }
-
-        .whatsapp-float {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
-            border: 0;
-            background: transparent;
-            cursor: pointer;
             border-radius: 50%;
             transition: transform 0.3s ease;
         }
@@ -122,145 +116,6 @@
 
         .whatsapp-float:hover {
             transform: scale(1.08);
-        }
-
-        .whatsapp-widget.is-open .whatsapp-float .wa-icon {
-            background-color: #128C7E;
-        }
-
-        .wa-popup {
-            position: absolute;
-            left: 0;
-            bottom: 76px;
-            width: 340px;
-            max-width: calc(100vw - 40px);
-            background: #efeae2;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 16px 40px rgba(17, 27, 33, 0.28);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(12px);
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-        }
-
-        .whatsapp-widget.is-open .wa-popup {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .wa-popup-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #075E54;
-            color: #fff;
-            padding: 12px 12px 12px 14px;
-        }
-
-        .wa-popup-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #fff;
-            flex-shrink: 0;
-        }
-
-        .wa-popup-meta {
-            min-width: 0;
-            flex: 1;
-        }
-
-        .wa-popup-meta strong {
-            display: block;
-            font-size: 15px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .wa-popup-meta span {
-            display: block;
-            font-size: 12px;
-            opacity: 0.85;
-            margin-top: 2px;
-        }
-
-        .wa-popup-close {
-            border: 0;
-            background: transparent;
-            color: #fff;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            font-size: 22px;
-            line-height: 1;
-            cursor: pointer;
-        }
-
-        .wa-popup-body {
-            min-height: 180px;
-            max-height: 280px;
-            overflow-y: auto;
-            padding: 16px 14px;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d7d3cc' fill-opacity='0.45'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .wa-bubble {
-            max-width: 88%;
-            background: #fff;
-            color: #111b21;
-            border-radius: 8px 8px 8px 2px;
-            padding: 10px 12px;
-            font-size: 14px;
-            line-height: 1.45;
-            box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
-        }
-
-        .wa-bubble p {
-            margin: 0 0 8px;
-        }
-
-        .wa-bubble p:last-child {
-            margin-bottom: 0;
-        }
-
-        .wa-popup-footer {
-            display: flex;
-            gap: 8px;
-            padding: 10px;
-            background: #f0f2f5;
-        }
-
-        .wa-popup-footer input {
-            flex: 1;
-            border: 0;
-            border-radius: 24px;
-            padding: 10px 14px;
-            font-size: 14px;
-            outline: none;
-            background: #fff;
-        }
-
-        .wa-popup-send {
-            width: 44px;
-            height: 44px;
-            border: 0;
-            border-radius: 50%;
-            background: #25D366;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        .wa-popup-send i {
-            font-size: 18px;
         }
 
         /* Critical hero + header/nav to avoid CLS before CSS loads */
@@ -392,7 +247,7 @@
         }
 
         @media (max-width: 600px) {
-            .whatsapp-widget {
+            .whatsapp-float {
                 bottom: 15px;
                 left: 15px;
             }
@@ -410,76 +265,18 @@
     @include('layouts.footer')
 
 
-    <!-- WhatsApp chat widget -->
+    <!-- WhatsApp Floating Button -->
     @php
         $waChatNumber = preg_replace('/\D+/', '', (string) config('lead-popups.whatsapp', '923344066429'));
     @endphp
-    <div class="whatsapp-widget" id="whatsapp-widget">
-        <div class="wa-popup" id="wa-popup" role="dialog" aria-label="WhatsApp chat" aria-hidden="true">
-            <div class="wa-popup-header">
-                <img class="wa-popup-avatar" src="{{ asset('assets/img/tab-logo.webp') }}" alt="" width="40" height="40">
-                <div class="wa-popup-meta">
-                    <strong>Rooh Ul Quran Academy</strong>
-                    <span>Typically replies instantly</span>
-                </div>
-                <button type="button" class="wa-popup-close" id="wa-popup-close" aria-label="Close chat">&times;</button>
-            </div>
-            <div class="wa-popup-body">
-                <div class="wa-bubble">
-                    <p>Assalamu Alaikum! 👋</p>
-                    <p>How can we help you with online Quran classes today?</p>
-                </div>
-            </div>
-            <form class="wa-popup-footer" id="wa-chat-form">
-                <input type="text" id="wa-chat-input" placeholder="Type a message..." autocomplete="off" maxlength="500" aria-label="Type a WhatsApp message">
-                <button type="submit" class="wa-popup-send" aria-label="Send on WhatsApp">
-                    <i class="bi bi-send-fill"></i>
-                </button>
-            </form>
-        </div>
-        <button type="button" class="whatsapp-float" id="whatsapp-toggle" aria-label="Chat on WhatsApp" aria-expanded="false" aria-controls="wa-popup">
-            <span class="wa-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" width="34" height="34">
-                    <path
-                        d="M13.601 2.326A7.854 7.854 0 0 0 8.006.001C3.604.001.03 3.575.03 7.977c0 1.405.37 2.776 1.07 3.985L0 16l4.13-1.08a7.93 7.93 0 0 0 3.876 1c4.402 0 7.976-3.574 7.976-7.976a7.93 7.93 0 0 0-2.381-5.618zM8.006 14.5a6.47 6.47 0 0 1-3.3-.9l-.236-.14-2.45.64.655-2.389-.153-.245a6.47 6.47 0 0 1-.99-3.489c0-3.573 2.907-6.48 6.474-6.48a6.43 6.43 0 0 1 4.588 1.896 6.43 6.43 0 0 1 1.896 4.584c0 3.568-2.907 6.483-6.484 6.483zm3.686-4.853c-.202-.101-1.192-.59-1.377-.658-.184-.067-.318-.101-.452.102-.133.202-.518.657-.635.792-.117.134-.234.151-.436.05-.202-.102-.851-.313-1.622-.997-.6-.534-1.005-1.194-1.123-1.396-.117-.202-.012-.311.089-.412.092-.091.202-.235.303-.352.101-.117.134-.201.202-.336.067-.134.034-.252-.017-.353-.05-.102-.452-1.087-.62-1.488-.163-.392-.329-.339-.452-.343l-.384-.007c-.134 0-.353.051-.537.252-.184.202-.704.69-.704 1.68s.72 1.951.82 2.085c.101.134 1.417 2.162 3.434 3.033.48.207.855.33 1.147.422.482.153.921.132 1.27.08.387-.058 1.192-.487 1.36-.957.168-.47.168-.873.118-.957-.05-.084-.185-.134-.387-.235z" />
-                </svg>
-            </span>
-        </button>
-    </div>
-    <script>
-        (function () {
-            var widget = document.getElementById('whatsapp-widget');
-            var toggle = document.getElementById('whatsapp-toggle');
-            var closeBtn = document.getElementById('wa-popup-close');
-            var popup = document.getElementById('wa-popup');
-            var form = document.getElementById('wa-chat-form');
-            var input = document.getElementById('wa-chat-input');
-            var phone = '{{ $waChatNumber }}';
-            var defaultMsg = 'Assalamu Alaikum, I want to know about online Quran classes.';
-
-            function setOpen(open) {
-                widget.classList.toggle('is-open', open);
-                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-                popup.setAttribute('aria-hidden', open ? 'false' : 'true');
-                if (open) {
-                    setTimeout(function () { input.focus(); }, 180);
-                }
-            }
-
-            toggle.addEventListener('click', function () {
-                setOpen(!widget.classList.contains('is-open'));
-            });
-            closeBtn.addEventListener('click', function () { setOpen(false); });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') setOpen(false);
-            });
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                var text = (input.value || '').trim() || defaultMsg;
-                window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-            });
-        })();
-    </script>
+    <a href="https://wa.me/{{ $waChatNumber }}" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <span class="wa-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" width="34" height="34">
+                <path
+                    d="M13.601 2.326A7.854 7.854 0 0 0 8.006.001C3.604.001.03 3.575.03 7.977c0 1.405.37 2.776 1.07 3.985L0 16l4.13-1.08a7.93 7.93 0 0 0 3.876 1c4.402 0 7.976-3.574 7.976-7.976a7.93 7.93 0 0 0-2.381-5.618zM8.006 14.5a6.47 6.47 0 0 1-3.3-.9l-.236-.14-2.45.64.655-2.389-.153-.245a6.47 6.47 0 0 1-.99-3.489c0-3.573 2.907-6.48 6.474-6.48a6.43 6.43 0 0 1 4.588 1.896 6.43 6.43 0 0 1 1.896 4.584c0 3.568-2.907 6.483-6.484 6.483zm3.686-4.853c-.202-.101-1.192-.59-1.377-.658-.184-.067-.318-.101-.452.102-.133.202-.518.657-.635.792-.117.134-.234.151-.436.05-.202-.102-.851-.313-1.622-.997-.6-.534-1.005-1.194-1.123-1.396-.117-.202-.012-.311.089-.412.092-.091.202-.235.303-.352.101-.117.134-.201.202-.336.067-.134.034-.252-.017-.353-.05-.102-.452-1.087-.62-1.488-.163-.392-.329-.339-.452-.343l-.384-.007c-.134 0-.353.051-.537.252-.184.202-.704.69-.704 1.68s.72 1.951.82 2.085c.101.134 1.417 2.162 3.434 3.033.48.207.855.33 1.147.422.482.153.921.132 1.27.08.387-.058 1.192-.487 1.36-.957.168-.47.168-.873.118-.957-.05-.084-.185-.134-.387-.235z" />
+            </svg>
+        </span>
+    </a>
     @include('layouts.partials.lead-popups')
     <script defer src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
