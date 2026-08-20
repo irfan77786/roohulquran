@@ -161,16 +161,46 @@ class BlogController extends Controller
 
         $extension = strtolower($uploadedFile->getClientOriginalExtension() ?: $uploadedFile->guessExtension() ?: 'jpg');
         $filename = 'blog_' . $blogId . '_' . time() . '_' . Str::random(8) . '.' . $extension;
-        $directory = storage_path('app/public/blogs');
+        $relative = 'blogs/' . $filename;
 
-        if (! is_dir($directory) && ! mkdir($directory, 0755, true) && ! is_dir($directory)) {
-            throw new \RuntimeException('Unable to create blog image directory.');
+        $publicDir = public_path('uploads/blogs');
+        $storageDir = storage_path('app/public/blogs');
+
+        foreach ([$publicDir, $storageDir] as $directory) {
+            if (! is_dir($directory) && ! mkdir($directory, 0755, true) && ! is_dir($directory)) {
+                throw new \RuntimeException('Unable to create blog image directory.');
+            }
         }
 
-        // move() avoids Flysystem chmod/visibility failures on Windows/XAMPP.
-        $uploadedFile->move($directory, $filename);
+        // Save into public/uploads so the image is web-accessible without a storage symlink.
+        $uploadedFile->move($publicDir, $filename);
+        $publicFile = $publicDir . DIRECTORY_SEPARATOR . $filename;
 
-        return 'blogs/' . $filename;
+        if (is_file($publicFile)) {
+            @copy($publicFile, $storageDir . DIRECTORY_SEPARATOR . $filename);
+        }
+
+        $this->ensureStorageLink();
+
+        return $relative;
+    }
+
+    private function ensureStorageLink(): void
+    {
+        $link = public_path('storage');
+        $target = storage_path('app/public');
+
+        if (file_exists($link) || is_link($link)) {
+            return;
+        }
+
+        try {
+            if (function_exists('symlink')) {
+                @symlink($target, $link);
+            }
+        } catch (\Throwable $e) {
+            \Log::info('Could not create storage symlink: ' . $e->getMessage());
+        }
     }
 
     private function deleteFeaturedImage(?string $path): void
@@ -193,7 +223,18 @@ class BlogController extends Controller
         }
 
         if (! filter_var($path, FILTER_VALIDATE_URL)) {
-            Storage::disk('public')->delete($path);
+            $relative = ltrim(str_replace('\\', '/', $path), '/');
+            foreach (['public/', 'storage/', 'uploads/'] as $prefix) {
+                if (str_starts_with($relative, $prefix)) {
+                    $relative = substr($relative, strlen($prefix));
+                }
+            }
+
+            Storage::disk('public')->delete($relative);
+            $publicUpload = public_path('uploads/' . $relative);
+            if (is_file($publicUpload)) {
+                @unlink($publicUpload);
+            }
         }
     }
 

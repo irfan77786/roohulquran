@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\TrialClassController;
 use Illuminate\Support\Facades\Auth;
@@ -117,6 +118,7 @@ Route::prefix('blogs')->name('blogs.')->group(function () {
 });
 
 Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
+Route::get('/storage/{path}', [MediaController::class, 'storage'])->where('path', '.*')->name('media.storage');
 
 // UK City-specific routes (generated into routes/uk-cities.php)
 if (file_exists(__DIR__ . '/uk-cities.php')) {

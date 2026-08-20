@@ -31,8 +31,17 @@ class Blog extends Model
             return null;
         }
 
-        // UploadedFile was accidentally saved as a Windows/PHP temp path.
-        if (preg_match('/^[A-Za-z]:[\\\\\\/]/', $image) || str_starts_with($image, '/tmp/')) {
+        $image = str_replace('\\', '/', $image);
+
+        if (preg_match('/^[A-Za-z]:\//', $image) || str_starts_with($image, '/tmp/')) {
+            $basename = basename($image);
+            if ($basename !== '' && $basename !== $image) {
+                $relative = 'blogs/' . $basename;
+                if ($url = $this->publicFileUrl($relative)) {
+                    return $url;
+                }
+            }
+
             return null;
         }
 
@@ -40,15 +49,36 @@ class Blog extends Model
             return $image;
         }
 
-        $image = ltrim(str_replace('\\', '/', $image), '/');
-        if (str_starts_with($image, 'public/')) {
-            $image = substr($image, 7);
-        }
-        if (str_starts_with($image, 'storage/')) {
-            $image = substr($image, 8);
+        $relative = ltrim($image, '/');
+        foreach (['public/', 'storage/', 'uploads/'] as $prefix) {
+            if (str_starts_with($relative, $prefix)) {
+                $relative = substr($relative, strlen($prefix));
+            }
         }
 
-        // Root-relative URL so images work on http and https (no mixed-content).
-        return '/storage/' . $image;
+        if (! str_contains($relative, '/')) {
+            $relative = 'blogs/' . $relative;
+        }
+
+        return $this->publicFileUrl($relative) ?? '/storage/' . $relative;
+    }
+
+    private function publicFileUrl(string $relative): ?string
+    {
+        $relative = ltrim(str_replace('\\', '/', $relative), '/');
+
+        if (is_file(public_path('uploads/' . $relative))) {
+            return '/uploads/' . $relative;
+        }
+
+        if (is_file(public_path('storage/' . $relative))) {
+            return '/storage/' . $relative;
+        }
+
+        if (is_file(storage_path('app/public/' . $relative))) {
+            return '/storage/' . $relative;
+        }
+
+        return null;
     }
 }
