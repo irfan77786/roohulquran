@@ -203,17 +203,17 @@
 
     function schedule() {
         if (captured()) return;
+        if (path === cfg.contactPath) return;
+        var delay = cfg.popupDelay || cfg.dwellDelay || cfg.pageDelay || 15000;
         if (path === cfg.pricingPath) {
-            setTimeout(function () { open('pricing'); }, cfg.pageDelay || 1500);
+            setTimeout(function () { open('pricing'); }, delay);
             return;
         }
         if (isCourse()) {
-            setTimeout(function () { open('courses'); }, cfg.pageDelay || 1500);
+            setTimeout(function () { open('courses'); }, delay);
             return;
         }
-        if (path !== cfg.contactPath) {
-            setTimeout(function () { open('dwell'); }, cfg.dwellDelay || 10000);
-        }
+        setTimeout(function () { open('dwell'); }, delay);
     }
 
     window.Tawk_API = window.Tawk_API || {};

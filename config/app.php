@@ -58,6 +58,8 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'sitemap_base_url' => env('SITEMAP_BASE_URL', 'https://roohulquranacademy.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

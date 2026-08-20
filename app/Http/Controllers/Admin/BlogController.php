@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\AdminNotification;
+use App\Services\BlogSitemapService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -85,6 +86,8 @@ class BlogController extends Controller
             );
         }
 
+        app(BlogSitemapService::class)->regenerate();
+
         return redirect()->route('admin.blogs.index')->with('success', 'Blog created!');
     }
 
@@ -120,6 +123,8 @@ class BlogController extends Controller
             $blog->save();
         }
 
+        app(BlogSitemapService::class)->regenerate();
+
         return redirect()->route('admin.blogs.index')->with('success', 'Blog updated!');
     }
 
@@ -129,6 +134,8 @@ class BlogController extends Controller
         $this->deleteFeaturedImage($blog->featured_image);
 
         $blog->delete();
+        app(BlogSitemapService::class)->regenerate();
+
         return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted!');
     }
 
