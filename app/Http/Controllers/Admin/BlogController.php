@@ -41,42 +41,28 @@ class BlogController extends Controller
         }
 
         $blogs = $query->latest()->paginate(10)->withQueryString();
-
-        return view('admin.blog.index', [
-            'blogs' => $blogs,
-            'suggestedLinks' => $this->suggestedInternalLinks(),
-            'formBlog' => old('blog_id') ? Blog::find(old('blog_id')) : null,
-        ]);
+        return view('admin.blog.index', compact('blogs'));
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        if ($request->ajax()) {
-            return view('admin.blog.partials.form', [
-                'suggestedLinks' => $this->suggestedInternalLinks(),
-            ]);
-        }
-
-        return redirect()->route('admin.blogs.index', ['create' => 1]);
+        return view('admin.blog.create');
     }
 
     public function store(Request $request)
     {
-        $validated = $this->validatedBlogData($request);
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'content' => 'required',
+            'featured_image' => 'nullable|image',
+            'seo' => 'nullable|array',
+
+        ]);
+
+        $validated['slug'] = Str::slug($request->title);
+        $validated['author'] = auth()->user()->name;
         $imageFile = $request->file('featured_image');
         unset($validated['featured_image']);
-
-        $validated['slug'] = $this->uniqueSlug($validated['title'], $request->input('slug'));
-        $validated['author'] = auth()->user()->name;
-        $validated['content'] = $this->normalizeHeadings($validated['content']);
-        $validated['faqs'] = $this->cleanRepeater($request->input('faqs', []), ['question', 'answer']);
-        $validated['internal_links'] = $this->cleanRepeater($request->input('internal_links', []), ['label', 'url']);
-        $validated['seo'] = [
-            'keywords' => trim(implode(', ', array_filter([
-                $validated['primary_keyword'] ?? '',
-                $validated['secondary_keywords'] ?? '',
-            ]))),
-        ];
 
         $blog = new Blog($validated);
         $blog->save();
@@ -86,6 +72,7 @@ class BlogController extends Controller
             $blog->save();
         }
 
+        // Create notification
         if ($blog->status) {
             AdminNotification::createNotification(
                 'blog',
@@ -110,34 +97,23 @@ class BlogController extends Controller
     }
 
 
-    public function edit(Request $request, Blog $blog)
+    public function edit(Blog $blog)
     {
-        if ($request->ajax()) {
-            return view('admin.blog.partials.form', [
-                'blog' => $blog,
-                'suggestedLinks' => $this->suggestedInternalLinks(),
-            ]);
-        }
-
-        return redirect()->route('admin.blogs.index', ['edit' => $blog->id]);
+        return view('admin.blog.create', compact('blog'));
     }
     public function update(Request $request, Blog $blog)
     {
-        $validated = $this->validatedBlogData($request);
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'content' => 'required',
+            'featured_image' => 'nullable|image',
+            'seo' => 'nullable|array',
+        ]);
+
+        $validated['slug'] = Str::slug($request->title);
+        $validated['author'] = auth()->user()->name;
         $imageFile = $request->file('featured_image');
         unset($validated['featured_image']);
-
-        $validated['slug'] = $this->uniqueSlug($validated['title'], $request->input('slug'), $blog->id);
-        $validated['author'] = auth()->user()->name;
-        $validated['content'] = $this->normalizeHeadings($validated['content']);
-        $validated['faqs'] = $this->cleanRepeater($request->input('faqs', []), ['question', 'answer']);
-        $validated['internal_links'] = $this->cleanRepeater($request->input('internal_links', []), ['label', 'url']);
-        $validated['seo'] = [
-            'keywords' => trim(implode(', ', array_filter([
-                $validated['primary_keyword'] ?? '',
-                $validated['secondary_keywords'] ?? '',
-            ]))),
-        ];
 
         $blog->update($validated);
 
@@ -161,92 +137,6 @@ class BlogController extends Controller
         app(BlogSitemapService::class)->regenerate();
 
         return redirect()->route('admin.blogs.index')->with('success', 'Blog deleted!');
-    }
-
-    private function validatedBlogData(Request $request): array
-    {
-        $data = $request->validate([
-            'title' => 'required|string|max:180',
-            'slug' => 'nullable|string|max:180',
-            'meta_title' => 'nullable|string|max:70',
-            'meta_description' => 'nullable|string|max:180',
-            'excerpt' => 'nullable|string|max:300',
-            'primary_keyword' => 'nullable|string|max:120',
-            'secondary_keywords' => 'nullable|string|max:500',
-            'content' => 'required|string',
-            'featured_image' => 'nullable|image',
-            'status' => 'nullable',
-        ]);
-
-        $data['status'] = $request->boolean('status');
-        $data['meta_keywords'] = trim(implode(', ', array_filter([
-            $data['primary_keyword'] ?? '',
-            $data['secondary_keywords'] ?? '',
-        ])));
-
-        return $data;
-    }
-
-    private function uniqueSlug(string $title, ?string $requested = null, ?int $ignoreId = null): string
-    {
-        $slug = Str::slug($requested ?: $title) ?: 'blog';
-        $base = $slug;
-        $i = 2;
-
-        while (
-            Blog::where('slug', $slug)
-                ->when($ignoreId, fn ($query) => $query->where('id', '!=', $ignoreId))
-                ->exists()
-        ) {
-            $slug = $base . '-' . $i;
-            $i++;
-        }
-
-        return $slug;
-    }
-
-    private function normalizeHeadings(string $content): string
-    {
-        $content = preg_replace('/<h1(\b[^>]*)>/i', '<h2$1>', $content) ?? $content;
-
-        return str_ireplace('</h1>', '</h2>', $content);
-    }
-
-    private function cleanRepeater($rows, array $required): array
-    {
-        if (! is_array($rows)) {
-            return [];
-        }
-
-        $clean = [];
-        foreach ($rows as $row) {
-            if (! is_array($row)) {
-                continue;
-            }
-            $item = [];
-            foreach ($required as $key) {
-                $item[$key] = trim((string) ($row[$key] ?? ''));
-            }
-            if (count(array_filter($item)) === count($required)) {
-                $clean[] = $item;
-            }
-        }
-
-        return $clean;
-    }
-
-    private function suggestedInternalLinks(): array
-    {
-        return [
-            ['label' => 'Quran Reading with Tajweed', 'url' => route('quran.tajweed')],
-            ['label' => 'Noorani Qaida for beginners', 'url' => route('quran.recitation')],
-            ['label' => 'Quran Memorization (Hifz)', 'url' => route('quran.memorization')],
-            ['label' => 'Tafseer course', 'url' => route('quran.tafseer')],
-            ['label' => 'Kids Quran classes', 'url' => route('kids.classes')],
-            ['label' => 'Pricing', 'url' => route('home.pricing')],
-            ['label' => 'Meet our teachers', 'url' => route('teachers')],
-            ['label' => '3-day free trial / Contact', 'url' => route('home.contact.us')],
-        ];
     }
 
     private function cloudinaryConfigured(): bool

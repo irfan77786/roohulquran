@@ -69,8 +69,8 @@ education blog, quran study resources')
                     @continue
                 @endif
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 50 }}">
-                    <a href="{{ route('blogs.show', $blog->slug) }}" class="rq-blog-card">
-                        <div class="rq-blog-card-media">
+                    <article class="rq-blog-card">
+                        <a href="{{ route('blogs.show', $blog->slug) }}" class="rq-blog-card-media">
                             <span class="rq-blog-date-chip">
                                 <strong>{{ $blog->created_at->format('d') }}</strong>
                                 <span>{{ $blog->created_at->format('M') }}</span>
@@ -80,18 +80,18 @@ education blog, quran study resources')
                             @else
                                 <div class="rq-blog-placeholder"><i class="bi bi-journal-richtext"></i></div>
                             @endif
-                        </div>
+                        </a>
                         <div class="rq-blog-card-body">
-                            <h3>{{ Str::limit($blog->title, 72) }}</h3>
+                            <h3><a href="{{ route('blogs.show', $blog->slug) }}">{{ Str::limit($blog->title, 72) }}</a></h3>
                             <p>{{ Str::limit($blog->excerpt ?? strip_tags($blog->content), 110) }}</p>
                             <div class="rq-blog-card-foot">
                                 <div class="rq-blog-meta mb-0">
                                     <span><i class="bi bi-person"></i>{{ $blog->author ?: 'Admin' }}</span>
                                 </div>
-                                <span class="rq-blog-read">Read <i class="bi bi-arrow-right"></i></span>
+                                <a href="{{ route('blogs.show', $blog->slug) }}" class="rq-blog-read">Read <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                    </a>
+                    </article>
                 </div>
             @empty
                 <div class="col-12">
@@ -107,8 +107,6 @@ education blog, quran study resources')
         <div class="rq-blogs-pagination">
             {{ $blogs->onEachSide(1)->links() }}
         </div>
-
-        @include('blogs.partials.trial-cta')
     </div>
 </section>
 @endsection
