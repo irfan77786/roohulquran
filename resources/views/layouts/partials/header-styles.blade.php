@@ -443,6 +443,27 @@
       overflow: hidden;
     }
 
+    /* Header is position:fixed + backdrop-filter after scroll, which
+       becomes the containing block and clips the slide-in menu. */
+    body.mobile-nav-active #header {
+      overflow: visible !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      transform: none !important;
+      filter: none !important;
+      z-index: 10050 !important;
+    }
+
+    body.mobile-nav-active .mobile-nav-overlay {
+      z-index: 10051;
+    }
+
+    body.mobile-nav-active .navmenu .mobile-nav-panel {
+      z-index: 10052;
+      top: 0 !important;
+      height: 100dvh !important;
+    }
+
     /* Override legacy main.css full-screen nav */
     .mobile-nav-active .navmenu {
       position: static !important;
