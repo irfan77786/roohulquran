@@ -8,7 +8,8 @@
     <title>@yield('title', 'Online Quran Classes For Kids And Adults')</title>
     @yield('meta')
 
-    <meta property="og:title" content="Roohul Quran Online Academy">
+    <meta property="og:title" content="@yield('og_title', 'Roohul Quran Online Academy')">
+    <meta property="og:description" content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
     <meta property="og:site_name" content="Roohul Quran Online Academy">
     <link rel="canonical" href="{{ url()->current() }}">
 
