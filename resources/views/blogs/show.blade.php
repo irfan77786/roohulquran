@@ -1,179 +1,131 @@
 @extends('main')
 
-@section('title', $blog->seo_title)
-@section('og_title', $blog->seo_title)
-@section('meta_description', $blog->seo_description)
-@section('meta_keywords', $blog->seo_keywords)
+@section('title', $blog->meta_title ?? $blog->title)
 
-@section('meta')
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ url()->current() }}">
-    @if($blog->image_url)
-        <meta property="og:image" content="{{ url($blog->image_url) }}">
-    @endif
-    <meta name="author" content="{{ $blog->author ?: 'Rooh Ul Quran Academy' }}">
-@endsection
+@section('meta_keywords', $blog['meta_keywords'] ?? $blog->seo['keywords'])
 
+@section('meta_description', $blog['meta_description'] ?? '')
+<style>
+    .card-title {
+    font-family: 'Georgia', serif;
+    line-height: 1.4;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #1f1872;
+    color: white;
+}
+
+</style>
 @section('content')
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-10">
-            <article class="rq-blog-article">
-                @if($blog->image_url)
-                    <div class="mb-4">
-                        <img src="{{ $blog->image_url }}"
-                             alt="{{ $blog->title }}"
-                             class="img-fluid rounded shadow w-100"
-                             style="max-height: 700px; object-fit: cover;">
-                    </div>
-                @endif
 
-                <h1 class="fw-bold text-dark mb-2">{{ $blog->title }}</h1>
-                <div class="text-muted mb-4">
-                    By <strong>{{ $blog->author ?: 'Rooh Ul Quran Academy' }}</strong>
-                    | {{ $blog->created_at->format('F d, Y') }}
-                </div>
+            {{-- Featured Image --}}
+            @if($blog->image_url)
+            <div class="mb-4">
+                <img src="{{ $blog->image_url }}"
+                     alt="{{ $blog->title }}"
+                     class="img-fluid rounded shadow w-100"
+                     style="max-height: 700px; object-fit: cover;">
+            </div>
+            @endif
 
-                @if($blog->excerpt)
-                    <p class="rq-blog-lead">{{ $blog->excerpt }}</p>
-                @endif
+            {{-- Title & Meta --}}
+            <h1 class="fw-bold text-dark mb-2">{{ $blog->title }}</h1>
+            <div class="text-muted mb-4">
+                By <strong>{{ $blog->author }}</strong> | {{ $blog->created_at->format('F d, Y') }}
+            </div>
 
-                <div class="rq-blog-content content">
+            {{-- Content --}}
+            <article class="mb-5" style="line-height: 1.8;">
+                <div class="content">
                     {!! $blog->content !!}
                 </div>
             </article>
 
-            @php $internalLinks = $blog->internalLinkItems(); @endphp
-            @if(count($internalLinks))
-                <nav class="rq-blog-links" aria-label="Related academy pages">
-                    <h2>Explore related classes</h2>
-                    <ul>
-                        @foreach($internalLinks as $link)
-                            <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
-                        @endforeach
-                    </ul>
-                </nav>
-            @endif
-
-            @php $faqs = $blog->faqItems(); @endphp
-            @if(count($faqs))
-                <section id="faq" class="rq-blog-faqs py-4" data-aos="fade-up">
-                    <div class="text-center mb-4">
-                        <h2 class="fw-bold" style="color:#122F2A;">Frequently Asked Questions</h2>
-                        <p class="text-muted mb-0">Find answers to the most common questions about this article and our online Quran classes.</p>
-                    </div>
-                    <div class="accordion" id="blogFaqAccordion">
-                        @foreach($faqs as $index => $faq)
-                            @php $faqId = $index + 1; @endphp
-                            <div class="accordion-item mb-3 shadow-sm rounded">
-                                <h2 class="accordion-header" id="blog-faq-heading-{{ $faqId }}">
-                                    <button class="accordion-button collapsed fw-semibold" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#blog-faq-collapse-{{ $faqId }}"
-                                        aria-expanded="false"
-                                        aria-controls="blog-faq-collapse-{{ $faqId }}">
-                                        {{ $faq['question'] }}
-                                    </button>
-                                </h2>
-                                <div id="blog-faq-collapse-{{ $faqId }}" class="accordion-collapse collapse"
-                                    aria-labelledby="blog-faq-heading-{{ $faqId }}"
-                                    data-bs-parent="#blogFaqAccordion">
-                                    <div class="accordion-body">
-                                        {{ $faq['answer'] }}
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </section>
-            @endif
-
-            @include('blogs.partials.trial-cta')
-
-            <div class="mb-5 mt-4">
+            {{-- Social Sharing --}}
+            <div class="mb-5">
                 <h5 class="mb-3">Share this blog:</h5>
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Facebook</a>
-                    <a href="https://wa.me/?text={{ urlencode($blog->title . ' ' . request()->fullUrl()) }}" target="_blank" rel="noopener" class="btn btn-success btn-sm">WhatsApp</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" rel="noopener" rel="noopener" class="btn btn-primary btn-sm">Facebook</a>
+                    <a href="https://wa.me/?text={{ urlencode($blog->title . ' ' . request()->fullUrl()) }}" target="_blank" rel="noopener" rel="noopener" class="btn btn-success btn-sm">WhatsApp</a>
                 </div>
             </div>
 
+            {{-- Related Blogs --}}
             @if($relatedBlogs->count())
             <div class="mt-5 mb-5">
-                <h2 class="fw-bold mb-4" style="color:#122F2A;font-size:1.4rem">You may also like</h2>
+                <h4 class="fw-bold mb-4" style="color:#122F2A">You may also like</h4>
                 <div class="row g-4">
                     @foreach($relatedBlogs as $related)
                         <div class="col-sm-6 col-md-4">
-                            <a href="{{ route('blogs.show', $related->slug) }}" class="rq-blog-card">
-                                <div class="rq-blog-card-media">
+                            <article class="rq-blog-card">
+                                <a href="{{ route('blogs.show', $related->slug) }}" class="rq-blog-card-media">
                                     @if($related->image_url)
                                         <img src="{{ $related->image_url }}" alt="{{ $related->title }}">
                                     @else
                                         <div class="rq-blog-placeholder"><i class="bi bi-journal-richtext"></i></div>
                                     @endif
-                                </div>
+                                </a>
                                 <div class="rq-blog-card-body">
-                                    <h3>{{ Str::limit($related->title, 50) }}</h3>
+                                    <h3><a href="{{ route('blogs.show', $related->slug) }}">{{ Str::limit($related->title, 50) }}</a></h3>
                                     <p>{{ Str::limit($related->excerpt ?? strip_tags($related->content), 80) }}</p>
-                                    <span class="rq-blog-read">Read <i class="bi bi-arrow-right"></i></span>
+                                    <a href="{{ route('blogs.show', $related->slug) }}" class="rq-blog-read">Read <i class="bi bi-arrow-right"></i></a>
                                 </div>
-                            </a>
+                            </article>
                         </div>
                     @endforeach
                 </div>
             </div>
             @endif
+
         </div>
     </div>
 </div>
 
+{{-- Testimonials --}}
 <div class="container">
     @include('layouts.testimonial')
 </div>
-
-@php
-    $schema = [
-        '@context' => 'https://schema.org',
-        '@type' => 'Article',
-        'headline' => $blog->seo_title,
-        'description' => $blog->seo_description,
-        'author' => [
-            '@type' => 'Organization',
-            'name' => $blog->author ?: 'Rooh Ul Quran Academy',
-        ],
-        'publisher' => [
-            '@type' => 'EducationalOrganization',
-            'name' => 'Rooh Ul Quran Academy',
-            'url' => url('/'),
-        ],
-        'datePublished' => optional($blog->created_at)->toIso8601String(),
-        'dateModified' => optional($blog->updated_at)->toIso8601String(),
-        'mainEntityOfPage' => [
-            '@type' => 'WebPage',
-            '@id' => url()->current(),
-        ],
-    ];
-    if ($blog->image_url) {
-        $schema['image'] = url($blog->image_url);
-    }
-    $faqSchema = null;
-    if (count($faqs)) {
-        $faqSchema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'FAQPage',
-            'mainEntity' => array_map(fn ($faq) => [
-                '@type' => 'Question',
-                'name' => $faq['question'],
-                'acceptedAnswer' => [
-                    '@type' => 'Answer',
-                    'text' => $faq['answer'],
-                ],
-            ], $faqs),
-        ];
-    }
-@endphp
-<script type="application/ld+json">{!! json_encode($schema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-@if($faqSchema)
-<script type="application/ld+json">{!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-@endif
 @endsection
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Hajj: The Fifth Pillar of Islam",
+  "description": "An in-depth article on the importance of Hajj, the fifth pillar of Islam. It explains its spiritual benefits, historical significance, and the unity it brings to Muslims worldwide.",
+  "author": {
+    "@type": "Person",
+    "name": "Admin"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Rooh Ul Quran Academy",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://roohulquranacademy.com/storage/blogs/8/0D8u16QnqC6oJsbnL5K0gjNRrT63mNU9Lsl5tJBw.jpg"
+    },
+    "url": "https://roohulquranacademy.com"
+  },
+  "datePublished": "2025-06-05",
+  "dateModified": "2025-06-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://roohulquranacademy.com/blogs/hajj-the-fifth-pillar-of-islam"
+  },
+  "image": "https://roohulquranacademy.com/storage/blogs/8/0D8u16QnqC6oJsbnL5K0gjNRrT63mNU9Lsl5tJBw.jpg"
+}
+</script>
+

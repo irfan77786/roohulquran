@@ -23,216 +23,16 @@
         rel="stylesheet">
 
         <style>
-          .left-sidebar {
-              display: none !important;
-          }
-
-          .body-wrapper {
-              margin-left: 0 !important;
-          }
-
-          #main-wrapper[data-layout=vertical][data-sidebartype=full] .body-wrapper {
-              margin-left: 0 !important;
-          }
-
-          #main-wrapper[data-layout=vertical][data-header-position=fixed] .app-header {
-              left: 0 !important;
-              right: 0 !important;
-              width: 100% !important;
-              max-width: 100% !important;
-          }
-
-          .app-header {
-              background: rgba(255, 255, 255, 0.92) !important;
-              backdrop-filter: blur(16px);
-              -webkit-backdrop-filter: blur(16px);
-              border-bottom: none !important;
-              padding: 0 28px;
-              z-index: 1030 !important;
-              box-shadow: 0 1px 0 rgba(18, 47, 42, 0.06), 0 10px 28px rgba(18, 47, 42, 0.05);
-          }
-
-          .app-header::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              height: 2px;
-              background: linear-gradient(90deg, #122F2A 0%, #1A685B 45%, #C4A35A 100%);
-          }
-
-          .app-header .navbar {
-              min-height: 72px;
-              flex-wrap: wrap;
-              padding: 0;
-          }
-
-          .app-header .navbar-brand {
-              padding: 0;
-              margin-right: 8px;
-          }
-
-          .app-header .navbar-brand img {
-              height: 46px;
-              width: auto;
-              display: block;
-          }
-
-          .admin-header-actions {
-              order: 1;
-          }
-
-          #adminHeaderNav {
-              order: 2;
-          }
-
-          @media (min-width: 992px) {
-              #adminHeaderNav {
-                  order: 1;
-                  flex: 1 1 auto;
-                  justify-content: center;
-              }
-
-              .admin-header-actions {
-                  order: 2;
-                  margin-left: 0 !important;
-              }
-          }
-
-          #main-wrapper .app-header .navbar .navbar-nav .nav-item .nav-link {
-              height: auto !important;
-              line-height: 1.2 !important;
-          }
-
-          #main-wrapper .app-header .navbar .admin-top-nav .nav-item .nav-link,
-          .admin-top-nav .nav-link {
-              font-size: 0.84rem !important;
-              font-weight: 600;
-              letter-spacing: 0.04em;
-              text-transform: uppercase;
-              color: #122F2A !important;
-              padding: 0.45rem 0.95rem !important;
-              border-radius: 999px;
-              background: transparent !important;
-              position: relative;
-              transition: color 0.2s ease, background 0.2s ease;
-          }
-
-          .admin-top-nav .nav-link:hover {
-              color: #1A685B !important;
-              background: rgba(26, 104, 91, 0.07) !important;
-          }
-
-          .admin-top-nav .nav-link.active {
-              color: #1A685B !important;
-              background: transparent !important;
-          }
-
-          .admin-top-nav .nav-link.active::after {
-              content: "";
-              position: absolute;
-              left: 18px;
-              right: 18px;
-              bottom: 4px;
-              height: 2px;
-              border-radius: 2px;
-              background: #C4A35A;
-          }
-
-          .admin-top-nav .nav-link .admin-nav-badge {
-              min-width: 18px;
-              height: 18px;
-              padding: 0 5px;
-              font-size: 0.65rem;
-              font-weight: 700;
-              letter-spacing: 0;
-              text-transform: none;
-              line-height: 18px;
-              border-radius: 999px;
-              background: #FF5528;
-              color: #fff;
-          }
-
-          .admin-visit-link {
-              border: 1px solid rgba(26, 104, 91, 0.28) !important;
-              color: #1A685B !important;
-              background: transparent !important;
-          }
-
-          .admin-visit-link:hover {
-              background: #1A685B !important;
-              color: #fff !important;
-              border-color: #1A685B !important;
-          }
-
-          .admin-visit-link::after {
-              display: none !important;
-          }
-
-          #main-wrapper .app-header .admin-icon-btn {
-              width: 40px;
-              height: 40px !important;
-              border-radius: 50%;
-              display: inline-flex !important;
-              align-items: center;
-              justify-content: center;
-              color: #122F2A !important;
-              background: #f3f7f6 !important;
-              padding: 0 !important;
-              line-height: 1 !important;
-              font-size: 1.05rem !important;
-              text-transform: none;
-              letter-spacing: 0;
-              transition: background 0.2s ease, color 0.2s ease;
-          }
-
-          #main-wrapper .app-header .admin-icon-btn:hover {
-              background: rgba(26, 104, 91, 0.12) !important;
-              color: #1A685B !important;
-          }
-
-          #main-wrapper .app-header .admin-avatar-btn {
-              padding: 0 !important;
-              height: auto !important;
-              line-height: 0 !important;
-              background: transparent !important;
-          }
-
-          .admin-avatar-btn img {
-              width: 38px;
-              height: 38px;
-              object-fit: cover;
-              border: 2px solid #1A685B;
-              box-shadow: 0 0 0 3px rgba(26, 104, 91, 0.12);
-          }
-
-          .admin-header-dropdown {
-              border: 0;
-              border-radius: 14px;
-              box-shadow: 0 16px 40px rgba(18, 47, 42, 0.14);
-              padding: 8px;
-          }
-
-          .admin-header-dropdown .dropdown-item {
-              border-radius: 8px;
-              font-size: 0.9rem;
-              padding: 0.55rem 0.85rem;
-              color: #122F2A;
-          }
-
-          .admin-header-dropdown .dropdown-item:hover,
-          .admin-header-dropdown .dropdown-item.active {
-              background: rgba(26, 104, 91, 0.08);
-              color: #1A685B;
-          }
-
           .page-content {
-              margin-left: 0;
-              width: 100%;
-              max-width: 100%;
+              margin-left: 250px; /* Match your sidebar width if fixed */
               padding: 2rem;
-              padding-top: 90px;
+              padding-top: 80px; /* Match your fixed header height */
+          }
+      
+          @media (max-width: 1200px) {
+              .page-content {
+                  margin-left: 0; /* For mobile responsiveness */
+              }
           }
 
           /* Enhanced Dashboard Styles */
@@ -277,6 +77,17 @@
               padding: 0.25rem 0.5rem;
           }
 
+          .sidebar-item.active .sidebar-link {
+              background: linear-gradient(135deg, rgba(93, 135, 255, 0.1) 0%, rgba(93, 135, 255, 0.05) 100%);
+              color: #5D87FF;
+              border-left: 3px solid #5D87FF;
+          }
+
+          .sidebar-item .sidebar-link:hover {
+              background: rgba(93, 135, 255, 0.05);
+              color: #5D87FF;
+          }
+
           .hover-bg-light:hover {
               background-color: rgba(0,0,0,0.03) !important;
           }
@@ -297,33 +108,15 @@
               border-radius: 0.375rem;
           }
 
-          @media (max-width: 991.98px) {
-              #adminHeaderNav {
-                  flex-basis: 100%;
-                  padding: 8px 0 14px;
-              }
-
-              .admin-top-nav .nav-link {
-                  display: block;
-                  margin: 2px 0;
-              }
-
-              .admin-top-nav .nav-link.active::after {
-                  left: 12px;
-                  right: auto;
-                  width: 28px;
-                  bottom: 8px;
-              }
-
-              .page-content {
-                  padding-top: 92px;
-              }
-          }
-
+          /* Responsive */
           @media (max-width: 768px) {
               .page-content {
                   padding: 1rem;
-                  padding-top: 90px;
+                  padding-top: 70px;
+              }
+
+              .navbar-nav.gap-3 {
+                  gap: 0.5rem !important;
               }
           }
 
@@ -354,6 +147,24 @@
               background-clip: text;
           }
 
+          /* Scrollbar */
+          .scroll-sidebar::-webkit-scrollbar {
+              width: 6px;
+          }
+
+          .scroll-sidebar::-webkit-scrollbar-track {
+              background: #f1f1f1;
+          }
+
+          .scroll-sidebar::-webkit-scrollbar-thumb {
+              background: #c1c1c1;
+              border-radius: 10px;
+          }
+
+          .scroll-sidebar::-webkit-scrollbar-thumb:hover {
+              background: #a1a1a1;
+          }
+
           /* Notification styles */
           .unread-notification {
               background-color: rgba(93, 135, 255, 0.03) !important;
@@ -380,6 +191,22 @@
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
     data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+        <div>
+            <div class="brand-logo d-flex align-items-center justify-content-between">
+                <a href="{{ route('admin.dashboard') }}" class="text-nowrap logo-img">
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="roohul quran academy logo" height="70px" />
+                </a>
+                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                    <i class="ti ti-x fs-8"></i>
+                </div>
+            </div>
+            @include('admin.layouts.sidebar')
+        </div>
+    </aside>
+    <!-- Sidebar End -->
 
     <!-- Main wrapper -->
     <div class="body-wrapper">

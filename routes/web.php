@@ -45,6 +45,31 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::post('users/{user}/toggle-status', [\App\Http\Controllers\Admin\UserController::class, 'toggleStatus'])->name('users.toggle-status');
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
     Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
+    
+    // Academy Management Routes
+    Route::resource('students', \App\Http\Controllers\Admin\StudentController::class);
+    Route::post('students/{student}/generate-credentials', [\App\Http\Controllers\Admin\StudentController::class, 'generateCredentials'])->name('students.generate-credentials');
+    Route::post('students/{student}/assign-course', [\App\Http\Controllers\Admin\StudentController::class, 'assignCourse'])->name('students.assign-course');
+    Route::delete('students/{student}/enrollments/{enrollment}', [\App\Http\Controllers\Admin\StudentController::class, 'removeEnrollment'])->name('students.remove-enrollment');
+    Route::resource('teachers', \App\Http\Controllers\Admin\TeacherController::class);
+    Route::resource('courses', \App\Http\Controllers\Admin\CourseController::class);
+    Route::post('courses/generate-bulk-sessions', [\App\Http\Controllers\Admin\CourseController::class, 'generateBulkSessions'])->name('courses.generate-bulk-sessions');
+    Route::resource('sessions', \App\Http\Controllers\Admin\ClassSessionController::class);
+    Route::post('sessions/generate-monthly', [\App\Http\Controllers\Admin\ClassSessionController::class, 'generateMonthlySessions'])->name('sessions.generate-monthly');
+    Route::get('sessions/student/{student}', [\App\Http\Controllers\Admin\ClassSessionController::class, 'studentSessions'])->name('sessions.student');
+    Route::post('sessions/student/{student}/mark-today-attendance', [\App\Http\Controllers\Admin\ClassSessionController::class, 'markTodayAttendance'])->name('sessions.mark-today-attendance');
+    Route::post('sessions/student/{student}/mark-attendance', [\App\Http\Controllers\Admin\ClassSessionController::class, 'markSessionAttendance'])->name('sessions.mark-attendance');
+    
+    // Attendance Routes
+    Route::get('attendance', [\App\Http\Controllers\Admin\AttendanceController::class, 'index'])->name('attendance.index');
+    Route::post('attendance/mark', [\App\Http\Controllers\Admin\AttendanceController::class, 'mark'])->name('attendance.mark');
+    Route::get('attendance/history', [\App\Http\Controllers\Admin\AttendanceController::class, 'history'])->name('attendance.history');
+
+    // Invoice Routes
+    Route::resource('invoices', \App\Http\Controllers\Admin\InvoiceController::class);
+    Route::get('invoices/{invoice}/download', [\App\Http\Controllers\Admin\InvoiceController::class, 'download'])->name('invoices.download');
+    Route::post('invoices/{invoice}/record-payment', [\App\Http\Controllers\Admin\InvoiceController::class, 'recordPayment'])->name('invoices.record-payment');
+    Route::post('invoices/{invoice}/send', [\App\Http\Controllers\Admin\InvoiceController::class, 'send'])->name('invoices.send');
 
     // Notification routes
     Route::get('notifications', [\App\Http\Controllers\Admin\NotificationController::class, 'index'])->name('notifications.index');
