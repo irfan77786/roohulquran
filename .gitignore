@@ -4,6 +4,8 @@
 /public/uploads/blogs/*
 !/public/uploads/blogs/.gitkeep
 /storage/*.key
+/public\sitemap_index.xml
+/public\sitemap-blogs.xml
 /vendor
 .env
 .env.backup
@@ -15,3 +17,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+public/sitemap_index.xml
+public/sitemap_index.xml
