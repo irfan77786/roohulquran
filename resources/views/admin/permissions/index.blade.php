@@ -146,11 +146,6 @@
                             <option value="users">Users</option>
                             <option value="roles">Roles</option>
                             <option value="permissions">Permissions</option>
-                            <option value="students">Students</option>
-                            <option value="teachers">Teachers</option>
-                            <option value="courses">Courses</option>
-                            <option value="sessions">Class Sessions</option>
-                            <option value="attendance">Attendance</option>
                             <option value="blogs">Blogs</option>
                             <option value="trial-classes">Trial Classes</option>
                             <option value="dashboard">Dashboard</option>
