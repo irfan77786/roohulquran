@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\AdminNotification;
 use App\Services\BlogSitemapService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -67,7 +68,7 @@ class BlogController extends Controller
         unset($validated['featured_image']);
 
         $validated['slug'] = $this->uniqueSlug($validated['title'], $request->input('slug'));
-        $validated['author'] = auth()->user()->name;
+        $validated['author'] = $this->adminAuthorName();
         $validated['content'] = $this->normalizeHeadings($validated['content']);
         $validated['faqs'] = $this->cleanRepeater($request->input('faqs', []), ['question', 'answer']);
         $validated['internal_links'] = $this->cleanRepeater($request->input('internal_links', []), ['label', 'url']);
@@ -82,21 +83,29 @@ class BlogController extends Controller
         $blog->save();
 
         if ($imageFile) {
-            $blog->featured_image = $this->storeFeaturedImage($imageFile, $blog->id);
-            $blog->save();
+            try {
+                $blog->featured_image = $this->storeFeaturedImage($imageFile, $blog->id);
+                $blog->save();
+            } catch (\Throwable $e) {
+                \Log::error('Blog featured image upload failed: ' . $e->getMessage());
+            }
         }
 
         if ($blog->status) {
-            AdminNotification::createNotification(
-                'blog',
-                'New Blog Published',
-                $validated['title'] . ' has been published',
-                'ti ti-file-text',
-                'success',
-                ['blog_id' => $blog->id, 'title' => $validated['title']],
-                'blog',
-                $blog->id
-            );
+            try {
+                AdminNotification::createNotification(
+                    'blog',
+                    'New Blog Published',
+                    $validated['title'] . ' has been published',
+                    'ti ti-file-text',
+                    'success',
+                    ['blog_id' => $blog->id, 'title' => $validated['title']],
+                    'blog',
+                    $blog->id
+                );
+            } catch (\Throwable $e) {
+                \Log::warning('Blog notification failed: ' . $e->getMessage());
+            }
         }
 
         app(BlogSitemapService::class)->regenerate();
@@ -128,7 +137,7 @@ class BlogController extends Controller
         unset($validated['featured_image']);
 
         $validated['slug'] = $this->uniqueSlug($validated['title'], $request->input('slug'), $blog->id);
-        $validated['author'] = auth()->user()->name;
+        $validated['author'] = $this->adminAuthorName();
         $validated['content'] = $this->normalizeHeadings($validated['content']);
         $validated['faqs'] = $this->cleanRepeater($request->input('faqs', []), ['question', 'answer']);
         $validated['internal_links'] = $this->cleanRepeater($request->input('internal_links', []), ['label', 'url']);
@@ -142,9 +151,13 @@ class BlogController extends Controller
         $blog->update($validated);
 
         if ($imageFile) {
-            $this->deleteFeaturedImage($blog->featured_image);
-            $blog->featured_image = $this->storeFeaturedImage($imageFile, $blog->id);
-            $blog->save();
+            try {
+                $this->deleteFeaturedImage($blog->featured_image);
+                $blog->featured_image = $this->storeFeaturedImage($imageFile, $blog->id);
+                $blog->save();
+            } catch (\Throwable $e) {
+                \Log::error('Blog featured image upload failed: ' . $e->getMessage());
+            }
         }
 
         app(BlogSitemapService::class)->regenerate();
@@ -249,9 +262,18 @@ class BlogController extends Controller
         ];
     }
 
+    private function adminAuthorName(): string
+    {
+        return (string) (Auth::guard('admin')->user()?->name ?: 'Admin');
+    }
+
     private function cloudinaryConfigured(): bool
     {
-        return filled(config('cloudinary.cloud_url'));
+        $url = trim((string) config('cloudinary.cloud_url'));
+
+        return $url !== ''
+            && str_starts_with($url, 'cloudinary://')
+            && str_contains($url, '@');
     }
 
     private function storeFeaturedImage($uploadedFile, int $blogId): string

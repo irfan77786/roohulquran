@@ -167,7 +167,7 @@ class GoogleReviewsService
             return null;
         }
 
-        $text = trim((string) ($review['review_text'] ?? ''));
+        $text = $this->plainReviewText($review['review_text'] ?? '');
         if ($text === '') {
             return null;
         }
@@ -175,7 +175,7 @@ class GoogleReviewsService
         $created = $review['review_date_time'] ?? ($review['created_time'] ?? null);
 
         return [
-            'author' => $review['reviewer_name'] ?? 'Google User',
+            'author' => $this->plainReviewText($review['reviewer_name'] ?? 'Google User') ?: 'Google User',
             'rating' => $rating,
             'text' => $text,
             'photo' => $this->normalizeReviewPhoto($review['reviewer_photo_link'] ?? null),
@@ -188,14 +188,36 @@ class GoogleReviewsService
         ];
     }
 
+    /**
+     * SociableKIT scrapes Google markup and often wraps text in <span class=wiI7pd>.
+     */
+    private function plainReviewText(mixed $value): string
+    {
+        $text = html_entity_decode(strip_tags((string) $value), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $text = preg_replace('/\s+/u', ' ', $text) ?? $text;
+
+        return trim($text);
+    }
+
     private function normalizeReviewPhoto(?string $url): ?string
     {
         if (! filled($url)) {
             return null;
         }
 
-        // Smaller avatars load more reliably on live HTTPS + CSP hosts
-        return preg_replace('/=s\d+(-c)?(-rp)?(-mo)?(-ba\d+)?(-br\d+)?$/i', '=s96-c-rp-mo-br100', $url) ?: $url;
+        $url = trim($url);
+        if (! filter_var($url, FILTER_VALIDATE_URL)) {
+            return null;
+        }
+
+        // Normalize Google avatar size params (=s96-c… or =w100-h100-p…)
+        $normalized = preg_replace(
+            '/=(?:s\d+(?:-[a-z0-9]+)*|w\d+-h\d+(?:-[a-z0-9]+)*)$/i',
+            '=s96-c-rp-mo-br100',
+            $url
+        );
+
+        return $normalized ?: $url;
     }
 
     private function fetchFromBusinessProfile(): array
@@ -389,7 +411,7 @@ class GoogleReviewsService
             return null;
         }
 
-        $text = trim((string) ($review['comment'] ?? ''));
+        $text = $this->plainReviewText($review['comment'] ?? '');
         // Strip optional translated block Google sometimes appends
         if (str_contains($text, '(Translated by Google)')) {
             $parts = preg_split('/\n?\(Translated by Google\)\n?/u', $text);
@@ -397,10 +419,10 @@ class GoogleReviewsService
         }
 
         return [
-            'author' => $review['reviewer']['displayName'] ?? 'Google User',
+            'author' => $this->plainReviewText($review['reviewer']['displayName'] ?? 'Google User') ?: 'Google User',
             'rating' => $rating,
             'text' => $text,
-            'photo' => $review['reviewer']['profilePhotoUrl'] ?? null,
+            'photo' => $this->normalizeReviewPhoto($review['reviewer']['profilePhotoUrl'] ?? null),
             'relative_time' => isset($review['createTime'])
                 ? \Carbon\Carbon::parse($review['createTime'])->diffForHumans()
                 : null,
@@ -416,10 +438,10 @@ class GoogleReviewsService
         }
 
         return [
-            'author' => $review['author_name'] ?? 'Google User',
+            'author' => $this->plainReviewText($review['author_name'] ?? 'Google User') ?: 'Google User',
             'rating' => $rating,
-            'text' => trim((string) ($review['text'] ?? '')),
-            'photo' => $review['profile_photo_url'] ?? null,
+            'text' => $this->plainReviewText($review['text'] ?? ''),
+            'photo' => $this->normalizeReviewPhoto($review['profile_photo_url'] ?? null),
             'relative_time' => $review['relative_time_description'] ?? null,
             'create_time' => isset($review['time'])
                 ? \Carbon\Carbon::createFromTimestamp($review['time'])->toIso8601String()

@@ -333,8 +333,10 @@
               @forelse($reviews as $review)
                 @php
                   $rating = (int) ($review['rating'] ?? 5);
+                  $author = trim(strip_tags((string) ($review['author'] ?? 'Google User'))) ?: 'Google User';
                   $photo = $review['photo'] ?? null;
-                  $initial = mb_strtoupper(mb_substr($review['author'] ?? 'G', 0, 1));
+                  $reviewText = trim(strip_tags(html_entity_decode((string) ($review['text'] ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                  $initial = mb_strtoupper(mb_substr($author, 0, 1));
                 @endphp
                 <div class="swiper-slide">
                   <div class="testimonial-card p-4 rounded shadow bg-white">
@@ -349,21 +351,22 @@
                         </svg>
                       @endif
                     </div>
-                    <p class="mb-4">{{ \Illuminate\Support\Str::limit($review['text'] ?? '', 220) }}</p>
+                    <p class="mb-4">{{ \Illuminate\Support\Str::limit($reviewText, 220) }}</p>
                     <div class="d-flex align-items-center">
-                      <div class="position-relative" style="width: 50px; height: 50px;">
+                      <div class="position-relative review-avatar" style="width: 50px; height: 50px; flex-shrink: 0; overflow: hidden; border-radius: 50%;">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold review-avatar-fallback"
+                          style="width: 50px; height: 50px; background: #4285F4; font-size: 1.25rem;">
+                          {{ $initial }}
+                        </div>
                         @if($photo)
-                          <img src="{{ $photo }}" alt="{{ $review['author'] }} review" class="rounded-circle"
-                            style="width: 50px; height: 50px; object-fit: cover;" loading="lazy" referrerpolicy="no-referrer">
-                        @else
-                          <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
-                            style="width: 50px; height: 50px; background: #4285F4; font-size: 1.25rem;">
-                            {{ $initial }}
-                          </div>
+                          <img src="{{ $photo }}" alt="" class="rounded-circle review-avatar-img"
+                            style="position: absolute; inset: 0; width: 50px; height: 50px; object-fit: cover;"
+                            loading="lazy" referrerpolicy="no-referrer"
+                            onerror="this.remove()">
                         @endif
                       </div>
                       <div class="ms-3">
-                        <h3 class="mb-0" style="font-size: 1.1rem;">{{ $review['author'] ?? 'Google User' }}</h3>
+                        <h3 class="mb-0" style="font-size: 1.1rem;">{{ $author }}</h3>
                       </div>
                     </div>
                   </div>
