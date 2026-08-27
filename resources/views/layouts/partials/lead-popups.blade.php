@@ -81,8 +81,8 @@
                     <input type="hidden" name="message" value="Free trial class request from website popup">
                     <label>Full name</label>
                     <input type="text" name="name" placeholder="Your name" required>
-                    <label>WhatsApp number</label>
-                    <input type="tel" name="phone" placeholder="+92 334 4066429" required>
+                    <label>YourWhatsApp number</label>
+                    <input type="tel" name="phone" placeholder="Please enter your WhatsApp number" required>
                     <div class="rq-lead-turnstile"></div>
                     <button type="submit" class="rq-lead-btn rq-lead-btn-primary">
                         <span class="rq-lead-btn-text">Book my free class</span>
@@ -133,7 +133,7 @@
                 <input type="hidden" name="form_started_at" value="{{ time() }}">
                 <input type="hidden" name="message" value="Course enquiry from website popup">
                 <input type="text" name="name" placeholder="Your name" required>
-                <input type="tel" name="phone" placeholder="WhatsApp number" required>
+                <input type="tel" name="phone" placeholder="Please enter your WhatsApp number" required>
                 <div class="rq-lead-turnstile"></div>
                 <button type="submit" class="rq-lead-btn rq-lead-btn-primary">
                     <span class="rq-lead-btn-text">Request callback</span>
@@ -162,7 +162,7 @@
                 <input type="hidden" name="form_started_at" value="{{ time() }}">
                 <input type="hidden" name="message" value="Fee information enquiry from pricing popup">
                 <input type="text" name="name" placeholder="Your name" required>
-                <input type="tel" name="phone" placeholder="WhatsApp number" required>
+                <input type="tel" name="phone" placeholder="Please enter your WhatsApp number" required>
                 <div class="rq-lead-turnstile"></div>
                 <button type="submit" class="rq-lead-btn rq-lead-btn-primary">
                     <span class="rq-lead-btn-text">Contact me about fees</span>
