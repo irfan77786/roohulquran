@@ -17,13 +17,74 @@ class Blog extends Model
         'excerpt',
         'featured_image',
         'seo',
-        'status'
+        'status',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'primary_keyword',
+        'secondary_keywords',
+        'faqs',
+        'internal_links',
     ];
 
     protected $casts = [
         'seo' => 'array',
+        'faqs' => 'array',
+        'internal_links' => 'array',
         'status' => 'boolean',
     ];
+
+    public function getSeoTitleAttribute(): string
+    {
+        return trim((string) ($this->meta_title ?: $this->title));
+    }
+
+    public function getSeoDescriptionAttribute(): string
+    {
+        $text = $this->meta_description ?: $this->excerpt ?: strip_tags((string) $this->content);
+
+        return \Illuminate\Support\Str::limit(trim(preg_replace('/\s+/', ' ', strip_tags((string) $text))), 160, '');
+    }
+
+    public function getSeoKeywordsAttribute(): string
+    {
+        $parts = array_filter([
+            $this->primary_keyword,
+            $this->secondary_keywords,
+            $this->meta_keywords,
+            data_get($this->seo, 'keywords'),
+        ]);
+
+        $keywords = [];
+        foreach ($parts as $part) {
+            foreach (explode(',', (string) $part) as $keyword) {
+                $keyword = trim($keyword);
+                if ($keyword !== '') {
+                    $keywords[] = $keyword;
+                }
+            }
+        }
+
+        return implode(', ', array_unique($keywords));
+    }
+
+    public function faqItems(): array
+    {
+        $faqs = is_array($this->faqs) ? $this->faqs : [];
+
+        return array_values(array_filter($faqs, function ($faq) {
+            return filled($faq['question'] ?? null) && filled($faq['answer'] ?? null);
+        }));
+    }
+
+    public function internalLinkItems(): array
+    {
+        $links = is_array($this->internal_links) ? $this->internal_links : [];
+
+        return array_values(array_filter($links, function ($link) {
+            return filled($link['label'] ?? null) && filled($link['url'] ?? null);
+        }));
+    }
     public function getImageUrlAttribute()
     {
         $image = trim((string) $this->featured_image);
