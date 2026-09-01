@@ -1,16 +1,11 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Support\UkLocations;
 use Illuminate\Support\Facades\Route;
 
-foreach (config('uk-cities.cities', []) as $city) {
-    Route::get("/{$city}/quran-academy-{$city}-united-kingdom", [HomeController::class, 'cityPage'])
-        ->defaults('city', $city)
-        ->defaults('state', 'united-kingdom');
-}
-
-foreach (config('uk-cities.london_areas', []) as $area) {
-    Route::get("/{$area}/quran-academy-{$area}-london", [HomeController::class, 'cityPage'])
-        ->defaults('city', $area)
-        ->defaults('state', 'london');
+foreach (UkLocations::pages() as $page) {
+    Route::get($page['path'], [HomeController::class, 'cityPage'])
+        ->defaults('city', $page['city'])
+        ->defaults('state', $page['state']);
 }

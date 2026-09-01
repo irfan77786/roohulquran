@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
+use App\Support\UkLocations;
 
 class SiteMapController extends Controller
 {
     public function sitemap()
-{
-    $blogs = Blog::select('slug', 'updated_at')->latest()->get();
+    {
+        $blogs = Blog::select('slug', 'updated_at')->latest()->get();
+        $ukPages = UkLocations::pages();
 
-    return response()
-        ->view('sitemap', compact('blogs'))
-        ->header('Content-Type', 'application/xml');
-}
+        return response()
+            ->view('sitemap', compact('blogs', 'ukPages'))
+            ->header('Content-Type', 'application/xml');
+    }
 
 }

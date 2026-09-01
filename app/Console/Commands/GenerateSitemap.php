@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Blog;
+use App\Support\UkLocations;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
@@ -33,15 +34,8 @@ class GenerateSitemap extends Command
             ->add(Url::create("{$baseUrl}/kids-quran-classes")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/blogs")->setLastModificationDate($now));
 
-        foreach (config('uk-cities.cities', []) as $city) {
-            $sitemap->add(Url::create("{$baseUrl}/{$city}/quran-academy-{$city}-united-kingdom")
-                ->setLastModificationDate($now)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-                ->setPriority(0.6));
-        }
-
-        foreach (config('uk-cities.london_areas', []) as $area) {
-            $sitemap->add(Url::create("{$baseUrl}/{$area}/quran-academy-{$area}-london")
+        foreach (UkLocations::pages() as $page) {
+            $sitemap->add(Url::create($baseUrl . $page['path'])
                 ->setLastModificationDate($now)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(0.6));

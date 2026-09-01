@@ -50,13 +50,13 @@ class HomeController extends Controller
 
     public function cityPage(Request $request, $city = null, $state = null)
     {
-        // Get city and state from route parameters or defaults
-        $city = $city ?? $request->route('city');
-        $state = $state ?? $request->route('state');
+        $route = $request->route();
+        $defaults = $route ? $route->defaults : [];
+        $city = $city ?? $request->route('city') ?? ($defaults['city'] ?? null);
+        $state = $state ?? $request->route('state') ?? ($defaults['state'] ?? null);
 
-        // Format city and state names for display
-        $cityName = ucwords(str_replace('-', ' ', $city));
-        $stateName = ucwords(str_replace('-', ' ', $state));
+        $cityName = ucwords(str_replace('-', ' ', (string) $city));
+        $stateName = ucwords(str_replace('-', ' ', (string) $state));
 
         return view('cities.home', compact('cityName', 'stateName'));
     }

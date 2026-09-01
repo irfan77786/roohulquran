@@ -74,20 +74,10 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- Main UK city pages -->
-    @foreach (config('uk-cities.cities', []) as $city)
+    <!-- UK city and London area pages -->
+    @foreach ($ukPages ?? [] as $page)
     <url>
-        <loc>{{ $base }}/{{ $city }}/quran-academy-{{ $city }}-united-kingdom</loc>
-        <lastmod>{{ now()->toAtomString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    @endforeach
-
-    <!-- London area pages -->
-    @foreach (config('uk-cities.london_areas', []) as $area)
-    <url>
-        <loc>{{ $base }}/{{ $area }}/quran-academy-{{ $area }}-london</loc>
+        <loc>{{ $base }}{{ $page['path'] }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -106,7 +96,7 @@
     @foreach ($blogs as $blog)
     <url>
         <loc>{{ $base }}/blogs/{{ $blog->slug }}</loc>
-        <lastmod>{{ $blog->updated_at->toAtomString() }}</lastmod>
+        <lastmod>{{ optional($blog->updated_at)->toAtomString() ?: now()->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
