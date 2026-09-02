@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Support\UkLocations;
+
+foreach (UkLocations::pages() as $page) {
+    Route::get($page['path'], [HomeController::class, 'cityPage'])
+        ->defaults('city', $page['city'])
+        ->defaults('state', $page['state']);
+}
+
 
 Route::get('/aberdeen/quran-academy-aberdeen-united-kingdom', [HomeController::class, 'cityPage'])
     ->defaults('city', 'aberdeen')
