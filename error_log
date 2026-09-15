@@ -1,0 +1,122 @@
+[09-Sep-2026 15:46:00 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:889
+Stack trace:
+#0 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(889): ReflectionClass->__construct()
+#1 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(770): Illuminate\Container\Container->build()
+#2 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(881): Illuminate\Container\Container->resolve()
+#3 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(706): Illuminate\Foundation\Application->resolve()
+#4 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(866): Illuminate\Container\Container->make()
+#5 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1431): Illuminate\Foundation\Application->make()
+#6 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(222): Illuminate\Container\Container->offsetGet()
+#7 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(193): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(332): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(16): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(642): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(623): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#15 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(235): Illuminate\Foundation\Exceptions\Handler->render()
+#16 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(212): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#17 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(272): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#18 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#19 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:891
+Stack trace:
+#0 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(770): Illuminate\Container\Container->build()
+#1 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(881): Illuminate\Container\Container->resolve()
+#2 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(706): Illuminate\Foundation\Application->resolve()
+#3 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(866): Illuminate\Container\Container->make()
+#4 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1431): Illuminate\Foundation\Application->make()
+#5 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(222): Illuminate\Container\Container->offsetGet()
+#6 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(193): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(332): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(16): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(642): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(623): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#14 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(235): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(212): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(272): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#18 {main}
+  thrown in /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 891
+[09-Sep-2026 17:03:51 UTC] PHP Notice:  include(): Read of 46159 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 20:20:38 UTC] PHP Notice:  include(): Read of 25679 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:12:04 UTC] PHP Notice:  include(): Read of 128470 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:12:04 UTC] PHP Notice:  include(): Read of 128470 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:12:04 UTC] PHP Notice:  include(): Read of 128470 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:12:04 UTC] PHP Notice:  include(): Read of 128470 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:12:04 UTC] PHP Warning:  include(): Failed opening '/home/roohulquranacade/public_html/vendor/composer/../nesbot/carbon/src/Carbon/CarbonInterface.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:12:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Carbon\CarbonInterface" not found in /home/roohulquranacade/public_html/vendor/nesbot/carbon/src/Carbon/Carbon.php:510
+Stack trace:
+#0 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(576): include()
+#1 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#2 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Carbon.php(9): Composer\Autoload\ClassLoader->loadClass()
+#3 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(576): include('/home/roohulqur...')
+#4 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#5 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(129): Composer\Autoload\ClassLoader->loadClass()
+#6 /home/roohulquranacade/public_html/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#7 {main}
+  thrown in /home/roohulquranacade/public_html/vendor/nesbot/carbon/src/Carbon/Carbon.php on line 510
+[10-Sep-2026 21:21:03 UTC] PHP Notice:  include(): Read of 198102 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:21:03 UTC] PHP Notice:  include(): Read of 198102 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
+[10-Sep-2026 21:21:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Carbon\CarbonInterface" not found in /home/roohulquranacade/public_html/vendor/nesbot/carbon/src/Carbon/Carbon.php:510
+Stack trace:
+#0 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(576): include()
+#1 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#2 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Carbon.php(9): Composer\Autoload\ClassLoader->loadClass()
+#3 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(576): include('/home/roohulqur...')
+#4 /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#5 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(129): Composer\Autoload\ClassLoader->loadClass()
+#6 /home/roohulquranacade/public_html/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#7 {main}
+  thrown in /home/roohulquranacade/public_html/vendor/nesbot/carbon/src/Carbon/Carbon.php on line 510
+[10-Sep-2026 21:41:44 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:889
+Stack trace:
+#0 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(889): ReflectionClass->__construct()
+#1 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(770): Illuminate\Container\Container->build()
+#2 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(881): Illuminate\Container\Container->resolve()
+#3 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(706): Illuminate\Foundation\Application->resolve()
+#4 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(866): Illuminate\Container\Container->make()
+#5 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1431): Illuminate\Foundation\Application->make()
+#6 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(222): Illuminate\Container\Container->offsetGet()
+#7 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(193): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(332): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(16): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(642): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(623): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#15 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(235): Illuminate\Foundation\Exceptions\Handler->render()
+#16 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(212): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#17 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(272): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#18 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#19 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:891
+Stack trace:
+#0 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(770): Illuminate\Container\Container->build()
+#1 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(881): Illuminate\Container\Container->resolve()
+#2 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(706): Illuminate\Foundation\Application->resolve()
+#3 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(866): Illuminate\Container\Container->make()
+#4 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1431): Illuminate\Foundation\Application->make()
+#5 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(222): Illuminate\Container\Container->offsetGet()
+#6 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(193): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(332): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(16): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(642): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(623): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#14 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(235): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(212): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(272): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#18 {main}
+  thrown in /home/roohulquranacade/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 891
+[10-Sep-2026 22:00:03 UTC] PHP Notice:  include(): Read of 198102 bytes failed with errno=14 Bad address in /home/roohulquranacade/public_html/vendor/composer/ClassLoader.php on line 576
