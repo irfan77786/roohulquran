@@ -1,0 +1,163 @@
+.loc-crumb {
+    padding: 18px 0 0;
+    font-size: 13px;
+    color: #5b675f;
+}
+.loc-crumb a { color: #1a685b; text-decoration: none; font-weight: 600; }
+.loc-eyebrow {
+    display: inline-block;
+    color: #1a685b;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.loc-steps {
+    padding: 56px 0;
+    background: #fff;
+}
+.loc-steps h2,
+.loc-areas h2,
+.loc-nearby-band h2 {
+    color: #122f2a;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.loc-step-card {
+    background: #f6f3ee;
+    border-radius: 18px;
+    padding: 28px 24px;
+    height: 100%;
+    border: 1px solid #ebe4d6;
+}
+.loc-step-num {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #122f2a;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+.loc-step-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #122f2a;
+    margin-bottom: 8px;
+}
+.loc-step-card p { margin: 0; color: #444; line-height: 1.7; }
+.loc-areas {
+    padding: 56px 0;
+    background: #f6f3ee;
+}
+.loc-areas-lead {
+    max-width: 640px;
+    margin: 0 auto 22px;
+    color: #555;
+}
+.loc-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.loc-chips li {
+    background: #fff;
+    color: #122f2a;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #dce8e3;
+}
+.loc-nearby-band {
+    padding: 48px 0;
+    background: #fff;
+}
+.loc-nearby-band p { color: #555; }
+.loc-nearby-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.loc-nearby-links a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #eef6f3;
+    color: #1a685b;
+    font-weight: 700;
+    text-decoration: none;
+}
+.loc-nearby-links a:hover { background: #122f2a; color: #fff; }
+
+.contact-section {
+    position: relative;
+    padding: 50px 0;
+    color: white;
+    background: url('../img/ai/contact-us.jpg') center / cover no-repeat;
+}
+.contact-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 47, 42, 0.72);
+}
+.contact-section .contact-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.contact-section .contact-form input,
+.contact-section .contact-form textarea {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.hover-popout {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-popout:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.youtube-lazy-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+}
+.youtube-thumbnail {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    z-index: 2;
+}
+.youtube-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url('https://img.icons8.com/ios-filled/100/ffffff/play--v1.png') no-repeat center;
+    background-size: contain;
+    z-index: 3;
+}
+.youtube-lazy-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.add-plus::after {
+    content: "+";
+    margin-left: 4px;
+}

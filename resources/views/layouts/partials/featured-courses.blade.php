@@ -5,11 +5,9 @@
 
     <!-- Section Title -->
     <div class="container section-title text-center" data-aos="fade-up">
-        <span class="courses-eyebrow">Popular Quran Courses</span>
-        <h2 class="courses-heading">Our Featured Courses</h2>
-        <span class="courses-sub">Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran
-            translation. Each course is
-            tailored to help you achieve your learning goals with ease and excellence.</span>
+        <span class="courses-eyebrow">{{ $coursesEyebrow ?? 'Popular Quran Courses' }}</span>
+        <h2 class="courses-heading">{{ $coursesHeading ?? 'Our Featured Courses' }}</h2>
+        <span class="courses-sub">{{ $coursesSub ?? 'Explore our expertly designed Quran courses, including Tajweed, Hifz, and Quran translation. Each course is tailored to help you achieve your learning goals with ease and excellence.' }}</span>
     </div><!-- End Section Title -->
 
     <div class="container">

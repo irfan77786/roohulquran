@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\LocationCatalog;
+use App\Support\LocationPageCopy;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $ukFeatured = LocationCatalog::featured('uk', 12);
 
-
-        return view('home');
+        return view('home', compact('ukFeatured'));
     }
 
     public function video()
@@ -55,9 +57,15 @@ class HomeController extends Controller
         $city = $city ?? $request->route('city') ?? ($defaults['city'] ?? null);
         $state = $state ?? $request->route('state') ?? ($defaults['state'] ?? null);
 
-        $cityName = ucwords(str_replace('-', ' ', (string) $city));
-        $stateName = ucwords(str_replace('-', ' ', (string) $state));
+        $location = LocationCatalog::find((string) $city, (string) $state);
+        if (! $location) {
+            abort(404);
+        }
 
-        return view('cities.home', compact('cityName', 'stateName'));
+        $cityName = $location['name'];
+        $stateName = $location['region_name'];
+        $copy = LocationPageCopy::make($location);
+
+        return view('locations.landing', compact('location', 'cityName', 'stateName', 'copy'));
     }
 }

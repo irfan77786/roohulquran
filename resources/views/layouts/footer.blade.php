@@ -70,6 +70,20 @@
     </div>
   </div>
 
+  @php
+      $footerUk = \App\Support\LocationCatalog::featured('uk', 10);
+  @endphp
+  @if ($footerUk)
+    <div class="container pt-4">
+      <h4 class="text-white text-center mb-3">Quran classes in the UK</h4>
+      <p class="text-center" style="font-size:14px;line-height:1.9;">
+        @foreach ($footerUk as $place)
+          <a href="{{ url($place['path']) }}" class="text-white-50 text-decoration-none me-2">{{ $place['name'] }}</a>
+        @endforeach
+      </p>
+    </div>
+  @endif
+
   <div class="container text-center mt-4">
     <p>Copyright © 2025. All Rights Reserved.</p>
   </div>

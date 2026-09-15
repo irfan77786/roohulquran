@@ -2,6 +2,9 @@
 
 namespace App\Support;
 
+/**
+ * @deprecated Use LocationCatalog. Kept so sitemap and older calls keep working.
+ */
 class UkLocations
 {
     /**
@@ -9,51 +12,16 @@ class UkLocations
      */
     public static function pages(): array
     {
-        $configFile = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'uk-cities.php';
-        $config = is_file($configFile) ? require $configFile : [];
-
         $pages = [];
 
-        foreach (self::slugs($config['cities'] ?? []) as $city) {
+        foreach (LocationCatalog::pages('uk') as $page) {
             $pages[] = [
-                'city' => $city,
-                'state' => 'united-kingdom',
-                'path' => "/{$city}/quran-academy-{$city}-united-kingdom",
-            ];
-        }
-
-        foreach (self::slugs($config['london_areas'] ?? []) as $area) {
-            $pages[] = [
-                'city' => $area,
-                'state' => 'london',
-                'path' => "/{$area}/quran-academy-{$area}-london",
+                'city' => $page['slug'],
+                'state' => $page['region_slug'],
+                'path' => $page['path'],
             ];
         }
 
         return $pages;
-    }
-
-    /**
-     * @param  mixed  $values
-     * @return array<int, string>
-     */
-    private static function slugs($values): array
-    {
-        if (! is_array($values)) {
-            return [];
-        }
-
-        $slugs = [];
-        foreach ($values as $value) {
-            if (! is_string($value) && ! is_numeric($value)) {
-                continue;
-            }
-            $slug = trim((string) $value);
-            if ($slug !== '') {
-                $slugs[] = $slug;
-            }
-        }
-
-        return $slugs;
     }
 }
