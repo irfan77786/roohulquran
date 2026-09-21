@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://roohulquranacademy.com/blogs</loc>
-        <lastmod>2026-09-10T23:25:06+00:00</lastmod>
+        <lastmod>2026-09-21T23:44:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://roohulquranacademy.com/blogs/10-ways-parents-can-help-children-learn-quran-at-home</loc>
+        <lastmod>2026-09-21T23:44:19+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://roohulquranacademy.com/blogs/quran-learning-schedule-for-kids</loc>
+        <lastmod>2026-09-18T22:39:02+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://roohulquranacademy.com/blogs/female-quran-teacher-online-benefits</loc>
+        <lastmod>2026-09-15T23:50:08+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://roohulquranacademy.com/blogs/online-quran-classes-for-adults</loc>
