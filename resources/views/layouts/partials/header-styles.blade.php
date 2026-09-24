@@ -140,8 +140,10 @@
     }
 
     #header .navmenu {
-      position: static;
+      position: absolute;
       width: 0;
+      min-width: 0;
+      flex: 0 0 0;
       height: 0;
       overflow: visible;
       padding: 0;
@@ -501,13 +503,26 @@
       min-height: 0;
     }
 
+    #top-header .container-fluid {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
     #top-header .contact-info {
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 8px;
     }
 
     #top-header .contact-info > div {
       padding: 5px 12px;
+      white-space: nowrap;
+      min-width: 0;
+    }
+
+    #top-header .phone-number,
+    #top-header .email,
+    #top-header .contact-info a {
+      white-space: nowrap;
     }
 
     #top-header,
@@ -542,16 +557,66 @@
     }
   }
 
-  @media (max-width: 399px) {
-    #header .logo img {
-      max-height: 52px;
-      max-width: 96px;
-      margin: 4px 0;
+  /* iPhone 16 (393px) and other phones under Pro Max (440px):
+     keep phone + email on one line so the bar does not cover the logo. */
+  @media (max-width: 439px) {
+    #top-header {
+      padding: 6px 4px;
     }
 
-    #header .header-actions .btn-getstarted {
+    #top-header .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    #top-header .contact-info {
+      gap: 6px;
+    }
+
+    #top-header .contact-info > div {
       padding: 4px 8px;
-      font-size: 10px;
+    }
+
+    #top-header .contact-info .me-2 {
+      margin-right: 0.25rem !important;
+    }
+
+    #top-header,
+    #top-header .email,
+    #top-header .phone-number,
+    #top-header a {
+      font-size: 0.66rem;
+    }
+
+    #top-header .contact-info i {
+      font-size: 0.8rem !important;
+    }
+
+    body:has(#hero) #header {
+      top: 44px;
+    }
+
+    #header .logo img {
+      max-height: 58px;
+      max-width: 112px;
+      margin: 4px 0;
+    }
+  }
+
+  @media (max-width: 360px) {
+    #top-header,
+    #top-header .email,
+    #top-header .phone-number,
+    #top-header a {
+      font-size: 0.58rem;
+    }
+
+    #top-header .contact-info {
+      gap: 4px;
+    }
+
+    #top-header .contact-info > div {
+      padding: 3px 6px;
     }
   }
 

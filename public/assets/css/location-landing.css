@@ -4,6 +4,28 @@
     color: #5b675f;
 }
 .loc-crumb a { color: #1a685b; text-decoration: none; font-weight: 600; }
+
+@media (max-width: 439px) {
+    body:has(#hero) .loc-crumb {
+        position: absolute;
+        top: 136px;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px 4px;
+        margin: 0;
+        padding: 0 16px;
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    body:has(.loc-crumb) #hero.hero-tauheed {
+        padding-top: 172px;
+    }
+}
 .loc-eyebrow {
     display: inline-block;
     color: #1a685b;
