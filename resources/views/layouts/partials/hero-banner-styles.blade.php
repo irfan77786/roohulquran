@@ -1,19 +1,34 @@
+@push('preload')
+@include('layouts.partials.hero-lcp-preload')
+@endpush
 <style>
     #hero.hero-tauheed {
         position: relative;
         padding: 168px 0 80px;
         min-height: 580px;
         background-color: #F6F3EE;
-        background-image: url('{{ asset('assets/img/hero-quran-banner.png') }}');
-        background-size: cover;
-        background-position: center bottom;
-        background-repeat: no-repeat;
         overflow: hidden;
     }
 
+    #hero.hero-tauheed .hero-lcp-picture {
+        position: absolute;
+        inset: 0;
+        display: block;
+        margin: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    #hero.hero-tauheed .hero-lcp {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        display: block;
+    }
+
     #hero.hero-tauheed .desktop-image,
-    #hero.hero-tauheed .mobile-image,
-    #hero.hero-tauheed picture {
+    #hero.hero-tauheed .mobile-image {
         display: none !important;
     }
 
@@ -42,6 +57,7 @@
     #hero.hero-tauheed .hero-heading {
         font-size: 2.75rem;
         font-weight: 800;
+        line-height: 1.45;
         color: #122F2A;
         margin-bottom: 18px;
         letter-spacing: -0.5px;
@@ -168,13 +184,20 @@
 
     @media (max-width: 991px) {
         #hero.hero-tauheed {
-            padding: 132px 0 60px;
-            min-height: auto;
-            background-position: 70% bottom;
+            display: block;
+            height: auto !important;
+            min-height: 0;
+            overflow: visible;
+            padding: 132px 0 48px;
+        }
+
+        #hero.hero-tauheed .hero-lcp {
+            object-position: 70% bottom;
         }
 
         #hero.hero-tauheed .hero-heading {
-            font-size: 2rem;
+            font-size: 1.7rem;
+            line-height: 1.5;
         }
 
         #hero.hero-tauheed .hero-content-col {
@@ -204,7 +227,8 @@
     /* Override legacy course-page #hero CSS */
     #hero.hero-tauheed {
         text-align: left !important;
-        overflow: hidden;
+        height: auto !important;
+        overflow: visible;
     }
 
     #hero.hero-tauheed .form-container {

@@ -12,12 +12,16 @@ Watch our introduction video to learn about Rooh Ul Quran Academy's mission, vis
 rooh ul quran academy video, introduction video, online quran classes video, islamic education video, quran learning video
 @endsection
 
+@push('preload')
+<link rel="preload" as="image" href="{{ asset('assets/img/hero-quran-banner.webp') }}" type="image/webp" fetchpriority="high">
+@endpush
+
 @section('content')
 
 <style>
     .video-hero {
         background-color: #F6F3EE;
-        background-image: url('{{ asset('assets/img/hero-quran-banner.png') }}');
+        background-image: url('{{ asset('assets/img/hero-quran-banner.webp') }}');
         background-size: cover;
         background-position: center bottom;
         background-repeat: no-repeat;

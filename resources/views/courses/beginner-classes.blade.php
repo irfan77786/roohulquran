@@ -40,9 +40,9 @@ beginners, online quran for beginners, quran study beginners')
 
         #hero {
             text-align: center;
-            padding: 0px 0px;
-            min-height: 500px;
-            height: 500px;
+            padding: 0;
+            min-height: 0;
+            height: auto;
         }
 
         .hero-heading {

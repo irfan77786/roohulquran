@@ -229,17 +229,11 @@
     }
     window.addEventListener("load", aosInit);
 
-    /**
-     * Initiate glightbox
-     */
-    const glightbox = GLightbox({
-        selector: ".glightbox",
-    });
-
-    /**
-     * Initiate Pure Counter
-     */
-    new PureCounter();
+    if (typeof GLightbox === "function" && document.querySelector(".glightbox")) {
+        GLightbox({
+            selector: ".glightbox",
+        });
+    }
 
     /**
      * Init swiper sliders

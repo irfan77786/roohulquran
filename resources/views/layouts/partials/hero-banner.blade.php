@@ -16,6 +16,7 @@
 @endphp
 
 <section id="hero" class="hero section hero-tauheed">
+    @include('layouts.partials.hero-lcp-image')
     <div class="container">
         <div class="row align-items-center g-4 hero-tauheed-row">
             <div class="col-lg-5 col-md-12 hero-form-col">

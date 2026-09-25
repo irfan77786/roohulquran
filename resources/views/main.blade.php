@@ -27,39 +27,26 @@
     <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="icon">
     <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
 
-    <!-- Preconnect -->
+    {{-- Hero image starts downloading before stylesheets --}}
+    @stack('preload')
+
+    <!-- Preconnect third parties that load after first paint -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://embed.tawk.to" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://embed.tawk.to">
 
-    <!-- Preload critical fonts to prevent CLS -->
-    <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ asset('assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff') }}" as="font" type="font/woff" crossorigin>
-
-    @php
-        $isProduction = app()->environment('production');
-        $mainCssPath = $isProduction ? 'assets/css/main.min.css' : 'assets/css/main.css';
-        $mainJsPath = $isProduction ? 'assets/js/main.min.js' : 'assets/js/main.js';
-    @endphp
-
-    <!-- Critical CSS (blocking — prevents CLS from late stylesheet application) -->
+    <!-- Critical CSS. Icon file only contains icons the templates use. Fonts are self-hosted. -->
     <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset($mainCssPath) }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/theme-tauheed.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('assets/css/main.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/theme-tauheed.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/fonts/site-fonts.css') }}" rel="stylesheet">
     <!-- Non-critical CSS (deferred) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
     </noscript>
-
-    <!-- Preload LCP hero image (viewport-specific) -->
-    <link rel="preload" href="{{ asset('assets/img/hero-quran-banner.png') }}" as="image" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" as="image">
     
     @stack('styles')
     @include('layouts.partials.header-styles')
@@ -174,13 +161,23 @@
             color: #fff;
         }
 
-        .hero img {
+        .hero-lcp-picture {
+            position: absolute;
+            inset: 0;
+            display: block;
+            margin: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero img.hero-lcp {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1;
+            object-position: center bottom;
+            z-index: 0;
             display: block;
         }
 
@@ -193,6 +190,7 @@
             margin: 0;
             font-size: 48px;
             font-weight: 700;
+            line-height: 1.45;
         }
 
         .hero p {
@@ -279,26 +277,9 @@
         </span>
     </a>
     @include('layouts.partials.lead-popups')
-    <script defer src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/accordion.js') }}"></script>
+    <script defer src="{{ asset('assets/js/counters.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-    {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script> --}}
-    <script>
-        // Initialize AOS with reduced animation to prevent CLS
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 600,
-                easing: 'ease-in-out',
-                once: true,
-                offset: 100,
-                disable: function() {
-                    // Disable AOS on mobile to prevent CLS
-                    return window.innerWidth < 768;
-                }
-            });
-        }
-    </script>
-    <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
     <!-- Swiper: load CSS/JS only when slider scrolls into view -->
     <script>
         (function () {
@@ -355,7 +336,7 @@
             obs.observe(slider);
         })();
     </script>
-    <script defer src="{{ asset($mainJsPath) }}"></script>
+    <script defer src="{{ asset('assets/js/main.min.js') }}"></script>
 
 
     <!-- Load Google Analytics & Ads after page idle to reduce main-thread work -->

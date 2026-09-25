@@ -202,7 +202,12 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
 
 @section('content')
 
+@push('preload')
+@include('layouts.partials.hero-lcp-preload')
+@endpush
+
 <section id="hero" class="hero section tauheed-page-banner">
+    @include('layouts.partials.hero-lcp-image')
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">

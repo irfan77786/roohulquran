@@ -94,7 +94,7 @@
                 <span class="intro-image-dot" aria-hidden="true"></span>
                 <span class="intro-image-accent" aria-hidden="true"></span>
                 <div class="intro-image-frame">
-                    <img src="{{ asset('assets/img/child-reading-quran.png') }}" alt="Child learning Quran online in {{ $city }}"
+                    <img src="{{ asset('assets/img/child-reading-quran.webp') }}" alt="Child learning Quran online in {{ $city }}"
                         loading="lazy" width="600" height="480">
                     <div class="intro-image-badge">
                         <i class="bi bi-journal-richtext" aria-hidden="true"></i>
