@@ -267,7 +267,7 @@
   $useEmbed = $driver === 'embed' && filled($embedId);
 
   $reviewsPayload = $googleReviews ?? ['source' => 'fallback', 'rating' => 5, 'total' => 0, 'reviews' => [], 'maps_url' => null];
-  $reviews = $reviewsPayload['reviews'] ?? [];
+  $reviews = array_slice(array_values(is_array($reviewsPayload['reviews'] ?? null) ? $reviewsPayload['reviews'] : []), 0, 8);
   $overallRating = $reviewsPayload['rating'] ?? null;
   $totalReviews = $reviewsPayload['total'] ?? count($reviews);
   $mapsUrl = $reviewsPayload['maps_url'] ?? config('google-reviews.maps_url');
@@ -360,8 +360,9 @@
                         </div>
                         @if($photo)
                           <img src="{{ $photo }}" alt="" class="rounded-circle review-avatar-img"
+                            width="50" height="50"
                             style="position: absolute; inset: 0; width: 50px; height: 50px; object-fit: cover;"
-                            loading="lazy" referrerpolicy="no-referrer"
+                            loading="lazy" decoding="async" referrerpolicy="no-referrer"
                             onerror="this.remove()">
                         @endif
                       </div>
@@ -411,7 +412,7 @@
 
       <div class="col-lg-6 text-center position-relative" data-aos="fade-up" data-aos-delay="200">
         <img src="{{ asset('assets/img/ai/happystudent.webp') }}" alt="quran student" class="img-fluid rounded"
-          style="max-height: 400px;" loading="lazy">
+          width="400" height="400" style="max-height: 400px;" loading="lazy" decoding="async">
         <div
           class="badge-card position-absolute bottom-0 start-50 translate-middle-x bg-white shadow p-3 rounded d-flex align-items-center"
           style="margin-bottom: -30px;">

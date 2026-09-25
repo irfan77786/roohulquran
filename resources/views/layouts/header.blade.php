@@ -27,7 +27,7 @@
 
     <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
       <img src="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" alt="Rooh Ul Quran Academy Logo"
-        decoding="async" loading="eager" />
+        width="312" height="192" decoding="async" loading="eager" />
     </a>
 
     <div class="d-flex align-items-center gap-2 header-actions">

@@ -176,4 +176,4 @@
 <script>
     window.RQ_LEAD_POPUPS = @json($leadConfig);
 </script>
-<script defer src="{{ asset('assets/js/lead-popups.js') }}"></script>
+<script defer src="{{ asset('assets/js/lead-popups.min.js') }}"></script>

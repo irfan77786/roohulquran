@@ -851,7 +851,7 @@
                 <ul class="list-unstyled">
                     <li class="mb-4 d-flex align-items-start">
                         <img src="{{ asset('assets/img/icons/pointing-up.avif') }}" alt="registration" class="me-3"
-                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
+                            width="40" height="40" style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h2 style="color: #1bd634; font-weight: bold;">Simple and Convenient Registration</h2>
                             <p>Sign up easily for free Quran classes with experienced teachers. Just provide your name
@@ -861,7 +861,7 @@
                     </li>
                     <li class="mb-4 d-flex align-items-start">
                         <img src="{{ asset('assets/img/icons/schedule.avif') }}" alt="Schedule" class="me-3"
-                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
+                            width="40" height="40" style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Schedule Your Free Trial</h5>
                             <p>After you register, we will reach out to you to arrange a convenient time for your free
@@ -871,7 +871,7 @@
                     </li>
                     <li class="mb-4 d-flex align-items-start">
                         <img src="{{ asset('assets/img/icons/koran.avif') }}" alt="Start quran Class" class="me-3"
-                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
+                            width="40" height="40" style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Start Your First Class</h5>
                             <p>We’ll quickly connect you with one of our expert Quran teachers, allowing you to schedule
@@ -881,7 +881,7 @@
                     </li>
                     <li class="d-flex align-items-start">
                         <img src="{{ asset('assets/img/icons/quality.avif') }}" alt="Certificate quran teachers" class="me-3"
-                            style="width: 40px; height: 40px;" loading="lazy" decoding="async">
+                            width="40" height="40" style="width: 40px; height: 40px;" loading="lazy" decoding="async">
                         <div>
                             <h5 style="color: #1bd634; font-weight: bold;">Get Your Certificate from Us</h5>
                             <p>Get your certificate after successfully completing the course. Start your learning

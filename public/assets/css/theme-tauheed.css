@@ -99,9 +99,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero.tauheed-page-banner .desktop-image,
-.hero.tauheed-page-banner .mobile-image,
-.hero.tauheed-page-banner picture {
+.hero.tauheed-page-banner .mobile-image {
     display: none !important;
+}
+
+.hero.tauheed-page-banner picture.hero-lcp-picture {
+    display: block !important;
 }
 
 /* Glass content panel (used on mobile; subtle on desktop too) */

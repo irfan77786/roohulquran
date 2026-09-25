@@ -30,8 +30,7 @@
     {{-- Hero image starts downloading before stylesheets --}}
     @stack('preload')
 
-    <!-- Preconnect third parties that load after first paint -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <!-- Third parties load after first paint -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://embed.tawk.to">
 
@@ -43,13 +42,6 @@
         <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/fonts/site-fonts.css') }}">
     </noscript>
-    <!-- Non-critical CSS (deferred) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
-    </noscript>
-    
     @stack('styles')
     @include('layouts.partials.header-styles')
 
@@ -233,18 +225,14 @@
             min-height: 3.6em;
         }
 
-        /* Ensure Bootstrap Icons load without layout shift */
-        .bi { 
-            font-family: "bootstrap-icons" !important; 
-            font-style: normal; 
-            font-variant: normal; 
-            text-transform: none; 
-            line-height: 1; 
-        }
-            .bi::before { 
-            display: inline-block; 
-            width: 1em; 
-            height: 1em; 
+        /* Reserve icon boxes so the deferred icon CSS does not shift layout */
+        .bi::before,
+        [class^="bi-"]::before,
+        [class*=" bi-"]::before {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.125em;
         }
 
         @media (max-width: 600px) {
@@ -281,9 +269,9 @@
         </span>
     </a>
     @include('layouts.partials.lead-popups')
-    <script defer src="{{ asset('assets/js/accordion.js') }}"></script>
-    <script defer src="{{ asset('assets/js/counters.js') }}"></script>
-    <script defer src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+    <script defer src="{{ asset('assets/js/accordion.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/counters.min.js') }}"></script>
+    <script defer src="{{ asset('assets/vendor/php-email-form/validate.min.js') }}"></script>
     <!-- Swiper: load CSS/JS only when slider scrolls into view -->
     <script>
         (function () {
@@ -343,10 +331,10 @@
     <script defer src="{{ asset('assets/js/main.min.js') }}"></script>
 
 
-    <!-- Load Google Analytics & Ads after page idle to reduce main-thread work -->
+    <!-- Analytics and chat start after first paint so they do not compete with the hero -->
     <script>
         window.addEventListener('load', function () {
-            var load = function () {
+            setTimeout(function () {
                 window.dataLayer = window.dataLayer || [];
                 function gtag() { dataLayer.push(arguments); }
                 window.gtag = gtag;
@@ -358,26 +346,30 @@
                     document.head.appendChild(s);
                     gtag('config', id);
                 });
-            };
-            if (window.requestIdleCallback) {
-                requestIdleCallback(load, { timeout: 3000 });
-            } else {
-                setTimeout(load, 2000);
-            }
+            }, 5000);
         });
     </script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    window.addEventListener("load", function() {
-        var s1 = document.createElement("script"),
-            s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/68285e127a51e3190e056edf/1irequujd';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    });
+    <script>
+        window.addEventListener('load', function () {
+            var started = false;
+            function loadTawk() {
+                if (started) return;
+                started = true;
+                var Tawk_API = window.Tawk_API || {};
+                window.Tawk_API = Tawk_API;
+                window.Tawk_LoadStart = new Date();
+                var s1 = document.createElement('script');
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/68285e127a51e3190e056edf/1irequujd';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                document.body.appendChild(s1);
+            }
+            ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
+                window.addEventListener(ev, loadTawk, { once: true, passive: true });
+            });
+            setTimeout(loadTawk, 8000);
+        });
     </script>
 
     <!--End of Tawk.to Script-->

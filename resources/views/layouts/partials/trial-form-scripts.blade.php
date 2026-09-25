@@ -2,7 +2,7 @@
 <script>
 (function () {
     var forms = document.querySelectorAll('#trial-form, #trial-form-submit');
-    if (!forms.length || !('IntersectionObserver' in window)) return;
+    if (!forms.length) return;
     var loaded = false;
     function loadTurnstile() {
         if (loaded) return;
@@ -10,16 +10,12 @@
         var s = document.createElement('script');
         s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
         s.async = true;
-        s.defer = true;
         document.head.appendChild(s);
     }
-    var obs = new IntersectionObserver(function (entries) {
-        if (entries.some(function (e) { return e.isIntersecting; })) {
-            obs.disconnect();
-            loadTurnstile();
-        }
-    }, { rootMargin: '100px' });
-    forms.forEach(function (f) { obs.observe(f); });
+    forms.forEach(function (f) {
+        f.addEventListener('focusin', loadTurnstile, { once: true });
+    });
+    window.addEventListener('load', loadTurnstile);
 })();
 </script>
 @endif
