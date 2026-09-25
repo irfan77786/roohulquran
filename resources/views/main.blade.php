@@ -35,12 +35,14 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://embed.tawk.to">
 
-    <!-- Critical CSS. Icon file only contains icons the templates use. Fonts are self-hosted. -->
-    <link href="{{ asset('assets/css/purged/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/main.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/theme-tauheed.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/fonts/site-fonts.css') }}" rel="stylesheet">
+    <!-- One blocking stylesheet. Icon font and text fonts load after first paint. -->
+    <link href="{{ asset('assets/css/site.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/site-fonts.css') }}" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/fonts/site-fonts.css') }}">
+    </noscript>
     <!-- Non-critical CSS (deferred) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css" media="print"
         onload="this.media='all'">
@@ -260,6 +262,8 @@
 
     @yield('content')
 
+
+    @stack('late-styles')
 
     @include('layouts.footer')
 

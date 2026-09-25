@@ -10,6 +10,9 @@
 
 @push('styles')
 @include('layouts.partials.hero-banner-styles')
+@endpush
+
+@push('late-styles')
 @include('layouts.partials.teacher-highlights-styles')
 @include('layouts.partials.academy-intro-styles')
 @include('layouts.partials.counts-section-styles')
