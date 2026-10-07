@@ -2,9 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://roohulquranacademy.com/blogs</loc>
-        <lastmod>2026-09-25T00:02:27+00:00</lastmod>
+        <lastmod>2026-10-07T13:24:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://roohulquranacademy.com/blogs/makharij-quran-arabic-letter-pronunciation</loc>
+        <lastmod>2026-10-07T13:24:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://roohulquranacademy.com/blogs/basic-tajweed-rules-for-beginners</loc>
+        <lastmod>2026-10-05T11:27:30+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://roohulquranacademy.com/blogs/ow-to-read-quran-for-beginners</loc>
