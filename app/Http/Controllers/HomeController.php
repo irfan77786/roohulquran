@@ -11,8 +11,9 @@ class HomeController extends Controller
     public function index()
     {
         $ukFeatured = LocationCatalog::featured('uk', 12);
+        $usFeatured = LocationCatalog::featured('us', 12);
 
-        return view('home', compact('ukFeatured'));
+        return view('home', compact('ukFeatured', 'usFeatured'));
     }
 
     public function video()

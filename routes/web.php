@@ -30,13 +30,16 @@ Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.
 
 
 
-// Main UK city pages only (see config/uk-cities.php)
+// Main UK + US city pages (unique local copy per location; see config/locations/)
 if (file_exists(__DIR__ . '/uk-cities.php')) {
     require __DIR__ . '/uk-cities.php';
 }
+if (file_exists(__DIR__ . '/us-cities.php')) {
+    require __DIR__ . '/us-cities.php';
+}
 
-// Old US / EU / extra UK city URLs used to be unique pages with duplicate content.
-// Send them to the homepage so Google drops them from the index.
+// Leftover city URLs that are NOT in the UK/US catalogs (old thin/duplicate pages)
+// 301 to the homepage so Google drops them from the index.
 Route::get('/{city}/{slug}', function () {
     $home = rtrim((string) config('app.sitemap_base_url', 'https://roohulquranacademy.com'), '/') . '/';
 

@@ -709,13 +709,36 @@
         <div class="text-center mb-4">
             <h2 class="fw-bold" style="color:#122F2A;">Online Quran classes across the UK</h2>
             <p class="text-muted col-lg-8 mx-auto">
-                These are dedicated landing pages for towns and boroughs with large Muslim communities — each with its own local copy, not a copied homepage.
+                These are dedicated landing pages for towns and boroughs with large Muslim communities, each with its own local copy, not a copied homepage.
             </p>
         </div>
         <div class="row g-3 justify-content-center">
             @foreach ($ukFeatured as $place)
                 <div class="col-6 col-md-4 col-lg-3">
                     <a href="{{ url($place['path']) }}" class="d-block bg-white rounded-3 shadow-sm p-3 h-100 text-decoration-none" style="color:#122F2A;font-weight:700;">
+                        {{ $place['name'] }}
+                        <span class="d-block fw-normal text-muted" style="font-size:13px;">{{ $place['region'] }}</span>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+@if (! empty($usFeatured ?? []))
+<section id="us-quran-classes" class="py-5" style="background:#ffffff;">
+    <div class="container" data-aos="fade-up">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold" style="color:#122F2A;">Online Quran classes across the USA</h2>
+            <p class="text-muted col-lg-8 mx-auto">
+                Dedicated pages for US cities and suburbs with strong Muslim communities. Each page has unique local copy for families searching Quran classes near them.
+            </p>
+        </div>
+        <div class="row g-3 justify-content-center">
+            @foreach ($usFeatured as $place)
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="{{ url($place['path']) }}" class="d-block bg-white rounded-3 shadow-sm p-3 h-100 text-decoration-none" style="color:#122F2A;font-weight:700;border:1px solid rgba(18,47,42,0.08);">
                         {{ $place['name'] }}
                         <span class="d-block fw-normal text-muted" style="font-size:13px;">{{ $place['region'] }}</span>
                     </a>

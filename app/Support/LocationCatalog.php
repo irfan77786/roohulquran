@@ -88,7 +88,7 @@ class LocationCatalog
         return array_merge($location, [
             'country_key' => $countryKey,
             'country_name' => $country['country'] ?? $regionName,
-            'timezone' => $country['timezone'] ?? 'Europe/London',
+            'timezone' => $location['timezone'] ?? $country['timezone'] ?? 'Europe/London',
             'locale' => $country['locale'] ?? 'en-GB',
             'schedule_note' => $country['schedule_note'] ?? '',
             'region_slug' => $regionSlug,

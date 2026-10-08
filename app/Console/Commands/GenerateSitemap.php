@@ -13,7 +13,7 @@ class GenerateSitemap extends Command
 {
     protected $signature = 'sitemap:generate';
 
-    protected $description = 'Write public/sitemap.xml with core pages, blogs, and main UK city URLs';
+    protected $description = 'Write public/sitemap.xml with core pages, blogs, and UK/US city URLs';
 
     public function handle()
     {
@@ -26,15 +26,17 @@ class GenerateSitemap extends Command
             ->add(Url::create("{$baseUrl}/pricing")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/contact-us")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/teachers")->setLastModificationDate($now))
+            ->add(Url::create("{$baseUrl}/faq")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/quran-reading-with-tajweed")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/qaida-by-roohulquran")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/tafseer-course-online")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/memorize-quran-online")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/beginner-quran-classes")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/kids-quran-classes")->setLastModificationDate($now))
+            ->add(Url::create("{$baseUrl}/online-ijazah-course")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/blogs")->setLastModificationDate($now));
 
-        foreach (LocationCatalog::pages('uk') as $page) {
+        foreach (array_merge(LocationCatalog::pages('uk'), LocationCatalog::pages('us')) as $page) {
             $sitemap->add(Url::create($baseUrl . $page['path'])
                 ->setLastModificationDate($now)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)

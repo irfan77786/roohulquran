@@ -15,6 +15,7 @@ return [
 
     'countries' => [
         'uk' => require __DIR__ . '/locations/uk.php',
+        'us' => require __DIR__ . '/locations/us.php',
     ],
 
 ];

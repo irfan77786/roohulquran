@@ -15,7 +15,7 @@
 @section('og_title', 'Online Quran Classes in ' . $city . ' — Tajweed, Hifz & Qaida')
 
 @section('meta_description',
-    'Join live 1-to-1 online Quran classes in ' . $city . '. Learn Madani Qaida, Tajweed, Hifz, Tafsir and Ijazah with male or female tutors on UK time. Book a free trial with Rooh Ul Quran Academy.')
+    'Join live 1-to-1 online Quran classes in ' . $city . '. Learn Madani Qaida, Tajweed, Hifz, Tafsir and Ijazah with male or female tutors on flexible local time. Book a free trial with Rooh Ul Quran Academy.')
 
 @section('meta_keywords',
     'online quran classes ' . $city . ', quran academy ' . $city . ', learn quran ' . $region . ', tajweed classes ' . $city . ', hifz online ' . $city . ', female quran tutor ' . $city)
@@ -33,7 +33,7 @@
 <nav class="loc-crumb container" aria-label="Breadcrumb">
     <a href="{{ route('home.index') }}">Home</a>
     <span aria-hidden="true"> / </span>
-    <span>UK Quran classes</span>
+    <span>{{ $copy['crumbLabel'] }}</span>
     <span aria-hidden="true"> / </span>
     <span>{{ $city }}</span>
 </nav>
@@ -45,7 +45,7 @@
     'heroCtaText' => 'Book a free trial',
     'heroCtaUrl' => '#contact',
     'formTitle' => 'Free Trial Class',
-    'formSubtitle' => 'UK-time slot for ' . $city,
+    'formSubtitle' => 'Trial slot for ' . $city,
     'formButtonText' => 'Get Free Trial Class',
     'heroImageAlt' => 'Online Quran classes in ' . $city,
 ])
@@ -74,7 +74,7 @@
                         <h3>Female Quran Teachers</h3>
                         <p>
                             Sisters and children in {{ $city }} can request a female tutor for a comfortable
-                            private class at home, with flexible UK evenings and weekends.
+                            private class at home, with flexible evenings and weekends.
                         </p>
                         <a href="#contact" class="teacher-card-btn teacher-card-btn--light">
                             Enroll now
@@ -165,7 +165,7 @@
 @include('layouts.partials.featured-courses', [
     'coursesEyebrow' => 'Courses for ' . $city,
     'coursesHeading' => 'Qaida, Tajweed, Hifz & kids classes',
-    'coursesSub' => 'Pick a path that matches the student in ' . $city . ' — then start with a free live trial on UK time.',
+    'coursesSub' => 'Pick a path that matches the student in ' . $city . ', then start with a free live trial.',
 ])
 
 <section id="counts" class="section counts counts-tauheed counts-help-people-v1-shape1" aria-labelledby="counts-heading">
@@ -348,7 +348,7 @@
                     <li class="mb-4 d-flex align-items-start">
                         <img src="{{ asset('assets/img/icons/schedule.avif') }}" alt="" class="me-3" style="width: 40px; height: 40px;" loading="lazy">
                         <div>
-                            <h3 style="color: #1bd634; font-weight: bold;">UK-time trial</h3>
+                            <h3 style="color: #1bd634; font-weight: bold;">{{ $copy['trialLabel'] }}</h3>
                             <p>We arrange a trial in the evening or weekend slot your household can actually keep.</p>
                         </div>
                     </li>
