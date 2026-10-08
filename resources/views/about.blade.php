@@ -209,32 +209,24 @@ certified teachers, flexible timings')
   }
 </style>
 
-@push('preload')
-@include('layouts.partials.hero-lcp-preload')
+@push('styles')
+@include('layouts.partials.hero-banner-styles')
 @endpush
 
 @section('content')
 
-<section id="hero" class="hero section tauheed-page-banner">
-  @include('layouts.partials.hero-lcp-image')
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-        <div class="tauheed-banner-panel">
-          <h1 class="fw-bold mb-3" style="font-size: 2.6rem !important">About <span>Rooh ul Quran Academy</span></h1>
-          <p style="font-size: larger; text-align: justify;" class="col-lg-10 col-md-12 col-sm-12">
-            At Rooh ul Quran Academy, we believe the Quran is not just a book to be read, but a divine guidance to be
-            lived.
-            Our mission is to make Quran learning accessible for everyone across the world through professional online
-            Quran classes with qualified teachers.
-          </p>
-
-          <a href="{{ route('home.contact.us') }}" class="btn-get-started text-bold">Free Trial</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+@include('layouts.partials.hero-banner', [
+    'heroTitle' => 'About Rooh ul Quran Academy',
+    'heroSubtitle' => 'At Rooh ul Quran Academy, we believe the Quran is not just a book to be read, but a divine guidance to be lived. Our mission is to make Quran learning accessible for everyone across the world through professional online Quran classes with qualified teachers.',
+    'heroFeatures' => [
+        'Madani Qaida, Quran Reading, Tajweed, Hifz, Tafsir & Ijazah',
+        'Certified male and female teachers',
+        'Flexible timings for kids, adults, and families',
+        'Start with a free trial class',
+    ],
+    'heroCtaText' => 'Free Trial',
+    'heroCtaUrl' => route('home.contact.us'),
+])
 
 <section id="about-us" class="section about-us about-refined py-5">
   <div class="container">
@@ -478,5 +470,7 @@ certified teachers, flexible timings')
   </script>
 
 </section>
+
+@include('layouts.partials.trial-form-scripts')
 
 @endsection

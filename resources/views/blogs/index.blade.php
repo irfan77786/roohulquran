@@ -6,29 +6,24 @@ guidance for students of all ages.')
 @section('meta_keywords' , 'rooh ul quran blog, islamic articles, quran learning tips, online quran blog, islamic
 education blog, quran study resources')
 
-@section('content')
-{{-- Page banner (same as About / Teachers) --}}
-@push('preload')
-@include('layouts.partials.hero-lcp-preload')
+@push('styles')
+@include('layouts.partials.hero-banner-styles')
 @endpush
 
-<section id="hero" class="hero section tauheed-page-banner">
-    @include('layouts.partials.hero-lcp-image')
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                <div class="tauheed-banner-panel">
-                    <h1 class="fw-bold mb-3" style="font-size: 2.4rem !important">Our <span>Blog</span></h1>
-                    <p style="font-size: larger" class="col-lg-10 col-md-12 col-sm-12">
-                        Explore Islamic articles, Quran learning tips, and guidance for students of all ages
-                        from Rooh Ul Quran Academy.
-                    </p>
-                    <a href="#blogs" class="btn-get-started text-bold">Latest Articles</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@section('content')
+
+@include('layouts.partials.hero-banner', [
+    'heroTitle' => 'Our Blog',
+    'heroSubtitle' => 'Explore Islamic articles, Quran learning tips, and guidance for students of all ages from Rooh Ul Quran Academy.',
+    'heroFeatures' => [
+        'Quran learning tips and Tajweed guidance',
+        'Islamic articles for students of every age',
+        'Practical study advice from our academy',
+        'Start with a free trial class',
+    ],
+    'heroCtaText' => 'Latest Articles',
+    'heroCtaUrl' => '#blogs',
+])
 
 <section id="blogs" class="rq-blogs">
     <div class="container">
@@ -116,4 +111,5 @@ education blog, quran study resources')
         @include('blogs.partials.trial-cta')
     </div>
 </section>
+@include('layouts.partials.trial-form-scripts')
 @endsection

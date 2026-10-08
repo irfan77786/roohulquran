@@ -45,14 +45,16 @@
                 <h1 class="hero-heading">{{ $heroTitle }}</h1>
                 <p class="hero-subtext">{!! $heroSubtitle !!}</p>
 
-                <ul class="hero-features text-start mt-3">
-                    @foreach ($heroFeatures as $feature)
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>{{ $feature }}</span>
-                        </li>
-                    @endforeach
-                </ul>
+                @if (!empty($heroFeatures))
+                    <ul class="hero-features text-start mt-3">
+                        @foreach ($heroFeatures as $feature)
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>{{ $feature }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
 
                 <a href="{{ $heroCtaUrl }}" class="btn-get-started mt-4 d-inline-block">{{ $heroCtaText }}</a>
             </div>

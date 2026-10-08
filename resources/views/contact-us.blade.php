@@ -165,29 +165,24 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
         }
     }
 </style>
-@section('content')
-{{-- Page banner (same as About / Teachers) --}}
-@push('preload')
-@include('layouts.partials.hero-lcp-preload')
+@push('styles')
+@include('layouts.partials.hero-banner-styles')
 @endpush
 
-<section id="hero" class="hero section tauheed-page-banner">
-    @include('layouts.partials.hero-lcp-image')
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                <div class="tauheed-banner-panel">
-                    <h1 class="fw-bold mb-3" style="font-size: 2.4rem !important">Contact <span>Us</span></h1>
-                    <p style="font-size: larger" class="col-lg-10 col-md-12 col-sm-12">
-                        We’re here to help! Whether you have questions about our Quran courses, need
-                        assistance with enrollment, or want to share feedback, feel free to reach out.
-                    </p>
-                    <a href="#contact" class="btn-get-started text-bold">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@section('content')
+
+@include('layouts.partials.hero-banner', [
+    'heroTitle' => 'Contact Us',
+    'heroSubtitle' => 'We’re here to help! Whether you have questions about our Quran courses, need assistance with enrollment, or want to share feedback, feel free to reach out.',
+    'heroFeatures' => [
+        'Questions about courses and enrollment',
+        'Call or WhatsApp us anytime',
+        'Email info@roohulquranacademy.com',
+        'Book a free trial class from this page',
+    ],
+    'heroCtaText' => 'Get In Touch',
+    'heroCtaUrl' => '#contact',
+])
 
 <!-- Contact Section -->
 <section id="contact" class="contact-refined">
@@ -224,7 +219,7 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                 <div class="form-panel">
                     <span class="contact-eyebrow">Contact Us</span>
                     <h2 class="contact-title">Get in Touch with Us</h2>
-                    <form id="trial-form" method="post" action="{{ route('trial-class.store') }}">
+                    <form id="contact-form" method="post" action="{{ route('trial-class.store') }}">
                         @csrf
                         <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="form_started_at" value="{{ time() }}">
@@ -287,7 +282,7 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 <script>
 (function() {
     function initContactForm() {
-        var form = document.getElementById('trial-form');
+        var form = document.getElementById('contact-form');
         var submitBtn = document.getElementById('get-in-touch');
         if (!form || !submitBtn) return;
 
@@ -358,4 +353,5 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
     }
 })();
 </script>
+@include('layouts.partials.trial-form-scripts')
 @endsection

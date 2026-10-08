@@ -200,32 +200,24 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
     }
 </style>
 
-@section('content')
-
-@push('preload')
-@include('layouts.partials.hero-lcp-preload')
+@push('styles')
+@include('layouts.partials.hero-banner-styles')
 @endpush
 
-<section id="hero" class="hero section tauheed-page-banner">
-    @include('layouts.partials.hero-lcp-image')
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 col-md-10 col-sm-12 mb-2 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                <div class="tauheed-banner-panel">
-                    <h1 class="fw-bold mb-3" style="font-size: 2.2rem !important">Online Quran Teacher <span>Learn Anytime,
-                            Anywhere</span></h1>
-                    <p style="font-size: larger" class="col-lg-10 col-md-12 col-sm-12">
-                        Learning the Quran with a professional teacher is the most effective way to build strong Tajweed,
-                        fluency, and understanding.
-                        At <strong>Rooh ul Quran Academy</strong>, we provide certified online Quran teachers who guide
-                        students step by step with patience and dedication.
-                    </p>
-                    <a href="{{ route('home.contact.us') }}" class="btn-get-started text-bold">Free Trial</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@section('content')
+
+@include('layouts.partials.hero-banner', [
+    'heroTitle' => 'Online Quran Teacher — Learn Anytime, Anywhere',
+    'heroSubtitle' => 'Learning the Quran with a professional teacher is the most effective way to build strong Tajweed, fluency, and understanding. At <strong>Rooh ul Quran Academy</strong>, we provide certified online Quran teachers who guide students step by step with patience and dedication.',
+    'heroFeatures' => [
+        'Certified male and female Quran teachers',
+        'One-to-one help with Tajweed, fluency, and Hifz',
+        'Patient guidance for kids and adults',
+        'Start with a free trial class',
+    ],
+    'heroCtaText' => 'Free Trial',
+    'heroCtaUrl' => route('home.contact.us'),
+])
 
 <section id="quran-teacher" class="py-5 quran-teacher teachers-refined">
     <div class="container">
@@ -447,5 +439,7 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
     </script>
 
 </section>
+
+@include('layouts.partials.trial-form-scripts')
 
 @endsection
