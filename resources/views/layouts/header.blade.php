@@ -60,14 +60,17 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle-link"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="{{ route('quran.tajweed') }}">Quran Reading With Tajweed</a></li>
-              <li><a href="{{ route('quran.recitation') }}">Noorani Qaida</a></li>
-              <li><a href="{{ route('quran.memorization') }}">Quran Memorization</a></li>
-              <li><a href="{{ route('quran.tafseer') }}">Tafseer Course</a></li>
+              <li><a href="{{ route('quran.recitation') }}">Madani Qaida Course</a></li>
+              <li><a href="{{ route('beginner.classes') }}">Quran Reading Course</a></li>
+              <li><a href="{{ route('quran.tajweed') }}">Learn Quran With Tajweed</a></li>
+              <li><a href="{{ route('quran.memorization') }}">Online Quran Memorization</a></li>
+              <li><a href="{{ route('quran.tafseer') }}">Online Quran Tafsir - Translation</a></li>
+              <li><a href="{{ route('quran.ijazah') }}">Online Ijazah Course</a></li>
             </ul>
           </li>
           <li><a href="{{ route('home.pricing') }}">Pricing</a></li>
           <li><a href="{{ route('teachers') }}">Teachers</a></li>
+          <li><a href="{{ route('home.faq') }}">FAQ</a></li>
           <li><a href="{{ route('home.contact.us') }}">Contact Us</a></li>
           <li><a href="{{ route('blogs.index') }}">Blogs</a></li>
         </ul>

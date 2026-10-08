@@ -594,7 +594,7 @@
                     <ul class="why-course-list">
                         <li>
                             <a href="{{ route('quran.recitation') }}" class="why-course-link is-active">
-                                <span>Madani &amp; Noorani Qaida Course</span>
+                                <span>Madani Qaida Course</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -612,18 +612,18 @@
                         </li>
                         <li>
                             <a href="{{ route('quran.memorization') }}" class="why-course-link">
-                                <span>Quran Memorization</span>
+                                <span>Online Quran Memorization</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('quran.tafseer') }}" class="why-course-link">
-                                <span>Quran Translation And Tafseer</span>
+                                <span>Online Quran Tafsir - Translation</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('home.contact.us') }}" class="why-course-link">
+                            <a href="{{ route('quran.ijazah') }}" class="why-course-link">
                                 <span>Online Ijazah Course</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
@@ -925,7 +925,7 @@
       "name": "Rooh Ul Quran Academy",
       "url": "https://roohulquranacademy.com/",
       "logo": "https://roohulquranacademy.com/assets/img/tab-logo.webp",
-      "description": "Rooh Ul Quran Academy offers online Quran classes for kids and adults worldwide, including Noorani Qaida, Tajweed, Quran Memorization (Hifz), and Tafseer courses with qualified male and female Quran tutors.",
+      "description": "Rooh Ul Quran Academy offers online Quran classes for kids and adults worldwide, including Madani Qaida, Quran Reading, Tajweed, Memorization (Hifz), Tafsir, and Ijazah courses with qualified male and female Quran tutors.",
       "email": "info@roohulquranacademy.com",
       "telephone": ["+92-334-4066429", "+92-344-6781539"],
       "sameAs": [
@@ -942,9 +942,27 @@
     },
     {
       "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#qaida-course",
+      "url": "{{ url('/qaida-by-roohulquran') }}",
+      "name": "Madani Qaida Course",
+      "description": "Beginner-friendly Madani Qaida course for kids and adults to learn Arabic letters, pronunciation, and basic Tajweed.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
+    },
+    {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#reading-course",
+      "url": "{{ url('/beginner-quran-classes') }}",
+      "name": "Quran Reading Course",
+      "description": "Online Quran reading course covering fundamentals, accurate recitation, Tajweed basics, and translation for all ages.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
+    },
+    {
+      "@type": "Course",
       "@id": "https://roohulquranacademy.com/#tajweed-course",
       "url": "{{ url('/quran-reading-with-tajweed') }}",
-      "name": "Online Quran Classes with Tajweed",
+      "name": "Learn Quran With Tajweed",
       "description": "Learn Quran online with proper Tajweed rules, guided by expert tutors.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
       @include('layouts.partials.course-schema-extras')
@@ -953,17 +971,8 @@
       "@type": "Course",
       "@id": "https://roohulquranacademy.com/#hifz-course",
       "url": "{{ url('/memorize-quran-online') }}",
-      "name": "Quran Memorization (Hifz) Online",
+      "name": "Online Quran Memorization",
       "description": "Structured online Hifz course to help students memorize the Holy Quran with discipline.",
-      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
-      @include('layouts.partials.course-schema-extras')
-    },
-    {
-      "@type": "Course",
-      "@id": "https://roohulquranacademy.com/#qaida-course",
-      "url": "{{ url('/qaida-by-roohulquran') }}",
-      "name": "Learn Noorani Qaida Online",
-      "description": "Beginner-friendly Noorani Qaida course for kids and adults to learn Quran reading basics.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
       @include('layouts.partials.course-schema-extras')
     },
@@ -971,8 +980,17 @@
       "@type": "Course",
       "@id": "https://roohulquranacademy.com/#tafseer-course",
       "url": "{{ url('/tafseer-course-online') }}",
-      "name": "Tafseer Course Online",
-      "description": "Comprehensive Tafseer ul Quran lessons to understand the meaning and context of the Quran.",
+      "name": "Online Quran Tafsir - Translation",
+      "description": "Interactive Quran translation and Tafsir lessons to understand meaning, context, and practical guidance.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
+    },
+    {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#ijazah-course",
+      "url": "{{ url('/online-ijazah-course') }}",
+      "name": "Online Ijazah Course",
+      "description": "Advanced Quran Ijazah preparation for certification in recitation, memorization, or Tafsir with certified scholars.",
       "provider": { "@id": "https://roohulquranacademy.com/#organization" }
       @include('layouts.partials.course-schema-extras')
     },
@@ -993,7 +1011,7 @@
           "name": "Can kids join your online Quran classes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, our online Quran classes are designed for both kids and adults. We have specialized beginner-friendly courses for children such as Noorani Qaida."
+            "text": "Yes, our online Quran classes are designed for both kids and adults. We have specialized beginner-friendly courses for children such as Madani Qaida."
           }
         },
         {
@@ -1009,7 +1027,7 @@
           "name": "What courses do you offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer Online Quran Classes with Tajweed, Noorani Qaida, Quran Memorization (Hifz), and Tafseer courses for all levels."
+            "text": "We offer Madani Qaida Course, Quran Reading Course, Learn Quran With Tajweed, Online Quran Memorization, Online Quran Tafsir - Translation, and Online Ijazah Course for all levels."
           }
         },
         {

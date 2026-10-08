@@ -40,4 +40,9 @@ class CourseController extends Controller
     {
         return view('courses.kids-classes');
     }
+
+    public function ijazahCourse()
+    {
+        return view('courses.ijazah');
+    }
 }

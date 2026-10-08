@@ -1,10 +1,10 @@
 @extends('main')
 
-@section('title', 'Memorize Quran Online - Hifz Classes for Kids & Adults')
-@section('meta_description' , 'Memorize the Quran online with Rooh Ul Quran Academy — live one-on-one Hifz classes,
+@section('title', 'Online Quran Memorization - Hifz Classes for Kids & Adults')
+@section('meta_description' , 'Online Quran Memorization with Rooh Ul Quran Academy — live one-on-one Hifz classes,
 flexible schedule & expert tutors')
-@section('meta_keywords' , 'memorize quran online, hifz classes online, online quran memorization, hifz course, memorize
-quran with tajweed, quran hifz academy, online hifz program')
+@section('meta_keywords' , 'online quran memorization, memorize quran online, hifz classes online, hifz course,
+memorize quran with tajweed, quran hifz academy, online hifz program')
 
 @section('content')
 
@@ -134,7 +134,7 @@ quran with tajweed, quran hifz academy, online hifz program')
 
 @include('layouts.partials.hero-banner-styles')
 @include('layouts.partials.hero-banner', [
-    'heroTitle' => 'Quran Memorization Course Online',
+    'heroTitle' => 'Online Quran Memorization',
     'heroSubtitle' => 'Begin your Hifz journey with personalized online memorization classes designed for every level.',
     'heroFeatures' => [
         'Start Where You Are, Learn at Your Pace',

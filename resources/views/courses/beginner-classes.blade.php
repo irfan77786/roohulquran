@@ -1,10 +1,10 @@
 @extends('main')
 
-@section('title', 'Quran Classes for Beginners - Online Quran Classes')
-@section('meta_description' , 'Begin your Quran journey with beginner Quran classes at Rooh Ul Quran — learn reading,
-Tajweed & basics with friendly tutors.')
-@section('meta_keywords' , 'beginner quran classes, learn quran online, quran basics course, quran reading for
-beginners, online quran for beginners, quran study beginners')
+@section('title', 'Quran Reading Course Online - Beginner Quran Classes')
+@section('meta_description' , 'Join our Quran Reading Course at Rooh Ul Quran — learn accurate reading, Tajweed basics
+& translation with friendly one-to-one tutors.')
+@section('meta_keywords' , 'quran reading course, beginner quran classes, learn quran online, quran basics course,
+quran reading for beginners, online quran for beginners')
 @section('content')
 
 <style>
@@ -132,11 +132,11 @@ beginners, online quran for beginners, quran study beginners')
 </style>
 @include('layouts.partials.hero-banner-styles')
 @include('layouts.partials.hero-banner', [
-    'heroTitle' => 'Online Noorani Qaida Course – Learn Noorani Qaida for Kids & Beginners',
-    'heroSubtitle' => 'Build a strong foundation in Quran recitation with our step-by-step Online Noorani Qaida Course for kids, adults, and new learners.',
+    'heroTitle' => 'Quran Reading Course – For All Ages & Levels',
+    'heroSubtitle' => 'Learn accurate Quran reading, core Tajweed, and basic meanings through translation with personal attention from caring instructors.',
     'heroFeatures' => [
-        'Perfect for absolute beginners',
-        'Kids, adults & new Muslims welcome',
+        'Reading foundations & correct recitation',
+        'Kids, adults & new learners welcome',
         'One-on-one flexible classes',
         'Start with a free trial class',
     ],
@@ -148,30 +148,20 @@ beginners, online quran for beginners, quran study beginners')
     <div class="container" data-aos="fade-up">
         <div class="row align-items-center">
 
-            <!-- Left: Image -->
-            {{-- <div class="col-lg-5 mb-4 mb-lg-0 text-center">
-                <img src="your-image-here.jpg" alt="Noorani Qaida Course" class="img-fluid rounded shadow-lg">
-            </div> --}}
-
-            <!-- Right: Content -->
             <div class="col-lg-7">
                 <h3 class="fw-bold mb-4" style="color:#122F2A; font-size: 28px;">
-                    About the Noorani Qaida Course
+                    About the Quran Reading Course
                 </h3>
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">
-                    The <strong>Online Noorani Qaida Course</strong> at <b>Rooh ul Quran Academy</b> is the foundation
-                    for every beginner who wishes to
-                    learn the Holy Quran. Our qualified online Quran teachers help kids, adults, and new learners start
-                    their journey in a
+                    The <strong>Online Quran Reading Course</strong> at <b>Rooh Ul Quran Academy</b> is made for people
+                    of all ages and backgrounds. It helps you learn the basics, read the Quran correctly, understand
+                    core Tajweed rules, and discover meanings through translation in a
                     <span class="fw-semibold">simple, step-by-step manner</span>.
                 </p>
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">
-                    Whether you are a child beginning your first lesson, a new Muslim, or someone looking to refresh
-                    your basics,
-                    our Noorani Qaida program builds a <strong>strong base for Quran with Tajweed</strong>.
-                    With <span class="text-primary">interactive one-to-one classes</span>, flexible timings, and
-                    dedicated female Quran tutors for sisters and children,
-                    we make Quran learning accessible to everyone worldwide.
+                    Enjoy flexible schedules with personal attention from our caring instructors, and learn from
+                    anywhere. Beyond reading, this course supports spiritual and moral growth, whether you are new to
+                    Quran reading or want to get better.
                 </p>
 
             </div>
@@ -187,70 +177,64 @@ beginners, online quran for beginners, quran study beginners')
             <!-- Left Side -->
             <div class="col-lg-8 col-md-12">
 
-                <!-- Learn Noorani Qaida Step by Step -->
                 <div class="card mb-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Learn Noorani Qaida Online –
-                            Step by Step for Beginners</h4>
-                        <p class="card-text">Our Noorani Qaida Online Course is designed for:</p>
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Quran Reading Course Online –
+                            Step by Step for All Ages</h4>
+                        <p class="card-text">Our Quran Reading Course is designed for:</p>
                         <ul>
-                            <li>Kids who are learning Quran for the first time.</li>
-                            <li>Beginners who want to understand the basics of Arabic letters and pronunciation.</li>
-                            <li>Adults who missed Quran learning in their childhood.</li>
-                            <li>New Muslims who wish to start their journey of learning Quran online.</li>
+                            <li>Kids building fluent Quran reading after Qaida.</li>
+                            <li>Beginners who want accurate recitation and basic Tajweed.</li>
+                            <li>Adults returning to Quran reading after a long break.</li>
+                            <li>New Muslims ready to read the Quran with confidence.</li>
                         </ul>
                         <p>This course helps students:</p>
                         <ul>
-                            <li>Recognize Arabic letters correctly.</li>
-                            <li>Learn proper pronunciation (Makharij).</li>
-                            <li>Practice joining letters and forming words.</li>
-                            <li>Develop fluency in reading short verses.</li>
+                            <li>Read Quran verses with correct pronunciation.</li>
+                            <li>Apply foundational Tajweed rules while reading.</li>
+                            <li>Understand meanings through simple translation.</li>
+                            <li>Build fluency and confidence with live practice.</li>
                         </ul>
                         <p>
-                            After completing this course, students are ready to move towards Quran classes for
-                            beginners, Tajweed rules,
-                            and eventually Hifz Quran Online if they wish.
+                            After completing this course, students can continue with Learn Quran With Tajweed,
+                            Online Quran Memorization, or Online Quran Tafsir - Translation.
                         </p>
                     </div>
                 </div>
 
-                <!-- Noorani Qaida for Kids and Adults -->
                 <div class="card shadow-sm" style="border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Noorani Qaida for Kids and
-                            Adults – A Strong Quran Foundation</h4>
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Quran Reading for Kids and
+                            Adults – Accurate &amp; Meaningful Recitation</h4>
                         <p class="card-text">
-                            At Rooh ul Quran Academy, we believe that Noorani Qaida is the key to reading the Quran
-                            correctly.
-                            Our tutors ensure that children enjoy learning through engaging lessons and repetition,
-                            while adults benefit from patient, step-by-step teaching.
+                            At Rooh Ul Quran Academy, Quran reading is more than fluency. It is a journey of spiritual
+                            and moral growth. Our tutors keep children engaged through clear lessons and repetition,
+                            while adults benefit from patient, flexible teaching.
                         </p>
                         <ul>
-                            <li>Kids Classes – Fun and interactive sessions for children.</li>
+                            <li>Kids Classes – Engaging sessions focused on correct reading.</li>
                             <li>Adult Classes – Flexible timing for working professionals.</li>
                             <li>Female Quran Tutors – Available for sisters and young girls.</li>
                             <li>Progress Tracking – Parents get regular updates about their child’s learning progress.
                             </li>
                         </ul>
                         <p>
-                            Once you master Noorani Qaida, you can easily continue with our Learn Quran Online with
-                            Tajweed
-                            and Quran Memorization Online Courses.
+                            Once you are confident in Quran reading, you can continue with Learn Quran With Tajweed
+                            and Online Quran Memorization courses.
                         </p>
                     </div>
                 </div>
 
-                <!-- Why Choose -->
                 <div class="card mt-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Online Noorani
-                            Qaida Course?</h4>
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Quran Reading
+                            Course?</h4>
                         <ul>
-                            <li>Qualified Noorani Qaida Tutors – Skilled in teaching kids & beginners.</li>
+                            <li>Qualified Quran tutors – Skilled with kids, adults &amp; beginners.</li>
                             <li>Flexible Timings – Learn at your convenience.</li>
                             <li>Affordable Packages – Quality education at reasonable prices.</li>
                             <li>Worldwide Access – Learn from any country.</li>
-                            <li>Step-by-Step Learning – From letters to fluent reading.</li>
+                            <li>Reading + Tajweed basics + translation support.</li>
                             <li>Interactive Classes – Focused one-to-one teaching.</li>
                         </ul>
                     </div>
@@ -344,96 +328,92 @@ beginners, online quran for beginners, quran study beginners')
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:#122F2A;">Noorani Qaida – Frequently Asked Questions</h2>
-            <p class="text-muted">Find answers about our Online Noorani Qaida Course for kids and adults.</p>
+            <h2 class="fw-bold" style="color:#122F2A;">Quran Reading Course – Frequently Asked Questions</h2>
+            <p class="text-muted">Find answers about our Online Quran Reading Course for kids and adults.</p>
         </div>
 
-        <!-- FAQ Accordion -->
-        <div class="accordion" id="faqNooraniAccordion">
+        <div class="accordion" id="faqReadingAccordion">
 
-            <!-- Item 1 -->
             <div class="accordion-item mb-3 shadow-sm rounded">
-                <h2 class="accordion-header" id="faq-noorani-heading-1">
+                <h2 class="accordion-header" id="faq-reading-heading-1">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-noorani-collapse-1" aria-expanded="false"
-                        aria-controls="faq-noorani-collapse-1">
-                        Who should join the Online Noorani Qaida Course?
+                        data-bs-target="#faq-reading-collapse-1" aria-expanded="false"
+                        aria-controls="faq-reading-collapse-1">
+                        Who should join the Quran Reading Course?
                     </button>
                 </h2>
-                <div id="faq-noorani-collapse-1" class="accordion-collapse collapse"
-                    aria-labelledby="faq-noorani-heading-1" data-bs-parent="#faqNooraniAccordion">
+                <div id="faq-reading-collapse-1" class="accordion-collapse collapse"
+                    aria-labelledby="faq-reading-heading-1" data-bs-parent="#faqReadingAccordion">
                     <div class="accordion-body">
-                        Anyone who is a <strong>beginner—kids, adults, or new Muslims—</strong> can join this course.
+                        Anyone who wants to read the Quran correctly (<strong>kids, adults, or new Muslims</strong>) can
+                        join this course.
                     </div>
                 </div>
             </div>
 
-            <!-- Item 2 -->
             <div class="accordion-item mb-3 shadow-sm rounded">
-                <h2 class="accordion-header" id="faq-noorani-heading-2">
+                <h2 class="accordion-header" id="faq-reading-heading-2">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-noorani-collapse-2" aria-expanded="false"
-                        aria-controls="faq-noorani-collapse-2">
-                        Do you offer female Quran teachers for Noorani Qaida?
+                        data-bs-target="#faq-reading-collapse-2" aria-expanded="false"
+                        aria-controls="faq-reading-collapse-2">
+                        Do you offer female Quran teachers for Quran Reading?
                     </button>
                 </h2>
-                <div id="faq-noorani-collapse-2" class="accordion-collapse collapse"
-                    aria-labelledby="faq-noorani-heading-2" data-bs-parent="#faqNooraniAccordion">
+                <div id="faq-reading-collapse-2" class="accordion-collapse collapse"
+                    aria-labelledby="faq-reading-heading-2" data-bs-parent="#faqReadingAccordion">
                     <div class="accordion-body">
                         Yes, we provide <strong>female Quran tutors</strong> for sisters and kids.
                     </div>
                 </div>
             </div>
 
-            <!-- Item 3 -->
             <div class="accordion-item mb-3 shadow-sm rounded">
-                <h2 class="accordion-header" id="faq-noorani-heading-3">
+                <h2 class="accordion-header" id="faq-reading-heading-3">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-noorani-collapse-3" aria-expanded="false"
-                        aria-controls="faq-noorani-collapse-3">
-                        How long does it take to complete Noorani Qaida?
+                        data-bs-target="#faq-reading-collapse-3" aria-expanded="false"
+                        aria-controls="faq-reading-collapse-3">
+                        Do I need Madani Qaida before this course?
                     </button>
                 </h2>
-                <div id="faq-noorani-collapse-3" class="accordion-collapse collapse"
-                    aria-labelledby="faq-noorani-heading-3" data-bs-parent="#faqNooraniAccordion">
+                <div id="faq-reading-collapse-3" class="accordion-collapse collapse"
+                    aria-labelledby="faq-reading-heading-3" data-bs-parent="#faqReadingAccordion">
                     <div class="accordion-body">
-                        It depends on the student’s pace. On average, <strong>kids complete it in 3–6 months</strong>.
+                        Basic letter recognition helps, but we assess each student live and place them at the right
+                        starting point.
                     </div>
                 </div>
             </div>
 
-            <!-- Item 4 -->
             <div class="accordion-item mb-3 shadow-sm rounded">
-                <h2 class="accordion-header" id="faq-noorani-heading-4">
+                <h2 class="accordion-header" id="faq-reading-heading-4">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-noorani-collapse-4" aria-expanded="false"
-                        aria-controls="faq-noorani-collapse-4">
+                        data-bs-target="#faq-reading-collapse-4" aria-expanded="false"
+                        aria-controls="faq-reading-collapse-4">
                         Is this course only for children?
                     </button>
                 </h2>
-                <div id="faq-noorani-collapse-4" class="accordion-collapse collapse"
-                    aria-labelledby="faq-noorani-heading-4" data-bs-parent="#faqNooraniAccordion">
+                <div id="faq-reading-collapse-4" class="accordion-collapse collapse"
+                    aria-labelledby="faq-reading-heading-4" data-bs-parent="#faqReadingAccordion">
                     <div class="accordion-body">
-                        No, this course is for <strong>both kids and adults</strong>. Many adults also start with
-                        Noorani Qaida to refresh their basics.
+                        No, this course is for <strong>both kids and adults</strong>. Many adults also join to improve
+                        fluency and Tajweed basics.
                     </div>
                 </div>
             </div>
 
-            <!-- Item 5 -->
             <div class="accordion-item mb-3 shadow-sm rounded">
-                <h2 class="accordion-header" id="faq-noorani-heading-5">
+                <h2 class="accordion-header" id="faq-reading-heading-5">
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq-noorani-collapse-5" aria-expanded="false"
-                        aria-controls="faq-noorani-collapse-5">
-                        What will I learn after Noorani Qaida?
+                        data-bs-target="#faq-reading-collapse-5" aria-expanded="false"
+                        aria-controls="faq-reading-collapse-5">
+                        What can I study after Quran Reading?
                     </button>
                 </h2>
-                <div id="faq-noorani-collapse-5" class="accordion-collapse collapse"
-                    aria-labelledby="faq-noorani-heading-5" data-bs-parent="#faqNooraniAccordion">
+                <div id="faq-reading-collapse-5" class="accordion-collapse collapse"
+                    aria-labelledby="faq-reading-heading-5" data-bs-parent="#faqReadingAccordion">
                     <div class="accordion-body">
-                        After Noorani Qaida, you can continue with <strong>Learn Quran with Tajweed</strong> and then
-                        move to <strong>Quran Memorization Online</strong> if you wish.
+                        After Quran Reading, you can continue with <strong>Learn Quran With Tajweed</strong> and then
+                        move to <strong>Online Quran Memorization</strong> if you wish.
                     </div>
                 </div>
             </div>
@@ -447,18 +427,18 @@ beginners, online quran for beginners, quran study beginners')
     {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Online Noorani Qaida Course",
-  "description": "Rooh Ul Quran Academy's Noorani Qaida course helps beginners, kids, and adults learn the basics of Quran reading. Students will learn Arabic letters, pronunciation, and Tajweed rules in a structured, step-by-step format.",
+  "name": "Quran Reading Course",
+  "description": "Rooh Ul Quran Academy's Quran Reading Course helps learners of all ages read the Quran correctly, apply basic Tajweed, and understand meanings through translation with flexible one-to-one online classes.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",
-    "url": "http://roohulquranacademy.com",
+    "url": "https://roohulquranacademy.com",
     "logo": "https://roohulquranacademy.com/assets/img/logo.png",
     "sameAs": [
       "https://www.facebook.com/roohulquran"
     ]
   },
-  "url": "http://roohulquranacademy.com/qaida-by-roohulquran",
+  "url": "https://roohulquranacademy.com/beginner-quran-classes",
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",

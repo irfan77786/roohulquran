@@ -7,6 +7,7 @@
         'quran.tafseer',
         'beginner.classes',
         'kids.classes',
+        'quran.ijazah',
     ])->map(fn ($name) => rtrim(parse_url(route($name), PHP_URL_PATH), '/') ?: '/')->values();
     $leadConfig = [
         'storeUrl' => route('trial-class.store'),

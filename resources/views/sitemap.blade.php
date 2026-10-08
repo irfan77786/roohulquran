@@ -32,6 +32,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>{{ $base }}/faq</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>{{ $base }}/quran-reading-with-tajweed</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
@@ -69,6 +75,12 @@
     </url>
     <url>
         <loc>{{ $base }}/kids-quran-classes</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{{ $base }}/online-ijazah-course</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>

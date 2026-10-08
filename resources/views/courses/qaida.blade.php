@@ -1,9 +1,9 @@
 @extends('main')
 
-@section('title', 'Learn Noorani Qaida Online - Beginner Quran Course')
-@section('meta_description' , 'Learn Noorani Qaida online with Rooh Ul Quran — step-by-step course for kids, beginners &
+@section('title', 'Madani Qaida Course Online - Beginner Quran Course')
+@section('meta_description' , 'Learn Madani Qaida online with Rooh Ul Quran — step-by-step course for kids, beginners &
 adults to build Quran reading skills.')
-@section('meta_keywords' , 'noorani qaida, qaida by roohulquran, online noorani qaida, learn qaida online, beginners
+@section('meta_keywords' , 'madani qaida, madani qaida course, online madani qaida, learn qaida online, beginners
 qaida course, online quran basics')
 @section('content')
 
@@ -154,10 +154,10 @@ qaida course, online quran basics')
 </style>
 @include('layouts.partials.hero-banner-styles')
 @include('layouts.partials.hero-banner', [
-    'heroTitle' => 'Online Noorani Qaida Course – Learn Noorani Qaida for Kids & Beginners',
-    'heroSubtitle' => 'Build a strong foundation in Quran recitation with our step-by-step Online Noorani Qaida Course for kids, adults, and new learners.',
+    'heroTitle' => 'Madani Qaida Course – Learn Quran Basics for Kids & Beginners',
+    'heroSubtitle' => 'Build a strong foundation in Quran recitation with our step-by-step Madani Qaida Course for kids, adults, and new learners.',
     'heroFeatures' => [
-        'Step-by-step Noorani Qaida for beginners',
+        'Step-by-step Madani Qaida for beginners',
         'Kids, adults & new Muslims welcome',
         'One-on-one classes with expert tutors',
         'Start with a free trial class',
@@ -172,16 +172,16 @@ qaida course, online quran basics')
 
             <!-- Left: Image -->
             {{-- <div class="col-lg-5 mb-4 mb-lg-0 text-center">
-                <img src="your-image-here.jpg" alt="Noorani Qaida Course" class="img-fluid rounded shadow-lg">
+                <img src="your-image-here.jpg" alt="Madani Qaida Course" class="img-fluid rounded shadow-lg">
             </div> --}}
 
             <!-- Right: Content -->
             <div class="col-lg-12 col-md-7 col-sm-12">
                 <h3 class="fw-bold mb-4" style="color:#122F2A; font-size: 28px; text-align: center;">
-                    About the Noorani Qaida Course
+                    About the Madani Qaida Course
                 </h3>
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">
-                    The <strong>Online Noorani Qaida Course</strong> at <b>Rooh ul Quran Academy</b> is the foundation
+                    The <strong>Online Madani Qaida Course</strong> at <b>Rooh ul Quran Academy</b> is the foundation
                     for every beginner who wishes to
                     learn the Holy Quran. Our qualified online Quran teachers help kids, adults, and new learners start
                     their journey in a
@@ -190,7 +190,7 @@ qaida course, online quran basics')
                 <p style="font-size: 17px; line-height: 1.8rem; color:#555;">
                     Whether you are a child beginning your first lesson, a new Muslim, or someone looking to refresh
                     your basics,
-                    our Noorani Qaida program builds a <strong>strong base for Quran with Tajweed</strong>.
+                    our Madani Qaida program builds a <strong>strong base for Quran with Tajweed</strong>.
                     With <span class="text-primary">interactive one-to-one classes</span>, flexible timings, and
                     dedicated female Quran tutors for sisters and children,
                     we make Quran learning accessible to everyone worldwide.
@@ -209,12 +209,12 @@ qaida course, online quran basics')
             <!-- Left Side -->
             <div class="col-lg-8 col-md-12">
 
-                <!-- Learn Noorani Qaida Step by Step -->
+                <!-- Learn Madani Qaida Step by Step -->
                 <div class="card mb-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Learn Noorani Qaida Online –
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Learn Madani Qaida Online –
                             Step by Step for Beginners</h4>
-                        <p class="card-text">Our Noorani Qaida Online Course is designed for:</p>
+                        <p class="card-text">Our Madani Qaida Online Course is designed for:</p>
                         <ul>
                             <li>Kids who are learning Quran for the first time.</li>
                             <li>Beginners who want to understand the basics of Arabic letters and pronunciation.</li>
@@ -236,13 +236,13 @@ qaida course, online quran basics')
                     </div>
                 </div>
 
-                <!-- Noorani Qaida for Kids and Adults -->
+                <!-- Madani Qaida for Kids and Adults -->
                 <div class="card shadow-sm" style="border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Noorani Qaida for Kids and
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Madani Qaida for Kids and
                             Adults – A Strong Quran Foundation</h4>
                         <p class="card-text">
-                            At Rooh ul Quran Academy, we believe that Noorani Qaida is the key to reading the Quran
+                            At Rooh ul Quran Academy, we believe that Madani Qaida is the key to reading the Quran
                             correctly.
                             Our tutors ensure that children enjoy learning through engaging lessons and repetition,
                             while adults benefit from patient, step-by-step teaching.
@@ -255,7 +255,7 @@ qaida course, online quran basics')
                             </li>
                         </ul>
                         <p>
-                            Once you master Noorani Qaida, you can easily continue with our Learn Quran Online with
+                            Once you master Madani Qaida, you can easily continue with our Learn Quran Online with
                             Tajweed
                             and Quran Memorization Online Courses.
                         </p>
@@ -265,10 +265,10 @@ qaida course, online quran basics')
                 <!-- Why Choose -->
                 <div class="card mt-4 shadow-sm" style="background-color: #fff8e6; border: none; border-radius: 10px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Online Noorani
+                        <h4 class="card-title" style="color: #122F2A; font-weight: bold;">Why Choose Our Online Madani
                             Qaida Course?</h4>
                         <ul>
-                            <li>Qualified Noorani Qaida Tutors – Skilled in teaching kids & beginners.</li>
+                            <li>Qualified Madani Qaida Tutors – Skilled in teaching kids & beginners.</li>
                             <li>Flexible Timings – Learn at your convenience.</li>
                             <li>Affordable Packages – Quality education at reasonable prices.</li>
                             <li>Worldwide Access – Learn from any country.</li>
@@ -367,8 +367,8 @@ qaida course, online quran basics')
     <div class="container" data-aos="fade-up">
         <!-- Heading -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:#122F2A;">Noorani Qaida – Frequently Asked Questions</h2>
-            <p class="text-muted">Find answers about our Online Noorani Qaida Course for kids and adults.</p>
+            <h2 class="fw-bold" style="color:#122F2A;">Madani Qaida – Frequently Asked Questions</h2>
+            <p class="text-muted">Find answers about our Online Madani Qaida Course for kids and adults.</p>
         </div>
 
         <!-- FAQ Accordion -->
@@ -380,7 +380,7 @@ qaida course, online quran basics')
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-noorani-collapse-1" aria-expanded="false"
                         aria-controls="faq-noorani-collapse-1">
-                        Who should join the Online Noorani Qaida Course?
+                        Who should join the Online Madani Qaida Course?
                     </button>
                 </h2>
                 <div id="faq-noorani-collapse-1" class="accordion-collapse collapse"
@@ -397,7 +397,7 @@ qaida course, online quran basics')
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-noorani-collapse-2" aria-expanded="false"
                         aria-controls="faq-noorani-collapse-2">
-                        Do you offer female Quran teachers for Noorani Qaida?
+                        Do you offer female Quran teachers for Madani Qaida?
                     </button>
                 </h2>
                 <div id="faq-noorani-collapse-2" class="accordion-collapse collapse"
@@ -414,7 +414,7 @@ qaida course, online quran basics')
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-noorani-collapse-3" aria-expanded="false"
                         aria-controls="faq-noorani-collapse-3">
-                        How long does it take to complete Noorani Qaida?
+                        How long does it take to complete Madani Qaida?
                     </button>
                 </h2>
                 <div id="faq-noorani-collapse-3" class="accordion-collapse collapse"
@@ -438,7 +438,7 @@ qaida course, online quran basics')
                     aria-labelledby="faq-noorani-heading-4" data-bs-parent="#faqNooraniAccordion">
                     <div class="accordion-body">
                         No, this course is for <strong>both kids and adults</strong>. Many adults also start with
-                        Noorani Qaida to refresh their basics.
+                        Madani Qaida to refresh their basics.
                     </div>
                 </div>
             </div>
@@ -449,13 +449,13 @@ qaida course, online quran basics')
                     <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                         data-bs-target="#faq-noorani-collapse-5" aria-expanded="false"
                         aria-controls="faq-noorani-collapse-5">
-                        What will I learn after Noorani Qaida?
+                        What will I learn after Madani Qaida?
                     </button>
                 </h2>
                 <div id="faq-noorani-collapse-5" class="accordion-collapse collapse"
                     aria-labelledby="faq-noorani-heading-5" data-bs-parent="#faqNooraniAccordion">
                     <div class="accordion-body">
-                        After Noorani Qaida, you can continue with <strong>Learn Quran with Tajweed</strong> and then
+                        After Madani Qaida, you can continue with <strong>Learn Quran with Tajweed</strong> and then
                         move to <strong>Quran Memorization Online</strong> if you wish.
                     </div>
                 </div>
@@ -469,8 +469,8 @@ qaida course, online quran basics')
   "@context": "https://schema.org",
   "@type": "Course",
   "url": "https://roohulquranacademy.com/qaida-by-roohulquran",
-  "name": "Learn Noorani Qaida Online",
-  "description": "Beginner-friendly Noorani Qaida course designed for kids and adults to learn Arabic letters, pronunciation, and basic Quran reading skills. Taught by certified male and female Quran tutors with one-on-one online sessions.",
+  "name": "Learn Madani Qaida Online",
+  "description": "Beginner-friendly Madani Qaida course designed for kids and adults to learn Arabic letters, pronunciation, and basic Quran reading skills. Taught by certified male and female Quran tutors with one-on-one online sessions.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",

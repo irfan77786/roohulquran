@@ -15,7 +15,7 @@
 @section('og_title', 'Online Quran Classes in ' . $city . ' — Tajweed, Hifz & Qaida')
 
 @section('meta_description',
-    'Join live 1-to-1 online Quran classes in ' . $city . '. Learn Noorani Qaida, Tajweed and Hifz with male or female tutors on UK time. Book a free trial with Rooh Ul Quran Academy.')
+    'Join live 1-to-1 online Quran classes in ' . $city . '. Learn Madani Qaida, Tajweed, Hifz, Tafsir and Ijazah with male or female tutors on UK time. Book a free trial with Rooh Ul Quran Academy.')
 
 @section('meta_keywords',
     'online quran classes ' . $city . ', quran academy ' . $city . ', learn quran ' . $region . ', tajweed classes ' . $city . ', hifz online ' . $city . ', female quran tutor ' . $city)
@@ -235,7 +235,7 @@
                     <ul class="why-course-list">
                         <li>
                             <a href="{{ route('quran.recitation') }}" class="why-course-link is-active">
-                                <span>Madani &amp; Noorani Qaida Course</span>
+                                <span>Madani Qaida Course</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -253,19 +253,19 @@
                         </li>
                         <li>
                             <a href="{{ route('quran.memorization') }}" class="why-course-link">
-                                <span>Quran Memorization</span>
-                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('kids.classes') }}" class="why-course-link">
-                                <span>Online Quran Classes for Kids</span>
+                                <span>Online Quran Memorization</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('quran.tafseer') }}" class="why-course-link">
-                                <span>Quran Translation And Tafseer</span>
+                                <span>Online Quran Tafsir - Translation</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('quran.ijazah') }}" class="why-course-link">
+                                <span>Online Ijazah Course</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>

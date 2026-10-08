@@ -1,10 +1,10 @@
 @extends('main')
 
-@section('title', 'Tafseer Course - Online Quran Classes')
-@section('meta_description' , 'Understand Quran’s meaning with Rooh Ul Quran’s Tafsir course — expert teachers, flexible
-timings, learn translation & context')
-@section('meta_keywords' , 'online tafsir course, quran tafsir, learn tafsir online, tafsir course, quran translation,
-tafsir classes, understand quran meaning')
+@section('title', 'Online Quran Tafsir - Translation Course')
+@section('meta_description' , 'Understand Quran’s meaning with Rooh Ul Quran’s Tafsir & Translation course — expert
+teachers, flexible timings, Surah study & practical guidance.')
+@section('meta_keywords' , 'online quran tafsir, quran translation course, learn tafsir online, tafsir course, quran
+translation, tafsir classes, understand quran meaning')
 
 @section('content')
 
@@ -134,8 +134,8 @@ tafsir classes, understand quran meaning')
 </style>
 @include('layouts.partials.hero-banner-styles')
 @include('layouts.partials.hero-banner', [
-    'heroTitle' => 'Online Tafsir Course',
-    'heroSubtitle' => 'Our teachers explain Tafsir in an easy-to-understand way, making it suitable for kids, adults, and new learners.',
+    'heroTitle' => 'Online Quran Tafsir - Translation',
+    'heroSubtitle' => 'Our teachers explain Tafsir and translation in an easy-to-understand way, making it suitable for kids, adults, and new learners.',
     'heroFeatures' => [
         'Easy-to-understand Tafsir lessons',
         'Suitable for kids, adults & beginners',
@@ -235,8 +235,8 @@ tafsir classes, understand quran meaning')
             </ul>
             <p class="mt-2">
               We also recommend combining Tafsir with our Online Quran Memorization Course for those who want to not
-              only memorize but also understand the Quran. Beginners can also benefit from our Online Noorani Qaida
-              Course to improve reading skills before starting Tafsir.
+              only memorize but also understand the Quran. Beginners can also benefit from our Madani Qaida Course
+              or Quran Reading Course to improve reading skills before starting Tafsir.
             </p>
           </div>
         </div>
@@ -411,8 +411,8 @@ tafsir classes, understand quran meaning')
   "@context": "https://schema.org",
   "@type": "Course",
   "url": "https://roohulquranacademy.com/tafseer-course-online",
-  "name": "Tafseer Course Online",
-  "description": "Learn Tafseer ul Quran online with Rooh Ul Quran Academy. From foundation to advanced level, this course helps students understand the deeper meaning of Quranic verses with historical and contemporary context. One-on-one classes, flexible timings, and a free trial are available.",
+  "name": "Online Quran Tafsir - Translation",
+  "description": "Learn Quran Tafsir and translation online with Rooh Ul Quran Academy. From foundation to advanced level, this course helps students understand the deeper meaning of Quranic verses with historical and contemporary context. One-on-one classes, flexible timings, and a free trial are available.",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",

@@ -255,11 +255,11 @@ certified teachers, flexible timings')
           with Tajweed, memorize the Holy Quran, and understand its deeper meanings through Tafsir.
         </p>
         <ul class="about-checklist">
-          <li><i class="bi bi-check-circle-fill"></i> Learn Quran Online with Tajweed</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Noorani Qaida Course (for beginners and kids)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Tajweed Course (for fluency and accuracy)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Quran Memorization Course (Hifz)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Tafsir Course (to understand the Quran deeply)</li>
+          <li><i class="bi bi-check-circle-fill"></i> Madani Qaida Course (for beginners and kids)</li>
+          <li><i class="bi bi-check-circle-fill"></i> Quran Reading Course</li>
+          <li><i class="bi bi-check-circle-fill"></i> Learn Quran With Tajweed</li>
+          <li><i class="bi bi-check-circle-fill"></i> Online Quran Memorization (Hifz)</li>
+          <li><i class="bi bi-check-circle-fill"></i> Online Quran Tafsir - Translation</li>
           <li><i class="bi bi-check-circle-fill"></i> Online Ijazah Course (for advanced students)</li>
         </ul>
       </div>
@@ -393,7 +393,7 @@ certified teachers, flexible timings')
         <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
           data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Yes, we have <strong>online Quran classes for kids</strong>, starting from Noorani Qaida to Tajweed and
+            Yes, we have <strong>online Quran classes for kids</strong>, starting from Madani Qaida to Tajweed and
             Hifz.
           </div>
         </div>
@@ -457,7 +457,7 @@ certified teachers, flexible timings')
   "@type": "AboutPage",
   "url": "https://roohulquranacademy.com/about",
   "name": "About Rooh Ul Quran Academy",
-  "description": "Rooh Ul Quran Academy is an online Quran learning platform offering Tajweed, Noorani Qaida, Hifz, Tafsir, and Ijazah courses with certified male and female teachers. Our mission is to make Quran learning accessible worldwide with flexible timings and affordable fees.",
+  "description": "Rooh Ul Quran Academy is an online Quran learning platform offering Madani Qaida, Quran Reading, Tajweed, Memorization (Hifz), Tafsir, and Ijazah courses with certified male and female teachers. Our mission is to make Quran learning accessible worldwide with flexible timings and affordable fees.",
   "publisher": {
     "@type": "EducationalOrganization",
     "name": "Rooh Ul Quran Academy",

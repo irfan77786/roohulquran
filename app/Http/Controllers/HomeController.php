@@ -50,6 +50,11 @@ class HomeController extends Controller
         return view('teachers');
     }
 
+    public function faq()
+    {
+        return view('faq');
+    }
+
     public function cityPage(Request $request, $city = null, $state = null)
     {
         $route = $request->route();

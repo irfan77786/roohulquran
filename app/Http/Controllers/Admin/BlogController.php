@@ -251,11 +251,14 @@ class BlogController extends Controller
     private function suggestedInternalLinks(): array
     {
         return [
-            ['label' => 'Quran Reading with Tajweed', 'url' => route('quran.tajweed')],
-            ['label' => 'Noorani Qaida for beginners', 'url' => route('quran.recitation')],
-            ['label' => 'Quran Memorization (Hifz)', 'url' => route('quran.memorization')],
-            ['label' => 'Tafseer course', 'url' => route('quran.tafseer')],
+            ['label' => 'Madani Qaida Course', 'url' => route('quran.recitation')],
+            ['label' => 'Quran Reading Course', 'url' => route('beginner.classes')],
+            ['label' => 'Learn Quran With Tajweed', 'url' => route('quran.tajweed')],
+            ['label' => 'Online Quran Memorization', 'url' => route('quran.memorization')],
+            ['label' => 'Online Quran Tafsir - Translation', 'url' => route('quran.tafseer')],
+            ['label' => 'Online Ijazah Course', 'url' => route('quran.ijazah')],
             ['label' => 'Kids Quran classes', 'url' => route('kids.classes')],
+            ['label' => 'FAQ — Online Quran Classes', 'url' => route('home.faq')],
             ['label' => 'Pricing', 'url' => route('home.pricing')],
             ['label' => 'Meet our teachers', 'url' => route('teachers')],
             ['label' => '3-day free trial / Contact', 'url' => route('home.contact.us')],

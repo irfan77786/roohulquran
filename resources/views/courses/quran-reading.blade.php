@@ -1,8 +1,8 @@
 @extends('main')
 
-@section('title', 'Quran Reading with Tajweed - Online Quran Classes')
-@section('meta_description' , 'Learn Quran reading with Tajweed online — improve pronunciation, fluency, and recitation with expert Quran tutors. ')
-@section('meta_keywords' , 'quran reading with tajweed, online quran classes, tajweed course, quran pronunciation, learn quran online, quran recitation classes, islamic learning')
+@section('title', 'Learn Quran With Tajweed - Online Quran Classes')
+@section('meta_description' , 'Learn Quran With Tajweed online — improve pronunciation, fluency, and recitation with expert Quran tutors. ')
+@section('meta_keywords' , 'learn quran with tajweed, online quran classes, tajweed course, quran pronunciation, learn quran online, quran recitation classes, islamic learning')
 @section('content')
 
 <style>
@@ -134,7 +134,7 @@
 
 @include('layouts.partials.hero-banner-styles')
 @include('layouts.partials.hero-banner', [
-    'heroTitle' => 'Quran Reading With Tajweed Course',
+    'heroTitle' => 'Learn Quran With Tajweed',
     'heroSubtitle' => 'Our Online Quran Classes are structured and student-focused making learning Tajweed simple and achievable.',
     'heroFeatures' => [
         'Structured Tajweed lessons',
@@ -167,7 +167,7 @@
               change.
             </p>
             <p class="card-text">
-              Whether you are just starting with Noorani Qaida Online or already know basic Quran reading, this course
+              Whether you are just starting with Madani Qaida or already know basic Quran reading, this course
               will elevate your recitation skills.
             </p>
           </div>
@@ -229,7 +229,7 @@
               </li>
             </ul>
             <p class="card-text mt-3">
-              If you are just starting your Quran journey, we recommend beginning with our Online Noorani Qaida Course.
+              If you are just starting your Quran journey, we recommend beginning with our Madani Qaida Course.
               Once you gain a strong foundation, moving into Online Tajweed Classes becomes much easier. For those who
               want to advance further, we also offer Online Quran Memorization Course and Online Tafsir Course.
             </p>
@@ -358,7 +358,7 @@
         <div id="faq-tajweed-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-tajweed-heading-2"
           data-bs-parent="#faqTajweedAccordion">
           <div class="accordion-body">
-            No, beginners can start from <strong>Noorani Qaida Online</strong> and then gradually move into Tajweed
+            No, beginners can start from <strong>Madani Qaida Course</strong> and then gradually move into Tajweed
             lessons.
           </div>
         </div>

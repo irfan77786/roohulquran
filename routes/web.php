@@ -85,6 +85,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('home.about');
 Route::get('/pricing', [HomeController::class, 'pricing'])->name('home.pricing');
 Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('home.contact.us');
 Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
+Route::get('/faq', [HomeController::class, 'faq'])->name('home.faq');
 
 
 Route::post('/trial-class', [TrialClassController::class, 'store'])
@@ -99,6 +100,7 @@ Route::get('/tafseer-course-online', [CourseController::class, 'quraWithTafseer'
 Route::get('/memorize-quran-online', [CourseController::class, 'quraMemorization'])->name('quran.memorization');
 Route::get('/beginner-quran-classes', [CourseController::class, 'begineerClasses'])->name('beginner.classes');
 Route::get('/kids-quran-classes', [CourseController::class, 'kidsClasses'])->name('kids.classes');
+Route::get('/online-ijazah-course', [CourseController::class, 'ijazahCourse'])->name('quran.ijazah');
 
 
 
