@@ -86,26 +86,6 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- UK city and London area pages -->
-    @foreach ($ukPages ?? [] as $page)
-    <url>
-        <loc>{{ $base }}{{ $page['path'] }}</loc>
-        <lastmod>{{ now()->toAtomString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    @endforeach
-
-    <!-- US city pages -->
-    @foreach ($usPages ?? [] as $page)
-    <url>
-        <loc>{{ $base }}{{ $page['path'] }}</loc>
-        <lastmod>{{ now()->toAtomString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    @endforeach
-
     <!-- Blog List Page -->
     <url>
         <loc>{{ $base }}/blogs</loc>

@@ -29,25 +29,6 @@ Route::get('admin/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/admin/login/auth', [AuthController::class, 'login'])->name('admin.login');
 
 
-
-// Main UK + US city pages (unique local copy per location; see config/locations/)
-if (file_exists(__DIR__ . '/uk-cities.php')) {
-    require __DIR__ . '/uk-cities.php';
-}
-if (file_exists(__DIR__ . '/us-cities.php')) {
-    require __DIR__ . '/us-cities.php';
-}
-
-// Leftover city URLs that are NOT in the UK/US catalogs (old thin/duplicate pages).
-// 410 Gone tells Google the page is permanently removed — no link equity passed to homepage.
-Route::get('/{city}/{slug}', function () {
-    return response('Gone', 410);
-})->where([
-    'city' => '[A-Za-z0-9\-]+',
-    'slug' => 'quran-academy-.+',
-]);
-
-
 Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('trial/classes', [DashboardController::class, 'trialClasses'])->name('trial.classes');
@@ -114,7 +95,3 @@ Route::prefix('blogs')->name('blogs.')->group(function () {
 
 Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
 Route::get('/storage/{path}', [MediaController::class, 'storage'])->where('path', '.*')->name('media.storage');
-
-// Mass US / EU city route files are intentionally not loaded.
-// Leftover quran-academy-* URLs return 410 Gone via the catch-all above.
-// Future countries: add config/locations/{country}.php with unique copy, same as UK.

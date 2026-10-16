@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Models\Blog;
-use App\Support\LocationCatalog;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
@@ -13,7 +12,7 @@ class GenerateSitemap extends Command
 {
     protected $signature = 'sitemap:generate';
 
-    protected $description = 'Write public/sitemap.xml with core pages, blogs, and UK/US city URLs';
+    protected $description = 'Write public/sitemap.xml with core pages and blogs';
 
     public function handle()
     {
@@ -35,13 +34,6 @@ class GenerateSitemap extends Command
             ->add(Url::create("{$baseUrl}/kids-quran-classes")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/online-ijazah-course")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/blogs")->setLastModificationDate($now));
-
-        foreach (array_merge(LocationCatalog::pages('uk'), LocationCatalog::pages('us')) as $page) {
-            $sitemap->add(Url::create($baseUrl . $page['path'])
-                ->setLastModificationDate($now)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-                ->setPriority(0.6));
-        }
 
         Blog::query()
             ->where('status', true)
