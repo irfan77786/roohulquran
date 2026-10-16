@@ -85,23 +85,4 @@
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
-
-    <!-- Blog List Page -->
-    <url>
-        <loc>{{ $base }}/blogs</loc>
-        <lastmod>{{ now()->toAtomString() }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Blog Detail Pages -->
-    @foreach ($blogs as $blog)
-    <url>
-        <loc>{{ $base }}/blogs/{{ $blog->slug }}</loc>
-        <lastmod>{{ optional($blog->updated_at)->toAtomString() ?: now()->toAtomString() }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    @endforeach
-
 </urlset>

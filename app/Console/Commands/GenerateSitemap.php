@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Blog;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
@@ -12,7 +11,7 @@ class GenerateSitemap extends Command
 {
     protected $signature = 'sitemap:generate';
 
-    protected $description = 'Write public/sitemap.xml with core pages and blogs';
+    protected $description = 'Write public/sitemap.xml with core pages only (blogs live in sitemap-blogs.xml)';
 
     public function handle()
     {
@@ -32,20 +31,7 @@ class GenerateSitemap extends Command
             ->add(Url::create("{$baseUrl}/memorize-quran-online")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/beginner-quran-classes")->setLastModificationDate($now))
             ->add(Url::create("{$baseUrl}/kids-quran-classes")->setLastModificationDate($now))
-            ->add(Url::create("{$baseUrl}/online-ijazah-course")->setLastModificationDate($now))
-            ->add(Url::create("{$baseUrl}/blogs")->setLastModificationDate($now));
-
-        Blog::query()
-            ->where('status', true)
-            ->orderByDesc('updated_at')
-            ->get(['slug', 'updated_at'])
-            ->each(function (Blog $blog) use ($sitemap, $baseUrl) {
-                $lastmod = $blog->updated_at ?? Carbon::now();
-                $sitemap->add(Url::create("{$baseUrl}/blogs/" . ltrim((string) $blog->slug, '/'))
-                    ->setLastModificationDate($lastmod)
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-                    ->setPriority(0.6));
-            });
+            ->add(Url::create("{$baseUrl}/online-ijazah-course")->setLastModificationDate($now));
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
