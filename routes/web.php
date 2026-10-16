@@ -95,3 +95,11 @@ Route::prefix('blogs')->name('blogs.')->group(function () {
 
 Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
 Route::get('/storage/{path}', [MediaController::class, 'storage'])->where('path', '.*')->name('media.storage');
+
+// Old UK/US city landing URLs — permanently removed (410 Gone for Google).
+Route::get('/{city}/{slug}', function () {
+    return response('Gone', 410);
+})->where([
+    'city' => '[A-Za-z0-9\-]+',
+    'slug' => 'quran-academy-.+',
+]);
