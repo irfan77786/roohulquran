@@ -38,12 +38,10 @@ if (file_exists(__DIR__ . '/us-cities.php')) {
     require __DIR__ . '/us-cities.php';
 }
 
-// Leftover city URLs that are NOT in the UK/US catalogs (old thin/duplicate pages)
-// 301 to the homepage so Google drops them from the index.
+// Leftover city URLs that are NOT in the UK/US catalogs (old thin/duplicate pages).
+// 410 Gone tells Google the page is permanently removed — no link equity passed to homepage.
 Route::get('/{city}/{slug}', function () {
-    $home = rtrim((string) config('app.sitemap_base_url', 'https://roohulquranacademy.com'), '/') . '/';
-
-    return redirect()->away($home, 301);
+    return response('Gone', 410);
 })->where([
     'city' => '[A-Za-z0-9\-]+',
     'slug' => 'quran-academy-.+',
@@ -118,5 +116,5 @@ Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
 Route::get('/storage/{path}', [MediaController::class, 'storage'])->where('path', '.*')->name('media.storage');
 
 // Mass US / EU city route files are intentionally not loaded.
-// Leftover quran-academy-* URLs 301 to the homepage via the catch-all above.
+// Leftover quran-academy-* URLs return 410 Gone via the catch-all above.
 // Future countries: add config/locations/{country}.php with unique copy, same as UK.
