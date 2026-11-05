@@ -1,0 +1,89 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # ---------------------------------------------
+    # Force HTTPS and remove www (before Laravel)
+    # ---------------------------------------------
+    # Remove www (optional)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # ---------------------------------------------
+    # Serve static files from public directory
+    # ---------------------------------------------
+    # If the request is for a file that exists in public, serve it directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # If the request is for a directory that exists in public, serve index from there
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+    RewriteRule ^(.*)$ public/$1/ [L]
+
+    # ---------------------------------------------
+    # Laravel specific rules
+    # ---------------------------------------------
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Remove trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Route all other requests to index.php in root
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    <IfModule mod_expires.c>
+        ExpiresActive On
+
+        # Cache images for 1 year
+        ExpiresByType image/webp "access plus 1 year"
+        ExpiresByType image/png "access plus 1 year"
+        ExpiresByType image/jpg "access plus 1 year"
+        ExpiresByType image/jpeg "access plus 1 year"
+        ExpiresByType image/gif "access plus 1 year"
+        ExpiresByType image/svg+xml "access plus 1 year"
+
+        # Cache CSS & JS for 1 month (change to 1 year if you use versioning)
+        ExpiresByType text/css "access plus 1 month"
+        ExpiresByType application/javascript "access plus 1 month"
+        ExpiresByType text/javascript "access plus 1 month"
+
+        # Cache fonts
+        ExpiresByType font/woff2 "access plus 1 year"
+        ExpiresByType font/woff "access plus 1 year"
+        ExpiresByType font/ttf "access plus 1 year"
+    </IfModule>
+
+    <IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|css|js|woff2?|ttf|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Content Security Policy — Tawk.to + Google + Cloudflare Turnstile
+  Header always set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' challenges.cloudflare.com *.tawk.to *.google-analytics.com *.googletagmanager.com *.google.com *.gstatic.com *.googleapis.com *.jsdelivr.net *.unpkg.com *.youtube.com *.googleadservices.com *.googlesyndication.com *.sociablekit.com; style-src 'self' 'unsafe-inline' challenges.cloudflare.com *.tawk.to *.googleapis.com *.jsdelivr.net *.unpkg.com *.sociablekit.com; img-src 'self' data: blob: challenges.cloudflare.com *.tawk.to *.google-analytics.com *.googletagmanager.com *.google.com *.gstatic.com *.googleapis.com *.googleusercontent.com *.jsdelivr.net *.unpkg.com *.youtube.com *.img.youtube.com *.amazonaws.com *.tawk.link *.sociablekit.com *.cloudinary.com res.cloudinary.com; font-src 'self' data: challenges.cloudflare.com *.tawk.to *.gstatic.com *.googleapis.com *.jsdelivr.net; connect-src 'self' challenges.cloudflare.com *.tawk.to wss://*.tawk.to *.google-analytics.com *.googletagmanager.com *.google.com *.youtube.com *.sociablekit.com *.accentapi.com; frame-src 'self' challenges.cloudflare.com *.tawk.to *.youtube.com *.google.com; worker-src 'self' blob: challenges.cloudflare.com; child-src 'self' blob: challenges.cloudflare.com; form-action 'self' *.tawk.to; object-src 'none'; base-uri 'self';"
+</IfModule>
+
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

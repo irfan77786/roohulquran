@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://roohulquranacademy.com/sitemap.xml
+Sitemap: https://roohulquranacademy.com/sitemap-blogs.xml

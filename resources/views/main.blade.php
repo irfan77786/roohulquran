@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@yield('title', 'Online Quran Classes For Kids And Adults')</title>
+    @yield('meta')
+
+    <meta property="og:title" content="@yield('og_title', 'Roohul Quran Online Academy')">
+    <meta property="og:description" content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
+    <meta property="og:site_name" content="Roohul Quran Online Academy">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+
+    <meta name="description"
+        content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
+
+    <meta name="keywords"
+        content="@yield('meta_keywords', 'Online Quran classes, Quran academy, Learn Quran online, Quran with Tajweed, Quran memorization, Online Hifz classes, Quran for kids, Quran teachers online, Islamic education, Rooh Ul Quran Academy')">
+
+    <meta name="google-site-verification" content="LazU64-UPkWgAw4DYjqtS2HjCsUe6xVKjqjSUDB54SY">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Favicons -->
+    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="icon">
+    <link href="{{ asset('assets/img/tab-logo.webp') }}" rel="apple-touch-icon">
+
+    {{-- Hero image starts downloading before stylesheets --}}
+    @stack('preload')
+
+    <!-- Third parties load after first paint -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://embed.tawk.to">
+
+    <!-- One blocking stylesheet. Icon font and text fonts load after first paint. -->
+    <link href="{{ asset('assets/css/site.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/site-fonts.css') }}" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/fonts/site-fonts.css') }}">
+    </noscript>
+    @stack('styles')
+    @include('layouts.partials.header-styles')
+
+    <style>
+        body {
+            min-height: 100vh;
+            /* Prevent layout shift */
+        }
+
+        body.index-page {
+            min-height: 100vh;
+        }
+
+        #hero {
+            min-height: 600px;
+            /* Matches your existing CSS */
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .whatsapp-float .wa-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #25D366;
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+        }
+
+        .whatsapp-float .wa-icon svg {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        /* Critical hero + header/nav to avoid CLS before CSS loads */
+        .header {
+            background-color: #ffffff;
+            padding: 0;
+            z-index: 997;
+            min-height: 80px;
+            /* Prevent layout shift */
+        }
+
+        .header .btn-getstarted {
+            color: #fff;
+            background-color: #FF5528;
+            font-size: 14px;
+            padding: 8px 25px;
+            border-radius: 50px;
+        }
+
+        /* .navmenu ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+                align-items: center;
+            } */
+
+        .navmenu a {
+            color: #272828;
+            padding: 18px 15px;
+            font-size: 20px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .navmenu a i {
+            font-size: 12px;
+            line-height: 0;
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+        .hero {
+            width: 100%;
+            min-height: 80vh;
+            position: relative;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .hero-lcp-picture {
+            position: absolute;
+            inset: 0;
+            display: block;
+            margin: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero img.hero-lcp {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+            z-index: 0;
+            display: block;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .hero p {
+            margin: 10px 0 0 0;
+            font-size: 24px;
+        }
+
+        .btn-get-started {
+            background-color: #FF5528;
+            color: #fff;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 8px 35px 10px;
+            border-radius: 50px;
+            margin-top: 30px;
+            border: 2px solid #fff;
+        }
+
+        /* Disable AOS on above-the-fold elements to prevent CLS */
+        [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Stable top-header dimensions — shimmer uses transform, not left */
+        #top-header {
+            min-height: 54px;
+            contain: layout style;
+        }
+
+        #top-header::before {
+            will-change: transform;
+        }
+
+        .hero-subtext {
+            min-height: 3.6em;
+        }
+
+        /* Reserve icon boxes so the deferred icon CSS does not shift layout */
+        .bi::before,
+        [class^="bi-"]::before,
+        [class*=" bi-"]::before {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.125em;
+        }
+
+        @media (max-width: 600px) {
+            .whatsapp-float {
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="index-page">
+    @include('layouts.header')
+
+    @yield('content')
+
+
+    @stack('late-styles')
+
+    @include('layouts.footer')
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/19172036999" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp USA">
+        <span class="wa-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" width="34" height="34">
+                <path
+                    d="M13.601 2.326A7.854 7.854 0 0 0 8.006.001C3.604.001.03 3.575.03 7.977c0 1.405.37 2.776 1.07 3.985L0 16l4.13-1.08a7.93 7.93 0 0 0 3.876 1c4.402 0 7.976-3.574 7.976-7.976a7.93 7.93 0 0 0-2.381-5.618zM8.006 14.5a6.47 6.47 0 0 1-3.3-.9l-.236-.14-2.45.64.655-2.389-.153-.245a6.47 6.47 0 0 1-.99-3.489c0-3.573 2.907-6.48 6.474-6.48a6.43 6.43 0 0 1 4.588 1.896 6.43 6.43 0 0 1 1.896 4.584c0 3.568-2.907 6.483-6.484 6.483zm3.686-4.853c-.202-.101-1.192-.59-1.377-.658-.184-.067-.318-.101-.452.102-.133.202-.518.657-.635.792-.117.134-.234.151-.436.05-.202-.102-.851-.313-1.622-.997-.6-.534-1.005-1.194-1.123-1.396-.117-.202-.012-.311.089-.412.092-.091.202-.235.303-.352.101-.117.134-.201.202-.336.067-.134.034-.252-.017-.353-.05-.102-.452-1.087-.62-1.488-.163-.392-.329-.339-.452-.343l-.384-.007c-.134 0-.353.051-.537.252-.184.202-.704.69-.704 1.68s.72 1.951.82 2.085c.101.134 1.417 2.162 3.434 3.033.48.207.855.33 1.147.422.482.153.921.132 1.27.08.387-.058 1.192-.487 1.36-.957.168-.47.168-.873.118-.957-.05-.084-.185-.134-.387-.235z" />
+            </svg>
+        </span>
+    </a>
+    <script defer src="{{ asset('assets/js/accordion.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/counters.min.js') }}"></script>
+    <script defer src="{{ asset('assets/vendor/php-email-form/validate.min.js') }}"></script>
+    <!-- Swiper: load CSS/JS only when slider scrolls into view -->
+    <script>
+        (function () {
+            var slider = document.querySelector('.testimonial-slider, .init-swiper');
+            if (!slider || !('IntersectionObserver' in window)) return;
+
+            var swiperLoaded = false;
+            function loadSwiperAssets(callback) {
+                if (swiperLoaded) { callback(); return; }
+                swiperLoaded = true;
+                var css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = '{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}';
+                document.head.appendChild(css);
+                var s = document.createElement('script');
+                s.src = '{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}';
+                s.onload = callback;
+                document.head.appendChild(s);
+            }
+
+            function initSwiper() {
+                loadSwiperAssets(function () {
+                    try {
+                        document.querySelectorAll('.testimonial-slider').forEach(function (el) {
+                            var section = el.closest('#testimonials') || el.parentElement;
+                            var nextEl = section.querySelector('.testimonial-next');
+                            var prevEl = section.querySelector('.testimonial-prev');
+                            new Swiper(el, {
+                                loop: true,
+                                autoHeight: true,
+                                slidesPerView: 1,
+                                spaceBetween: 16,
+                                pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+                                navigation: {
+                                    nextEl: nextEl,
+                                    prevEl: prevEl,
+                                },
+                                autoplay: { delay: 5000, disableOnInteraction: false },
+                                watchOverflow: true,
+                                observer: false,
+                                observeParents: false,
+                            });
+                        });
+                    } catch (e) { /* silent */ }
+                });
+            }
+
+            var obs = new IntersectionObserver(function (entries) {
+                if (entries.some(function (e) { return e.isIntersecting; })) {
+                    obs.disconnect();
+                    initSwiper();
+                }
+            }, { rootMargin: '200px' });
+            obs.observe(slider);
+        })();
+    </script>
+    <script defer src="{{ asset('assets/js/main.min.js') }}"></script>
+
+
+    <!-- Analytics and chat start after first paint so they do not compete with the hero -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                window.gtag = gtag;
+                gtag('js', new Date());
+                ['G-NSTXB23J7J', 'AW-17989840665'].forEach(function (id) {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+                    document.head.appendChild(s);
+                    gtag('config', id);
+                });
+            }, 5000);
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            var started = false;
+            function loadTawk() {
+                if (started) return;
+                started = true;
+                var Tawk_API = window.Tawk_API || {};
+                window.Tawk_API = Tawk_API;
+                window.Tawk_LoadStart = new Date();
+                var s1 = document.createElement('script');
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/68285e127a51e3190e056edf/1irequujd';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                document.body.appendChild(s1);
+            }
+            ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
+                window.addEventListener(ev, loadTawk, { once: true, passive: true });
+            });
+            setTimeout(loadTawk, 8000);
+        });
+    </script>
+
+    <!--End of Tawk.to Script-->
+
+</body>
+
+</html>
