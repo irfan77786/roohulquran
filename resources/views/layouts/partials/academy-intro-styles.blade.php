@@ -316,10 +316,10 @@
     #academy-intro .intro-phone-number {
         color: #122F2A;
         font-weight: 800;
-        font-size: 1.08rem;
+        font-size: 0.98rem;
         font-family: "Nunito", sans-serif;
         text-decoration: none !important;
-        line-height: 1.25;
+        line-height: 1.3;
         transition: color 0.2s ease;
     }
 

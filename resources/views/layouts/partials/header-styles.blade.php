@@ -1,11 +1,11 @@
 <style>
-  /* Contact bar — original pill layout, Tauheed colors */
+  /* Contact bar — Tauheed colors */
   #top-header {
     background-color: #122F2A;
     position: relative;
     overflow: hidden;
-    padding: 12px 0;
-    min-height: 54px;
+    padding: 10px 0;
+    min-height: 0;
     box-shadow: 0 2px 12px rgba(18, 47, 42, 0.12);
     contain: layout style;
     border-bottom: none;
@@ -14,51 +14,56 @@
   #top-header .contact-info {
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    gap: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 1;
   }
 
-  #top-header .contact-info > div {
-    margin-bottom: 0;
-    padding: 7px 18px;
+  #top-header .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    padding: 6px 14px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border-radius: 25px;
+    border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.16);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   }
 
-  #top-header .contact-info > div:hover {
+  #top-header .contact-chip:hover {
     background: rgba(26, 104, 91, 0.45);
-    transform: translateY(-1px);
+    color: #FF5528;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  #top-header .contact-info i {
-    font-size: 1.15rem !important;
-    color: #FF5528 !important;
-  }
-
-  #top-header,
-  #top-header .email {
-    color: #ffffff;
-    font-size: 0.92rem;
-    font-weight: 500;
-  }
-
-  #top-header a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  #top-header a:hover {
+  #top-header .contact-chip i {
+    font-size: 1rem;
     color: #FF5528;
+    flex-shrink: 0;
+  }
+
+  #top-header .chip-label {
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+  }
+
+  #top-header .chip-value-us-short {
+    display: none;
   }
 
   .mobile-break {
@@ -428,6 +433,13 @@
       text-align: center;
       font-size: 14px;
       color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-nav-contact .mobile-nav-wa {
+      margin: 0;
     }
 
     .mobile-nav-contact a {
@@ -496,46 +508,6 @@
     }
   }
 
-  @media (max-width: 1199.98px) {
-    #top-header {
-      display: block;
-      padding: 8px 10px;
-      min-height: 0;
-    }
-
-    #top-header .container-fluid {
-      padding-left: 8px;
-      padding-right: 8px;
-    }
-
-    #top-header .contact-info {
-      flex-wrap: nowrap;
-      gap: 8px;
-    }
-
-    #top-header .contact-info > div {
-      padding: 5px 12px;
-      white-space: nowrap;
-      min-width: 0;
-    }
-
-    #top-header .phone-number,
-    #top-header .email,
-    #top-header .contact-info a {
-      white-space: nowrap;
-    }
-
-    #top-header,
-    #top-header .email,
-    #top-header a {
-      font-size: 0.78rem;
-    }
-
-    #top-header .contact-info i {
-      font-size: 0.95rem !important;
-    }
-  }
-
   @media (min-width: 300px) and (max-width: 768px) {
     #header .logo img {
       max-height: 58px;
@@ -557,43 +529,72 @@
     }
   }
 
-  /* iPhone 16 (393px) and other phones under Pro Max (440px):
-     keep phone + email on one line so the bar does not cover the logo. */
-  @media (max-width: 439px) {
+  /* Tablet + mobile contact bar: compact 2-row grid (WA | WA / email) */
+  @media (max-width: 991.98px) {
     #top-header {
-      padding: 6px 4px;
+      padding: 6px 8px;
+      overflow: hidden;
     }
 
     #top-header .container-fluid {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 4px;
+      padding-right: 4px;
     }
 
     #top-header .contact-info {
-      gap: 6px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 6px;
+      width: 100%;
+      align-items: stretch;
     }
 
-    #top-header .contact-info > div {
+    #top-header .contact-chip {
+      width: 100%;
+      justify-content: center;
+      padding: 5px 6px;
+      font-size: 0.68rem;
+      gap: 4px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    #top-header .contact-chip i {
+      font-size: 0.8rem;
+    }
+
+    #top-header .contact-email {
+      grid-column: 1 / -1;
       padding: 4px 8px;
-    }
-
-    #top-header .contact-info .me-2 {
-      margin-right: 0.25rem !important;
-    }
-
-    #top-header,
-    #top-header .email,
-    #top-header .phone-number,
-    #top-header a {
       font-size: 0.66rem;
     }
 
-    #top-header .contact-info i {
-      font-size: 0.8rem !important;
+    #top-header .chip-value-us-full {
+      display: none;
     }
 
-    body:has(#hero) #header {
-      top: 44px;
+    #top-header .chip-value-us-short {
+      display: inline;
+    }
+  }
+
+  @media (max-width: 439px) {
+    #top-header {
+      padding: 5px 4px;
+    }
+
+    #top-header .contact-chip {
+      font-size: 0.62rem;
+      padding: 4px 4px;
+      gap: 3px;
+    }
+
+    #top-header .contact-chip i {
+      font-size: 0.75rem;
+    }
+
+    #top-header .contact-email {
+      font-size: 0.6rem;
     }
 
     #header .logo img {
@@ -604,33 +605,34 @@
   }
 
   @media (max-width: 360px) {
-    #top-header,
-    #top-header .email,
-    #top-header .phone-number,
-    #top-header a {
-      font-size: 0.58rem;
+    #top-header .contact-chip {
+      font-size: 0.56rem;
     }
 
-    #top-header .contact-info {
-      gap: 4px;
-    }
-
-    #top-header .contact-info > div {
-      padding: 3px 6px;
+    #top-header .contact-email {
+      font-size: 0.55rem;
     }
   }
 
-  @media (min-width: 769px) and (max-width: 1024px) {
+  @media (min-width: 992px) {
     #top-header .contact-info {
-      gap: 8px;
-      font-size: 14px;
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
+
+    #top-header .contact-chip {
+      font-size: 0.9rem;
+      padding: 7px 16px;
     }
   }
 
   @media (min-width: 1200px) {
     #top-header .contact-info {
       gap: 15px;
-      font-size: 16px;
+    }
+
+    #top-header .contact-chip {
+      font-size: 0.95rem;
     }
 
     #header .container-fluid.container-xl {
@@ -704,15 +706,35 @@
 
   @media (min-width: 1200px) {
     body:has(#hero) #header {
-      top: 62px;
+      top: 58px;
       padding-top: 8px;
     }
   }
 
-  @media (max-width: 1199.98px) {
+  @media (max-width: 1199.98px) and (min-width: 992px) {
     body:has(#hero) #header {
       top: 52px;
       padding-top: 6px;
+    }
+  }
+
+  /* Keep logo below the 2-row contact bar on mobile */
+  @media (max-width: 991.98px) {
+    body:has(#hero) #header {
+      top: 68px;
+      padding-top: 4px;
+    }
+  }
+
+  @media (max-width: 439px) {
+    body:has(#hero) #header {
+      top: 62px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    body:has(#hero) #header {
+      top: 58px;
     }
   }
 

@@ -22,8 +22,15 @@
           <img src="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" class="img-fluid footer-logo" alt="roohul quran academy logo" width="160" height="99" decoding="async" loading="lazy">
         </a>
         <div class="footer-contact pt-3">
-          <p><strong>CALL FOR MORE INFO:</strong></p>
-          <p class="phone-number"><i class="bi bi-telephone-fill"></i> +92-334-4066429</p>
+          <p><strong>WHATSAPP / CALL:</strong></p>
+          <p class="phone-number">
+            <i class="bi bi-whatsapp"></i>
+            <a href="https://wa.me/19172036999" class="text-white text-decoration-none" target="_blank" rel="noopener">US +1 (917) 203-6999</a>
+          </p>
+          <p class="phone-number">
+            <i class="bi bi-whatsapp"></i>
+            <a href="https://wa.me/923344066429" class="text-white text-decoration-none" target="_blank" rel="noopener">PK +92-334-4066429</a>
+          </p>
           <p><strong>GET IN TOUCH:</strong></p>
           <p><i class="bi bi-envelope-fill"></i> info@roohulquranacademy.com</p>
         </div>
@@ -59,8 +66,8 @@
     </a>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/+923344066429" class="whatsapp" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-      <span class="sr-only">Chat with us on WhatsApp</span>
+    <a href="https://wa.me/19172036999" class="whatsapp" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp USA">
+      <span class="sr-only">Chat with us on WhatsApp USA</span>
       <i class="bi bi-whatsapp text-black"></i>
     </a>
 

@@ -459,12 +459,22 @@ certified teachers, flexible timings')
     "@type": "Organization",
     "name": "Rooh Ul Quran Academy",
     "description": "Dedicated to spreading authentic Quran education through online classes for kids and adults worldwide.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+92-334-4066429",
-      "contactType": "Customer Support",
-      "availableLanguage": ["English", "Urdu", "Arabic"]
-    }
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1-917-203-6999",
+        "contactType": "Customer Support",
+        "areaServed": "US",
+        "availableLanguage": ["English", "Urdu", "Arabic"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+92-334-4066429",
+        "contactType": "Customer Support",
+        "areaServed": "PK",
+        "availableLanguage": ["English", "Urdu", "Arabic"]
+      }
+    ]
   }
 }
   </script>

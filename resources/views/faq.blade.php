@@ -119,7 +119,7 @@
                 ],
                 [
                     'q' => 'How do I contact Rooh Ul Quran Academy?',
-                    'a' => 'Contact us by WhatsApp at +92-334-4066429, email info@roohulquranacademy.com, or use the Contact Us page to request a free trial and course guidance.',
+                    'a' => 'Contact us by WhatsApp at +1 (917) 203-6999 (USA) or +92-334-4066429 (Pakistan), email info@roohulquranacademy.com, or use the Contact Us page to request a free trial and course guidance.',
                 ],
             ],
         ],

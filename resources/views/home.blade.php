@@ -395,11 +395,12 @@
                     </a>
                     <div class="intro-phone-block">
                         <span class="intro-phone-icon" aria-hidden="true">
-                            <i class="bi bi-telephone-fill"></i>
+                            <i class="bi bi-whatsapp"></i>
                         </span>
                         <div class="intro-phone-text">
-                            <span class="intro-phone-label">Call us any time:</span>
-                            <a href="tel:+923344066429" class="intro-phone-number">+92-334-4066429</a>
+                            <span class="intro-phone-label">WhatsApp us any time:</span>
+                            <a href="https://wa.me/19172036999" class="intro-phone-number" target="_blank" rel="noopener">US +1 (917) 203-6999</a>
+                            <a href="https://wa.me/923344066429" class="intro-phone-number" target="_blank" rel="noopener">PK +92-334-4066429</a>
                         </div>
                     </div>
                 </div>
@@ -903,7 +904,7 @@
       "logo": "https://roohulquranacademy.com/assets/img/tab-logo.webp",
       "description": "Rooh Ul Quran Academy offers online Quran classes for kids and adults worldwide, including Madani Qaida, Quran Reading, Tajweed, Memorization (Hifz), Tafsir, and Ijazah courses with qualified male and female Quran tutors.",
       "email": "info@roohulquranacademy.com",
-      "telephone": ["+92-334-4066429", "+92-344-6781539"],
+      "telephone": ["+1-917-203-6999", "+92-334-4066429", "+92-344-6781539"],
       "sameAs": [
         "https://www.facebook.com/roohulquran"
       ],

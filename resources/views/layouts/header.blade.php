@@ -3,20 +3,23 @@
   <div class="container-fluid">
     <div class="contact-info">
 
-      <!-- Phone section -->
-      <div class="d-flex align-items-center justify-content-center">
-        <i class="bi bi-whatsapp me-2"></i>
-        <span class="phone-number">
-          <a href="https://wa.me/923344066429" class="text-decoration-none" target="_blank" rel="noopener">+92-334-4066429</a>
-        </span>
-      </div>
+      <a href="https://wa.me/19172036999" class="contact-chip contact-wa" target="_blank" rel="noopener" aria-label="WhatsApp USA +1 (917) 203-6999">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        <span class="chip-label">US</span>
+        <span class="chip-value chip-value-us-full">+1 (917) 203-6999</span>
+        <span class="chip-value chip-value-us-short">+1-917-203-6999</span>
+      </a>
 
-      <div class="d-flex align-items-center justify-content-center">
-        <i class="bi bi-envelope-fill me-2"></i>
-        <span class="email">
-          <a href="mailto:info@roohulquranacademy.com" class="text-decoration-none">info@roohulquranacademy.com</a>
-        </span>
-      </div>
+      <a href="https://wa.me/923344066429" class="contact-chip contact-wa" target="_blank" rel="noopener" aria-label="WhatsApp Pakistan +92-334-4066429">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        <span class="chip-label">PK</span>
+        <span class="chip-value">+92-334-4066429</span>
+      </a>
+
+      <a href="mailto:info@roohulquranacademy.com" class="contact-chip contact-email" aria-label="Email info@roohulquranacademy.com">
+        <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+        <span class="chip-value">info@roohulquranacademy.com</span>
+      </a>
 
     </div>
   </div>
@@ -77,10 +80,16 @@
 
         <div class="mobile-nav-footer d-xl-none">
           <a href="{{ route('home.contact.us') }}" class="mobile-nav-cta">Get Started</a>
-          <p class="mobile-nav-contact">
-            <i class="bi bi-whatsapp"></i>
-            <a href="https://wa.me/923344066429" target="_blank" rel="noopener">+92-334-4066429</a>
-          </p>
+          <div class="mobile-nav-contact">
+            <p class="mobile-nav-wa">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              <a href="https://wa.me/19172036999" target="_blank" rel="noopener" aria-label="WhatsApp USA">US +1 (917) 203-6999</a>
+            </p>
+            <p class="mobile-nav-wa">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              <a href="https://wa.me/923344066429" target="_blank" rel="noopener" aria-label="WhatsApp Pakistan">PK +92-334-4066429</a>
+            </p>
+          </div>
         </div>
       </div>
     </nav>

@@ -197,10 +197,18 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
 
                 <div class="info-card">
                     <div class="info-item">
-                        <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div class="info-icon"><i class="bi bi-whatsapp"></i></div>
                         <div>
-                            <small>Call us or whatsapp Anytime</small>
-                            <a href="tel:+923344066429">+92-334-4066429</a>
+                            <small>WhatsApp USA</small>
+                            <a href="https://wa.me/19172036999" target="_blank" rel="noopener">+1 (917) 203-6999</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-whatsapp"></i></div>
+                        <div>
+                            <small>WhatsApp / Call Pakistan</small>
+                            <a href="https://wa.me/923344066429" target="_blank" rel="noopener">+92-334-4066429</a>
                         </div>
                     </div>
 
@@ -255,8 +263,16 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
   "contactPoint": [
     {
       "@type": "ContactPoint",
+      "telephone": "+1-917-203-6999",
+      "contactType": "Customer Support",
+      "areaServed": "US",
+      "availableLanguage": ["English", "Urdu"]
+    },
+    {
+      "@type": "ContactPoint",
       "telephone": "+92-334-4066429",
       "contactType": "Customer Support",
+      "areaServed": "PK",
       "availableLanguage": ["English", "Urdu"]
     },
     {
@@ -268,6 +284,7 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
   ],
   "sameAs": [
     "https://www.facebook.com/roohulquranacademy",
+    "https://wa.me/19172036999",
     "https://wa.me/923344066429"
   ]
 }

@@ -1,5 +1,5 @@
 @php
-    $ctaWhatsapp = 'https://wa.me/923344066429?text=' . rawurlencode('Assalamu Alaikum, I want to book a 3-day free trial Quran class.');
+    $ctaWhatsapp = 'https://wa.me/19172036999?text=' . rawurlencode('Assalamu Alaikum, I want to book a 3-day free trial Quran class.');
 @endphp
 
 <section class="rq-blog-cta">

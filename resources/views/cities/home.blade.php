@@ -867,7 +867,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
       "logo": "https://roohulquranacademy.com/assets/img/tab-logo.webp",
       "description": "Rooh Ul Quran Academy offers online Quran classes for kids and adults worldwide, including Noorani Qaida, Tajweed, Quran Memorization (Hifz), and Tafseer courses with qualified male and female Quran tutors.",
       "email": "info@roohulquranacademy.com",
-      "telephone": ["+92-334-4066429", "+92-344-6781539"],
+      "telephone": ["+1-917-203-6999", "+92-334-4066429", "+92-344-6781539"],
       "sameAs": [
         "https://www.facebook.com/roohulquran"
       ],

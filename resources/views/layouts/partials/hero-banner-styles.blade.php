@@ -188,7 +188,8 @@
             height: auto !important;
             min-height: 0;
             overflow: visible;
-            padding: 132px 0 48px;
+            /* Extra top space for 2-row contact bar + logo so form does not sit under logo */
+            padding: 158px 0 48px;
         }
 
         #hero.hero-tauheed .hero-lcp {
@@ -215,12 +216,22 @@
     }
 
     @media (max-width: 576px) {
+        #hero.hero-tauheed {
+            padding-top: 152px;
+        }
+
         #hero.hero-tauheed .hero-heading {
             font-size: 1.75rem !important;
         }
 
         #hero.hero-tauheed .hero-subtext {
             font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 439px) {
+        #hero.hero-tauheed {
+            padding-top: 146px;
         }
     }
 
