@@ -68,6 +68,8 @@ Route::get('/pricing', [HomeController::class, 'pricing'])->name('home.pricing')
 Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('home.contact.us');
 Route::get('/teachers', [HomeController::class, 'teachers'])->name('teachers');
 Route::get('/faq', [HomeController::class, 'faq'])->name('home.faq');
+Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('home.privacy.policy');
+
 
 
 Route::post('/trial-class', [TrialClassController::class, 'store'])
