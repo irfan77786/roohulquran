@@ -78,6 +78,9 @@
   </div>
 
   <div class="container text-center mt-4">
+    <p class="mb-2">
+      <a href="{{ route('home.privacy.policy') }}" class="text-white text-decoration-underline">Privacy Policy</a>
+    </p>
     <p>Copyright © 2025. All Rights Reserved.</p>
   </div>
 </footer>
