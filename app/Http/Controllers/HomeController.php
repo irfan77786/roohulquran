@@ -48,8 +48,13 @@ class HomeController extends Controller
     {
         return view('faq');
     }
+<<<<<<< HEAD
     
       public function privacyPolicy()
+=======
+
+    public function privacyPolicy()
+>>>>>>> 08f44ab56213e2f802fc4ecd258d25e7b53617d7
     {
         return view('privacy-policy');
     }

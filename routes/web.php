@@ -71,7 +71,6 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('home.faq');
 Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('home.privacy.policy');
 
 
-
 Route::post('/trial-class', [TrialClassController::class, 'store'])
     ->middleware(['protect.public.form', 'throttle:trial-class'])
     ->name('trial-class.store');
