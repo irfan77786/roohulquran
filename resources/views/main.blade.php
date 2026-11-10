@@ -335,10 +335,12 @@
                 function gtag() { dataLayer.push(arguments); }
                 window.gtag = gtag;
                 gtag('js', new Date());
-                var s = document.createElement('script');
-                s.async = true;
-                s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5VFMDD4M';
-                document.head.appendChild(s);
+                ['GTM-5VFMDD4M', 'GTM-58XPK6NV'].forEach(function (id) {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+                    document.head.appendChild(s);
+                });
             }, 5000);
         });
     </script>
