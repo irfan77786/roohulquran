@@ -335,13 +335,10 @@
                 function gtag() { dataLayer.push(arguments); }
                 window.gtag = gtag;
                 gtag('js', new Date());
-                ['G-NSTXB23J7J', 'AW-17989840665'].forEach(function (id) {
-                    var s = document.createElement('script');
-                    s.async = true;
-                    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
-                    document.head.appendChild(s);
-                    gtag('config', id);
-                });
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5VFMDD4M';
+                document.head.appendChild(s);
             }, 5000);
         });
     </script>
