@@ -1,0 +1,30 @@
+{
+  "specVersion": "0.91",
+  "entries": [
+    {
+      "identifier": "urn:air:roohulquranacademy.com:docs:llms",
+      "displayName": "Roohul Quran Academy documentation index",
+      "type": "text/markdown",
+      "url": "https://roohulquranacademy.com/llms.txt",
+      "description": "Markdown index of Roohul Quran Academy pages and online Quran courses for AI agents.",
+      "representativeQueries": [
+        "online Quran classes for kids and adults",
+        "learn Quran with Tajweed online",
+        "Hifz and Noorani Qaida courses near me",
+        "Roohul Quran Academy pricing and free trial"
+      ]
+    },
+    {
+      "identifier": "urn:air:roohulquranacademy.com:site:home",
+      "displayName": "Roohul Quran Academy website",
+      "type": "text/html",
+      "url": "https://roohulquranacademy.com/",
+      "description": "Official website for live online Quran classes, teachers, pricing, and enrollment.",
+      "representativeQueries": [
+        "Roohul Quran Academy official website",
+        "book a free online Quran trial class",
+        "qualified online Quran teachers"
+      ]
+    }
+  ]
+}

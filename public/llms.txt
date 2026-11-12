@@ -1,0 +1,29 @@
+# Roohul Quran Academy
+
+> Online Quran classes for kids and adults with Tajweed, Hifz, Noorani Qaida, Tafseer, and Ijazah — taught live by qualified teachers.
+
+Roohul Quran Academy helps students learn the Quran from home through one-on-one and small-group online classes. This file summarizes the main pages AI agents and crawlers should use.
+
+## Main pages
+
+- [Home](https://roohulquranacademy.com/): Overview of online Quran learning and free trial class
+- [About](https://roohulquranacademy.com/about): Academy mission, approach, and teaching standards
+- [Teachers](https://roohulquranacademy.com/teachers): Qualified Quran teachers and instructors
+- [Pricing](https://roohulquranacademy.com/pricing): Class packages and pricing options
+- [Contact](https://roohulquranacademy.com/contact-us): Contact details and enrollment support
+- [FAQ](https://roohulquranacademy.com/faq): Common questions about online Quran classes
+- [Blogs](https://roohulquranacademy.com/blogs): Articles on Quran learning and Islamic education
+
+## Courses
+
+- [Quran Reading with Tajweed](https://roohulquranacademy.com/quran-reading-with-tajweed)
+- [Noorani Qaida](https://roohulquranacademy.com/qaida-by-roohulquran)
+- [Tafseer Course Online](https://roohulquranacademy.com/tafseer-course-online)
+- [Memorize Quran Online (Hifz)](https://roohulquranacademy.com/memorize-quran-online)
+- [Beginner Quran Classes](https://roohulquranacademy.com/beginner-quran-classes)
+- [Kids Quran Classes](https://roohulquranacademy.com/kids-quran-classes)
+- [Online Ijazah Course](https://roohulquranacademy.com/online-ijazah-course)
+
+## Optional
+
+- [Privacy Policy](https://roohulquranacademy.com/privacy-policy)
