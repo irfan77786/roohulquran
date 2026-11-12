@@ -9,7 +9,8 @@
     @yield('meta')
 
     <meta property="og:title" content="@yield('og_title', 'Roohul Quran Online Academy')">
-    <meta property="og:description" content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
+    <meta property="og:description"
+        content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
     <meta property="og:site_name" content="Roohul Quran Online Academy">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -36,7 +37,8 @@
 
     <!-- One blocking stylesheet. Icon font and text fonts load after first paint. -->
     <link href="{{ asset('assets/css/site.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}" media="print"
+        onload="this.media='all'">
     <link rel="stylesheet" href="{{ asset('assets/fonts/site-fonts.css') }}" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.used.css') }}">
@@ -257,7 +259,8 @@
 
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/19172036999" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp USA">
+    <a href="https://wa.me/19172036999" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp USA">
         <span class="wa-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" width="34" height="34">
                 <path
@@ -326,31 +329,6 @@
     </script>
     <script defer src="{{ asset('assets/js/main.min.js') }}"></script>
 
-
-    <!-- Analytics and chat start after first paint so they do not compete with the hero -->
-    <script>
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                window.gtag = gtag;
-                gtag('js', new Date());
-
-                var ga = document.createElement('script');
-                ga.async = true;
-                ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-339T6RXVKX';
-                document.head.appendChild(ga);
-                gtag('config', 'G-339T6RXVKX');
-
-                ['GTM-5VFMDD4M', 'GTM-58XPK6NV'].forEach(function (id) {
-                    var s = document.createElement('script');
-                    s.async = true;
-                    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
-                    document.head.appendChild(s);
-                });
-            }, 5000);
-        });
-    </script>
     <script>
         window.addEventListener('load', function () {
             var started = false;
@@ -375,6 +353,31 @@
     </script>
 
     <!--End of Tawk.to Script-->
+    <!-- Analytics and chat start after first paint so they do not compete with the hero -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                window.gtag = gtag;
+                gtag('js', new Date());
+
+                var ga = document.createElement('script');
+                ga.async = true;
+                ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-339T6RXVKX';
+                document.head.appendChild(ga);
+                gtag('config', 'G-339T6RXVKX');
+
+                ['GTM-5VFMDD4M', 'GTM-58XPK6NV'].forEach(function (id) {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+                    document.head.appendChild(s);
+                });
+            }, 5000);
+        });
+    </script>
+
 
 </body>
 
