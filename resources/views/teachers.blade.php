@@ -307,6 +307,11 @@ expert teachers roohulquran, Quran instructors online, learn from quran teachers
 
 {{-- Courses + Testimonials --}}
 @include('layouts.partials.featured-courses')
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'teachers',
+    'heading' => 'Courses taught by our tutors',
+    'intro' => 'Browse kids classes, Tajweed, Hifz, pricing, and FAQ — then book a free trial with a suitable teacher.',
+])
 @include('layouts.testimonial')
 
 {{-- start of faq --}}

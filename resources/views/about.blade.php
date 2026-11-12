@@ -247,12 +247,13 @@ certified teachers, flexible timings')
           with Tajweed, memorize the Holy Quran, and understand its deeper meanings through Tafsir.
         </p>
         <ul class="about-checklist">
-          <li><i class="bi bi-check-circle-fill"></i> Madani Qaida Course (for beginners and kids)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Quran Reading Course</li>
-          <li><i class="bi bi-check-circle-fill"></i> Learn Quran With Tajweed</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Quran Memorization (Hifz)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Quran Tafsir - Translation</li>
-          <li><i class="bi bi-check-circle-fill"></i> Online Ijazah Course (for advanced students)</li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('quran.recitation') }}">Madani Qaida Course</a> (for beginners and kids)</li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('beginner.classes') }}">Quran Reading Course</a></li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('kids.classes') }}">Kids Quran Classes</a></li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('quran.tajweed') }}">Learn Quran With Tajweed</a></li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('quran.memorization') }}">Online Quran Memorization (Hifz)</a></li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('quran.tafseer') }}">Online Quran Tafsir - Translation</a></li>
+          <li><i class="bi bi-check-circle-fill"></i> <a href="{{ route('quran.ijazah') }}">Online Ijazah Course</a> (for advanced students)</li>
         </ul>
       </div>
     </div>
@@ -289,6 +290,11 @@ certified teachers, flexible timings')
 
 {{-- Courses + Testimonials after Mission --}}
 @include('layouts.partials.featured-courses')
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.about',
+    'heading' => 'Continue exploring Rooh Ul Quran Academy',
+    'intro' => 'Meet our teachers, watch the introduction video, or open a course page to start learning.',
+])
 @include('layouts.testimonial')
 
 <section id="about-why" class="section about-us about-refined py-5">

@@ -370,5 +370,10 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
     }
 })();
 </script>
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.contact.us',
+    'heading' => 'Useful pages before you enroll',
+    'intro' => 'Review pricing, FAQ, kids classes, Tajweed, teachers, or our blog while you wait for a reply.',
+])
 @include('layouts.partials.trial-form-scripts')
 @endsection

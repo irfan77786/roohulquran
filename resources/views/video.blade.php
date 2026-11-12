@@ -134,10 +134,14 @@ rooh ul quran academy video, introduction video, online quran classes video, isl
                     <h4>About This Video</h4>
                     <p>This introduction video showcases Rooh Ul Quran Academy's commitment to providing accessible, high-quality Islamic education. Learn about our:</p>
                     <ul class="list-unstyled">
-                        <li><i class="bi bi-check-circle text-success me-2"></i>Expert Quran teachers and tutors</li>
+                        <li><i class="bi bi-check-circle text-success me-2"></i><a href="{{ route('teachers') }}">Expert Quran teachers and tutors</a></li>
                         <li><i class="bi bi-check-circle text-success me-2"></i>Interactive learning methodology</li>
                         <li><i class="bi bi-check-circle text-success me-2"></i>Flexible scheduling for students worldwide</li>
-                        <li><i class="bi bi-check-circle text-success me-2"></i>Comprehensive Quran courses (Tajweed, Hifz, Tafseer)</li>
+                        <li><i class="bi bi-check-circle text-success me-2"></i>Comprehensive courses:
+                            <a href="{{ route('quran.tajweed') }}">Tajweed</a>,
+                            <a href="{{ route('quran.memorization') }}">Hifz</a>,
+                            <a href="{{ route('quran.tafseer') }}">Tafsir</a>
+                        </li>
                         <li><i class="bi bi-check-circle text-success me-2"></i>Modern technology integration</li>
                     </ul>
                 </div>
@@ -146,7 +150,7 @@ rooh ul quran academy video, introduction video, online quran classes video, isl
                     <a href="{{ route('home.contact.us') }}" class="btn btn-primary btn-lg me-3">
                         <i class="bi bi-telephone me-2"></i>Get Free Trial Class
                     </a>
-                    <a href="{{ route('home') }}" class="btn btn-outline-primary btn-lg">
+                    <a href="{{ route('home.index') }}" class="btn btn-outline-primary btn-lg">
                         <i class="bi bi-house me-2"></i>Back to Home
                     </a>
                 </div>
@@ -154,6 +158,12 @@ rooh ul quran academy video, introduction video, online quran classes video, isl
         </div>
     </div>
 </section>
+
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.video',
+    'heading' => 'Continue after watching',
+    'intro' => 'Learn more about the academy, meet teachers, explore courses, or start a free trial.',
+])
 
 <!-- Structured Data -->
 <script type="application/ld+json">

@@ -111,5 +111,11 @@ education blog, quran study resources')
         @include('blogs.partials.trial-cta')
     </div>
 </section>
+
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'blogs.index',
+    'heading' => 'Explore Quran courses from the blog',
+    'intro' => 'After reading, continue with kids classes, Tajweed, Hifz, pricing, FAQ, or a free trial.',
+])
 @include('layouts.partials.trial-form-scripts')
 @endsection

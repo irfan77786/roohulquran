@@ -361,6 +361,11 @@ qaida course, online quran basics')
 @include('layouts.partials.featured-courses')
 
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'quran.recitation',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'After Qaida, many students continue with reading, Tajweed, kids classes, or review pricing and FAQ.',
+])
 @include('layouts.testimonial')
 
 <section id="faq-noorani" class="py-5 bg-light">

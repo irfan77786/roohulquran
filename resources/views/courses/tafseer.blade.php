@@ -428,6 +428,11 @@ translation, tafsir classes, understand quran meaning')
 
 </section>
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'quran.tafseer',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'Combine Tafsir with Tajweed or memorization, or read our blog and pricing details.',
+])
 @include('layouts.testimonial')
 @include('layouts.partials.trial-form-scripts')
 

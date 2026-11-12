@@ -145,6 +145,27 @@
                 </div>
             </article>
 
+            <article class="course-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="course-image">
+                    <span class="badge-level">Kids</span>
+                    <img src="{{ asset('assets/img/ai/course-2.webp') }}" alt="Kids Quran Classes online"
+                        loading="lazy" width="400" height="260" />
+                </div>
+                <div class="course-info">
+                    <div class="course-meta">
+                        <span><i class="bi bi-person-video" aria-hidden="true"></i> 1 on 1 Session</span>
+                        <span><i class="bi bi-clock" aria-hidden="true"></i> Flexible Timing</span>
+                    </div>
+                    <h3 class="title"><a href="{{ route('kids.classes') }}">Kids Quran Classes</a></h3>
+                    <p class="description">Age-friendly online Quran classes for children covering Qaida, reading,
+                        Tajweed basics, and early Hifz with patient tutors. Parents can choose male or female teachers
+                        and flexible timings that fit school schedules worldwide.</p>
+                    <a href="{{ route('kids.classes') }}" class="course-cta">
+                        Start Free Trial <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+
         </div>
     </div>
 

@@ -146,7 +146,19 @@
                 Email <a href="mailto:info@roohulquranacademy.com">info@roohulquranacademy.com</a>
                 or visit our <a href="{{ route('home.contact.us') }}">Contact Us</a> page.
             </p>
+            <p class="mb-0">
+                You can also return to the
+                <a href="{{ route('home.index') }}">home page</a>,
+                read the <a href="{{ route('home.faq') }}">FAQ</a>,
+                or learn <a href="{{ route('home.about') }}">about Rooh Ul Quran Academy</a>.
+            </p>
         </article>
     </div>
 </section>
+
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.privacy.policy',
+    'heading' => 'Back to the academy',
+    'intro' => 'Privacy questions answered? Continue to home, contact, FAQ, or about us.',
+])
 @endsection

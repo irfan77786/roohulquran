@@ -322,6 +322,11 @@ quran reading for beginners, online quran for beginners')
 
 @include('layouts.partials.featured-courses')
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'beginner.classes',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'Pair reading practice with Tajweed, kids classes, or check pricing before you enroll.',
+])
 @include('layouts.testimonial')
 
 <section id="faq-noorani" class="py-5 bg-light">

@@ -521,5 +521,10 @@ price')
   </div>
 </section>
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.pricing',
+    'heading' => 'Choose a course after reviewing fees',
+    'intro' => 'Browse Madani Qaida, Tajweed, Hifz, kids classes, FAQ, or book a free trial when you are ready.',
+])
 
 @endsection

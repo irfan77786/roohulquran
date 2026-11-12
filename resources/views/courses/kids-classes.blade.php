@@ -337,6 +337,11 @@ kids tajweed, kids hifz class, quran learning for children')
 
 @include('layouts.partials.featured-courses')
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'kids.classes',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'Kids often start with Madani Qaida, then Quran reading or Hifz — see teachers and pricing too.',
+])
 @include('layouts.testimonial')
 
 <section id="faq-noorani" class="py-5 bg-light">

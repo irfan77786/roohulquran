@@ -358,8 +358,10 @@
         <div id="faq-tajweed-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-tajweed-heading-2"
           data-bs-parent="#faqTajweedAccordion">
           <div class="accordion-body">
-            No, beginners can start from <strong>Madani Qaida Course</strong> and then gradually move into Tajweed
-            lessons.
+            No, beginners can start from the
+            <a href="{{ route('quran.recitation') }}">Madani Qaida Course</a> and then gradually move into Tajweed
+            lessons. Families often also explore our
+            <a href="{{ route('kids.classes') }}">kids Quran classes</a>.
           </div>
         </div>
       </div>
@@ -436,6 +438,11 @@
 </script>
 
 </section>
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'quran.tajweed',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'Continue with related courses, pricing, teachers, or book a free trial when you are ready.',
+])
 @include('layouts.testimonial')
 @include('layouts.partials.trial-form-scripts')
 

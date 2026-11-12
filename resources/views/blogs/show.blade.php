@@ -43,7 +43,15 @@
                 </div>
             </article>
 
-            @php $internalLinks = $blog->internalLinkItems(); @endphp
+            @php
+                $internalLinks = $blog->internalLinkItems();
+                if (!count($internalLinks)) {
+                    $internalLinks = collect(\App\Helpers\SiteLinks::related('blogs.index'))
+                        ->take(5)
+                        ->map(fn ($link) => ['url' => $link['url'], 'label' => $link['label']])
+                        ->all();
+                }
+            @endphp
             @if(count($internalLinks))
                 <nav class="rq-blog-links" aria-label="Related academy pages">
                     <h2>Explore related classes</h2>

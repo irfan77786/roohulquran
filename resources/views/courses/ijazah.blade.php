@@ -377,6 +377,11 @@ sanad quran, ijazah in tajweed, online quran ijazah')
 
 </section>
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'quran.ijazah',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'Ijazah students often continue Hifz and Tajweed, meet our teachers, and confirm pricing.',
+])
 @include('layouts.testimonial')
 @include('layouts.partials.trial-form-scripts')
 

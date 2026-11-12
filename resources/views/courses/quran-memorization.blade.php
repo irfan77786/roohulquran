@@ -297,6 +297,11 @@ memorize quran with tajweed, quran hifz academy, online hifz program')
 
 
 
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'quran.memorization',
+    'heading' => 'Related Quran courses and academy pages',
+    'intro' => 'Strengthen Hifz with Tajweed, explore Ijazah, kids Hifz paths, or review pricing and FAQ.',
+])
 @include('layouts.testimonial')
 @include('layouts.partials.trial-form-scripts')
 

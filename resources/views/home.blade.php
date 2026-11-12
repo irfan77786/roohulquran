@@ -276,6 +276,21 @@
         content: "+";
         margin-left: 4px;
     }
+
+    #academy-intro a,
+    #why-choose-us a,
+    #faq .accordion-body a {
+        color: #1A685B;
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    #academy-intro a:hover,
+    #why-choose-us a:hover,
+    #faq .accordion-body a:hover {
+        color: #FF5528;
+    }
 </style>
 @endpush
 
@@ -354,15 +369,17 @@
                         Rooh ul Quran Academy Learn Quran Online with Expert Teachers
                     </h2>
                     <p>
-                        Whether you are a beginner starting with <strong>Noorani Qaida Online</strong>, a student aiming to
-                        <strong>learn Quran with Tajweed</strong>, or someone dedicated to <strong>Quran Memorization
-                            Online</strong>,
+                        Whether you are a beginner starting with
+                        <a href="{{ route('quran.recitation') }}">Madani Qaida Online</a>, a student aiming to
+                        <a href="{{ route('quran.tajweed') }}">learn Quran with Tajweed</a>, or someone dedicated to
+                        <a href="{{ route('quran.memorization') }}">Quran Memorization Online</a>,
                         we provide structured and personalized classes for all ages.
                     </p>
                     <p>
-                        With highly qualified teachers, including experienced <strong>female Quran tutors</strong> for
-                        sisters and
-                        kids, our mission is to make Quran learning accessible to every Muslim across the globe.
+                        With highly qualified teachers, including experienced
+                        <a href="{{ route('teachers') }}">female Quran tutors</a> for sisters and
+                        <a href="{{ route('kids.classes') }}">kids Quran classes</a>, our mission is to make Quran learning
+                        accessible to every Muslim across the globe.
                     </p>
                     <a href="#contact" class="intro-enroll">
                         Enroll Now and Begin Your Online Quran Journey!
@@ -373,18 +390,17 @@
                 <div class="intro-panel intro-block-secondary">
                     <h2 class="fw-bold">Quran Memorization and Tajweed Made Easy</h2>
                     <p>
-                        If your goal is to <strong>memorize the Quran</strong>, our step-by-step
-                        <strong>Online Hifz Course</strong> is perfect for you. Students can
-                        <strong>Read and Memorize Quran Online</strong> under the supervision of expert tutors who ensure
-                        accuracy and
+                        If your goal is to memorize the Quran, our step-by-step
+                        <a href="{{ route('quran.memorization') }}">Online Hifz Course</a> is perfect for you. Students can
+                        read and memorize Quran online under the supervision of expert tutors who ensure accuracy and
                         discipline.
                     </p>
                     <p>
-                        We also specialize in <strong>Learn Quran with Tajweed</strong>, helping students perfect their
-                        recitation with
-                        correct pronunciation. Whether you are a beginner or want to polish your skills, our academy
-                        provides
-                        structured and easy-to-follow programs.
+                        We also specialize in
+                        <a href="{{ route('quran.tajweed') }}">Learn Quran with Tajweed</a>, helping students perfect their
+                        recitation with correct pronunciation. Beginners can start with our
+                        <a href="{{ route('beginner.classes') }}">Quran Reading Course</a> or review
+                        <a href="{{ route('home.pricing') }}">flexible pricing plans</a> before enrolling.
                     </p>
                 </div>
 
@@ -629,6 +645,12 @@
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('kids.classes') }}" class="why-course-link">
+                                <span>Kids Quran Classes</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
                     </ul>
                 </aside>
             </div>
@@ -643,9 +665,13 @@
             <h2 class="fw-bold" style="color:#122F2A;">Learn Quran Online with Trusted Teachers</h2>
             <p class="text-muted">
                 At Rooh ul Quran Academy, we understand that every student learns differently. That’s why we offer
-                <strong>personalized online Quran classes</strong> with both male and female tutors to suit your needs.
-                From <strong>Learn Noorani Qaida Online</strong> for kids to advanced Tajweed lessons for adults, our
-                courses are designed to meet the needs of beginners, children, and advanced learners.
+                personalized online Quran classes with both male and
+                <a href="{{ route('teachers') }}">female tutors</a> to suit your needs.
+                From <a href="{{ route('quran.recitation') }}">Madani Qaida Online</a> and
+                <a href="{{ route('kids.classes') }}">kids Quran classes</a> to advanced
+                <a href="{{ route('quran.tajweed') }}">Tajweed</a> and
+                <a href="{{ route('quran.ijazah') }}">Ijazah</a> lessons for adults, our courses are designed for
+                beginners, children, and advanced learners.
             </p>
         </div>
 
@@ -728,7 +754,9 @@
                 <div id="faq-collapse-1" class="accordion-collapse collapse" aria-labelledby="faq-heading-1"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Yes! We have special Quran classes for beginners starting with <strong>Noorani Qaida</strong>.
+                        Yes! Beginners can start with our
+                        <a href="{{ route('quran.recitation') }}">Madani Qaida Course</a>
+                        or join age-friendly <a href="{{ route('kids.classes') }}">kids Quran classes</a>.
                     </div>
                 </div>
             </div>
@@ -744,7 +772,7 @@
                 <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Yes, we provide <strong>female Quran tutors online</strong> for sisters and young kids.
+                        Yes, we provide <a href="{{ route('teachers') }}">female Quran tutors online</a> for sisters and young kids.
                     </div>
                 </div>
             </div>
@@ -760,8 +788,9 @@
                 <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        You can join our <strong>Online Hifz Course</strong>, specially designed for both kids and
-                        adults.
+                        You can join our <a href="{{ route('quran.memorization') }}">Online Hifz Course</a>, specially designed for both kids and adults.
+                        See <a href="{{ route('home.pricing') }}">pricing</a> or book a free trial on our
+                        <a href="{{ route('home.contact.us') }}">contact page</a>.
                     </div>
                 </div>
             </div>
@@ -777,8 +806,8 @@
                 <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Absolutely! Our expert teachers provide <strong>step-by-step guidance</strong> to help you learn
-                        Quran with Tajweed.
+                        Absolutely! Join <a href="{{ route('quran.tajweed') }}">Learn Quran With Tajweed</a> for
+                        step-by-step guidance on accurate recitation.
                     </div>
                 </div>
             </div>
@@ -807,6 +836,12 @@
 
 {{-- end of faq --}}
 
+
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.index',
+    'heading' => 'Popular next steps for students',
+    'intro' => 'Explore kids classes, Tajweed, Hifz, pricing, teachers, and our blog — useful pages to continue your Quran learning journey.',
+])
 
 {{-- start testimonial --}}
 
@@ -972,55 +1007,56 @@
       @include('layouts.partials.course-schema-extras')
     },
     {
+      "@type": "Course",
+      "@id": "https://roohulquranacademy.com/#kids-course",
+      "url": "{{ url('/kids-quran-classes') }}",
+      "name": "Kids Quran Classes",
+      "description": "Age-friendly online Quran classes for children covering Qaida, reading, Tajweed basics, and early memorization with caring tutors.",
+      "provider": { "@id": "https://roohulquranacademy.com/#organization" }
+      @include('layouts.partials.course-schema-extras')
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://roohulquranacademy.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Do you offer a free trial class?",
+          "name": "Can beginners start Quran classes online?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, Rooh Ul Quran Academy offers a free trial class so students can experience our teaching method before enrolling."
+            "text": "Yes! Beginners can start with our Madani Qaida Course or join age-friendly kids Quran classes."
           }
         },
         {
           "@type": "Question",
-          "name": "Can kids join your online Quran classes?",
+          "name": "Do you provide female Quran teachers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, our online Quran classes are designed for both kids and adults. We have specialized beginner-friendly courses for children such as Madani Qaida."
+            "text": "Yes, we provide female Quran tutors online for sisters and young kids."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you provide female Quran tutors?",
+          "name": "What if I want to memorize the Quran?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, we have qualified female Quran tutors available for students who prefer to learn from a female teacher."
+            "text": "You can join our Online Hifz Course, specially designed for both kids and adults. See pricing or book a free trial on our contact page."
           }
         },
         {
           "@type": "Question",
-          "name": "What courses do you offer?",
+          "name": "Can I learn Tajweed online?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer Madani Qaida Course, Quran Reading Course, Learn Quran With Tajweed, Online Quran Memorization, Online Quran Tafsir - Translation, and Online Ijazah Course for all levels."
+            "text": "Absolutely! Join Learn Quran With Tajweed for step-by-step guidance on accurate recitation."
           }
         },
         {
           "@type": "Question",
-          "name": "What are your class timings?",
+          "name": "What devices can I use for online Quran classes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We provide flexible class timings to accommodate students across different time zones worldwide."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much do online Quran classes cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The fee structure varies depending on the course and number of classes per week. Please contact us directly for detailed pricing."
+            "text": "You can use a laptop, tablet, or even a mobile phone with internet access to attend our classes."
           }
         }
       ]

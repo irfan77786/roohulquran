@@ -65,6 +65,7 @@
             <ul>
               <li><a href="{{ route('quran.recitation') }}">Madani Qaida Course</a></li>
               <li><a href="{{ route('beginner.classes') }}">Quran Reading Course</a></li>
+              <li><a href="{{ route('kids.classes') }}">Kids Quran Classes</a></li>
               <li><a href="{{ route('quran.tajweed') }}">Learn Quran With Tajweed</a></li>
               <li><a href="{{ route('quran.memorization') }}">Online Quran Memorization</a></li>
               <li><a href="{{ route('quran.tafseer') }}">Online Quran Tafsir - Translation</a></li>

@@ -33,19 +33,23 @@
             'items' => [
                 [
                     'q' => 'What courses do you offer?',
-                    'a' => 'We offer six core programs: Madani Qaida Course, Quran Reading Course, Learn Quran With Tajweed, Online Quran Memorization (Hifz), Online Quran Tafsir - Translation, and Online Ijazah Course. Kids-focused classes are also available.',
+                    'a' => 'We offer Madani Qaida, Quran Reading, Learn Quran With Tajweed, Online Quran Memorization (Hifz), Online Quran Tafsir - Translation, Online Ijazah, and Kids Quran Classes.',
+                    'a_html' => 'We offer <a href="'.route('quran.recitation').'">Madani Qaida</a>, <a href="'.route('beginner.classes').'">Quran Reading</a>, <a href="'.route('quran.tajweed').'">Learn Quran With Tajweed</a>, <a href="'.route('quran.memorization').'">Online Quran Memorization (Hifz)</a>, <a href="'.route('quran.tafseer').'">Online Quran Tafsir - Translation</a>, <a href="'.route('quran.ijazah').'">Online Ijazah</a>, and <a href="'.route('kids.classes').'">Kids Quran Classes</a>.',
                 ],
                 [
                     'q' => 'What is the Madani Qaida Course?',
                     'a' => 'The Madani Qaida Course is a beginner foundation program. Students learn Arabic letters, correct pronunciation, joining letters, and basic Tajweed before moving to fluent Quran reading.',
+                    'a_html' => 'The <a href="'.route('quran.recitation').'">Madani Qaida Course</a> is a beginner foundation program. Students learn Arabic letters, correct pronunciation, joining letters, and basic Tajweed before moving to fluent <a href="'.route('beginner.classes').'">Quran reading</a>.',
                 ],
                 [
                     'q' => 'What is the difference between Quran Reading and Tajweed courses?',
                     'a' => 'Quran Reading builds accurate reading fluency and basic rules. Learn Quran With Tajweed focuses more deeply on makharij, rules of noon/meem, madd, and polished recitation quality.',
+                    'a_html' => '<a href="'.route('beginner.classes').'">Quran Reading</a> builds accurate reading fluency and basic rules. <a href="'.route('quran.tajweed').'">Learn Quran With Tajweed</a> focuses more deeply on makharij, rules of noon/meem, madd, and polished recitation quality.',
                 ],
                 [
                     'q' => 'Can I memorize the Quran online (Hifz)?',
                     'a' => 'Yes. Our Online Quran Memorization course uses structured new lesson, revision, and testing cycles with a dedicated tutor so students can memorize steadily from home.',
+                    'a_html' => 'Yes. Our <a href="'.route('quran.memorization').'">Online Quran Memorization</a> course uses structured new lesson, revision, and testing cycles with a dedicated tutor so students can memorize steadily from home. See <a href="'.route('home.pricing').'">pricing</a> for plan options.',
                 ],
                 [
                     'q' => 'Do you teach Quran Tafsir and translation?',
@@ -108,6 +112,7 @@
                 [
                     'q' => 'How much do online Quran classes cost?',
                     'a' => 'Fees depend on the number of classes per week and the selected course plan. Visit our Pricing page for current packages, or contact us for a plan matched to your family schedule.',
+                    'a_html' => 'Fees depend on the number of classes per week and the selected course plan. Visit our <a href="'.route('home.pricing').'">Pricing</a> page for current packages, or <a href="'.route('home.contact.us').'">contact us</a> for a plan matched to your family schedule.',
                 ],
                 [
                     'q' => 'Do you offer family or sibling discounts?',
@@ -120,6 +125,7 @@
                 [
                     'q' => 'How do I contact Rooh Ul Quran Academy?',
                     'a' => 'Contact us by WhatsApp at +1 (917) 203-6999 (USA) or +92-334-4066429 (Pakistan), email info@roohulquranacademy.com, or use the Contact Us page to request a free trial and course guidance.',
+                    'a_html' => 'Contact us by WhatsApp at +1 (917) 203-6999 (USA) or +92-334-4066429 (Pakistan), email info@roohulquranacademy.com, or use the <a href="'.route('home.contact.us').'">Contact Us</a> page to request a free trial and course guidance.',
                 ],
             ],
         ],
@@ -134,6 +140,7 @@
                 [
                     'q' => 'Is online Quran learning effective for kids?',
                     'a' => 'Yes. One-to-one live classes with patient tutors, short focused sessions, and regular revision help children build strong Quran reading habits from home.',
+                    'a_html' => 'Yes. Our <a href="'.route('kids.classes').'">Kids Quran Classes</a> use one-to-one live sessions with patient tutors, short focused lessons, and regular revision so children build strong Quran reading habits from home.',
                 ],
                 [
                     'q' => 'Can students in the UK or USA join?',
@@ -142,6 +149,7 @@
                 [
                     'q' => 'Will I receive a certificate?',
                     'a' => 'Course completion recognition is available for eligible students. Advanced learners may pursue the Online Ijazah Course for formal scholarly authorization after meeting assessment standards.',
+                    'a_html' => 'Course completion recognition is available for eligible students. Advanced learners may pursue the <a href="'.route('quran.ijazah').'">Online Ijazah Course</a> for formal scholarly authorization after meeting assessment standards.',
                 ],
             ],
         ],
@@ -417,7 +425,7 @@
                                 aria-labelledby="heading-{{ $itemId }}"
                                 data-bs-parent="#faqAccordion-{{ $group['id'] }}">
                                 <div class="accordion-body">
-                                    <p class="mb-0">{{ $item['a'] }}</p>
+                                    <p class="mb-0">{!! $item['a_html'] ?? e($item['a']) !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -438,6 +446,12 @@
         </div>
     </div>
 </section>
+
+@include('layouts.partials.related-internal-links', [
+    'forRoute' => 'home.faq',
+    'heading' => 'Helpful pages after the FAQ',
+    'intro' => 'Open pricing, kids classes, Tajweed, Hifz, teachers, or contact us to take the next step.',
+])
 
 <script type="application/ld+json">
 {!! json_encode([
