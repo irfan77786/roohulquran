@@ -335,6 +335,13 @@
                 function gtag() { dataLayer.push(arguments); }
                 window.gtag = gtag;
                 gtag('js', new Date());
+
+                var ga = document.createElement('script');
+                ga.async = true;
+                ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-339T6RXVKX';
+                document.head.appendChild(ga);
+                gtag('config', 'G-339T6RXVKX');
+
                 ['GTM-5VFMDD4M', 'GTM-58XPK6NV'].forEach(function (id) {
                     var s = document.createElement('script');
                     s.async = true;
