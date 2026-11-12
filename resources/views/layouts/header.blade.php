@@ -3,16 +3,14 @@
   <div class="container-fluid">
     <div class="contact-info">
 
-      <a href="https://wa.me/19172036999" class="contact-chip contact-wa" target="_blank" rel="noopener" aria-label="WhatsApp USA +1 (917) 203-6999">
+      <a href="https://wa.me/19172036999" class="contact-chip contact-wa" target="_blank" rel="noopener" aria-label="WhatsApp +1 (917) 203-6999">
         <i class="bi bi-whatsapp" aria-hidden="true"></i>
-        <span class="chip-label">US</span>
         <span class="chip-value chip-value-us-full">+1 (917) 203-6999</span>
         <span class="chip-value chip-value-us-short">+1-917-203-6999</span>
       </a>
 
-      <a href="https://wa.me/923344066429" class="contact-chip contact-wa" target="_blank" rel="noopener" aria-label="WhatsApp Pakistan +92-334-4066429">
+      <a href="https://wa.me/923344066429" class="contact-chip contact-wa" target="_blank" rel="noopener" aria-label="WhatsApp +92-334-4066429">
         <i class="bi bi-whatsapp" aria-hidden="true"></i>
-        <span class="chip-label">PK</span>
         <span class="chip-value">+92-334-4066429</span>
       </a>
 
@@ -87,11 +85,11 @@
           <div class="mobile-nav-contact">
             <p class="mobile-nav-wa">
               <i class="bi bi-whatsapp" aria-hidden="true"></i>
-              <a href="https://wa.me/19172036999" target="_blank" rel="noopener" aria-label="WhatsApp USA">US +1 (917) 203-6999</a>
+              <a href="https://wa.me/19172036999" target="_blank" rel="noopener" aria-label="WhatsApp +1 (917) 203-6999">+1 (917) 203-6999</a>
             </p>
             <p class="mobile-nav-wa">
               <i class="bi bi-whatsapp" aria-hidden="true"></i>
-              <a href="https://wa.me/923344066429" target="_blank" rel="noopener" aria-label="WhatsApp Pakistan">PK +92-334-4066429</a>
+              <a href="https://wa.me/923344066429" target="_blank" rel="noopener" aria-label="WhatsApp +92-334-4066429">+92-334-4066429</a>
             </p>
           </div>
         </div>

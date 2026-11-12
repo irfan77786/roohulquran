@@ -51,8 +51,15 @@
 
   #top-header .contact-chip i {
     font-size: 1rem;
-    color: #FF5528;
     flex-shrink: 0;
+  }
+
+  #top-header .contact-wa i {
+    color: #25D366;
+  }
+
+  #top-header .contact-email i {
+    color: #EA4335;
   }
 
   #top-header .chip-label {
@@ -449,7 +456,7 @@
     }
 
     .mobile-nav-contact i {
-      color: #FF5528;
+      color: #25D366;
       margin-right: 6px;
     }
 

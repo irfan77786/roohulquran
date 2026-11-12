@@ -472,13 +472,6 @@ certified teachers, flexible timings')
         "contactType": "Customer Support",
         "areaServed": "US",
         "availableLanguage": ["English", "Urdu", "Arabic"]
-      },
-      {
-        "@type": "ContactPoint",
-        "telephone": "+92-334-4066429",
-        "contactType": "Customer Support",
-        "areaServed": "PK",
-        "availableLanguage": ["English", "Urdu", "Arabic"]
       }
     ]
   }
