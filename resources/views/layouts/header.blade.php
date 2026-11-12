@@ -29,8 +29,11 @@
   <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
     <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
-      <img src="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" alt="Rooh Ul Quran Academy Logo"
-        width="312" height="192" decoding="async" loading="eager" />
+      <picture>
+        <source media="(max-width: 991px)" srcset="{{ asset('assets/img/logo-rooh-ul-quran-sm.webp') }}" type="image/webp">
+        <img src="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" alt="Rooh Ul Quran Academy Logo"
+          width="312" height="192" decoding="async" loading="eager" fetchpriority="low" />
+      </picture>
     </a>
 
     <div class="d-flex align-items-center gap-2 header-actions">

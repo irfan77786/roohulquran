@@ -14,8 +14,16 @@
     }
     forms.forEach(function (f) {
         f.addEventListener('focusin', loadTurnstile, { once: true });
+        f.addEventListener('pointerdown', loadTurnstile, { once: true, passive: true });
     });
-    window.addEventListener('load', loadTurnstile);
+    // Keep Turnstile off the critical path so mobile Speed Index / LCP stay free.
+    window.addEventListener('load', function () {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadTurnstile, { timeout: 12000 });
+        } else {
+            setTimeout(loadTurnstile, 8000);
+        }
+    });
 })();
 </script>
 @endif

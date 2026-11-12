@@ -16,13 +16,21 @@
         border-radius: 28px;
         overflow: hidden;
         background-color: #122F2A;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         box-shadow: 0 14px 40px rgba(18, 47, 42, 0.14);
         transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
             box-shadow 0.4s ease;
         height: 100%;
+    }
+
+    #teacher-highlights .teacher-card-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+        pointer-events: none;
     }
 
     #teacher-highlights .teacher-card::before {

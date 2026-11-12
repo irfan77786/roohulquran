@@ -243,6 +243,17 @@
                 left: 15px;
             }
         }
+
+        @media (max-width: 991px) {
+            #hero {
+                min-height: 0;
+            }
+
+            .hero {
+                min-height: 0;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 
@@ -271,6 +282,7 @@
     <script defer src="{{ asset('assets/js/accordion.min.js') }}"></script>
     <script defer src="{{ asset('assets/js/counters.min.js') }}"></script>
     <script defer src="{{ asset('assets/vendor/php-email-form/validate.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/main.min.js') }}"></script>
     <!-- Swiper: load CSS/JS only when slider scrolls into view -->
     <script>
         (function () {
@@ -327,7 +339,6 @@
             obs.observe(slider);
         })();
     </script>
-    <script defer src="{{ asset('assets/js/main.min.js') }}"></script>
 
     <script>
         window.addEventListener('load', function () {
@@ -348,12 +359,12 @@
             ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
                 window.addEventListener(ev, loadTawk, { once: true, passive: true });
             });
-            setTimeout(loadTawk, 8000);
+            setTimeout(loadTawk, 12000);
         });
     </script>
 
     <!--End of Tawk.to Script-->
-    <!-- Analytics and chat start after first paint so they do not compete with the hero -->
+    <!-- Analytics start well after first paint so they do not compete with the hero -->
     <script>
         window.addEventListener('load', function () {
             setTimeout(function () {
@@ -374,7 +385,7 @@
                     s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
                     document.head.appendChild(s);
                 });
-            }, 5000);
+            }, 8000);
         });
     </script>
 

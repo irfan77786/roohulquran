@@ -291,6 +291,22 @@
     #faq .accordion-body a:hover {
         color: #FF5528;
     }
+
+    /* Skip layout/paint for below-fold blocks until near viewport (mobile SI). */
+    #teacher-highlights,
+    #academy-intro,
+    #courses,
+    #about,
+    #counts,
+    #why-us,
+    #why-choose-us,
+    #faq,
+    #testimonials,
+    #contact,
+    .video-section {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 480px;
+    }
 </style>
 @endpush
 
@@ -302,8 +318,8 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <article class="teacher-card"
-                    style="background-image: url('{{ asset('assets/img/ai/about.webp') }}');">
+                <article class="teacher-card">
+                    <img class="teacher-card-bg" src="{{ asset('assets/img/ai/about.webp') }}" alt="" width="400" height="400" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="teacher-card-body">
                         <h3>Professional Quran Teachers</h3>
                         <p>
@@ -320,8 +336,8 @@
             </div>
 
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="180">
-                <article class="teacher-card"
-                    style="background-image: url('{{ asset('assets/img/ai/teachers.webp') }}');">
+                <article class="teacher-card">
+                    <img class="teacher-card-bg" src="{{ asset('assets/img/ai/teachers-card.webp') }}" alt="" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="teacher-card-body">
                         <h3>Female Quran Teachers</h3>
                         <p>
