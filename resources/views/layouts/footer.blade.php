@@ -1,72 +1,89 @@
+@php
+  $footerCourses = \App\Helpers\SiteLinks::allCourses();
+  $footerQuick = \App\Helpers\SiteLinks::footerQuickLinks();
+@endphp
+
 <style>
   .sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  border: 0 !important;
-  white-space: nowrap !important;
-}
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
 
-.footer-links-col h4 {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.85rem;
-}
+  .footer-logo {
+    max-height: 92px;
+    width: auto;
+    height: auto;
+  }
 
-.footer-link-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  .footer-sitemap {
+    margin-top: 2.25rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
 
-.footer-link-list li {
-  margin-bottom: 0.45rem;
-}
+  .footer-sitemap h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+  }
 
-.footer-link-list a {
-  color: rgba(255, 255, 255, 0.88);
-  text-decoration: none;
-  font-size: 0.92rem;
-  transition: color 0.2s ease;
-}
+  .footer-link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.footer-link-list a:hover,
-.footer-link-list a:focus {
-  color: #ffffff;
-  text-decoration: underline;
-}
+  .footer-link-list li {
+    margin-bottom: 0.4rem;
+  }
 
-.footer-bottom-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem 1.25rem;
-  margin-bottom: 0.75rem;
-}
+  .footer-link-list a {
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+  }
 
-.footer-bottom-nav a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: underline;
-  font-size: 0.9rem;
-}
+  .footer-link-list a:hover,
+  .footer-link-list a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .footer-bottom-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-bottom-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 767.98px) {
+    .footer-sitemap {
+      text-align: center;
+    }
+  }
 </style>
-
-@php
-  use App\Helpers\SiteLinks;
-  $footerCourses = SiteLinks::allCourses();
-  $footerQuick = SiteLinks::footerQuickLinks();
-@endphp
 
 <footer id="footer" class="footer position-relative" style="background-color: #122F2A; color: white !important;">
   <div class="container footer-top">
-    <div class="row gy-4">
-      <!-- Brand / Contact -->
-      <div class="col-lg-4 col-md-6 footer-about text-center text-lg-start">
+    <div class="row gy-4 align-items-center text-center text-lg-start">
+      <!-- Left Content -->
+      <div class="col-lg-4 col-md-6 footer-about">
         <a href="{{ route('home.index') }}" class="logo d-flex align-items-center justify-content-center justify-content-lg-start">
           <img src="{{ asset('assets/img/logo-rooh-ul-quran.webp') }}" class="img-fluid footer-logo" alt="roohul quran academy logo" width="160" height="99" decoding="async" loading="lazy">
         </a>
@@ -85,40 +102,22 @@
         </div>
       </div>
 
-      <!-- Quick links -->
-      <div class="col-lg-2 col-md-6 footer-links-col text-center text-lg-start">
-        <h4>Quick Links</h4>
-        <ul class="footer-link-list">
-          @foreach($footerQuick as $link)
-            <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
-          @endforeach
-        </ul>
+      <!-- Newsletter -->
+      <div class="col-lg-4 col-md-6 footer-newsletter">
+        <h4 class="text-white">Subscribe to our Newsletter</h4>
+        <p>We will always stay in touch!</p>
+        <form action="forms/newsletter.php" method="post" class="php-email-form">
+          <div class="newsletter-form d-flex justify-content-center">
+            <input type="email" name="email" placeholder="Your email address" required>
+            <button type="submit"><b>Subscribe</b></button>
+          </div>
+        </form>
       </div>
 
-      <!-- Courses -->
-      <div class="col-lg-3 col-md-6 footer-links-col text-center text-lg-start">
-        <h4>Quran Courses</h4>
-        <ul class="footer-link-list">
-          @foreach($footerCourses as $link)
-            <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
-          @endforeach
-        </ul>
-      </div>
-
-      <!-- Newsletter + Social -->
-      <div class="col-lg-3 col-md-6 text-center text-lg-start">
-        <div class="footer-newsletter">
-          <h4 class="text-white">Subscribe to our Newsletter</h4>
-          <p>We will always stay in touch!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form d-flex justify-content-center justify-content-lg-start">
-              <input type="email" name="email" placeholder="Your email address" required>
-              <button type="submit"><b>Subscribe</b></button>
-            </div>
-          </form>
-        </div>
-        <h4 class="text-white mt-4">Stay Connected</h4>
-        <div class="social-links d-flex justify-content-center justify-content-lg-start mt-3">
+      <!-- Social Links -->
+      <div class="col-lg-4 col-md-12 text-center text-lg-end">
+        <h4 class="text-white">STAY CONNECTED:</h4>
+        <div class="social-links d-flex justify-content-center justify-content-lg-end mt-3">
           <a href="https://www.facebook.com/roohulquran" rel="noopener" class="facebook" aria-label="Visit us on Facebook">
             <span class="sr-only">Visit us on Facebook</span>
             <i class="bi bi-facebook text-black"></i>
@@ -134,9 +133,44 @@
         </div>
       </div>
     </div>
+
+    <!-- Sitemap row: keeps original top layout intact -->
+    <div class="row gy-4 footer-sitemap text-center text-lg-start">
+      <div class="col-lg-5 col-md-6">
+        <h4>Quick Links</h4>
+        <ul class="footer-link-list">
+          @foreach($footerQuick as $link)
+            <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
+          @endforeach
+        </ul>
+      </div>
+      <div class="col-lg-7 col-md-6">
+        <h4>Quran Courses</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <ul class="footer-link-list">
+              @foreach($footerCourses as $link)
+                @if($loop->index < 4)
+                  <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
+                @endif
+              @endforeach
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <ul class="footer-link-list">
+              @foreach($footerCourses as $link)
+                @if($loop->index >= 4)
+                  <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
+                @endif
+              @endforeach
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
- <div class="container text-center mt-4">
+  <div class="container text-center mt-4">
     <nav class="footer-bottom-nav" aria-label="Legal and site pages">
       <a href="{{ route('home.privacy.policy') }}">Privacy Policy</a>
       <a href="{{ route('home.faq') }}">FAQ</a>
@@ -146,10 +180,3 @@
     <p>Copyright © {{ date('Y') }}. All Rights Reserved.</p>
   </div>
 </footer>
-<style>
-  .footer-logo {
-    max-height: 92px;
-    width: auto;
-    height: auto;
-  }
-</style>
