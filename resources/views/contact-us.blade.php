@@ -328,6 +328,7 @@ inquiry, contact quran teachers, quran academy help, free trial quran ')
                 });
             })
             .then(function(data) {
+                if (typeof window.trackLeadConversion === 'function') window.trackLeadConversion();
                 if (typeof Swal !== 'undefined') {
                     Swal.fire('JazakAllah', data.message || 'We received your query. InshAllah we will contact you soon.', 'success');
                 } else {

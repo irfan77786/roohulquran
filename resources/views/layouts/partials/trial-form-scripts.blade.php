@@ -74,6 +74,7 @@
                     });
                     if (!response.ok) throw response;
                     var data = await response.json();
+                    if (typeof window.trackLeadConversion === 'function') window.trackLeadConversion();
                     Swal.fire('JazakAllah', data.message || 'Submitted successfully', 'success');
                     this.reset();
                     var startedAtField = this.querySelector('input[name="form_started_at"]');

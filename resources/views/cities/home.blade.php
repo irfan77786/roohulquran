@@ -1046,6 +1046,7 @@ rooh ul quran academy, online quran classes {{ $cityName }}, quran learning {{ $
                     });
                     if (!response.ok) throw response;
                     const data = await response.json();
+                    if (typeof window.trackLeadConversion === 'function') window.trackLeadConversion();
                     Swal.fire('JazakAllah', data.message || 'Submitted successfully', 'success');
                     this.reset();
                     const startedAtField = this.querySelector('input[name="form_started_at"]');

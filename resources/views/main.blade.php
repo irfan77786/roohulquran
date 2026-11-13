@@ -364,19 +364,26 @@
     </script>
 
     <!--End of Tawk.to Script-->
-    <!-- Analytics start well after first paint so they do not compete with the hero -->
+    <!-- Analytics: load soon after first paint so Ads can capture gclid / conversions -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        window.trackLeadConversion = function () {
+            window.dataLayer.push({ event: 'generate_lead' });
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', { send_to: 'AW-18556755171' });
+            }
+        };
         window.addEventListener('load', function () {
             setTimeout(function () {
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                window.gtag = gtag;
                 gtag('js', new Date());
 
                 var ga = document.createElement('script');
                 ga.async = true;
-                ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-339T6RXVKX';
+                ga.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18556755171';
                 document.head.appendChild(ga);
+                gtag('config', 'AW-18556755171');
                 gtag('config', 'G-339T6RXVKX');
 
                 ['GTM-5VFMDD4M', 'GTM-58XPK6NV'].forEach(function (id) {
@@ -385,7 +392,7 @@
                     s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
                     document.head.appendChild(s);
                 });
-            }, 8000);
+            }, 1500);
         });
     </script>
 
