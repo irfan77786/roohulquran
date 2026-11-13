@@ -372,7 +372,9 @@
         window.trackLeadConversion = function () {
             window.dataLayer.push({ event: 'generate_lead' });
             if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', { send_to: 'AW-18556755171' });
+                gtag('event', 'conversion', {
+                    send_to: 'AW-18556755171/OnzmCIK9qrUdEOO5xpBF'
+                });
             }
         };
         window.addEventListener('load', function () {
