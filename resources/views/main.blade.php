@@ -12,7 +12,7 @@
     <meta property="og:description"
         content="@yield('meta_description', 'Learn Quran online with Rooh Ul Quran Academy. We offer expert-led online Quran classes for kids and adults, including Tajweed, Hifz, and Quran translation. Start your spiritual journey today from the comfort of your home.')">
     <meta property="og:site_name" content="Roohul Quran Online Academy">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
 
 
     <meta name="description"
