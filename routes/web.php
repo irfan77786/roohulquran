@@ -97,10 +97,10 @@ Route::prefix('blogs')->name('blogs.')->group(function () {
 Route::get('/sitemap.xml', [SiteMapController::class, 'sitemap']);
 Route::get('/storage/{path}', [MediaController::class, 'storage'])->where('path', '.*')->name('media.storage');
 
-// Temporary soft landing for old city URLs still in Google index (Europe etc.).
-// 200 + trial form keeps traffic/leads; noindex drops them gradually.
-// When GSC traffic on these URLs is near zero, switch back to 410 Gone.
-Route::get('/{city}/{slug}', [HomeController::class, 'legacyCitySoftLanding'])->where([
+// Old UK/US city landing URLs — permanently removed (410 Gone for Google).
+Route::get('/{city}/{slug}', function () {
+    return response('Gone', 410);
+})->where([
     'city' => '[A-Za-z0-9\-]+',
     'slug' => 'quran-academy-.+',
 ]);
